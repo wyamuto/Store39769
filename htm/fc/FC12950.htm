@@ -1,0 +1,137 @@
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'>
+<title>FC 12950 :: Quais são as variáveis JavaScript disponíveis para utilização na loja?</title>
+<link href='/lojas/00000009/htm/LojaSite.css' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+<table cellspacing="0" cellpadding="0"><tr><td>
+
+
+<br>
+<table border="1" cellpadding="5" cellspacing="0">
+  <tr><td colspan=4>Quando o cliente está <b>realizando um pedido</b></td></tr>
+  <tr>
+    <td>FC$.Page</td>
+    <td>FC$.Step</td>
+    <td>FC$.NextStep</td>
+    <td>Descrição</td>
+  </tr>
+  <tr>
+    <td>Register</td>
+    <td>Login</td>
+    <td>Order</td>
+    <td>Página de login</td>
+  </tr>
+  <tr>
+    <td>Register</td>
+    <td>Registration</td>
+    <td>Order</td>
+    <td>Página de cadastro</td>
+  </tr>
+  <tr>
+    <td>Register</td>
+    <td>Confirmation</td>
+    <td>Order</td>
+    <td>Página de confirmação</td>
+  </tr>
+  <tr>
+    <td>Register</td>
+    <td>Completion</td>
+    <td>Order</td>
+    <td>Página de pedido completado</td>
+  </tr>
+
+  <tr><td colspan=4><br>Quando o cliente está realizando um <b>cadastro</b> simples</td></tr>
+  <tr>
+    <td>FC$.Page</td>
+    <td>FC$.Step</td>
+    <td>FC$.NextStep</td>
+    <td>Descrição</td>
+  </tr>
+  <tr>
+    <td>Register</td>
+    <td>Login</td>
+    <td>Home</td>
+    <td>Página de login</td>
+  </tr>
+  <tr>
+    <td>Register</td>
+    <td>Registration</td>
+    <td>Home</td>
+    <td>Página de cadastro</td>
+  </tr>
+  <tr>
+    <td>Register</td>
+    <td>Confirmation</td>
+    <td>Home</td>
+    <td>Página de confirmação</td>
+  </tr>
+
+  <tr><td colspan=4><br>Quando o cliente vai <b>opinar</b> sobre um produto</td></tr>
+  <tr>
+    <td>FC$.Page</td>
+    <td>FC$.Step</td>
+    <td>FC$.NextStep</td>
+    <td>Descrição</td>
+  </tr>
+  <tr>
+    <td>Register</td>
+    <td>Login</td>
+    <td>Rate</td>
+    <td>Página de login</td>
+  </tr>
+  <tr>
+    <td>Register</td>
+    <td>Registration</td>
+    <td>Rate</td>
+    <td>Página de cadastro</td>
+  </tr>
+  <tr>
+    <td>Register</td>
+    <td>Confirmation</td>
+    <td>Rate</td>
+    <td>Página de confirmação</td>
+  </tr>
+
+  <tr><td colspan=4><br>Quando o cliente tem que se cadastrar para poder ver produtos (lojas com <b>níveis de acesso restrito</b>)</td></tr>
+  <tr>
+    <td>FC$.Page</td>
+    <td>FC$.Step</td>
+    <td>FC$.NextStep</td>
+    <td>Descrição</td>
+  </tr>
+  <tr>
+    <td>Register</td>
+    <td>Login</td>
+    <td>Prod</td>
+    <td>Página de login</td>
+  </tr>
+  <tr>
+    <td>Register</td>
+    <td>Registration</td>
+    <td>Prod</td>
+    <td>Página de cadastro</td>
+  </tr>
+  <tr>
+    <td>Register</td>
+    <td>Confirmation</td>
+    <td>Prod</td>
+    <td>Página de confirmação</td>
+  </tr>
+      
+</table>
+<br>
+Desta forma é possível criar uma programação específica de acordo com o contexto e passo atual dentro da página Register.<br>
+<br>
+<b>Exemplo:</b><br>
+<br>
+<b>1)</b> Programação que verifica se está em Register, passo Login no contexto de um cadastro simples:<br>
+<br>
+<span class=courrier>if(<span class=dest>FC$.Page</span>=="<span class=destgreen >Register</span>" && <span class=dest>FC$.Step</span>=="<span class=destgreen >Login</span>" && <span class=dest>FC$.NextStep</span>=="<span class=destgreen >Home</span>"){.....}</span>
+<br>
+
+</td></tr></table>
+
+</html>

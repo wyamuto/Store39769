@@ -1,0 +1,62 @@
+<p><span><b>ATENÇÃO:</b></span> A implantação deste recurso requer <b>CONHECIMENTOS AVANÇADOS</b> de <b>html</b> e <b>JavaScript</b>.</p>
+
+<p>Veja a diferença entre os passo de compra com textos (atual) e com imagens:</p>
+
+
+<center>Estilo de passo-a-passo no formato <b>texto</b>:<br><br><img src="/lojas/00028496/images/PassoCompra.png"></center>
+
+
+<center>Estilo de passo-a-passo com <b>imagens</b>:<br><br><img src="/lojas/00028496/images/PassoCompraImagem.png"></center>
+
+<p><a href="/dnload/PassosCompra.zip">Clique aqui</a> para baixar as imagens que deverão ser enviadas para a pasta <b>images</b> de sua loja.</p>
+
+
+<p>Segue o código que deverá ser colado ao final do arquivo <b>Rodape.htm</b>:</p><p><pre><span>
+&lt;script>
+//Personalização dos passos da compra com imagens
+var TemPassosCompra=document.getElementById("PassosCompra"); 
+if(TemPassosCompra){
+  var passo1=document.getElementById("idPasso1FC"); 
+  var passo2=document.getElementById("idPasso2FC"); 
+  var passo3=document.getElementById("idPasso3FC"); 
+  var passo4=document.getElementById("idPasso4FC"); 
+  var passo5=document.getElementById("idPasso5FC"); 
+  if(passo1.className=='EstPassoCompraAtual')
+    passo1.innerHTML="&lt;img src=&lt;BaseLoja>images/Passo1Atual.gif width=85 height=71>";
+  else if(passo1.className=='EstPassoCompraPre')
+    passo1.innerHTML="&lt;img src=&lt;BaseLoja>images/Passo1Pre.gif width=85 height=71>";
+  if(passo2.className=='EstPassoCompraAtual')
+     passo2.innerHTML="&lt;img src=&lt;BaseLoja>images/Passo2Atual.gif width=85 height=71>";
+  else if(passo2.className=='EstPassoCompraPre')
+     passo2.innerHTML="&lt;img src=&lt;BaseLoja>images/Passo2Pre.gif width=85 height=71>";
+  else if(passo2.className=='EstPassoCompraPos')
+     passo2.innerHTML="&lt;img src=&lt;BaseLoja>images/Passo2Pos.gif width=85 height=71>";
+  if(passo3.className=='EstPassoCompraAtual')
+    passo3.innerHTML="&lt;img src=&lt;BaseLoja>images/Passo3Atual.gif width=86 height=71>";
+  else if(passo3.className=='EstPassoCompraPre')
+    passo3.innerHTML="&lt;img src=&lt;BaseLoja>images/Passo3Pre.gif width=86 height=71>";
+  else if(passo3.className=='EstPassoCompraPos')
+    passo3.innerHTML="&lt;img src=&lt;BaseLoja>images/Passo3Pos.gif width=86 height=71>";
+  if(passo4.className=='EstPassoCompraAtual')
+    passo4.innerHTML="&lt;img src=&lt;BaseLoja>images/Passo4Atual.gif width=85 height=71>";
+  else if(passo4.className=='EstPassoCompraPre')
+    passo4.innerHTML="&lt;img src=&lt;BaseLoja>images/Passo4Pre.gif width=85 height=71>";
+   else if(passo4.className=='EstPassoCompraPos')
+    passo4.innerHTML="&lt;img src=&lt;BaseLoja>images/Passo4Pos.gif width=85 height=71>";
+  if(passo5.className=='EstPassoCompraAtual')
+    passo5.innerHTML="&lt;img src=&lt;BaseLoja>images/Passo5Atual.gif width=86 height=71>";
+  else if(passo5.className=='EstPassoCompraPos')
+    passo5.innerHTML="&lt;img src=&lt;BaseLoja>images/Passo5Pos.gif width=86 height=71>";
+}
+&lt;/script>
+&lt;style>
+.EstPassoCompraDiv{display:none}
+&lt;/style>
+</span></pre></p>
+
+<p><b>Obs:</b> Para alterar as imagens, sugerimos que elas tenham como dimensão <b>85px de largura</b>, <b>71px de altura</b>. Seus nomes devem ser:</p>
+
+<b><ul><li>Passo1Atual.gif&nbsp;&nbsp;&nbsp;&nbsp;Passo1Pos.gif&nbsp;&nbsp;&nbsp;&nbsp;Passo1Pre.gif</li><li>Passo2Atual.gif&nbsp;&nbsp;&nbsp;&nbsp;Passo2Pos.gif&nbsp;&nbsp;&nbsp;&nbsp;Passo2Pre.gif</li><li>Passo3Atual.gif&nbsp;&nbsp;&nbsp;&nbsp;Passo3Pos.gif&nbsp;&nbsp;&nbsp;&nbsp;Passo3Pre.gif</li><li>Passo4Atual.gif&nbsp;&nbsp;&nbsp;&nbsp;Passo4Pos.gif&nbsp;&nbsp;&nbsp;&nbsp;Passo4Pre.gif</li><li>Passo5Atual.gif&nbsp;&nbsp;&nbsp;&nbsp;Passo5Pos.gif&nbsp;&nbsp;&nbsp;&nbsp;Passo5Pre.gif</li></ul></b>
+
+
+<p><span><b>ATENÇÃO:</b></span> Efetue pedidos de testes após a implantação deste recurso, para ter certeza de que seu funcionamento esteja correto.</p>

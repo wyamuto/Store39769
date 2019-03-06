@@ -1,0 +1,170 @@
+<link rel="stylesheet" type="text/css" href="/js/MagicToolbox/MagicZoomPlusV1/magiczoomplus.css" />
+<script type="text/javascript" src="/js/MagicToolbox/MagicZoomPlusV1/magiczoomplus.js"></script>
+<style>
+.smText {font-size:10pt;font-family:tahoma}
+
+/* Estilos para cores dos códigos */
+#schemaHtml {font-size:9pt;font-weight:bold;font-family:tahoma,verdana}
+#schemaHtml h1 {font-size:9pt;color:#800000}
+#schemaHtml h2 {font-size:9pt;color:green}
+#schemaHtml b {font-size:9pt;color:#ff2200}
+#schemaHtml i {font-size:9pt;color:#0000FF}
+
+</style>
+
+<table width="100%">
+  <!-- Exemplo 1 -->
+  <tr>
+    <td class="smText">
+      <b><u>Exemplo 1</u></b> (Sem personalização)
+    </td>
+  </tr>
+  <tr>
+    <td class="smText">
+      <br>Altere a tag <b>&lt;ImagemProd></b> para:<div id=schemaHtml><pre><h1>&lt;a href<i>="&lt;ImagemProdAmp>"</i> title<i>="&lt;CodProd>"</i> class<i>="MagicZoomPlus"</i>>&lt;img src<i>="&lt;ImagemProdDet>"</i>/>&lt;/a></h1></pre></div>
+    </td>
+  </tr>
+  <tr>
+    <td class="smText">
+      Veja recurso em funcionamento ao passar o cursor do mouse por cima da imagem:<br>
+      <a href="http://www.rumo.com.br/lojas/00000009/prod/ImagemAmpliada.jpg" title="Super Máquina" class="MagicZoomPlus"><img src="http://www.rumo.com.br/lojas/00000009/prod/ImagemDetalhe.jpg"/></a>
+    </td>
+  </tr>
+  <!-- Exemplo 2 -->
+  <tr>
+    <td class="smText">
+      <br><br><br><br>
+    </td>
+  </tr>
+  <tr>
+    <td class="smText">
+      <b><u>Exemplo 2</u></b> (Personalização da largura e altura de exibição do Zoom)
+    </td>
+  </tr>
+  <tr>
+    <td class="smText">
+      <br>Altere a tag <b>&lt;ImagemProd></b> para:<div id=schemaHtml><pre><h1>&lt;a href<i>="&lt;ImagemProdAmp>"</i> rel<i>="zoom-width:<b>400px</b>;zoom-height:<b>170px;</b>"</i> class<i>="MagicZoomPlus"</i>>&lt;img src<i>="&lt;ImagemProdDet>"</i>/>&lt;/a></h1></pre></div>
+    </td>
+  </tr>
+  <tr>
+    <td class="smText">
+      Veja recurso em funcionamento ao passar o cursor do mouse por cima da imagem:<br>
+      <a href="http://www.rumo.com.br/lojas/00000009/prod/ImagemAmpliada.jpg" rel="zoom-width:400;zoom-height:170;" class="MagicZoomPlus"><img src="http://www.rumo.com.br/lojas/00000009/prod/ImagemDetalhe.jpg"/></a>
+    </td>
+  </tr>
+
+  <!-- Exemplo 3 -->
+  <tr>
+    <td class="smText">
+      <br><br><br><br>
+    </td>
+  </tr>
+  <tr>
+    <td class="smText">
+      <b><u>Exemplo 3</u></b> (Expandir para tamanho original da imagem)
+    </td>
+  </tr>
+  <tr>
+    <td class="smText">
+      <br>Altere a tag <b>&lt;ImagemProd></b> para:<div id=schemaHtml><pre><h1>&lt;a href<i>="&lt;ImagemProdAmp>"</i> rel<i>="expand-size:<b>original</b>;"</i> class<i>="MagicZoomPlus"</i>>&lt;img src<i>="&lt;ImagemProdDet>"</i>/>&lt;/a></h1></pre></div>
+    </td>
+  </tr>
+  <tr>
+    <td class="smText">
+      Veja recurso em funcionamento ao passar o cursor do mouse por cima da imagem:<br>
+      <a href="http://www.rumo.com.br/lojas/00000009/prod/ImagemAmpliada.jpg" class="MagicZoomPlus" rel="expand-size: original;" ><img src="http://www.rumo.com.br/lojas/00000009/prod/ImagemDetalhe.jpg"/></a>
+    </td>
+  </tr>
+
+  <!-- Exemplo 4 -->
+  <tr>
+    <td class="smText">
+      <br><br><br><br>
+    </td>
+  </tr>
+  <tr>
+    <td class="smText">
+      <b><u>Exemplo 4</u></b> (Janela modal)
+    </td>
+  </tr>
+  <tr>
+    <td class="smText">
+      <br>Altere a tag <b>&lt;ImagemProd></b> para:<div id=schemaHtml><pre><h1>&lt;a href<i>="&lt;ImagemProdAmp>"</i> rel<i>="disable-zoom:<b>true</b>;expand-size:<b>width=480px</b>;group:<b>panzoom</b>;"</i> class<i>="MagicZoomPlus"</i>><br />&lt;img src<i>="&lt;ImagemProdDet>"</i>/>&lt;/a></h1></pre></div>
+    </td>
+  </tr>
+  <tr>
+    <td class="smText">
+      Veja recurso em funcionamento ao clicar por cima da imagem:<br>
+      <a href="http://www.rumo.com.br/lojas/00000009/prod/ImagemAmpliada.jpg" class="MagicZoomPlus" rel="disable-zoom: true; expand-size: width=480px; group: panzoom;" title="Super Máquina"><img src="http://www.rumo.com.br/lojas/00000009/prod/ImagemDetalhe.jpg"/></a> <br/>
+    </td>
+  </tr>
+
+  <!-- Exemplo 5 -->
+  <tr>
+    <td class="smText">
+      <br><br><br><br>
+    </td>
+  </tr>
+  <tr>
+    <td class="smText">
+      <b><u>Exemplo 5</u></b> (Exibir o Zoom dentro da própria imagem)
+    </td>
+  </tr>
+  <tr>
+    <td class="smText">
+      <br>Altere a tag <b>&lt;ImagemProd></b> para:<div id=schemaHtml><pre><h1>&lt;a href<i>="&lt;ImagemProdAmp>"</i> rel<i>="zoom-position:<b>inner</b>;expand-position:<b>center</b>;expand-align:<b>image</b>;"</i> class<i>="MagicZoomPlus"</i>><br />&lt;img src<i>="&lt;ImagemProdDet>"</i>/>&lt;/a></h1></pre></div>
+    </td>
+  </tr>
+  <tr>
+    <td class="smText">
+      Veja recurso em funcionamento ao passar o cursor do mouse por cima da imagem:<br>
+      <a href="http://www.rumo.com.br/lojas/00000009/prod/ImagemAmpliada.jpg" class="MagicZoomPlus" rel="zoom-position: inner;  expand-position: center; expand-align: image;"><img src="http://www.rumo.com.br/lojas/00000009/prod/ImagemDetalhe.jpg"/></a>
+    </td>
+  </tr>
+
+  <!-- Exemplo 6 -->
+  <tr>
+    <td class="smText">
+      <br><br><br><br>
+    </td>
+  </tr>
+  <tr>
+    <td class="smText">
+      <b><u>Exemplo 6</u></b> (Efeito de transparência)
+    </td>
+  </tr>
+  <tr>
+    <td class="smText">
+      <br>Altere a tag <b>&lt;ImagemProd></b> para:<div id=schemaHtml><pre><h1>&lt;a href<i>="&lt;ImagemProdAmp>"</i> rel<i>="zoom-fade:<b>true</b>;zoom-fade-in-speed:<b>1000</b>;zoom-fade-out-speed:<b>500</b>;smoothing-speed:<b>10</b>"</i> <br />class<i>="MagicZoomPlus"</i>>&lt;img src<i>="&lt;ImagemProdDet>"</i>/>&lt;/a></h1></pre></div>
+    </td>
+  </tr>
+  <tr>
+    <td class="smText">
+      Veja recurso em funcionamento ao passar o cursor do mouse por cima da imagem:<br>
+      <a href="http://www.rumo.com.br/lojas/00000009/prod/ImagemAmpliada.jpg" class="MagicZoomPlus" rel="zoom-fade: true; zoom-fade-in-speed: 1000; zoom-fade-out-speed: 500; smoothing-speed: 10" title="Transparência"><img src="http://www.rumo.com.br/lojas/00000009/prod/ImagemDetalhe.jpg"/></a>
+    </td>
+  </tr>
+
+  <!-- Exemplo 7 -->
+  <tr>
+    <td class="smText">
+      <br><br><br><br>
+    </td>
+  </tr>
+  <tr>
+    <td class="smText">
+      <b><u>Exemplo 7</u></b> (Efeito de opacidade)
+    </td>
+  </tr>
+  <tr>
+    <td class="smText">
+      <br>Altere a tag <b>&lt;ImagemProd></b> para:<div id=schemaHtml><pre><h1>&lt;a href<i>="&lt;ImagemProdAmp>"</i> rel<i>="opacity-reverse:<b>true</b>;zoom-height:<b>200</b>;background-opacity:<b>30</b>"</i> class<i>="MagicZoomPlus"</i>><br />&lt;img src<i>="&lt;ImagemProdDet>"</i>/>&lt;/a></h1></pre></div>
+    </td>
+  </tr>
+  <tr>
+    <td class="smText">
+      Veja recurso em funcionamento ao passar o cursor do mouse por cima da imagem:<br>
+      <a href="http://www.rumo.com.br/lojas/00000009/prod/ImagemAmpliada.jpg" class="MagicZoomPlus" rel="opacity-reverse:true; zoom-height:200;background-opacity: 30"><img src="http://www.rumo.com.br/lojas/00000009/prod/ImagemDetalhe.jpg"/></a>
+    </td>
+  </tr>
+</table>

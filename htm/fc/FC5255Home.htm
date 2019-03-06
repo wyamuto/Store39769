@@ -1,0 +1,21 @@
+<style>
+.courrierpeq {font-size:8pt;font-family:courier new,tahoma,verdana;color:#0D6D9E;}
+.destpeq {font-size:8pt;font-family:tahoma,verdana;color:#990000;font-weight:bold;}
+</style>
+
+<pre>
+<span class=courrierpeq>
+&lt;script language=JavaScript src=&lt;BaseLoja&gt;htm/JurosParcelas.js&gt;&lt;/script&gt;
+&lt;script&gt;
+function MostraMaxParcela(PrecoProd,MaxParcelas){
+  var ComSem;
+  if(PrecoProd==0||MaxParcelas==1||Juros.length==0)return;
+  if(MaxParcelas==0||MaxParcelas&gt;Juros.length)MaxParcelas=Juros.length;
+  if(Juros[MaxParcelas-1]&gt;0)ComSem=""; else ComSem="&lt;font color=#990000&gt;&nbsp;sem&nbsp;juros&lt;/font&gt;";
+  document.write("ou&nbsp;&lt;b&gt;"+MaxParcelas+"x&lt;/b&gt;"+ComSem+" de&nbsp;&lt;b&gt;"+FormatPrecoReais(CalculaParcelaJurosCompostos(PrecoProd,MaxParcelas))+"&lt;/b&gt;");
+}
+&lt;/script&gt;
+</span>
+</pre>
+
+

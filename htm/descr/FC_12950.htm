@@ -1,0 +1,45 @@
+<img src="/lojas/00000009/images/fc/FC12950IMG1.png" class="img-responsive">
+<br>
+<p><b>Exemplos:</b></p>
+
+<p><b>1)</b> Programação que verifica se está na home da loja para executar algum comando, função, etc.</p>
+
+<pre><span>if(<span>FC$.Page</span>=="<span>Home</span>"){.....}</span></pre>
+<br>
+
+<p><b>2)</b> Utilização da variável do ID da loja para montar um link</p>
+
+<pre><span>"ChatLogin.asp?IDLoja="+<span>FC$.IDLoja</span></span></pre>
+<br>
+
+<p><b>3)</b> Utilização da variável do caminho da pasta IMAGES da loja para referenciar uma imagem</p>
+
+<pre><span>passo1.innerHTML="&lt;img src='"+ <span>FC$.PathImg</span> +"passo1pre.png' alt='Cesta' width='85' height='71' /&gt;";</span></pre>
+<br>
+
+
+<p><b>Opções de valores para <span>FC$.Page</span>:</b></p>
+
+<img src="/lojas/00000009/images/fc/FC12950IMG2.png" class="img-responsive">
+<br>
+
+<p><b>Valores de FC$.Step e FC$.NextStep para FC$.Page="Register":</b></p>
+
+<p>A página cadastro.asp (FC$.Page="Register") tem múltiplas funções, como a de fazer o login e cadastro do cliente. Esta página pode ser utilizada em diversos contextos, como por exemplo quando o cliente está finalizando um pedido ou apenas realizando um cadastro na loja.</p>
+
+<p>Quando o cliente vai opinar sobre um produto, ele também deve fazer login e cadastro, caso não tenha ainda e depois será redirecionado para a página de opinião de produto.</p>
+
+<p>O nome da página (FC$.Page) é sempre o mesmo, Register. O passo (F$.Step) pode ser Login, Registration, Confirmation, etc e o contexto (próximo passo para onde o cliente será redirecionado após o login/cadastro) é indicado em FC$.NextStep.</p>
+
+<p>Segue abaixo tabela com os valores de FC$.NextStep para cada um destes contextos:</p>
+
+<img src="/lojas/00000009/images/fc/FC12950IMG3.png" class="img-responsive">
+<br>
+Desta forma é possível criar uma programação específica de acordo com o contexto e passo atual dentro da página Register.<br>
+<br>
+<b>Exemplo:</b><br>
+<br>
+<b>1)</b> Programação que verifica se está em Register, passo Login no contexto de um cadastro simples:<br>
+<br>
+<pre><span>if(<span>FC$.Page</span>=="<span>Register</span>" && <span>FC$.Step</span>=="<span>Login</span>" && <span>FC$.NextStep</span>=="<span>Home</span>"){.....}</span></pre>
+<br>

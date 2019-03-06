@@ -1,0 +1,42 @@
+<style>
+.titpeqverde {font-size:9pt;font-family:courier new,tahoma,verdana;color:#1DA906;font-weight:bold;}
+.courrierpeq {font-size:8pt;font-family:courier new,tahoma,verdana;color:#0D6D9E;}
+.destpeq {font-size:8pt;font-family:tahoma,verdana;color:#990000;font-weight:bold;}
+</style>
+<pre>
+<span class=courrierpeq>
+
+<span class=titpeqverde>
+&lt;!-- Altere onde está <span class=destpeq>10</span> de acordo com o Pagto utilizado na loja -->
+&lt;!-- Pagto 1 = <span class=destpeq>9</span>, Pagto 2 = <span class=destpeq>10</span>, Pagto 3 = <span class=destpeq>11</span>, Pagto 4 = <span class=destpeq>12</span> e Pagto 5 = <span class=destpeq>13</span> -->
+
+&lt;!-- Altere onde está &lt;input name="lojaID" type="hidden" value="<span class=destpeq>9999</span>"> de acordo com o LojaID cadastrado no Rache Aqui! -->
+
+</span>
+
+
+&lt;script>
+var TotalPrazoRacheAqui = parseFloat(&lt;TotalPrazo>).toFixed(2).toString().replace('.','');
+if(&lt;IDFormaPagamento>==10){
+  sRacheAqui='&lt;table width=100% align=center>&lt;tr>&lt;td style=text-align:center>&lt;br>Clique no botão abaixo para prosseguir:&lt;br>&lt;br>';
+  sRacheAqui+='&lt;form name="racheaqui" action="https://pagamentos.racheaqui.com.br" method="post" target="_blank">';
+  sRacheAqui+='&lt;input name="lojaID" type="hidden" value="9999">';
+  sRacheAqui+='&lt;input name="valor_pedido" type="hidden" value="'+TotalPrazoRacheAqui+'">';
+  sRacheAqui+='&lt;input name="pedidoID" type="hidden" value="&lt;NumPedido>">';
+  sRacheAqui+='&lt;input type="hidden" name="num_raches" value="0">';
+  sRacheAqui+='&lt;input type="hidden" name="maximo_parcelas" value="0">';
+  sRacheAqui+='&lt;input type="image" src="&lt;BaseLoja>images/BTComprarRA.png" alt="Comprar Rache aqui!" border="0" align="absbottom" >';
+  sRacheAqui+='&lt;/form>&lt;/td>&lt;/tr>&lt;/table>';
+
+  var oPedConfirmado=F$.GetID("idChkTxtPedConfirmadoFC");
+  if(oPedConfirmado){
+    var oNewElementRacheAqui=document.createElement("div");
+    oNewElementRacheAqui.setAttribute("id","DivShowRacheAqui"); 
+    oDivShowRacheAqui=oPedConfirmado.parentNode.insertBefore(oNewElementRacheAqui,oPedConfirmado);
+    oDivShowRacheAqui.innerHTML=sRacheAqui;
+  }
+}
+&lt;/script>
+
+</span>
+</pre>

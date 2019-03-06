@@ -1,0 +1,326 @@
+<html>
+  <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link href='http://www.rumo.com.br/lojas/00000009/htm/LojaSite.css' rel='stylesheet' type='text/css'>
+
+  <style>
+   *{margin: :0; padding: 0;}
+   /*html, body { margin:0;}*/
+   img{border:0;}  
+   p, h1, h2, h3, h4, h5, ul, li{font-family: arial, arial;}
+   h3,h5{margin: 15px 0 5px 0}
+   p{margin: 5px 0}
+   p, li{font-size:13px}
+   pre{position: relative; margin:10px;}
+   .content{width:930px!important; height:auto; position: relative;}
+   .titpeqverde {font-family:'courier new',tahoma,verdana;color:#1DA906;font-weight:bold;}
+   .courrierpeq {font-family:'courier new',tahoma,verdana;color:#0D6D9E;}
+   .destpeq {font-family:tahoma,verdana;color:#990000;font-weight:bold;}
+   
+   /**** *****/
+   .courrier{font-family:courier new,tahoma,verdana;}
+   .redblackbold {color: #990000; font-weight:bold;}
+   .redblack {color: #990000; font-weight:normal;}
+   
+   
+   
+   </style>
+  </head>
+  <body>
+  
+<div class="content">
+
+	<p>É possível defenir em uma opção de <b>Pagamento Adicional</b> um meio de pagamento especifico do Bcash, como por exemplo, direcionar o cliente diretamente para a opção do <b>Boleto Bancário</b>.<br><br>
+	Neste exemplo vamos utilizar as 5 opções de <b>Pagamento Adicionais</b>.</p>
+	<p>No exemplo abaixo foi utilizado todas as opções de <b>Formas Pagamentos Adicionais</b>.</p>
+	<center><img src="/lojas/00000009/images/fc/FC13374_2.png"></center>
+
+    <p>No exemplo, foi utilizados as seguintes opções:</p>
+	<ul>
+	  <li>Bcash Boleto (Pagamento por boleto bancário)</li>
+	  <li>Bcash Transf Itaú (Pagamento por Transferência Itaú)</li>
+	  <li>Bcash Transf Bradesco (Pagamento por Transferência Bradesco)</li>
+	  <li>Bcash Transf  Banco do Brasil (Pagamento por Transferência Banco do Brasil)</li>
+	  <li>Bcash Todos os Meios (Cartões de crédito, boleto, Transferência)</li>
+	</ul>
+	
+	<br /><br />
+	<center><img src="/lojas/00000009/images/fc/FC13374_4.png"></center><br />
+	<p><b>Obs.:</b> As imagens das formas de pagemento devem ser envidas para a loja.</p><br /><br />
+
+	<p>Copie o código abaixo, cole no <b>bloco de notas</b> e salve com o nome <b>ConfirmacaoPedido.htm</b>, envie o arquivo para a pasta <b>HTM</b> no gerenciador de arquivos da loja.</p><br />
+	
+<div style="width:910px; height:3000px; margin:0 auto; padding:10px; overflow:auto; border: 1px solid #ccc;">
+<span class=courrier style="text-align: left;">
+<!-- -->
+<pre>
+
+&lt;style type="text/css">
+.iframeBcashTexto{font-family: arial, tahoma; font-size: 14px; text-align: center; background-color: #D31601; color: #FFFFFF;}
+.iframeBcashTexto h3{font-size: 18px; color:#000; margin: 10px;}
+.iframeBcashTexto p{font-size: 14px; margin: 10px;}
+.iframeBcash{background-color: #F6F6F6;}
+&lt;/style>
+<span class="titpeqverde">
+&lt;!-- Começo da integração IFrame Bach FC Xtreme Checkout -->
+&lt;!-- Altere onde está <b class=destpeq>email@cadastradonobcash.com.br</b> de acordo com o e-mail cadastrado no Bcash -->
+</span>
+&lt;script type="text/javascript">
+<span class="titpeqverde">
+//DEFININDO O MEIO DE PAGAMENTO PARA O BCASH - EXEMPLO:
+//VISA e outras bandeiras = <b class=destpeq>1</b>
+//Mastercard e outras bandeiras = <b class=destpeq>2</b>
+//Boleto = <b class=destpeq>10</b>
+//Transferência OnLine Banco do Brasil = <b class=destpeq>58</b>
+//Transferência OnLine Banco Bradesco =  <b class=destpeq>59</b>
+//Transferência OnLine Banco Itaú  = <b class=destpeq>60</b>
+//Transferência OnLine Banco Banrisul =  <b class=destpeq>61</b>
+//Transferência OnLine Banco HSBC =  <b class=destpeq>62</b>
+//Todos os meios de pagamento = <b class=destpeq>0</b> (Exibe todas as opções)
+</span>
+
+var temPagamentoBcash = false;
+var temDesconto = false;
+switch (&lt;IDFormaPagamento>) {
+        <b class=titpeqverde>//Forma de pagto adicionais 1</b>
+        case 9:
+            meioPagamentoBcash = "<b class=destpeq>10</b>";
+            temPagamentoBcash = true;
+            temDesconto = true;
+            break;
+        <b class=titpeqverde>//Forma de pagto adicionais 2</b>
+        case 10:
+            meioPagamentoBcash = "<b class=destpeq>60</b>";
+            temPagamentoBcash = true;
+            temDesconto = true;
+            break;
+        <b class=titpeqverde>//Forma de pagto adicionais 3</b>
+        case 11:
+            meioPagamentoBcash = "<b class=destpeq>59</b>";
+            temPagamentoBcash = true;
+            temDesconto = true;
+            break;
+        <b class=titpeqverde>//Forma de pagto adicionais 4</b>
+        case 12:
+            meioPagamentoBcash = "<b class=destpeq>58</b>";
+            temPagamentoBcash = true;
+            break;
+        <b class=titpeqverde>//Forma de pagto adicionais 5</b>
+        case 13:
+            meioPagamentoBcash = "<b class=destpeq>0</b>"; //Exibe todos os meios de pagamentos
+            temPagamentoBcash = true;
+            break;        
+        default:
+            <b class=titpeqverde>// se não for nenhum dos cases acima, então:</b>
+            meioPagamentoBcash = -1;
+            temPagamentoBcash = false;
+    }
+
+if(temPagamentoBcash && meioPagamentoBcash != -1){
+  //Dados do cliente
+ var NomeCompletoCliente = "&lt;NomeCompletoCliente>".replace("'",""); 
+ var EnderecoCliente = "&lt;EnderecoCliente>".replace("'","\'");
+ var BairroCliente = "&lt;BairroCliente>".replace("'","\'");
+ var CidadeCliente ="&lt;CidadeCliente>".replace("'","\'");
+
+  //Tratamento para ' no nome dos produtos
+  var NomeProduto1 = "&lt;NomeProduto1>".replace("'","\'"),  NomeProduto2 = "&lt;NomeProduto2>".replace("'","\'"), 
+                      NomeProduto3 = "&lt;NomeProduto3>".replace("'","\'"), NomeProduto4 = "&lt;NomeProduto4>".replace("'","\'"), 
+					  NomeProduto5 = "&lt;NomeProduto5>".replace("'","\'"),  NomeProduto6 = "&lt;NomeProduto6>".replace("'","\'"),
+					  NomeProduto7 = "&lt;NomeProduto7>".replace("'","\'"), NomeProduto8 = "&lt;NomeProduto8>".replace("'","\'"),
+					  NomeProduto9 = "&lt;NomeProduto9>".replace("'","\'"), NomeProduto10 = "&lt;NomeProduto10>".replace("'","\'");
+  
+  sBcash='&lt;form name="bcash" action="https://www.bcash.com.br/checkout/pay/" method="post" target="iframe_pd_pf">';
+  sBcash+='&lt;input name="email_loja" type="hidden" value="email@cadastradonobcash.com.br">';
+  sBcash+='&lt;input name="id_pedido" type="hidden" value="&lt;NumPedido>">';
+  sBcash+='&lt;input name="email" type="hidden" value="&lt;EmailCliente>">';
+  sBcash+='&lt;input name="nome" type="hidden" value="'+NomeCompletoCliente+'">';
+  sBcash+='&lt;input name="cpf" type="hidden" value="&lt;CPFCNPJ>">';
+  sBcash+='&lt;input name="telefone" type="hidden" value="&lt;TelefoneCliente>">';
+  sBcash+='&lt;input name="endereco" type="hidden" value="'+EnderecoCliente+'">';
+  sBcash+='&lt;input name="bairro" type="hidden" value="'+BairroCliente+'">';
+  sBcash+='&lt;input name="cidade" type="hidden" value="'+CidadeCliente+'">';
+  sBcash+='&lt;input name="estado" type="hidden" value="&lt;EstadoCliente>">';
+  sBcash+='&lt;input name="cep" type="hidden" value="&lt;CEPCliente>">';
+  sBcash+='&lt;input name="produto_codigo_1" type="hidden" value="&lt;RefProduto1>">';
+  sBcash+='&lt;input name="produto_descricao_1" type="hidden" value="'+NomeProduto1+'">';
+  sBcash+='&lt;input name="produto_qtde_1" type="hidden" value="&lt;QtdProduto1>">';
+  sBcash+='&lt;input name="produto_valor_1" type="hidden" value="&lt;PrecoUnitProduto1>">';
+  sBcash+='&lt;input name="produto_codigo_2" type="hidden" value="&lt;RefProduto2>">';
+  sBcash+='&lt;input name="produto_descricao_2" type="hidden" value="'+NomeProduto2+'">';
+  sBcash+='&lt;input name="produto_qtde_2" type="hidden" value="&lt;QtdProduto2>">';
+  sBcash+='&lt;input name="produto_valor_2" type="hidden" value="&lt;PrecoUnitProduto2>">';
+  sBcash+='&lt;input name="produto_codigo_3" type="hidden" value="&lt;RefProduto3>">';
+  sBcash+='&lt;input name="produto_descricao_3" type="hidden" value="'+NomeProduto3+'">';
+  sBcash+='&lt;input name="produto_qtde_3" type="hidden" value="&lt;QtdProduto3>">';
+  sBcash+='&lt;input name="produto_valor_3" type="hidden" value="&lt;PrecoUnitProduto3>">';
+  sBcash+='&lt;input name="produto_codigo_4" type="hidden" value="&lt;RefProduto4>">';
+  sBcash+='&lt;input name="produto_descricao_4" type="hidden" value="'+NomeProduto4+'">';
+  sBcash+='&lt;input name="produto_qtde_4" type="hidden" value="&lt;QtdProduto4>">';
+  sBcash+='&lt;input name="produto_valor_4" type="hidden" value="&lt;PrecoUnitProduto4>">';
+  sBcash+='&lt;input name="produto_codigo_5" type="hidden" value="&lt;RefProduto5>">';
+  sBcash+='&lt;input name="produto_descricao_5" type="hidden" value="'+NomeProduto5+'">';
+  sBcash+='&lt;input name="produto_qtde_5" type="hidden" value="&lt;QtdProduto5>">';
+  sBcash+='&lt;input name="produto_valor_5" type="hidden" value="&lt;PrecoUnitProduto5>">';
+  sBcash+='&lt;input name="produto_codigo_6" type="hidden" value="&lt;RefProduto6>">';
+  sBcash+='&lt;input name="produto_descricao_6" type="hidden" value="'+NomeProduto6+'">';
+  sBcash+='&lt;input name="produto_qtde_6" type="hidden" value="&lt;QtdProduto6>">';
+  sBcash+='&lt;input name="produto_valor_6" type="hidden" value="&lt;PrecoUnitProduto6>">';
+  sBcash+='&lt;input name="produto_codigo_7" type="hidden" value="&lt;RefProduto7>">';
+  sBcash+='&lt;input name="produto_descricao_7" type="hidden" value="'+NomeProduto7+'">';
+  sBcash+='&lt;input name="produto_qtde_7" type="hidden" value="&lt;QtdProduto7>">';
+  sBcash+='&lt;input name="produto_valor_7" type="hidden" value="&lt;PrecoUnitProduto7>">';
+  sBcash+='&lt;input name="produto_codigo_8" type="hidden" value="&lt;RefProduto8>">';
+  sBcash+='&lt;input name="produto_descricao_8" type="hidden" value="'+NomeProduto8+'">';
+  sBcash+='&lt;input name="produto_qtde_8" type="hidden" value="&lt;QtdProduto8>">';
+  sBcash+='&lt;input name="produto_valor_8" type="hidden" value="&lt;PrecoUnitProduto8>">';
+  sBcash+='&lt;input name="produto_codigo_9" type="hidden" value="&lt;RefProduto9>">';
+  sBcash+='&lt;input name="produto_descricao_9" type="hidden" value="'+NomeProduto9+'">';
+  sBcash+='&lt;input name="produto_qtde_9" type="hidden" value="&lt;QtdProduto9>">';
+  sBcash+='&lt;input name="produto_valor_9" type="hidden" value="&lt;PrecoUnitProduto9>">';
+  sBcash+='&lt;input name="produto_codigo_10" type="hidden" value="&lt;RefProduto10>">';
+  sBcash+='&lt;input name="produto_descricao_10" type="hidden" value="'+NomeProduto10+'">';
+  sBcash+='&lt;input name="produto_qtde_10" type="hidden" value="&lt;QtdProduto10>">';
+  sBcash+='&lt;input name="produto_valor_10" type="hidden" value="&lt;PrecoUnitProduto10>">';
+  sBcash+='&lt;input name="tipo_integracao" type="hidden" value="PAD">';
+  sBcash+='&lt;input name="frete" type="hidden" value="&lt;Frete>">';
+  sBcash+='&lt;input name="desconto" type="hidden" value="">';
+  sBcash+='&lt;input name="acrescimo" type="hidden" value="&lt;ValorEmbalagemPedido>">';
+    if(meioPagamentoBcash !== 0)sBcash+='&lt;input name="meio_pagamento" type="hidden" value="' +meioPagamentoBcash+ '">'; //Pré define um meio de pagamento no Bcash
+  sBcash+='&lt;/form>';
+
+    //Exibe o Iframe do Bcash
+    sBcash+= "&lt;table width='100%' border='0' cellpadding='0' cellspacing='0'>";
+    sBcash+=  "&lt;tr>&lt;td class='iframeBcashTexto' align='center'>&lt;h3>Bcash!&lt;/h3>&lt;p>Aguarde, em instantes a página para pagamento será exibida.&lt;/p>&lt;/td>&lt;/tr>";
+    
+    var t = setTimeout("document.bcash.submit();",1000); //2 seconds measured in miliseconds
+    //SCRIPT IFRAME XTREME CHECKOUT
+    sBcash+=  "&lt;tr>&lt;td class='iframeBcash'>&lt;iframe  frameborder='0' name='iframe_pd_pf' src='' width='980px' height='1300px'>&lt;/iframe>&lt;/td>&lt;/tr>"; //INSTRUÇÕES BCASH
+
+    sBcash+="&lt;/table>";
+
+
+   var oChkEnd=F$.GetID("idChkEndFC");
+   if(oChkEnd){
+     var oNewElementbCash=document.createElement("div");
+     oNewElementbCash.setAttribute("id","DivShowBcash");
+     oDivShowBcash=oChkEnd.parentNode.insertBefore(oNewElementbCash,oChkEnd);
+     oDivShowBcash.innerHTML=sBcash;
+     
+     var oChkBottom=F$.GetID("idChkBottomFC");
+     F$.FooterHeight+=1300;
+     if(oChkBottom)setTimeout("F$.fnIntoView(oChkBottom);",100);
+     
+   }
+  //FIM SCRIPT IFRAME XTREME CHECKOUT
+
+  var TotalSFrete=&lt;TotalSemFrete>;
+  var NumP=&lt;NumParcelas>;
+<span class="titpeqverde">
+  //Verifica se tem desconto para pagamento à vista
+  //Informe o desconto que é oferecido de acordo com as regras da página "Pagamentos".
+  
+  //if(temDesconto){   
+  //   if(TotalSFrete>=210)var Desc1=30;
+  //   else if(TotalSFrete>=160)var Desc1=20;
+  //   else if(TotalSFrete>=90)var Desc1=10;
+
+  // var Desc1;
+  // var FatorDesc=Desc1/100;
+  // Total=((TotalSFrete*100)/(100-Desc1)*FatorDesc);   
+  // document.bcash.desconto.value=Total; //coloca o resultado no campo hidden
+  //}
+</span>
+}
+
+&lt;/script>
+&lt;!-- Final da integração IFrame Bach FC Xtreme Checkout -->
+
+</pre>
+<!-- -->
+</span>
+	
+</div>
+<!-- Personalização  Desconto -->
+    <br />  
+	<p>Para definir um desconto para pagamento <b>"à vista"</b> realize as seguintes alterações.</p>
+	<p>Na opção de <b>Pagamento Adicional</b> que deseja oferecer o desconto "à vista" marque o campo <b>"À vista".</b></p><br />
+	<center><img src="/lojas/00000009/images/fc/FC13374_3.png"></center><br />
+	
+	<p>
+		As opções de <b class="courrier">CASE</b> do código devem estar de acordo com as configurações das opções de <b>Formas Pagamentos Adicionais</b>.<br/>
+		O <b class="courrier">CASE</b> deve ter a variável <b class="titpeqverde">temDesconto</b> com o valor <b class="courrierpeq">true</b>
+	</p>
+
+<div style="width:910px; height:300px; margin:0 auto; padding:10px; overflow:auto; border: 1px solid #ccc;">
+<span class=courrier style="text-align: left;">
+<pre>
+switch (&lt;IDFormaPagamento>) {
+        <b class=titpeqverde>//Forma de pagto adicionais 1</b>
+        case 9:
+            meioPagamentoBcash = "<b class=destpeq>10</b>";
+            temPagamentoBcash = true;
+            <b class=titpeqverde>temDesconto</b> = <b class=destpeq>true</b>;
+            break;
+        <b class=titpeqverde>//Forma de pagto adicionais 2</b>
+        case 10:
+            meioPagamentoBcash = "<b class=destpeq>60</b>";
+            temPagamentoBcash = true;
+            <b class=titpeqverde>temDesconto</b> = <b class=destpeq>true</b>;
+            break;
+        <b class=titpeqverde>//Forma de pagto adicionais 3</b>
+        case 11:
+            meioPagamentoBcash = "<b class=destpeq>59</b>";
+            temPagamentoBcash = true;
+            <b class=titpeqverde>temDesconto</b> = <b class=destpeq>true</b>;
+            break;
+        <b class=titpeqverde>//Forma de pagto adicionais 4</b>
+        case 12:
+            meioPagamentoBcash = "<b class=destpeq>58</b>";
+            temPagamentoBcash = true;
+            break;
+        <b class=titpeqverde>//Forma de pagto adicionais 5</b>
+        case 13:
+            meioPagamentoBcash = "<b class=destpeq>0</b>"; //Exibe todos os meios de pagamentos
+            temPagamentoBcash = true;
+            break;        
+        default:
+            <b class=titpeqverde>// se não for nenhum dos cases acima, então:</b>
+            meioPagamentoBcash = -1;
+            temPagamentoBcash = false;
+    }
+</pre>	
+</span>
+</div>	
+
+
+	<br />
+	<p>Remova o sinal de barra (<b class=destpeq>//</b>) do seguinte trecho de código:</p>
+<div style="width:910px; height:210px; margin:0 auto; padding:10px; overflow:auto; border: 1px solid #ccc;">
+<span class=courrier style="text-align: left;">
+<!-- -->
+<pre>
+<span class="titpeqverde">
+  <b class=destpeq>//</b>if(temDesconto){     
+  <b class=destpeq>//</b>   if(TotalSFrete>=<b class=destpeq>210</b>)var Desc1=<b class=destpeq>30</b>;
+  <b class=destpeq>//</b>   else if(TotalSFrete>=<b class=destpeq>160</b>)var Desc1=<b class=destpeq>20</b>;
+  <b class=destpeq>//</b>   else if(TotalSFrete>=<b class=destpeq>90</b>)var Desc1=<b class=destpeq>10</b>;
+  <b class=destpeq>//</b>
+  <b class=destpeq>//</b> var Desc1;
+  <b class=destpeq>//</b> var FatorDesc=Desc1/100;
+  <b class=destpeq>//</b> Total=((TotalSFrete*100)/(100-Desc1)*FatorDesc);      
+  <b class=destpeq>//</b> document.bcash.desconto.value=Total; //coloca o resultado no campo hidden
+  <b class=destpeq>//</b>}
+</span>
+</pre>
+</span>
+</div>
+	<br />
+	<p>Altere o <b class=destpeq>valor mínimo</b> de compra e o <b class=destpeq>percentual de deconto(%)</b> de acordo com as regras da loja.</p>
+	<p style="font-size: 14px; padding:15px; background:#4bdc5f">Após realizar este procedimento, efetue pedidos de teste em sua loja com esta forma de pagamento.<br /><br />
+	<b class=dest>ATENÇÃO:</b> esta integração permite até 10 produtos diferentes por pedido.</p>
+	
+</div>  
+  
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<p>O conteúdo mencionado neste exemplo é apenas uma sugestão. A <b>Rumo Informática</b> não se responsabiliza por apresentar mais detalhes a respeito de alterações e implantações.</p>
+
+<p>Para mais informações, solicite recomendações de webdesigner ou entre em contato com o webdesigner de sua preferência.</p>
+<br>
+
+
+<p>Veja exemplo de personalização no ícone <b>Recomende este produto</b> da seguinte página:</p>
+
+<p>Ex: <a href="http://www.rumo.com.br/sistema/ListaProdutos.asp?IDLoja=288&IDProduto=1185104" target="_blank">http://www.rumo.com.br/sistema/ListaProdutos.asp?IDLoja=288&IDProduto=1185104</a></p>
+<br>
+
+
+<p><b>Alterações necessárias:</b></p>
+
+<p><span class="dest NewsPassos">1ª</span> No arquivo <b>EstiloProduto.htm</b> entre as tags <b>&lt;ProdTop&gt;</b> e <b>&lt;/ProdTop&gt;</b> insira a seguinte função:</p>
+
+<pre>&lt;script&gt;
+function IndicaProd(IDProduto){
+ document.write("&lt;center&gt;&lt;span class=smText&gt;&lt;a href='javascript:MostraIndique(<b>99999</b>,"+IDProduto+")'&gt;&lt;img src=/lojas/<b>00007777</b>/images/<b>cartao.gif</b> border=0 vspace=2&gt;&lt;br&gt;<b>Recomende este produto</b>&lt;/a&gt;&lt;/span&gt;&lt;/center&gt;");}
+&lt;/script&gt;</pre>
+<br>
+
+<p>No exemplo acima existe uma imagem chamada <b>cartao.gif</b>, que deve ser enviada para a pasta IMAGES do gerenciador de arquivos da loja e um texto <b>Recomende este produto</b>, que pode ser alterado de acordo com sua preferência (ex: <i>Quero este produto de presente</i>).</p>
+
+<p>Caso não queira inserir uma imagem, segue outro exemplo:</p>
+
+<pre>&lt;script&gt;
+function IndicaProd(IDProduto){document.write("&lt;a href='javascript:MostraIndique(<b>99999</b>,"+IDProduto+")'&gt;Recomende&lt;/a&gt;");
+}
+&lt;/script&gt;</pre>
+<br>
+
+<p>Altere onde está <b>99999</b> para o ID de sua loja (ex. <b>123</b>) e onde está <b>00007777</b> para o ID da loja com 8 posiçoes, por exemplo, se o ID de sua loja for <b>123</b> coloque <b>00000123</b>. Não esqueça de remover a quebra de linha dos scripts.</p>
+<br>
+
+<p><span class="dest NewsPassos">2ª</span> Remova as tags <b>&lt;IndicaProd&gt;</b> do arquivo <b>EstiloProduto.htm</b> e insira no lugar uma chamada para a função:</p>
+<pre>&lt;script&gt;IndicaProd(&lt;IDProduto&gt;);&lt;/script&gt;</pre>
+<br>
+
+<p><span class="dest NewsPassos">3ª</span> Altere o campo <b>Layout das páginas de produtos</b> da página <b>Dimensões & menus</b> do site administrativo para <b>Personalizado</b>.</p>

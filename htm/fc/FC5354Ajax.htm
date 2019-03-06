@@ -1,0 +1,15 @@
+<style>
+.courrierpeq {font-size:8pt;font-family:courier new,tahoma,verdana;color:#0D6D9E;}
+.destpeq {font-size:8pt;font-family:tahoma,verdana;color:#990000;font-weight:bold;}
+</style>
+
+<pre>
+<span class=courrierpeq>
+&lt;div id=productMenu<span class=destpeq>X</span> class=productMenuClass<span class=destpeq>X</span> spry:region=dsProducts&gt;
+&lt;div class=productItemClass spry:repeat=dsProducts spry:suggest={n}&gt;{n}&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;script&gt;
+var SprySuggest<span class=destpeq>X</span>=new Spry.Widget.AutoSuggest('texto<span class=destpeq>X</span>','productMenu<span class=destpeq>X</span>','dsProducts','n',{containsString:true,minCharsType:3});
+&lt;/script&gt;
+</span>
+</pre>

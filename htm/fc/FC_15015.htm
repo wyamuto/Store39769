@@ -1,0 +1,86 @@
+<link href="http://ajuda.fastcommerce.com.br/lojas/00000009/htm/LojaSite.css" rel="stylesheet" type="text/css">
+<style>
+.NewsPassos{max-width: 90px; display: block; margin: 8px 0; background: #C4CCD0; border-bottom: 2px solid #A0ADB4; color:#25354c; font-weight: bold; padding: 2px 5px 2px 5px;}
+  p{font: 14px arial, tahoma;line-height:2;}
+  ul li{font: 14px arial, tahoma;line-height:2;}
+</style>
+
+<p>Podem ser personalizadas as <b>URLs de produtos, categorias e notícias</b>.</p>
+
+<p>As URLs personalizadas devem ser alfanuméricas, sem acentos. Os espaços devem ser substituídos por hifens. As URLs devem ser únicas (sem repetição), pois a loja não deve possuir duas páginas com o mesmo endereço.</p>
+
+<p>Para habilitar este recurso, acesse a seção <b>Navegação e SEO</b> da página <b>Dados da Loja</b> do site administrativo. Marque o campo <i>URLs personalizadas</i> e informe os termos que serão usados no início da URL personalizada que lista os produtos de uma categoria e de uma notícia. Estes termos será exibido entre barras / no endereço da página.</p>
+
+<center><img src="http://ajuda.fastcommerce.com.br/lojas/00000009/images/A_15015.png" alt=""/></center>
+
+<ul><li><u>Caminho para Categorias:</u> ao preencher este campo com <b>marca</b>, a URL personalizada para os produtos de cada categoria da loja será <i><b>/marca/nome_da_categoria</b></i>. Acesse a ficha de cada categoria para definir sua URL personalizada. Ao visitar a URL <i><b>/marca</b></i> será exibida uma página com a lista de categorias da loja.</li><li><u>Caminho para Notícias:</u> ao preencher este campo com noticias, a URL personalizada para listar as notícias da loja será <i><b>/noticias</b></i>. As notícias individuais serão acessadas pelo endereço <i><b>/noticia/url-noticia</b></i>, onde url-noticia é o que foi preenchido no campo URL da ficha da notícia.</li></ul>
+
+<p><span style="color:#FF0000;"><b>ATENÇÃO:</b></span> Antes de efetuar a personalização das URLs de produtos e notícias, faça o teste a seguir:</p>
+
+<p><span class="dest NewsPassos">1º Passo</span></p>
+<p>Acesse a ficha de uma categoria e cadastre sua URL personalizada, como no exemplo abaixo:</p>
+<center><img src="http://ajuda.fastcommerce.com.br/lojas/00000009/images/A_15015_3.png" alt=""/></center>
+
+<p><span class="dest NewsPassos">2º Passo</span></p>
+<p>Acesse a URL personalizada da categoria criada no passo anterior e acesse os links contidos nesta página. Certifique-se de que não existem erros 404 nestes links e que está tudo OK nas funcionalidades da loja. <a href="#p4">Clique aqui</a> para ver as orientações da seção <b>Correção dos problemas encontrados</b>.</p>
+
+<p><b>ATENÇÃO:</b> Os testes também devem ser feitos na versão mobile e na versão Facebook da loja.</p>
+
+<p>Desative o recurso de URL personalizada se for identificado algum problema. Entre em contato com nossa equipe de suporte caso persitam dúvidas.</p>
+
+
+<p><span class="dest NewsPassos">3º Passo</span></p>
+<p>Após a realização dos testes e tendo a certeza de que não foram encontrados erros, desative o recurso de URLs personalizadas e execute os seguintes utilitários para a criação de todas as URLs da loja:</p>
+<ul>
+  <li>Define URLs personalizadas de produtos</li>
+  <li>Define URLs personalizadas de categorias</li>
+  <li>Define URLs personalizadas de notícias (<i>somente se a loja tiver notícias cadastradas</i>)</li>
+</ul>
+<p><b>Obs:</b> As URLs também podem ser criadas individualmente através da ficha de cada produto, categoria e notícia.</p>
+
+<p><span class="dest NewsPassos">4º Passo</span></p>
+<p>Após a execução dos utilitários do passo anterior, acesse os seguintes relatórios para listar as URLs que foram criadas:</p>
+<ul>
+  <li>Produtos cadastrados por URL personalizada e Title</li>
+  <li>Categorias cadastradas</li>
+  <li>Notícias cadastradas por URL personalizada e Title(<i>somente se tiver notícias cadastradas</i>)</li>
+</ul>
+<p><b>Obs:</b> Verifique se não existem URLs duplicadas e se todas estão de acordo com o formato desejado. As correções devem ser feitas na ficha de cada produto, categoria e notícia.</p>
+
+<hr>
+
+<p><span style="color:#FF0000;"><b>ATENÇÃO</b></span></p>
+
+<p>A ativação deste recurso implica na reindexação nos sites de busca das URLs de produtos e notícias da loja. Os acessos às URLs antigas serão automaticamente redirecionados para as novas URLs personalizadas através de redir 301. Sendo assim, não ative este recurso sem ter <b>CERTEZA</b> de que tudo está de acordo com o desejado.</p>
+
+<p>Após cadastrar URLs personalizadas, evite alterá-las novamente, para que não ocorra erro 404 (página não encontrada) nos acessos feitos à URL personalizada anterior. Ao mudar a URL da página, considere que é provável que o Google já tenha indexado a URL anterior, que não existirá mais.</p>
+
+
+<p id="p4"><hr><p><b>Correção dos problemas encontrados</b></p></p>
+<p>Verifique os arquivos HTML e javascript que foram personalizados, pois os links relativos que não comecem com barra (<span class=courrier>/</span>) deixarão de funcionar.</p>
+
+<p>Exemplo:</p>
+<ul>
+  <li>Link incorreto: <span class=courrier>&lt;a href="prod,idloja,&lt;IDLoja&gt;,promocao,1,ofertas.htm"&gt;</span></li>
+  <li>Link correto: <span class=courrier>&lt;a href="/prod,idloja,&lt;IDLoja&gt;,promocao,1,ofertas.htm"&gt;</span></li>
+</ul>
+ 
+<p>Outro exemplo é a função do carrinho de compras que fica no arquivo <b>LojaLib.js</b> da pasta HTM: </p>
+<ul>
+  <li>Link incorreto: <span class=courrier>oXMLHTTP.open("GET","XMLCart.asp?IDLoja="+FC$.IDLoja+"",false);</span></li>
+  <li>Link correto: <span class=courrier>oXMLHTTP.open("GET","/XMLCart.asp?IDLoja="+FC$.IDLoja+"",false);</span></li>
+</ul>
+ 
+<p>Nos arquivos EstiloProduto.htm e EstiloProdutoOut.htm, os links para os produtos devem ser alterados para a tag especial <b>&lt;URLProd&gt;</b>.</p>
+<ul>
+  <li>Link incorreto: <span class=courrier>&lt;a href="/prod,idloja,&lt;IDLojaNum&gt;,idproduto,&lt;IDProduto&gt;,&lt;NomeProdUA&gt;"&gt;</span></li>
+  <li>Link correto: <span class=courrier>&lt;a href="&lt;URLProd&gt;"&gt;</span></li>
+</ul>
+
+<p>Se a loja possui links estáticos para categorias, altere-os da seguinte forma.</p>
+<ul>
+  <li>Link incorreto: <span class=courrier>&lt;a href="/prod,idloja,9999999,idcategoria,99999,acessorios"&gt;Acessórios&lt;/a&gt;</span></li>
+  <li>Link correto: <span class=courrier>&lt;a href="/categoria/acessorios"&gt;Acessórios&lt;/a&gt;</span><br>Altere <span class=courrier>/categoria/</span> para o termo que foi cadastrado na seção de URLs personalizadas da página Dados da loja (exemplo <span class=courrier>/marca/</span>)</li>
+</ul>
+
+<p><b>Obs:</b> Os testes devem ser feitos também nas versões Facebook, Mobile e designs alternativos de teste A/B, caso a loja utilize algum destes recursos.</p>

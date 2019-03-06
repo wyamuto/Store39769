@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fastcommerce ::Tags especiais de produtos</title>
+<link rel="stylesheet" href="/adm/EstilosAdic.css" media="all">
+<link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css" media="all">
+<script type="text/javascript" src="/jquery-2.1.1.min.js"></script>
+<script src="../lojas/00028496/htm/js/list.js"></script>
+<style>
+  #body2(border: 1px solid #DCDCDC;  border-radius:5px;)
+</style>
+</head>
+<body>
+<div id="users">
+  <!-- Separator -->
+  <div class="FC-Global-Separator">&nbsp;</div>
+<div class="container list">
+
+  <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-H3TagTit FC-Custom-ContainerTit">
+      <h3>Tags especiais de produtos</h3>
+    </div>
+    
+  </div>
+
+  <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <p>O arquivo <b>EstiloProduto.htm</b> pode conter as seguintes <i>tags especiais de produtos</i>, que serão substituídas por conteúdo obtido a partir do cadastro de produtos da loja:</p><br>
+    </div>
+    
+  </div>
+
+  
+  <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;ProdLista&gt; &lt;/ProdLista&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Delimitam o código HTML das listas de produtos.<br>Se a loja utiliza autopaginação, somente o conteúdo entre estas tags será repetido a cada página de produtos automaticamente carregada.<br><b>Tags obrigatórias</b>.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+    <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;ProdDet&gt; &lt;/ProdDet&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Delimitam o código HTML de detalhe de cada produto.<br><b>Tags obrigatórias</b>.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+    <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;ProdAmp&gt; &lt;/ProdAmp&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Delimitam o código HTML de ampliação de imagem de cada produto.<br><b>Tags obrigatórias</b>.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+    <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;FormProd&gt; &lt;/FormProd&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Delimitam o posicionamento das tags de descritores, cor e de carrinho de compras.<br><b>Tags obrigatórias</b>: deve haver um conjunto para cada tag delimitadora acima.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+    <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;Sub&gt; &lt;/Sub&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Delimitam o código HTML de cada subproduto. Estas tags são obrigatórias somente se a loja utiliza subprodutos. Neste caso, deve haver um conjunto para cada tag delimitadora: &lt;ProdLista&gt;, &lt;ProdLista&gt; e &lt;ProdLista&gt;</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+    <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;ProdTop&gt; &lt;/ProdTop&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Delimitam o código HTML exibido no início de todas as páginas de produtos. Utilizada para incluir scripts <i>client-side</i> que calculam e exibem os parcelamentos disponíveis para cada produto.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+    <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;ProdBottom&gt; &lt;/ProdBottom&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Delimitam o código HTML exibido no final de todas as páginas de produtos. Utilizada para incluir tag &lt;/FormProdMult> para fechamento de form de múltiplos produtos (veja detalhes ao final desta página).</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+    <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;WebSlice&gt; &lt;/WebSlice&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Delimitam o código HTML que será relacionado a um Web Slice, que é um recurso existente a partir do Internet Explorer 8 para exibir páginas pela barra de favoritos. Quando o visitante clicar no ícone verde do Web Slice, o produto será colocado na sua barra de favoritos. Ao selecionar este favorito, os dados do produto serão exibidos pelo arquivo <b>WebSlice.htm</b>, que deverá existir na pasta HTM da loja contendo ao menos uma tag &lt;prod&gt;. Quando houver alteração no preço ou na disponibilidade do produto, este favorito será exibido em negrito pelo navegador.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+    <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;JurosParcelas&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Tag exclusiva para a seção &lt;ProdTop&gt;, que deve ser incluída caso a loja exiba os parcelamentos disponíveis para cada produto. Se esta tag existir, o arquivo JurosParcelas.js deverá ser enviado para a pasta htm da loja, contendo os juros para cada número de parcelas.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+    <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;IDLoja&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Utilizada para criar links para as páginas ASP do <b>FastCommerce</b>.<br><b>Ex:</b> Para criar link para a página <i>Ajuda.asp</i>, utilize<br>&lt;a href=Ajuda.asp?IDLoja=<b>&lt;IDLoja&gt;</b>&gt;</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+    <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;IDLojaNum&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Utilizada para criar formulários e links para arquivos da loja. Esta tag é substituída somente pelo ID da loja, SEM o parâmetro dinâmico Y.<br><br><b>Ex:</b> Para criar formulário contendo o ID da loja, utilize<br><br><span class="tagtxt">&lt;input type=hidden name=IDLoja value=<b>&lt;IDLojaNum&gt;</b>&gt;</span></p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+
+  <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;Y&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Esta tag é substituída pelo valor do Y dinâmico, que varia para cada visitante. Utilizada para criar forms para as páginas ASP do <b>FastCommerce</b>.<br><br><b>Ex:</b> Para incluir campo hidden com o Y correto, utilize<br><br><span class="tagtxt">&lt;input type=hidden name=Y value=<b>&lt;Y&gt;</b>&gt;</span><br><br>A linha acima resulta em:<br><br><span class="tagtxt">&lt;input type=hidden name=Y value=<b>1166564875496</b>&gt;</span></p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+
+  <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;BaseLoja&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Utilizada para compor caminhos para as pastas da loja.<br><b>Ex:</b> Para obter o caminho para o arquivo BotCarrinho.gif na pasta IMAGES, utilize &lt;img src=<b>&lt;BaseLoja></b>images/BotCarrinho.gif&gt;</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+
+  <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;IDProduto&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Substituída pelo número que identifica internamente cada produto.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+  <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;NomeProd&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Nome do produto. Subprodutos utilizarão o nome do produto pai.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+  <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;NomeProdUA&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Nome do produto para criar URLs amigáveis, contendo somente caracteres alfanuméricos. Os demais caracteres serão substituídos por hífens.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+  <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;CodProd&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Código de referência do produto.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+  <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;BarCode&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Código de barras do produto, exibido de acordo com o padrão definido na página <i>Dados da loja</i>.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+  <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;LegendaCat&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Palavra para categorização dos produtos da loja, determinada no campo <b>Produtos agrupados por</b> da página <i>Dados da loja</i>.<br><b>Ex:</b> categoria, departamento, coleção.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+  <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;NomeCat&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Nome da categoria (ou departamento, coleção, etc) a qual pertence o produto. Veja detalhes no campo <b>Produtos agrupados por</b> da página <i>Dados da loja</i>.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+  <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> >&lt;PathCat&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Informa o caminho completo até a categoria (ou departamento, coleção, etc) a qual pertence o produto (ex: DVDs > Filmes > Ação). Veja detalhes no campo de subcategorias da página <i>Dados da loja</i>.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+  <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;ImagemProd&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Substituída pela imagem do produto. A imagem exibida estará de acordo com a tag delimitadora onde esta tag está contida. Por exemplo, se a tag &lt;ImagemProd&gt; estiver contida entre as tags &lt;ProdAmp&gt; e &lt;/ProdAmp&gt;, será exibida a <b>imagem ampliada</b> do produto.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+  <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;ImagemProdPri&gt;, &lt;ImagemProdDet&gt;, &lt;ImagemProdAmp&gt; </p></div>
+        <div class="panel-body born">         
+          <p>Substituídas respectivamente pela imagem principal, de detalhe e ampliada do produto. Utilizadas na programação de scripts personalizados para exibição das imagens.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+  <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;ImagemProdPriPai&gt;, &lt;ImagemProdDetPai&gt;, &lt;ImagemProdAmpPai&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Substituídas respectivamente pela imagem principal, de detalhe e ampliada do produto-pai do subproduto. Utilizadas na programação de scripts personalizados para exibição das imagens.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+    <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;VideoProd&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Substituída pelo código HTML que exibe o vídeo no YouTube associado ao produto.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+  <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;CodVideoProd&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Substituída pelo código alfanumérico que identifica o vídeo no YouTube associado ao produto. Este códido permite a personalização do vídeo com mais opções oferecidas pelo YouTube ou para integrar a outro serviço de hospedagem de vídeos.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+    <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;ProdLargura&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Substituída pelo valor do campo <b>Largura máxima das fotos</b> informado na página <i>Dimensões & menus</i>.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+    <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;ProdAltura&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Substituída pelo valor do campo <b>Altura mínima das fotos</b> informado na página <i>Dimensões & menus</i>.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+    <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;Lancamento&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Se o produto for lançamento, esta tag será substituída pela imagem <b>BotLancamento.gif</b> da loja.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+    <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;Destaque&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Se o produto tiver o campo <b>Destaque</b> marcado na sua ficha, esta tag será substituída pela imagem <b>BotDestaque.gif</b> da loja. A imagem pode conter o texto da preferência do lojista (ex: Mais vendido), de acordo com o uso do campo Destaque (ex: para marcar os produtos mais vendidos).</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+    <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;Descricao&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Será substituída pela <b>descrição longa</b> do produto se esta for preenchida e se a tag &lt;Descricao&gt; estiver contida entre as tags &lt;ProdDet&gt; e &lt;/ProdDet&gt;. Caso contrário será exibida a <b>descrição curta</b> do produto.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>         
+
+    <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;Adicional1&gt;, &lt;Adicional2&gt;, &lt;Adicional3&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Substituídas pelos <b>descritores especiais</b> de cada produto, definidos na página <i>Dados da loja</i>. Uma caixa de seleção será exibida se o descritor for multi-valorado. O cliente terá que escolher uma opção para cada descritor multi-valorado para adicionar o produto ao seu carrinho.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+    <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;AdicionalD1&gt;, &lt;AdicionalD2&gt;, &lt;AdicionalD3&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Substituídas pelos <b>descritores simples</b> de cada produto, definidos na página <i>Dados da loja</i>. Uma caixa de seleção será exibida se o descritor for multi-valorado. O cliente terá que escolher uma opção para cada descritor multi-valorado para adicionar o produto ao seu carrinho.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+    <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;Cor&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Substituída pelas <b>cores</b> de cada produto. Uma caixa de seleção será exibida se houver mais de uma cor no produto. Nesta caso, o cliente terá que escolher uma opção para adicionar o produto ao seu carrinho.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+      <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;Peso&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Substituída pelo <b>peso</b> de cada produto.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+      <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;WidthProd&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Substituída pela <b>largura</b> de cada produto. A unidade de largura também será exibida (ex: 25,1 cm). Acesse a página Dados da loja para definir a unidade utilizada pela loja.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+      <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;HeightProd&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Substituída pela <b>altura</b> de cada produto (ex: 34,3 cm).</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+      <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> >&lt;DepthProd&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Substituída pela <b>profundidade</b> de cada produto (ex: 20,5 cm).</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+      <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;Estoque&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Substituída pela <b>quantidade em estoque</b> de cada produto.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+      <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;LinkDet&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Se o produto tiver descrição longa ou imagem de detalhe, esta tag será substituída pela imagem <b>BotMaisDetalhes.gif</b> da loja. Esta imagem poderá ser clicada para que o cliente veja mais detalhes sobre o produto.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+      <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;LinkAmp&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Se o produto tiver imagem ampliada, esta tag será substituída pela imagem <b>BotAmpliar.gif</b> da loja. Esta imagem conterá link para que o cliente veja a imagem ampliada do produto.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+      <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;LinkComprar&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Se o produto estiver disponível para compra, esta tag será substituída pela imagem <b>BotCarrinho.gif</b> da loja. Esta imagem conterá link para que o cliente inclua o produto no carrinho.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+      <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;Preco&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Substituída pelo preço normal e/ou preço promocional do produto, no formato <i>De/Por</i>.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+      <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;PrecoSimples&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Substituída pelo preço normal ou preço promocional do produto, com a legenda da moeda (R$) mas nenhuma outra formatação.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+      <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;PrecoNum&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Substituída pelo preço normal ou preço promocional do produto, sem legenda da moeda (R$) ou qualquer outra formatação. Utilizada em scripts <i>client-side</i> que calculam e exibem os parcelamentos disponíveis para cada produto.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+      <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;PrecoOri&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Substituída pelo preço normal do produto (fora do período promocional), ou pelo preço promocional do produto caso o preço normal não esteja preenchido na ficha do produto, sem legenda da moeda (R$) ou qualquer outra formatação. Utilizada em scripts <i>client-side</i> que calculam e exibem o valor ou o percentual economizado pelo cliente na compra do produto.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+      <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;MaxParcelasProd&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Informa o número máximo de parcelas, conforme preenchido no campo <b>Máx Parc</b> de cada produto. Se este campo contiver 1, esta tag será substituída por <i>à vista</i>. Se contiver 0, a tag será removida.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+      <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;MaxParcelasProdNum&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Informa o número máximo de parcelas do produto, conforme preenchido no campo <b>Máx Parc</b> de cada produto. Utilizada em scripts <i>client-side</i> que calculam e exibem os parcelamentos disponíveis para cada produto.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+      <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;DataPromFim&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Substituída pela data/hora de término da validade do preço promocional de cada produto.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+      <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &&lt;CrossSelling&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Substituída pelos produtos relacionados a este produto, no campo de cross selling da sua ficha cadastral. Esta tag é utilizada somente se o campo <b>Usar tag <i>&lt;CrossSelling></i></b> da página <i>Textos & imagens</i> estiver marcado. Caso contrário, a tag será ignorada e os produtos relacionados serão exibidos ao final da página com os detalhes do produto.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+      <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;Comments&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Substituída pelos comentários feitos pelos clientes sobre este produto. Esta tag é utilizada somente se o campo <b>Usar tag <i>&lt;Comments></i></b> da página <i>Dados da loja</i> estiver marcado. Caso contrário, a tag será ignorada e os comentários serão exibidos ao final da página com os detalhes do produto.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+      <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;OpiniaoMedia&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Substituída pela média das avaliações sobre os produtos feitas pelos clientes, liberadas até a véspera. Normalmente a nota é indicada com estrelas.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+      <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;OpiniaoMediaNum&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Substituída pelo valor médio das avaliações sobre os produtos feitas pelos clientes, liberadas até a véspera. O valor é arredondado na 3ª casa decimal.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+      <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;OpiniaoQtd&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Substituída pela quantidade de avaliações sobre os produtos feitas pelos clientes, liberadas até a véspera.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+      <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;LinkOpiniao&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Substituída por link para que o cliente opine sobre o produto. Será necessário selecionar opção ativa para o campo <b>Avaliação pelo cliente</b> na página <i>Dados da loja</i>.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+      <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;AvisoDisp&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Caso o produto esteja esgotado, esta tag será substituída por link para que o cliente solicite para ser avisado automaticamente quando o produto estiver novamente disponível. Será necessário selecionar o campo <b>Aviso de disponibilidade</b> na página <i>Dados da loja</i>.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+      <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;IndicaProd&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Substituída por link para que o cliente recomende este produto a terceiros por e-mail. Será necessário selecionar o campo <b>Link de recomendação</b> na página <i>Estilos & cores</i>.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+      <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;DescrURL&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Substituída por link para página que contém mais informações sobre o produto, no site do fabricante ou em página especial na própria loja, conforme informado no cadastro do produto. Será necessário selecionar o campo <b>Texto para link de mais informações</b> na página <i>Textos & imagens</i>.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+      <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;DescrHTM&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Substituída pelo conteúdo do arquivo HTM informado no campo <b>Descrição HTML</b> da ficha do produto.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+      <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;IncludeHTML&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Substituída pelo arquivo .htm ou .html indicado no atributo <b>src=</b> da tag. Este arquivo deve existir na pasta HTM ou subpasta desta.<br><br><b>Exemplo:</b><p class="tagtxt">&lt;IncludeHTML src="outros/more.htm"&gt;</p>Opcionalmente, pode-se utilizar os atributos <b>param1=</b> até <b>param9=</b>. Estes atributos serão substituídos respectivamente pelas tags &lt;param1> até &lt;param9>, caso estas existam nos arquivo incluídos.<br><br><b>Exemplo:</b><p class="tagtxt">&lt;IncludeHTML src="teste.htm" param1="Vitrine especial" param2="50"
+param3="#BB0000"></p>Os arquivos incluídos podem conter tags &lt;IncludeHTML>, ou seja, é possível fazer inclusões dentro de inclusões, de forma recursiva. No total, até 5 tags &lt;IncludeHTML&gt; serão substituídas por arquivo e suas inclusões.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+      <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;EstiloSubProduto&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Substituída alternadamente pelas classes <i>CSS</i> <b>EstCorParSubProd</b> e <b>EstCorImparSubProd</b>. Esta tag permite alternar as cores de subprodutos adjacentes em um mesmo produto.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+<!-- Tags de Buscas -->
+
+<div class="container">
+  <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-8 col-lg-8 FC-Custom-H3TagTit FC-Custom-ContainerTit">
+      <h3>Tags para contextualização e refinamento de buscas:</h3>
+    </div>
+    
+  </div>
+
+    <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <p>As seguintes tags são exclusivas para a seção &lt;ProdTop&gt; e são utilizadas para exibição de conteúdo referente aos filtros de busca da página atual.</p><br>
+    </div>
+    
+  </div>
+
+  <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;QtProd&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Indica a quantidade de produtos encontrados. Não são contabilizados os subprodutos.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+
+  <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;LinkAdvancedSearch&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Substituída por link para a página de busca detalhada de produtos, utilizando os filtros da página atual.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+
+  <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;ListPathSearch&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Substituída pelo caminho completo da página atual de produtos, com todos os filtros de busca utilizados, incluindo os termos digitados pelo visitante (ex: DVDs > Filmes > Ação > "tom cruise"). Ao lado de cada filtro, será exibido um ícone para removê-lo. Ao clicar no termo de busca, será possível digitar outro termo para fazer nova busca utilizando os demais filtros. Ao clicar nos demais filtros, será feita busca exclusiva pelo filtro clicado.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+
+  <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;ListPathCatQt&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Lista as quantidades de produtos encontrados em cada categoria dos produtos listados na página atual.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+
+  <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;ListAdic1Qt&gt;, &lt;ListAdic2Qt&gt;, &lt;ListAdic3Qt&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Lista as quantidades de produtos encontrados em cada descritor especial dos produtos listados na página atual.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+
+  <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;NomeAdicional1&gt;, &lt;NomeAdicional2&gt;, &lt;NomeAdicional3&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Substituídos pelos nomes dos descritores especiais 1, 2 e 3.<br><br>Exemplos: Tamanho, Marca, Voltagem.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+
+  <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;LegendaCat&gt;, &lt;LegendaCats&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Substituídas pela legenda escolhida para representar as categorias da loja, no campo <i>Produtos agrupados por</i> da página <b>Dados da loja.</b><br>Exemplos: Departamento, Seção<br><br>A tag &lt;LegendaCats&gt; é substituída pela legenda no plural.<br>Exemplos: Departamentos, Seções</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  
+
+</div>  
+
+<!-- Tags para Grade -->
+<div class="container">
+  <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-8 col-lg-8 FC-Custom-H3TagTit FC-Custom-ContainerTit">
+      <h3>Tags para grades de produtos:</h3>
+    </div>
+    
+  </div>
+
+    <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <p>Utilizadas por scripts para a escolha de tamanhos e cores de subprodutos.</p>
+    </div>
+    
+  </div>
+
+    <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;NomeAdicional1&gt;, &lt;NomeAdicional2&gt;, &lt;NomeAdicional3&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Substituídas pelos nomes dos descritores especiais 1, 2 e 3, cadastrados nos três campos de descritores especiais da página <b>Dados da loja</b>.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+
+  <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;NomeAdicionalD1&gt;, &lt;NomeAdicionalD2&gt;, &lt;NomeAdicionalD3&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Substituídas pelo nomes dos descritores simples 1, 2 e 3, cadastrados nos três campos de descritores simples da página <b>Dados da loja</b>.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+
+  <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;Adicional1Val&gt;, &lt;Adicional2Val&gt;, &lt;Adicional3Val&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Substituídas pelos valores dos descritores especiais 1, 2 e 3 cadastrados na ficha do subproduto.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+
+  <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;AdicionalD1Val&gt;, &lt;AdicionalD2Val&gt;, &lt;AdicionalD3Val&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Substituídas pelos valores dos descritores simples 1, 2 e 3 cadastrados na ficha do subproduto.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+
+  <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;CorVal&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Substituída pelo nome da cor cadastrada na ficha do subproduto.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+
+  <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;CorRGB&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Substituída pelo valor RGB da cor cadastrada na ficha do subproduto.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+
+  <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;PesoNum&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Substituída pelo valor do <b>peso</b> de cada produto. Utilizada também em scripts <i>client-side</i> que utilizam o peso do produto (por exemplo, para exibir promoções de frete grátis se o peso cadastrado for zero).</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+
+  <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;WidthProdNum&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Substituída pelo valor da <b>largura</b> de cada produto.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+
+  <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b>&lt;HeightProdNum&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Substituída pelo valor da <b>altura</b> de cada produto.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+
+  <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;DepthProdNum&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Substituída pelo valor da <b>profundidade</b> de cada produto.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+    <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <p><b>Obs<sup>1</sup>:</b> Todas as tags são opcionais, exceto os quatro primeiros conjuntos de tags delimitadoras.</p>
+    <br>
+    <p><b>Obs<sup>2</sup>:</b> As tags especiais genéricas <b>não podem</b> ser utilizadas no arquivo <b>EstiloProduto.htm</b>.</p>
+    </div>
+    
+  </div>
+
+</div>  
+
+<!-- Tags para múltiplos produtos -->
+  <div class="container">
+  <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-8 col-lg-8 FC-Custom-H3TagTit FC-Custom-ContainerTit">
+      <h3>Tags para adicionar múltiplos produtos e quantidades à cesta:</h3>
+    </div>
+    
+  </div>
+      <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <p>As seguites tags são necessárias para que as páginas de produtos exibam campos de quantidade e seleção e possam enviar os produtos selecionados simultaneamente para a cesta.</p>
+    </div>
+    
+  </div>
+
+  <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;FormProdMult&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Deve ser inserida dentro da tag &lt;ProdTop&gt;.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+    <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;/FormProdMult&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Deve ser inserida dentro da tag &lt;ProdBottom&gt;.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+    <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+      <div class="panel panel-default">
+        <div class="panel-heading FC-Tit-Rec name"><p><b>Tag:&nbsp;</b> &lt;IncMult&gt;</p></div>
+        <div class="panel-body born">         
+          <p>Substituída por caixa de seleção (<i>checkbox</i>) e campo de texto para informar a quantidade desejada do produto.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+  <div class="row">
+    
+    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 FC-Custom-PTag FC-Side-Spacing">
+    <p>Para colocar apenas um link de comprar ao final da página, inclua a tag &lt;LinkComprar&gt; somente na seção &lt;ProdBottom&gt;. Adicionalmente, deve-se remover todas as ocorrências das tags &lt;FormProd&gt; e &lt;/FormProd&gt;.</p>
+    </div>
+    
+  </div>
+</div> 
+</div> 
+<script>
+var options = {
+  valueNames: [ 'name', 'born' ]
+};
+
+var userList = new List('users', options);
+</script>
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+</body>
+</html>

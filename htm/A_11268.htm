@@ -1,0 +1,93 @@
+<p>É possível personalizar estes ícones:</p>
+
+<p>Ícones padrões</td><td>Exemplos de ícones personalizados</p>
+
+
+<div class="container">
+	<div class="row text-center">
+	  <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4"><p>Ícones padrões</p></div>
+	  <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4"><p>Exemplos de ícones personalizados</p></div>
+	</div>
+
+	<div class="row">
+	  <div class="col-xs-12 col-sm-12 col-lg-12"><br></div>
+	</div>
+
+	<div class="row text-center">
+	  <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4"><img src=/lojas/00000009/images/ShareFacebook.png></div>
+	  <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4"><img src="/lojas/00000009/images/IcoFacebook.svg" style="width: 20px; height: 20px;"></div>
+	</div>
+
+	<div class="row">
+	  <div class="col-xs-12 col-sm-12 col-lg-12"><br></div>
+	</div>
+
+	<div class="row text-center">
+	  <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4"><img src=/lojas/00000009/images/ShareTwitter.png></div>
+	  <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4"><img src="/lojas/00000009/images/IcoTwitter.svg" style="width: 20px; height: 20px;"></div>
+	</div>
+
+	<div class="row">
+	  <div class="col-xs-12 col-sm-12 col-lg-12"><br></div>
+	</div>
+
+	<div class="row text-center">
+	  <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4"><img src=/lojas/00000009/images/ShareGooglePlus.png></div>
+	  <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4"><img src="/lojas/00000009/images/IcoGooglePlus.svg" style="width: 20px; height: 20px;"></div>
+	</div>
+
+	<div class="row">
+	  <div class="col-xs-12 col-sm-12 col-lg-12"><br></div>
+	</div>
+
+	<div class="row text-center">
+	  <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4"><img src=/lojas/00000009/images/SharePinterest.png></div>
+	  <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4"><img src="/lojas/00000009/images/IcoPinterest.svg" style="width: 20px; height: 20px;"></div>
+	</div>
+
+</div>
+<br>
+
+<p>Segue exemplo de código para personalização destes ícones. Insira este código no arquivo rodape.htm da loja:</p>
+<br>
+
+<pre>&lt;table id=<span class=dest>IconesRedesSociais_Rodape</span>>&lt;tr>
+&nbsp;&nbsp;&lt;td>&lt;ShareFacebook>&lt;/td>
+&nbsp;&nbsp;&lt;td>&lt;ShareTwitter>&lt;/td>
+&nbsp;&nbsp;&lt;td>&lt;ShareGooglePlus>&lt;/td>
+&nbsp;&nbsp;&lt;td>&lt;SharePinterest>&lt;/td>
+&nbsp;&nbsp;&lt;td>&lt;Facebook type="like" send="true" layout="button_count" width="150" show_faces="false">&lt;/td>
+&nbsp;&nbsp;&lt;td>&lt;GooglePlusOne size="small">&lt;/td>
+&lt;/tr>&lt;/table></pre>
+<br>
+<p>No exemplo acima, o id <span class="dest">IconesRedesSociais_Rodape</span> foi colocado na table que exibe os botões de compartilhamento. Se preferir, utilize uma &lt;div> com este ID.</p>
+
+<p>No arquivo Rodape.htm insira o seguinte código para personalizar os ícones:</p>
+<br>
+
+<pre>&lt;script>
+var sRodapeContent=document.getElementById("<span class="dest">IconesRedesSociais_Rodape</span>");
+if(sRodapeContent)var aImgsShare=sRodapeContent.getElementsByTagName('img');
+if(aImgsShare)
+&nbsp;&nbsp;for(var i=0;i&lt;aImgsShare.length;i++){
+&nbsp;&nbsp;&nbsp;&nbsp;if(aImgsShare[i].className=='EstImgShareFacebook'){
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;aImgsShare[i].setAttribute('data-src',FC$.PathImg +'icofacebook.png');
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;aImgsShare[i].src=FC$.PathImg +'icfacebook.png';
+&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;if(aImgsShare[i].className=='EstImgShareTwitter'){
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;aImgsShare[i].setAttribute('data-src',FC$.PathImg +'icotwitter.png');
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;aImgsShare[i].src=FC$.PathImg +'ictwitter_1.png';
+&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;if(aImgsShare[i].className=='EstImgShareGooglePlus'){
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;aImgsShare[i].setAttribute('data-src',FC$.PathImg +'icogoogleplus.png');
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;aImgsShare[i].src=FC$.PathImg +'icogoogleplus.png';
+&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;if(aImgsShare[i].className=='EstImgSharePinterest'){
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;aImgsShare[i].setAttribute('data-src',FC$.PathImg +'icopinterest.png');
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;aImgsShare[i].src=FC$.PathImg +'icopinterest.png';
+&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;}
+&lt;/script></pre>
+<br>
+
+<p>No exemplo acima, a loja deve enviar as imagens IcTwitter.png, IcFacebook.png, IcoGooglePlus.png e IcoPinterest personalizadas para a pasta <b>IMAGES</b>, através do gerenciador de arquivos da loja.</p>

@@ -1,0 +1,31 @@
+<p><b>Exemplos:</b></p>
+<p><b>&lt;prod em="lanc"&gt;</b> (mostra produto em lançamento, no layout 1)</p>
+<p><b>&lt;prod cod="XP221"&gt;</b> (mostra produto cód XP221, no layout 1)</p>
+<p><b>&lt;prod cat="Som" em="rand"&gt;</b> (sorteia produto da categoria Som)</p>
+<p><b>&lt;prod id="2343,2312,3451" em="rand"&gt;</b> (sorteia produto entre 3 IDs)</p>
+<p><b>&lt;prod em="rand,prom,capa"&gt;</b> (sorteia produto em promoção na capa)</p>
+<p><b>&lt;prod em="rand" out="5"&gt;</b> (sorteia produto, com layout 5)</p>
+<br>
+
+<p><b>onde:</b></p>
+
+<p><b>em</b> indica onde o produto se enquadra (opções podem ser combinadas, entre vírgulas):</p>
+
+<p><b>lanc:</b> produto em lançamento </p>
+<p><b>prom:</b> em promoção </p>
+<p><b>capa:</b> em destaque para capa </p>
+<p><b>rand:</b> sorteia novo produto a cada 2 horas</p>
+
+<p><b>out</b> define o layout selecionado (onde n>=1). Se omitido, será utilizado o layout 1. Para personalizar, envie arquivo EstiloProdutoOut.htm e informe p1 a p255. <a href="http://www.rumo.com.br/lojas/00000358/htm/InicioOuts.htm" target="_blank">Clique aqui</a> para ver exemplos de cada layout disponível para home e para barra direita.</p>
+
+<p><b>id</b> permite especificar o ID interno do produto. <br>
+Pode-se informar até 10 IDs de 6 dígitos, separados por vírgula.</p>
+
+<p><b>cod</b> permite especificar o código do produto. <br>
+Pode-se informar até 4 códigos de 15 caracteres, separados por vírgula.</p>
+
+<p><b>cat</b> permite especificar a categoria do produto.
+Pode-se informar até 4 categorias de 25 caracteres, separadas por vírgula.</p>
+<p>OBS: Verifique se o campo Layout em Capa da página <b>Textos & imagens</b> do site administrativo esteja como <b>Personalizado</b>.</p>
+<!--AJUDAINIC-->
+<!--2007A09M03D-->

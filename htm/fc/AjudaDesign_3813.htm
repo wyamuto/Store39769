@@ -1,0 +1,165 @@
+<link href='https://www.rumo.com.br/lojas/00000009/htm/LojaSite.css' rel='stylesheet' type='text/css'>
+<style>
+.courrier {font-size:11pt;font-family:courier new,tahoma,verdana;color:#0D6D9E;}
+.courrierpeq {font-size:8pt;font-family:courier new,tahoma,verdana;color:#0D6D9E;}
+.tit {font-size:14pt}
+.dest {font-size:10pt;font-family:tahoma,verdana;color:#990000;font-weight:bold;}
+.destverde {font-size:10pt;font-family:tahoma,verdana;color:#139606;font-weight:bold;}
+a.LinkAjudaDesign:link {color:black;text-decoration:none;font-family:verdana;font-size:11pt;}
+a.LinkAjudaDesign:visited {color:#999999;text-decoration:none;text-decoration:none;font-family:verdana;font-size:11pt;}
+a.LinkAjudaDesign:hover {color:navy;text-decoration:underline}
+</style>
+
+<table width=100%>
+  <tr>
+    <td>
+Seguem algumas informações que irão auxiliar na implementação ou na alteração do design da loja no Fastcommerce:<br><br>
+      <table width=100%>
+        <tr><td class="tit"><b>1) Modelos prontos</b><br></td></tr>
+        <tr>
+          <td>
+          <a href="http://www.rumo.com.br/sistema/Noticias.asp?IDLoja=9&IDNoticia=6953" target="_blank">Clique aqui</a> para ver instruções simples para implementar os modelos prontos, que servirão como ponto de partida para a personalização da loja.
+          </td>
+        </tr>
+        <tr><td><br><br><br></td></tr> 
+        <tr><td class="tit"><b>2) Estrutura dos arquivos</b><br></td></tr>
+        <tr>
+          <td>
+As páginas do site são compostas por cabeçalho + rodapé + barra direita + barra esquerda, além do corpo da página. Cada parte deve ser enviada em arquivo HTML separado para a pasta HTM do gerenciador de arquivos da loja. O sistema se encarrega de agrupá-las para gerar as páginas.<br><br>
+
+<table width=100%>
+<tr><td style="color:black;text-decoration:none;font-family:verdana;font-size:11pt;"><b>2.1</b>) Estrutura padrão para lojas que não tem o serviço de banners próprios contratado:</td></tr>
+<tr><td align=center><br><table bgcolor=#888888 cellpadding=30 cellspacing=1><tr><td bgcolor=#f4f4f4><img src=http://ajuda.fastcommerce.com.br/Sistema/adm/images/Arquivos.png width=599 height=310 vspace=10></td></tr></table></td></tr>
+<tr><td style="color:black;text-decoration:none;font-family:verdana;font-size:11pt;"><br><br><b>2.2</b>) Estrutura padrão para lojas que tem o serviço de banners próprios contratado e desejam remover o topo padrão do sistema:</td></tr>
+<tr><td align=center><br><table bgcolor=#888888 cellpadding=30 cellspacing=1><tr><td bgcolor=#f4f4f4><img src=http://www.rumo.com.br/lojas/00000009/images/ArquivosSemBanners.png width=598 height=246 vspace=10></td></tr></table></td></tr>
+</table><br>
+<a href="http://ajuda.fastcommerce.com.br/ajuda/banners" target="_blank">Clique aqui</a> e veja mais detalhes sobre o serviço de banners próprios.
+<br><br>
+Veja <a href="http://rumo.com.br/l3312" target="_blank">mais detalhes</a> sobre os arquivos que compõe o design da loja na página <b>Textos & imagens</b> do site administrativo.
+          </td>
+        </tr>
+
+        <tr><td><br><br><br></td></tr> 
+        <tr><td class="tit"><b>3) Tags especiais para criar links, caminhos para imagens, etc</b><br></td></tr>
+        <tr>
+          <td>
+
+<br>
+Veja exemplos de como montar links internos para os produtos, categorias, contato, etc:<br>
+<a href="http://www.rumo.com.br/sistema/adm/ExemplosLinks.htm" target="_blank">http://www.rumo.com.br/sistema/adm/ExemplosLinks.htm</a><br><br>
+<br>
+Você pode utilizar qualquer tag html + javascript + java + dhtml em seus projetos, além das tags especiais do cHTML:<br>
+<a href="http://www.rumo.com.br/sistema/adm/TagsEspeciais.htm" target="_blank">http://www.rumo.com.br/sistema/adm/TagsEspeciais.htm</a><br>
+<br><br>
+<b class=destverde>Exemplo <sup>1</sup></b> : Para criar link para uma página chamada QuemSomos.htm, utilize:<br><br>
+<table bgcolor=#888888 cellpadding=10 cellspacing=1><tr><td bgcolor=#f4f4f4><span class=courrier>&lt;a href="<span class=dest>&lt;HTMLoja&gt;</span>QuemSomos.htm"&gt;Quem somos&lt;/a&gt;</span></td></tr></table><br>
+ou<br><br>
+<table bgcolor=#888888 cellpadding=10 cellspacing=1><tr><td bgcolor=#f4f4f4><span class=courrier>&lt;a href="Custom.asp?IDLoja=<span class=dest>&lt;IDLoja&gt;</span>&arq=QuemSomos.htm"&gt;Quem somos&lt;/a&gt;</span></td></tr></table><br>
+com <a href="http://www.rumo.com.br/sistema/adm/AjudaAdm.asp?ajuda=373" target="_blank">URL amigável</a>:<br><br>
+<table bgcolor=#888888 cellpadding=10 cellspacing=1><tr><td bgcolor=#f4f4f4><span class=courrier>&lt;a href="/page,idloja,<span class=dest>&lt;IDLojaNum&gt;</span>,arq,QuemSomos.htm,sobre-a-nossa-empresa"&gt;Quem somos&lt;/a&gt;</span></td></tr></table><br>
+
+<br><br>
+<b class=destverde>Exemplo <sup>2</sup></b> : Para criar link para uma imagem chamada Imagemdaloja.jpg, utilize:<br><br>
+<table bgcolor=#888888 cellpadding=10 cellspacing=1><tr><td bgcolor=#f4f4f4><span class=courrier>&lt;img src="<span class=dest>&lt;BaseLoja&gt;</span>images/Imagemdaloja.jpg"&gt;</span></td></tr></table><br>
+<br>
+A tag <span class=dest>&lt;Baseloja&gt;</span> é substituída automaticamente pelo sistema por <span class=dest>../lojas/00000000/</span>, desta forma o caminho para a imagem fica <span class=dest>../lojas/00000000/images/Imagemdaloja.jpg</span>. (<b>00000000</b> é o nome da pasta correspondente ao ID da loja com 8 posições. Se o ID da loja for 154, ficaria <b>00000154</b>)
+
+<br><br>
+
+
+          </td>
+        </tr>
+        <tr><td><br><br><br></td></tr> 
+        <tr><td class="tit"><b>4) Títulos, botões e fundo da loja</b><br></td></tr>
+        <tr>
+          <td>
+
+<br>
+Os títulos, botões e fundo da loja são definidos na página <b>Estilos & cores</b> do site administrativo, onde é possível também definir o tipo das imagens (GIF, JPG ou PNG)
+<br><br>
+Para ver o nome dos arquivos de títulos e ícones de navegação, clique no primeiro botão <b>Visualizar</b> da página <i>Estilos & cores</i>, no site administrativo. <a href="http://www.rumo.com.br/sistema/Preview.asp?IDLoja=16636" target="_blank">Clique aqui</a> para ver exemplo.
+
+<br><br>
+
+          </td>
+        </tr>
+        <tr><td><br><br><br></td></tr> 
+        <tr><td class="tit"><b>5) Estilos CSS da loja</b><br></td></tr>
+        <tr>
+          <td>
+<br>
+As fontes são definidas através de CSS, desde o tamanho de letra para os preços e textos descritivos de produtos até as cores dos formulários de cadastramento.
+<br><br>
+Criamos uma loja fictícia para exemplificar algumas classes <b>CSS</b> e para disponibilizar alguns códigos HTML. Visite esta loja em:<br>
+<a href="http://css.fastcommerce.com.br" target="_blank">http://css.fastcommerce.com.br</a><br>
+<br>
+          </td>
+        </tr>
+        <tr><td><br><br><br></td></tr> 
+        <tr><td class="tit"><b>6) Outras personalizações</b><br></td></tr>
+        <tr>
+          <td><br>Seguem abaixo algumas das personalizações que podem ser realizadas no design da loja:<br>
+          <br><a href="http://ajuda.fastcommerce.com.br/n6303" class=LinkAjudaDesign target="_blank"><b>6.1</b>) Layout dos produtos na página inicial da loja</a><br>
+          <br><a href="http://ajuda.fastcommerce.com.br/n5255" class=LinkAjudaDesign target="_blank"><b>6.2</b>) Como inserir o parcelamento na página inicial da loja</a><br>
+          <br><a href="http://ajuda.fastcommerce.com.br/n3821" class=LinkAjudaDesign target="_blank"><b>6.3</b>) Layout da lista/detalhes de produtos</a><br>
+          <br><a href="http://ajuda.fastcommerce.com.br/n8907" class=LinkAjudaDesign target="_blank"><b>6.4</b>) Como utilizar o recurso de Web Slices na loja</a><br>
+          <br><a href="http://ajuda.fastcommerce.com.br/n8968" class=LinkAjudaDesign target="_blank"><b>6.5</b>) Personalização de estilos no cross selling</a><br>
+          <br><a href="http://ajuda.fastcommerce.com.br/n7772" class=LinkAjudaDesign target="_blank"><b>6.6</b>) Como adicionar ordenação na lista de produtos da loja</a><br>
+          <br><a href="http://ajuda.fastcommerce.com.br/n8763" class=LinkAjudaDesign target="_blank"><b>6.7</b>) Como padronizar a largura das imagens de produtos</a><br>
+          <br><a href="http://ajuda.fastcommerce.com.br/n7242" class=LinkAjudaDesign target="_blank"><b>6.8</b>) Personalização do link "Indique este produto a um amigo"</a><br>
+          <br><a href="http://ajuda.fastcommerce.com.br/n6001" class=LinkAjudaDesign target="_blank"><b>6.9</b>) Como mostrar o valor do produto com desconto para compras à vista na lista do produto</a><br>
+          <br><a href="http://ajuda.fastcommerce.com.br/n4526" class=LinkAjudaDesign target="_blank"><b>6.10</b>) Como inserir animações flash em páginas personalizadas</a><br>
+          <br><a href="http://ajuda.fastcommerce.com.br/n4528" class=LinkAjudaDesign target="_blank"><b>6.11</b>) Código HTML para inserir link para o chat em outras páginas da loja</a><br>
+          <br><a href="http://ajuda.fastcommerce.com.br/n10588" class=LinkAjudaDesign target="_blank"><b>6.12</b>) Código HTML para inserir e-mail na lista de assinantes de e-mail marketing da loja</a><br>
+          <br><a href="http://ajuda.fastcommerce.com.br/n5260" class=LinkAjudaDesign target="_blank"><b>6.13</b>) Código HTML para criar busca personalizada na loja</a><br>
+          <br><a href="http://ajuda.fastcommerce.com.br/n6697" class=LinkAjudaDesign target="_blank"><b>6.14</b>) Parâmetros de busca a página que lista os produtos aceita</a><br>
+          <br><a href="http://ajuda.fastcommerce.com.br/n5354" class=LinkAjudaDesign target="_blank"><b>6.15</b>) Como inserir a busca com o recurso AJAX</a><br>
+          <br><a href="http://ajuda.fastcommerce.com.br/n5250" class=LinkAjudaDesign target="_blank"><b>6.16</b>) Código HTML para criar formulário personalizado</a><br>
+          <br><a href="http://ajuda.fastcommerce.com.br/n8355" class=LinkAjudaDesign target="_blank"><b>6.17</b>) Como ilustrar com imagens os passos de compra</a><br>
+          <br><a href="http://ajuda.fastcommerce.com.br/n10470" class=LinkAjudaDesign target="_blank"><b>6.18</b>) Como exibir grades de produtos (combinações de cor X tamanho)</a><br>
+          <br><a href="http://ajuda.fastcommerce.com.br/n10433" class=LinkAjudaDesign target="_blank"><b>6.19</b>) Como simplificar o design das páginas de finalização do pedido</a><br>
+          <br><a href="http://ajuda.fastcommerce.com.br/n10372" class=LinkAjudaDesign target="_blank"><b>6.20</b>) Como exibir no design da loja os dados dos produtos adicionadas à cesta</a><br>
+          <br><a href="http://ajuda.fastcommerce.com.br/n10371" class=LinkAjudaDesign target="_blank"><b>6.21</b>) Como exibir ao cliente o histórico recente de sua visita à loja</a><br>
+          <br><a href="http://ajuda.fastcommerce.com.br/n7858" class=LinkAjudaDesign target="_blank"><b>6.22</b>) Como ver a loja na versão "Mobile" em meu computador</a><br>
+          <br><a href="http://ajuda.fastcommerce.com.br/n4585" class=LinkAjudaDesign target="_blank"><b>6.23</b>) Como inserir um botão de continuar comprando na cesta do pedido</a><br>
+          <br><a href="http://ajuda.fastcommerce.com.br/n7750" class=LinkAjudaDesign target="_blank"><b>6.24</b>) Como informar a quantidade de cada produto antes de colocá-lo na cesta</a><br>
+          <br><a href="http://ajuda.fastcommerce.com.br/n6549" class=LinkAjudaDesign target="_blank"><b>6.25</b>) Como alterar os estilos dos botões Continuar na confirmação do pedido</a><br>
+          <br><a href="http://ajuda.fastcommerce.com.br/n6546" class=LinkAjudaDesign target="_blank"><b>6.26</b>) Posso mudar o estilo da descrição da forma de pagamento na página de confirmação</a><br>
+          <br><a href="http://ajuda.fastcommerce.com.br/n4522" class=LinkAjudaDesign target="_blank"><b>6.27</b>) Como alterar o conteúdo da página de Ajuda da loja</a><br>
+          <br><a href="http://ajuda.fastcommerce.com.br/n3817" class=LinkAjudaDesign target="_blank"><b>6.28</b>) Posso enviar os arquivos para minha loja via FTP?</a><br>
+          <br><a href="http://ajuda.fastcommerce.com.br/n3818" class=LinkAjudaDesign target="_blank"><b>6.29</b>) Posso hospedar arquivos de programação ASP, PHP no Fastcommerce?</a><br>
+         <br><a href="http://ajuda.fastcommerce.com.br/n11835" class=LinkAjudaDesign target="_blank"><b>6.30</b>) Como utilizar fontes de texto adicionais?</a><br>
+
+<br>
+          </td>
+        </tr>
+        <tr><td><br><br><br></td></tr> 
+        <tr><td class="tit"><b>7) Dicas de personalização de design e erros mais comuns</b><br></td></tr>
+        <tr>
+          <td><br>
+          Ao alterar os arquivos deve-se ter muito cuidado para manter o correto funcionamento da loja. Ao longo dos anos verificamos os erros mais comuns cometidos pelos lojistas e pelos webdesigners das lojas, que listamos abaixo.<br><br>
+          Alguns destes erros causam a exibição de alerta de segurança em páginas acessadas com https:. Outros impedem a exibição de imagens ou prejudicam a performance da navegação. Tais erros podem ter consequências negativas nos resultados financeiros da loja. <br><br>
+          <a href="http://ajuda.fastcommerce.com.br/sistema/Noticias.asp?IDLoja=9&IDNoticia=7523" target="_blank">http://ajuda.fastcommerce.com.br/sistema/Noticias.asp?IDLoja=9&IDNoticia=7523</a><br>
+          </td>
+        </tr>
+
+        <tr><td><br><br><br></td></tr> 
+        <tr><td class="tit"><b>8) Recomendações de webdesigners</b><br></td></tr>
+        <tr>
+          <td><br>
+          Caso necessite de recomendações de webdesigners para sua loja, solicite através do e-mail <a href=mailto:suporte@fastcommerce.com.br?subject=Recomendações%20de%20WebDesigners>suporte@fastcommerce.com.br</a><br>
+          </td>
+        </tr>
+
+        <tr><td><br><br><br></td></tr> 
+        <tr><td class="tit"><b>9) Informações importantes para o desenvolvimento de novos layouts </b><br></td></tr>
+        <tr>
+          <td><br>
+          <a href="http://blog.fastcommerce.com.br/2011/07/informacoes-importantes-para-o.html" target="_blank">Clique aqui</a> para ver informações que devem ser levadas em consideração, quando for criar ou contratar uma empresa para desenvolver o layout para sua loja virtual.<br>
+          </td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>

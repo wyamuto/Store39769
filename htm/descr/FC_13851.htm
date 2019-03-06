@@ -1,0 +1,72 @@
+<p>Neste exemplo, vamos utilizar a opção <b>Aceita Pagto 5</b>. Segue o passo-a-passo:</p>
+<br>
+<p><span class="dest NewsPassos">1º Passo</span></p>
+<p>Selecione <b>Sim</b> no campo <b>Aceita Pagto 5</b>. No campo <b>Legenda</b>, informe <b>PayU</b> e envie o logotipo <b>PagtoPayU.gif</b> através do campo <b>GIF</b>. Se desejar, adicione uma <b>Descrição</b>.</p>
+
+<center><img src="/lojas/00000009/images/fc/FC13851a.png" class="img-responsive"></center>
+<br>
+
+<p><span class="dest NewsPassos">2º Passo</span></p>
+<p>Copie as imagens abaixo e envie para a pasta <b>images</b> no gerenciador de arquivos da loja.</p>
+
+<p>Para copiar as imagens, clique com o botão direito do mouse em cima da imagem desejada e selecione a opção <b>Salvar Imagem Como...</b>.</p>
+
+<center><b>PagtoPayU.gif</b><br><br><a href="/lojas/00000009/images/fc/PagtoPayU.gif" target="_blank"><img src="/lojas/00000009/images/fc/PagtoPayU.gif" border="0" class="img-responsive"></a></center>
+<br>
+
+<p><span class="dest NewsPassos">3º Passo</span></p>
+<p><a href="/dnload/MD5.zip">Clique aqui</a> para baixar o arquivo <b>MD5.js</b> que deve ser enviado para a pasta <b>htm</b> no gerenciador de arquivos da loja.</p>
+<br>
+
+<p><span class="dest NewsPassos">4º Passo</span></p>
+<p>Adicione o código abaixo no começo do arquivo <b>PedBarraTopo.htm</b>:</p>
+
+<pre>&lt;script src="&lt;BaseLoja>htm/md5.js">&lt;/script></pre>
+<br>
+
+<p><span class="dest NewsPassos">5º Passo</span></p>
+<p>Copie o código abaixo e cole ao final do arquivo <b>ConfirmacaoPedido.htm</b> na pasta <b>htm</b> do gerenciador de arquivos da loja.</p>
+<br>
+<p><b>OBS:</b> Altere os seguintes dados de acordo com sua conta do <b>PayU</b>.</p>
+<br>
+<ul><li><p><b>apiKeyapiKeyapiKeyapiKeyapiKey</b></p></li>
+<li><p><b>apiLoginapiLogin</b></p></li>
+<li><p><b>accountId</b></p></li>
+<li><p><b>merchantId</b></p></li>
+</ul>
+<br>
+<pre>&lt;script type="text/javascript">
+  var apiKey = "<span><b>apiKeyapiKeyapiKeyapiKeyapiKey</b></span>";
+  var apiLogin = "<span><b>apiLoginapiLogin</b></span>";
+  var accountId = "<span><b>accountId</b></span>";
+  var merchantId = "<span><b>merchantId</b></span>";
+  var referenceCode = "&lt;IDLoja>-&lt;NumPedido>-&lt;IDPedido>"; // Número do pedido formado por IDLoja-NumPedido-IDPedido
+  var valorPedido = "&lt;TotalPrazo>"; // Valor total do pedido
+  var partnerId = "512022";
+  var signature = apiKey +"~"+ merchantId +"~"+ referenceCode +"~"+ valorPedido +"~BRL";
+  var  hash = CryptoJS.MD5(signature);
+
+ if(&lt;IDFormaPagamento>==13){
+  var sPayU= '&lt;form action="https://gateway.payulatam.com/ppp-web-gateway/" name="payu" method="post" id="payulatam-form" target="_blank">';
+  sPayU+='&lt;input type="hidden" name="merchantId" value="'+ merchantId +'">';
+  sPayU+='&lt;input type="hidden" name="accountId"  value="'+ accountId +'"/>';
+  sPayU+='&lt;input type="hidden" name="referenceCode" value="'+ referenceCode +'">';
+  sPayU+='&lt;input type="hidden" name="partnerId" value="'+ partnerId +'">';
+  sPayU+='&lt;input type="hidden" name="description" value="Pedido #&lt;NumPedido> realizado na loja &lt;NomeLoja>">';
+  sPayU+='&lt;input type="hidden" name="amount" value="'+ valorPedido +'">';
+  sPayU+='&lt;input type="hidden" name="tax" value="0">';
+  sPayU+='&lt;input type="hidden" name="taxReturnBase" value="0">';
+  sPayU+='&lt;input type="hidden" name="algorithmSignature" value="MD5">';
+  sPayU+='&lt;input type="hidden" name="signature" value="'+ hash +'">';
+  sPayU+='&lt;input type="hidden" name="currency" value="BRL">';
+  sPayU+='&lt;input type="hidden" name="buyerEmail" value="&lt;EmailPedido>">';
+  sPayU+='&lt;input name="test" type="hidden" value="0"/>';
+  sPayU+='&lt;input type="image" border="0" alt="" src="http://www.payulatam.com/img_botones_herramientas/btn-pagar-port-mediano.png "/>';
+  sPayU+='&lt;/form>';
+  document.getElementById('idTxtPaymentMethodFC').innerHTML='&lt;br />&lt;center>&lt;b>Clique no botão abaixo para prosseguir&lt;/b>&lt;br />&lt;br />'+ sPayU +'&lt;/center>';
+ }
+&lt;/script></pre>
+<br>
+<p><b>OBS:</b> Após realizar este procedimento, efetue pedidos de teste na loja para certificar-se do correto funcionamento da integração.</p>
+<br>
+<p><b class="dest">ATENÇÃO:</b> As consultas de aprovação dos pedidos devem ser realizadas diretamente no site do <b>PayU</b>.</p>

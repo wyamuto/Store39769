@@ -1,0 +1,57 @@
+<p>Para integrar, utilize as "Formas de pagamento adicionais" da página "Pagamentos" do site administrativo. Certifique-se que a loja utiliza o <b>Xtreme Checkout</b> e que tenha alguma opção de pagamento adicional sem uso (Pagto 1, Pagto 2, Pagto 3, Pagto 4 ou Pagto 5).</p>
+
+<p>Neste exemplo vamos utilizar a opção <b>Aceita Pagto 2</b>. Segue o passo-a-passo:</p>
+<br>
+
+<p><span class="dest NewsPassos">1º Passo</span></p>
+<p>Selecione <b>Sim</b> no campo <b>Aceita Pagto 2</b>. No campo <b>Legenda</b>, informe <b>Rache aqui!</b> e envie o logotipo <b>PagtoRAqui.gif</b> através do campo <b>GIF</b>. Se desejar adicione uma <b>Descrição</b>.</p>
+
+<center><img src="/lojas/00000009/images/RacheAquiPA2.gif" class="img-responsive"></center>
+<br>
+
+<p><span class="dest NewsPassos">2º Passo</span></p>
+<p>Copie as imagens abaixo e envie para a pasta <b>images</b> no gerenciador de arquivos da loja.</p>
+
+<p>Para copiar as imagens clique com o botão direito do mouse em cima da imagem desejada e selecione a opção <b>Salvar Imagem Como...</b>.</p>
+
+<center><b>PagtoRAqui.gif</b><br><br><a href="/lojas/00000009/images/PagtoRAqui.gif" target="_blank"><img src="/lojas/00000009/images/PagtoRAqui.gif" border="0" class="img-responsive"></a></center>
+<br>
+<center><b>BTComprarRA.png</b><br><br><a href="/lojas/00000009/images/BTComprarRA.png" target="_blank"><img src="/lojas/00000009/images/BTComprarRA.png" border="0" class="img-responsive"></a></center>
+<br>
+<p><span class="dest NewsPassos">3º Passo</span></p>
+<p>Copie o código abaixo, cole no <b>bloco de notas</b> e salve com o nome <b>ConfirmacaoPedido.htm</b> na pasta <b>htm</b> do gerenciador de arquivos da loja.</p>
+<pre><span><span>&lt;!-- Altere onde está <span>10</span> de acordo com o Pagto utilizado na loja -->
+&lt;!-- Pagto 1 = <span>9</span>, Pagto 2 = <span>10</span>, Pagto 3 = <span>11</span>, Pagto 4 = <span>12</span> e Pagto 5 = <span>13</span> -->
+
+&lt;!-- Altere onde está &lt;input name="lojaID" type="hidden" value="<span>9999</span>"> de acordo com o LojaID cadastrado no Rache Aqui! -->
+
+</span>
+&lt;script>
+var TotalPrazoRacheAqui = parseFloat(&lt;TotalPrazo>).toFixed(2).toString().replace('.','');
+if(&lt;IDFormaPagamento>==10){
+  sRacheAqui='&lt;table width=100% align=center>&lt;tr>&lt;td style=text-align:center>&lt;br>Clique no botão abaixo para prosseguir:&lt;br>&lt;br>';
+  sRacheAqui+='&lt;form name="racheaqui" action="https://pagamentos.racheaqui.com.br" method="post" target="_blank">';
+  sRacheAqui+='&lt;input name="lojaID" type="hidden" value="9999">';
+  sRacheAqui+='&lt;input name="valor_pedido" type="hidden" value="'+TotalPrazoRacheAqui+'">';
+  sRacheAqui+='&lt;input name="pedidoID" type="hidden" value="&lt;NumPedido>">';
+  sRacheAqui+='&lt;input type="hidden" name="num_raches" value="0">';
+  sRacheAqui+='&lt;input type="hidden" name="maximo_parcelas" value="0">';
+  sRacheAqui+='&lt;input type="image" src="&lt;BaseLoja>images/BTComprarRA.png" alt="Comprar Rache aqui!" border="0" align="absbottom" >';
+  sRacheAqui+='&lt;/form>&lt;/td>&lt;/tr>&lt;/table>';
+
+  var oPedConfirmado=F$.GetID("idChkTxtPedConfirmadoFC");
+  if(oPedConfirmado){
+    var oNewElementRacheAqui=document.createElement("div");
+    oNewElementRacheAqui.setAttribute("id","DivShowRacheAqui"); 
+    oDivShowRacheAqui=oPedConfirmado.parentNode.insertBefore(oNewElementRacheAqui,oPedConfirmado);
+    oDivShowRacheAqui.innerHTML=sRacheAqui;
+  }
+}
+&lt;/script></span></pre>
+<br>
+
+<p>Após realizar este procedimento, efetue pedidos de teste em sua loja com esta forma de pagamento, utilizando múltiplos cartões para pagamento de cada pedido.</p>
+<br>
+<p><b>OBS:</b> Preencha o endereço da sua loja no campo <b>URL de retorno</b> no sistema <b>Rache Aqui!</b></p>
+<br>
+<p>As consultas de aprovação dos pedidos devem ser realizadas diretamente no ambiente do <b>Rache Aqui!</b>.</p>

@@ -1,0 +1,88 @@
+<ul><li><p>Pode-se consultar rapidamente os detalhes de um produto, incluindo suas variações de tamanho e cor</p></li>
+<li><p>Em uma lista extensa de produtos com autopaginação, o cliente pode facilmente espiar vários produtos e adicioná-los ao carrinho, sem sair da lista.</p></li>
+</ul>
+
+<p><a href="http://www.spdepartamentos.com.br/espiadinha" target="_blank">Clique aqui</a> para ver exemplo deste recurso em funcionamento.</p>
+
+<center><a href="http://www.spdepartamentos.com.br/espiadinha" target="_blank" title="Ver Fast Preview (espiadinha)"><img src="/lojas/00000009/images/fc/RecFastPreview.png" class="img-responsive" border="0"></a></center>
+<br>
+
+<p><b>Seguem os passos de implantação:</b></p>
+<br>
+
+<p><span class="dest NewsPassos">1º Passo</span></p>
+<p>Dentro da pasta <b>htm</b>, crie uma pasta chamada <b>fancybox</b>.</p>
+
+<p><a href="/dnload/FPreview_htm.zip">Clique aqui</a> para baixar o arquivo que deve ser enviado para a pasta <b>fancybox</b> que acabou de ser criada.</p>
+<br>
+
+<p><span class="dest NewsPassos">2º Passo</span></p>
+<p>Dentro da pasta <b>images</b>, crie uma pasta chamada <b>fancybox</b>.</p>
+
+<p><a href="/dnload/FPreview_images.zip">Clique aqui</a> para baixar o arquivo que deve ser enviado para a pasta <b>fancybox</b> que acabou de ser criada.</p>
+<br>
+
+<p><span class="dest NewsPassos">3º Passo</span></p>
+<p>Adicione o código abaixo no começo do arquivo <b>home.htm</b>:</p>
+
+<pre>&lt;script src="/jquery-1.8.2.min.js">&lt;/script>
+&lt;!-- fancybox -->
+&lt;script src="&lt;BaseLoja>htm/fancybox/fancybox.js?v=2.1.5">&lt;/script>
+&lt;link rel="stylesheet" href="&lt;BaseLoja>htm/fancybox/fancybox.css?v=2.1.5" media="screen" />
+&lt;script type="text/javascript">
+  jQuery(document).ready(function() {
+    jQuery('.fancybox').fancybox({maxWidth:700,maxHeight: 500});
+  });
+&lt;/script></pre>
+<br>
+
+<p><span class="dest NewsPassos">4º Passo</span></p>
+<p><a href="/dnload/FPreview_htm1.zip">Clique aqui</a> para baixar o arquivo que deve ser enviado para a pasta <b>htm</b> com um modelo de <b>Fast Preview (espiadinha)</b>.</p>
+
+<br>
+<p><b>Obs ¹:</b> Neste exemplo foi criado um arquivo chamado <b>EstiloProduto9.htm</b> que aceita as mesmas tags utilizadas no arquivo padrão <b>EstiloProduto.htm</b>.</p>
+
+<p><b>Obs ²:</b> Quando seu próprio modelo for criado, os includes de arquivos js e css já utilizados pela loja também deverão ser declarados neste arquivo.</p>
+<br>
+
+<p><span class="dest NewsPassos">5º Passo</span></p>
+<p>No arquivo <b>EstiloProdutoOut.htm</b> deve ser adicionado o link para a espiadinha na tag <b>prod out</b> que está definida no arquivo <b>Home.htm</b>.</p>
+<br>
+
+<p>Segue código do link:</p>
+
+<pre>&lt;a class="fancybox fancybox.iframe" href="ListaProdutos.asp?IDLoja=&lt;IDLoja>&Sty=9&Int=1&IDProduto=&lt;IDProduto>">
+  &lt;img src="&lt;BaseLoja>images/fancybox/QuickView.png" border="0" title="Espiar">
+&lt;/a></pre>
+<br>
+
+<p>Segue exemplo de uma tag <b>prod out</b> completa:</p>
+
+<pre>&lt;p234>
+&lt;br>
+&lt;table border="0" width="180" height="250" cellspacing="0" cellpadding="0" style="border-style:solid;border-width:1px;border-color:#dedede;">
+  &lt;tr height="50">
+    &lt;td align="center" class="EstNomeProdCapa">
+      &lt;a href="/prod,idloja,&lt;idlojanum>,idproduto,&lt;IDProduto>,&lt;NomeProdUA>">&lt;NomeProd>&lt;/a>
+    &lt;/td>
+  &lt;/tr>
+  &lt;tr height="120">
+    &lt;td align="center">
+      &lt;a href="/prod,idloja,&lt;idlojanum>,idproduto,&lt;IDProduto>,&lt;NomeProdUA>">&lt;div class="ProdCapaDiv">&lt;ImagemProd>&lt;/div>&lt;/a>
+    &lt;/td>
+  &lt;/tr>
+  &lt;tr height="50">
+    &lt;td align="center" class="MainStyPrice">&lt;PrecoSimples>&lt;/td>
+  &lt;/tr>
+  &lt;tr>
+    &lt;td align="center">
+      &lt;a class="fancybox fancybox.iframe" href="ListaProdutos.asp?IDLoja=&lt;IDLoja>&Sty=9&Int=1&IDProduto=&lt;IDProduto>">&lt;img src="&lt;BaseLoja>images/fancybox/QuickView.png" border="0" title="Espiar">&lt;/a>
+    &lt;/td>
+  &lt;/tr>
+&lt;/table>
+&lt;br>
+&lt;/p234></pre>
+<br>
+
+<p><span class="dest NewsPassos">6º Passo</span></p>
+<p>Marque o campo <b>Adiciona produto à cesta sem sair da página</b> que fica na página "Dados da loja" do site administrativo.</p>

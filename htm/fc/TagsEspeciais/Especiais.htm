@@ -1,0 +1,218 @@
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'>
+<title>FastCommerce :: Tags especiais</title>
+<link href="https://www.rumo.com.br/sistema/adm/Estilos1.css" rel="stylesheet" type="text/css">
+<style>
+body,td,span,p {font-size:10pt;}
+.tagtxt {font-size:11pt;font-family:consolas,Courier New,Courier,Terminal;}
+</style>
+</head>
+<body topmargin=0 leftmargin=0 marginwidth=0 marginheight=0 class=EstTabPag>
+<table width=720 cellspacing=0 cellpadding=10 align=center>
+  <tr>
+    <td><center><span class=EstTopoGen><h3>Tags especiais genéricas</h3></span></center>
+    <p>Os arquivos HTML enviados ao site podem conter tags especiais que serão substituídas por conteúdo obtido do banco de dados da loja. Estas tags permitem criar páginas dinâmicas, sempre atualizadas com as informações sobre produtos, lançamentos, promoções, etc.<br><br>Com estas tags também é possível personalizar os menus de navegação e criar links para novas páginas.</p>
+    <table width=720 border=0 cellspacing=0 cellpadding=0 align=center class=EstTabBorda bgcolor=#333>
+      <tr>
+        <td><table border=0 width=720 cellspacing=1 cellpadding=20 align=center>
+          <tr>
+            <td align=center class=EstCaixaTit>Tag</td>
+            <td align=center class=EstCaixaTit>Descrição</td>
+          </tr>
+          <tr>
+            <td class=EstTabInt valign=top align=center><span class=tagtxt>&lt;nomeloja&gt;</span></td>
+            <td class=EstTabInt>Substituída pelo nome da loja, informado em <b>Dados da loja</b>.</td>
+          </tr>
+          <tr>
+            <td class=EstTabInt valign=top align=center><span class=tagtxt>&lt;mailinfo&gt;</span></td>
+            <td class=EstTabInt>Substituída pelo e-mail de contato, informado em <b>Dados da loja</b>.</td>
+          </tr>
+          <tr>
+            <td class=EstTabInt valign=top align=center><span class=tagtxt>&lt;mailloja&gt;</span></td>
+            <td class=EstTabInt>Substituída pelo e-mail de pedidos, informado em <b>Dados da loja</b>.</td>
+          </tr>
+          <tr>
+            <td class=EstTabInt valign=top align=center><span class=tagtxt>&lt;baseloja&gt;</span></td>
+            <td class=EstTabInt>Caminho para o diretório virtual da loja. Permite criar links para
+            imagens do site e outros arquivos enviados.<br><br><b>Ex:</b> Para criar link para uma imagem chamada <i>Empresa.jpg</i>, utilize<br>&lt;img src=<b>&lt;baseloja&gt;</b>images/Empresa.jpg&gt;</td>
+          </tr>
+          <tr>
+            <td class=EstTabInt valign=top align=center><span class=tagtxt>&lt;HTMLoja&gt;</span></td>
+            <td class=EstTabInt>Utilizada para criar links para páginas HTML enviadas. Ao serem
+            acessadas, estas páginas serão posicionadas no corpo da loja.<br>
+            Serão mantidos os menus e demais elementos fixos do site.<br><br><b>Ex:</b> Para criar link para uma página chamada <i>Empresa.htm</i>, utilize<br>&lt;a href=<b>&lt;HTMLoja&gt;</b>Empresa.htm&gt;</td>
+          </tr>
+          <tr>
+            <td class=EstTabInt valign=top align=center><span class=tagtxt>&lt;IDLoja&gt;</span></td>
+            <td class=EstTabInt>Utilizada para criar links para as páginas ASP do <b>FastCommerce</b>. Esta tag é substituída pelo ID da loja e pelo parâmetro dinâmico Y.<br><br>
+            <b>Ex:</b> Para criar link para a página <i>Ajuda.asp</i>, utilize<br><br><span class=tagtxt>&lt;a href=Ajuda.asp?IDLoja=<b>&lt;IDLoja&gt;</b>&gt;</span><br><br>A linha acima resulta em:<br><br><span class=tagtxt>&lt;a href=Ajuda.asp?IDLoja=<b>999&Y=1073691609720</b>&gt;</span></td>
+          </tr>
+          <tr>
+            <td class=EstTabInt valign=top align=center><span class=tagtxt>&lt;IDLojaNum&gt;</span></td>
+            <td class=EstTabInt>Utilizada para criar formulários e links para arquivos da loja. Esta tag é substituída somente pelo ID da loja, SEM o parâmetro dinâmico Y.<br><br>
+            <b>Ex:</b> Para criar formulário contendo o ID da loja, utilize<br><br><span class=tagtxt>&lt;input type=hidden name=IDLoja value=<b>&lt;IDLojaNum&gt;</b>&gt;</span></td>
+          </tr>
+          <tr>
+            <td class=EstTabInt valign=top align=center><span class=tagtxt>&lt;Y&gt;</span></td>
+            <td class=EstTabInt>Esta tag é substituída pelo valor do Y dinâmico, que varia para cada visitante. Utilizada para criar forms para as páginas ASP do <b>FastCommerce</b>.<br><br>
+            <b>Ex:</b> Para incluir campo hidden com o Y correto, utilize<br><br><span class=tagtxt>&lt;input type=hidden name=Y value=<b>&lt;Y&gt;</b>&gt;</span><br><br>A linha acima resulta em:<br><br><span class=tagtxt>&lt;input type=hidden name=Y value=<b>1166564875496</b>&gt;</span></td>
+          </tr>
+          <tr>
+            <td class=EstTabInt valign=top align=center><span class=tagtxt>&lt;texto1&gt;<br>
+            até<br>
+            &lt;texto5&gt;</span></td>
+            <td class=EstTabInt>Serão substituídas pelos conteúdos informados nos respectivos
+            campos de texto para <em>Capa</em> e <em>Barra lateral</em>, preenchidos em <b>Design da
+            loja</b>.</td>
+          </tr>
+          <tr>
+            <td class=EstTabInt valign=top align=center><span class=tagtxt>&lt;SearchText&gt;</span></td>
+            <td class=EstTabInt>Substituída pelo texto utilizado em busca de produtos, informado na URL pelo parâmetro <span class=tagtxt>&texto=</span>. Esta tag poderá ser utilizada no campo de value da caixa de busca da loja, para exibir o texto da última busca realizada.</td>
+          </tr>
+          <tr>
+            <td class=EstTabInt valign=top align=center><span class=tagtxt>&lt;imagem1&gt;<br>
+            até<br>
+            &lt;imagem5&gt;</span></td>
+            <td class=EstTabInt>Serão substituídas pelas imagens informadas nos respectivos campos
+            de imagem para <em>Capa</em> e <em>Barra lateral</em>, preenchidos em <b>Design da loja</b>.</td>
+          </tr>
+          <tr>
+            <td class=EstTabInt valign=top align=center><span class=tagtxt>&lt;categoria&gt;</span></td>
+            <td class=EstTabInt>Substituída pela legenda utilizada para agrupar os produtos da
+            loja, informado em <b>Dados da loja</b>. As legendas disponíveis são: Categoria, Linha,
+            Departamento, Família, Griffe, Coleção, Marca, Seção</td>
+          </tr>
+          <tr>
+            <td class=EstTabInt valign=top align=center><span class=tagtxt>&lt;categorias&gt;</span></td>
+            <td class=EstTabInt>Utilize para obter o plural da legenda.</td>
+          </tr>
+          <tr>
+            <td class=EstTabInt valign=top align=center><span class=tagtxt>&lt;ListCat&gt;</span></td>
+            <td class=EstTabInt>Gera lista selecionável das categorias.<p>Para obter a lista aberta, especifique
+            &lt;ListCat out="n">, onde n é o número de colunas. Caso contrário, a lista será exibida em um campo de seleção (tag &lt;select>).<p>Ao ser selecionada uma categoria, a página com os produtos desta categoria será automaticamente acessada. Para desabilitar este comportamento automático e exibir um &lt;select> simples para uso em formulários personalizados, utilize &lt;ListCat em="manual">.
+            <p><b>Obs:</b> Para otimizar a performance da loja, cada página pode conter até 5 tags &lt;ListCat&gt;. As tags excedentes não serão substituídas.
+            </td>
+          </tr>
+          <tr>
+            <td class=EstTabInt valign=top align=center><span class=tagtxt>&lt;ListPathCat&gt;</span></td>
+            <td class=EstTabInt>Gera lista hierárquica das categorias, caso a loja habilite o campo de subcategorias da página <b>Dados da loja</b>.<p>Inclua o parâmetro out="<b><i>m</i></b>" para alterar o design da lista, onde <b><i>m</i></b> é o número do layout:<ul><li>Se o parâmetro out não for informado ou <b><i>m</i></b> for igual a 1, a lista será exibida em um campo de seleção (tag &lt;select>). Neste caso, ao ser selecionada uma categoria, a página com os produtos desta categoria será automaticamente acessada. Para desabilitar este comportamento automático e exibir um &lt;select> simples para uso em formulários personalizados, utilize &lt;ListPathCat em="manual"><li>Se <b><i>m</i></b> for igual a 2, 10 ou 11, a lista navegável será composta em HTML, CSS e javascript. Para obter a lista aberta, use &lt;ListPathCat id="<b><i>n</i></b>">, onde <b><i>n</i></b> é o número do ID da subcategoria, informado no topo da ficha da mesma no site administrativo. Informe valor negativo para <b><i>n</i></b> (de -1 a -5) para obter a lista aberta em até <b><i>n</i></b> sub-níveis.<li>Se <b><i>m</i></b> for igual a 10 e se um item for clicado, a lista navegável apresentará a hieraquia até os filhos e irmãos do item clicado. Os demais itens de primeiro nível serão exibidos fechados.<li>Se <b><i>m</i></b> for igual a 11 e se um item for clicado, a lista navegável apresentará a hieraquia até os filhos e irmãos do item clicado. Os demais itens de primeiro nível não serão exibidos. Útil para criar menus exclusivos de categorias.<li>Se <b><i>m</i></b> for igual a 12, a lista navegável apresentará somente o primeiro nível de categorias.</ul><b>Exemplos:</b><br>
+            &lt;ListPathCat out="10" id="-5"&gt;&nbsp; (mostra menu em HTML aberto até o 2º sub-nível. Se um sub-item for clicado, os itens de primeiro nível serão apresentados fechados)<br>
+<p><b>Obs:</b> Para otimizar a performance da loja, cada página pode conter até 5 tags &lt;ListPathCat&gt;. As tags excedentes não serão substituídas.<br><br>
+            </td>
+          </tr>
+          <tr>
+            <td class=EstTabInt valign=top align=center><span class=tagtxt>&lt;NomeCliente&gt;</span></td>
+            <td class=EstTabInt>Substituída pelo primeiro nome do cliente, conforme cadastro na loja. Utilize para tornar a navegação mais personalizada.<br><b>Ex:</b> Frase <i>Olá, Fulano!</i> na página inicial</td>
+          </tr>
+          <tr>
+            <td class=EstTabInt valign=top align=center><span class=tagtxt>&lt;TagCloud&gt;</span></td>
+            <td class=EstTabInt>Substituída pelo conteúdo do arquivo <b>TagCloud.htm</b>, caso este exista na pasta HTM da loja e se o campo <b>Tag Cloud</b> estiver selecionado na página <b>Dados da loja</b>, que contém mais informações a respeito.</td>
+          </tr>
+          <tr>
+            <td class=EstTabInt valign=top align=center><span class=tagtxt>&lt;banner&nbsp;1&gt;<br>
+            até<br>
+            &lt;banner&nbsp;250&gt;</span></td>
+            <td class=EstTabInt>Serão substituídas pelos banners cadastrados na página <b>Banners</b> para a posição &lt;banner&nbsp;1&gt; a &lt;banner&nbsp;250&gt;. Apenas uma substituição será feita para cada número.</td>
+          </tr>
+          <tr>
+            <td class=EstTabInt valign=top align=center><span class=tagtxt>&lt;ValorCesta&gt;<br>&lt;PesoCesta&gt;<br>&lt;QtdCesta&gt;</span></td>
+            <td class=EstTabInt>Serão substituídas pelos seguintes dados da cesta de produtos do visitante: valor total, peso total e quantidade de itens. É possível também utilizar Flash, XML ou AJAX para exibir dados da cesta. Veja os detalhes clicando na interrogação ao lado do campo <b>Exibe dados da cesta</b>, na página <b>Dados da loja</b>.<br><br></td>
+          </tr>
+          <tr>
+            <td class=EstTabInt valign=top align=center><span class=tagtxt>&lt;IncludeHTML&gt;</span></td>
+            <td class=EstTabInt>Substituída pelo arquivo .htm ou .html indicado no atributo <b>src=</b> da tag. Este arquivo deve existir na pasta HTM ou subpasta desta.<br><br><b>Exemplo:</b><p class=tagtxt>&lt;IncludeHTML src="outros/more.htm"&gt;</p>Opcionalmente, pode-se utilizar os atributos <b>param1=</b> até <b>param9=</b>. Estes atributos serão substituídos respectivamente pelas tags &lt;param1> até &lt;param9>, caso estas existam nos arquivo incluídos.<br><br><b>Exemplo:</b><p class=tagtxt>&lt;IncludeHTML src="teste.htm" param1="Vitrine especial" param2="50"
+param3="#BB0000"></p>Os arquivos incluídos podem conter tags &lt;IncludeHTML>, ou seja, é possível fazer inclusões dentro de inclusões, de forma recursiva. No total, até 5 tags &lt;IncludeHTML&gt; serão substituídas por arquivo e suas inclusões.<br><br></td>
+          </tr>
+          <tr>
+            <td class=EstTabInt valign=top align=center><a name=TagProd></a><span class=tagtxt>&lt;prod&gt;</span></td>
+            <td class=EstTabInt>Permite o posicionamento de informações de produtos selecionados.
+            Possui a seguinte sintaxe:<p class=tagtxt>&lt;prod
+            [em="[lanc],[prom],[capa],[rand]"] [out="[n]"] [id="idprod1,idprod2,..."]
+            [cod="codprod1,codprod2,..."] [cat="catprod1,catprod2,..."]&gt;</p>
+            <p>onde:</p>
+            <p><span class=tagtxt><b>em</b></span> indica onde o produto se enquadra (opções podem
+            ser combinadas, entre vírgulas):<ul>
+              <li><span class=tagtxt>lanc</span>: produto em lançamento</li>
+              <li><span class=tagtxt>prom</span>: em promoção</li>
+              <li><span class=tagtxt>capa</span>: em destaque para capa</li>
+              <li><span class=tagtxt>rand</span>: sorteia novo produto a cada 120 minutos</li></ul>
+            <p><span class=tagtxt><b>out</b></span> define o layout selecionado (onde n&gt;=1). Se
+            omitido, será utilizado o layout 1. Para personalizar, envie arquivo EstiloProdutoOut.htm e informe p1 a p255.</p>
+            <p><span class=tagtxt><b>id</b></span> permite especificar o ID interno do produto.<br>Pode-se informar até 10 IDs de 6 dígitos, separados por vírgula.</p>
+            <p><span class=tagtxt><b>cod</b></span> permite especificar o código do produto.<br>Pode-se informar até 4 códigos de 15 caracteres, separados por vírgula.</p>
+            <p><span class=tagtxt><b>cat</b></span> permite especificar a categoria do produto.<br>Pode-se informar até 4 categorias de 25 caracteres, separadas por vírgula.</p>
+            <p><span class=tagtxt><b>a1</b></span> permite especificar o descritor especial 1 do produto.<br>Pode-se informar até 4 descritores de 30 caracteres, separados por vírgula.</p>
+            <p><span class=tagtxt><b>a2</b></span> permite especificar o descritor especial 2 do produto.<br>Pode-se informar até 4 descritores de 30 caracteres, separados por vírgula.</p>
+            <p><span class=tagtxt><b>a3</b></span> permite especificar o descritor especial 3 do produto.<br>Pode-se informar até 4 descritores de 30 caracteres, separados por vírgula.</p>
+            <p><b>Exemplos:</b><br>
+            &lt;prod em="lanc"&gt;&nbsp; (mostra produto em oferta, no layout 1)<br>
+            &lt;prod cod="XP221"&gt;&nbsp; (mostra produto cód XP221, no layout 1)<br>
+            &lt;prod cat="Som" em="rand"&gt;&nbsp; (sorteia produto da categoria Som)<br>
+            &lt;prod id="2343,2312,3451" em="rand"&gt;&nbsp; (sorteia produto entre 3 IDs)<br>
+            &lt;prod a3="nike,adidas"&gt;&nbsp; (nike ou adidas no descritor especial 3)<br>
+            &lt;prod em="rand,prom,capa"&gt;&nbsp; (sorteia produto em promoção na capa)<br>
+            &lt;prod em="rand" out="5"&gt;&nbsp; (sorteia produto, com layout 5)
+            <p><b>Obs:</b> Para otimizar a performance da loja, cada página pode conter até 72 tags &lt;prod&gt;. As tags excedentes não serão substituídas.
+            </td>
+          </tr>
+        </table>
+        </td>
+      </tr>
+    </table>
+
+<br><br><a name=RedesSociais></a><b>Tags especiais para redes sociais:</b><br>
+Para utilizar estas tags, é necessário marcar o campo <b>Usar tags especiais</b> da seção de redes sociais da página <i>Dados da loja</i>.
+<br><br>
+
+    <table width=720 border=0 cellspacing=0 cellpadding=0 align=center class=EstTabBorda bgcolor=#333>
+      <tr>
+        <td><table border=0 width=720 cellspacing=1 cellpadding=20 align=center>
+          <tr>
+            <td align=center class=EstCaixaTit>Tag</td>
+            <td align=center class=EstCaixaTit>Descrição</td>
+          </tr>
+          <tr>
+            <td class=EstTabInt valign=top align=center><span class=tagtxt>&lt;ShareFacebook&gt;</span></td>
+            <td class=EstTabInt>Substituída pelo ícone pequeno do Facebook, que poderá ser clicado pelo visitante para compartilhar a página atual no seu perfil no Facebook.</td>
+          </tr>
+          <tr>
+            <td class=EstTabInt valign=top align=center><span class=tagtxt>&lt;ShareTwitter&gt;</span></td>
+            <td class=EstTabInt>Substituída pelo ícone pequeno do Twitter, que poderá ser clicado pelo visitante para <i>twittar</i> a página atual em seu profile no Twitter.</td>
+          </tr>
+          <tr>
+            <td class=EstTabInt valign=top align=center><span class=tagtxt>&lt;GooglePlusOne&gt;</span></td>
+            <td class=EstTabInt>Substituída pelo código do Google que exibirá botão para que o visitante possa recomendar a página. Esta recomendação será exibida nos resultados de busca do Google. O Google recomenda este recurso para aumentar os cliques nos links das páginas de resultados de busca. É possível incluir parâmetros para alterar o tamanho do botão e exibir a quantidade de recomendações da página.<br><br><b>Exemplos:</b><br><br><span class=tagtxt>&lt;GooglePlusOne size="small"&gt;</span>: exibe o botão no menor formato, com contador de recomendações.<br><br><span class=tagtxt>&lt;GooglePlusOne size="medium" count="false"&gt;</span>: exibe o botão no tamanho médio, sem contador de recomendações.<br><br></td>
+          </tr>
+          <tr>
+            <td class=EstTabInt valign=top align=center nowrap><span class=tagtxt>&lt;Facebook type="<span class=Ativo>plugin</span>"&gt;</span></td>
+            <td class=EstTabInt>Substituída pelo código do Facebook que exibirá um <i>social plugin</i> do Facebook. Estes <span class=Ativo>plugins</span> são utilizados para que o visitante possa comentar, recomendar, curtir ou enviar a página atual para seu perfil no Facebook.<br><br><b>Plugins mais utilizados:</b><br><br>
+<span class=tagtxt>&lt;Facebook type="<span class=Ativo>comments</span>"&gt;</span>: exibe os comentários feitos pelos visitantes sobre a página atual (ex: comentários sobre um determinado produto). Estes comentários podem ser moderados pela loja, se o campo <b>Facebook AppID</b> da página Dados da loja estiver preenchido e a aplicação estiver corretamente configurada no Facebook.<br><br>
+<span class=tagtxt>&lt;Facebook type="<span class=Ativo>like-box</span>"&gt;</span>: exibe uma caixa de integração com diversos recursos configuráveis: botão Like, <i>stream</i> de posts da página e <i>faces</i> das pessoas que curtiram-na. Para utilizar esta tag, é necessário preencher o campo <b>Page</b> da seção Facebook, na página Dados da loja.<br><br>
+<span class=tagtxt>&lt;Facebook type="<span class=Ativo>like</span>"&gt;</span>: exibe o botão Curtir. Esta tag pode também ser configurada para exibir o botão <b>Recomendar</b> (veja abaixo nos exemplos de parâmetros).<br><br>
+<span class=tagtxt>&lt;Facebook type="<span class=Ativo>send</span>"&gt;</span>: exibe o botão Enviar. Esta tag permite ao visitante enviar um resumo da página atual para um amigo no Facebook.<br><br>
+<span class=tagtxt>&lt;Facebook type="<span class=Ativo>recommendations</span>"&gt;</span>: exibe uma caixa de objetos relacionados à página atual.<br><br>
+<span class=tagtxt>&lt;Facebook type="<span class=Ativo>activity</span>"&gt;</span>: exibe uma caixa de objetos relacionados às atividades mais recentes na página atual.<br><br>
+
+É possível incluir parâmetros para configurar os recursos de cada plugin.
+<br><br><b>Exemplos:</b><br><br>
+<span class=tagtxt>&lt;Facebook type="<span class=Ativo>comments</span>" width="700" num_posts="5"></span><br>Exibe os 5 posts mais recentes em uma caixa de 700 pixels de largura.<br><br>
+<span class=tagtxt>&lt;Facebook type="<span class=Ativo>like</span>" send="true" layout="button_count" show_faces="false"></span><br>Exibe botão Curtir com contador e sem exemplificar nomes de pessoas que curtiram a página.<br><br>
+<span class=tagtxt>&lt;Facebook type="<span class=Ativo>like-box</span>" width="160" show_faces="true" stream="true" header="true"></span><br>Exibe caixa de integração com os principais recursos ativados.
+<br><br></td>
+          </tr>
+          <tr>
+            <td class=EstTabInt valign=top align=center><span class=tagtxt>&lt;TwitterProfile&gt;</span></td>
+            <td class=EstTabInt>Substituída pelo código do Twitter que exibirá uma caixa com os <i>tweets</i> mais recentes do perfil da loja no Twitter. Para utilizar esta tag, é necessário autorizar publicações através do botão de autorização da seção Twitter da página Dados da loja. É possível personalizar as cores desta caixa.<br><br></td>
+          </tr>
+        </table>
+        </td>
+      </tr>
+    </table>
+
+
+    </td>
+  </tr>
+</table>
+</body>
+</html>

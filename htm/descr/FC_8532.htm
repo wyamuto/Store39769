@@ -1,0 +1,86 @@
+<style>
+#tableGA {font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;border-collapse: collapse;width: 300px;}
+#tableGA td, #tableGA th {border: 1px solid #ddd;padding: 8px;}
+#tableGA tr:nth-child(even){background-color: #f2f2f2;}
+#tableGA tr:hover {background-color: #ddd;}
+</style>
+
+<p><span class="dest NewsPassos">1º Passo:</span></p>
+<p>Verifique se o campo <a href="https://www.rumo.com.br/adm/FrameAjudaAdm.asp?ajuda=414" target="_blank">Web Property ID</a> está preenchido em <b>Google Analytics</b> da página <b>Dados da loja</b> do site administrativo de sua loja virtual no Fastcommerce.</p>
+<br>
+
+<p><span class="dest NewsPassos">2º Passo:</span></p>
+<p>Acesse o <b>Google Analytics</b> e clique no item <b>Administrador</b> que fica na barra lateral esquerda.</p>
+<br>
+
+<p><span class="dest NewsPassos">3º Passo:</span></p>
+<p>Na coluna <b>Vista da proriedade</b> clique na opção <b>Metas</b>.</p>
+<br>
+
+<p><span class="dest NewsPassos">4º Passo:</span></p>
+<p>Clique no botão <b>+ Nova Meta</b>.</p>
+<br>
+
+<p><span class="dest NewsPassos">5º Passo:</span></p>
+<p>Em <i>Configuração da meta</i>, escolha a opção <b>Personalizado</b></p>
+<br>
+
+<p><span class="dest NewsPassos">6º Passo:</span></p>
+<p>Em <i>Descrição da meta</i>, preencha da seguinte forma:</p>
+<p><b>Nome da meta:</b> Pedido confirmado</p>
+<p><b>Tipo de meta:</b> Destino</p>
+<br>
+
+<p><b>Funil da meta:</b></p>
+
+<p>Marque o campo <b>Usar funil</b> e adicione as seguintes etapas ao funil (<i>As etapas abaixo devem ser utilizadas para as lojas que utilizam o Xtreme Checkout</i>):</p>
+
+<br>
+<center><img src="/lojas/00000009/images/FunilGA.png" border="0" class="img-responsive"></center>
+<br>
+
+<p>Para copiar e colar no passo <b>Detalhes da meta</b></p>
+
+<p>
+<table id="tableGA">
+  <tr>
+    <td>Destino</td>
+    <td>/OrderCompletion</td>
+  </tr>
+  <tr>
+    <td>Carrinho</td>
+    <td>/addproduto.asp</td>
+  </tr>
+  <tr>
+    <td>Login</td>
+    <td>/OrderLogin</td>
+  </tr>
+  <tr>
+    <td>Cadastro</td>
+    <td>/OrderRegistration</td>
+  </tr>
+  <tr>
+    <td>Frete</td>
+    <td>/ShippingChoice</td>
+  </tr>
+  <tr>
+    <td>Pagamento</td>
+    <td>/PaymentChoice</td>
+  </tr>
+</table>
+</p>
+
+<p><b>ATENÇÃO:</b> Clique em <b>Salvar</b> ao final da página.</p>
+<hr>
+<p><span>As instruções acima são válidas somente para lojas que usam o <b>Xtreme Checkout</b>. Caso sua loja utilize o checkout passo a passo, sugerimos que migre para o Xtreme Checkout. <a href="https://ajuda.fastcommerce.com.br/guia-de-implantacao-do-xtreme-checkout" target="_blank">Clique aqui</a> para mais detalhes.</span></p>
+<hr>
+<br>
+<p>Veja também: <b>Ajuda do Google Analytics</b>:</p>
+
+<p>- <a href="http://support.google.com/googleanalytics/bin/answer.py?hl=pt-BR&answer=55515" target="_blank">Como configuro metas e funis?</a></p>
+
+<p>- <a href="https://support.google.com/analytics/answer/2976313" target="_blank">Visualização do funil versus navegação da meta</a></p>
+<br>
+
+<p><b>Obs</b>: O <b>Fastcommerce</b> disponibiliza de forma nativa <a href="https://www.fastcommerce.com.br/crm-integrado-no-comercio-eletronico" target="_blank">relatórios de funil</a> no site administrativo, <b>Funil de compra no período</b> e <b>Funil de compra no período por parceiro ou cupom</b>. Nestes relatórios é possível acompanhar o fluxo de usuários pelas páginas de fechamento de pedidos e ainda informa os pedidos pagos.</p>
+<!--NewsProductsFC-->

@@ -1,0 +1,74 @@
+<p>Em seu arquivo <b>Home.htm</b> para exibir os produtos você deverá utilizar a tag <b><prod></b></p>
+
+<p><b>Ex.:</b></p>
+<pre>&lt;prod out="<b>p10</b>" em="rand"&gt;</pre>
+<br>
+
+<p><b>p10</b> é o modelo exemplo contido no arquivo <a href="http://www.rumo.com.br/dnload/EstiloProdutoOut.zip">EstiloProdutoOut.htm</a>.</p>
+<br>
+
+<p>2) Enviar o arquivo <a href="http://www.rumo.com.br/dnload/EstiloProdutoOut.zip">EstiloProdutoOut.htm</a> para a pasta HTM da loja.</p>
+
+<p>Neste modelo em anexo tem uma cópia do modelo OUT=10 com a função abaixo, para exibir parcelamentos.</p>
+
+<pre>&lt;script&gt;MostraMaxParcela(&lt;PrecoNum&gt;,&lt;MaxParcelasProdNum&gt;);&lt;/script&gt;</pre>
+<br>
+
+<p>Você pode criar outros modelos de exibição de produtos.</p>
+
+<p>Mais informações sobre o EstiloProdutoOut.htm <br>
+<a href="https://www.rumo.com.br/sistema/adm/AjudaAdm.asp?ajuda=263" target="_blank">https://www.rumo.com.br/sistema/adm/AjudaAdm.asp?ajuda=263</a></p>
+
+<p>Veja outros modelos prontos de OUT <br>
+<a href="http://www.rumo.com.br/lojas/00000358/htm/InicioOuts.htm" target="_blank">http://www.rumo.com.br/lojas/00000358/htm/InicioOuts.htm</a></p>
+
+<p>Mais informações sobre a tag <br>
+<a href="https://www.rumo.com.br/sistema/adm/TagsEspeciais.htm" target="_blank">https://www.rumo.com.br/sistema/adm/TagsEspeciais.htm</a></p>
+<br>
+
+<p><b>Arquivo HomeParcelamento.htm</b></p>
+
+<!-- Inicio do Antigo Frame FC5255Home.htm-->
+<pre>
+<span>
+&lt;script language=JavaScript src=&lt;BaseLoja&gt;htm/JurosParcelas.js&gt;&lt;/script&gt;
+&lt;script&gt;
+function MostraMaxParcela(PrecoProd,MaxParcelas){
+  var ComSem;
+  if(PrecoProd==0||MaxParcelas==1||Juros.length==0)return;
+  if(MaxParcelas==0||MaxParcelas&gt;Juros.length)MaxParcelas=Juros.length;
+  if(Juros[MaxParcelas-1]&gt;0)ComSem=""; else ComSem="&lt;font color=#990000&gt;&nbsp;sem&nbsp;juros&lt;/font&gt;";
+  document.write("ou&nbsp;&lt;b&gt;"+MaxParcelas+"x&lt;/b&gt;"+ComSem+" de&nbsp;&lt;b&gt;"+FormatPrecoReais(CalculaParcelaJurosCompostos(PrecoProd,MaxParcelas))+"&lt;/b&gt;");
+}
+&lt;/script&gt;
+</span>
+</pre>
+<!-- Fim do Antigo Frame-->
+
+<b>Arquivo EstiloProdutoOut.htm</b></p>
+
+<!-- Inicio do Antigo Frame FC5255Estilo.htm-->
+<pre>
+<span>
+&lt;p10&gt;
+&lt;table cellpadding=4 cellspacing=0 width=100% height=100% align=center&gt;
+  &lt;tr&gt;
+    &lt;td class=EstFotoProd&gt;&lt;a href='ListaProdutos.asp?IDLoja=&lt;IDLoja&gt;&IDProduto=&lt;IDProduto&gt;'&gt;&lt;ImagemProd&gt;&lt;/a&gt;&lt;/td&gt;
+    &lt;td&gt;
+      &lt;table cellpadding=2 cellspacing=0&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;a href='ListaProdutos.asp?IDLoja=&lt;IDLoja&gt;&IDProduto=&lt;IDProduto&gt;' class=EstNomeProdCapa&gt;&lt;NomeProd&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td class=EstDescrProdCapa&gt;&lt;DescricaoCurta&gt;&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td class=EstPrecoProdCapa align=right&gt;&lt;Preco&gt; &lt;script&gt;MostraMaxParcela(&lt;PrecoNum&gt;,&lt;MaxParcelasProdNum&gt;);&lt;/script&gt;&lt;/td&gt;&lt;/tr&gt;
+      &lt;/table&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+&lt;/p10&gt;
+</span>
+</pre>
+<!-- Fim do Antigo Frame-->
+
+<!--AJUDAPARC-->
+<!--AJUDAINIC-->
+<!--2008A03M17D-->
+<!--2007A09M03D-->

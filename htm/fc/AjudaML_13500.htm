@@ -1,0 +1,255 @@
+<link href='https://www.rumo.com.br/lojas/00000009/htm/LojaSite.css' rel='stylesheet' type='text/css'>
+<style>
+.courrier {font-size:11pt;font-family:courier new,tahoma,verdana;color:#0D6D9E;}
+.courrierpeq {font-size:8pt;font-family:courier new,tahoma,verdana;color:#0D6D9E;}
+.tit {font-size:16pt;color:#139606;}
+.dest {font-size:10pt;font-family:tahoma,verdana;color:#990000;font-weight:bold;}
+.destverde {font-size:10pt;font-family:tahoma,verdana;color:#139606;font-weight:bold;}
+a.LinkAjudaDesign:link {color:black;text-decoration:none;font-family:verdana;font-size:11pt;}
+a.LinkAjudaDesign:visited {color:#999999;text-decoration:none;text-decoration:none;font-family:verdana;font-size:11pt;}
+a.LinkAjudaDesign:hover {color:navy;text-decoration:underline}
+ul li{padding:5px;}
+.EstFieldset {border-color:#888888;border-width:1px;border-style:solid;margin-left:50px;}
+.EstLegend {margin:10px;background-color:#d6e1ed;border-color:#888888;border-width:1px;border-style:solid;padding:4px 15px;text-align:center;}
+#ULGuia a{text-decoration:none;}
+#ULGuia li{padding:8px;}
+</style>
+
+<table width=100%>
+  <tr>
+    <td>
+    <ul id=ULGuia style="list-style-type: none;">
+      <li><a href="#TIT1">1) Como começar</a></li>
+      <li><a href="#TIT2">2) Ativando a integração</a></li>
+      <li><a href="#TIT3">3) Importando anúncios do MercadoLivre para a loja virtual</a></li>
+      <li><a href="#TIT4">4) Associando os anúncios aos produtos cadastrados na loja virtual</a></li>
+      <li><a href="#TIT5">5) Definindo as categorias do MercadoLivre</a></li>
+      <li><a href="#TIT6">6) Exportando os produtos da loja virtual para o MercadoLivre</a></li>
+      <li><a href="#TIT7">7) Gerenciando os anúncios</a></li>
+      <li><a href="#TIT8">8) Criando anúncios de forma individual</a></li>
+      <li><a href="#TIT9">9) Gerenciando pedidos</a></li>
+      <li><a href="#TIT10">10) Gerenciando perguntas e respostas</a></li>
+    </ul>  
+<br><br>
+      <table width=100%>
+
+        <tr><td class="tit"><a name="TIT1"></a><b>1) Como começar</b><br></td></tr>
+        <tr>
+          <td><br>
+            Caso você não tenha conta no MercadoLivre, <a href="http://www.mercadolivre.com.br/ajuda_cadastro.html" target="_blank">clique aqui</a> para criá-la.
+          </td>
+        </tr>
+
+        <tr><td><br><br><br></td></tr> 
+
+        <tr><td class="tit"><a name="TIT2"></a><b>2) Ativando a integração</b><br></td></tr>
+        <tr>
+          <td><br>
+            A configuração da integração é feita na página <b>Dados da loja</b> do site administrativo, na seção <b>MercadoLivre</b>. Para ativar a integração, selecione o país e clique no botão <b>Autorizar integração</b>, que abrirá uma janela para digitar o apelido e a senha de seu usuário no MercadoLivre. Se esta janela não abrir, desative o recurso de anti-popup de seu navegador. Em seguida, marque o campo <b>Ativo</b> e grave.<br><br>
+
+<center>
+<img src="http://ajuda.fastcommerce.com.br/lojas/00000009/images/MeliAuth01.png" hspace="10" vspace="10"><br><b>Autorizar integração</b><br><br><br>
+<img src="http://ajuda.fastcommerce.com.br/lojas/00000009/images/MeliAuth02.png" hspace="10" vspace="10"><br><b>Autorizando no MercadoLivre (passo 1)</b><br><br><br>
+<img src="http://ajuda.fastcommerce.com.br/lojas/00000009/images/MeliAuth03.png" hspace="10" vspace="10"><br><b>Autorizando no MercadoLivre (passo 2)</b><br><br><br>
+<img src="http://ajuda.fastcommerce.com.br/lojas/00000009/images/MeliAuth04.png" hspace="10" vspace="10"><br><b>Integração autorizada</b><br><br><br>
+<img src="http://ajuda.fastcommerce.com.br/lojas/00000009/images/MeliAuth05.png" hspace="10" vspace="10"><br><b>Informações da integração registradas</b><br><br><br>
+</center>
+<br><br><br>
+
+
+
+         <fieldset class=EstFieldset style="width:90%"><legend class=EstLegend>&nbsp; &nbsp; <b>Sincronismo</b> &nbsp; &nbsp;</legend>
+            <div style="padding:20px">Opcionalmente, altere os campos <b>Sincronismo de estoque</b> e <b>Sincronismo de preço</b> para indicar como serão feitos estes sincronismos por padrão:<ul><li><b>Não:</b> nenhum sincronismo.</li><li><b>Loja -> MercadoLivre:</b> alterações feitas na loja são refletidas no MercadoLivre.</li><li><b>Loja <- MercadoLivre:</b> alterações feitas no MercadoLivre são refletidas na loja.</li><li><b>Loja <-> MercadoLivre:</b> alterações feitas na loja são enviadas para o MercadoLivre e vice-versa.</li></ul></div>
+         </fieldset>
+         <br><br>
+
+         <fieldset class=EstFieldset style="width:90%"><legend class=EstLegend>&nbsp; &nbsp; <b>Recadastro automático</b> &nbsp; &nbsp;</legend>
+            <div style="padding:20px">Marque o campo <b>Recadastro automático</b> para que os anúncios sejam republicados quando forem finalizados.</div>
+         </fieldset>
+         <br><br>
+
+         <fieldset class=EstFieldset style="width:90%"><legend class=EstLegend>&nbsp; &nbsp; <b>Padronizando os títulos dos anúncios</b> &nbsp; &nbsp;</legend>
+            <div style="padding:20px">Preencha os campos <b>Título padrão dos anúncios</b> e <b>Subtítulo padrão dos anúncios</b> com o texto que será utilizado por padrão na criação de novos anúncios. Nestes campos pode-se utilizar <a href="http://www.fastcommerce.com.br/adm/AjudaAdm.asp?ajuda=456" target="_blank">tags especiais</a>, que serão substituídas por informações dos produtos.</div>
+         </fieldset>
+         <br><br>
+
+         <fieldset class=EstFieldset style="width:90%"><legend class=EstLegend>&nbsp; &nbsp; <b>Modelo de descrição (template)</b> &nbsp; &nbsp;</legend>
+            <div style="padding:20px">Opcionalmente, informe no campo <b>Modelo HTM de descrição</b> o nome do arquivo HTML com o design do anúncio. Clique no ícone <img src="http://www.rumo.com.br/adm/images/Seta5.gif" width=16 height=16 align=absmiddle> que fica ao lado do campo para enviar este arquivo para a pasta HTM da loja.<br><br><a href="http://www.fastcommerce.com.br/adm/TagsEspeciaisAnunciosMercadoLivre.htm" target="_blank">Clique aqui</a> para ver lista de tags especiais que podem ser utilizadas na descrição dos anúncios.</div>
+         </fieldset>
+         <br><br>
+
+         <fieldset class=EstFieldset style="width:90%"><legend class=EstLegend>&nbsp; &nbsp; <b>Modelo de descrição (template)</b> &nbsp; &nbsp;</legend>
+            <div style="padding:20px">Clique no botão <b>Categorias favoritas</b> para navegar pela hierarquia de categorias do MercadoLivre e selecionar aquelas que serão associadas a categorias e anúncios da loja.</div>
+         </fieldset>
+         <br><br>
+
+         <fieldset class=EstFieldset style="width:90%"><legend class=EstLegend>&nbsp; &nbsp; <b>Importando anúncios do MercadoLivre</b> &nbsp; &nbsp;</legend>
+            <div style="padding:20px">Clique no botão <b>Importar anúncios</b> para trazer para a loja virtual os anúncios pré-existentes do usuário no MercadoLivre. Após a importação, será possível associar estes anúncios a produtos da loja, através da ficha de cada produto.</div>
+         </fieldset>
+         <br><br>
+
+
+          </td>
+        </tr>
+
+        <tr><td><br><br><br></td></tr> 
+
+        <tr><td class="tit"><a name="TIT3"></a><b>3) Importando anúncios do MercadoLivre para a loja virtual</b><br></td></tr>
+        <tr>
+          <td>
+            Caso já venda através do MercadoLivre, utilize esta opção para trazer para o site administrativo da loja os anúncios do usuário no MercadoLivre. Após a importação, será possível associar estes anúncios a produtos da loja, através da ficha de cada produto.
+          </td>
+        </tr>
+
+        <tr><td><br><br><br></td></tr> 
+
+        <tr><td class="tit"><a name="TIT4"></a><b>4) Associando os anúncios aos produtos da loja</b><br></td></tr>
+        <tr>
+          <td>
+            Após importar os anúncios do MercadoLivre, é possível associar os anúncios aos produtos da loja e utilizar o recurso de sincronismo se desejar.<br><br>
+            Para associar, acesse a ficha de cadastro de um produto no site administrativo e clique no botão <b>Associar anúncio</b>. Uma lista de anúncios sem produtos associados será exibida com um botão ao lado de cada anúncio para associar:<br><br>
+<center>
+<img src="http://ajuda.fastcommerce.com.br/lojas/00000009/images/MeliAssoc01.png" hspace="10" vspace="10"><br><b>Associando anúncio (ficha de cadastro de produto)</b><br><br><br>
+<img src="http://ajuda.fastcommerce.com.br/lojas/00000009/images/MeliAssoc02.png" hspace="10" vspace="10"><br><b>Associando anúncio (lista de anúncios sem associação)</b><br><br><br>
+</center>
+            <b>OBS:</b> Se a loja exportar anúncios em massa ou criar anúncios a partir de produtos da loja, esta associação é automática.
+          </td>
+        </tr>
+
+        <tr><td><br><br><br></td></tr> 
+
+        <tr><td class="tit"><a name="TIT5"></a><b>5) Definindo as categorias do MercadoLivre</b><br></td></tr>
+        <tr>
+          <td>
+            Clique no botão <b>Categorias favoritas</b> da seção MercadoLivre da página <b>Dados da loja</b> do site administrativo para navegar pela hierarquia de categorias do MercadoLivre e selecionar aquelas que serão associadas a categorias e anúncios da loja. Estas categorias favoritas irão faciliar o trabalho de criação de anúncios de forma individual e na associação destas categorias às categorias da loja. Esta associação é utilizada para a exportação em massa de produtos para o MercadoLivre.
+<br><br>
+<center>
+<img src="http://ajuda.fastcommerce.com.br/lojas/00000009/images/MeliAssocCat01.png" hspace="10" vspace="10"><br><b>Categorias favoritas</b><br><br><br>
+<img src="http://ajuda.fastcommerce.com.br/lojas/00000009/images/MeliAssocCat02.png" hspace="10" vspace="10"><br><b>Criando lista de categorias favoritas</b><br><br><br>
+<img src="http://ajuda.fastcommerce.com.br/lojas/00000009/images/MeliAssocCat03.png" hspace="10" vspace="10"><br><b>Associando categorias da loja às categorias do MercadoLivre</b><br><br><br>
+</center>
+          </td>
+        </tr>
+
+        <tr><td><br><br><br></td></tr> 
+
+        <tr><td class="tit"><a name="TIT6"></a><b>6) Exportando os produtos da loja virtual para o MercadoLivre</b><br></td></tr>
+        <tr>
+          <td>
+            Através deste recurso é possível exportar produtos em massa para o MercadoLivre, criando anúncios associados e, opcionalmente, sincronizados com a loja. Veja um <a href="http://ajuda.fastcommerce.com.br/noticias.asp?IDLoja=9&IDNoticia=13508" target="_blank">passo-a-passo</a>.<br><br>
+            Antes de exportar, é preciso associar uma ou mais categorias da loja às respectivas categorias do MercadoLivre. Esta associação é feita através do campo <a href="http://www.fastcommerce.com.br/adm/AjudaAdm.asp?ajuda=452" target="_blank">Categoria no MercadoLivre</a> que fica na ficha de cada catetoria.<br><br>
+            A página de exportação é dividida em três seções:<br>
+            <ul>
+              <li>
+                <b>Filtro de produtos:</b> Nesta seção serão informados os critérios de seleção dos produtos que serão exportados.<br>
+                <center><img src="http://ajuda.fastcommerce.com.br/lojas/00000009/images/MeliExport01.png" hspace="10" vspace="10"><br><br></center>
+              </li>
+              <li>
+                <b>Dados dos novos anúncios:</b> os anúncios exportados serão criados com as informações contidas nesta seção, incluindo título, subtítulo, imagens etc.<br>
+                <center><img src="http://ajuda.fastcommerce.com.br/lojas/00000009/images/MeliExport02.png" hspace="10" vspace="10"><br><br></center>
+              </li>
+              <li>
+                <b>Descrições dos anúncios:</b> o design padronizado dos anúncios exportados é definido nesta seção.<br>
+                <center><img src="http://ajuda.fastcommerce.com.br/lojas/00000009/images/MeliExport03.png" hspace="10" vspace="10"><br><br></center>
+              </li>
+            </ul>
+
+            <br>O campo <b>Multiplicador do preço</b> pode ser utilizado para alterar os preços dos produtos exportados. Se este campo for preenchido com valor diferente de 1, os anúncios criados terão preços diferentes dos produtos da loja. Por exemplo, para oferecer um desconto de 30% nos anúncios, preencha este campo com 0,7. Para aumento de 15%, preencha este campo com 1,15.<br><br>Marque o campo <b>Recadastro automático</b> para que os anúncios finalizados sejam republicados automaticamente.<br><br>
+            A quantidade e a data de início dos anúncios são campos opcionais. Se a quantidade não for informada, será utilizada a quantidade em estoque de cada produto. Se a data de início não for informada, a publicação do anúncio ocorrerá logo após a liberação do mesmo pelo MercadoLivre.<br><br>
+            <a href="http://www.fastcommerce.com.br/adm/TagsEspeciaisAnunciosMercadoLivre.htm" target="_blank">Clique aqui</a> para ver lista de tags especiais que podem ser utilizadas na descrição dos anúncios.<br><br>
+            Antes de exportar, selecione o tipo de anúncio de acordo com a respectiva tarifa e a exposição desejada para os anúncios.<br><br>
+            Para maiores detalhes, <a href="http://www.fastcommerce.com.br/adm/AjudaAdm.asp?ajuda=464" target="_blank">clique aqui</a>
+          </td>
+        </tr>
+
+        <tr><td><br><br><br></td></tr> 
+        <tr><td class="tit"><a name="TIT7"></a><b>7) Gerenciando os anúncios</b><br></td></tr>
+        <tr>
+          <td>
+            É possível fazer alterações nos anúncios integrados, mudar o tipo de anúncio, pausar ou encerrar um anúncio, alterar os dados como descrição, nome etc.
+<br><br>
+<center>
+<img src="http://ajuda.fastcommerce.com.br/lojas/00000009/images/MeliAnunc01.png" hspace="10" vspace="10"><br><b>Lista de anúncios</b><br><br><br>
+<img src="http://ajuda.fastcommerce.com.br/lojas/00000009/images/MeliAnunc02.png" hspace="10" vspace="10"><br><b>Cadastro do anúncio</b><br><br><br>
+</center>
+
+          </td>
+        </tr>
+
+
+        <tr><td><br><br><br></td></tr> 
+        <tr><td class="tit"><a name="TIT8"></a><b>8) Criando anúncios de forma individual</b><br></td></tr>
+        <tr>
+          <td>
+            É possível criar um anúncio de forma individual no MercadoLivre. Veja detalhes, <a href="http://ajuda.fastcommerce.com.br/n13507" target="_blank">clicando aqui</a>.
+<br><br>            
+<b>8.1) Anúncios mais atraentes e vendedores:</b><br><br>
+O design da descrição do produto poderá utilizar modelos prontos ou ser totalmente personalizado. Seu arquivo HTML poderá conter tags especiais, que serão automaticamente substituídas por informações do produto (nome, preço, descrição etc). <a href="http://ajuda.fastcommerce.com.br/n13499" target="_blank">Clique aqui</a> para mais informações.<br><br>
+<br>
+<b>8.2) Calculador de frete:</b><br><br>
+Cada anúncio poderá conter um link onde o próprio cliente obterá o valor do frete, informando seu CEP e a quantidade de itens desejados. <a href="http://ajuda.fastcommerce.com.br/n13503" target="_blank">Clique aqui</a> para mais informações.<br><br>
+<br><br>
+          </td>
+        </tr>
+
+
+
+        <tr><td><br><br><br></td></tr> 
+        <tr><td class="tit"><a name="TIT9"></a><b>9) Gerenciando os pedidos</b><br></td></tr>
+        <tr>
+          <td>
+            Os novos pedidos feitos no MercadoLivre serão automaticamente importados para a loja virtual, para facilitar seu gerenciamento e permitir o uso dos relatórios do Fastcommerce. Seus status na loja serão mantidos sempre atualizados, incluindo os status de pagamento e de envio.
+<br><br>
+<center>
+<img src="http://ajuda.fastcommerce.com.br/lojas/00000009/images/MeliPedido01.png" hspace="10" vspace="10"><br><b>Lista de pedidos</b><br><br><br>
+<img src="http://ajuda.fastcommerce.com.br/lojas/00000009/images/MeliPedido02.png" hspace="10" vspace="10"><br><b>Retorno de informações do pedido</b> <a href="http://www.fastcommerce.com.br/adm/AjudaAdm.asp?ajuda=453" target="_blank">Ver detalhes</a><br><br><br>
+</center>
+
+É possível utilizar as <a href="http://www.fastcommerce.com.br/home.asp?idloja=1&pagina=recursos" target="_blank">centenas de recursos</a> de administração de pedidos de uma loja virtual nos pedidos importados do MercadoLivre. Veja alguns exemplos:
+<ul>
+<li><a href="http://www.fastcommerce.com.br/home.asp?idloja=1&pagina=RecFluxoPedidos" target="_blank">Fluxo multi-departamental dos pedidos</a></li>
+<li><a href="http://www.fastcommerce.com.br/home.asp?idloja=1&pagina=RecMensagens" target="_blank">Envio de mensagens pré-formatadas</a></li>
+<li><a href="http://www.fastcommerce.com.br/home.asp?idloja=1&pagina=RecFormasPag" target="_blank">Diversas formas de pagamento</a></li>
+<li><a href="http://www.fastcommerce.com.br/home.asp?idloja=1&pagina=RecRelatorios" target="_blank">Relatórios administrativos</a></li>
+<li><a href="http://www.fastcommerce.com.br/home.asp?idloja=1&pagina=RecNotaFiscal" target="_blank">Emissão de nota fiscal eletrônica (NFe)</a></li>
+</ul>
+
+          </td>
+        </tr>
+
+
+        <tr><td><br><br><br></td></tr> 
+        <tr><td class="tit"><a name="TIT10"></a><b>10) Gerenciando perguntas e respostas</b><br></td></tr>
+        <tr>
+          <td>
+           Através do site administrativo, é possível responder às perguntas feitas sobre cada anúncio e administrar as pendências. É possível também criar mensagens pré-formatadas com tags especiais dinâmicas para utilizar nas respostas e desta forma agilizar as respostas. (Site administrativo > Menu Mensagens > Mensagens enviadas para os clientes > Botão Incluir nova mensagem > Tipo: MercadoLivre)
+<br><br>
+<center>
+<img src="http://ajuda.fastcommerce.com.br/lojas/00000009/images/MeliQuestions01.png" hspace="10" vspace="10"><br><b>Lista de anúncios</b><br><br><br>
+<img src="http://ajuda.fastcommerce.com.br/lojas/00000009/images/MeliQuestions02.png" hspace="10" vspace="10"><br><b>Respondendo às perguntas</b><br><br><br>
+</center>
+
+          </td>
+        </tr>
+
+
+
+        <tr><td><br><br><br></td></tr> 
+
+        <tr><td class="tit"><b>Artigos relacionados:</b><br></td></tr>
+        <tr>
+          <td>
+            <br><a href="http://ajuda.fastcommerce.com.br/n13508" class=LinkAjudaDesign target="_blank"><b>1</b>) FC 13508 :: Como exportar produtos em massa para o MercadoLivre?</a><br>
+            <br><a href="http://ajuda.fastcommerce.com.br/n13507" class=LinkAjudaDesign target="_blank"><b>2</b>) FC 13507 :: Como anunciar um produto da loja no MercadoLivre?</a><br>
+            <br><a href="http://ajuda.fastcommerce.com.br/n13503" class=LinkAjudaDesign target="_blank"><b>3</b>) FC 13503 :: Como incluir link para página de cálculo de frete nos anúncios do MercadoLivre?</a><br>
+            <br><a href="http://ajuda.fastcommerce.com.br/n13499" class=LinkAjudaDesign target="_blank"><b>4</b>) FC 13499 :: Como utilizar design diferenciado nos meus anúncios no MercadoLivre?</a><br>
+          </td>
+        </tr>
+        <tr><td><br><br><br></td></tr> 
+
+
+
+      </table>
+    </td>
+  </tr>
+</table>

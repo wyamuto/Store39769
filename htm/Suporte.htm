@@ -1,0 +1,176 @@
+<script>
+function ValidaForm(){
+
+ //Contato Nome
+ if(isEmpty(document.form.NomeDe.value)){
+ AvisoErroCampo(document.form.NomeDe,'Informe seu nome.');
+ return false;
+ }
+
+ //E-mail
+ if(isEmpty(document.form.EmailDe.value) || !ValidaEmailInt(document.form.EmailDe.value)){
+ AvisoErroCampo(document.form.EmailDe,'Informe seu e-mail.');
+ return false;
+ }
+
+ //Descrição
+ if(isEmpty(document.form.Mensagem.value)){
+ AvisoErroCampo(document.form.Mensagem,'Informe sua dúvida.');
+ return false;
+ }
+ document.form.submit();
+}
+
+function ValidaEmailInt(sEmail) {
+ var regex=/^[a-zA-Z0-9._-]+@([a-zA-Z0-9.-]+\.)+[a-zA-Z0-9.-]{2,4}$/;
+ return regex.test(sEmail);
+}
+
+function retiraEspaco(theString) {
+//retira espaços de string
+ if(theString.indexOf(" ")>=0){
+ var i=0;
+ while(theString.indexOf(" ")>=0){
+ if(theString.charAt(i)==" ")theString=theString.substring(0,i)+theString.substring(i+1,theString.length);
+ else i++;
+ }
+ newString=theString;
+ } 
+ else newString=theString;
+ return newString;
+}
+
+function isEmpty(s){return((retiraEspaco(s)==null)||(retiraEspaco(s).length==0));}
+
+function AvisoErroCampo(theField,warnText){
+ theField.focus();
+ theField.select();
+ alert(warnText);
+ return false;
+}
+
+function AvisoErroCampo_SelectBox(theField,s){
+ theField.focus();
+ alert(s);
+ return false;
+}
+</script>
+
+            <form name=form method=POST action="EnviaMail.asp" onsubmit="return ValidaForm(this);">
+            <input type=hidden name=NomePara value='Equipe Fastcommerce'>
+            <input type=hidden name=EmailPara value='suporte@fastcommerce.com.br'>
+            <input type=hidden name=URLRetorno value='custom.asp?IDLoja=<IDLoja>&arq=Agradece.htm'>
+
+
+      <table width=70% cellspacing=0 cellpadding=5 align=center class=EstTabQuadroNew>
+        <tr>
+          <td align=center height=30 class=TitTab colspan=2>Formulário para suporte</td>
+        </tr>
+        <tr>
+          <td colspan=2 align=center><br></td>
+        </tr>
+        <tr>
+          <td align=right><b>Nome:</b></td>
+          <td><input type=text name=NomeDe size=25 maxlength=50 class=InputText1 style="width:240px;"></td>
+        </tr>
+        <tr>
+          <td align=right><b>E-mail:</b></td>
+          <td><input type=text name=EmailDe size=25 maxlength=50 class=InputText1 style="width:240px;"></td>
+        </tr>
+        <tr>
+          <td align=right><b>Loja:</b></td>
+          <td><input type=text name=Loja size=25 maxlength=50 class=InputText1 style="width:180px;">&nbsp; (se tiver, informe o nome da loja)</td>
+        </tr>
+        <tr>
+          <td align=right><b>Assunto:</b></td>
+          <td><select name=Assunto size=1 class=InputText1>
+              <option value='[Suporte] Ajuda online ::  ' selected class=Lista3>&nbsp;Selecione...</option>
+              <option value='[Suporte] Ajuda online ::  Configurações gerais da loja' class=Lista3>&nbsp;Configurações gerais da loja</option>
+              <option value='[Suporte] Ajuda online ::  Chat' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Chat</option>
+              <option value='[Suporte] Ajuda online ::  Domínio próprio' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Domínio próprio</option>
+              <option value='[Suporte] Ajuda online ::  E-mails da loja' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;E-mails da loja</option>
+              <option value='[Suporte] Ajuda online ::  Envio & Frete' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Envio & Frete</option>
+              <option value='[Suporte] Ajuda online ::  ' class=Lista3>&nbsp;Design & conteúdo</option>
+              <option value='[Suporte] Ajuda online ::  Cores da loja' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Cores da loja</option>
+              <option value='[Suporte] Ajuda online ::  Arquivo CSS' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Arquivo CSS</option>
+              <option value='[Suporte] Ajuda online ::  Arquivos HTMLs personalizados' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Arquivos HTMLs personalizados</option>
+              <option value='[Suporte] Ajuda online ::  Layout da loja' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Layout da loja</option>
+              <option value='[Suporte] Ajuda online ::  Barras laterais' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Barras laterais</option>
+              <option value='[Suporte] Ajuda online ::  Estilo da lista de produtos' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Estilo da lista de produtos</option>
+              <option value='[Suporte] Ajuda online ::  Area de busca no topo' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Area de busca no topo</option>
+              <option value='[Suporte] Ajuda online ::  Titulos das páginas' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Titulos das páginas</option>
+              <option value='[Suporte] Ajuda online ::  Botões da loja' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Botões da loja</option>
+              <option value='[Suporte] Ajuda online ::  Menus de navegação' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Menus de navegação</option>
+              <option value='[Suporte] Ajuda online ::  Links para páginas' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Links para páginas</option>
+              <option value='[Suporte] Ajuda online ::  Banners da loja' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Banners da loja</option>
+              <option value='[Suporte] Ajuda online ::  Pagamentos' class=Lista3>&nbsp;Pagamentos</option>
+              <option value='[Suporte] Ajuda online ::  Cartão VISA' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Cartão VISA</option>
+              <option value='[Suporte] Ajuda online ::  Cartão Mastercard' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Cartão Mastercard</option>
+              <option value='[Suporte] Ajuda online ::  Cartão Diners' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Cartão Diners</option>
+              <option value='[Suporte] Ajuda online ::  Cartão AMEX' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Cartão AMEX</option>
+              <option value='[Suporte] Ajuda online ::  Cartão Hipercard' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Cartão Hipercard</option>
+              <option value='[Suporte] Ajuda online ::  Itaú ShopLine' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Itaú ShopLine</option>
+              <option value='[Suporte] Ajuda online ::  RealPague' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;RealPague</option>
+              <option value='[Suporte] Ajuda online ::  PayPal' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;PayPal</option>
+              <option value='[Suporte] Ajuda online ::  F2B' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;F2B</option>
+              <option value='[Suporte] Ajuda online ::  Finasa Online' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Finasa Online</option>
+              <option value='[Suporte] Ajuda online ::  Boleto bancário' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Boleto bancário</option>
+              <option value='[Suporte] Ajuda online ::  Sobre fraudes' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Sobre fraudes</option>
+              <option value='[Suporte] Ajuda online ::  Venda com parcelamento' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Venda com parcelamento</option>
+              <option value='[Suporte] Ajuda online ::  Parcelamento na lista de produtos' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Parcelamento na lista de produtos</option>
+              <option value='[Suporte] Ajuda online ::  Pedidos' class=Lista3>&nbsp;Pedidos</option>
+              <option value='[Suporte] Ajuda online ::  Emissão de nota fiscal' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Emissão de nota fiscal</option>
+              <option value='[Suporte] Ajuda online ::  Impressão de etiquetas' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Impressão de etiquetas</option>
+              <option value='[Suporte] Ajuda online ::  Status dos pedidos' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Status dos pedidos</option>
+              <option value='[Suporte] Ajuda online ::  Fluxo de pedidos' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Fluxo de pedidos</option>
+              <option value='[Suporte] Ajuda online ::  Produtos' class=Lista3>&nbsp;Produtos</option>
+              <option value='[Suporte] Ajuda online ::  Cadastro de produtos' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Cadastro de produtos</option>
+              <option value='[Suporte] Ajuda online ::  Cadastro em lote (CSV)' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Cadastro em lote (CSV)</option>
+              <option value='[Suporte] Ajuda online ::  Cores de produtos' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Cores de produtos</option>
+              <option value='[Suporte] Ajuda online ::  Sub-produtos' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Sub-produtos</option>
+              <option value='[Suporte] Ajuda online ::  Categorias da loja' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Categorias da loja</option>
+              <option value='[Suporte] Ajuda online ::  Sub-categorias' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Sub-categorias</option>
+              <option value='[Suporte] Ajuda online :: Parceiros' class=Lista3>&nbsp;Parceiros</option>
+              <option value='[Suporte] Ajuda online ::  Cadastro de parceiros' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Cadastro de parceiros</option>
+              <option value='[Suporte] Ajuda online ::  Links para parceiros' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Links para parceiros</option>
+              <option value='[Suporte] Ajuda online ::  Cadastro de produtos via XML' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Cadastro de produtos via XML</option>
+              <option value='[Suporte] Ajuda online ::  Integração com sites de comparação de preços' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Integração com sites de comparação de preços</option>
+              <option value='[Suporte] Ajuda online :: Outros' class=Lista3>&nbsp;Outros</option>
+              <option value='[Suporte] Ajuda online ::  Divulgação da loja' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Divulgação da loja</option>
+              <option value='[Suporte] Ajuda online ::  Informações' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Informações</option>
+              <option value='[Suporte] Ajuda online ::  Pageviews da loja' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Pageviews da loja</option>
+              <option value='[Suporte] Ajuda online ::  Planos especiais' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Planos especiais</option>
+              <option value='[Suporte] Ajuda online ::  Reclamações' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Reclamações</option>
+              <option value='[Suporte] Ajuda online ::  Marketplace Azul.com' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Marketplace MilhoAzul</option>
+              <option value='[Suporte] Ajuda online ::  Sugestões' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Sugestões</option>
+              </select></td>
+        </tr>
+        <tr>
+          <td align=right><b>Mensagem:</b></td>
+          <td><textarea cols=18 rows=5 name=Mensagem class=InputText1 style="width:345px;height:120px;"></textarea></td>
+        </tr>
+        <tr>
+          <td colspan=2 align=center>
+            <table border=0>
+               <tr>
+                 <td align="right">
+                   Digite os caracteres da imagem:
+                 </td>
+                 <td width="50">
+                   <input class=InputText1 style="width:50px" name=CodCaptcha maxlength=10>
+                 </td>
+                 <td>
+                   <img src=Captcha.asp?IDLoja=<IDLoja> width=64 height=32><br><br>
+                 </td>
+              </tr>
+            </table>
+          <td>
+        </tr>  
+        <tr>
+          <td colspan=2 align=center>
+            <input type=button name=Enviar value=' Enviar ' class=InputButton1 onclick='javascript:ValidaForm()'><br><br>
+          </td>
+        </tr>  
+      </table>
+
+      </form>

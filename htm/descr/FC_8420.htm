@@ -1,0 +1,137 @@
+<p>Os arquivos devem ter os seguintes nomes, para cada novo campo:</p>
+<ul>
+<li><p><b>CliCampo1.htm</b>, <b>CliCampo2.htm</b> e <b>CliCampo3.htm</b></p></li>
+<li><p><b>PedCampo1.htm</b>, <b>PedCampo2.htm</b> e <b>PedCampo3.htm</b></p></li>
+</ul>
+<br>
+<p>Os arquivos <b>CliCampo<span class="dest">X</span>.htm</b> são referentes aos campos que vão aparecer na ficha de cadastro dos clientes.</p>
+
+<p>Os arquivos <b>PedCampo<span class="dest">X</span>.htm</b> são referentes aos campos que vão aparecer na ficha de dados de entrega do pedido.</p>
+
+<center>Veja recurso <b>SEM</b> personalização do campo:
+<br>
+<img src="/lojas/00000009/prod/FC8420a.png" class="img-responsive"></center>
+<br>
+<center>Veja recurso <b>COM</b> personalização do campo:
+<br>
+<img src="/lojas/00000009/prod/FC8420b.png" class="img-responsive"></center>
+<br>
+<p>Além da personalização é possível validar estes campos, onde o <b>name</b> deverá ser sempre <b>P2CliCampo<span class="dest">X</span></b> ou <b>P2PedCampo<span class="dest">X</span></b>, onde:</p>
+<br>
+<ul>
+<li><p><b>P2CliCampo<span class="dest">X</span></b> deve ser utilizado quando os campos forem adicionados para o <b>cadastro de cliente</b>.<br><b>Ex.:</b> Se criou o arquivo <b>CliCampo1.htm</b> o "name" deverá ser <b>P2CliCampo<span class="dest">1</span></b></p></li>
+<li><p><b>P2PedCampo<span class="dest">X</span></b> deve ser utilizado quando os campos forem adicionados para o <b>dados de entrega</b>.<br><b>Ex.:</b> Se criou o arquivo <b>PedCampo3.htm</b> o "name" deverá ser <b>P2PedCampo<span class="dest">3</span></b></b></p></li>
+</ul>
+<br>
+<p>Seguem exemplos de códigos para campos de cadastro de clientes, com validações para <b>radio button</b>, <b>select</b> e <b>checkbox</b>.</p>
+
+<!-- Inicio do Antigo Frame FC8420c.htm-->
+<pre>
+<span>
+<b>&lt;!-- Radio button --></b>
+&lt;input id="P2CliCampoX" name=<b>"P2CliCampoX"</b> onchange="F$.fnCleanErrField(<b>'P2CliCampoX</b>');" type="radio" value="Blogs">Blogs
+&lt;input id="P2CliCampoX" name=<b>"P2CliCampoX"</b> onchange="F$.fnCleanErrField(<b>'P2CliCampoX</b>');" type="radio" value="Indicação de Amigos"> Indicação de Amigos
+&lt;input id="P2CliCampoX" name=<b>"P2CliCampoX"</b> onchange="F$.fnCleanErrField(<b>'P2CliCampoX</b>');" type="radio" value="Instagram"> Instagram
+&lt;input id="P2CliCampoX" name=<b>"P2CliCampoX"</b> onchange="F$.fnCleanErrField(<b>'P2CliCampoX</b>');" type="radio" value="Facebook"> Facebook
+&lt;input id="P2CliCampoX" name=<b>"P2CliCampoX"</b> onchange="F$.fnCleanErrField(<b>'P2CliCampoX</b>');" type="radio" value="YouTube"> YouTube
+&lt;input id="P2CliCampoX" name=<b>"P2CliCampoX"</b> onchange="F$.fnCleanErrField(<b>'P2CliCampoX'</b>);" type="radio" value="Google"> Google
+&lt;input id="P2CliCampoX" name=<b>"P2CliCampoX"</b> onchange="F$.fnCleanErrField(<b>'P2CliCampoX'</b>);" type="radio" value="Revistas"> Revistas
+&lt;input id="P2CliCampoX" name=<b>"P2CliCampoX"</b> onchange="F$.fnCleanErrField(<b>'P2CliCampoX'</b>);" type="radio" value="Outras Redes Sociais"> Outras Redes Sociais
+&lt;input id="P2CliCampoX" name=<b>"P2CliCampoX"</b> onchange="F$.fnCleanErrField(<b>'P2CliCampoX'</b>);" type="radio" value="Outros"> Outros
+
+&lt;script>
+setTimeout("<b>fnCliCampoX()</b>",1);
+function <b>fnCliCampoX()</b>{
+ 
+  var iSelect=0,Achei=false;
+while(iSelect&lt;document.Form1.<b>P2CliCampoX</b>.length && !Achei){
+  if(document.Form1.<b>P2CliCampoX</b>[iSelect].value=="&lt;ValorCampo>"){document.Form1.<b>P2CliCampoX</b>[iSelect].checked=true;Achei=true;}
+  else iSelect++;
+}
+}
+&lt;/script>
+<span>&lt;!-- Altere onde está <b>P2CliCampoX</b> para o "name" de acordo com o campo utilizado.
+Ex: Se utilizou o "campo 1" altere para <b>P2CliCampo1</b> e a função para <b>fnCliCampo1</b> --></span>
+
+<b>&lt;!-- Select --></b>
+&lt;select name='<b>P2CliCampoX</b>' id='<b>P2CliCampoX</b>' size='1' onchange="F$.fnCleanErrField('<b>P2CliCampoX</b>');">
+      &lt;option value=''>Selecione&lt;/option>
+      &lt;option value="Amadeirado">Amadeirado&lt;/option>
+      &lt;option value="Floral">Floral&lt;/option>
+      &lt;option value="Cítrico">Cítrico&lt;/option>
+      &lt;option value="Não sei">Não sei&lt;/option>
+&lt;/select>
+
+&lt;script>
+setTimeout("<b>fnCliCampoX</b>()",1);
+function <b>fnCliCampoX</b>(){
+
+  var iSelect=0,Achei=false;
+while(iSelect&lt;document.Form1.<b>P2CliCampoX</b>.length && !Achei){
+  if(document.Form1.<b>P2CliCampoX</b>[iSelect].value=="&lt;ValorCampo>"){document.Form1.<b>P2CliCampoX</b>.selectedIndex=iSelect;Achei=true;}
+  iSelect++;
+}
+
+}
+&lt;/script>
+<span>&lt;!-- Altere onde está <b>P2CliCampoX</b> para o "name" de acordo com o campo utilizado.
+Ex: Se utilizou o "campo 1" altere para <b>P2CliCampo1</b> e a função para <b>fnCliCampo1</b> --></span>
+
+<b>&lt;!-- Checkbox --></b>
+&lt;input type="checkbox" name="<b>P2CliCampoX</b>" value="Esporte"> Esporte
+&lt;input type="checkbox" name="<b>P2CliCampoX</b>" value="Saúde"> Saúde
+&lt;input type="checkbox" name="<b>P2CliCampoX</b>" value="Negócios"> Negócios
+
+&lt;script>
+function <b>fnCliCampoX</b>(){
+  var aValores="&lt;ValorCampo>".split(", ");
+  var iSelect=0,Achei,iArray;
+  while(iSelect&lt;document.Form1.<b>P2CliCampoX</b>.length){
+    Achei=false;
+    iArray=0;
+    while(iArray&lt;aValores.length && !Achei){
+      if(document.Form1.<b>P2CliCampoX</b>[iSelect].value==aValores[iArray]){document.Form1.<b>P2CliCampoX</b>[iSelect].checked=true;Achei=true;}
+      else iArray++;
+    }
+    iSelect++;
+  }
+}
+setTimeout("<b>fnCliCampoX</b>()",1000);
+&lt;/script>
+<span>&lt;!-- Altere onde está <b>P2CliCampoX</b> para o "name" de acordo com o campo utilizado.
+Ex: Se utilizou o "campo 1" altere para <b>P2CliCampo1</b> e a função para <b>fnCliCampo>1</b> --></span>
+</pre>
+<br>
+<!-- Fim do Antigo Frame-->
+
+<p>Seguem exemplos de códigos para campos de dados de entrega, com validações para <b>radio button</b>, <b>select</b> e <b>checkbox</b>.</p>
+
+<!-- Inicio do Antigo Frame FC8420d.htm-->
+<pre><span><b>&lt;!-- Radio button --></b>
+&lt;input id="<b>P2PedCampoX</b>" onchange="F$.fnCleanErrField('<b>P2PedCampoX</b>');" type="radio" value="Sem preferência">Sem preferência
+&lt;input id="<b>P2PedCampoX</b>" onchange="F$.fnCleanErrField('<b>P2PedCampoX</b>');" type="radio" value="Manhã"> Manhã
+&lt;input id="<b>P2PedCampoX</b>" onchange="F$.fnCleanErrField('<b>P2PedCampoX</b>');" type="radio" value="Tarde"> Tarde
+&lt;input id="<b>P2PedCampoX</b>" onchange="F$.fnCleanErrField('<b>P2PedCampoX</b>');" type="radio" value="Noite"> Noite
+&lt;input id="<b>P2PedCampoX</b>" onchange="F$.fnCleanErrField('<b>P2PedCampoX</b>');" type="radio" value="Madrugada"> Madrugada
+
+<span>&lt;!-- Altere onde está <b>P2PedCampoX</b> para o "name" de acordo com o campo utilizado.
+Ex: Se utilizou o "campo 1" altere para <b>P2PedCampo1</b> --></span>
+
+<b>&lt;!-- Select --></b>
+&lt;select name='<b>P2PedCampoX</b>' id='<b>P2PedCampoX</b>' size='1' onchange="F$.fnCleanErrField('<b>P2PedCampoX</b>');">
+      &lt;option value=''>Selecione&lt;/option>
+      &lt;option value="Não informado">Não informado&lt;/option>
+      &lt;option value="Masculino">Masculino&lt;/option>
+      &lt;option value="Feminino">Feminino&lt;/option>
+&lt;/select>
+
+<span>&lt;!-- Altere onde está <b>P2PedCampoX</b> para o "name" de acordo com o campo utilizado.
+Ex: Se utilizou o "campo 1" altere para <b>P2PedCampo1</b> --></span>
+
+<b>&lt;!-- Checkbox --></b>
+&lt;input id="<b>P2PedCampoX</b>" onchange="F$.fnCleanErrField('<b>P2PedCampoX</b>');" type="checkbox" value="8h às 12h">8h às 12h
+&lt;input id="<b>P2PedCampoX</b>" onchange="F$.fnCleanErrField('<b>P2PedCampoX</b>');" type="checkbox" value="12h às 17h"> 12h às 17h
+
+<span>&lt;!-- Altere onde está <b>P2PedCampoX</b> para o "name" de acordo com o campo utilizado.
+Ex: Se utilizou o "campo 1" altere para <b>P2PedCampo1</b> --></span></span></pre>
+<!-- Fim do Antigo Frame-->

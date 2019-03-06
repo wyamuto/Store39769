@@ -1,0 +1,36 @@
+/* FastCommerce - Estilo Personalizado */
+
+body {font-size:10pt;font-family:verdana,arial;color:#333333;}
+p {font-size:8pt;font-family:verdana,arial}
+TH {background:#FFFFCC;color:#336699;font-size:9pt;font-family:verdana,arial}
+TD {font-size:8pt;font-family:tahoma,verdana}
+ul {list-style:outside url('../images/UL.gif');margin-top:0px;margin-left:30px;padding:0}
+li {padding:3}
+.smText {font-size:9pt;font-family:verdana,tahoma,verdana}
+.dest {font-size:9pt;font-family:tahoma,verdana;color:#990000;font-weight:bold;}
+.courrier {font-size:10pt;font-family:courier new,tahoma,verdana;color:#0D6D9E;}
+.mnText {font-size:7pt;font-family:verdana,arial}
+.mdtxt {font-size:9pt;font-family:verdana,arial}
+.lgtxt {font-size:11pt;font-weight:bold;color:#0066CC;font-family:tahoma,verdana;text-decoration:none}
+
+a {color:#0B5A82;font-family:tahoma;font-size:9pt;}
+a:visited {color:#0B5A82;font-family:tahoma;}
+a:Active {color:#F93030;font-family:tahoma;}
+a:hover{color:#30A1DB;font-family:tahoma;}
+
+.LinkRodape {color:#0B5A82;font-family:tahoma;font-size:8pt;}
+.LinkRodape:visited {color:#0B5A82;font-family:tahoma;}
+.LinkRodape:Active {color:#F93030;font-family:tahoma;}
+.LinkRodape:hover{color:#30A1DB;font-family:tahoma;}
+
+.FundoSiteCentro{background:#FFFFFF}
+.FundoTopoExt{background:#39594B}
+.FundoSiteInt{background:#FFFFFF}
+
+.InputText {border-color:#0A1611;border-width:1;border-style:solid;background-color:#F5F5F5;font-size:11;font-family:tahoma,verdana;color:#365C31}
+.InputButton {border-width:1;font-size:11;font-family:verdana}
+.BotVerMais {color:#FFFFFF;font-size:8pt;font-family:verdana,arial;font-weight:bold;text-decoration:none}
+.BotVerMais:hover {color:#FFFFFF;text-decoration:underline}
+.EstTabQuadro {background:#FFFFFF;font-size:8pt;font-family:arial}
+
+.FundoBarraDireita{background:#000000}

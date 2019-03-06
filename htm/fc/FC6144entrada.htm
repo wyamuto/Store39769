@@ -1,0 +1,48 @@
+<style>
+.courrierpeq {font-size:8pt;font-family:courier new,tahoma,verdana;color:#0D6D9E;}
+.destpeq {font-size:8pt;font-family:tahoma,verdana;color:#990000;font-weight:bold;}
+</style>
+
+<pre>
+<span class=courrierpeq>
+&lt;script&gt;
+function GetCookie(name){
+var arg=name+"=";
+var alen=arg.length;
+var clen=document.cookie.length;
+var i=0;
+while (i&lt;clen){
+var j=i+alen;
+if(document.cookie.substring(i,j)==arg)return getCookieVal(j);
+i=document.cookie.indexOf(" ",i)+1;
+if(i==0)break;
+}
+return null;
+}
+
+
+function getCookieVal(offset){
+var endstr=document.cookie.indexOf(";",offset);
+if (endstr==-1)endstr=document.cookie.length;
+return unescape(document.cookie.substring(offset,endstr));
+}
+
+
+function SetCookie(name,value){
+var argv=SetCookie.arguments;
+var argc=SetCookie.arguments.length;
+var expires=(argc&gt;2)?argv[2]:null;
+var path=(argc&gt;3)?argv[3]:null;
+var domain=(argc&gt;4)?argv[4]:null;
+var secure=(argc&gt;5)?argv[5]:false;
+document.cookie=name+"="+escape(value)+((expires==null)?"":(";expires=" + expires.toGMTString()))+((path==null)?"":(";path="+path))+((domain==null)?"":(";domain="+domain))+((secure==true)?"; secure":"");
+}
+
+
+if(GetCookie('origem')==null){
+SetCookie('origem', 1);
+location='&lt;BaseLoja&gt;htm/<span class=destpeq>entrada.htm</span>';
+}
+&lt;/script&gt;
+</span>
+</pre>

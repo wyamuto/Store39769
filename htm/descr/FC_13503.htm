@@ -1,0 +1,56 @@
+<p>Com o calculador de frete disponível no <b>Fastcommerce</b>, cada anúncio poderá conter um link onde o próprio cliente obterá o valor do frete, informando seu CEP e a quantidade de itens desejados. Desta forma a loja automatiza parte do processo e evita perder tempo respondendo algumas das perguntas mais comuns feitas pelos consumidores em um anúncio: "Qual é o valor do frete para XXXX?", "Se eu comprar 5 unidades, qual o valor do frete?", "Qual o prazo de entrega para minha cidade?" etc.</p>
+
+<p>O calculador de frete está disponível gratuitamente para todas as lojas que utilizam o Fastcommerce e que estão integradas ao MercadoLivre.</p>
+<br>
+
+<p><b>Seguem algumas vantagens deste recurso:</b></p>
+
+<ul><li><p>O cálculo do frete utiliza as mesmas tabelas de frete já disponibilizadas na loja virtual e informa simultaneamente preços e prazos de entrega para o consumidor.</p></li>
+<li><p>O cálculo do frete é feito através do CEP do cliente, levando em consideração a quantidade que será comprada.</p></li>
+<li><p>O vendedor não precisa calcular manualmente o frete e responder toda vez que um consumidor perguntar quanto custa o frete.</p></li>
+<li><p>O consumidor já sabendo quanto irá pagar pelo frete, tem  maior chance de concretizar a compra.</p></li>
+</ul>
+<br>
+<p><a href="http://mercadolivre1.lojavirtualfc.com.br/freight.asp?IDLoja=26967&fsty=1&IDProduto=4378131" target="_blank">Clique aqui</a> para ver um exemplo do calculador de frete.</p>
+<br>
+
+<p><b>1) Criando o link de forma manual</b></p>
+
+<p>O padrão do link utilizado para este calculador de frete é:</p>
+
+<pre>http://www.dominiodaloja.com.br/freight.asp?IDLoja=99999&fsty=1&IDProduto=999999</pre>
+<br>
+
+<p>No link acima, informe o domínio da loja, o ID da loja, o ID do produto e o estilo da página padrão de cálculo de frete (&fsty=1).</p>
+<br>
+
+<p><b>2) Criando o link de forma automática com a utilização de tag especial</b></p>
+
+<p>Nos <a href="/prod,idloja,9,idproduto,4996781" target="_blank">modelos prontos</a> de descrição de anúncios oferecidos pelo Fastcommerce, já existe um link para o calculador de frete de forma automática. Assim, o lojista não precisará criar o link de forma manual, caso utilizde estes modelos.</p>
+
+<p>Exemplo:</p>
+
+<pre>&lt;a href="<span>&lt;URLFrete></span>" target="_blank">LINK&lt;/a></pre>
+<br>
+
+<p>&lt;URLFrete> é substituído automaticamente pela URL do cálculo de frete deste produto no momento da criação do anúncio. Você pode utilizar este exemplo em seu modelo.</p>
+<br>
+
+<p><b>3) Personalizando a página de cálculo de frete</b></p>
+
+<p>Para personalizar esta página, crie o link da seguinte maneira no HTML da descrição do anúncio:</p>
+
+<p>&lt;a href="<span>http://www.dominiodaloja.com.br/listaprodutos.asp?IDLoja=99999&IDProduto=&lt;IDProduto>&sty=1&int=1</span>" target="_blank">LINK&lt;/a></p>
+
+<p>No link acima, informe o domínio da loja, o ID da loja e o estilo da página personalizada de cálculo de frete (&sty=1). Neste caso a loja deverá enviar um arquivo com o nome <b>EstiloProduto1.htm</b> para a pasta <b>HTM</b> do gerenciador de arquivos da loja com o design desejado para o calculador de frete.</p>
+
+<br>
+<p><a href="/dnload/EstiloFrete1.zip">Clique aqui</a> para fazer o download do modelo padrão, que poderá ser utilizado como base para a criação de um modelo personalizado.</p>
+<br>
+
+<p><b>Obs¹:</b> Este recurso só está disponível se a loja utiliza a opção <b>Utilizar faixas de CEP (Brasil)</b> em <b>Formas de envio</b> da página <b>Envio & frete</b> do site administrativo.</p>
+
+<p><b>Obs²:</b> O HTML da descrição do anúncio pode conter tags especiais que serão substituídas de forma dinâmica com informações do produto. <a href="/adm/TagsEspeciaisAnunciosMercadoLivre.htm" target="_blank">Clique aqui</a> para ver esta lista de tags especiais.</p>
+
+<p><b>Obs³:</b> O HTML da página do calculador de frete também pode conter tags especiais que serão substituídas de forma dinâmica com informações do produto. <a href="/adm/TagsEspeciaisProdutos.htm" target="_blank">Clique aqui</a> para ver esta lista de tags especiais.</p>
+

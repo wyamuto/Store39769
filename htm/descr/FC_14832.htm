@@ -1,0 +1,39 @@
+<p><span class="dest NewsPassos">1º Passo</span></p>
+<p>Efetue um backup dos arquivos que serão alterados nesta implantação.</p>
+<br>
+
+<p><span class="dest NewsPassos">2º Passo</span></p>
+<p>Inclua o script abaixo ao final do seu arquivo <b>LojaLib.js</b>:</p>
+<pre>function fnCNPJInscrText(){
+  var oTextList = document.querySelectorAll("#idTableRGFC .smText");
+  if(oTextList && oTextList.length > 0){
+    for(var i=0; i< oTextList.length; i++){
+    var oText = oTextList[i];
+    var sText = oText.textContent;
+      if( (sText.toUpperCase()).indexOf("/MUNICIPAL") >= 0 ){
+      oText.id="idTxtIncrCNPJ_FC";
+      if(FC$.Page=="Register"){
+          oText.innerHTML = "&nbsp; Inscrição Estadual ou informe isento.";
+      }else if(FC$.Page=="Checkout"){
+          oText.innerHTML = "&nbsp; Estadual ou informe isento";
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;}
+&nbsp;}
+  if(!document.querySelector("#idTableRGFC #idTxtIncrCNPJ_FC")){
+  setTimeout(function(){fnCNPJInscrText();},500);
+  }
+}</pre>  
+<br>
+
+<p><span class="dest NewsPassos">3º Passo</span></p>
+<p>Inclua no início do arquivo <b>Rodape.htm</b> o código abaixo:</p>
+<pre>&lt;script>
+if(FC$.Page=="Register" && FC$.Step=="Registration")fnCNPJInscrText();
+&lt;/script></pre>
+<br>
+
+<p><b>Obs: </b>Caso a loja utilize o Xtreme Checkout é necessário incluir a chamada da função no arquivo <b>PedRodape.htm</b> para que funcione corretamente no fechamento do pedido.</p>
+<pre>&lt;script>
+setTimeout(function(){fnCNPJInscrText();},1000);
+&lt;/script></pre>

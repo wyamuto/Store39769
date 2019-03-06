@@ -1,0 +1,474 @@
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<p><span class="dest NewsPassos">1º Passo</span></p>
+<p>Insira a seguinte linha no início do arquivo BarraTopo.htm:</p>
+
+<pre>&lt;link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"></pre>OBS: Se sua loja já utiliza o Bootstrap em seu design, o passo acima não é necessário. 
+<br>
+
+<p><span class="dest NewsPassos">2º Passo</span></p>
+<p>Escolha os ícones desejados. Veja a lista abaixo.</p>
+<br>
+
+<p><span class="dest NewsPassos">3º Passo</span></p>
+<p>Defina em quais arquivos você deseja inserir este ícones (topo, rodapé, home, detalhes de produtos etc).</p>
+
+<p>Inclua a linha abaixo na posição onde o ícone será exibido, alterando o nome que está em negrito para o nome do ícone que deseja utilizar.</p>
+
+<pre>&lt;span class="glyphicon <strong>glyphicon-shopping-cart</strong>"&gt;&lt;/span&gt;</pre>
+<br>
+
+<p><span class="dest NewsPassos">4º Passo</span></p>
+
+<p>Para alterar o tamanho e a cor do ícone, utilize os atributos <strong>font-size</strong> e <strong>color</strong> na classe <strong>glyphicon</strong>. Segue exemplo desta alteração, que deve ser feita no arquivo LojaSite.css que fica na pasta htm da loja:</p>
+
+<pre>.glyphicon{font-size:25px;color:#FF6600}</pre>
+<br>
+
+<p><b>Lista de ícones e respectivas classes:</b></p>
+
+
+<div class="container">
+	<div class="row text-center">
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-asterisk"></span><br><div class="FCBootstrapTxt">glyphicon-asterisk</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-plus"></span><br><div class="FCBootstrapTxt">glyphicon-plus</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-euro"></span><br><div class="FCBootstrapTxt">glyphicon-euro</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-minus"></span><br><div class="FCBootstrapTxt">glyphicon-minus</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-cloud"></span><br><div class="FCBootstrapTxt">glyphicon-cloud</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-envelope"></span><br><div class="FCBootstrapTxt">glyphicon-envelope</div></div>
+	</div>
+
+	<div class="row">
+	  <div class="col-xs-12 col-sm-12 col-lg-12"><br></div>
+	</div>
+
+
+	<div class="row text-center">
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-pencil"></span><br><div class="FCBootstrapTxt">glyphicon-pencil</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-glass"></span><br><div class="FCBootstrapTxt">glyphicon-glass</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-music"></span><br><div class="FCBootstrapTxt">glyphicon-music</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-search"></span><br><div class="FCBootstrapTxt">glyphicon-search</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-heart"></span><br><div class="FCBootstrapTxt">glyphicon-heart</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-star"></span><br><div class="FCBootstrapTxt">glyphicon-star</div></div>
+	</div>
+
+	<div class="row">
+	  <div class="col-xs-12 col-sm-12 col-lg-12"><br></div>
+	</div>
+
+	<div class="row text-center">
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-star-empty"></span><br><div class="FCBootstrapTxt">glyphicon-star-empty</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-user"></span><br><div class="FCBootstrapTxt">glyphicon-user</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-film"></span><br><div class="FCBootstrapTxt">glyphicon-film</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-th-large"></span><br><div class="FCBootstrapTxt">glyphicon-th-large</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-th"></span><br><div class="FCBootstrapTxt">glyphicon-th</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-th-list"></span><br><div class="FCBootstrapTxt">glyphicon-th-list</div></div>
+	</div>
+
+	<div class="row">
+	  <div class="col-xs-12 col-sm-12 col-lg-12"><br></div>
+	</div>
+
+	<div class="row text-center">
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-ok"></span><br><div class="FCBootstrapTxt">glyphicon-ok</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-remove"></span><br><div class="FCBootstrapTxt">glyphicon-remove</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-zoom-in"></span><br><div class="FCBootstrapTxt">glyphicon-zoom-in</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-zoom-out"></span><br><div class="FCBootstrapTxt">glyphicon-zoom-out</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-off"></span><br><div class="FCBootstrapTxt">glyphicon-off</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-signal"></span><br><div class="FCBootstrapTxt">glyphicon-signal</div></div>
+	</div>
+
+	<div class="row">
+	  <div class="col-xs-12 col-sm-12 col-lg-12"><br></div>
+	</div>
+
+	<div class="row text-center">
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-cog"></span><br><div class="FCBootstrapTxt">glyphicon-cog</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-trash"></span><br><div class="FCBootstrapTxt">glyphicon-trash</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-home"></span><br><div class="FCBootstrapTxt">glyphicon-home</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-file"></span><br><div class="FCBootstrapTxt">glyphicon-file</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-time"></span><br><div class="FCBootstrapTxt">glyphicon-time</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-road"></span><br><div class="FCBootstrapTxt">glyphicon-road</div></div>
+	</div>
+
+	<div class="row">
+	  <div class="col-xs-12 col-sm-12 col-lg-12"><br></div>
+	</div>
+
+	<div class="row text-center">
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-download-alt"></span><br><div class="FCBootstrapTxt">glyphicon-download-alt</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-download"></span><br><div class="FCBootstrapTxt">glyphicon-download</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-upload"></span><br><div class="FCBootstrapTxt">glyphicon-upload</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-inbox"></span><br><div class="FCBootstrapTxt">glyphicon-inbox</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-play-circle"></span><br><div class="FCBootstrapTxt">glyphicon-play-circle</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-repeat"></span><br><div class="FCBootstrapTxt">glyphicon-repeat</div></div>
+	</div>
+
+	<div class="row">
+	  <div class="col-xs-12 col-sm-12 col-lg-12"><br></div>
+	</div>
+
+	<div class="row text-center">
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-refresh"></span><br><div class="FCBootstrapTxt">glyphicon-refresh</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-list-alt"></span><br><div class="FCBootstrapTxt">glyphicon-list-alt</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-lock"></span><br><div class="FCBootstrapTxt">glyphicon-lock</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-flag"></span><br><div class="FCBootstrapTxt">glyphicon-flag</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-headphones"></span><br><div class="FCBootstrapTxt">glyphicon-headphones</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-volume-off"></span><br><div class="FCBootstrapTxt">glyphicon-volume-off</div></div>
+	</div>
+
+	<div class="row">
+	  <div class="col-xs-12 col-sm-12 col-lg-12"><br></div>
+	</div>
+
+	<div class="row text-center">
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-volume-down"></span><br><div class="FCBootstrapTxt">glyphicon-volume-down</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-volume-up"></span><br><div class="FCBootstrapTxt">glyphicon-volume-up</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-qrcode"></span><br><div class="FCBootstrapTxt">glyphicon-qrcode</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-barcode"></span><br><div class="FCBootstrapTxt">glyphicon-barcode</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-tag"></span><br><div class="FCBootstrapTxt">glyphicon-tag</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-tags"></span><br><div class="FCBootstrapTxt">glyphicon-tags</div></div>
+	</div>
+
+	<div class="row">
+	  <div class="col-xs-12 col-sm-12 col-lg-12"><br></div>
+	</div>
+
+	<div class="row text-center">
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-book"></span><br><div class="FCBootstrapTxt">glyphicon-book</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-bookmark"></span><br><div class="FCBootstrapTxt">glyphicon-bookmark</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-print"></span><br><div class="FCBootstrapTxt">glyphicon-print</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-camera"></span><br><div class="FCBootstrapTxt">glyphicon-camera</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-font"></span><br><div class="FCBootstrapTxt">glyphicon-font</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-bold"></span><br><div class="FCBootstrapTxt">glyphicon-bold</div></div>
+	</div>
+
+	<div class="row">
+	  <div class="col-xs-12 col-sm-12 col-lg-12"><br></div>
+	</div>
+
+	<div class="row text-center">
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-italic"></span><br><div class="FCBootstrapTxt">glyphicon-italic</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-text-height"></span><br><div class="FCBootstrapTxt">glyphicon-text-height</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-text-width"></span><br><div class="FCBootstrapTxt">glyphicon-text-width</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-align-left"></span><br><div class="FCBootstrapTxt">glyphicon-align-left</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-align-center"></span><br><div class="FCBootstrapTxt">glyphicon-align-center</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-align-right"></span><br><div class="FCBootstrapTxt">glyphicon-align-right</div></div>
+	</div>
+
+	<div class="row">
+	  <div class="col-xs-12 col-sm-12 col-lg-12"><br></div>
+	</div>
+
+	<div class="row text-center">
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-align-justify"></span><br><div class="FCBootstrapTxt">glyphicon-align-justify</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-list"></span><br><div class="FCBootstrapTxt">glyphicon-list</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-indent-left"></span><br><div class="FCBootstrapTxt">glyphicon-indent-left</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-indent-right"></span><br><div class="FCBootstrapTxt">glyphicon-indent-right</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-facetime-video"></span><br><div class="FCBootstrapTxt">glyphicon-facetime-video</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-picture"></span><br><div class="FCBootstrapTxt">glyphicon-picture</div></div>
+	</div>
+
+	<div class="row">
+	  <div class="col-xs-12 col-sm-12 col-lg-12"><br></div>
+	</div>
+
+	<div class="row text-center">
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-map-marker"></span><br><div class="FCBootstrapTxt">glyphicon-map-marker</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-adjust"></span><br><div class="FCBootstrapTxt">glyphicon-adjust</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-tint"></span><br><div class="FCBootstrapTxt">glyphicon-tint</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-edit"></span><br><div class="FCBootstrapTxt">glyphicon-edit</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-share"></span><br><div class="FCBootstrapTxt">glyphicon-share</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-check"></span><br><div class="FCBootstrapTxt">glyphicon-check</div></div>
+	</div>
+
+	<div class="row">
+	  <div class="col-xs-12 col-sm-12 col-lg-12"><br></div>
+	</div>
+
+	<div class="row text-center">
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-move"></span><br><div class="FCBootstrapTxt">glyphicon-move</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-step-backward"></span><br><div class="FCBootstrapTxt">glyphicon-step-backward</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-fast-backward"></span><br><div class="FCBootstrapTxt">glyphicon-fast-backward</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-backward"></span><br><div class="FCBootstrapTxt">glyphicon-backward</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-play"></span><br><div class="FCBootstrapTxt">glyphicon-play</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-pause"></span><br><div class="FCBootstrapTxt">glyphicon-pause</div></div>
+	</div>
+
+	<div class="row">
+	  <div class="col-xs-12 col-sm-12 col-lg-12"><br></div>
+	</div>
+
+	<div class="row text-center">
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-stop"></span><br><div class="FCBootstrapTxt">glyphicon-stop</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-forward"></span><br><div class="FCBootstrapTxt">glyphicon-forward</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-fast-forward"></span><br><div class="FCBootstrapTxt">glyphicon-fast-forward</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-step-forward"></span><br><div class="FCBootstrapTxt">glyphicon-step-forward</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-eject"></span><br><div class="FCBootstrapTxt">glyphicon-eject</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-chevron-left"></span><br><div class="FCBootstrapTxt">glyphicon-chevron-left</div></div>
+	</div>
+
+	<div class="row">
+	  <div class="col-xs-12 col-sm-12 col-lg-12"><br></div>
+	</div>
+
+	<div class="row text-center">
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-chevron-right"></span><br><div class="FCBootstrapTxt">glyphicon-chevron-right</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-plus-sign"></span><br><div class="FCBootstrapTxt">glyphicon-plus-sign</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-minus-sign"></span><br><div class="FCBootstrapTxt">glyphicon-minus-sign</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-remove-sign"></span><br><div class="FCBootstrapTxt">glyphicon-remove-sign</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-ok-sign"></span><br><div class="FCBootstrapTxt">glyphicon-ok-sign</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-question-sign"></span><br><div class="FCBootstrapTxt">glyphicon-question-sign</div></div>
+	</div>
+
+	<div class="row">
+	  <div class="col-xs-12 col-sm-12 col-lg-12"><br></div>
+	</div>
+
+	<div class="row text-center">
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-info-sign"></span><br><div class="FCBootstrapTxt">glyphicon-info-sign</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-screenshot"></span><br><div class="FCBootstrapTxt">glyphicon-screenshot</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-remove-circle"></span><br><div class="FCBootstrapTxt">glyphicon-remove-circle</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-ok-circle"></span><br><div class="FCBootstrapTxt">glyphicon-ok-circle</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-ban-circle"></span><br><div class="FCBootstrapTxt">glyphicon-ban-circle</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-arrow-left"></span><br><div class="FCBootstrapTxt">glyphicon-arrow-left</div></div>
+	</div>
+
+	<div class="row">
+	  <div class="col-xs-12 col-sm-12 col-lg-12"><br></div>
+	</div>
+
+	<div class="row text-center">
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-arrow-right"></span><br><div class="FCBootstrapTxt">glyphicon-arrow-right</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-arrow-up"></span><br><div class="FCBootstrapTxt">glyphicon-arrow-up</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-arrow-down"></span><br><div class="FCBootstrapTxt">glyphicon-arrow-down</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-share-alt"></span><br><div class="FCBootstrapTxt">glyphicon-share-alt</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-resize-full"></span><br><div class="FCBootstrapTxt">glyphicon-resize-full</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-resize-small"></span><br><div class="FCBootstrapTxt">glyphicon-resize-small</div></div>
+	</div>
+
+	<div class="row">
+	  <div class="col-xs-12 col-sm-12 col-lg-12"><br></div>
+	</div>
+
+	<div class="row text-center">
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-exclamation-sign"></span><br><div class="FCBootstrapTxt">glyphicon-exclamation-sign</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-gift"></span><br><div class="FCBootstrapTxt">glyphicon-gift</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-leaf"></span><br><div class="FCBootstrapTxt">glyphicon-leaf</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-fire"></span><br><div class="FCBootstrapTxt">glyphicon-fire</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-eye-open"></span><br><div class="FCBootstrapTxt">glyphicon-eye-open</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-eye-close"></span><br><div class="FCBootstrapTxt">glyphicon-eye-close</div></div>
+	</div>
+
+	<div class="row">
+	  <div class="col-xs-12 col-sm-12 col-lg-12"><br></div>
+	</div>
+
+	<div class="row text-center">
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-warning-sign"></span><br><div class="FCBootstrapTxt">glyphicon-warning-sign</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-plane"></span><br><div class="FCBootstrapTxt">glyphicon-plane</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-calendar"></span><br><div class="FCBootstrapTxt">glyphicon-calendar</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-random"></span><br><div class="FCBootstrapTxt">glyphicon-random</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-comment"></span><br><div class="FCBootstrapTxt">glyphicon-comment</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-magnet"></span><br><div class="FCBootstrapTxt">glyphicon-magnet</div></div>
+	</div>
+
+	<div class="row">
+	  <div class="col-xs-12 col-sm-12 col-lg-12"><br></div>
+	</div>
+
+	<div class="row text-center">
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-chevron-up"></span><br><div class="FCBootstrapTxt">glyphicon-chevron-up</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-chevron-down"></span><br><div class="FCBootstrapTxt">glyphicon-chevron-down</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-retweet"></span><br><div class="FCBootstrapTxt">glyphicon-retweet</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-shopping-cart"></span><br><div class="FCBootstrapTxt">glyphicon-shopping-cart</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-folder-close"></span><br><div class="FCBootstrapTxt">glyphicon-folder-close</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-folder-open"></span><br><div class="FCBootstrapTxt">glyphicon-folder-open</div></div>
+	</div>
+
+	<div class="row">
+	  <div class="col-xs-12 col-sm-12 col-lg-12"><br></div>
+	</div>
+
+	<div class="row text-center">
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-resize-vertical"></span><br><div class="FCBootstrapTxt">glyphicon-resize-vertical</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-resize-horizontal"></span><br><div class="FCBootstrapTxt">glyphicon-resize-horizontal</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-hdd"></span><br><div class="FCBootstrapTxt">glyphicon-hdd</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-bullhorn"></span><br><div class="FCBootstrapTxt">glyphicon-bullhorn</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-bell"></span><br><div class="FCBootstrapTxt">glyphicon-bell</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-certificate"></span><br><div class="FCBootstrapTxt">glyphicon-certificate</div></div>
+	</div>
+
+	<div class="row">
+	  <div class="col-xs-12 col-sm-12 col-lg-12"><br></div>
+	</div>
+
+	<div class="row text-center">
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-thumbs-up"></span><br><div class="FCBootstrapTxt">glyphicon-thumbs-up</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-thumbs-down"></span><br><div class="FCBootstrapTxt">glyphicon-thumbs-down</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-hand-right"></span><br><div class="FCBootstrapTxt">glyphicon-hand-right</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-hand-left"></span><br><div class="FCBootstrapTxt">glyphicon-hand-left</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-hand-up"></span><br><div class="FCBootstrapTxt">glyphicon-hand-up</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-hand-down"></span><br><div class="FCBootstrapTxt">glyphicon-hand-down</div></div>
+	</div>
+
+	<div class="row">
+	  <div class="col-xs-12 col-sm-12 col-lg-12"><br></div>
+	</div>
+
+	<div class="row text-center">
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-circle-arrow-right"></span><br><div class="FCBootstrapTxt">glyphicon-circle-arrow-right</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-circle-arrow-left"></span><br><div class="FCBootstrapTxt">glyphicon-circle-arrow-left</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-circle-arrow-up"></span><br><div class="FCBootstrapTxt">glyphicon-circle-arrow-up</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-circle-arrow-down"></span><br><div class="FCBootstrapTxt">glyphicon-circle-arrow-down</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-globe"></span><br><div class="FCBootstrapTxt">glyphicon-globe</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-wrench"></span><br><div class="FCBootstrapTxt">glyphicon-wrench</div></div>
+	</div>
+
+	<div class="row">
+	  <div class="col-xs-12 col-sm-12 col-lg-12"><br></div>
+	</div>
+
+	<div class="row text-center">
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-tasks"></span><br><div class="FCBootstrapTxt">glyphicon-tasks</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-filter"></span><br><div class="FCBootstrapTxt">glyphicon-filter</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-briefcase"></span><br><div class="FCBootstrapTxt">glyphicon-briefcase</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-fullscreen"></span><br><div class="FCBootstrapTxt">glyphicon-fullscreen</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-dashboard"></span><br><div class="FCBootstrapTxt">glyphicon-dashboard</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-paperclip"></span><br><div class="FCBootstrapTxt">glyphicon-paperclip</div></div>
+	</div>
+
+	<div class="row">
+	  <div class="col-xs-12 col-sm-12 col-lg-12"><br></div>
+	</div>
+
+	<div class="row text-center">
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-heart-empty"></span><br><div class="FCBootstrapTxt">glyphicon-heart-empty</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-link"></span><br><div class="FCBootstrapTxt">glyphicon-link</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-phone"></span><br><div class="FCBootstrapTxt">glyphicon-phone</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-pushpin"></span><br><div class="FCBootstrapTxt">glyphicon-pushpin</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-usd"></span><br><div class="FCBootstrapTxt">glyphicon-usd</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-gbp"></span><br><div class="FCBootstrapTxt">glyphicon-gbp</div></div>
+	</div>
+
+	<div class="row">
+	  <div class="col-xs-12 col-sm-12 col-lg-12"><br></div>
+	</div>
+
+	<div class="row text-center">
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-sort"></span><br><div class="FCBootstrapTxt">glyphicon-sort</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-sort-by-alphabet"></span><br><div class="FCBootstrapTxt">glyphicon-sort-by-alphabet</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-sort-by-alphabet-alt"></span><br><div class="FCBootstrapTxt">glyphicon-sort-by-alphabet-alt</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-sort-by-order"></span><br><div class="FCBootstrapTxt">glyphicon-sort-by-order</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-sort-by-order-alt"></span><br><div class="FCBootstrapTxt">glyphicon-sort-by-order-alt</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-sort-by-attributes"></span><br><div class="FCBootstrapTxt">glyphicon-sort-by-attributes</div></div>
+	</div>
+
+	<div class="row">
+	  <div class="col-xs-12 col-sm-12 col-lg-12"><br></div>
+	</div>
+
+	<div class="row text-center">
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-sort-by-attributes-alt"></span><br><div class="FCBootstrapTxt">glyphicon-sort-by-attributes-alt</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-unchecked"></span><br><div class="FCBootstrapTxt">glyphicon-unchecked</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-expand"></span><br><div class="FCBootstrapTxt">glyphicon-expand</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-collapse-down"></span><br><div class="FCBootstrapTxt">glyphicon-collapse-down</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-collapse-up"></span><br><div class="FCBootstrapTxt">glyphicon-collapse-up</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-log-in"></span><br><div class="FCBootstrapTxt">glyphicon-log-in</div></div>
+	</div>
+
+	<div class="row">
+	  <div class="col-xs-12 col-sm-12 col-lg-12"><br></div>
+	</div>
+
+	<div class="row text-center">
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-flash"></span><br><div class="FCBootstrapTxt">glyphicon-flash</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-log-out"></span><br><div class="FCBootstrapTxt">glyphicon-log-out</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-new-window"></span><br><div class="FCBootstrapTxt">glyphicon-new-window</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-record"></span><br><div class="FCBootstrapTxt">glyphicon-record</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-save"></span><br><div class="FCBootstrapTxt">glyphicon-save</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-open"></span><br><div class="FCBootstrapTxt">glyphicon-open</div></div>
+	</div>
+
+	<div class="row">
+	  <div class="col-xs-12 col-sm-12 col-lg-12"><br></div>
+	</div>
+
+	<div class="row text-center">
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-saved"></span><br><div class="FCBootstrapTxt">glyphicon-saved</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-import"></span><br><div class="FCBootstrapTxt">glyphicon-import</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-export"></span><br><div class="FCBootstrapTxt">glyphicon-export</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-send"></span><br><div class="FCBootstrapTxt">glyphicon-send</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-floppy-disk"></span><br><div class="FCBootstrapTxt">glyphicon-floppy-disk</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-floppy-saved"></span><br><div class="FCBootstrapTxt">glyphicon-floppy-saved</div></div>
+	</div>
+
+	<div class="row">
+	  <div class="col-xs-12 col-sm-12 col-lg-12"><br></div>
+	</div>
+
+	<div class="row text-center">
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-floppy-remove"></span><br><div class="FCBootstrapTxt">glyphicon-floppy-remove</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-floppy-save"></span><br><div class="FCBootstrapTxt">glyphicon-floppy-save</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-floppy-open"></span><br><div class="FCBootstrapTxt">glyphicon-floppy-open</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-credit-card"></span><br><div class="FCBootstrapTxt">glyphicon-credit-card</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-transfer"></span><br><div class="FCBootstrapTxt">glyphicon-transfer</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-cutlery"></span><br><div class="FCBootstrapTxt">glyphicon-cutlery</div></div>
+	</div>
+
+	<div class="row">
+	  <div class="col-xs-12 col-sm-12 col-lg-12"><br></div>
+	</div>
+
+	<div class="row text-center">
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-header"></span><br><div class="FCBootstrapTxt">glyphicon-header</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-compressed"></span><br><div class="FCBootstrapTxt">glyphicon-compressed</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-earphone"></span><br><div class="FCBootstrapTxt">glyphicon-earphone</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-phone-alt"></span><br><div class="FCBootstrapTxt">glyphicon-phone-alt</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-tower"></span><br><div class="FCBootstrapTxt">glyphicon-tower</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-stats"></span><br><div class="FCBootstrapTxt">glyphicon-stats</div></div>
+	</div>
+
+	<div class="row">
+	  <div class="col-xs-12 col-sm-12 col-lg-12"><br></div>
+	</div>
+
+	<div class="row text-center">
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-sd-video"></span><br><div class="FCBootstrapTxt">glyphicon-sd-video</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-hd-video"></span><br><div class="FCBootstrapTxt">glyphicon-hd-video</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-subtitles"></span><br><div class="FCBootstrapTxt">glyphicon-subtitles</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-sound-stereo"></span><br><div class="FCBootstrapTxt">glyphicon-sound-stereo</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-sound-dolby"></span><br><div class="FCBootstrapTxt">glyphicon-sound-dolby</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-sound-5-1"></span><br><div class="FCBootstrapTxt">glyphicon-sound-5-1</div></div>
+	</div>
+
+	<div class="row">
+	  <div class="col-xs-12 col-sm-12 col-lg-12"><br></div>
+	</div>
+
+	<div class="row text-center">
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-sound-6-1"></span><br><div class="FCBootstrapTxt">glyphicon-sound-6-1</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-sound-7-1"></span><br><div class="FCBootstrapTxt">glyphicon-sound-7-1</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-copyright-mark"></span><br><div class="FCBootstrapTxt">glyphicon-copyright-mark</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-registration-mark"></span><br><div class="FCBootstrapTxt">glyphicon-registration-mark</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-cloud-download"></span><br><div class="FCBootstrapTxt">glyphicon-cloud-download</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-cloud-upload"></span><br><div class="FCBootstrapTxt">glyphicon-cloud-upload</div></div>
+	</div>
+
+	<div class="row">
+	  <div class="col-xs-12 col-sm-12 col-lg-12"><br></div>
+	</div>
+
+	<div class="row text-center">
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-tree-conifer"></span><br><div class="FCBootstrapTxt">glyphicon-tree-conifer</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"><span class="glyphicon glyphicon-tree-deciduous"></span><br><div class="FCBootstrapTxt">glyphicon-tree-deciduous</div></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"></div>
+	  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2"></div>
+	</div>
+
+	<div class="row">
+	  <div class="col-xs-12 col-sm-12 col-lg-12"><br></div>
+	</div>
+
+</div>

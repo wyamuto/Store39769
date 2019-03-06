@@ -1,0 +1,48 @@
+<p>Veja exemplos de sugestões de termos fazendo buscas por produtos <a href=https://modelo.lojavirtualfc.com.br/ target=_blank>nesta loja modelo</a>.</p>
+
+<p>Siga os seguintes passos para ativação:</p>
+
+<br><p><span class="dest NewsPassos">1º Passo</span></p>
+<p>Inclua as linhas abaixo no final do arquivo <b>lojalib.js</b></p>
+<pre>/* Google Suggestions */
+function fnCallbackSuggestions(aTerms){
+  "use strict";
+  var iTerms=aTerms.length;
+  if(FC$.Page=="News"){
+    var sParamName="textobuscanews"
+    var sIDNotFound="idNotFoundNewsFC";
+  }
+  else{
+    var sParamName="texto"
+    var sIDNotFound="idTxtCatNotFoundFC";
+  }
+  var oNotFound=FCLib$.GetID(sIDNotFound);
+  if(oNotFound && iTerms>=1){
+    if(iTerms>10)iTerms=10;
+    var sTerms="&lt;div id=GoogleTerms>&lt;ul>";
+    var sPlural=(iTerms>1)?"s":"";
+    sTerms+="&lt;li>&lt;b>Busca"+ sPlural +" sugerida"+ sPlural +" pelo Google:&lt;/b>&lt;/li>";
+    for(var i=0;i&lt;iTerms;i++)sTerms+="&lt;li>&lt;a href='"+ FCLib$.fnGetSearchURL(aTerms[i],sParamName) +"'>"+aTerms[i]+"&lt;/a>&lt;/li>";
+    sTerms+="&lt;/ul>&lt;/div>";
+    oNotFound.insertAdjacentHTML('afterend',sTerms);
+  }
+}
+if(FC$.query!="")FCLib$.onReady(FCLib$.fnGetSuggestions(decodeURIComponent(FC$.query),true,fnCallbackSuggestions));
+</pre>
+
+
+<br><p><span class="dest NewsPassos">2º Passo</span></p>
+<p>No final do arquivo <b>lojasite.css</b>, inclua os seguintes estilos CSS:</p>
+<pre>/* Google Suggestions */
+#GoogleTerms{margin-top:30px;}
+#GoogleTerms ul {list-style-type:none;}
+#GoogleTerms ul li{margin:5px 0;}
+#GoogleTerms ul li a{font-size:18px;color:#666666;}
+.FCNews #idTableNewsFC #GoogleTerms{margin-left:25%;}</pre>
+
+
+<br><p><span class="dest NewsPassos">3º Passo</span></p>
+<p>Se a loja utiliza um de nossos modelos de design, <a href=/dnload/GoogleSuggestions.zip>clique aqui</a> para baixar os scripts para mostrar os termos sugeridos na <a href=https://ajuda.Fastcommerce.com.br/como-facilitar-a-busca-por-produtos-hotsites-e-noticias-da-loja>janela de autosuggest</a>. Envie o arquivo zip baixado para a subpasta JS que fica dentro da pasta HTM.</p>
+<p><b>ATENÇÃO:</b> Antes de enviar, faça backup dos arquivos que serão sobrescritos <code>JS/autosuggest.js</code> e <code>JS/autosuggesttbar.js</code>.</p>
+<p>Se a loja não utiliza um modelo nosso de design, entre em contato com nossa equipe de suporte antes de prosseguir neste passo.</p>
+<br><br>

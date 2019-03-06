@@ -1,0 +1,44 @@
+<style>
+.titpeqverde {font-size:9pt;font-family:courier new,tahoma,verdana;color:#1DA906;font-weight:bold;}
+.courrierpeq {font-size:8pt;font-family:courier new,tahoma,verdana;color:#0D6D9E;}
+.destpeq {font-size:8pt;font-family:tahoma,verdana;color:#990000;font-weight:bold;}
+</style>
+<pre>
+<span class=courrierpeq>
+
+<span class=titpeqverde>
+&lt;!-- Altere onde está <span class=destpeq>9</span> de acordo com o Pagto utilizado na loja -->
+&lt;!-- Pagto 1 = <span class=destpeq>9</span>, Pagto 2 = <span class=destpeq>10</span>, Pagto 3 = <span class=destpeq>11</span>, Pagto 4 = <span class=destpeq>12</span> e Pagto 5 = <span class=destpeq>13</span> -->
+
+&lt;!-- Altere onde está <span class=destpeq>12345</span> de acordo com o seu "E_Comercio" (fornecido pelo DinheiroMail) <br><br> O "E_Comercio" é o número da conta DinheiroMail do comércio ou vendedor (sem zeros e sem o dígito final, que é um dígito verificador). -->
+
+&lt;!-- Altere onde está <span class=destpeq>00009999</span> para o ID da loja com 8 posiçoes. Por exemplo, se o ID da loja for 12345 coloque 00012345. -->
+
+&lt;!-- Altere onde está <span class=destpeq>9999</span> para o ID de sua loja -->
+
+&lt;!-- Altere onde está <span class=destpeq>High Store</span> para o nome de sua loja -->
+
+</span>
+
+&lt;!-- Pagto adicional 1 -->
+&lt;script>
+if(&lt;IDFormaPagamento>==<span class=destpeq>9</span>){
+  document.write('&lt;br>&lt;br>&lt;center>');
+  document.write('&lt;form name="dineromailfc" action="https://brasil.dineromail.com/dinero-tools/login/shop/shop_ingreso.asp" method="post" target="_blank">');
+  document.write('&lt;input type="hidden" name="TipoMoneda" value="1">');
+  document.write('&lt;input type="hidden" name="E_Comercio" value="<span class=destpeq>12345</span>">');
+  document.write('&lt;input type="hidden" name="image_url" value="https://www.rumo.com.br/lojas/<span class=destpeq>00009999</span>/images/LogoTopo.gif">');
+  document.write('&lt;input type="hidden" name="DireccionExito" value="https://www.rumo.com.br/sistema/Custom.asp?IDLoja=<span class=destpeq>9999</span>&amp;arq=DineroMailOK.htm">');
+  document.write('&lt;input type="hidden" name="DireccionFracaso" value="https://www.rumo.com.br/sistema/Custom.asp?IDLoja=<span class=destpeq>9999</span>&amp;arq=DineroMailErro.htm">');
+  document.write('&lt;input type="hidden" name="MediosPago" value="4,5,6,14,15,19,20,21,22,23,24,25,18,26,27,28,29,30,31,32,33,34,35,36,37,7">');
+  document.write('&lt;input type="hidden" name="Flete" value="&lt;Frete>">');
+  document.write('&lt;input type="hidden" name="NombreItem" value="Pedido efetuado na <span class=destpeq>High Store</span>">');
+  document.write('&lt;input type="hidden" name="NroItem" value="# &lt;NumPedido>">');
+  document.write('&lt;input type="hidden" name="PrecioItem" value="&lt;TotalSemFrete>">');
+  document.write('&lt;input type="image" src="https://brasil.dineromail.com/imagen/botones/tools/boton-pagar-04-BR.gif" border="0" name="submit" alt="Pagar com DineroMail">');
+  document.write('&lt;/form>');
+  document.write('&lt;/center>');
+}
+&lt;/script>
+</span>
+</pre>

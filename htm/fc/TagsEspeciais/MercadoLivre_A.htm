@@ -1,0 +1,75 @@
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'>
+<title>FastCommerce :: Tags especiais para Anúncios no MercadoLivre</title>
+<link href="https://www.rumo.com.br/sistema/adm/Estilos1.css" rel="stylesheet" type="text/css">
+<style>
+body,td,span,p {font-size:10pt;}
+.tagtxt{font-size:11pt;font-family:Consolas,Courier New,Courier,Terminal;}
+</style>
+</head>
+<body topmargin=0 leftmargin=0 marginwidth=0 marginheight=0 class=EstTabPag>
+<table width=760 cellspacing=0 cellpadding=10 align=center>
+  <tr>
+    <td><center><span class=EstTopoGen><h3>Tags especiais para Anúncios no MercadoLivre</h3></span></center>
+    <p>As descrições dos anúncios publicados no MercadoLivre a partir do site administrativo da loja virtual podem conter as seguintes <i>tags especiais</i>. Estas tags serão substituídas por conteúdo obtido a partir do cadastro de produtos da loja:<br>
+    </p>
+
+<table width=760 cellspacing=0 cellpadding=0 align=center class=EstTabBorda bgcolor=#333><tr><td>
+<table width=760 cellspacing=1 cellpadding=20 align=center>
+
+<tr><td align=center class=EstCaixaTit>Tag especial</td><td align=center class=EstCaixaTit>Descrição</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;NomeProd&gt;</td><td valign=top>Substituída pelo nome do produto.</td></tr>
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;NomeProdP1&gt;</td><td valign=top>Substituída pelo nome do produto até o caractere <b>|</b> (pipe) ou até o final, caso este caractere não exista no nome.</td></tr>
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;NomeProdP2&gt;</td><td valign=top>Substituída pelo nome do produto após o caractere <b>|</b> (pipe) ou por branco, caso este caractere não exista no nome.</td></tr>
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;CodProd&gt;</td><td valign=top>Substituída pelo código (referência) do produto.</td></tr>
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;Largura&gt;<br>&lt;Altura&gt;<br>&lt;Profundidade&gt;</td><td valign=top>Substituídas respectivamente pela largura, altura e profundidade do produto, incluindo a unidade (ex: 32cm).</td></tr>
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;Peso&gt;</td><td valign=top>Substituída pelo peso do produto, incluindo a unidade (ex: 2kg).</td></tr>
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;Cor&gt;</td><td valign=top>Substituída pelo nome da cor do produto.</td></tr>
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;CorRGB&gt;</td><td valign=top>Substituída pelo código RGB da cor do produto.</td></tr>
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;AdicionalD1&gt;<br>&lt;AdicionalD2&gt;<br>&lt;AdicionalD3&gt;</td><td valign=top>Substituídas pelos descritores simples 1, 2 e 3.</td></tr>
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;Adicional1&gt;<br>&lt;Adicional2&gt;<br>&lt;Adicional3&gt;</td><td valign=top>Substituídas pelos descritores especiais 1, 2 e 3.</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;LCodProd><br>&lt;LCor><br>&lt;LPeso><br>&lt;LLargura><br>&lt;LAltura><br>&lt;LProfundidade><br>&lt;LAdicionalD1><br>&lt;LAdicionalD2><br>&lt;LAdicionalD3><br>&lt;LAdicional1><br>&lt;LAdicional2><br>&lt;LAdicional3></td><td valign=top>Substituídas pelas legendas das respectivas tags e seus valores, caso estes tenham sido preenchidos.<br><p>Exemplo: A tag &lt;LLargura> será substituída pela palavra <b>Largura</b> mais o valor da largura (ex: Largura 35cm). A tag ficará em branco se o produto não tiver a largura preenchida.</p><br></td></tr>
+
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;IDProduto&gt;</td><td valign=top>Substituída pelo número que identifica internamente cada produto.</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;URLPastas&gt;</td><td valign=top>Substituída pelo endereço da pasta raiz da loja. Utilizada para criar referências para arquivos contidos nas pastas <b>images</b> e <b>prod</b>. <br><br>Exemplo de <b>URL do logotipo</b> da loja: <p class=tagtxt>&lt;URLPastas>images/Logotopo.png</p><br></td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;URLFrete&gt;</td><td valign=top>Substituída pelo endereço para cálculo de frete do produto, já considerando seu peso. O cliente deverá informar o CEP e a quantidade desejada.<br><br><b>ATENÇÃO:</b> Esta tag pode ser utilizada somente se a loja utilizar a opção <b>Utilizar faixas de CEP (Brasil)</b> na página <b>Envio & frete</b> do site administrativo.<br><br></td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;URLFreteEnc&gt;</td><td valign=top>Idêntica à tag &lt;URLFrete>, com codificação de URL (<i>URL Encoded</i>). Esta tag pode ser usada para gerar o QR-Code para facilitar o acessso à página do cálculo de frete, como no exemplo abaixo:<br><br><p class=tagtxt>&lt;img src="http://chart.apis.google.com/chart?chs=165x165&amp;cht=qr&amp;chld=|1&amp;chl=<b>&lt;URLFreteEnc></b>" alt="Cálculo do frete" width="165" width="165"/></p><br></td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;DescricaoCurta&gt;</td><td valign=top>Substituída pela descrição curta do produto.</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;DescricaoLonga&gt;</td><td valign=top>Substituída pela descrição longa do produto.</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;ImagemProd&gt;<br>&lt;ImagemDet&gt;<br>&lt;ImagemAmp&gt;</td><td valign=top>Substituídas respectivamente pela imagem principal, de detalhe e ampliada do produto.</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;ImagemProdSub&gt;<br>&lt;ImagemDetSub&gt;<br>&lt;ImagemAmpSub&gt;</td><td valign=top>Substituídas respectivamente pela imagem principal, de detalhe e ampliada do subproduto.</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;DescrURL&gt;</td><td valign=top>Link externo para página com mais informações sobre o produto (exemplo: página do produto no site do fabricante).<br><br>Será utilizado o endereço preenchido no campo <b>URL de apoio</b> da ficha do produto no site administrativo.<br><br><b>ATENÇÃO:</b> Utilize esta tag somente se o endereço apontar para uma página onde não é possível fazer a compra do produto, direta ou indiretamente. Por exemplo, a página não poderá conter o telefone da loja nem seu endereço na web. Por outro lado, o endereço poderá ser um documento .PDF online contendo o manual do produto.<br><br></td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;DescrHTM&gt;</td><td valign=top>Substituída pelo conteúdo do arquivo HTML que contém a descrição do produto. O nome deste arquivo é preenchido no campo <b>Descrição HTML</b> da ficha do produto.</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;MeliUserID&gt;</td><td valign=top>Substituída pelo ID do vendedor no MercadoLivre. Utilizada para montar links para exibir mais produtos do vendedor, como no exemplo abaixo:<br><br><p class=tagtxt>http://lista.mercadolivre.com.br/_CustId_<b>&lt;MeliUserID&gt;</b></p><br></td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;MeliNickname&gt;</td><td valign=top>Substituída pelo apelido do vendedor no MercadoLivre. Utilizada para montar links para exibir perfil do vendedor e sua reputação, como no exemplo abaixo:<br><br><p class=tagtxt>http://perfil.mercadolivre.com.br/<b>&lt;MeliNickname&gt;</b></p><br></td></tr>
+
+</table></td></tr></table>
+
+
+
+<br><b>Obs<sup>1</sup>:</b> Todas as tags são opcionais.
+<br>
+<br><b>Obs<sup>2</sup>:</b> As tags especiais genéricas <b>não podem</b> ser utilizadas.
+
+
+
+    </td>
+  </tr>
+</table>
+</body>
+</html>

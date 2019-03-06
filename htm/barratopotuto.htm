@@ -1,0 +1,146 @@
+<link href='http://ajuda.fastcommerce.com.br/lojas/00000009/htm/LojaSite.css' rel='stylesheet' type='text/css'>
+
+<center>
+
+<table width="750" height="45" style="border-style:dotted; border-width:2px; border-color:#CCC;">
+	<tr>
+    	<td><font face="arial" size="+1">Siga as referências abaixo para customizar o arquivo "BarraTopo.htm" de sua loja virtual: </font></td>
+    </tr>
+</table>
+
+<br />
+<br />
+<br />
+
+
+<center><iframe width="640" height="480" src="https://www.youtube.com/embed/2LQ3BpDWF9Y" frameborder="0" allowfullscreen></iframe></center>
+
+
+<br />
+<br />
+<br />
+
+<table width="750" height="45" style="border-style:dotted; border-width:2px; border-color:#CCC;">
+	<tr>
+    	<td height="30" bgcolor="#CCCCCC"><font face="arial" size="+1"><b style="margin-left:6px;">Layout finalizado:</b></font></td>
+    </tr>
+    <tr>
+    	<td><center><img width="700" src="/lojas/00000009/images/barratopoborder0.jpg"/></center></td>
+    </tr>
+</table>
+
+<br />
+<br />
+<br />
+
+<table width="750" height="45" style="border-style:dotted; border-width:2px; border-color:#CCC;">
+	<tr>
+    	<td  height="30"bgcolor="#CCCCCC"><font face="arial" size="+1"><b style="margin-left:6px;">Estrutura em tabelas:</b></font></td>
+    </tr>
+    <tr>
+    	<td height="250"><center><img width="700" src="/lojas/00000009/images/barratopoborder1.jpg"/></center></td>
+    </tr>
+</table>
+
+<br />
+<br />
+<br />
+
+
+<table border="1" width="750" height="150">
+      <tr>
+            <td  height="30" bgcolor="#CCCCCC"><font face="arial" size="+1"><b style="margin-left:6px;">Tags especiais e Scripts:</b></font></td>
+      </tr>
+      <tr>
+    	<td height="100" align="center"><h2>&lt;img src=&quot;&lt;BaseLoja&gt;images/bannertopo.jpg&quot;&gt;</h2></td>
+    </tr>
+    <tr>
+    	<td height="30">
+        	<table border="1" width="100%">
+        		<tr align="center">
+                	<td>HOME</td>
+                    <td>*</td>
+                    <td>CATEGORIAS</td>
+                    <td>*</td>
+                    <td>PROMOÇÕES</td>
+                    <td>*</td>
+                    <td>LANÇAMENTOS</td>
+                    <td>*</td>
+                    <td>SEU PEDIDO</td>
+                    <td>*</td>
+                    <td>AJUDA</td>
+                    <td>*</td>
+                    <td>CONTATO</td>
+                </tr>
+        	</table>
+        </td>
+    </tr>
+    <tr>
+    	<td height="20">
+        	<table border="1" width="100%">
+        		<tr>
+                	<td span class="courrierpeq">&lt;!--login--&gt;<br />                	  &lt;script&gt;<br>
+                	  if(''!='&lt;NomeCliente&gt;')<br>
+{<br>
+document.write('Olá, &lt;b&gt;&lt;NomeCliente&gt;&lt;/b&gt;! &lt;span class=smtext&gt;Se não for você, &lt;a target=_top href=https://www.rumo.com.br/sistema/cadastro.asp?IDLoja=&lt;IDLoja&gt; class=smtext&gt;clique aqui&lt;/a&gt;.&lt;/span&gt;')<br>
+}<br>
+else<br>
+{<br>
+document.write('Olá, &lt;b&gt;visitante&lt;/b&gt;! &lt;a target=_top href=https://www.rumo.com.br/sistema/cadastro.asp?IDLoja=&lt;IDLoja&gt; class=smtext&gt;Clique aqui&lt;/a&gt; para fazer o seu cadastro.')<br>
+}<br>
+&lt;/script&gt;</td>
+                    <td align="left" span class="courrierpeq">&lt;!--busca--&gt;<br>                      &lt;table class=buscabarra width=120 cellspacing=0 cellpadding=0&gt;<br>
+&lt;script&gt;function VerTextoBS(oForm){if (oForm.Texto.value==''){alert('Digite antes sua busca.');oForm.Texto.focus();return false;}else{return true;}}&lt;/script&gt;<br>
+&lt;form name=FormBuscaSimples method=GET action=&quot;ListaProdutos.asp&quot; onSubmit=&quot;return VerTextoBS(this);&quot;&gt;<br>
+&lt;input type=hidden name=IDLoja value=&quot;&lt;IDLojaNum&gt;&quot;&gt;<br>
+&lt;input type=hidden name=Y value=&quot;&lt;Y&gt;&quot;&gt;<br>
+&lt;input type=hidden name=Digitada value=True&gt;<br>
+&lt;tr&gt;<br>
+&lt;td&gt;&lt;b&gt;Busca:&lt;/b&gt;&lt;/td&gt;<br>
+&lt;td&gt;&lt;input type=text width=100 text size=10 name=Texto class=InputTextBusca style=&quot;width:90px;&quot;&gt;&lt;/td&gt;<br>
+&lt;td&gt;&lt;input type=image name=ok src=&quot;&lt;BaseLoja&gt;images/lupa.jpg&quot;&gt;&lt;/td&gt;&lt;/form&gt;<br>
+&lt;/tr&gt;<br>
+&lt;/table&gt;</td>
+                </tr>
+        	</table>
+        </td>
+    </tr>
+
+
+</table>
+<br/>
+<br/>
+
+<table border="1" cellpadding="8" cellspacing="1" width="750">
+	<tr>
+    	<td>HOME</td>
+        <td>&lt;a href=&quot;home.asp?IDLoja=&lt;IDLoja&gt;&quot;&gt;<font color="#999933"><br />&nbsp;&nbsp;&lt;img src=&quot;&lt;BaseLoja&gt;images/home_btn.jpg&quot; border=&quot;0&quot;/&gt;</font><br />&lt;/a&gt;</td>
+    </tr>
+    <tr>
+    	<td>CATEGORIAS</td>
+        <td>&lt;a href=&quot;Categorias.asp?IDLoja=&lt;IDLoja&gt;&quot;&gt;<font color="#999933"><br />&nbsp;&nbsp;&lt;img src=&quot;&lt;BaseLoja&gt;images/categorias_btn.jpg&quot; border=&quot;0&quot;/&gt;</font><br />&lt;/a&gt;</td>
+    </tr>
+    <tr>
+    	<td>PROMOÇÕES</td>
+        <td>&lt;a href=&quot;ListaProdutos.asp?IDLoja=&lt;IDLoja&gt;&amp;Promocao=True&quot;&gt;<font color="#999933"><br />&nbsp;&nbsp;&lt;img src=&quot;&lt;BaseLoja&gt;images/promocoes_btn.jpg&quot; border=&quot;0&quot;/&gt;</font><br />&lt;/a&gt;</td>
+    </tr>
+    <tr>
+    	<td>LANÇAMENTO</td>
+        <td>&lt;a href=&quot;ListaProdutos.asp?IDLoja=&lt;IDLoja&gt;&amp;Lancamento=True&quot;&gt;<font color="#999933"><br />&nbsp;&nbsp;&lt;img src=&quot;&lt;BaseLoja&gt;images/lancamento_btn.jpg&quot;  border=&quot;0&quot;/&gt;</font><br />&lt;/a&gt;</td>
+    </tr>
+    <tr>
+    	<td>SEU PEDIDO</td>
+        <td>&lt;a href=&quot;AddProduto.asp?IDLoja=&lt;IDLoja&gt;&quot;&gt;<font color="#999933"><br />&nbsp;&nbsp;&lt;img src=&quot;&lt;BaseLoja&gt;images/seupedido_btn.jpg&quot; border=&quot;0&quot;/&gt;</font><br />&lt;/a&gt;</td>
+    </tr>
+     <tr>
+    	<td>AJUDA</td>
+        <td>&lt;a href=&quot;Ajuda.asp?IDLoja=&lt;IDLoja&gt;&quot;&gt;<font color="#999933"><br />&nbsp;&nbsp;&lt;img src=&quot;&lt;BaseLoja&gt;images/ajuda_btn.jpg&quot; border=&quot;0&quot;/&gt;</font><br />&lt;/a&gt;</td>
+    </tr>
+    <tr>
+    	<td>CONTATO</td>
+        <td>&lt;a href=&quot;FaleConosco.asp?IDLoja=&lt;IDLoja&gt;&quot;&gt;<font color="#999933"><br />&nbsp;&nbsp;&lt;img src=&quot;&lt;BaseLoja&gt;images/contato_btn.jpg&quot; border=&quot;0&quot;/&gt;</font><br />&lt;/a&gt;</td>
+    </tr>
+</table>
+</center>
+
+

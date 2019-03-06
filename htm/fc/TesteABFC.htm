@@ -1,0 +1,922 @@
+<script>
+var Spry;
+if (!Spry) Spry = {};
+if (!Spry.Widget) Spry.Widget = {};
+
+Spry.Widget.TabbedPanels = function(element, opts)
+{
+	this.element = this.getElement(element);
+	this.defaultTab = 0; // Show the first panel by default.
+	this.bindings = [];
+	this.tabSelectedClass = "TabbedPanelsTabSelected";
+	this.tabHoverClass = "TabbedPanelsTabHover";
+	this.tabFocusedClass = "TabbedPanelsTabFocused";
+	this.panelVisibleClass = "TabbedPanelsContentVisible";
+	this.focusElement = null;
+	this.hasFocus = false;
+	this.currentTabIndex = 0;
+	this.enableKeyboardNavigation = true;
+
+	Spry.Widget.TabbedPanels.setOptions(this, opts);
+
+	// If the defaultTab is expressed as a number/index, convert
+	// it to an element.
+
+	if (typeof (this.defaultTab) == "number")
+	{
+		if (this.defaultTab < 0)
+			this.defaultTab = 0;
+		else
+		{
+			var count = this.getTabbedPanelCount();
+			if (this.defaultTab >= count)
+				this.defaultTab = (count > 1) ? (count - 1) : 0;
+		}
+
+		this.defaultTab = this.getTabs()[this.defaultTab];
+	}
+
+	// The defaultTab property is supposed to be the tab element for the tab content
+	// to show by default. The caller is allowed to pass in the element itself or the
+	// element's id, so we need to convert the current value to an element if necessary.
+
+	if (this.defaultTab)
+		this.defaultTab = this.getElement(this.defaultTab);
+
+	this.attachBehaviors();
+};
+
+Spry.Widget.TabbedPanels.prototype.getElement = function(ele)
+{
+	if (ele && typeof ele == "string")
+		return document.getElementById(ele);
+	return ele;
+}
+
+Spry.Widget.TabbedPanels.prototype.getElementChildren = function(element)
+{
+	var children = [];
+	var child = element.firstChild;
+	while (child)
+	{
+		if (child.nodeType == 1 /* Node.ELEMENT_NODE */)
+			children.push(child);
+		child = child.nextSibling;
+	}
+	return children;
+};
+
+Spry.Widget.TabbedPanels.prototype.addClassName = function(ele, className)
+{
+	if (!ele || !className || (ele.className && ele.className.search(new RegExp("\\b" + className + "\\b")) != -1))
+		return;
+	ele.className += (ele.className ? " " : "") + className;
+};
+
+Spry.Widget.TabbedPanels.prototype.removeClassName = function(ele, className)
+{
+	if (!ele || !className || (ele.className && ele.className.search(new RegExp("\\b" + className + "\\b")) == -1))
+		return;
+	ele.className = ele.className.replace(new RegExp("\\s*\\b" + className + "\\b", "g"), "");
+};
+
+Spry.Widget.TabbedPanels.setOptions = function(obj, optionsObj, ignoreUndefinedProps)
+{
+	if (!optionsObj)
+		return;
+	for (var optionName in optionsObj)
+	{
+		if (ignoreUndefinedProps && optionsObj[optionName] == undefined)
+			continue;
+		obj[optionName] = optionsObj[optionName];
+	}
+};
+
+Spry.Widget.TabbedPanels.prototype.getTabGroup = function()
+{
+	if (this.element)
+	{
+		var children = this.getElementChildren(this.element);
+		if (children.length)
+			return children[0];
+	}
+	return null;
+};
+
+Spry.Widget.TabbedPanels.prototype.getTabs = function()
+{
+	var tabs = [];
+	var tg = this.getTabGroup();
+	if (tg)
+		tabs = this.getElementChildren(tg);
+	return tabs;
+};
+
+Spry.Widget.TabbedPanels.prototype.getContentPanelGroup = function()
+{
+	if (this.element)
+	{
+		var children = this.getElementChildren(this.element);
+		if (children.length > 1)
+			return children[1];
+	}
+	return null;
+};
+
+Spry.Widget.TabbedPanels.prototype.getContentPanels = function()
+{
+	var panels = [];
+	var pg = this.getContentPanelGroup();
+	if (pg)
+		panels = this.getElementChildren(pg);
+	return panels;
+};
+
+Spry.Widget.TabbedPanels.prototype.getIndex = function(ele, arr)
+{
+	ele = this.getElement(ele);
+	if (ele && arr && arr.length)
+	{
+		for (var i = 0; i < arr.length; i++)
+		{
+			if (ele == arr[i])
+				return i;
+		}
+	}
+	return -1;
+};
+
+Spry.Widget.TabbedPanels.prototype.getTabIndex = function(ele)
+{
+	var i = this.getIndex(ele, this.getTabs());
+	if (i < 0)
+		i = this.getIndex(ele, this.getContentPanels());
+	return i;
+};
+
+Spry.Widget.TabbedPanels.prototype.getCurrentTabIndex = function()
+{
+	return this.currentTabIndex;
+};
+
+Spry.Widget.TabbedPanels.prototype.getTabbedPanelCount = function(ele)
+{
+	return Math.min(this.getTabs().length, this.getContentPanels().length);
+};
+
+Spry.Widget.TabbedPanels.addEventListener = function(element, eventType, handler, capture)
+{
+	try
+	{
+		if (element.addEventListener)
+			element.addEventListener(eventType, handler, capture);
+		else if (element.attachEvent)
+			element.attachEvent("on" + eventType, handler);
+	}
+	catch (e) {}
+};
+
+Spry.Widget.TabbedPanels.prototype.onTabClick = function(e, tab)
+{
+	this.showPanel(tab);
+};
+
+Spry.Widget.TabbedPanels.prototype.onTabMouseOver = function(e, tab)
+{
+	this.addClassName(tab, this.tabHoverClass);
+};
+
+Spry.Widget.TabbedPanels.prototype.onTabMouseOut = function(e, tab)
+{
+	this.removeClassName(tab, this.tabHoverClass);
+};
+
+Spry.Widget.TabbedPanels.prototype.onTabFocus = function(e, tab)
+{
+	this.hasFocus = true;
+	this.addClassName(this.element, this.tabFocusedClass);
+};
+
+Spry.Widget.TabbedPanels.prototype.onTabBlur = function(e, tab)
+{
+	this.hasFocus = false;
+	this.removeClassName(this.element, this.tabFocusedClass);
+};
+
+Spry.Widget.TabbedPanels.ENTER_KEY = 13;
+Spry.Widget.TabbedPanels.SPACE_KEY = 32;
+
+Spry.Widget.TabbedPanels.prototype.onTabKeyDown = function(e, tab)
+{
+	var key = e.keyCode;
+	if (!this.hasFocus || (key != Spry.Widget.TabbedPanels.ENTER_KEY && key != Spry.Widget.TabbedPanels.SPACE_KEY))
+		return true;
+
+	this.showPanel(tab);
+
+	if (e.stopPropagation)
+		e.stopPropagation();
+	if (e.preventDefault)
+		e.preventDefault();
+
+	return false;
+};
+
+Spry.Widget.TabbedPanels.prototype.preorderTraversal = function(root, func)
+{
+	var stopTraversal = false;
+	if (root)
+	{
+		stopTraversal = func(root);
+		if (root.hasChildNodes())
+		{
+			var child = root.firstChild;
+			while (!stopTraversal && child)
+			{
+				stopTraversal = this.preorderTraversal(child, func);
+				try { child = child.nextSibling; } catch (e) { child = null; }
+			}
+		}
+	}
+	return stopTraversal;
+};
+
+Spry.Widget.TabbedPanels.prototype.addPanelEventListeners = function(tab, panel)
+{
+	var self = this;
+	Spry.Widget.TabbedPanels.addEventListener(tab, "click", function(e) { return self.onTabClick(e, tab); }, false);
+	Spry.Widget.TabbedPanels.addEventListener(tab, "mouseover", function(e) { return self.onTabMouseOver(e, tab); }, false);
+	Spry.Widget.TabbedPanels.addEventListener(tab, "mouseout", function(e) { return self.onTabMouseOut(e, tab); }, false);
+
+	if (this.enableKeyboardNavigation)
+	{
+		// XXX: IE doesn't allow the setting of tabindex dynamically. This means we can't
+		// rely on adding the tabindex attribute if it is missing to enable keyboard navigation
+		// by default.
+
+		// Find the first element within the tab container that has a tabindex or the first
+		// anchor tag.
+		
+		var tabIndexEle = null;
+		var tabAnchorEle = null;
+
+		this.preorderTraversal(tab, function(node) {
+			if (node.nodeType == 1 /* NODE.ELEMENT_NODE */)
+			{
+				var tabIndexAttr = tab.attributes.getNamedItem("tabindex");
+				if (tabIndexAttr)
+				{
+					tabIndexEle = node;
+					return true;
+				}
+				if (!tabAnchorEle && node.nodeName.toLowerCase() == "a")
+					tabAnchorEle = node;
+			}
+			return false;
+		});
+
+		if (tabIndexEle)
+			this.focusElement = tabIndexEle;
+		else if (tabAnchorEle)
+			this.focusElement = tabAnchorEle;
+
+		if (this.focusElement)
+		{
+			Spry.Widget.TabbedPanels.addEventListener(this.focusElement, "focus", function(e) { return self.onTabFocus(e, tab); }, false);
+			Spry.Widget.TabbedPanels.addEventListener(this.focusElement, "blur", function(e) { return self.onTabBlur(e, tab); }, false);
+			Spry.Widget.TabbedPanels.addEventListener(this.focusElement, "keydown", function(e) { return self.onTabKeyDown(e, tab); }, false);
+		}
+	}
+};
+
+Spry.Widget.TabbedPanels.prototype.showPanel = function(elementOrIndex)
+{
+	var tpIndex = -1;
+	
+	if (typeof elementOrIndex == "number")
+		tpIndex = elementOrIndex;
+	else // Must be the element for the tab or content panel.
+		tpIndex = this.getTabIndex(elementOrIndex);
+	
+	if (!tpIndex < 0 || tpIndex >= this.getTabbedPanelCount())
+		return;
+
+	var tabs = this.getTabs();
+	var panels = this.getContentPanels();
+
+	var numTabbedPanels = Math.max(tabs.length, panels.length);
+
+	for (var i = 0; i < numTabbedPanels; i++)
+	{
+		if (i != tpIndex)
+		{
+			if (tabs[i])
+				this.removeClassName(tabs[i], this.tabSelectedClass);
+			if (panels[i])
+			{
+				this.removeClassName(panels[i], this.panelVisibleClass);
+				panels[i].style.display = "none";
+			}
+		}
+	}
+
+	this.addClassName(tabs[tpIndex], this.tabSelectedClass);
+	this.addClassName(panels[tpIndex], this.panelVisibleClass);
+	panels[tpIndex].style.display = "block";
+
+	this.currentTabIndex = tpIndex;
+};
+
+Spry.Widget.TabbedPanels.prototype.attachBehaviors = function(element)
+{
+	var tabs = this.getTabs();
+	var panels = this.getContentPanels();
+	var panelCount = this.getTabbedPanelCount();
+
+	for (var i = 0; i < panelCount; i++)
+		this.addPanelEventListeners(tabs[i], panels[i]);
+
+	this.showPanel(this.defaultTab);
+};
+</script>
+<style>
+.TabbedPanelsTab {position: relative;top: 1px;float: left;padding: 4px 10px;margin: 0px 1px 0px 0px;font: bold 0.7em sans-serif;background-color: #f9f9f9;list-style: none;border-left: solid 1px #CCCCCC;border-bottom: solid 1px #999999;border-top: solid 1px #999999;border-right: solid 1px #999999;-moz-user-select: none;-khtml-user-select: none;cursor: pointer;}
+.TabbedPanelsTabHover {background-color: #f0f0f0;}
+.TabbedPanelsTabSelected {background-color: #c0c0c0;border-bottom: 1px solid #EEEEEE;}
+.TabbedPanels {margin: 0px;padding: 0px;clear: both;width: 100%;}
+.TabbedPanelsTabGroup {margin: 0px;padding: 0px;}
+.TabbedPanelsTab a {color: black;text-decoration: none;}
+.TabbedPanelsContentGroup {clear: both;border-left: solid 1px #CCCCCC;border-bottom: solid 1px #CCCCCC;border-top: solid 1px #999999;border-right: solid 1px #999999;background-color: #FFFFFF;}
+.TabbedPanelsContent {padding: 4px;}
+.TabbedPanelsContentVisible {}
+.VTabbedPanels .TabbedPanelsTabGroup {float: left;width: 10em;height: 20em;background-color: #EEEEEE;position: relative;border-top: solid 1px #999999;border-right: solid 1px #999999;border-left: solid 1px #CCCCCC;border-bottom: solid 1px #CCCCCC;}
+.VTabbedPanels .TabbedPanelsTab {float: none;margin: 0px;border-top: none;border-left: none;border-right: none;}
+.VTabbedPanels .TabbedPanelsTabSelected {background-color: #EEEEEE;border-bottom: solid 1px #999999;}
+.VTabbedPanels .TabbedPanelsContentGroup {clear: none;float: left;padding: 0px;width: 30em;height: 20em;}
+.TabbedPanels {width: 870px;}
+.TabbedPanelsTab {font-family: sans-serif;font-size: 12px;font-weight: bold;}
+
+.TabbedPanelsTab #TabNormal {color:#234679}
+.TabbedPanelsTab #TabMobile {color:#74620f}
+.TabbedPanelsTab #TabFacebook {color:#274f09}
+</style>
+
+
+
+<center>
+  <div class="TabbedPanels" id="tp1">
+    <ul class="TabbedPanelsTabGroup">
+      <li class="TabbedPanelsTab" tabindex="0"><div id="TabNormal">Arquivos Normal A</div></li>
+      <li class="TabbedPanelsTab" id="" tabindex="0"><div id="TabNormal">Arquivos Normal B</div></li>
+      <li class="TabbedPanelsTab" id="" tabindex="0"><div id="TabMobile">Arquivos Mobile A</div></li>
+      <li class="TabbedPanelsTab" id="" tabindex="0"><div id="TabMobile">Arquivos Mobile B</div></li>
+      <li class="TabbedPanelsTab" id="" tabindex="0"><div id="TabFacebook">Arquivos Facebook A</div></li>
+      <li class="TabbedPanelsTab" id="" tabindex="0"><div id="TabFacebook">Arquivos Facebook B</div></li>
+    </ul>
+    <div class="TabbedPanelsContentGroup">
+      <div class="TabbedPanelsContent">
+        <!-- Arquivos Normal A -->
+        <style>
+        .tdNormalA {height:30px;font-size:9pt;font-family:verdana,arial;background:#EFF8FF;border-color:#000000;border-width:1px;border-style:solid}
+        .tdNormalA ul {list-style-type:square}
+        </style>
+        
+        <table width="840" border="0">
+          <tr>
+            <td align="center" width="280" class="tdNormalA">
+              ARQUIVOS HTML
+            </td>
+            <td align="center" width="280" class="tdNormalA">
+              IMAGENS DE BOTÕES
+            </td>
+            <td align="center" width="280" class="tdNormalA">
+              IMAGENS DE TÍTULOS
+            </td>
+          </tr>
+          <tr>
+            <td class="tdNormalA" valign="top"><br />
+              <ul><li>Ajuda.htm</li>
+              <li>BarraEsquerda.htm</li>
+              <li>BarraLateral.htm</li>
+              <li>BarraTopo.htm</li>
+              <li>BuscaTopo.htm</li>
+              <li>CartaoProd.htm</li>
+              <li>Categorias.htm</li>
+              <li>CliCampo1.htm</li>
+              <li>CliCampo2.htm</li>
+              <li>CliCampo3.htm</li>
+              <li>ConfirmacaoPedido.htm</li>
+              <li>Error404.htm</li>
+              <li>EstiloProduto.htm</li>
+              <li>EstiloProdutoOut.htm</li>
+              <li>Home.htm</li>
+              <li>JurosParcelas.js</li>
+              <li>LojaLib.js</li>
+              <li>LojaSite.css</li>
+              <li>Manutencao.htm</li>
+              <li>PedCampo1.htm</li>
+              <li>PedCampo2.htm</li>
+              <li>PedCampo3.htm</li>
+              <li>PedBarraTopo.htm</li>
+              <li>PedBarraLateral.htm</li>
+              <li>PedBarraEsquerda.htm</li>
+              <li>PedRodape.htm</li>
+              <li>Popup.htm</li>
+              <li>Rodape.htm</li></ul>
+            </td>
+            <td class="tdNormalA" valign="top"><br />
+              <ul><li>BotAmpliar.png</li>
+              <li>BotCarrinho.png</li>
+              <li>BotCarrinhoEsgotado.png</li>
+              <li>BotComprar.png</li>
+              <li>BotExcluir.png</li>
+              <li>BotLancamento.png</li>
+              <li>BotDestaque.png</li>
+              <li>BotMaisDetalhes.png</li>
+              <li>BotOk.png</li>
+              <li>BotRecalcular.png</li>
+              <li>BotSetaDireita.png</li>
+              <li>BotSetaEsquerda.png</li>
+              <li>BotNewsletter.png</li>
+              <li>BotIndique.png</li>
+              <li>BotCadastro.png</li></ul>
+            </td>
+            <td class="tdNormalA" valign="top"><br />
+              <ul><li>TitAjuda.png
+              <li>TitCadastro.png
+              <li>TitConfirmacao.png
+              <li>TitEnvio.png
+              <li>TitFaleConosco.png
+              <li>TitLancamento.png
+              <li>TitProduto.png
+              <li>TitPromocao.png
+              <li>TitSeuPedido.png
+              <li>TitBusca.png
+              <li>TitNewsletter.png
+              <li>TitIndique.png
+              <li>TitNoticia.png
+              <li>TitCategoria.png
+              <li>TitLinha.png
+              <li>TitDepartamento.png
+              <li>TitFamilia.png
+              <li>TitGriffe.png
+              <li>TitColecao.png
+              <li>TitMarca.png
+              <li>TitSecao.png
+              <li>TitGrupo.png</li></ul>
+            </td>
+          </tr>
+        </table>
+        <!-- Fim Arquivos Normal A -->
+      </div>
+      <div class="TabbedPanelsContent">
+        <!-- Arquivos Normal B -->
+        <style>
+        .tdNormalB {height:30px;font-size:9pt;font-family:verdana,arial;background:#EFF8FF;border-color:#000000;border-width:1px;border-style:solid}
+        .tdNormalB ul {list-style-type:square}
+        .tdNormalB i {color:#ff2200}
+        .dNormalB {height:30px;font-size:9pt;font-family:verdana,arial;border-color:#000000;border-width:1px;border-style:solid}
+        .dNormalB ul {list-style-type:square}
+        .dNormalB i {color:#ff2200}
+        </style>
+        
+        <table width="840" border="0">
+          <tr>
+            <td colspan="3" class="dNormalB">
+              <br />Para realizar os testes com o layout <i><b>B</b></i>, os seguintes prefixos devem ser adicionados aos nomes dos arquivos:
+              <ul><li><i><b>Abt</b></i> (para arquivos html)</li>
+                <li><i><b>Abtb</b></i> (para imagens de botões)</li>
+                <li><i><b>Abtt</b></i> (para imagens de títulos)</li></ul>
+            </td>
+          </tr>
+          <tr>
+            <td align="center" width="280" class="tdNormalB">
+              ARQUIVOS HTML
+            </td>
+            <td align="center" width="280" class="tdNormalB">
+              IMAGENS DE BOTÕES
+            </td>
+            <td align="center" width="280" class="tdNormalB">
+              IMAGENS DE TÍTULOS
+            </td>
+          </tr>
+          <tr>
+            <td class="tdNormalB" valign="top"><br />
+              <ul><li><i><b>Abt</b></i>Ajuda.htm</li>
+              <li><i><b>Abt</b></i>BarraEsquerda.htm</li>
+              <li><i><b>Abt</b></i>BarraLateral.htm</li>
+              <li><i><b>Abt</b></i>BarraTopo.htm</li>
+              <li><i><b>Abt</b></i>BuscaTopo.htm</li>
+              <li><i><b>Abt</b></i>CartaoProd.htm</li>
+              <li><i><b>Abt</b></i>Categorias.htm</li>
+              <li><i><b>Abt</b></i>CliCampo1.htm</li>
+              <li><i><b>Abt</b></i>CliCampo2.htm</li>
+              <li><i><b>Abt</b></i>CliCampo3.htm</li>
+              <li><i><b>Abt</b></i>ConfirmacaoPedido.htm</li>
+              <li><i><b>Abt</b></i>Error404.htm</li>
+              <li><i><b>Abt</b></i>EstiloProduto.htm</li>
+              <li><i><b>Abt</b></i>EstiloProdutoOut.htm</li>
+              <li><i><b>Abt</b></i>Home.htm</li>
+              <li><i><b>Abt</b></i>JurosParcelas.js</li>
+              <li><i><b>Abt</b></i>LojaLib.js</li>
+              <li><i><b>Abt</b></i>LojaSite.css</li>
+              <li><i><b>Abt</b></i>Manutencao.htm</li>
+              <li><i><b>Abt</b></i>PedCampo1.htm</li>
+              <li><i><b>Abt</b></i>PedCampo2.htm</li>
+              <li><i><b>Abt</b></i>PedCampo3.htm</li>
+              <li><i><b>Abt</b></i>PedBarraTopo.htm</li>
+              <li><i><b>Abt</b></i>PedBarraLateral.htm</li>
+              <li><i><b>Abt</b></i>PedBarraEsquerda.htm</li>
+              <li><i><b>Abt</b></i>PedRodape.htm</li>
+              <li><i><b>Abt</b></i>Popup.htm</li>
+              <li><i><b>Abt</b></i>Rodape.htm</li></ul>
+            </td>
+            <td class="tdNormalB" valign="top"><br />
+              <ul><li><i><b>Abtb</b></i>Ampliar.png</li>
+              <li><i><b>Abtb</b></i>Carrinho.png</li>
+              <li><i><b>Abtb</b></i>CarrinhoEsgotado.png</li>
+              <li><i><b>Abtb</b></i>Comprar.png</li>
+              <li><i><b>Abtb</b></i>Excluir.png</li>
+              <li><i><b>Abtb</b></i>Lancamento.png</li>
+              <li><i><b>Abtb</b></i>Destaque.png</li>
+              <li><i><b>Abtb</b></i>MaisDetalhes.png</li>
+              <li><i><b>Abtb</b></i>Ok.png</li>
+              <li><i><b>Abtb</b></i>Recalcular.png</li>
+              <li><i><b>Abtb</b></i>SetaDireita.png</li>
+              <li><i><b>Abtb</b></i>SetaEsquerda.png</li>
+              <li><i><b>Abtb</b></i>Newsletter.png</li>
+              <li><i><b>Abtb</b></i>Indique.png</li>
+              <li><i><b>Abtb</b></i>Cadastro.png</li></ul>
+            </td>
+            <td class="tdNormalB" valign="top"><br />
+              <ul><li><i><b>Abtt</b></i>Ajuda.png</li>
+              <li><i><b>Abtt</b></i>Cadastro.png</li>
+              <li><i><b>Abtt</b></i>Confirmacao.png</li>
+              <li><i><b>Abtt</b></i>Envio.png</li>
+              <li><i><b>Abtt</b></i>FaleConosco.png</li>
+              <li><i><b>Abtt</b></i>Lancamento.png</li>
+              <li><i><b>Abtt</b></i>Produto.png</li>
+              <li><i><b>Abtt</b></i>Promocao.png</li>
+              <li><i><b>Abtt</b></i>SeuPedido.png</li>
+              <li><i><b>Abtt</b></i>Busca.png</li>
+              <li><i><b>Abtt</b></i>Newsletter.png</li>
+              <li><i><b>Abtt</b></i>Indique.png</li>
+              <li><i><b>Abtt</b></i>Noticia.png</li>
+              <li><i><b>Abtt</b></i>Categoria.png</li>
+              <li><i><b>Abtt</b></i>Linha.png</li>
+              <li><i><b>Abtt</b></i>Departamento.png</li>
+              <li><i><b>Abtt</b></i>Familia.png</li>
+              <li><i><b>Abtt</b></i>Griffe.png</li>
+              <li><i><b>Abtt</b></i>Colecao.png</li>
+              <li><i><b>Abtt</b></i>Marca.png</li>
+              <li><i><b>Abtt</b></i>Secao.png</li>
+              <li><i><b>Abtt</b></i>Grupo.png</li></ul>
+            </td>
+          </tr>
+        </table>
+        <!-- Fim Arquivos Normal B -->
+      </div>
+      <div class="TabbedPanelsContent">
+        <!-- Arquivos Mobile A -->
+        <style>
+        .tdMobileA {height:30px;font-size:9pt;font-family:verdana,arial;background:#FFFCF1;border-color:#000000;border-width:1px;border-style:solid}
+        .tdMobileA ul {list-style-type:square}
+        </style>
+        
+        <table width="840" border="0">
+          <tr>
+            <td align="center" width="280" class="tdMobileA">
+              ARQUIVOS HTML
+            </td>
+            <td align="center" width="280" class="tdMobileA">
+              IMAGENS DE BOTÕES
+            </td>
+            <td align="center" width="280" class="tdMobileA">
+              IMAGENS DE TÍTULOS
+            </td>
+          </tr>
+          <tr>
+            <td class="tdMobileA" valign="top"><br />
+              <ul><li>MbhAjuda.htm</li>
+              <li>MbhBarraEsquerda.htm</li>
+              <li>MbhBarraLateral.htm</li>
+              <li>MbhBarraTopo.htm</li>
+              <li>MbhCategorias.htm</li>
+              <li>MbhConfirmacaoPedido.htm</li>
+              <li>MbhEstiloProduto.htm</li>
+              <li>MbhEstiloProdutoOut.htm</li>
+              <li>MbhHome.htm</li>
+              <li>MbhLojaSite.htm</li>
+              <li>MbhRodape.htm</li></ul>
+            </td>
+            <td class="tdMobileA" valign="top"><br />
+              <ul><li>MbbAmpliar.png</li>
+              <li>MbbCarrinho.png</li>
+              <li>MbbCarrinhoEsgotado.png</li>
+              <li>MbbComprar.png</li>
+              <li>MbbExcluir.png</li>
+              <li>MbbLancamento.png</li>
+              <li>MbbDestaque.png</li>
+              <li>MbbMaisDetalhes.png</li>
+              <li>MbbOk.png</li>
+              <li>MbbRecalcular.png</li>
+              <li>MbbSetaDireita.png</li>
+              <li>MbbSetaEsquerda.png</li>
+              <li>MbbNewsletter.png</li>
+              <li>MbbIndique.png</li>
+              <li>MbbCadastro.png</li></ul>
+            </td>
+            <td class="tdMobileA" valign="top"><br />
+              <ul><li>MbtAjuda.png</li>
+              <li>MbtCadastro.png</li>
+              <li>MbtConfirmacao.png</li>
+              <li>MbtEnvio.png</li>
+              <li>MbtFaleConosco.png</li>
+              <li>MbtLancamento.png</li>
+              <li>MbtProduto.png</li>
+              <li>MbtPromocao.png</li>
+              <li>MbtSeuPedido.png</li>
+              <li>MbtBusca.png</li>
+              <li>MbtNewsletter.png</li>
+              <li>MbtIndique.png</li>
+              <li>MbtNoticia.png</li>
+              <li>MbtCategoria.png</li>
+              <li>MbtLinha.png</li>
+              <li>MbtDepartamento.png</li>
+              <li>MbtFamilia.png</li>
+              <li>MbtGriffe.png</li>
+              <li>MbtColecao.png</li>
+              <li>MbtMarca.png</li>
+              <li>MbtSecao.png</li>
+              <li>MbtGrupo.png</li></ul>
+            </td>
+          </tr>
+        </table>
+        <!-- Fim Arquivos Mobile A -->
+      </div>
+      <div class="TabbedPanelsContent">
+        <!-- Arquivos Mobile B -->
+        <style>
+        .tdMobileB {height:30px;font-size:9pt;font-family:verdana,arial;background:#FFFCF1;border-color:#000000;border-width:1px;border-style:solid}
+        .tdMobileB ul {list-style-type:square}
+        .tdMobileB i {color:#ff2200}
+        .dMobileB {height:30px;font-size:9pt;font-family:verdana,arial;border-color:#000000;border-width:1px;border-style:solid}
+        .dMobileB ul {list-style-type:square}
+        .dMobileB i {color:#ff2200}
+        </style>
+        
+        <table width="840" border="0">
+          <tr>
+            <td colspan="3" class="dMobileB">
+              <br />Para realizar os testes com o layout <i><b>B</b></i>, o seguinte prefixo deve ser adicionado aos nomes dos arquivos:
+              <ul><li><i><b>Abt</b></i> (para arquivos html, imagens de botões e títulos)</li></ul>
+            </td>
+          </tr>
+          <tr>
+            <td align="center" width="280" class="tdMobileB">
+              ARQUIVOS HTML
+            </td>
+            <td align="center" width="280" class="tdMobileB">
+              IMAGENS DE BOTÕES
+            </td>
+            <td align="center" width="280" class="tdMobileB">
+              IMAGENS DE TÍTULOS
+            </td>
+          </tr>
+          <tr>
+            <td class="tdMobileB" valign="top"><br />
+              <ul><li><i><b>Abt</b></i>MbhAjuda.htm</li>
+              <li><i><b>Abt</b></i>MbhBarraEsquerda.htm</li>
+              <li><i><b>Abt</b></i>MbhBarraLateral.htm</li>
+              <li><i><b>Abt</b></i>MbhBarraTopo.htm</li>
+              <li><i><b>Abt</b></i>MbhCategorias.htm</li>
+              <li><i><b>Abt</b></i>MbhConfirmacaoPedido.htm</li>
+              <li><i><b>Abt</b></i>MbhEstiloProduto.htm</li>
+              <li><i><b>Abt</b></i>MbhEstiloProdutoOut.htm</li>
+              <li><i><b>Abt</b></i>MbhHome.htm</li>
+              <li><i><b>Abt</b></i>MbhLojaSite.htm</li>
+              <li><i><b>Abt</b></i>MbhRodape.htm</li></ul>
+            </td>
+            <td class="tdMobileB" valign="top"><br />
+              <ul><li><i><b>Abt</b></i>MbbAmpliar.png</li>
+              <li><i><b>Abt</b></i>MbbCarrinho.png</li>
+              <li><i><b>Abt</b></i>MbbCarrinhoEsgotado.png</li>
+              <li><i><b>Abt</b></i>MbbComprar.png</li>
+              <li><i><b>Abt</b></i>MbbExcluir.png</li>
+              <li><i><b>Abt</b></i>MbbLancamento.png</li>
+              <li><i><b>Abt</b></i>MbbDestaque.png</li>
+              <li><i><b>Abt</b></i>MbbMaisDetalhes.png</li>
+              <li><i><b>Abt</b></i>MbbOk.png</li>
+              <li><i><b>Abt</b></i>MbbRecalcular.png</li>
+              <li><i><b>Abt</b></i>MbbSetaDireita.png</li>
+              <li><i><b>Abt</b></i>MbbSetaEsquerda.png</li>
+              <li><i><b>Abt</b></i>MbbNewsletter.png</li>
+              <li><i><b>Abt</b></i>MbbIndique.png</li>
+              <li><i><b>Abt</b></i>MbbCadastro.png</li></ul>
+            </td>
+            <td class="tdMobileB" valign="top"><br />
+              <ul><li><i><b>Abt</b></i>MbtAjuda.png</li>
+              <li><i><b>Abt</b></i>MbtCadastro.png</li>
+              <li><i><b>Abt</b></i>MbtConfirmacao.png</li>
+              <li><i><b>Abt</b></i>MbtEnvio.png</li>
+              <li><i><b>Abt</b></i>MbtFaleConosco.png</li>
+              <li><i><b>Abt</b></i>MbtLancamento.png</li>
+              <li><i><b>Abt</b></i>MbtProduto.png</li>
+              <li><i><b>Abt</b></i>MbtPromocao.png</li>
+              <li><i><b>Abt</b></i>MbtSeuPedido.png</li>
+              <li><i><b>Abt</b></i>MbtBusca.png</li>
+              <li><i><b>Abt</b></i>MbtNewsletter.png</li>
+              <li><i><b>Abt</b></i>MbtIndique.png</li>
+              <li><i><b>Abt</b></i>MbtNoticia.png</li>
+              <li><i><b>Abt</b></i>MbtCategoria.png</li>
+              <li><i><b>Abt</b></i>MbtLinha.png</li>
+              <li><i><b>Abt</b></i>MbtDepartamento.png</li>
+              <li><i><b>Abt</b></i>MbtFamilia.png</li>
+              <li><i><b>Abt</b></i>MbtGriffe.png</li>
+              <li><i><b>Abt</b></i>MbtColecao.png</li>
+              <li><i><b>Abt</b></i>MbtMarca.png</li>
+              <li><i><b>Abt</b></i>MbtSecao.png</li>
+              <li><i><b>Abt</b></i>MbtGrupo.png</li></ul>
+            </td>
+          </tr>
+        </table>
+        <!-- Fim Arquivos Mobile B -->
+      </div>
+      <div class="TabbedPanelsContent">
+        <!-- Arquivos Facebook A -->
+        <style>
+        .tdFacebookA {height:30px;font-size:9pt;font-family:verdana,arial;background:#EBFFF4;border-color:#000000;border-width:1px;border-style:solid}
+        .tdFacebookA ul {list-style-type:square}
+        </style>
+        
+        <table width="840" border="0">
+          <tr>
+            <td align="center" width="280" class="tdFacebookA">
+              ARQUIVOS HTML
+            </td>
+            <td align="center" width="280" class="tdFacebookA">
+              IMAGENS DE BOTÕES
+            </td>
+            <td align="center" width="280" class="tdFacebookA">
+              IMAGENS DE TÍTULOS
+            </td>
+          </tr>
+          <tr>
+            <td class="tdFacebookA" valign="top"><br />
+              <ul><li>FbhAjuda.htm</li>
+              <li>FbhBarraEsquerda.htm</li>
+              <li>FbhBarraLateral.htm</li>
+              <li>FbhBarraTopo.htm</li>
+              <li>FbhCategorias.htm</li>
+              <li>FbhConfirmacaoPedido.htm</li>
+              <li>FbhEstiloProduto.htm</li>
+              <li>FbhEstiloProdutoOut.htm</li>
+              <li>FbhHome.htm</li>
+              <li>FbhLojaSite.htm</li>
+              <li>FbhPopup.htm</li>
+              <li>FbhRodape.htm</li></ul>
+            </td>
+            <td class="tdFacebookA" valign="top"><br />
+              <ul><li>FbbAmpliar.png</li>
+              <li>FbbCarrinho.png</li>
+              <li>FbbCarrinhoEsgotado.png</li>
+              <li>FbbComprar.png</li>
+              <li>FbbExcluir.png</li>
+              <li>FbbLancamento.png</li>
+              <li>FbbDestaque.png</li>
+              <li>FbbMaisDetalhes.png</li>
+              <li>FbbOk.png</li>
+              <li>FbbRecalcular.png</li>
+              <li>FbbSetaDireita.png</li>
+              <li>FbbSetaEsquerda.png</li>
+              <li>FbbNewsletter.png</li>
+              <li>FbbIndique.png</li>
+              <li>FbbCadastro.png</li></ul>
+            </td>
+            <td class="tdFacebookA" valign="top"><br />
+              <ul><li>FbtAjuda.png</li>
+              <li>FbtCadastro.png</li>
+              <li>FbtConfirmacao.png</li>
+              <li>FbtEnvio.png</li>
+              <li>FbtFaleConosco.png</li>
+              <li>FbtLancamento.png</li>
+              <li>FbtProduto.png</li>
+              <li>FbtPromocao.png</li>
+              <li>FbtSeuPedido.png</li>
+              <li>FbtBusca.png</li>
+              <li>FbtNewsletter.png</li>
+              <li>FbtIndique.png</li>
+              <li>FbtNoticia.png</li>
+              <li>FbtCategoria.png</li>
+              <li>FbtLinha.png</li>
+              <li>FbtDepartamento.png</li>
+              <li>FbtFamilia.png</li>
+              <li>FbtGriffe.png</li>
+              <li>FbtColecao.png</li>
+              <li>FbtMarca.png</li>
+              <li>FbtSecao.png</li>
+              <li>FbtGrupo.png</li></ul>
+            </td>
+          </tr>
+        </table>
+        <!-- Fim Arquivos Facebook A -->
+      </div>
+      <div class="TabbedPanelsContent">
+        <!-- Arquivos Facebook B -->
+        <style>
+        .tdFacebookB {height:30px;font-size:9pt;font-family:verdana,arial;background:#EBFFF4;border-color:#000000;border-width:1px;border-style:solid}
+        .tdFacebookB ul {list-style-type:square}
+        .tdFacebookB i {color:#ff2200}
+        .dFacebookB {height:30px;font-size:9pt;font-family:verdana,arial;border-color:#000000;border-width:1px;border-style:solid}
+        .dFacebookB ul {list-style-type:square}
+        .dFacebookB i {color:#ff2200}
+        </style>
+        
+        <table width="840" border="0">
+          <tr>
+            <td colspan="3" class="dFacebookB">
+              <br />Para realizar os testes com o layout <i><b>B</b></i>, o seguinte prefixo deve ser adicionado aos nomes dos arquivos:
+              <ul><li><i><b>Abt</b></i> (para arquivos html, imagens de botões e títulos)</li></ul>
+            </td>
+          </tr>
+          <tr>
+            <td align="center" width="280" class="tdFacebookB">
+              ARQUIVOS HTML
+            </td>
+            <td align="center" width="280" class="tdFacebookB">
+              IMAGENS DE BOTÕES
+            </td>
+            <td align="center" width="280" class="tdFacebookB">
+              IMAGENS DE TÍTULOS
+            </td>
+          </tr>
+          <tr>
+            <td class="tdFacebookB" valign="top"><br />
+              <ul><li><i><b>Abt</b></i>FbhAjuda.htm</li>
+              <li><i><b>Abt</b></i>FbhBarraEsquerda.htm</li>
+              <li><i><b>Abt</b></i>FbhBarraLateral.htm</li>
+              <li><i><b>Abt</b></i>FbhBarraTopo.htm</li>
+              <li><i><b>Abt</b></i>FbhCategorias.htm</li>
+              <li><i><b>Abt</b></i>FbhConfirmacaoPedido.htm</li>
+              <li><i><b>Abt</b></i>FbhEstiloProduto.htm</li>
+              <li><i><b>Abt</b></i>FbhEstiloProdutoOut.htm</li>
+              <li><i><b>Abt</b></i>FbhHome.htm</li>
+              <li><i><b>Abt</b></i>FbhLojaSite.htm</li>
+              <li><i><b>Abt</b></i>FbhPopup.htm</li>
+              <li><i><b>Abt</b></i>FbhRodape.htm</li></ul>
+            </td>
+            <td class="tdFacebookB" valign="top"><br />
+              <ul><li><i><b>Abt</b></i>FbbAmpliar.png</li>
+              <li><i><b>Abt</b></i>FbbCarrinho.png</li>
+              <li><i><b>Abt</b></i>FbbCarrinhoEsgotado.png</li>
+              <li><i><b>Abt</b></i>FbbComprar.png</li>
+              <li><i><b>Abt</b></i>FbbExcluir.png</li>
+              <li><i><b>Abt</b></i>FbbLancamento.png</li>
+              <li><i><b>Abt</b></i>FbbDestaque.png</li>
+              <li><i><b>Abt</b></i>FbbMaisDetalhes.png</li>
+              <li><i><b>Abt</b></i>FbbOk.png</li>
+              <li><i><b>Abt</b></i>FbbRecalcular.png</li>
+              <li><i><b>Abt</b></i>FbbSetaDireita.png</li>
+              <li><i><b>Abt</b></i>FbbSetaEsquerda.png</li>
+              <li><i><b>Abt</b></i>FbbNewsletter.png</li>
+              <li><i><b>Abt</b></i>FbbIndique.png</li>
+              <li><i><b>Abt</b></i>FbbCadastro.png</li></ul>
+            </td>
+            <td class="tdFacebookB" valign="top"><br />
+              <ul><li><i><b>Abt</b></i>FbtAjuda.png</li>
+              <li><i><b>Abt</b></i>FbtCadastro.png</li>
+              <li><i><b>Abt</b></i>FbtConfirmacao.png</li>
+              <li><i><b>Abt</b></i>FbtEnvio.png</li>
+              <li><i><b>Abt</b></i>FbtFaleConosco.png</li>
+              <li><i><b>Abt</b></i>FbtLancamento.png</li>
+              <li><i><b>Abt</b></i>FbtProduto.png</li>
+              <li><i><b>Abt</b></i>FbtPromocao.png</li>
+              <li><i><b>Abt</b></i>FbtSeuPedido.png</li>
+              <li><i><b>Abt</b></i>FbtBusca.png</li>
+              <li><i><b>Abt</b></i>FbtNewsletter.png</li>
+              <li><i><b>Abt</b></i>FbtIndique.png</li>
+              <li><i><b>Abt</b></i>FbtNoticia.png</li>
+              <li><i><b>Abt</b></i>FbtCategoria.png</li>
+              <li><i><b>Abt</b></i>FbtLinha.png</li>
+              <li><i><b>Abt</b></i>FbtDepartamento.png</li>
+              <li><i><b>Abt</b></i>FbtFamilia.png</li>
+              <li><i><b>Abt</b></i>FbtGriffe.png</li>
+              <li><i><b>Abt</b></i>FbtColecao.png</li>
+              <li><i><b>Abt</b></i>FbtMarca.png</li>
+              <li><i><b>Abt</b></i>FbtSecao.png</li>
+              <li><i><b>Abt</b></i>FbtGrupo.png</li></ul>
+            </td>
+          </tr>
+        </table>
+        <!-- Fim Arquivos Facebook B -->
+      </div>
+    </div>
+  </div>
+  <script language="JavaScript" type="text/javascript">var tp1 = new Spry.Widget.TabbedPanels("tp1");</script>
+</center>
+
+<center>
+<style>
+.tdNormal {font-size:9pt;font-family:verdana,arial}
+</style>
+ </center>

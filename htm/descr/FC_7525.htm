@@ -1,0 +1,27 @@
+<p>O seguinte alerta é apresentado pelo navegador Internet Explorer nos acessos feitos com endereço <span>https://...</span></p>.<br><br>
+<img src="/lojas/00000009/images/FC7525.gif" class="img-responsive">
+<br>
+
+<p>O alerta acima também poderá ocorrer nas páginas de cadastro de clientes e de fechamento de pedidos, o que pode causar prejuízos à loja.</p>
+<br>
+
+<p>Verifique e se for o caso corrija os seguintes itens:</p>
+<br>
+
+<p><b>1)</b> Uma ou mais imagens estão referenciadas com <b>http://</b> ao invés de <b>http<span class="dest">s</span>://</b></p>
+
+<p>Para corrigir, basta transferir estas imagens para as pastas <b>IMAGES</b> ou <b>PROD</b> da loja e referenciá-las através da tag especial &lt;baseloja&gt;.</p>
+
+<p><b>Ex:</b> <b>&lt;baseloja&gt;images/telefone.gif</b></p>
+
+<p>Para mais informações sobre tags especiais, visite as seguintes páginas:</p>
+<p><a href="https://www.fastcommerce.com.br/perguntas-frequentes-sobre-comercio-eletronico" target="_blank">http://faq.Fastcommerce.com.br</a> (item 26)</p>
+<p><a href="http://www.rumo.com.br/sistema/adm/TagsEspeciais.htm" target="_blank">http://www.rumo.com.br/sistema/adm/TagsEspeciais.htm</a></p>
+<br>
+
+<p><b>2)</b> Se algum arquivo personalizado da loja faz referência à scripts de <b>Terceiros</b>, é preciso entrar em contato com o fornecedor desse script e verificar o que está referenciado com <b>http://</b> e pedir que forneça com <b>https</b>.</p>
+
+<p>Após fazer as correções necessárias, limpe o cache da loja. Em seguida, preencha o <b>IDLoja</b> no campo abaixo para verificar se o alerta persiste:</p>
+
+<form method="GET" action="https://www.rumo.com.br/cadastro.asp" target="_blank" name="FormAbreLoja"><b>https://www.rumo.com.br/cadastro.asp?IDLoja=</b>&nbsp;<input type="text" size="8" maxlength="8" name="IDLoja">&nbsp;<input type="submit" name="BtVerificar" value="Verificar" class="EstBotaoPeq"></form>
+

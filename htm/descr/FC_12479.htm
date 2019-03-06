@@ -1,0 +1,65 @@
+<p>Com o recurso de <b>AutoSuggest avançado</b>, os resultados serão exibidos rapidamente a partir do 3º caractere digitado, incluindo as imagens dos produtos sugeridos.</p>
+
+<p>São quatro grupos de resultados:</p>
+<ol><li>Termos sugeridos
+<li>Produtos sugeridos
+<li>Páginas relacionadas (Hotsites)
+<li>Notícias
+</ol>
+<br>
+<p>Veja este recurso em funcionamento na loja <a href="http://flores.lojavirtualfc.com.br" target="_blank">http://flores.lojavirtualfc.com.br</a>, digitando <b>cra</b> no campo de busca:</p>
+
+<center><img src="/lojas/00000009/images/AutoSuggest01.gif" class="img-responsive"></center>
+
+<br>
+<p><b class="dest">ATENÇÃO:</b> A personalização deste recurso requer <b>CONHECIMENTOS AVANÇADOS</b> de <b>HTML</b>, <b>CSS</b> e <b>JavaScript</b>.</p>
+
+
+<p>Seguem os passos para a implantação do <b>AutoSuggest avançado</b>:</p>
+
+<p><span class="dest NewsPassos">1º Passo</span></p>
+<p>Envie o arquivo <a href="/dnload/AutoSuggest_v1.zip">AutoSuggest_v1.zip</a> para a pasta <b>htm</b> da loja.</p>
+<br>
+ 
+<p><span class="dest NewsPassos">2º Passo</span></p>
+<p>Insira as linhas abaixo no início do arquivo <b>BarraTopo.htm</b>:</p>
+
+<pre><span>&lt;link rel=&quot;stylesheet&quot; href=&quot;&lt;BaseLoja&gt;htm/jquery_ui.css&quot;&gt;
+&lt;script language=&quot;JavaScript&quot; src=&quot;/jquery-1.8.2.min.js&quot;&gt;&lt;/script&gt;
+&lt;script language=&quot;JavaScript&quot; src=&quot;/jquery-ui-1.9.2.custom.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;&lt;BaseLoja&gt;htm/autosuggest.js&quot;&gt;&lt;/script&gt;
+&lt;!--[if IE]&gt;
+  &lt;style type=&quot;text/css&quot;&gt;.ui-autocomplete-category{margin-top: -2px}&lt;/style&gt;
+&lt;![endif]--&gt;</span></pre>
+<br>
+
+<p><span class="dest NewsPassos">3º Passo</span></p>
+<p>Insira no form do campo de busca <b>id="autocomplete-form"</b>:</p>
+
+<p><b>Ex:</b></p> 
+<pre><span>&lt;form name=buscaprod method=GET <span>id=&quot;autocomplete-form&quot;</span> action=listaProdutos.asp?IDLoja=&lt;IDLoja&gt; onSubmit=&quot;return VerTexto(this)&quot;&gt;</span></pre>
+<br>
+
+<p><span class="dest NewsPassos">4º Passo</span></p>
+<p>Insira no input text o <b>id="autocomplete"</b>:</p>
+
+<p><b>Ex:</b></p>
+<pre>&lt;input type=text class=InputTextBusca value=&quot;&lt;SearchText&gt;&quot; name=Texto <span>id=&quot;autocomplete&quot;</span> maxlength=35 value=&quot;&quot;&gt;</span></pre>
+
+<p><b><u>Variáveis</u></b></p>
+<p>As variáveis abaixo definem a quantidade de resultados que serão exibidos em cada grupo (o máximo é <b>9</b>):</p>
+
+<img src="/lojas/00000009/images/fc/FC12479IMG1.png" class="img-responsive "style="border: 2px #000 solid"/>
+
+
+<p><b><u>Customização</u></b></p>
+<p>As classes e ids indicadas na imagem estão ao final do arquivo <b>jquery_ui.css</b>.</p>
+
+<p><b>Obs:</b> Para alterar a cor do efeito zebra, edite a linha abaixo no arquivo <b>AutoSuggest.js</b>:</p>
+
+<pre><b>jQuery('li.active:even').css('background-color', '#f1efef');</b></pre>
+<br>
+
+<center><img src="/lojas/00000009/images/as_img.jpg" class="img-responsive "style="border: 2px #000 solid"/></center>
+
+<!--NewsDesignFC-->

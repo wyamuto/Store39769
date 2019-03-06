@@ -1,0 +1,119 @@
+<img src="/lojas/00000009/images/RecRefinamento.gif" width="484" height="70" hspace="10" class="img-responsive">
+<br>
+<p>Veja exemplos de lojas que utilizam o refinamento de buscas:</p>
+
+<ul><li><a target="_blank" href="http://www.perfumes.com.br/prod,idloja,154,texto,floral,idcategoria,87601,produtos,12,order,2,avancada,1,adicional1,407,adicional2,14">Busca na Perfumes.com.br</a>: veja na barra esquerda os filtros de refinamento desta busca. Clique nos ícones [x] para remover filtros.</li><li><a target="_blank" href="http://spdepartamentos.lojavirtualfc.com.br/prod,idloja,184,texto,sony,produtos,8,avancada,1,idcategoria,78228,acessorios">Busca na SP Departamentos</a>: veja no topo da página os filtros de refinamento desta busca. Clique no termo <b>sony</b> para alterar a busca.</li></ul>
+
+<p>Veja os detalhes para fazer esta personalização na seção <b>Tags para contextualização e refinamento de buscas</b> da página de <a href="http://www.fastcommerce.com.br/adm/TagsEspeciaisProdutos.htm" target="_blank">tags especiais de produtos</a>.<br></p>
+
+<br>
+<p><h4>Exemplo de Personalização</h4></p>
+<p>É possível exibir o refinamento de busca na <b>Barra Esquerda</b> da loja virtual (no arquivo <b>BarraEsquerda.htm</b>).</p>
+<br />
+  <center><img src="/lojas/00000009/images/fc/FC_11675_1.png" class="img-responsive" /></center>
+<br />
+<h4>Como implementar?</h4>
+<br>
+<span class="dest NewsPassos">1° Passo</span>
+<p>Realize o backup dos arquivo <b>BarraEsquerda.htm</b>, <b>EstiloProduto.htm</b> e <b>LojaLib.js</b> localizado dentro da pasta HTM da loja.</p>
+<br>
+
+<span class="dest NewsPassos">2° Passo</span>
+<p>Edite o arquivo <b>BarraEsquerda.htm</b>. Inclua no código-fonte deste arquivo o código HTML abaixo.</p>
+<pre>&lt;div id="idExibeFiltrosFC" class="EstExibeFiltrosFC" style="display:none">&lt;/div></pre>
+<br>
+
+<span class="dest NewsPassos">3° Passo</span>
+<p>Edite o arquivo <b>EstiloProduto.htm</b>. Inclua no código-fonte deste arquivo o código abaixo entre as tags <b>&lt;ProdTop></b> e <b>&lt;/ProdTop></b>.
+<br />Normalmente estas tags estão localizadas no começo do código-fonte do arquivo.</p>
+
+<pre>&lt;script&gt;
+var iQtdProds=&lt;QtProd&gt;;
+&lt;/script&gt;
+
+&lt;style type="text/css"&gt;
+/* Estilos Refinamento de busca Barra Esquerda*/
+.EstExibeFiltrosFC{width: 180px; min-height: 50px; position: relative;}
+.EstTabFiltros{background-color: #FFFFFF; border: 1px solid #CCCCCC}
+.EstTabFiltros tr td, .EstTabFiltros ul, .EstTabFiltros a{font-family: arial, tahoma;}
+
+.EstTitFiltroFC{ width: 100%; height: auto; position: relative; font-size: 14px; color: #3b3b3b; background-color:#E8E8E8}
+.EstTitFiltroFC b{display: block; padding: 5px; font-weight: normal;}
+.EstListaFiltroFC{width:100%; min-height: 30px; position: relative; display: block; padding: 5px 0;}
+.EstListaFiltroFC ul{padding: 5px; position: relative; display: block;}
+#idSelPathCatQtFC, #idSelAdic1QtFC, #idSelAdic2QtFC, #idSelAdic3QtFC {width:100%;}
+
+#idUlPathCatQtFC a,#idUlAdic1QtFC a,#idUlAdic2QtFC a,#idUlAdic3QtFC a{text-decoration:none; color:#0e6cb0;}
+#idUlPathCatQtFC a:hover,#idUlAdic1QtFC a:hover,#idUlAdic2QtFC a:hover,#idUlAdic3QtFC a:hover{text-decoration:underline; color:333333}
+#idUlPathCatQtFC li,#idUlAdic1QtFC li,#idUlAdic2QtFC li,#idUlAdic3QtFC li{font-size:12px;list-style-type:none;  margin:5px 10px 3px 5px; }
+#idUlPathSearchFC input[type=text]{margin: 5px 0;border: 1px solid #cccccc;}
+#idUlPathSearchFC, #idDivLinkAdvancedSearchFC{margin:5px}
+#idLinkAdvancedSearchFC{font-size: 12px; color: #009900; text-decoration: none; display: block; padding: 5px 0}
+#idLinkAdvancedSearchFC:hover{text-decoration:underline; color: #187095;}
+.BotRemoveFiltros{text-align:center; text-decoration: none; display: block; width: 90%; padding:5px 0; margin:10px 0; font-weight: bold; border:1px solid #cccccc; background-color:#eeeeee; color:#254573}
+.BotRemoveFiltros:hover{ text-decoration: underline; background-color: #009900; color: #ffffff;}
+
+&lt;/style&gt;
+
+&lt;div id="idFiltrosBusca" style="display:none"&gt;
+  &lt;table class="EstTabFiltros" width="100%" border="0" cellpadding="0" cellspacing="0"&gt;
+    &lt;tr&gt;
+      &lt;td class="EstTitFiltroFC"&gt;&lt;b&gt;Filtrando por&lt;/b&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr id="idFiltroResultadoFC"&gt;
+      &lt;td&gt;&lt;div id="idBuscaFiltro" class="EstListaFiltroFC"&gt;&lt;ListPathSearch&gt;&lt;/div&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr id="idFiltroCatFC"&gt;
+      &lt;td&gt;&lt;div class="EstTitFiltroFC"&gt;&lt;b&gt;&lt;LegendaCats&gt;&lt;/b&gt;&lt;/div&gt;&lt;div class=EstListaFiltroFC&gt;&lt;ListPathCatQt&gt;&lt;/div&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr id="idFiltroAdic1FC"&gt;
+      &lt;td&gt;&lt;div class="EstTitFiltroFC"&gt;&lt;b&gt;&lt;NomeAdicional1&gt;&lt;/b&gt;&lt;/div&gt;&lt;div class=EstListaFiltroFC&gt;&lt;ListAdic1Qt&gt;&lt;/div&gt;&lt;/tr&gt;
+    &lt;tr id="idFiltroAdic2FC"&gt;
+      &lt;td&gt;&lt;div class="EstTitFiltroFC"&gt;&lt;b&gt;&lt;NomeAdicional2&gt;&lt;/b&gt;&lt;/div&gt;&lt;div class=EstListaFiltroFC&gt;&lt;ListAdic2Qt&gt;&lt;/div&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr id="idFiltroAdic3FC"&gt;
+      &lt;td&gt;&lt;div class="EstTitFiltroFC"&gt;&lt;b&gt;&lt;NomeAdicional3&gt;&lt;/b&gt;&lt;/div&gt;&lt;div class=EstListaFiltroFC&gt;&lt;ListAdic3Qt&gt;&lt;/div&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;div id="idDivLinkAdvancedSearchFC"&gt;&lt;LinkAdvancedSearch&gt;&lt;/div&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td align="center"&gt;&lt;a class="BotRemoveFiltros" href="/prod,idloja,&lt;IDLoja&gt;"&gt;Remover filtros&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/div&gt;
+
+&lt;script type="text/javascript"&gt;
+if(iQtdProds&gt;1)exibeRefinamentoBusca();
+&lt;/script&gt;</pre>
+<br>
+
+<span class="dest NewsPassos">4° Passo</span>
+<p>Edite o arquivo <b>LojaLib.js</b>. No final do código-fonte deste arquivo inclua o código abaixo:</p>
+<br>
+
+<pre>function exibeRefinamentoBusca(){
+
+var deleteElement = function( sIdFiltro ) {
+      var el = document.getElementById(sIdFiltro);
+      el.parentNode.removeChild(el);
+    };
+
+var oFiltroBusca = document.getElementById('idUlPathSearchFC');
+var oFiltroCat = document.getElementById('idUlPathCatQtFC');
+var oFiltroAdic1 = document.getElementById('idUlAdic1QtFC');
+var oFiltroAdic2 = document.getElementById('idUlAdic2QtFC');
+var oFiltroAdic3 = document.getElementById('idUlAdic3QtFC');
+
+if(!oFiltroBusca)deleteElement('idFiltroResultadoFC');
+if(!oFiltroCat)deleteElement('idFiltroCatFC');
+if(!oFiltroAdic1)deleteElement('idFiltroAdic1FC');
+if(!oFiltroAdic2)deleteElement('idFiltroAdic2FC');
+if(!oFiltroAdic3)deleteElement('idFiltroAdic3FC');
+
+var sTabFiltros = document.getElementById('idFiltrosBusca').innerHTML;
+if(oFiltroBusca || oFiltroCat || oFiltroAdic1 || oFiltroAdic2 || oFiltroAdic3){
+  document.getElementById('idExibeFiltrosFC').style.display = 'block';
+  document.getElementById('idExibeFiltrosFC').innerHTML = sTabFiltros;
+  } 
+}</pre>

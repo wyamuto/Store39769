@@ -1,0 +1,150 @@
+<script src="<BaseLoja>htm/SpryAssets/SpryMenuBar.js" type="text/javascript"></script>
+<link href="<BaseLoja>htm/SpryAssets/SpryMenuBarVertical.css" rel="stylesheet" type="text/css" />
+
+<table width=100% border=1>
+  <tr>
+    <td width=50%>
+      Exemplo de menu com personalização em CSS e Javascript<br><br>Seguem os arquivos que devem ser enviados para a pasta <a href=/dnload/SpryAssetsHTM.zip>htm/SpryAssets</a> e <a href=/dnload/SpryAssetsIMAGES.zip>images/SpryAssets</a>, caso a pasta <b>SpryAssets</b> não exista será necessário sua criação.
+    </td>
+    <td>
+
+      <style>.CatOpened{}.CatClosed{display:none}.EstListCat ul{margin:0 0 0 12px;padding:0}.EstListCat li{margin:0;list-style-type:none;padding:5px 0 0 0}.EstListCat .wid{width:12px}.PathCatActive{font-weight:bold}.EstListCat .ImgClosed{width:12px;cursor:pointer;background:url(images/PathClosed.gif) no-repeat bottom left}.EstListCat .ImgOpened{width:12px;cursor:pointer;background:url(images/PathOpened.gif) no-repeat bottom left}</style>
+      
+      <style>
+      #idMenuCat1 .wid{width:0px}
+      .CatClosed{display:block}
+      .EstListCat ul{margin:0 0 0 0;padding:0}
+      .EstListCat li{margin:0;list-style-type:none;padding:0 0 0 0}
+      </style>
+      
+      <span class=EstListCat>
+      <ul id=idMenuCat1 class=CatOpened>
+        <li id=Cat2_2861><span class=wid><span id=img_Cat2_2861 class=ImgClosed onclick=CatToggle('Cat2_2861')><img src=images/shim.gif class=wid></span></span><span class=PathCat0 id=idPathCat2861><a href=#2861&q=Apple>Apple</a></span>
+          <ul id=ul_Cat2_2861 class=CatClosed>
+            <li id=Cat2_2864><span class=wid><span id=img_Cat2_2864 class=ImgClosed onclick=CatToggle('Cat2_2864')><img src=images/shim.gif class=wid></span></span><span class=PathCat1 id=idPathCat2864><a href=#2864&q=IPhone>IPhone</a></span>
+              <ul id=ul_Cat2_2864 class=CatClosed>
+                <li id=Cat2_2867><span class=wid><img src=images/shim.gif class=wid></span><span class=PathCat2 id=idPathCat2867><a href=#2867&q=Claro>Claro</a></span>
+                </li>
+                <li id=Cat2_2869><span class=wid><img src=images/shim.gif class=wid></span><span class=PathCat2 id=idPathCat2869><a href=#2869&q=Tim>Tim</a></span>
+                </li>
+                <li id=Cat2_2868><span class=wid><img src=images/shim.gif class=wid></span><span class=PathCat2 id=idPathCat2868><a href=#2868&q=Vivo>Vivo</a></span>
+                </li>
+              </ul>
+            </li>
+            <li id=Cat2_2862><span class=wid><span id=img_Cat2_2862 class=ImgClosed onclick=CatToggle('Cat2_2862')><img src=images/shim.gif class=wid></span></span><span class=PathCat1 id=idPathCat2862><a href=#2862&q=Ipod>Ipod</a></span>
+              <ul id=ul_Cat2_2862 class=CatClosed>
+                <li id=Cat2_2866><span class=wid><img src=images/shim.gif class=wid></span><span class=PathCat2 id=idPathCat2866><a href=#2866&q=80Gb>80Gb</a></span>
+                </li>
+                <li id=Cat2_2865><span class=wid><img src=images/shim.gif class=wid></span><span class=PathCat2 id=idPathCat2865><a href=#2865&q=8Gb>8Gb</a></span>
+                </li>
+              </ul>
+            </li>
+            <li id=Cat2_2863><span class=wid><img src=images/shim.gif class=wid></span><span class=PathCat1 id=idPathCat2863><a href=#2863&q=Notebook>Notebook</a></span>
+            </li>
+          </ul>
+        </li>
+        <li id=Cat2_2870><span class=wid><span id=img_Cat2_2870 class=ImgClosed onclick=CatToggle('Cat2_2870')><img src=images/shim.gif class=wid></span></span><span class=PathCat0 id=idPathCat2870><a href=#2870&q=C%E2meras+digitais>Câmeras digitais</a></span>
+          <ul id=ul_Cat2_2870 class=CatClosed>
+            <li id=Cat2_2872><span class=wid><img src=images/shim.gif class=wid></span><span class=PathCat1 id=idPathCat2872><a href=#2872&q=Filmadoras>Filmadoras</a></span>
+            </li>
+            <li id=Cat2_2871><span class=wid><img src=images/shim.gif class=wid></span><span class=PathCat1 id=idPathCat2871><a href=#2871&q=Fotogr%E1ficas>Fotográficas</a></span>
+            </li>
+          </ul>
+        </li>
+        <li id=Cat2_2901><span class=wid><img src=images/shim.gif class=wid></span><span class=PathCat0 id=idPathCat2901><a href=#2901&q=DVDs>DVDs</a></span>
+        </li>
+        <li id=Cat2_2873><span class=wid><span id=img_Cat2_2873 class=ImgClosed onclick=CatToggle('Cat2_2873')><img src=images/shim.gif class=wid></span></span><span class=PathCat0 id=idPathCat2873><a href=#2873&q=Eletr%F4nicos>Eletrônicos</a></span>
+          <ul id=ul_Cat2_2873 class=CatClosed>
+            <li id=Cat2_2874><span class=wid><img src=images/shim.gif class=wid></span><span class=PathCat1 id=idPathCat2874><a href=#2874&q=DVD>DVD</a></span>
+            </li>
+            <li id=Cat2_2875><span class=wid><span id=img_Cat2_2875 class=ImgClosed onclick=CatToggle('Cat2_2875')><img src=images/shim.gif class=wid></span></span><span class=PathCat1 id=idPathCat2875><a href=#2875&q=LCD>LCD</a></span>
+              <ul id=ul_Cat2_2875 class=CatClosed>
+                <li id=Cat2_2877><span class=wid><span id=img_Cat2_2877 class=ImgClosed onclick=CatToggle('Cat2_2877')><img src=images/shim.gif class=wid></span></span><span class=PathCat2 id=idPathCat2877><a href=#2877&q=LG>LG</a></span>
+                  <ul id=ul_Cat2_2877 class=CatClosed>
+                    <li id=Cat2_2879><span class=wid><img src=images/shim.gif class=wid></span><span class=PathCat3 id=idPathCat2879><a href=#2879&q=36%27>36'</a></span>
+                    </li>
+                    <li id=Cat2_2880><span class=wid><img src=images/shim.gif class=wid></span><span class=PathCat3 id=idPathCat2880><a href=#2880&q=42%27>42'</a></span>
+                    </li>
+                  </ul>
+                </li>
+                <li id=Cat2_2878><span class=wid><span id=img_Cat2_2878 class=ImgClosed onclick=CatToggle('Cat2_2878')><img src=images/shim.gif class=wid></span></span><span class=PathCat2 id=idPathCat2878><a href=#2878&q=Samsung>Samsung</a></span>
+                  <ul id=ul_Cat2_2878 class=CatClosed>
+                    <li id=Cat2_2881><span class=wid><img src=images/shim.gif class=wid></span><span class=PathCat3 id=idPathCat2881><a href=#2881&q=19%27>19'</a></span>
+                    </li>
+                    <li id=Cat2_2882><span class=wid><img src=images/shim.gif class=wid></span><span class=PathCat3 id=idPathCat2882><a href=#2882&q=52%27>52'</a></span>
+                    </li>
+                  </ul>
+                </li>
+                <li id=Cat2_2876><span class=wid><span id=img_Cat2_2876 class=ImgClosed onclick=CatToggle('Cat2_2876')><img src=images/shim.gif class=wid></span></span><span class=PathCat2 id=idPathCat2876><a href=#2876&q=Sony>Sony</a></span>
+                  <ul id=ul_Cat2_2876 class=CatClosed>
+                    <li id=Cat2_2884><span class=wid><img src=images/shim.gif class=wid></span><span class=PathCat3 id=idPathCat2884><a href=#2884&q=100%27>100'</a></span>
+                    </li>
+                    <li id=Cat2_2883><span class=wid><img src=images/shim.gif class=wid></span><span class=PathCat3 id=idPathCat2883><a href=#2883&q=5%27>5'</a></span>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      </span>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+var idMenuCat1 = new Spry.Widget.MenuBar("idMenuCat1", {imgRight:"<BaseLoja>images/SpryAssets/SpryMenuBarRightHover.gif"});
+</script>
+
+
+
+<pre><span class=courrier>
+
+<b>Segue exemplo de arquivo html com a personalização:</b>
+
+
+<span class=dest>&lt; !-- ### O código abaixo deve ser adicionado nas duas primeiras linhas de seu arquivo html ### --></span>
+&lt;script src="&lt;BaseLoja>htm/SpryAssets/SpryMenuBar.js" type="text/javascript">&lt;/script>
+&lt;link href="&lt;BaseLoja>htm/SpryAssets/SpryMenuBarVertical.css" rel="stylesheet" type="text/css" />
+<span class=dest>&lt; !-- ### Fim deste comentário ### --></span>
+
+
+<span class=dest>&lt; !-- ### Este conteúdo será adicionado de forma automática pelo sistema ### --></span>
+&lt;style>
+  .CatOpened{}
+  .CatClosed{display:none}
+  .EstListCat ul{margin:0 0 0 12px;padding:0}
+  .EstListCat li{margin:0;list-style-type:none;padding:5px 0 0 0}
+  .EstListCat .wid{width:12px}
+  .PathCatActive{font-weight:bold}
+  .EstListCat .ImgClosed{width:12px;cursor:pointer;background:url(images/PathClosed.gif) no-repeat bottom left}
+  .EstListCat .ImgOpened{width:12px;cursor:pointer;background:url(images/PathOpened.gif) no-repeat bottom left}
+&lt;/style>
+<span class=dest>&lt; !-- ### Fim deste comentário ### --></span>
+
+
+<span class=dest>&lt; !-- ### O código abaixo deve ser adicionado em seu arquivo html ### --></span>
+&lt;style>
+  #idMenuCat1 .wid{width:0px}
+  .CatClosed{display:block}
+  .EstListCat{font-size:8pt;font-family:arial}
+&lt;/style>
+<span class=dest>&lt; !-- ### Fim deste comentário ### --></span>
+
+
+&lt;table width=100%>
+  &lt;tr>
+    &lt;td>
+      &lt;ListPathCat out="2">  <span class=dest>&lt; !-- ### Tag especial utilizada para a criaçãodo menu ### --></span>
+    &lt;/td>
+  &lt;/tr>
+&lt;/table>
+
+
+<span class=dest>&lt; !-- ### O código abaixo deve ser adicionado em seu arquivo html ### --></span>
+&lt;script type="text/javascript">
+var idMenuCat1 = new Spry.Widget.MenuBar("idMenuCat1", {imgRight:"&lt;BaseLoja>images/SpryAssets/SpryMenuBarRightHover.gif"});
+&lt;/script>
+<span class=dest>&lt; !-- ### Fim deste comentário ### --></span>
+</span><pre>

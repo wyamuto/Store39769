@@ -1,0 +1,88 @@
+<p><span class="dest">2º Passo</span> - Neste arquivo localize a linha abaixo:</p> 
+  
+  <p><b>function fnShowPrice(Price,OriginalPrice,Cod,iMaxParcels,ProductID){</b></p>
+
+<p><span class="dest">3º Passo</span> - Ao localizar a linha acima insira o código abaixo uma linha depois:</p> 
+<pre>  if(Price>=300)iMaxParcels=6;
+  else if(Price>=250)iMaxParcels=5;
+  else if(Price>=200)iMaxParcels=4;
+  else if(Price>=150)iMaxParcels=3;
+  else if(Price>=100)iMaxParcels=2;
+  else if(Price>=1)iMaxParcels=1;
+</pre>
+<p><span class="dest">4º Passo</span> - Agora localize a linha de código abaixo:</p>
+
+  <p><b>function fnShowParcels(Price,iMaxParcels,ProductID){</b></p>
+
+<p><span class="dest">5º Passo</span> - Ao localizar a linha acima insira o código abaixo uma linha depois:</p>
+<pre>  if(Price>=300)iMaxParcels=6;
+  else if(Price>=250)iMaxParcels=5;
+  else if(Price>=200)iMaxParcels=4;
+  else if(Price>=150)iMaxParcels=3;
+  else if(Price>=100)iMaxParcels=2;
+  else if(Price>=1)iMaxParcels=1;
+</pre>
+<p>Este código acima define o parcelamento por valor do produto, faça as alterações de acordo com o que deseja.</p>
+
+<p>Por exemplo: </p>
+ <p><b>else if(Price>=100)iMaxParcels=2;</b></p>
+
+<p>Explicando o código acima, se o preço for MAIOR que 100 as quantidades de parcelas serão iguais á 2.</p>  
+
+<p><span class="dest">6º Passo</span> Caso sua loja utilize o recurso de grade de produtos busque a seguinte função:</p>
+
+<p><b>function fnMaxInstallmentsGrid(PrecoProd,MaxParcelas){</b></p>
+
+<p><span class="dest">7º Passo</span> - Ao localizar a linha acima insira o código abaixo uma linha depois:</p>
+
+<pre>
+    if(PrecoProd>=300)MaxParcelas=6;
+  else if(PrecoProd>=250)MaxParcelas=5;
+  else if(PrecoProd>=200)MaxParcelas=4;
+  else if(PrecoProd>=150)MaxParcelas=3;
+  else if(PrecoProd>=100)MaxParcelas=2;
+  else if(PrecoProd>=1)MaxParcelas=1;
+</pre>
+
+<p>Segue um exemplo deste código dentro das funções:</p>
+
+<pre>
+<span class=courrierpeq>
+  <b>function fnShowPrice(Price,OriginalPrice,Cod,iMaxParcels,ProductID){</b>
+
+    if(Price>=300)iMaxParcels=6;
+  else if(Price>=250)iMaxParcels=5;
+  else if(Price>=200)iMaxParcels=4;
+  else if(Price>=150)iMaxParcels=3;
+  else if(Price>=100)iMaxParcels=2;
+  else if(Price>=1)iMaxParcels=1;
+.
+.
+.
+ <b>function fnShowParcels(Price,iMaxParcels,ProductID){</b>
+
+      if(Price>=300)iMaxParcels=6;
+  else if(Price>=250)iMaxParcels=5;
+  else if(Price>=200)iMaxParcels=4;
+  else if(Price>=150)iMaxParcels=3;
+  else if(Price>=100)iMaxParcels=2;
+  else if(Price>=1)iMaxParcels=1;
+.
+.
+.
+<b> function fnMaxInstallmentsGrid(PrecoProd,MaxParcelas){</b>
+  if(PrecoProd>=300)MaxParcelas=6;
+  else if(PrecoProd>=250)MaxParcelas=5;
+  else if(PrecoProd>=200)MaxParcelas=4;
+  else if(PrecoProd>=150)MaxParcelas=3;
+  else if(PrecoProd>=100)MaxParcelas=2;
+  else if(PrecoProd>=1)MaxParcelas=1;
+.
+.
+.
+</span>
+</pre>
+
+<p><span class="dest">8º Passo</span> - Grave a alteração, apague ou acesse a loja sem cache e verifique.</p>
+
+<p><b>Obs:</b> Faça o backup do arquivo antes de realizar as alterações.</p>

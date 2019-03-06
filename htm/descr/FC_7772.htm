@@ -1,0 +1,39 @@
+<pre>&lt;script>//Sort 
+var sPag=document.location.href.toUpperCase();
+if(sPag.indexOf("/PROD,")==-1){sConcat="&";sCharSep="=";} else {sConcat=",";sCharSep=",";}
+if((sPag.indexOf("&DET=")==-1 && sPag.indexOf("&IDPRODUTO=")==-1) && (sPag.indexOf(",DET,")==-1 && sPag.indexOf(",IDPRODUTO,")==-1)){
+  document.write("&lt;br>&lt;select id=OrderProd class=smSelect onchange=NewOrder()>");
+  document.write("&lt;option value=-1>Sort&lt;/option>");
+  document.write("&lt;option value=0>default&lt;/option>");
+  document.write("&lt;option value=1>new releases&lt;/option>");
+  document.write("&lt;option value=2>highlights&lt;/option>");
+  document.write("&lt;option value=3>categories&lt;/option>");
+  document.write("&lt;option value=4>product name&lt;/option>");
+  document.write("&lt;option value=5>customer review&lt;/option>");
+  document.write("&lt;option value=6>on sale&lt;/option>");
+  document.write("&lt;option value=7>lower prices&lt;/option>");
+  document.write("&lt;option value=8>higher prices&lt;/option>");
+  document.write("&lt;/select>");
+  var oOrder=document.getElementById('OrderProd');
+  var posOrder=sPag.indexOf("ORDER"+sCharSep);
+  if(posOrder!=-1){
+    var iOrderCurrent=sPag.substr(posOrder+6,1);
+    if(!isNaN(iOrderCurrent))if(iOrderCurrent>=0){
+      var i=0;
+      while(i&lt;oOrder.length && oOrder.options[i].value!=iOrderCurrent)i++;
+      if(i&lt;oOrder.length)oOrder.selectedIndex=i;
+    }
+  }
+}
+
+function NewOrder(){
+  var iOrder=oOrder.options[oOrder.selectedIndex].value;
+  if(iOrder>=0){
+    if(posOrder!=-1){document.location.href=document.location.href.replace(new RegExp('order'+sCharSep+iOrderCurrent),'order'+sCharSep+iOrder);}
+    else{document.location.href=document.location.href.replace(new RegExp('idloja'+sCharSep+FC$.IDLoja,'gi'),'idloja'+sCharSep+FC$.IDLoja+sConcat+'order'+sCharSep+iOrder);}
+  }
+}
+&lt;/script></pre>
+<br>
+<p>A sort selection field will be added to the top of the pages that list the products.
+In this way, the visitor can choose the preferred ordering for the products listed.</p>

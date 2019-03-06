@@ -1,0 +1,63 @@
+<style>
+.imgbordercolor{border:1px solid #eeeeee;margin-top:15px;margin-bottom:15px;}
+.fc-warning{color:red;}
+</style>
+
+<p><b>PRÉ-REQUISITO:</b> As imagens dos produtos da loja precisam estar corretamente cadastradas. <a href="https://ajuda.fastcommerce.net.br/como-cadastrar-varias-imagens-nos-produtos" target="_blank">Clique aqui</a> para mais detalhes.</p>
+
+<br>
+
+<p><span class="dest NewsPassos">1º Passo</span></p>
+<p>Copie o código abaixo e cole ao final do arquivo <b>LojaLib.js</b>, que fica na pasta HTM:</p>
+
+<pre>
+function changeImages(sImagemProdPri,sImagemProdDet,sDescUrl,sIdProduto,sNomeProd) {
+var replaceNomeProd = sNomeProd.replace(/-/g,' ');
+var tagImgPri = sImagemProdPri;
+var sIdCampo = "DivImagemProdDouble" + sIdProduto;
+if (tagImgPri == "") {
+document.getElementById(sIdCampo).innerHTML = "&lt;img height='200px' src='/images/nd0.gif'>";
+} else {
+var tagImgDet = sImagemProdDet;
+var sLenghtImg = tagImgDet;
+var nLenghtImg = sLenghtImg.search(",");
+if (nLenghtImg &lt; 0) {
+document.getElementById(sIdCampo).innerHTML = "&lt;a href=" + sDescUrl + ">&lt;img src='" + sImagemProdPri + "' alt=\""+ replaceNomeProd +"\">&lt;/a>";
+} else {
+var valImgDet = null;
+if (tagImgDet != null) {
+valImgDet = tagImgDet.split(",");
+}
+var imgDet0 = valImgDet[0];
+var imgDet1 = valImgDet[1];
+if ((imgDet0.indexOf('#') >= 0 && imgDet0.indexOf('/') >= 0) || (imgDet1.indexOf('#') >= 0 && imgDet1.indexOf('/') >= 0)) {
+imgDet0 = valImgDet[0].replace('#', "/lojas/");
+imgDet1 = valImgDet[1].replace('#', "/lojas/");
+} else if (imgDet0.indexOf('#') >= 0 || imgDet1.indexOf('#') >= 0) {
+imgDet0 = valImgDet[0].replace('#', FC$.PathPrdExt);
+imgDet1 = valImgDet[1].replace('#', FC$.PathPrdExt);
+} else {
+imgDet1 = FC$.PathPrd + valImgDet[1];
+}
+if (imgDet0 == null) {
+document.getElementById(sIdCampo).innerHTML = "&lt;a href=" + sDescUrl + ">&lt;img height='159' src='" + sImagemProdPri + "' alt=\""+ replaceNomeProd +"\">&lt;/a>";
+} else {
+document.getElementById(sIdCampo).innerHTML = "&lt;a href=" + sDescUrl + ">&lt;img height='159' src='" + imgDet0 + "'' border='0'' onmouseover=\"this.src='" + imgDet1 + "'\" onmouseout=\"this.src='" + imgDet0 + "'\" alt=\""+ replaceNomeProd +"\">&lt;/a>";
+}
+}
+}
+}
+</pre>
+
+<br>
+
+<p><span class="dest NewsPassos">2º Passo</span></p>
+<p>Segue o código que deverá substituir o trecho referente à apresentação da imagem na página principal e na lista de produtos:</p>
+
+<pre>
+&lt;div id="DivImagemProdDouble&lt;IDProduto>">
+&lt;script>changeImages("&lt;ImagemProdPri>","&lt;ImagemProdDet>","&lt;URLProd>","&lt;IDProduto>","&lt;NomeProdUA>")&lt;/script>
+&lt;/div>
+</pre>
+
+<p>O arquivo responsável pela exibição na página principal da loja é o <b>EstiloProdutoOut.htm</b> e na listagem de produtos é o <b>EstiloProduto.htm</b>.</p>

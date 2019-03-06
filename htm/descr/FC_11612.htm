@@ -1,0 +1,48 @@
+<center><div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/pjHY3-yXkLg" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+</div></center>
+<br>
+
+<p><a target="_blank" href="http://spdepartamentos.lojavirtualfc.com.br">Clique aqui</a> para acessar a loja acima e navegar pelas categorias e produtos. Note como os menus se alteram de acordo com a página acessada, de forma contextual.</p>
+
+<p>Para criar estes menus contextuais, utilize as opções de OUT da tag &lt;ListPathCat>:</p>
+
+<p><span>Exemplo 1</span> (<b>&lt;ListPathCat out="2" id="-1"></b>)</p>
+<p>A mesma estrutura de sub-categorias é exibida em todas as páginas de navegação (página inicial, lista de produtos, ajuda, etc).</p>
+
+<div class="container">
+	<div class="row text-center">
+	  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"><img src="/lojas/00000009/images/sub_01.png" class="img-responsive"/></div>
+	  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"><img src="/lojas/00000009/images/sub_01a.png" class="img-responsive"/></div>
+	</div>
+</div>
+<br><br><br>
+
+<p><span>Exemplo 2</span> (<b>&lt;ListPathCat out="10" id="-1"></b>)</p>
+<p>A estrutura de sub-categorias apresentará a hieraquia até os filhos e irmãos do item clicado. Os demais itens de primeiro nível serão exibidos fechados.</p>
+
+<div class="container">
+	<div class="row text-center">
+	  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"><img src="/lojas/00000009/images/sub_01.png" class="img-responsive"/></div>
+	  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"><img src="/lojas/00000009/images/sub_01b.png" class="img-responsive"/></div>
+	</div>
+</div>
+<br><br><br>
+
+<p><span>Exemplo 3</span> (<b>&lt;ListPathCat out="11" id="-1"></b>)</p>
+<p>A estrutura de sub-categorias apresentará a hieraquia até os filhos e irmãos do item clicado. Os demais itens de primeiro nível não serão exibidos. Útil para criar menus exclusivos de categorias (ex: hotsites).</p>
+
+<div class="container">
+	<div class="row text-center">
+	  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"><img src="/lojas/00000009/images/sub_01.png" class="img-responsive"/></div>
+	  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"><img src="/lojas/00000009/images/sub_01c.png" class="img-responsive"/></div>
+	</div>
+</div>
+<br><br><br>
+
+<p><span>Exemplo 4</span> (<b>&lt;ListPathCat out="12"></b>)</p>
+<p>A estrutura de sub-categorias apresentará somente o primeiro nível de categorias. Útil para criar menu horizontal apresentado na parte superior da loja.</p>
+
+<center><img src="/lojas/00000009/images/sub_01d.png" class="img-responsive"></center>
+<br><br><br>
+<p><b>Obs:</b> Sugerimos que utilize os exemplos <b>3</b> e <b>4</b> em conjunto.</p>

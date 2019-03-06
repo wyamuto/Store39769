@@ -1,0 +1,43 @@
+<p><span class="dest NewsPassos">1º Passo</span></p>
+<p>Copie o código abaixo e cole no fim do arquivo <b>LojaLib.js</b>, que fica na pasta HTM:</p>
+<pre>
+function fnShowBadgeProd(IDProduto,PrecoOri,PrecoNum){
+  var oBadge=document.getElementById("DivProd"+IDProduto);
+  if(oBadge){
+    var sBadges="";
+    if(oBadge.hasAttribute("data-sale") && PrecoOri>PrecoNum && (getPromocao() > 1))sBadges+="&lt;div class='badgeProm' title='Oferta'>-"+ getPromocao() +"%&lt;/div>";
+    if(oBadge.hasAttribute("data-release"))sBadges+="&lt;div class='badgeNew' title='Lançamento'>NOVO&lt;/div>";
+    if(oBadge.hasAttribute("data-highlight"))sBadges+="&lt;div class='badgeHigh' title='Destaque'>&amp;#9733;&amp;#9733;&amp;#9733;&lt;/div>";
+    if(sBadges!="")oBadge.innerHTML+="&lt;div class='badgesProd'>"+ sBadges +"&lt;/div>";
+  }
+  function getPromocao(){return parseInt((PrecoOri-PrecoNum)/PrecoOri*100);}
+}
+</pre>
+<br>
+<p><span class="dest NewsPassos">2º Passo</span></p>
+<p>Copie o código abaixo e cole no fim do arquivo <b>LojaSite.css</b>, que fica na pasta HTM:</p>
+<pre>
+/* ShowBadges */
+.DivHomeProd,.DivListProd{position:relative;}
+.badgesProd {position: absolute;top: 10px;color: white;}
+.badgeProm  {margin-top: 3px;background-color: #009900;border-radius: 5px;padding: 5px;font-size: 12px;width:45.2px;}
+.badgeNew   {margin-top: 3px;color:#0088d8;border:1px solid #0088d8;background-color: #ffffff;border-radius: 5px;padding: 5px;font-size: 11px;width:45.2px;}
+.badgeHigh  {margin-top: 3px;color:#ffc033;background-color: #ffffff;border-radius: 5px;padding: 2px 5px;font-size: 18px;width:45.2px;}
+</pre>
+<br>
+<p><span class="dest NewsPassos">3º Passo</span></p>
+<p>Insira o código abaixo nas tags &lt;div> que receberão o selo na página principal e na lista de produtos:</p>
+<pre>
+id="DivProd&lt;IDProduto>" &lt;DataAttribute>
+</pre>
+<br>
+<p>Exemplo de uso:</p>
+<pre>
+&lt;div id="DivProd&lt;IDProduto>" &lt;DataAttribute>>&lt;/div>
+</pre>
+<br>
+<p>O script abaixo deve ser inserido antes da tag &lt;/ProdLista> no arquivo <b>estiloproduto.htm</b> e antes da tag &lt;/p255> no arquivo <b>estiloprodutoout.htm</b>.</p>
+<pre>
+&lt;script>fnShowBadgeProd(&lt;IDProduto>,&lt;PrecoOri>,&lt;PrecoNum>);&lt;/script>
+</pre>
+<br>

@@ -1,0 +1,70 @@
+<p><b>Segue o passo-a-passo:</b></p>
+<br>
+
+<p><span class="dest NewsPassos">1º Passo:</span></p>
+<p>Crie um novo widget e preencha o campo <b>ID da posição</b> com o nome <b>Widget1</b>.</p>
+<p>Altere os campos abaixo <b>StoreID</b>, <b>Partner</b> e <b>PosID</b> de acordo com o ID da loja, o nome do parceiro cadastrado na loja e a posição na página onde o widget será exibido.</p>
+
+<pre><span>&lt;script type='text/javascript'&gt;
+var _FCw_aProds=new Array();
+
+var _FCw_prod=new Array();
+_FCw_prod['StoreID']=<b>999999</b>;
+_FCw_prod['Partner']='<b>widget</b>';
+_FCw_prod['AdType']=1;
+_FCw_prod['PosID']='<b>Widget1</b>';
+
+_FCw_aProds[_FCw_aProds.length]=_FCw_prod;
+(function(){
+var fcw=document.createElement('script');
+fcw.type='text/javascript';
+fcw.async=true;
+fcw.src=('https:'==document.location.protocol?'https':'http')+'://www.rumo.com.br/ProdWidget.js';
+var s=document.getElementsByTagName('script')[0];
+s.parentNode.insertBefore(fcw,s);
+})();
+&lt;/script&gt;</span></pre>
+<br>
+
+
+<p><span class="dest NewsPassos">2º Passo:</span></p>
+<p>Escolha um novo modelo de widget e preencha o campo <b>ID da posição</b> com o nome <b>Widget2</b>. Insira os novos parâmetros do segundo modelo de widget e altere o parâmetro <b>StoreID</b>, <b>Partner</b> e <b>PosID</b>, conforme o 1º passo.</p>
+
+<pre><span>&lt;script type='text/javascript'&gt;
+var _FCw_aProds=new Array();
+
+//Widget modelo 1
+var _FCw_prod=new Array();
+_FCw_prod['StoreID']=<b>999999</b>;
+_FCw_prod['Partner']='<b>widget</b>';
+_FCw_prod['AdType']=1;
+_FCw_prod['PosID']='<b>Widget1</b>';
+
+//Widget modelo 2
+var _FCw_prod=new Array();
+_FCw_prod['StoreID']=<b>999999</b>;
+_FCw_prod['Partner']='<b>widget</b>';
+_FCw_prod['AdType']=2;
+_FCw_prod['PosID']='<b>Widget2</b>';
+
+_FCw_aProds[_FCw_aProds.length]=_FCw_prod;
+(function(){
+var fcw=document.createElement('script');
+fcw.type='text/javascript';
+fcw.async=true;
+fcw.src=('https:'==document.location.protocol?'https':'http')+'://www.rumo.com.br/ProdWidget.js';
+var s=document.getElementsByTagName('script')[0];
+s.parentNode.insertBefore(fcw,s);
+})();
+&lt;/script&gt;
+</span></pre>
+<br>
+
+<p><span class="dest NewsPassos">3º Passo:</span></p>
+<p>Insira as DIVs com os IDs abaixo nas posições onde deseja exibir os widgets.</p>
+
+<pre><b>&lt;div id='Widget1'&gt;&lt;/div&gt;
+&lt;div id='Widget2'&gt;&lt;/div&gt;</b></pre>
+<br>
+
+<p><b>OBS:</b> Uma loja pode exibir widgets de outra loja. Entretanto, ela não poderá exibir widgets com seus próprios produtos.</p>

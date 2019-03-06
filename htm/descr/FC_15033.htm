@@ -1,0 +1,51 @@
+<center><span id="idTextNewsFC" itemprop="articleBody"><img src="<PathTo file="prod/loading-example.gif">" class="img-responsive" style="border:1px solid #ddd"></span></center>
+<br><br>
+
+<h4>Veja o procedimento para incluir barra de progresso:</h4>
+
+<br>
+<span id="idTextNewsFC" itemprop="articleBody"><span class="dest NewsPassos">1º Passo</span>
+<p>Acesse o site do <a href="http://ricostacruz.com/nprogress/" target="_blank">NProgress.js</a> e clique no botão <b>Download</b>.</p>
+<br>
+
+<span class="dest NewsPassos">2º Passo</span><br>
+<p>Clique no botão <b>Clone or download</b> para abrir as opções e clique em <b>Download Zip</b>.</p>
+<center><span id="idTextNewsFC" itemprop="articleBody"><a href="https://github.com/rstacruz/nprogress" target="_blank"><img src="/lojas/00028496/images/fc/Img_5033_2.png" class="img-responsive"></a></span></center>
+<br>
+
+<span id="idTextNewsFC" itemprop="articleBody"><span class="dest NewsPassos">3º Passo</span>
+<p>Descompacte o arquivo <b>nprogress-master.zip</b></p>
+<br>
+
+<span id="idTextNewsFC" itemprop="articleBody"><span class="dest NewsPassos">4º Passo</span>
+<p>Envie o arquivo <b>nprogress.css</b> para a subpasta <b>CSS</b> da pasta <b>HTM</b>.</p>
+<small><b>OBS</b>: Caso a loja não tenha uma pasta CSS, crie uma dentro da pasta HTM.</small>
+<br><br>
+
+<span id="idTextNewsFC" itemprop="articleBody"><span class="dest NewsPassos">5º Passo</span>
+<p>Envie o arquivo <b>nprogress.js</b> para a pasta <b>JS</b>.</p>
+<small><b>Obs</b>: Caso a loja não tenha uma pasta JS, crie uma dentro da pasta HTM.</small>
+<br><br>
+
+<span id="idTextNewsFC" itemprop="articleBody"><span class="dest NewsPassos">6º Passo</span>
+<p>Copie e cole o seguinte script no final do arquivo <b>lojalib.js</b></p>
+
+<pre>/* Progress Bar */
+function fnProgressBarLoading(){
+  NProgress.start();
+  window.addEventListener("load",function(event){
+    NProgress.done();
+  });
+}</pre>
+<br>
+
+<span id="idTextNewsFC" itemprop="articleBody"><span class="dest NewsPassos">7º Passo</span>
+<p>Copie e cole o código abaixo no final do arquivo <b>rodape.htm</b></p>
+<pre>&lt;!-- Progress Bar -->
+&lt;link rel="stylesheet" href="&lt;PathTo file="htm/css/nprogress.css">">
+&lt;script src="&lt;PathTo file="htm/js/nprogress.js">">&lt;/script>
+&lt;script>fnProgressBarLoading();&lt;/script></pre>
+<br>
+
+<span id="idTextNewsFC" itemprop="articleBody"><span class="dest NewsPassos">8º Passo</span>
+<p>Limpe o cache da loja e acesse a loja para ver sua barra de progresso.</p>

@@ -1,0 +1,74 @@
+<!-- Includes CSS -->
+<link rel="stylesheet" href="<BaseLoja>htm/css/jquery_ui.css?cccfc=1">
+<link rel="stylesheet" href="<BaseLoja>htm/css/bootstrap.css?cccfc=1" media="all">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700&subset=latin-ext" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow&subset=latin-ext" rel="stylesheet"> 
+
+<!--[if IE]>
+<style type="text/css">.ui-autocomplete-category{margin-top: -2px}</style>
+<![endif]-->
+
+<div class="FC-HeaderFUllBG">
+  <!-- Logo + Menu -->
+  <div class="container FC-HeaderContentPosition">
+    <div class="row">
+        <div class="col-xs-12 col-sm-2 col-md-4 col-lg-4 FC-HeaderLogoAlign">
+          <a href="/" target="_self"><img class="" src="<BaseLoja>images/LogoFastcommerce.png?cccfc=1" width="250" class="img-responsive"></a>
+        </div>
+      <div class="col-xs-12 col-sm-10 col-md-8 col-lg-8">
+        <div class="FC-HeaderNavPosition">
+          <nav role="navigation" class="navbar navbar-default navbar-right">
+            <div class="navbar-header text-right">
+              <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+                <span class="sr-only"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand visible-xs" href="#" data-target="#navbarCollapse" data-toggle="collapse">Menu</a>
+            </div>
+            <div id="navbarCollapse" class="collapse navbar-collapse">
+              <ul class="nav navbar-nav FC-HeaderMenuLink">
+                <li class=""><a href="/secao/design" target="_self">Design</a></li>
+                <li class=""><a href="/secao/divulgacao" target="_self">Divulgação</a></li>
+                <li class=""><a href="/secao/pagamentos" target="_self">Pagamentos</a></li>
+                <li class=""><a href="/secao/produtos" target="_self">Produtos</a></li>
+                <li class="FC-HeaderMenuHideTablet"><a href="/secao/servicos" target="_self">Serviços</a></li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Search -->
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center FC-HeaderTitWhite"><h1>Como podemos ajudar?</h1></div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-1 col-md-1 col-lg-1"></div>
+      <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
+        <form name="TopSearchForm" method="GET" id="autocomplete-form" action="/listaprodutos.asp" onsubmit="zF$.fnCreateEvent('Busca Topo','Termo',this.texto.value);">
+          <input type="hidden" name="IDLoja" value="<IDLoja>">
+          <input type="hidden" name="Digitada" value="True">
+          <input type="hidden" name="order" value="8">
+          <input type="text" value="<SearchText>" id="autocomplete" name="texto" class="form-control FC-Header-SearchField" placeholder="Digite sua dúvida. Ex:frete, XML etc.">
+          <input type="image" name="buscar" src="<BaseLoja>images/IconSearch.svg?cccfc=1" class="FC-Header-SearchBtnSubmit">
+        </form>
+      </div>
+      <div class="col-xs-12 col-sm-1 col-md-1 col-lg-1"></div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center FC-HeaderTitWhite"><h2>Encontre os artigos que irão ajudá-lo a melhorar sua loja virtual</h2></div>
+    </div>
+  </div>
+
+</div>

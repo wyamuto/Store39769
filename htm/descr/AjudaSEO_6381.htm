@@ -1,0 +1,92 @@
+<style>
+.courrier {font-size:11pt;font-family:courier new,tahoma,verdana;color:#0D6D9E;}
+.courrierpeq {font-size:8pt;font-family:courier new,tahoma,verdana;color:#0D6D9E;}
+.tit {font-size:14pt}
+.dest {font-size:10pt;font-family:tahoma,verdana;color:#990000;font-weight:bold;}
+.destverde {font-size:10pt;font-family:tahoma,verdana;color:#139606;font-weight:bold;}
+</style>
+
+<p>Appearing prominently in search engines (Google, Yahoo, Bing, etc.) is the goal of 10 out of 10 sites. Ideally, this happens in unpaid (natural) searches, which are results that appear just below the <i>sponsored links</i>.</p>
+
+<p>SEO (Search Engine Optimization) is a set of techniques to improve the positioning in the natural results in search engines.</p>
+
+<p><a href=https://www.ehcommerce.com target=_blank>ehcommerce</a> allows the use of various SEO techniques to improve the positioning in the natural (non-sponsored) results of the main search sites.</p>
+
+<p><b>Here are some examples:</b></p>
+
+<ol>
+
+<li><p><b>Tag <span class=courrier>&lt;TITLE></span></b></p>
+<p>One of the key information used by search engines is the &lt;title> tag. The content of this tag is usually displayed as the title of search results on search sites. In ehcommerce, the title is generated according to the page visited. For example, the title of a detail page for a product is the name of this product, followed by the name of the store.</p>
+<p>You can also enter a custom default title. See more information on the <i>Store data</i> page of the administrative site by clicking on the question mark next to the <i>Tag contents &lt;title></i> field.
+</p>
+<p>The news detail page uses the subject of this news in the title and the subtitle in the meta description tag.</p>
+</li>
+<br>
+
+<li><p><b>Tag configuration <span class=courrier>&lt;META DESCRIPTION></span></b></p>
+<p>These tags are used by search engines to display the most relevant information on the page, just below the TITLE. Its inclusion is automatic, according to the page visited. For example, if the page details a product, the short description field of this product will be used in this tag.</p>
+<p>See more information in the <b>Store description in meta description tag</b> section of the <b>STORE CONFIGURATION</b> page.</p>
+</li>
+<br>
+
+<li><p><b>Configuring the <span class=courrier>&lt;HEAD></span> on custom pages (hotsites)</b></p>
+<p>In custom webdesigner pages, include &lt;head> and &lt;/head> at the beginning of the htm file and enter the tags you want in this section, including the &lt;title> and &lt;/title>.</p>
+</li>
+<br>
+
+<li><p><b>Configuring the <span class=courrier>&lt;META></span></b> for proving site ownership</p>
+<p>Google, Bing and Yahoo! offer sites with unique features for use by webmasters. To use these features you must prove ownership of your domain. In ehcommerce this is done through the meta tag defined by the search engines and inserted in the <b>Additional HTML Header</b> field of the <b>STORE CONFIGURATION</b> page.</p>
+</li>
+<br>
+
+<li><p><b>Content hierarchy</b> on custom pages (use of tags <span class=courrier>&lt;h1></span>, <span class=courrier>&lt;h2></span> etc)</p></li>
+<br>
+
+<li><p><b>Generating XML for <span class=courrier>Sitemap Protocol</span></b></p>
+<p>For better control of pages indexed by search engines, use the <b><a target=_blank href=https://support.google.com/webmasters/answer/156184?hl=en>Sitemap protocol</a></b>.</p>
+<p>ehcommerce creates sitemaps automatically, making it easier for compatible search engines to include in their indexes the main pages of the store.</p>
+</li>
+<br>
+
+<li><p><b>Generating and customizing <span class=courrier>robots.txt</span></b></p>
+<p>ehcommerce creates the robots.txt file that is used by the main indexing robots to obtain the sitemap of the store and to know access restrictions. You can customize it by sending a robots.htm file to the HTM folder of the store.</p>
+</li>
+<br>
+
+<li><p><b>Custom URLs</b> and automated URLs for auto redirection</p>
+<p>You can create customizable URL redirects. See the instructions by clicking the question mark to the right of the <b>Redirections</b> field on the <b>STORE CONFIGURATION</b> page of the administrative site.</p>
+<p>You can also create the link with the text of the products to be searched by includind this text between the store domain and /prod.htm.</p>
+<p>e.g.:</p>
+<pre>www.mystore.com/apple-watch/prod.htm</pre>
+</li>
+<br>
+
+<li><p><b>Friendly URLs</b> for products and store news.</p>
+<p>The links generated to the product pages, news and store hotspots are optimized for search engine indexing robots (Google, Bing, Yahoo! etc) with the use of friendly URLs. See details by clicking the question mark to the right of the <b>Friendly URLs</b> field on the <b>STORE CONFIGURATION</b> page of the administrative site.</p>
+<p>Examples of friendly URLs:</p>
+<pre>
+<span class=courrier>
+www.mystore.com/prod,productid,999999,<span class=dest>acqua-di-gio-pour-homme</span><br>
+www.mystore.com.br/news,newsid,999999,<span class=dest>how-to-contact-us-for-product-support</span>
+</span>
+</pre>
+<br>
+<p><b>Custom URLs</b> for products, categories and store news.</p>
+<p>Product pages, categories, and store news may have customizable addresses. See details by clicking the question mark to the right of the <b>Custom URLs</b> field on the <b>STORE CONFIGURATION</b> page of the administrative site.</p>
+<p>Examples of custom URLs:</p>
+<pre>
+<span class=courrier>
+www.mystore.com/<span class=dest>acqua-di-gio-pour-homme</span><br>
+www.mystore.com/news/<span class=dest>how-to-contact-us-for-product-support</span><br>
+www.mystore.com/brand/<span class=dest>ralph-lauren</span>
+</span>
+</pre>
+</li>
+<br>
+
+<li><p><b>Customize meta keywords tags</b> to particular categories and products in the store</p>
+<p>Some search engines still consider the meta tag keyword relevant to their results. You can enter specific keywords for each category and each product in the store, in their respective fields in the category and product details pages. Terms must be separated by commas.</p>
+</li>
+
+</ol>

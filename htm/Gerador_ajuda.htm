@@ -1,0 +1,260 @@
+<html>
+<head>
+  <title>Gerador de código de Ajuda</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+<body>
+ <style type="text/css">
+ .codigo{
+    padding-left: 10px;
+    width:100%; 
+    height:100%; 
+    color:#2E8B57;
+    font-family: monospace;
+    line-height: 25px;    
+ }
+#block_cod{
+  border: solid 1px;
+  border-color: #C0C0C0;
+}
+tr{
+  border: solid 1px;
+  border-color: #C0C0C0;
+}
+
+p{
+  font-family: monospace;
+}
+.Butons:hover img{background-color: red;}
+
+ </style>
+
+  <textarea id="holdtext" style="display:none;"></textarea>
+  <form name="gerador" style="line-height: 30px;margin-bottom:10px;">
+    <table style="border: solid 1px; border-color: #C0C0C0; margin-bottom:10px;"> 
+
+      <tr>
+        <td>Marque os arquivos que deseja:</td>
+      </tr>
+      <tr> 
+        <td>Topo padrão</td>
+        <td><input type="checkbox" id="TP"> </td>
+      </tr>
+      <tr>
+        <td>Boleto bancário</td>
+        <td><input type="checkbox" id="BB" /></td>
+      </tr> 
+      <tr>
+        <td>Cartões de crédito</td>
+        <td><input type="checkbox" id="CD" /></td>
+      </tr> 
+      <tr>
+        <td>Depósito bancário</td>
+        <td><input type="checkbox" id="DB" /></td>
+      </tr> 
+      <tr>
+        <td>MercadoPago</td>
+        <td><input type="checkbox" id="MP" /></td>
+      </tr>
+      <tr>
+        <td>Moip</td>
+        <td><input type="checkbox" id="M" /></td>
+      </tr> 
+      <tr>
+        <td>PayPal</td>
+        <td><input type="checkbox" id="PP" /></td>
+      </tr> 
+      <tr>
+        <td>PagSeguro</td>
+        <td><input type="checkbox" id="PS" /></td>
+      </tr>
+      <tr>
+        <td>Rodapé padrão</td>
+        <td><input type="checkbox" id="RP"></td>
+      </tr>  
+    </table>
+    <img src="../lojas/00028496/images/Gerar.svg" onclick="Gerador_Ajuda()" class="Butons" />
+    <img src="../lojas/00028496/images/Limpar.svg" onclick="Limpa_Ajuda()" class="Butons"  />
+    <img src="../lojas/00028496/images/Marcar.svg" onclick="Marcar_checkbox()" class="Butons"  />
+
+  <!--<input type="button" value="Gerar Código" onclick="Gerador_Ajuda()" >
+  <input type="button" value="Limpar Código" onclick="Limpa_Ajuda()" >
+  <input type="button" value="Marcar Todos" onclick="Marcar_checkbox()">-->
+
+ <!--<textarea name="copia" cols="75" rows="5" id="copia" class="formul" readonly="readonly">CONTEÚDO</textarea>
+
+<input name="Button2" value="Clique para selecionar e copiar" 
+onclick="document.getElementById('copia').select();therange=document.getElementById('copia').createTextRange();therange.execCommand('Copy');"
+class="botao" type="button">-->
+  </form>
+
+<div id="block_cod" class="codigo">
+<div id="topo" class="codigo">
+
+</div>
+
+<div id="boleto" class="codigo">
+
+</div>
+
+<div id="cartao" class="codigo">
+
+</div>
+
+<div id="deposito" class="codigo">
+
+</div>
+
+<div id="mercadopago" class="codigo">
+
+</div>
+
+<div id="moip" class="codigo">
+
+</div>
+
+<div id="paypal" class="codigo">
+
+</div>
+
+<div id="pagseguro" class="codigo">
+
+</div>
+
+<div id="rodape" class="codigo">
+
+</div>
+
+</div>
+
+<script type="text/javascript">
+function Gerador_Ajuda(){
+
+  
+
+  if (document.getElementById("TP").checked == true){
+    fnGetAjax('#topo', '/Topo_Ajuda.htm')
+
+  }
+ 
+
+  if (document.getElementById("BB").checked == true) {
+
+    fnGetAjax('#boleto','/Boleto_Ajuda.htm')
+
+
+  }
+
+  if (document.getElementById("CD").checked == true) {
+
+    fnGetAjax('#cartao','Cartao_Ajuda.htm')
+
+  }
+
+  if (document.getElementById("DB").checked == true){
+
+    fnGetAjax('#deposito','/Deposito_Ajuda.htm')
+
+  }
+
+  if (document.getElementById("MP").checked == true) {
+
+    fnGetAjax('#mercadopago','/MercadoPago_Ajuda.htm')
+  }
+
+  if (document.getElementById("M").checked == true) {
+    fnGetAjax('#moip','/Moip_Ajuda.htm')
+
+  }
+
+  if (document.getElementById("PP").checked == true) {
+    fnGetAjax('#paypal','/PayPal_Ajuda.htm')
+
+  }
+
+  if (document.getElementById("PS").checked == true) {
+    fnGetAjax('#pagseguro','/PagSeguro_Ajuda.htm')
+
+  }
+
+  if (document.getElementById("RP").checked == true){
+
+    fnGetAjax('#rodape', '/Rodape_Ajuda.htm') 
+
+  }
+
+
+  /*else{
+
+    alert("Nenhuma opção selecionada");
+  }*/
+
+}
+
+</script>  
+<script type="text/javascript">
+function Limpa_Ajuda(){
+
+
+   for (i=0;i<document.gerador.elements.length;i++) 
+      if(document.gerador.elements[i].type == "checkbox")  
+         document.gerador.elements[i].checked=0 
+ 
+
+  document.getElementById('block_cod').innerHTML =
+'<div id="topo">'+
+
+'</div>'+
+
+'<div id="boleto" class="codigo">'+
+
+'</div>'+
+
+'<div id="cartao" class="codigo">'+
+
+'</div>'+
+
+'<div id="deposito" class="codigo">'+
+
+'</div>'+
+
+'<div id="mercadopago" class="codigo">'+
+
+'</div>'+
+
+'<div id="moip" class="codigo">'+
+
+'</div>'+
+
+'<div id="paypal" class="codigo">'+
+
+'</div>'+
+
+'<div id="pagseguro" class="codigo">'+
+
+'</div>'+
+
+'<div id="rodape" class="codigo">'+
+
+'</div>';
+
+
+}
+</script>
+
+<script type="text/javascript">
+  function Marcar_checkbox(){
+
+     
+   for (i=0;i<document.gerador.elements.length;i++) 
+      if(document.gerador.elements[i].type == "checkbox")  
+         document.gerador.elements[i].checked=1 
+
+  }
+
+</script>
+
+<script>function fnGetAjax(element, file){  var getHTTPObject=function(){if(window.XMLHttpRequest){return new XMLHttpRequest()}else if(window.ActiveXObject){return new ActiveXObject("Microsoft.XMLHTTP")}else{return null}}; var xmlHttp=getHTTPObject();if(xmlHttp!==null){xmlHttp.open("GET",FC$.PathHtm+file,true); xmlHttp.onreadystatechange=function(){if(xmlHttp.readyState==4){document.querySelector(element).innerHTML=xmlHttp.responseText;}};xmlHttp.send( null );}}</script>
+
+</body>
+</html>

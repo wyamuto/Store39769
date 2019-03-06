@@ -1,0 +1,61 @@
+<ul><li><p><code>OffsetAutoPagFC</code>: distância vertical em pixels do final da lista de produtos, para acionamento da autopaginação. Quanto maior o valor, mais cedo a autopaginação será iniciada. Se o valor for negativo, a carga ocorrerá depois de exibido o final da lista de produtos.
+
+Utilize um valor positivo nesta variável para que a carga de um novo conjunto de produtos seja acionada antes que o visitante chegue ao final da lista de produtos já carregada, proporcionando uma experiência mais contínua de rolagem pelos produtos.
+
+Default: <code>OffsetAutoPagFC=0</code></p></li>
+
+<li><p><code>TimeToAutoPagFC</code>: tempo em milissegundos antes de iniciar a carga da nova página.
+
+Utilize um valor maior de 2000 caso queira o visitante tenha mais tempo para ver o rodapé da página antes da carga de um novo conjunto de produtos.
+
+Default: <code>TimeToAutoPagFC=0</code></p></li>
+
+<li><p><code>ImgLoadingFC</code>: imagem de espera para a carga da nova página. A imagem tem que ser um arquivo .gif animado e deve ser enviada para a pasta <i>images</i>.
+ 
+Default: <code>/images/loading.gif</code> (<img src=/images/loading.gif>)</p></li>
+
+
+</ul>
+<p><b>Exemplo em EstiloProduto.htm</b>:</p>
+
+<pre>&lt;ProdTop>
+&lt;script>
+OffsetAutoPagFC=500; //autopaginação é acionada 500 pixels antes do final da lista de produtos
+ImgLoadingFC="&lt;BaseLoja>images/loading.gif";  //imagem personalizada de espera para a carga da nova página
+&lt;/script>
+...
+...
+&lt;/ProdTop></pre>
+<br>
+
+<p><b>Funções opcionais:</b></p>
+
+<ul><li><p><code>FuncAutoPagStart()</code>: caso esta função exista, será acionada antes do início da autopaginação.</p></li>
+
+<li><p><code>FuncAutoPagEnd()</code>: caso esta função exista, será acionada após o término da autopaginação.</p></li>
+
+<li><p>Seguem abaixo as variáveis globais de controle, que podem ser usadas nas duas funções acima:</p></li>
+
+<p><code>iPagProdFC</code>: informa o número da página atual.</p>
+
+<p><code>iPagCountFC</code>: informa a quantidade total de páginas.</p>
+
+<p><code>AutoPagProdFC</code>: número da página limite a carregar com autopaginação (255=sem limite).</p></ul>
+<p>Com estas funções e variáveis, pode-se criar funcionalidades adicionais na autopaginação. Segue abaixo exemplo para carregar mais produtos somente quando o visitante clicar em um botão.
+</p> <p>Ao ser apertado, um novo conjunto de produtos será acrescentado ao final da lista de produtos, correspondentes à página seguinte.</p>
+
+<p>Insira o código abaixo dentro da seção <code>&lt;ProdBottom></code> do arquivo EstiloProduto.htm:</p>
+
+<pre>&lt;script>
+OffsetAutoPagFC=-3000; //inibe autopaginação por rolagem
+if(iPagProdFC&lt;iPagCountFC){
+&nbsp;&nbsp;document.write("&lt;center>");
+&nbsp;&nbsp;document.write("&lt;input type=button value='Mais produtos' onclick=StartLoadPageFC()>");
+&nbsp;&nbsp;document.write("&lt;/center>");
+}
+
+function FuncAutoPagEnd(){
+&nbsp;&nbsp;if(iPagProdFC==iPagCountFC)
+&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById("idAutoPagCallFC").style.visibility='hidden';
+}
+&lt;/script></pre>

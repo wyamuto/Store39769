@@ -1,0 +1,188 @@
+<style>
+.divTable {display:table;width:100%;}
+.divTableRow {display:table-row;}
+.divTableHeading {background-color:#EEE;display:table-header-group;}
+.divTableCell, .divTableHead {border:1px solid #999999;display:table-cell;padding:3px 10px;}
+.divTableHeading {background-color:#EEE;display:table-header-group;font-weight:bold;}
+.divTableFoot {background-color:#EEE;display:table-footer-group;font-weight:bold;}
+.divTableBody {display:table-row-group;}
+</style>
+
+<p>Os produtos que serão exibidos no cross selling serão selecionados de acordo com o campo <b>Cross selling</b> preenchido na ficha de cada produto adicionado ao carrinho.</p>
+
+<br>
+<h3>Observações</h3><br>
+<ul>
+<li><p>Se a loja não tiver subprodutos, o botão <b>Adicionar</b> incluirá o produto diretamente no carrinho. Caso a loja tenha subprodutos, será aberto o produto no formato de <b>espiadinha</b>, para que o cliente possa comprar selecionando cor, tamanho etc. Neste caso a loja deve ter o arquivo <b>estiloproduto9.htm</b> com o design específico dessa página na pasta HTM do gerenciador de arquivos da loja.</p></li>
+<li><p>Se a resolução horizontal do navegador for menor do que 400 pixels ou se estiver na versão para celular, ao invés de abrir a espiadinha o botão "adicionar" levará à página de detalhe deste produto.</p></li>
+<li><p>Após ativar o recurso acesse a loja para ver como fica a exibição desses produtos de cross selling no carrinho de sua loja. Clique no link de cada produto, no botão comprar etc. Qualquer dúvida entre em contato com a nossa equipe de suporte.</p></li>
+</ul>
+
+<br><br><p><img src="/lojas/00000009/prod/fc/fc15070a.png" class="img-responsive imgbordercolor"></a></p><br><br>
+
+
+<h2>Personalizações</h2>
+<p>Ao ativar o recurso, os produtos serão exibidos com um design padronizado. Veja abaixo como personalizar esta exibição:<br><br></p>
+
+
+<h3>Configurações do design</h3>
+<p>Se desejar que no design não seja exibido alguns elementos, insira a respectiva linha indicada abaixo no arquivo lojalib.js da pasta HTM da loja:</p><br>
+
+<div class="divTable" style="width:500px;border:1px solid #000;">
+	<div class="divTableBody">
+    <div class="divTableRow"><div class="divTableCell"><b>Elemento</b></div><div class="divTableCell"><b>Configuração</b></div></div>
+	  <div class="divTableRow"><div class="divTableCell">Descritores</div><div class="divTableCell">var bShowDescritCrossCart=false;</div></div>
+	  <div class="divTableRow"><div class="divTableCell">Filtros</div><div class="divTableCell">var bShowFilCrossCart=false;</div></div>
+	  <div class="divTableRow"><div class="divTableCell">Nome da categoria</div><div class="divTableCell">var bShowCatCrossCart=false;</div></div>
+	  <div class="divTableRow"><div class="divTableCell">Referência/código do produto</div><div class="divTableCell">var bShowRefCrossCart=false;</div></div>
+	  <div class="divTableRow"><div class="divTableCell">Botão de carrinho de comprar</div><div class="divTableCell">var bBuyWishlistCrossCart=false;</div></div>
+	</div>
+</div>
+
+<br><br>
+<h3>Personalização do CSS</h3>
+
+<p>No design padrão é inserido um arquivo CSS que define cores, tamanhos de textos, posicionamento etc, definindo o design do cross selling. Se desejar enviar o seu próprio CSS e que este CSS padrão não seja carregado, inclua a linha abaixo no arquivo <b>lojalib.js</b>:</p>
+
+<p><code>var bIncludeCSSCrossSellingCart=false; //para remover include de css padrão</code></p>
+
+<p>Desta forma é possível inserir no CSS da loja (lojasite.css) os estilos personalizados para obter o design desejado.</p>
+
+<br>
+<h3>Personalização completa</h3>
+
+<p>Na página do carrinho da loja é inserido um objeto JSON chamado <b>FCLib$.CrossSellingCart</b> com os dados dos produtos de cross selling da cesta. Uma função javascript se encagerrega de ler esse objeto JSON e dinamicamente montar o design dos produtos para serem exibidos no cross selling, carregar um CSS com os estilos e inserir na página os produtos.</p>
+
+<p>É possível personalizar completamente esse recurso usando uma função personalizada chamada <b>FuncCrossSellingCart()</b>. Basta criar uma função com esse nome no arquivo lojalib.js da loja e através dessa função manipular o objeto JSON <b>FCLib$.CrossSellingCart</b> que contém as informações necessárias para montar o design com os produtos de cross selling.</p>
+
+
+<br><p>Exemplo da estrutura do objeto <b>FCLib$.CrossSellingCart</b>:</p><br>
+
+<pre>
+{  
+  "legcat":"Categoria",
+  "subprod":true,
+  "name_a1":"Tipo",
+  "name_a2":"Fragrância",
+  "name_a3":"Item",
+  "name_d1":"Volume",
+  "name_d2":"Brinde",
+  "name_d3":"Disponibilidade",
+  "items":[  
+    {  
+      "idp":396302,
+      "nome":"Console Playstation 4 Pro 4K - 1TB - Sony",
+      "url":"/console-playstation-4-pro-4k-1-tb-sony",
+      "price":333.0,
+      "priceori":439.0,
+      "prom":"true",
+      "datafim":"2020-01-01T00:00:00",
+      "imgp":"https://mytoystore.lojavirtualfc.com.br/lojas/00010611/prod/tbri036p1.png",
+      "imgd":"https://mytoystore.lojavirtualfc.com.br/lojas/00010611/prod/tbri036d1.png",
+      "imga":"https://mytoystore.lojavirtualfc.com.br/lojas/00010611/prod/tbri036a1.png",
+      "a1":"Eau de Parfum",
+      "a2":"feminina",
+      "avRating":"4,5",
+      "qtRating":"20",
+      "fil":[  
+        {  
+          "name":"Marca",
+          "value":"Sony"
+        },
+        {  
+          "name":"Gênero",
+          "value":"Unissex"
+        },
+        {  
+          "name":"Idade",
+          "value":"+4 Anos"
+        },
+        {  
+          "name":"Capacidade",
+          "value":"1 TB"
+        }
+      ],
+      "ref":"TBri036",
+      "cat":"PS4",
+      "urlcat":"/c/eletronicos-ps4",
+      "descr":"Jogos 4K dinâmicos e entretenimento 4K. Uma jogabilidade intensamente vibrante, filmes extraordinariamente nítidos e detalhes incríveis em cada momento."
+    },
+    {  
+      "idp":396303,
+      "nome":"Console Playstation 4 - Edição Limitada God of War II - 500 GB - Sony",
+      "url":"/console-playstation-4-edicao-limitada-god-of-war-ii-500-gb-sony",
+      "price":13999.0,
+      "priceori":13999.0,
+      "prom":"false",
+      "imgp":"https://mytoystore.lojavirtualfc.com.br/lojas/00010611/prod/tbri037p1.png",
+      "imgd":"https://mytoystore.lojavirtualfc.com.br/lojas/00010611/prod/tbri037d1.png",
+      "imga":"https://mytoystore.lojavirtualfc.com.br/lojas/00010611/prod/tbri037a1.png",
+      "avRating":"5",
+      "qtRating":"28",
+      "fil":[  
+        {  
+          "name":"Marca",
+          "value":"Sony"
+        },
+        {  
+          "name":"Gênero",
+          "value":"Unissex"
+        },
+        {  
+          "name":"Idade",
+          "value":"+18 Anos"
+        },
+        {  
+          "name":"Capacidade",
+          "value":"500 GB"
+        }
+      ],
+      "ref":"TBri037",
+      "cat":"PS4",
+      "urlcat":"/c/eletronicos-ps4",
+      "descr":"O sistema PlayStation®4 oferece jogos dinâmicos e conectados, jogos conectados, velocidade e gráficos poderosos, personalização inteligente, capacidades sociais profundamente integradas."
+    }
+  ]
+}
+</pre>
+
+<div class="divTable" style="width:800px;border:1px solid #000;">
+	<div class="divTableBody">
+    <div class="divTableRow"><div class="divTableCell"><b>Elemento</b></div><div class="divTableCell"><b>Descrição</b></div></div>
+	  <div class="divTableRow"><div class="divTableCell">legcat</div><div class="divTableCell">Legenda para categorização dos produtos da loja. Ex: Categoria, Departamento, etc.</div></div>
+	  <div class="divTableRow"><div class="divTableCell">subprod</div><div class="divTableCell">Indica se a loja tem subprodutos</div></div>
+	  <div class="divTableRow"><div class="divTableCell">name_a1</div><div class="divTableCell">Nome do descritor especial 1</div></div>
+	  <div class="divTableRow"><div class="divTableCell">name_a2</div><div class="divTableCell">Nome do descritor especial 2</div></div>
+	  <div class="divTableRow"><div class="divTableCell">name_a3</div><div class="divTableCell">Nome do descritor especial 3</div></div>
+	  <div class="divTableRow"><div class="divTableCell">name_d1</div><div class="divTableCell">Nome do descritor simples 1</div></div>
+	  <div class="divTableRow"><div class="divTableCell">name_d2</div><div class="divTableCell">Nome do descritor simples 2</div></div>
+	  <div class="divTableRow"><div class="divTableCell">name_d3</div><div class="divTableCell">Nome do descritor simples 3</div></div>
+	  <div class="divTableRow"><div class="divTableCell">items</div><div class="divTableCell">Array de objetos de itens/produtos do cross selling</div></div>
+	  <div class="divTableRow"><div class="divTableCell">&nbsp; items.idp</div><div class="divTableCell">ID do produto</div></div>
+	  <div class="divTableRow"><div class="divTableCell">&nbsp; items.nome</div><div class="divTableCell">Nome do produto</div></div>
+	  <div class="divTableRow"><div class="divTableCell">&nbsp; items.url</div><div class="divTableCell">URL para o produto</div></div>
+	  <div class="divTableRow"><div class="divTableCell">&nbsp; items.price</div><div class="divTableCell">Preço final do produto</div></div>
+	  <div class="divTableRow"><div class="divTableCell">&nbsp; items.priceori</div><div class="divTableCell">Proço original do produto</div></div>
+	  <div class="divTableRow"><div class="divTableCell">&nbsp; items.prom</div><div class="divTableCell">Indica se está em promoção</div></div>
+	  <div class="divTableRow"><div class="divTableCell">&nbsp; items.datafim</div><div class="divTableCell">Indica data de fim de promoção</div></div>
+	  <div class="divTableRow"><div class="divTableCell">&nbsp; items.imgp</div><div class="divTableCell">Imagem principal</div></div>
+	  <div class="divTableRow"><div class="divTableCell">&nbsp; items.imgd</div><div class="divTableCell">Imagem detalhe</div></div>
+	  <div class="divTableRow"><div class="divTableCell">&nbsp; items.imga</div><div class="divTableCell">Imagem ampliada</div></div>
+	  <div class="divTableRow"><div class="divTableCell">&nbsp; items.a1</div><div class="divTableCell">Valor atribuido no descritor especial 1</div></div>
+	  <div class="divTableRow"><div class="divTableCell">&nbsp; items.a2</div><div class="divTableCell">Valor atribuido no descritor especial 2</div></div>
+	  <div class="divTableRow"><div class="divTableCell">&nbsp; items.a3</div><div class="divTableCell">Valor atribuido no descritor especial 3</div></div>
+	  <div class="divTableRow"><div class="divTableCell">&nbsp; items.d1</div><div class="divTableCell">Valor atribuido no descritor simples 1</div></div>
+	  <div class="divTableRow"><div class="divTableCell">&nbsp; items.d2</div><div class="divTableCell">Valor atribuido no descritor simples 2</div></div>
+	  <div class="divTableRow"><div class="divTableCell">&nbsp; items.d3</div><div class="divTableCell">Valor atribuido no descritor simples 3</div></div>
+	  <div class="divTableRow"><div class="divTableCell">&nbsp; items.cor</div><div class="divTableCell">Valor atribuido em Cor</div></div>
+	  <div class="divTableRow"><div class="divTableCell">&nbsp; items.avRating</div><div class="divTableCell">Valo média das opiniões. Ex: 4,5</div></div>
+	  <div class="divTableRow"><div class="divTableCell">&nbsp; items.qtRating</div><div class="divTableCell">Quantidade de opiniões. Ex: 20</div></div>
+	  <div class="divTableRow"><div class="divTableCell">&nbsp; items.fil</div><div class="divTableCell">Array com objetos de filtros</div></div>
+	  <div class="divTableRow"><div class="divTableCell">&nbsp; &nbsp; items.fil.name</div><div class="divTableCell">Nome do filtro. Ex: Marca</div></div>
+	  <div class="divTableRow"><div class="divTableCell">&nbsp; &nbsp; items.fil.value</div><div class="divTableCell">Valor do fitro. Ex: Nike</div></div>
+	  <div class="divTableRow"><div class="divTableCell">&nbsp; items.ref</div><div class="divTableCell">Código/referência do produto</div></div>
+	  <div class="divTableRow"><div class="divTableCell">&nbsp; items.cat</div><div class="divTableCell">Nome da categoria</div></div>
+	  <div class="divTableRow"><div class="divTableCell">&nbsp; items.urlcat</div><div class="divTableCell">URL da categoria</div></div>
+	  <div class="divTableRow"><div class="divTableCell">&nbsp; items.descr</div><div class="divTableCell">Descrição do produto</div></div>
+	</div>
+</div>

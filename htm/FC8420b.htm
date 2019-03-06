@@ -1,0 +1,157 @@
+<style>
+.titpeqverde {font-size:9pt;font-family:courier new,tahoma,verdana;color:#1DA906;font-weight:bold;}
+.courrierpeq {font-size:8pt;font-family:courier new,tahoma,verdana;color:#0D6D9E;}
+.destpeq {font-size:8pt;font-family:tahoma,verdana;color:#990000;font-weight:bold;}
+</style>
+<pre>
+<span class=courrierpeq>
+<span class=titpeqverde>&lt;!-- Radio button --></span>
+
+
+&lt;script>
+var sHidden<span class=destpeq>CampoX</span>='P2Ped<span class=destpeq>CampoX</span>';
+var aText<span class=destpeq>CampoX</span>=new Array('Sem preferência','Manhã','Tarde','Noite','Madrugada');
+var aValue<span class=destpeq>CampoX</span>=new Array('','Manhã','Tarde','Noite','Madrugada');
+var sErrMsg<span class=destpeq>CampoX</span>='Selecione período preferencial de entrega.';
+
+document.write("&lt;input type=hidden name="+sHidden<span class=destpeq>CampoX</span>+" id="+sHidden<span class=destpeq>CampoX</span>+" onpropertychange=PedAltera<span class=destpeq>CampoX</span>(this.value)>");
+
+for(var i=0;i&lt;aText<span class=destpeq>CampoX</span>.length;i++)
+  document.write("&lt;input type=radio name=x"+sHidden<span class=destpeq>CampoX</span>+" id=x"+sHidden<span class=destpeq>CampoX</span>+"_"+i+" value='"+aValue<span class=destpeq>CampoX</span>[i]+"' onclick=document.Form1."+sHidden<span class=destpeq>CampoX</span>+".value=this.value>&lt;label for=x"+sHidden<span class=destpeq>CampoX</span>+"_"+i+">"+aText<span class=destpeq>CampoX</span>[i]+"&lt;/label>&lt;br>");
+
+
+function PedAltera<span class=destpeq>CampoX</span>FF(){PedAltera<span class=destpeq>CampoX</span>(document.Form1.P2Ped<span class=destpeq>CampoX</span>.value);}
+if(navigator.appName.indexOf("Explorer")&lt;0)document.getElementById(sHidden<span class=destpeq>CampoX</span>).addEventListener('DOMAttrModified',PedAltera<span class=destpeq>CampoX</span>FF,false);
+
+PedAltera<span class=destpeq>CampoX</span>("&lt;ValorCampo>");
+
+function PedAltera<span class=destpeq>CampoX</span>(sValor){
+  var iSelect=0,Achei=false;
+  while(iSelect&lt;document.Form1.xP2Ped<span class=destpeq>CampoX</span>.length && !Achei){
+    if(document.Form1.xP2Ped<span class=destpeq>CampoX</span>[iSelect].value==sValor){document.Form1.xP2Ped<span class=destpeq>CampoX</span>[iSelect].checked=true;Achei=true;}
+    else iSelect++;
+  }
+}
+
+function PedValida<span class=destpeq>CampoX</span>(){
+  var iSelect=1,Achei=false;
+  while(iSelect&lt;document.Form1.xP2Ped<span class=destpeq>CampoX</span>.length && !Achei){
+    if(document.Form1.xP2Ped<span class=destpeq>CampoX</span>[iSelect].checked)Achei=true;
+    else iSelect++;
+  }
+  if(!Achei){alert(sErrMsg<span class=destpeq>CampoX</span>);document.Form1.xP2Ped<span class=destpeq>CampoX</span>[0].focus();return false;}
+  else return true;
+}
+&lt;/script>
+
+
+<span class=titpeqverde>&lt;!-- Altere onde está <span class=destpeq>P2PedCampoX</span> para o "name" de acordo com o campo utilizado.<br>
+Ex: Se utilizou o "campo 1" altere para <span class=destpeq>P2PedCampo1</span> e a função para PedValidaCampo<span class=destpeq>1</span> --></span>
+
+
+
+<span class=titpeqverde>&lt;!-- Select --></span>
+
+
+&lt;script>
+var sHidden<span class=destpeq>CampoX</span>='P2Ped<span class=destpeq>CampoX</span>';
+var aText<span class=destpeq>CampoX</span>=new Array('Não informado','Masculino','Feminino');
+var aValue<span class=destpeq>CampoX</span>=new Array('Selecione','Masculino','Feminino');
+var sErrMsg<span class=destpeq>CampoX</span>='Selecione o sexo.';
+
+document.write("&lt;input type=hidden name="+sHidden<span class=destpeq>CampoX</span>+" id="+sHidden<span class=destpeq>CampoX</span>+" onpropertychange=PedAltera<span class=destpeq>CampoX</span>(this.value)>");
+
+document.write("&lt;select name=x"+sHidden<span class=destpeq>CampoX</span>+" id=x"+sHidden<span class=destpeq>CampoX</span>+" size=1 class=smSelect onchange=document.Form1."+sHidden<span class=destpeq>CampoX</span>+".value=this.value>");
+for(var i=0;i&lt;aText<span class=destpeq>CampoX</span>.length;i++)
+  document.write("&lt;option value='"+aValue<span class=destpeq>CampoX</span>[i]+"'>"+aText<span class=destpeq>CampoX</span>[i]+"&lt;/option>");
+document.write("&lt;/select>");
+
+function PedAltera<span class=destpeq>CampoX</span>FF(){PedAltera<span class=destpeq>CampoX</span>(document.Form1.P2Ped<span class=destpeq>CampoX</span>.value);}
+if(navigator.appName.indexOf("Explorer")&lt;0)document.getElementById(sHidden<span class=destpeq>CampoX</span>).addEventListener('DOMAttrModified',PedAltera<span class=destpeq>CampoX</span>FF,false);
+
+PedAltera<span class=destpeq>CampoX</span>("&lt;ValorCampo>");
+
+function PedAltera<span class=destpeq>CampoX</span>(sValor){
+  var iSelect=0,Achei=false;
+  while(iSelect&lt;document.Form1.xP2Ped<span class=destpeq>CampoX</span>.length && !Achei){
+    if(document.Form1.xP2Ped<span class=destpeq>CampoX</span>[iSelect].value==sValor){document.Form1.xP2Ped<span class=destpeq>CampoX</span>.selectedIndex=iSelect;Achei=true;}
+    else iSelect++;
+  }
+}
+
+function PedValida<span class=destpeq>CampoX</span>(){
+  if(document.Form1.xP2Ped<span class=destpeq>CampoX</span>.selectedIndex==0){alert(sErrMsg<span class=destpeq>CampoX</span>);document.Form1.xP2Ped<span class=destpeq>CampoX</span>.focus();return false;}
+  else return true;
+}
+&lt;/script>
+
+
+<span class=titpeqverde>&lt;!-- Altere onde está <span class=destpeq>P2PedCampoX</span> para o "name" de acordo com o campo utilizado.<br>
+Ex: Se utilizou o "campo 1" altere para <span class=destpeq>P2PedCampo1</span> e a função para PedValidaCampo<span class=destpeq>1</span> --></span>
+
+
+
+<span class=titpeqverde>&lt;!-- Checkbox --></span>
+
+
+&lt;script>
+var sHidden<span class=destpeq>CampoX</span>='P2Ped<span class=destpeq>CampoX</span>';
+var aText<span class=destpeq>CampoX</span>=new Array('8h às 10h','10h às 12h','12h às 14h','14h às 16h','16h às 18h');
+var aValue<span class=destpeq>CampoX</span>=new Array('8h às 10h','10h às 12h','12h às 14h','14h às 16h','16h às 18h');
+var sErrMsg<span class=destpeq>CampoX</span>='Selecione horário(s) preferido(s) de entrega.';
+
+document.write("&lt;input type=hidden name="+sHidden<span class=destpeq>CampoX</span>+" id="+sHidden<span class=destpeq>CampoX</span>+" onpropertychange=PedAltera<span class=destpeq>CampoX</span>(this.value)>");
+
+for(var i=0;i&lt;aText<span class=destpeq>CampoX</span>.length;i++)
+  document.write("&lt;input type=checkbox name=x"+sHidden<span class=destpeq>CampoX</span>+" id=x"+sHidden<span class=destpeq>CampoX</span>+"_"+i+" value='"+aValue<span class=destpeq>CampoX</span>[i]+"' onclick=AtualizaHidden<span class=destpeq>CampoX</span>()>&lt;label for=x"+sHidden<span class=destpeq>CampoX</span>+"_"+i+">"+aText<span class=destpeq>CampoX</span>[i]+"&lt;/label>&lt;br>");
+
+
+function PedAltera<span class=destpeq>CampoX</span>FF(){PedAltera<span class=destpeq>CampoX</span>(document.Form1.P2Ped<span class=destpeq>CampoX</span>.value);}
+if(navigator.appName.indexOf("Explorer")&lt;0)document.getElementById(sHidden<span class=destpeq>CampoX</span>).addEventListener('DOMAttrModified',PedAltera<span class=destpeq>CampoX</span>FF,false);
+
+PedAltera<span class=destpeq>CampoX</span>("&lt;ValorCampo>");
+
+function PedAltera<span class=destpeq>CampoX</span>(sValor){
+  var aValores=sValor.split(", ");
+  var iSelect=0,Achei,iArray;
+  while(iSelect&lt;document.Form1.xP2Ped<span class=destpeq>CampoX</span>.length){
+    Achei=false;
+    iArray=0;
+    while(iArray&lt;aValores.length && !Achei){
+      if(document.Form1.xP2Ped<span class=destpeq>CampoX</span>[iSelect].value==aValores[iArray]){document.Form1.xP2Ped<span class=destpeq>CampoX</span>[iSelect].checked=true;Achei=true;}
+      else iArray++;
+    }
+    if(!Achei)document.Form1.xP2Ped<span class=destpeq>CampoX</span>[iSelect].checked=false;
+    iSelect++;
+  }
+}
+
+function AtualizaHidden<span class=destpeq>CampoX</span>(){
+  var iSelect=0,sHiddenValor="";
+  while(iSelect&lt;document.Form1.xP2Ped<span class=destpeq>CampoX</span>.length){
+    if(document.Form1.xP2Ped<span class=destpeq>CampoX</span>[iSelect].checked){
+      if(sHiddenValor!="")sHiddenValor+=", ";
+      sHiddenValor+=document.Form1.xP2Ped<span class=destpeq>CampoX</span>[iSelect].value;
+    }
+    iSelect++;
+  }
+  document.Form1.P2Ped<span class=destpeq>CampoX</span>.value=sHiddenValor;
+}
+
+function PedValida<span class=destpeq>CampoX</span>(){
+  var iSelect=0,Achei=false;
+  while(iSelect&lt;document.Form1.xP2Ped<span class=destpeq>CampoX</span>.length && !Achei){
+    if(document.Form1.xP2Ped<span class=destpeq>CampoX</span>[iSelect].checked)Achei=true;
+    else iSelect++;
+  }
+  if(!Achei){alert(sErrMsg<span class=destpeq>CampoX</span>);document.Form1.xP2Ped<span class=destpeq>CampoX</span>[0].focus();return false;}
+  else return true;
+}
+&lt;/script>
+
+
+
+<span class=titpeqverde>&lt;!-- Altere onde está <span class=destpeq>P2PedCampoX</span> para o "name" de acordo com o campo utilizado.<br>
+Ex: Se utilizou o "campo 1" altere para <span class=destpeq>P2PedCampo1</span> e a função para PedValidaCampo<span class=destpeq>1</span> --></span>
+</span>
+</pre>

@@ -1,0 +1,47 @@
+<link rel="stylesheet" type="text/css" href="/js/MagicToolbox/MagicZoomPlusV2/magiczoomplus.css" />
+<script type="text/javascript" src="/js/MagicToolbox/MagicZoomPlusV2/magiczoomplus.js"></script>
+
+<!-- começo :: zoom com várias imagens -->
+<script>
+var imgDetAll = "nike01tiny.jpg,nike02tiny.jpg,nike03tiny.jpg,nike04tiny.jpg";
+var imgAmpAll = "nike01.jpg,nike02.jpg,nike03.jpg,nike04.jpg";
+var novoArray = imgDetAll.split(',');
+var novoArrayAmp = imgAmpAll.split(',');
+var CountImgDet=novoArray.length;
+var CountImgAmp=novoArrayAmp.length;
+
+if (imgDetAll=="" || imgAmpAll==""){
+  document.write("");
+}
+else{
+  if (CountImgDet==CountImgAmp){
+    var FC_MaxImages=CountImgDet-1;
+    MostraZoomImgFC();
+  }
+  else{
+    var FC_MaxImages=0;
+    MostraZoomImgFC();
+  }
+}
+
+function MostraZoomImgFC(){
+  for (var i=0;i<=FC_MaxImages;i++)
+  {
+    if(i==0)
+    {
+      imgDetMini=novoArray[i];
+      imgAmpMini=novoArrayAmp[i];
+      document.write("<a href=http://ajuda.Fastcommerce.com.br/lojas/00000009/prod/"+imgAmpMini+" title='Nike' class=MagicZoom id=zoom2 data-options='hint:off;selectorTrigger:hover;transitionEffect:false;'><img src=https://ajuda.Fastcommerce.com.br/lojas/00000009/prod/"+ imgDetMini +"></a><br>");
+			/*document.write('<p><a onclick="MagicZoom.expand(zoom2); return false;" href="#">Ampliar imagem</a></p>');*/
+      document.write("<a data-zoom-id='zoom2' href='http://ajuda.Fastcommerce.com.br/lojas/00000009/prod/"+imgAmpMini+"' data-image='http://ajuda.Fastcommerce.com.br/lojas/00000009/prod/"+ imgDetMini +"'><img src=https://ajuda.Fastcommerce.com.br/lojas/00000009/prod/"+ imgDetMini +" width=75 height=45 class=ZoomIMG2></a>");
+    }
+    else{
+          imgDetMini="http://ajuda.Fastcommerce.com.br/lojas/00000009/prod/"+novoArray[i];
+          imgAmpMini="http://ajuda.Fastcommerce.com.br/lojas/00000009/prod/"+novoArrayAmp[i];
+          document.write("<a data-zoom-id='zoom2' href="+imgAmpMini+" data-image="+ imgDetMini +"><img src="+ imgDetMini +" width=75 height=45 class=ZoomIMG2></a>");
+    }
+  }
+}
+</script>
+<!-- fim :: zoom com várias imagens -->
+

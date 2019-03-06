@@ -1,0 +1,379 @@
+<style type="text/css">
+.FCAjudaContent{width: 100%; height: auto; position: relative; color:#333 !important;}
+.FCTabGridTutor{width: 100%}
+.FCTabGridTutor td{font: inherit; font: 14px arial !important; border-bottom: 1px solid #eee; padding: 8px 4px; text-align: left;}
+.FCTabGridTutorTit{background: #ccc; text-align: left !important;}
+
+.FCColorGreen9{color: #009900 !important}
+.FCTabGridTutorCorlors{width: 90%; margin: 0 auto}
+.FCTabGridTutorCorlors td{padding: 5px; line-height: 18px}
+.FCTabGridTutorSub{padding-left: 15px !important}
+</style>
+<div class="FCAjudaContent">
+
+
+<span><b>EstiloProduto.htm</b></span><br><br>
+
+<span>Entre as tags <b>&lt;ProdDet></b> e <b>&lt;/ProdDet></b> deve ser inserido os seguintes códigos:</span><br><br>
+
+<span>Para que o zoom nas fotos funcione corretamente é necessário que a loja tenha os seguintes includes:</span><br><br>
+<span>Include css/ js MagicToolbox</span>
+<pre>
+&lt;link rel="stylesheet" href="/js/MagicToolbox/MagicZoomPlusV1/magiczoomplus.css" />
+&lt;script src="/js/MagicToolbox/MagicZoomPlusV1/magiczoomplus.js">&lt;/script>
+</pre>
+<br>
+
+
+<span>HTML</span>
+
+<pre>
+&lt;link href="&lt;BaseLoja>htm/css/grid_1.css" rel="stylesheet" type="text/css">
+&lt;script language="JavaScript" src="&lt;BaseLoja>htm/js/grid_1.js">&lt;/script>
+</pre>
+
+
+<pre>
+&lt;div class="FCGridMain">
+  &lt;div id="idDivGridImg" class="col-small-12 col-medium-12 col-large-5 col-xlarge-5">
+    &lt;img src="&lt;ImagemProdDet>">
+  &lt;/div>
+  &lt;div class="col-small-12 col-medium-12 col-large-7 col-xlarge-7 FCContentGrid">
+    &lt;h1 id="idNameProductGridFC">&lt;NomeProd>&lt;/h1>
+    &lt;br>
+    &lt;h5 class="FCCodProdGrid">
+      Ref.: &lt;span id="idCodProdGrid">&lt;CodProd>&lt;/span> 
+    &lt;/h5>
+    &lt;br>
+    &lt;p id="idPriceGridFC" class="FCPriceGridFC">&lt;PrecoSimples>&lt;/p>&lt;br>
+    
+    &lt;div id="idMainGridFC">&lt;/div>
+    
+    &lt;div id="idBotComprarFC">&lt;/div>
+    &lt;br>    
+  
+    &lt;!-- Begin: ZipCode -->
+    &lt;div class="ProductStyleBoxFC col-small-12 col-medium-12 col-large-8 col-xlarge-5">
+      &lt;div id="ShowCEP&lt;IDProduto>">&lt;/div>
+    &lt;/div>
+    &lt;!-- End: ZipCode -->
+  &lt;/div>
+&lt;/div>
+</pre>
+
+<span>JS</span>
+<pre>
+&lt;script>
+
+//FC simulação de frete
+fnShowCEP(&lt;IDProduto>); 
+
+//executa o MagicZoomPlus
+FCGrid$.fnMultipleZoom("&lt;ImagemProdDet>","&lt;ImagemProdAmp>", <b>false</b>)
+
+<b>var</b> aProductOnlyOneGrid=[], aProductListGrid=[];
+
+//produto principal
+var sCor="&lt;CorVal>"; if(sCor!="")sCor=sCor+"|&lt;CorRGB>";
+aProductOnlyOneGrid.push(JSON.stringify({IDProduto: &lt;IDProduto>,codProd: "&lt;CodProd>", cor: sCor, estoque: &lt;Estoque>, peso: "&lt;PesoNum>", priceOri: "&lt;PrecoOri>", priceNum: "&lt;PrecoNum>", adicional1: "&lt;Adicional1Val>",adicional2: "&lt;Adicional2Val>",  adicional3: "&lt;Adicional3Val>",  adicionalD1: "&lt;AdicionalD1Val>", adicionalD2:"&lt;AdicionalD2Val>", adicionalD3:"&lt;AdicionalD3Val>", imgDet:"&lt;ImagemProdDet>", imgAmp:"&lt;ImagemProdAmp>"}));
+
+//lista de subprodutos:begin
+<b>&lt;sub></b>
+var sCor="&lt;CorVal>"; if(sCor!="")sCor=sCor+"|&lt;CorRGB>";
+aProductListGrid.push(JSON.stringify({IDProduto: &lt;IDProduto>, codProd: "&lt;CodProd>", cor: sCor, estoque: &lt;Estoque>, peso: "&lt;PesoNum>", priceOri: "&lt;PrecoOri>", priceNum: "&lt;PrecoNum>", adicional1: "&lt;Adicional1Val>",adicional2: "&lt;Adicional2Val>",  adicional3: "&lt;Adicional3Val>",  adicionalD1: "&lt;AdicionalD1Val>", adicionalD2:"&lt;AdicionalD2Val>", adicionalD3:"&lt;AdicionalD3Val>", imgDet:"&lt;ImagemProdDet>", imgAmp:"&lt;ImagemProdAmp>"}));
+<b>&lt;/sub></b>
+//lista de subprodutos:end
+
+//altera as opções
+FCGrid$.myOptions={
+  autoSelect: true,
+  cartOnPage: true,
+  showUpdate: true,
+  incMultGrid: true,
+  idElementGrid: '#idMainGridFC',
+  separadorRGBCor: '|',
+  qtyDescriptors: 2, 
+  htmlFlagChecked: '&lt;i class="FCCheckedGrid">&lt;/i>', 
+  imageProduct: 'cor',
+  colorImg: false, 
+  colorImgFormat : '.gif',
+  textGrid: 'Selecione as opções abaixo',
+  order: ['cor', 'adicional1', 'adicional3', 'adicional2', 'adicionalD1', 'adicionalD2', 'adicionalD3'],
+  nameDescriptor: { 
+    cor: 'Cor',
+    adicional1: 'Adicional 1',
+    adicional2: 'Adicional 2',
+    adicional3: 'Adicional 3',
+    adicionalD1: 'Adicional 4',
+    adicionalD2: 'Adicional 5',
+    adicionalD3: 'Adicional 6'
+  },
+  textDescriptor: {
+    cor: 'Selecione a cor',
+    adicional1: 'Selecione ',
+    adicional2: 'Selecione',
+    adicional3: 'Selecione',
+    adicionalD1: 'Selecione',
+    adicionalD2: 'Selecione',
+    adicionalD3: 'Selecione'
+  }
+};
+
+//executa a grade
+FCGrid$.init(&lt;IDProduto>, aProductListGrid, aProductOnlyOneGrid);
+
+&lt;/script>
+</pre>
+
+<span>LojaLib.js</span><br>
+<pre>
+function MostraMaxParcelaJS(PrecoProd,MaxParcelas){
+  var ComSem;
+
+  if(PrecoProd>=300)MaxParcelas=6;
+  else if(PrecoProd>=250)MaxParcelas=5;
+  else if(PrecoProd>=200)MaxParcelas=4;
+  else if(PrecoProd>=150)MaxParcelas=3;
+  else if(PrecoProd>=100)MaxParcelas=2;
+  else if(PrecoProd>=1)MaxParcelas=1;
+
+  if(PrecoProd==0||MaxParcelas==1||Juros.length==0)return "";
+  if(MaxParcelas==0||MaxParcelas>Juros.length)MaxParcelas=Juros.length;
+  if(Juros[MaxParcelas-1]>0)ComSem=""; else ComSem="&lt;font color=#990000> sem juros&lt;/font>";
+  return "&lt;span class=EstParc> ou &lt;b>"+MaxParcelas+"x&lt;/b>"+ComSem+" de &lt;b>"+FormatPrecoReais(CalculaParcelaJurosCompostos(PrecoProd,MaxParcelas))+"&lt;/b>&lt;/span>";
+}
+</pre>
+
+<!--
+<p>A simulação de frete no detalhe do produto funciona somente se a loja utiliza a opção <i><b>Utilizar faixas de CEP (Brasil)</b></i> na página <i><b>Envio & frete</b></i></p>
+<p>Incluir no arquivo <b>LojaLib.js</b> as funções abaixo caso não existam no arquivo:</p>
+
+<pre>
+
+
+</pre>
+
+-->
+
+<br><span><b>Parâmetros de configuração</b></span><br><br>
+<table class="FCTabGridTutor">
+  <tbody>
+    <tr>
+      <td width="15%"><b>Parâmetro</b></td>
+      <td width="20%"><b>Padrão</b></td>
+      <td width="25%"><b>Opções</b></td>
+      <td width="60%"><b>Descrição</b></td>
+    </tr>
+  	<tr>
+      <td colspan="4" class="FCTabGridTutorTit">myOptions</td>
+    </tr>
+    <tr>
+      <td>autoSelect</td>
+      <td>true</td>
+      <td><b>true</b>/ <b>false</b></td>
+      <td>Selecione automaticamente o primeiro subproduto caso seja utilizado a opção <b>true</b></td>
+    </tr>
+    <tr>
+      <td>cartOnPage</td>
+      <td>true</td>
+      <td><b>true</b>/ <b>false</b></td>
+      <td>Ativa o recurso <a href="http://ajuda.fastcommerce.com.br/n12059" target="_blank">Adiciona produto à cesta sem sair da página</a> na <i><b>Grade</b></i> caso seja utilizado a opção <b>true</b> </td>
+    </tr>
+    <tr>
+      <td>shippingUpdate</td>
+      <td>true</td>
+      <td><b>true</b>/ <b>false</b></td>
+      <td>Ativa o recurso a simulação de frete com o peso do subproduto caso utilizado a opção <b>true</b> </td>
+    </tr>
+    <tr>
+      <td>textGrid</td>
+      <td>'Selecione as opções abaixo'</td>
+      <td><i>texto livre</i></td>
+      <td>Exibe um texto acima das opções da grade</td>
+    </tr>
+    <tr>
+      <td>incMultGrid</td>
+      <td>true</td>
+      <td><b>true</b>/ <b>false</b></td>
+      <td>Ativa o recurso para <a href="http://ajuda.fastcommerce.com.br/n7750" target="_blank">informar a quantidade de cada produto antes de colocá-lo na cesta</a> na <i><b>Grade</b></i> caso seja utilizado a opção <b>true</b> </td>
+    </tr>
+    <tr>
+      <td>idElementGrid</td>
+      <td>#idMainGridFC</td>
+      <td><i>id</i> do elemento DIV</td>
+      <td>Define o elemento HTML DIV a onde será inserido a <i><b>Grade</b></i></td>
+    </tr>
+    <tr>
+      <td>separadorRGBCor</td>
+      <td>#idMainGrid</td>
+      <td>|</td>
+      <td>Define o caractere para seperar o <b>nome</b> e o valor Hexadecimal da <b>cor</b> cadastrado no produto</td>
+    </tr>
+    <tr>
+      <td>qtyDescriptors</td>
+      <td>2</td>
+      <td>números entre 1 e 7</td>
+      <td>Define a quantidade máxima de descritores especiais e simples utilizandos nos produtos, incluí também a cor</td>
+    </tr>
+    <tr>
+      <td>htmlFlagChecked</td>
+      <td><i>&lt;i class="FCCheckedGrid"&lt;/i></i></td>
+      <td>html</td>
+      <td>Define o HTML para exibir o <i>check</i></td>
+    </tr>
+    <tr>
+      <td>imageProduct</td>
+      <td><i>cor</i></td>
+      <td>nome de um descritor ex.: <i>cor</i> e <i>descritor1</i></td>
+      <td>Define qual descritor será usado para exibir a imagem dos subprodutos ex. <img src="http://tenis.lojavirtualfct.com.br/lojas/00010130/prod/cores/Preto_Vermelho.gif"></td>
+    </tr>
+    <tr>
+      <td>colorImgFormat</td>
+      <td><i>.gif</i></td>
+      <td>extensões de arquivos de imagem ex. <i>.svg</i> e <i>.png</i></td>
+      <td>Define a extensão dos arquivos de imagem que serão para as cores ex. <img src="http://tenis.lojavirtualfct.com.br/lojas/00010130/prod/cores/Preto_Vermelho.gif"></td>
+    </tr>
+    <tr>
+      <td>order</td>
+      <td><i>['cor', 'descritor1', 'descritor2', 'descritor3', 'descritorD1', 'descritorD2', 'descritorD3']</i></td>
+      <td></td>
+      <td>Define a ordenação que os descritores serão exibidos na <i><b>Grade</b></i></td>
+    </tr>
+    <tr>
+      <td colspan="4" class="FCTabGridTutorTit">myOptions : nameDescriptor [ ]</td>
+    </tr>
+    <tr>
+      <td class="FCTabGridTutorSub">cor</td>
+      <td>Cor</i></td>
+      <td><i>nome para o descrito cor</i></td>
+      <td>Define o nome que será exibido para o descritor <b>Cor</b></td>
+    </tr>
+    <tr>
+      <td class="FCTabGridTutorSub">descritor1</td>
+      <td>Adicional 1</i></td>
+      <td><i>nome do descritor 1, ex. tamanho</i></td>
+      <td>Define o nome que será exibido para o <b>Descritor Adicional 1</b></td>
+    </tr>
+    <tr>
+      <td class="FCTabGridTutorSub">descritor2</td>
+      <td>Adicional 2</i></td>
+      <td><i>nome do descritor 2, ex. marca</i></td>
+      <td>Define o nome que será exibido para o <b>Descritor Adicional 2</b></td>
+    </tr>
+    <tr>
+    <tr>
+      <td class="FCTabGridTutorSub">descritor1</td>
+      <td>Adicional 3</i></td>
+      <td><i>nome do descritor 3</i></td>
+      <td>Define o nome que será exibido para o <b>Descritor Adicional 3</b></td>
+    </tr>
+    <tr>
+      <td class="FCTabGridTutorSub">descritorD1</td>
+      <td>Adicional 4</i></td>
+      <td><i>nome do descritor 4</i></td>
+      <td>Define o nome que será exibido para o <b>Descritor Simples 1</b></td>
+    </tr>
+    <tr>
+      <td class="FCTabGridTutorSub">descritorD2</td>
+      <td>Adicional 5</i></td>
+      <td><i>nome do descritor 5</i></td>
+      <td>Define o nome que será exibido para o <b>Descritor Simples 2</b></td>
+    </tr>
+    <tr>
+      <td class="FCTabGridTutorSub">descritorD3</td>
+      <td>Adicional 6</i></td>
+      <td><i>nome do descritor 6</i></td>
+      <td>Define o nome que será exibido para o <b>Descritor Simples 3</b></td>
+    </tr>
+
+
+
+    <tr>
+      <td colspan="4" class="FCTabGridTutorTit">myOptions : textDescriptor [ ]</td>
+    </tr>
+    <tr>
+      <td class="FCTabGridTutorSub">cor</td>
+      <td>Selecione</i></td>
+      <td><i>texto livre, ex. selecione a cor</i></td>
+      <td>Define o texto que será exibido para o descritor <b>Cor</b></td>
+    </tr>
+    <tr>
+      <td class="FCTabGridTutorSub">descritor1</td>
+      <td>Selecione</i></td>
+      <td><i>texto livre, ex. selecione o tamanho</i></td>
+      <td>Define o texto que será exibido para o <b>Descritor Adicional 1</b></td>
+    </tr>
+    <tr>
+      <td class="FCTabGridTutorSub">descritor2</td>
+      <td>Selecione</i></td>
+      <td><i>texto livre, ex. selecione o modelo</i></td>
+      <td>Define o texto que será exibido para o <b>Descritor Adicional 2</b></td>
+    </tr>
+    <tr>
+      <td class="FCTabGridTutorSub">descritor3</td>
+      <td>Selecione</i></td>
+      <td><i>texto livre, ex. selecione a voltagem</i></td>
+      <td>Define o texto que será exibido para o <b>Descritor Adicional 3</b></td>
+    </tr>
+    <tr>
+      <td class="FCTabGridTutorSub">descritorD1</td>
+      <td>Selecione</i></td>
+      <td><i>texto livre</i></td>
+      <td>Define o texto que será exibido para o <b>Descritor Simples 1</b></td>
+    </tr>
+    <tr>
+      <td class="FCTabGridTutorSub">descritorD2</td>
+      <td>Selecione</i></td>
+      <td><i>texto livre</i></td>
+      <td>Define o texto que será exibido para o <b>Descritor Simples 2</b></td>
+    </tr>
+    <tr>
+      <td class="FCTabGridTutorSub">descritorD3</td>
+      <td>Selecione</i></td>
+      <td><i>texto livre</i></td>
+      <td>Define o texto que será exibido para o <b>Descritor Simples 3</b></td>
+    </tr>
+  </tbody>
+</table>
+<br><br><br>
+
+<span><b>Como utilizar imagens para as cores?</b></span><br><br>
+<p>Cadastre as cores na página de <i><b>Dados da Loja</b></i> >> <i><b>Produtos</b></i> >>  clique na seta a direita do campo <i><b>"Exibe cores"</b></i>, informe o nome da cor, selecione uma cor na tabela de cores e clique no botão <b><i>incluir</b></i>.</p>
+
+<p>Para mais detalhes sobre como cadastrar as cores e demais descritores para os produtos <a href="http://ajuda.fastcommerce.com.br/Noticias.asp?IDLoja=9&IDNoticia=4288" target="_blank">clique aqui</a>.</p>
+
+<p>Crie uma pasta com o nome <i><b>CORES</b></i> dentro da pasta <i><b>PROD</b></i> no <i><b>Gerenciador de Arquivos</b></i> da loja e envie as imagens das cores. O nome do arquivo da imagem deve ser igual ao nome da cor cadastrada na loja.</p> 
+<p>Caso a cor seja composta por mais de um nome, utilize o sinal de <b>+</b> (mais), exemplo, <i>"Azul<b>+</b>Escuro"</i> e o nome da imagem enviada para a pasta <i><b>CORES</i></b>  deve ser  <i>"Azul_Escuro.gif"</i>, substitua o sinal de <b>+</b> (mais) por <b>_</b> (<i>underscore / underline</i>).</p>
+
+<br>
+Exemplos<br><br>
+
+<table class="FCTabGridTutorCorlors">
+  <tbody>
+    <tr>
+      <td>
+        <b>Combinação de cores</b><br>
+        Nome cadastrado na loja: <i><b>preto+</b>vermelho <br></i>
+        Nome do arquivo de imagem: <i><b>preto_</b>vermelho.gif<br></i>
+        <img src="http://tenis.lojavirtualfct.com.br/lojas/00010130/prod/cores/Preto_Vermelho.gif"><br>
+      </td>
+      <td>
+        <br>
+        Nome cadastrado na loja: <i>vermelho</i><br>
+        Nome do arquivo de imagem: <i>vermelho.gif</i><br>
+        <img src="http://tenis.lojavirtualfct.com.br/lojas/00010130/prod/cores/vermelho.gif"><br>
+      </td>
+      <td>
+        <br>
+        Nome cadastrado na loja: <i>azul</i><br>
+        Nome do arquivo de imagem: <i>azul.gif</i><br>
+        <img src="http://tenis.lojavirtualfct.com.br/lojas/00010130/prod/cores/azul.gif"><br>
+      </td>      
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+</div>

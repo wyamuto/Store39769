@@ -1,0 +1,67 @@
+<center><div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/36cGRWfjH-8" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+</div></center>
+<br>
+
+<p><span class="dest">ATENÇÃO:</span> Para habilitar o recurso basta seguir as instruções do vídeo, caso tenha a necessidade de personalização seguem as instruções:</p>
+
+<p>Ao utilizar este recurso, quando um produto é adicionado à cesta, uma função javascript é acionada e exibe uma mensagem informando que o produto foi adicionado à cesta. Exemplo:</p>
+
+<center><img src="/lojas/00000009/images/ShowCartOnPage.png" class="img-responsive"></center>
+
+<p>É possível personalizar a ação que irá ocorrer após a inclusão do produto à cesta. Para esta personalização a loja deve inserir uma função na biblioteca javascript da loja com o nome <b>ShowCartOnPage</b>. (<a href="/lojas/00000009/htm/ShowCartOnPage.js" target="_blank">Clique aqui</a> para ver exemplo da função padrão)</p>
+
+<p><b>Exemplo:</b></p>
+
+<pre>function ShowCartOnPage(IDLoja,iErr,sMsg,sCartText,sCheckoutText,este){
+  ...
+  ...
+  ...
+}</pre>
+<br>
+
+<p><b>Onde:</b></p>
+
+<ul>
+<li><p><code>IDLoja</code>: É o ID da loja. Ex: 999999</p></li>
+<li><p><code>iErr</code>: retorna 0 se produto adicionado à cesta. Caso contrário retorna código de erro.</p></li>
+<li><p><code>sMsg</code>: retorna mensagem com status da inclusão do produto à cesta:</p></li></ul>
+
+<ul><p><li>Um ou mais produtos não puderam ser adicionados à cesta.</p></li>
+<li><p>Produto adicionado ao carrinho.</p></li>
+<li><p>Produtos adicionados ao carrinho.</p></li>
+<li><p>Nenhum produto foi selecionado para inclusão no carrinho.</p></li>
+</ul>
+
+<ul>
+<li><p><code>sCartText</code>: retorna texto "Ir ao carrinho". (Apenas quando não ocorre erro na inclusão [iErr=0])</p></li>
+<li><p><code>sCheckoutText</code>: retorna texto "Finalizar pedido". (Apenas quando não ocorre erro na inclusão [iErr=0])</p></li>
+<li><p><code>este</code>: retorna objeto que foi clicado para adicionar produto à cesta. Este objeto pode ser utilizado por exemplo para pegar a posição onde foi feito o click para adição do produto à cesta.</p></li>
+</ul>
+
+<hr>
+<p><b>Atualizar cesta de produtos no design da loja via AJAX</b></p>
+
+<p>É comum a loja utilizar este recurso em conjunto com o recurso que exibe os dados do carrinho no design da loja em AJAX. Desta forma, quando o cliente clicar no botão para comprar o produto, o produto será adicionado à cesta sem sair da página, irá aparecer a mensagem de que o produto foi adicionado à cesta (função <b>ShowCartOnPage</b>) e uma outra função (<b>MostraDadosCesta</b>) irá automaticamente atualizar a quantidade e valor da cesta no design da loja via AJAX.</p>
+
+<p><b>Exemplo:</b></p>
+
+<p><b>BarraTopo.htm</b> - Design com os dados da cesta de produtos.</p>
+
+<pre>&lt;script>IDLojaNum='&lt;IDLojaNum>';&lt;/script></pre>
+<br>
+
+<pre>&lt;table width="290" border="0">&lt;tr>&lt;td class="StyProdLinkCart" align="left">&lt;a href="AddProduto.asp?IDLoja=&lt;IDLoja>">&lt;b>Carrinho de compras: &lt;span class="StyProdShoppingCartPrice" id="QtdItensCesta">&lt;/span>&lt;/b>&lt;/a>&lt;/td>&lt;/tr>&lt;tr>&lt;td>&nbsp;&lt;/td>&lt;/tr>&lt;tr>&lt;td class="StyProdLinkCart" align="left">&lt;a href="AddProduto.asp?IDLoja=&lt;IDLoja>">&lt;b>Sub-total: &lt;span id="ValorItensCesta">&lt;/span>&lt;/a>&lt;/b>&lt;/td>&lt;/tr>&lt;/table></pre>
+<br>
+
+
+<p><b>Rodape.htm</b> - Função que exibe os dados da cesta no design do topo via AJAX</p>
+
+<pre>&lt;script>MostraDadosCesta();&lt;/script></pre>
+<br>
+
+<p><b>LojaLib.js</b> - Função AJAX que atualiza os dados da cesta.</p>
+
+<p><a href="/lojas/00000009/htm/MostraDadosCesta.js" target="_blank">Clique aqui</a> para ver fazer o download desta função.</p>
+
+<!--NewsDesignFC-->

@@ -1,0 +1,259 @@
+<p>Imagine o seguinte cenário comum:</p>
+
+<ol><li>Um visitante acessou a loja virtual, viu os detalhes de alguns produtos, mas decidiu não comprar e procurar em outro site.</li><li>Para sair da loja, ele move o ponteiro do mouse para fora da página, na direção da barra de endereços do navegador.</li><li>Neste breve momento, antes de mudar de site ou de fechar a aba da loja, uma imagem promocional é exibida ao visitante, oferecendo um desconto imperdível de 10%.</li><li>O cliente vê a promoção e resolve comprar o produto na loja.</li></ol>
+
+<p>Note que o visitante estava indo embora da loja virtual sem comprar nada. Neste momento é importante criar uma ação para prender a atenção do cliente. Normalmente utiliza-se as chamadas <i>call to action</i> para exibir promoções, lançamentos, códigos de desconto ou para mostrar produtos em destaque da loja.</p>
+<br>
+
+<p><b>Exemplo:</b></p>
+<img src="/lojas/00000009/images/fc/FC15027_1.jpg" style="border-style:solid;border-width:1px;border-color:#C0C0C0" class="img-responsive">
+<br><br>
+
+<p><b>Documentação</b></p>
+<ul>
+<li>Personalização CSS</li>
+<li>Suporte de Cookies</li>
+<li>Inclusão de Parâmetros</li>
+</ul>
+
+<p>Existem 5 parâmetros para mostrar o popup:</p>
+
+<b>Botão fechar</b>
+<pre>DontGoBtnClose:FC$.PathImg +"<b>botdontgoclose.svg</b>?cccfc=1", //Close button</pre>
+<p>O nome da imagem do exemplo é <b>BotDontGoClose.svg</b>. A imagem pode ser SVG, PNG, JPG ou GIF. Se preferir, você pode montar a promoção usando via HTML, javascript e CSS.</p>
+<br>
+
+<b>Banner</b>
+<pre>DontGoBanner:FC$.PathImg +"<b>bannerpopupdontgo.jpg</b>?cccfc=1", //Banner</pre>
+<p>No exemplo, o nome do banner é <b>BannerPopupDontGo.jpg</b>, com tamanho <b>800x300 pixels</b>. O banner pode ter outras dimensões e pode usar extensões SVG, PNG, JPG ou GIF.</p>
+<br>
+
+<b>Parâmetro Alt</b>
+<pre>DontGoAltParam:"<b>Não vá embora!</b>"}, //Alt Param</pre>
+<p>No exemplo, o parâmetro alt <b>Não vá embora!</b> é um texto simples. O texto deve refletir a mensagem que represente o banner</p>
+<ul>
+<li><b>PROMOÇÃO RELÂMPAGO! NÃO PERCA!</b></li>
+<li><b>ESPERE! OLHE BEM ESSA OPORTUNIDADE! ;)</b></li>
+<li><b>UM DESCONTO ESPECIAL PARA VOCÊ!</b></li>
+<li><b>FRETE GRÁTIS! ISTO NÃO SE ENCONTRA FÁCIL!</b></li>
+</ul>
+<br>
+
+<b>Link</b>
+<pre>DontGoLink:"<b>https://sualoja.lojavirtualfc.com.br</b>", //Link</pre>
+<p>O link aponta para qualquer página da loja. <a href="https://www.fastcommerce.com.br/adm/ExemplosLinks.htm" target="_blank">Clique aqui</a> e veja os exemplos.</p>
+<br>
+
+<b>Cookie</b>
+<pre>"<b>DontGoCookie</b>"); //Cookie name (opcional)</pre>
+<p>Se o cliente fechar o popup e continuar navegando pela loja virtual, este não será mostrado novamente na sessão. Este controle de exibição é feito por cookie.</p>
+<p>O nome do cookie <b>DontGoCookie</b> pode ser personalizado para cada tipo de popup. Desta forma, cada banner pode ter um cookie próprio, para que cada popup seja exibido somente uma vez.</p>
+<ul>
+<li><b>DontGoCookieHome</b></li>
+<li><b>DontGoCookieProduct</b></li>
+<li><b>DontGoCookieCategories</b></li>
+<li><b>DontGoCookiePromo</b></li>
+</ul>
+<br><br>
+
+<p><b>Seguem instruções de implantação deste recurso:</b></p>
+
+<p><span class="dest NewsPassos">1º Passo</span></p>
+<p>Clique <a href="/dnload/DontGoImages.zip"><b>aqui</b></a> e faça download das imagens. Envie o arquivo para a pasta IMAGES.</p>
+<br><br>
+
+<p><span class="dest NewsPassos">2º Passo</span></p>
+<p>No final do arquivo <b>LojaLib.js</b> insira o script abaixo.</p>
+<pre>// Don't Go Popup
+FCLib$.onReady(function(){
+  if(FCLib$.GetID("overlay")){
+    //Dynamic Don't Go Container
+    var dynamicDontGoContainer = document.createElement('div');
+    dynamicDontGoContainer.id = 'ShowDontGoPopup';
+    dynamicDontGoContainer.className = 'DontGoPopup';
+    document.getElementsByTagName('body')[0].appendChild(dynamicDontGoContainer);
+  
+    //Dynamic Don't Go Container Elements
+    var dynamicDontGoContainerElements = document.createElement('div');
+    dynamicDontGoContainerElements.className = 'DontGoPopupContent';
+    dynamicDontGoContainer.appendChild(dynamicDontGoContainerElements);
+  
+    //Dynamic Don't Go Elements Close Button
+    var dynamicDontGoElementsCloseButton = document.createElement('div');
+    dynamicDontGoElementsCloseButton.className = 'DontGoPopupCloseButton';
+    dynamicDontGoContainerElements.appendChild(dynamicDontGoElementsCloseButton);
+    dynamicDontGoElementsCloseButton.innerHTML = "&lt;img id='idBtnDontGoClose' border='0'>";
+  
+    //Dynamic Don't Go Elements Banner
+    var dynamicDontGoElementsBanner = document.createElement('div');
+    dynamicDontGoElementsBanner.className = 'DontGoBanner';
+    dynamicDontGoContainerElements.appendChild(dynamicDontGoElementsBanner);
+    dynamicDontGoElementsBanner.innerHTML = "&lt;a id='idLinkDontGo' target='_self'>&lt;img id='idImgDontGo' src='' border='0'>&lt;/a>"; 
+  
+    //PreLoading Image Banner
+    var preLoadingDontGoBanner = new Image();
+    preLoadingDontGoBanner.onload = function () {
+      document.getElementById('idImgDontGo').src = preLoadingDontGoBanner.src;
+    };
+    preLoadingDontGoBanner.src = FC$.PathImg +"bannerpopupdontgo.jpg?cccfc=1";
+  
+    //Show Don't Go Popup
+    FCLib$.fnDontGo(userDontGo,{
+    DontGoBtnClose:FC$.PathImg +"botdontgoclose.svg?cccfc=1", //Close button
+    DontGoBanner:FC$.PathImg +"bannerpopupdontgo.jpg?cccfc=1", //Banner
+    DontGoLink:"/prod,idloja,"+FC$.IDLoja+",promocao,1,ofertas.htm", //Link
+    DontGoAltParam:"UM DESCONTO ESPECIAL PARA VOCÊ!"}, //Alt Param
+    "DontGoCookie"); //Cookie name
+  }
+});
+
+function userDontGo(oParam){
+  var OpenDontGoPopup=document.getElementById('ShowDontGoPopup');
+  if(OpenDontGoPopup){
+    document.getElementById("idBtnDontGoClose").src=oParam.DontGoBtnClose; //Close button
+    document.getElementById("idImgDontGo").src=oParam.DontGoBanner; //Banner
+    document.getElementById("idImgDontGo").alt=oParam.DontGoAltParam; //Alt Param
+    document.getElementById("idLinkDontGo").href=oParam.DontGoLink; //Link
+    window.onload=OpenDontGoPopup.style.display="block";
+    var CloseDontGoPopup=document.getElementsByClassName("DontGoPopupCloseButton")[0];
+    CloseDontGoPopup.onclick=function(){OpenDontGoPopup.style.display="none";}
+  }
+}</pre>
+<br><br>
+
+<p><span class="dest NewsPassos">3º Passo</span></p>
+<p>Insira os estilos abaixo no final do arquivo <b>LojaSite.css</b>:</p>
+<pre>/* Don't Go Popup */
+.DontGoPopup{display:none;position:fixed;z-index:1;padding-top:100px;left:0;top:0;width:100%;height:100%;overflow:auto;overflow-y:hidden;background-color:rgb(0,0,0);background-color:rgba(0,0,0,0.4);}
+.DontGoPopup .DontGoPopupContent div a img{max-width:100%;height:auto;}
+.DontGoPopupContent{margin:auto;padding:0px;}
+.DontGoBanner img{border:1px solid #888888;border-radius:10px;}
+.DontGoPopupCloseButton img{position:relative;top:30px;right:12px;float:right;width:80px;height:auto;}
+.DontGoPopupCloseButton:hover,.DontGoPopupCloseButton:focus{cursor:pointer;}
+@media only screen and (max-width:1680px){.DontGoPopupContent{width:48%;}}
+@media only screen and (min-width:1681px){.DontGoPopupContent{width:40%;}}</pre>
+<p>O estilo do popup são definidos nas classes acima. É possível definir cores, dimensões etc.</p>
+<br><br>
+
+<p><b>Versão Avançada:</b></p>
+
+<p>É possível personalizar e mostrar popups diferentes em determinadas páginas. No exemplo abaixo serão exibidos <b>4 popups</b> diferentes, exibidos nas páginas <b>home</b>, <b>lista de produtos</b>, <b>produto específico</b> e <b>demais páginas</b>.</p>
+<br>
+
+<p><span class="dest NewsPassos">1º Passo</span></p>
+<p>Para especificar um popup diferenciado na página de <b>detalhes do produto</b>, insira o código abaixo na primeira linha dentro da tag <b>&lt;ProdDet></b> no arquivo <b>EstiloProduto.htm</b>.</p>
+<pre>&lt;script>var dontGoProduct="&lt;IDProduto>";&lt;/script></pre>
+<br><br>
+
+<p><span class="dest NewsPassos">2º Passo</span></p>
+No final do arquivo <b>LojaLib.js</b>, insira o script abaixo e altere <b>"9999999"</b> pelo ID do seu produto.</p>
+<pre>// Don't Go Popup
+FCLib$.onReady(function(){
+  if(FCLib$.GetID("overlay")){
+    //Dynamic Don't Go Container
+    var dynamicDontGoContainer = document.createElement('div');
+    dynamicDontGoContainer.id = 'ShowDontGoPopup';
+    dynamicDontGoContainer.className = 'DontGoPopup';
+    document.getElementsByTagName('body')[0].appendChild(dynamicDontGoContainer);
+  
+    //Dynamic Don't Go Container Elements
+    var dynamicDontGoContainerElements = document.createElement('div');
+    dynamicDontGoContainerElements.className = 'DontGoPopupContent';
+    dynamicDontGoContainer.appendChild(dynamicDontGoContainerElements);
+  
+    //Dynamic Don't Go Elements Close Button
+    var dynamicDontGoElementsCloseButton = document.createElement('div');
+    dynamicDontGoElementsCloseButton.className = 'DontGoPopupCloseButton';
+    dynamicDontGoContainerElements.appendChild(dynamicDontGoElementsCloseButton);
+    dynamicDontGoElementsCloseButton.innerHTML = "&lt;img id='idBtnDontGoClose' border='0'>";
+  
+    //Dynamic Don't Go Elements Banner
+    var dynamicDontGoElementsBanner = document.createElement('div');
+    dynamicDontGoElementsBanner.className = 'DontGoBanner';
+    dynamicDontGoElementsBanner.innerHTML = "&lt;a id='idLinkDontGo' target='_self'>&lt;img id='idImgDontGo' src='' border='0'>&lt;/a>";
+    dynamicDontGoContainerElements.appendChild(dynamicDontGoElementsBanner);
+  
+    //var Estiloproduto.htm &lt;ProdDet>
+    function isDontGoProdID(IDProduto){
+      if(typeof dontGoProduct !== "undefined"){
+        return (dontGoProduct == IDProduto) ? true : false;
+      }else{
+        return false;
+      }
+    }
+    
+    //PreLoading Images Banner
+    var preLoadingDontGoBanner = new Image();
+    preLoadingDontGoBanner.onload = function () {
+      document.getElementById('idImgDontGo').src = preLoadingDontGoBanner.src;
+    };
+    
+    //Show Don't Go Popup Home
+    if(FC$.Page=="Home"){
+      FCLib$.fnDontGo(userDontGo,{
+      DontGoBtnClose:FC$.PathImg +"botdontgoclose.svg?cccfc=1", //Close button
+      DontGoBanner:FC$.PathImg +"bannerpopupdontgo.jpg?cccfc=1", //Banner
+      DontGoLink:"https://sualoja.lojavirtualfc.com.br", //Link
+      DontGoAltParam:"PROMOÇÃO RELÂMPAGO! NÃO PERCA!"}, //Alt Param
+      "DontGoCookieHome"); //Cookie name
+      preLoadingDontGoBanner.src = FC$.PathImg +"bannerpopupdontgo.jpg?cccfc=1"; //PreLoading Image Banner
+  
+    //Show Don't Go Popup Product Details
+    }else if(isDontGoProdID("<b>9999999</b>")){
+      FCLib$.fnDontGo(userDontGo,{
+      DontGoBtnClose:FC$.PathImg +"botdontgoclose.svg?cccfc=1", //Close button
+      DontGoBanner:FC$.PathImg +"bannerpopupdontgo1.jpg?cccfc=1", //Banner
+      DontGoLink:"https://sualoja.lojavirtualfc.com.br", //Link
+      DontGoAltParam:"ESPERE! OLHE BEM ESSA OPORTUNIDADE! ;)"}, //Alt Param
+      "DontGoCookieProduct"); //Cookie name
+      preLoadingDontGoBanner.src = FC$.PathImg +"bannerpopupdontgo1.jpg?cccfc=1"; //PreLoading Image Banner
+  
+    //Show Don't Go Popup Products Page
+    }else if(FC$.Page==="Products"){
+      FCLib$.fnDontGo(userDontGo,{
+      DontGoBtnClose:FC$.PathImg +"botdontgoclose.svg?cccfc=1", //Close button
+      DontGoBanner:FC$.PathImg +"Bannerpopupdontgo2.jpg?cccfc=1", //Banner
+      DontGoLink:"https://sualoja.lojavirtualfc.com.br", //Link
+      DontGoAltParam:"UM DESCONTO ESPECIAL PARA VOCÊ!"}, //Alt Param
+      "DontGoCookieCategories"); //Cookie name
+      preLoadingDontGoBanner.src = FC$.PathImg +"bannerpopupdontgo2.jpg?cccfc=1"; //PreLoading Image Banner
+  
+    //Show Don't Go Popup in other pages
+    }else{
+      FCLib$.fnDontGo(userDontGo,{
+      DontGoBtnClose:FC$.PathImg +"botdontgoclose.svg?cccfc=1", //Close button
+      DontGoBanner:FC$.PathImg +"bannerpopupdontgo3.jpg?cccfc=1", //Banner
+      DontGoLink:"https://sualoja.lojavirtualfc.com.br", //Link
+      DontGoAltParam:"FRETE GRÁTIS! ISTO NÃO SE ENCONTRA FÁCIL!"}, //Alt Param
+      "DontGoCookiePromo"); //Cookie name
+      preLoadingDontGoBanner.src = FC$.PathImg +"bannerpopupdontgo3.jpg?cccfc=1"; //PreLoading Image Banner 
+    }
+  }
+});
+
+function userDontGo(oParam){
+  var OpenDontGoPopup=document.getElementById('ShowDontGoPopup');
+  if(OpenDontGoPopup){
+    document.getElementById("idBtnDontGoClose").src=oParam.DontGoBtnClose; //Close button
+    document.getElementById("idImgDontGo").src=oParam.DontGoBanner; //Banner
+    document.getElementById("idImgDontGo").alt=oParam.DontGoAltParam; //Alt Param
+    document.getElementById("idLinkDontGo").href=oParam.DontGoLink; //Link
+    window.onload=OpenDontGoPopup.style.display="block";
+    var CloseDontGoPopup=document.getElementsByClassName("DontGoPopupCloseButton")[0];
+    CloseDontGoPopup.onclick=function(){OpenDontGoPopup.style.display="none";}
+  }
+}</pre>
+<br><br>
+
+<p><span class="dest NewsPassos">3º Passo</span></p>
+<p>Insira os estilos abaixo no final do arquivo <b>LojaSite.css</b>:</p>
+<pre>/* Don't Go Popup */
+.DontGoPopup{display:none;position:fixed;z-index:1;padding-top:100px;left:0;top:0;width:100%;height:100%;overflow:auto;overflow-y:hidden;background-color:rgb(0,0,0);background-color:rgba(0,0,0,0.4);}
+.DontGoPopup .DontGoPopupContent div a img{max-width:100%;height:auto;}
+.DontGoPopupContent{margin:auto;padding:0px;}
+.DontGoBanner img{border:1px solid #888888;border-radius:10px;}
+.DontGoPopupCloseButton img{position:relative;top:30px;right:12px;float:right;width:80px;height:auto;}
+.DontGoPopupCloseButton:hover,.DontGoPopupCloseButton:focus{cursor:pointer;}
+@media only screen and (max-width:1680px){.DontGoPopupContent{width:48%;}}
+@media only screen and (min-width:1681px){.DontGoPopupContent{width:40%;}}</pre>
+<br><br>

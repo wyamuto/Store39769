@@ -1,0 +1,324 @@
+<script language=JavaScript src=RequestObject.js></script>
+<style>
+body {background-color:#ffffff}
+.EstNomeCampo {color:black;font-size:11pt;font-family:verdana;}
+.InputText {border-color:#c0c0c0;border-width:1;border-style:solid;background-color:#F5F5F5;font-size:11;font-family:verdana;color:#2C2C2C}
+.EstTabPedido {height:40px;background:#d1deeb;color:#333333;font-size:12pt;font-family:verdana,arial;font-weight:bold}
+.EstTabPedidoX {border-style:solid;border-width:1px;border-color:#a0a0a0;}
+.BotEnviarAtend{font-size:12pt;font-weight:bold;width:400px;height:40px;}
+.InputText1 {border-color:#c0c0c0;border-width:1;border-style:solid;background-color:#F5F5F5;font-size:12;font-family:verdana;color:#2C2C2C;height:30px;}
+.InputTextTempo {border-color:#c0c0c0;border-width:1;border-style:solid;background-color:#F5F5F5;font-size:12;font-family:verdana;color:#990000;height:30px;}
+.EstFieldset {border-color:#b0b0b0;border-width:1px;border-style:solid;}
+.EstLegend {font-size:14px;margin:16px;background-color:#dce3ea;border-color:#bbbbbb;border-width:1px;border-style:solid;padding:4px 15px;text-align:center;}
+
+.hideSuggestClass{border:1px solid #D4D4D4;cursor:pointer;background-color:#FFFFFF;height:150px;overflow:auto;display:none;width:550px;margin:0px}
+.showSuggestClass .hideSuggestClass{display:block}
+.showSuggestClass .hoverSuggestClass{background-color:#E4E4E4}
+.productMenuClass{position:absolute;z-index:255}
+.productItemClass{padding:0px 0px 0px 2px;height:11pt}
+</style>
+
+<!--[if IE]><style>.productMenuClass {margin-left:-183px;margin-top:18px;}</style><![endif]-->
+<script src='https://www.rumo.com.br/sistema/Spry.js'></script>
+<script>var dsProducts=new Spry.Data.XMLDataSet('<BaseLoja>htm/AssuntoChamado.xml','/produtos/p',{})</script>
+</script>
+
+<table align=center width=90% cellspacing=1 cellpadding=5>
+  <tr>
+    <td align="center">
+
+      <table align=center width=700 cellspacing=1 cellpadding=5 class="EstTabPedidoX">
+        <tr>
+          <td align="center">
+            <!-- form -->
+            <table align=center width=100% cellspacing=1 cellpadding=5 >
+              <form name=formatend method=POST action=EnviaMail.asp>
+              <input type=hidden name=NomePara value='Atendimento FC'>
+              <input type=hidden name=EmailPara value='suporte@fastcommerce.com.br'>
+              <input type=hidden name=Assunto value='FC :: Atendimento'>
+              <input type=hidden name=URLRetorno value='<HTMLoja>thks.htm&int=1'>
+              <input type=hidden name=OrdemCampos value='NomeDe,EmailDe,IDLojaFC,NomeLojaFC,NomeCliente,TelefoneFC,EmailCliFC,AssuntoAtend,Comentarios'>
+              <tr>
+                <td align=center class=EstTabPedido>CONTROLE DE ATENDIMENTOS</td>
+              </tr>   
+              <tr>
+                <td>
+                
+                <fieldset class=EstFieldset style="width:95%"><legend class=EstLegend><b>A T E N D E N T E</b></legend>
+                  <table align=center>
+                    <tr>
+                      <td align=right class=EstNomeCampo>Especialista:</td>
+                      <td><input type=text name=NomeDe class=InputText1 size=25 maxlength=50 style=width:150px></td>
+                      <td>&nbsp; &nbsp; &nbsp; </td>
+                      <td align=right class=EstNomeCampo>E-mail:</td>
+                      <td><input type=text name=EmailDe class=InputText1 size=35 maxlength=50 style=width:200px></td>
+                    </tr>   
+                  </table>
+                </FieldSet>
+
+                </td>
+              </tr>
+
+
+              <tr>
+                <td>
+                
+                <fieldset class=EstFieldset style="width:95%"><legend class=EstLegend><b>L O J A / C L I E N T E</b></legend>
+                  <table align=center>
+                    <tr>
+                      <td align=right class=EstNomeCampo>IDLoja:</td>
+                      <td><input type=text name=IDLojaFC class=InputText1 size=25 maxlength=10 style=width:60px>&nbsp;&nbsp;&nbsp;<span class=EstNomeCampo>Nome da loja:</span>&nbsp;&nbsp;<input type=text name=NomeLojaFC class=InputText1 size=20 maxlength=100 style=width:300px></td>
+                    </tr>
+                    <tr>
+                      <td align=right class=EstNomeCampo>Nome do cliente:</td>
+                      <td><input type=text name=NomeCliente class=InputText1 size=25 maxlength=50></td>
+                    </tr>
+                    <tr>
+                      <td align=right class=EstNomeCampo>Tel:</td>
+                      <td><input type=text name=TelefoneFC class=InputText1 size=25 maxlength=50>&nbsp;&nbsp;&nbsp;<span class=EstNomeCampo>E-mail:</span>&nbsp;&nbsp;<input type=text name=EmailCliFC class=InputText1 size=35 maxlength=50></td>
+                    </tr>
+                  </table>
+                </FieldSet>
+
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                
+                <fieldset class=EstFieldset style="width:95%"><legend class=EstLegend><b>A T E N D I M E N T O</b></legend>
+                  <table align=center>
+                    <tr>
+                      <td align=right class=EstNomeCampo>Via:</td>
+                      <td>
+                        <select name=TipoAtend size=1 class=InputText1 style=width:345px>
+                        <option value='' selected class=Lista3>&nbsp;Selecione...</option>                
+                        <option value='Atendimento via Telefone' class=Lista2>Telefone</option>
+                        <option value='Atendimento via Skype' class=Lista2>Skype</option>
+                        <option value='Atendimento via CHAT' class=Lista2>Chat</option>
+                        <option value='Ata Reunião' class=Lista2>Reunião</option>
+                        </select>
+                      </td>
+                    </tr>   
+                    <tr>
+                      <td align=right class=EstNomeCampo>Assunto:</td>
+                      <td>
+
+  <div id=texto3>
+        <input type=text name=AssuntoAtend class=InputText1 style=width:180px>
+            <div id=productMenu3 class=productMenuClass spry:region=dsProducts>
+            <div class=productItemClass spry:repeat=dsProducts spry:suggest={n}>{n}</div>
+            </div></div>
+            <script>
+            var SprySuggest3=new Spry.Widget.AutoSuggest('texto3','productMenu3','dsProducts','n',{containsString:true,minCharsType:3});
+            </script>
+
+      
+
+                      </td>
+                    </tr>   
+                    <tr>
+                      <td align=right valign=top class=EstNomeCampo>Comentários:</td>
+                      <td><textarea wrap=virtual cols=8 rows=4 name="Comentarios" class=InputText1 style="height:150px;width:400px"></textarea></td>
+                    </tr>   
+
+                    <tr>
+                      <td align=right class=EstNomeCampo>Tempo:</td>
+                      <td>
+                      <input type=text name=DuracaoAtend id=DuracaoAtend class=InputTextTempo size=25 maxlength=50>
+<script>
+var timeCrono;
+var hor = 0;
+var min = 0;
+var seg = 0;
+var startTime = new Date();
+var start = startTime.getSeconds();
+Cronometra();
+
+function Cronometra() {
+  if (seg+1>59){min+=1;}
+  if (min>59){min= 0;hor+= 1;}
+  var time = new Date();
+  if (time.getSeconds() >= start) {
+    seg = time.getSeconds() - start;
+  }
+  else {
+    seg = 60 + (time.getSeconds() - start);
+  }
+  sTempo= (hor < 10) ? "0" + hor : hor;
+  sTempo+= ((min < 10) ? ":0" : ":") + min;
+  sTempo+= ((seg < 10) ? ":0" : ":") + seg;
+  document.formatend.DuracaoAtend.value = sTempo;
+  setTimeout("Cronometra()",1000);
+} 
+</script>
+
+                      </td>
+                    </tr>   
+                    <tr>
+                      <td align=right class=EstNomeCampo>N° Chamado:</td>
+                      <td>
+                      <input type=text name=Num_Chamado id=Num_Chamado class=InputText1 size=25 maxlength=50>
+                    </tr>    
+                    <tr>
+                      <td align=right class=EstNomeCampo>Status:</td>
+                      <td>
+                        <select name=StatusAtend size=1 class=InputText1 style=width:345px>
+                        <option value='' selected class=Lista3>&nbsp;Selecione...</option>                
+                        <option value='Finalizado' class=Lista2>Finalizado</option>
+                        <option value='Pendente' class=Lista2>Pendente</option>
+                        <option value='Chamado aberto' class=Lista2>Chamado aberto</option>
+                        </select>
+                      </td>
+                    </tr>   
+                  </table>
+                </FieldSet>
+
+                </td>
+              </tr>
+
+              <tr>
+                <td align=center><br><input type=button name=Enviar value=' Enviar atendimento ' class=BotEnviarAtend onclick='javascript:ValidaForm()'></td>
+              </tr></form>
+            </table>
+            <!-- form -->
+<script>
+
+
+function ValidaForm(){
+
+
+ //Contato Nome
+ if(isEmpty(document.formatend.NomeDe.value)){
+    AvisoErroCampo(document.formatend.NomeDe,'Informe seu nome.');
+    return false;
+ }
+
+ //E-mail
+ if(isEmpty(document.formatend.EmailDe.value) || !ValidaEmailInt(document.formatend.EmailDe.value)){
+    AvisoErroCampo(document.formatend.EmailDe,'Informe seu e-mail.');
+    return false;
+ }
+
+ //Contato Nome
+ if(isEmpty(document.formatend.IDLojaFC.value)){
+    AvisoErroCampo(document.formatend.IDLojaFC,'Informe o IDLoja.');
+    return false;
+ }
+
+ //Contato Nome
+ if(isEmpty(document.formatend.NomeCliente.value)){
+    AvisoErroCampo(document.formatend.NomeCliente,'Informe o nome do cliente.');
+    return false;
+ }
+
+ if(isEmpty(document.formatend.TipoAtend.options[document.formatend.TipoAtend.selectedIndex].value)){
+       AvisoErroCampo_SelectBox(document.formatend.TipoAtend,'Selecione o tipo de atendimento.');
+    return false;
+ }
+
+ if(isEmpty(document.formatend.AssuntoAtend.value)){
+    AvisoErroCampo(document.formatend.AssuntoAtend,'Informe o assunto.');
+ return false;
+ }
+
+ if(isEmpty(document.formatend.StatusAtend.options[document.formatend.StatusAtend.selectedIndex].value)){
+       AvisoErroCampo_SelectBox(document.formatend.StatusAtend,'Selecione o status.');
+    return false;
+ }
+
+  // Define assunto
+  var sAssunto=document.formatend.Assunto.value;
+  sAssunto=sAssunto+" (IDLoja:"+document.formatend.IDLojaFC.value+") - "+document.formatend.AssuntoAtend.value;
+  document.formatend.Assunto.value=sAssunto
+
+  document.formatend.submit();
+}
+
+function ValidaEmailInt(sEmail) {
+  var regex=/^[a-zA-Z0-9._-]+@([a-zA-Z0-9.-]+\.)+[a-zA-Z0-9.-]{2,4}$/;
+  return regex.test(sEmail);
+}
+
+function retiraEspaco(theString) {
+//retira espaços de string
+  if(theString.indexOf(" ")>=0){
+    var i=0;
+    while(theString.indexOf(" ")>=0){
+      if(theString.charAt(i)==" ")theString=theString.substring(0,i)+theString.substring(i+1,theString.length);
+      else i++;
+    }
+    newString=theString;
+  } 
+  else newString=theString;
+  return newString;
+}
+
+function isEmpty(s){return((retiraEspaco(s)==null)||(retiraEspaco(s).length==0));}
+
+function AvisoErroCampo(theField,warnText){
+  theField.focus();
+  theField.select();
+  alert(warnText);
+  return false;
+}
+
+function AvisoErroCampo_SelectBox(theField,s){
+  theField.focus();
+  alert(s);
+  return false;
+}
+
+</script>
+
+    </td>
+  </tr>
+</table>
+
+    </td>
+  </tr>
+</table>
+
+
+<script type="text/javascript">
+// Nome do especialista
+var sNomeEspecialista = Request.QueryString("sNE");
+document.formatend.NomeDe.value=sNomeEspecialista;
+
+// E-mail do especialista
+var sEmailEspecialista = Request.QueryString("sEE");
+document.formatend.EmailDe.value=sEmailEspecialista;
+
+// IDLojaFC
+var sIDLojaFC = Request.QueryString("sIL");
+document.formatend.IDLojaFC.value=sIDLojaFC;
+
+// E-mail do especialista
+var sNomeLojaFC = Request.QueryString("sNL");
+document.formatend.NomeLojaFC.value=sNomeLojaFC;
+
+// Nome do cliente
+var sNomeCliente = Request.QueryString("sNC");
+document.formatend.NomeCliente.value=sNomeCliente;
+
+// Telefone do cliente
+var sTelefoneFC = Request.QueryString("sTC");
+document.formatend.TelefoneFC.value=sTelefoneFC;
+
+// E-mail do cliente
+var sEmailCliente = Request.QueryString("sEC");
+document.formatend.EmailCliFC.value=sEmailCliente;
+
+</script>
+
+
+<script>
+var IDLojaFC=document.formatend.IDLojaFC.value;
+var Zeros="";
+var iNum = Math.random()*999999999
+for(var i=0;i<8-IDLojaFC.length;i++){Zeros=Zeros+"0";}
+var sIDLojaFC=(Zeros+IDLojaFC);
+
+iNum=Math.floor(iNum) 
+document.formatend.Num_Chamado.value=sIDLojaFC+iNum;
+</script>

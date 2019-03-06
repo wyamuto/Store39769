@@ -1,0 +1,52 @@
+<link rel="stylesheet" type="text/css" href="/js/MagicToolbox/MagicScrollV2/magicscroll.css" />
+<script type="text/javascript" src="/js/MagicToolbox/MagicScrollV2/magicscroll.js"></script>
+<style>
+.smText {font-size:10pt;font-family:tahoma}
+
+/* Estilos para cores dos códigos */
+#schemaHtml {font-size:9pt;font-weight:bold;font-family:tahoma,verdana}
+#schemaHtml h1 {font-size:9pt;color:#800000}
+#schemaHtml h2 {font-size:9pt;color:green}
+#schemaHtml b {font-size:9pt;color:#ff2200}
+#schemaHtml i {font-size:9pt;color:#0000FF}
+
+.mcs-item::after, .mcs-item > a::after {
+    content: "";
+    display: inline-block;
+    height: 20px !important;
+    vertical-align: middle;
+}
+
+</style>
+
+
+<p><b><u>Exemplo 3</u></b> (Texto)</p>
+<div id=schemaHtml><h1>
+			&lt;script type="text/javascript"><br>
+			  var MagicScrollOptions ={<br>
+			   <i>items: '[ [320,1], [600,2], [800,3], [1000,5], [1200,7], [1500,10] ]'</i><br>
+			  };<br>
+			&lt;/script></h1></div><br>
+			<div id=schemaHtml><h1>
+			&lt;div class="MagicScroll msborder" id="horizontalTextScroll"><br>
+			  &lt;a href="<i>http://www.SeuEnderecoLojaVirtual.com.br</i>">&lt;b><i>Título Texto 1</i>&lt;/b>&lt;br /><i>Coffret Lolita Lempicka EDP</i>&lt;/a><br>
+			  &lt;a href="<i>http://www.SeuEnderecoLojaVirtual.com.br</i>">&lt;b><i>Título Texto 2</i>&lt;/b>&lt;br /><i>L'eau de Riô Jardim Botânico</i>&lt;/a><br>
+			  &lt;a href="<i>http://www.SeuEnderecoLojaVirtual.com.br</i>">&lt;b><i>Título Texto 3</i>&lt;/b>&lt;br /><i>Esprit de Versailles for Women</i>&lt;/a><br>
+			  &lt;a href="<i>http://www.SeuEnderecoLojaVirtual.com.br</i>">&lt;b><i>Título Texto 4</i>&lt;/b>&lt;br /><i>Versace Yellow Diamond</i>&lt;/a><br>
+			  &lt;a href="<i>http://www.SeuEnderecoLojaVirtual.com.br</i>">&lt;b><i>Título Texto 5</i>&lt;/b>&lt;br /><i>La Perla J'aime La Nuit</i>&lt;/a><br>
+			&lt;/div>
+			</h1>
+</div>
+<br>
+<script>
+  var MagicScrollOptions = {
+  items:'[ [320,1], [600,2], [800,3], [1000,5], [1200,7], [1500,10] ]'
+  }
+</script>
+<div class="MagicScroll">
+  <a href="#"><b>Título Texto 1</b><br/>Coffret Lolita Lempicka EDP</a><br>
+  <a href="#"><b>Título Texto 2</b><br/>L'eau de Riô Jardim Botânico</a><br>
+  <a href="#"><b>Título Texto 3</b><br/>Esprit de Versailles for Women</a><br>
+  <a href="#"><b>Título Texto 4</b><br/>Versace Yellow Diamond</a><br>
+  <a href="#"><b>Título Texto 5</b><br/>La Perla J'aime La Nuit</a><br>
+</div>

@@ -1,0 +1,76 @@
+<img src="/lojas/00000009/images/fc/FC6697IMG1.png" class="img-responsive">
+<img src="/lojas/00000009/images/fc/FC6697IMG2.png" class="img-responsive">
+<br><br>
+<p><b>Exemplo:</b></p>
+<pre>
+<span>
+&lt;script&gt;
+function ValidaForm(este) {
+  if(este.texto.value.length&lt;2 && este.PrecoDe.value.length&lt;1 && este.PrecoAte.value.length&lt;1 && este.IDCategoria.options[este.IDCategoria.selectedIndex].value==0 && este.Promocao.checked==false && este.Lancamento.checked==false
+ && este.Adicional1.options[este.Adicional1.selectedIndex].value==0 && este.Adicional2.options[este.Adicional2.selectedIndex].value==0 && este.Adicional3.options[este.Adicional3.selectedIndex].value==0){
+    alert("Preencha pelo menos um dos campos de busca.");
+    este.texto.focus();
+    return false;
+  }
+  return true;
+}
+&lt;/script&gt;
+
+&lt;form method=GET action=ListaProdutos.asp name=FormBuscaAvancada onSubmit='return ValidaForm(this)'&gt;
+&lt;input type=hidden name=IDLoja value='&lt;IDLojaNum&gt;'&gt;
+&lt;input type=hidden name=Y value='&lt;Y&gt;'&gt;
+&lt;input type=hidden name=<b>Avancada</b> value='True'&gt;
+&lt;input type=hidden name=<b>Digitada</b> value='True'&gt;
+Procurar por: &lt;input type=text name=texto size=15 maxlength=25 class=InputText style=width:70px&gt;
+Categoria: &lt;select class=smSelect name=<b>IDCategoria</b> size=1&gt;
+           &lt;option value=0&gt;[ Selecione ]&lt;/option&gt;
+           &lt;option value=0&gt;(*) Qualquer&lt;/option&gt;
+           &lt;option value='11111'&gt;Categoria A&lt;/option&gt;
+           &lt;option value='22222'&gt;Categoria B&lt;/option&gt;
+           &lt;/select&gt;
+Faixa de preço: de &lt;input type=text name=<b>PrecoDe</b> class=InputText size=5 maxlength=8&gt;
+ até &lt;input type=text name=<b>PrecoAte</b> class=InputText size=5 maxlength=8&gt;
+Somente promoção: &lt;input type=checkbox name=<b>Promocao</b> value=True&gt;
+Somente lançamento: &lt;input type=checkbox name=<b>Lancamento</b> value=True&gt;
+Adicional 1: &lt;select class=smSelect name=<b>Adicional1</b> size=1&gt;
+             &lt;option value=0&gt;[ Selecione ]&lt;/option&gt;
+             &lt;option value=0&gt;(*) Qualquer&lt;/option&gt;
+             &lt;option value='12345'&gt;Item 1&lt;/option&gt;
+             &lt;option value='21444'&gt;Item 2&lt;/option&gt;
+             &lt;/select&gt;
+Adicional 2: &lt;select class=smSelect name=<b>Adicional2</b> size=1&gt;
+             &lt;option value=0&gt;[ Selecione ]&lt;/option&gt;
+             &lt;option value=0&gt;(*) Qualquer&lt;/option&gt;
+             &lt;option value='33333'&gt;Item 1&lt;/option&gt;
+             &lt;option value='56566'&gt;Item 2&lt;/option&gt;
+             &lt;/select&gt;
+Adicional 3: &lt;select class=smSelect name=<b>Adicional3</b> size=1&gt;
+             &lt;option value=0&gt;[ Selecione ]&lt;/option&gt;
+             &lt;option value=0&gt;(*) Qualquer&lt;/option&gt;
+             &lt;option value='8282'&gt;Item 1&lt;/option&gt;
+             &lt;option value='2828'&gt;Item 2&lt;/option&gt;
+             &lt;option value='2223'&gt;Item 3&lt;/option&gt;
+             &lt;option value='2213'&gt;Item 4&lt;/option&gt;
+             &lt;/select&gt;
+&lt;input type=submit value='Buscar' class=BotBuscaAvancada name=Buscar&gt;
+&lt;/form&gt;</span></pre>
+<!-- Fim do Antigo Frame-->
+<br>
+
+<p>Para busca com os campos de descritores especiais, Adicional1, Adicional2 e Adicional3, informe o ID do item, como no exemplo acima e o parâmetro Avancada=True.</p>
+
+<p>Para buscar pelos descritores simples, utilize o parâmetro <b>Texto</b>, que faz busca nestes campos.</p>
+
+<p>Os descritores especiais permitem predefinir valores que facilitam o cadastramento de autor, genero, marca, tamanhos, cores, etc. É possível cadastrar 3 descritores simples, 3 descritores especiais e cor, na página <b>Dados da loja</b> no site administrativo.</p>
+<br>
+
+<p><b>Veja exemplos de códigos de busca simples: </b><a href="/prod,idloja,9,idproduto,4814476" target="_blank">FC 5260 :: Qual é o código html do campo de busca?</a></p>
+
+<p>Exemplo de busca de outras lojas:</p>
+<p><a href="http://www.rumo.com.br/sistema/buscaavancada.asp?IDLoja=153" target="_blank">http://www.rumo.com.br/sistema/buscaavancada.asp?IDLoja=153</a> (busca por tecido, tipo, cor)</p>
+
+<p><a href="http://www.rumo.com.br/sistema/buscaavancada.asp?IDLoja=154" target="_blank">http://www.rumo.com.br/sistema/buscaavancada.asp?IDLoja=154</a> (busca por tipo, fragrância, item)</p>
+
+<p><a href="http://www.rumo.com.br/sistema/buscaavancada.asp?IDLoja=198" target="_blank">http://www.rumo.com.br/sistema/buscaavancada.asp?IDLoja=198</a></p>
+
+<p><a href="http://www.rumo.com.br/sistema/buscaavancada.asp?IDLoja=161" target="_blank">http://www.rumo.com.br/sistema/BuscaAvancada.asp?IDLoja=161</a> (busca por seção, fabricante. Veja no topo também, canto superior direito, outro tipo de busca)</p>

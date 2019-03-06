@@ -1,0 +1,35 @@
+<p>O cliente acessa a loja e procura por um produto. A loja retorna <i>10 páginas</i> de resultados. Por azar, o produto que o cliente quer está na <i>8ª página</i>.</p>
+
+<p><b>Sem autopaginação:</b></p>
+ <p>Na maioria das vezes, o cliente não tem paciência de chegar até a 8ª página e não compra o produto.</p>
+<br>
+
+<p><b>Com autopaginação:</b></p>
+<p>O cliente recebe a primeira página de produtos. Ao fazer a rolagem, a segunda página de produtos é automaticamente acrescentada ao final da página e assim por diante. O cliente rapidamente chega à 8ª página, encontra o produto desejado e compra.</p>
+<br>
+
+<p>Para habilitar a autopaginação, acesse a página <b>Dimensões & menus</b> e altere o campo <b>Autopaginação</b> para a opção <i>Sem limite de páginas</i>. <u>Antes de gravar</u>, clique no botão <b>Testar</b>. Será aberta a lista de produtos da loja. Siga o procedimento abaixo para verificar se está tudo OK:</p>
+
+<ol><li><p>Faça rolagens até o final da lista de produtos para carregar automaticamente as páginas seguintes.</p></li>
+
+<li><p>Verifique se o design das novas páginas carregadas está correto e funcional.</p></li>
+
+<li><p>Tente incluir produtos das páginas seguintes na cesta e veja se ocorrem erros.</p></li>
+
+<li><p>Repita os testes acima com os principais navegadores: Internet Explorer, Firefox e Chrome</p></li></ol>
+<br>
+<p>Na maioria das lojas, a autopaginação funciona perfeitamente. Entretanto, podem ocorrer problemas, de acordo com a personalização que foi feita na loja.</p>
+<br>
+
+<p><b>Erros mais comuns e como corrigí-los:</b></p>
+
+<ul><li><p>Se a autopaginação não iniciar, verifique se a loja tem erros de javascript em seus arquivos personalizados e corrija-os. Para localizar estes erros mais facilmente, utilize a <i>Console de erros</i> do Firefox. Para acessá-la rapidamente, aperte a combinação ctrl-shift-J.</p></li>
+
+<li><p>Se o design das páginas carregadas automaticamente estiver com problemas, verifique se existem erros estruturais no HTML e corrija-os. Por exemplo, para cada tag &lt;td> deve existir uma tag &lt;/td> correspondente.</p></li>
+
+<li><p>Se ao utilizar o Firefox não for possível incluir na cesta um produto das páginas carregadas, edite o arquivos EstiloProduto.htm, deslocando as tags &lt;FormProd> da seção &lt;ProdLista> para um "local válido". Por exemplo, o Firefox não considera esta tag se ela estiver dentro de uma &lt;table> mas fora de &lt;td>&lt;/td>.</p></li></ul>
+
+<p>Caso persistam os erros, <b>não habilite o recurso de autopaginação</b>. Entre em contato com seu webdesigner ou com nossa equipe de suporte, que poderão ajudar na correção do problema.
+</p>
+
+<p><b>Obs:</b> Somente o conteúdo da seção &lt;ProdLista> é repetido quando ocorre a autopaginação.</p>

@@ -1,0 +1,16 @@
+<p>Segue abaixo exemplo de script:</p>
+
+<pre>&lt;script <b>type</b><i>="text/javascript"</i>></h1>LinkDisp(<span>&lt;Estoque></span>,<span>&lt;IDProduto></span>);&lt;/script></pre>
+<br>
+<p>Também no arquivo <b>EstiloProduto.htm</b>, insira o script abaixo entre as tags <span>&lt;ProdTop></span> e <span>&lt;/ProdTop></span>:</p>
+
+<pre>&lt;script <b>type</b><i>="text/javascript"</i>>function LinkDisp(Estoque,IDProduto){
+ if(Estoque==0){
+    document.write("&lt;a href='javascript:MostraDisp(99999,"+ IDProduto +")'
+    title='Clique aqui para ser avisado quando este produto estiver disponível'>
+    Avise-me</a> quando estiver disponível.&lt;/a>");
+ }
+}
+&lt;/script></pre>
+<br>
+<p>No script acima, altere o ID da loja de 99999 para o ID de sua loja, e o texto padrão para o texto personalizado ou para uma imagem.</p>

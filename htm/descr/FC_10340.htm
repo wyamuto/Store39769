@@ -1,0 +1,73 @@
+<p>Veja abaixo exemplo de histórico de uma visita, exibido através de <b>AJAX</b> (<b>A</b>synchronous <b>J</b>avascript <b>A</b>nd <b>X</b>ML):</p>
+
+<center><img src="/lojas/00000009/prod/FC_10340.png" class="img-responsive"></center>
+<br>
+<p>Seguem instruções de implantação deste recurso:</p>
+<br>
+<p><span class="dest NewsPassos">1º Passo</span></p>
+<p>Marque o campo <b>Exibe histórico da visita</b> na página <b>Dados da loja</b> do site administrativo.</p>
+<br>
+
+<p><span class="dest NewsPassos">2º Passo</span></p>
+
+<p>Adicione o código abaixo ao final do arquivo <b>LojaLib.js</b>:</p>
+<pre>
+  <p><span>// Histórico de navegação </span></p>
+  <p><span>function fnShowPageHistory(){AjaxExecFC("/xmlpagehistory.asp","idloja="+ FC$.IDLoja,false,fnExibeHistoricoNaveg);}
+
+function fnExibeHistoricoNaveg(oDocXML){
+  var oXML=oDocXML.getElementsByTagName("item");
+  var oPageHistory=document.getElementById("PageHistory");
+  if(oPageHistory){
+    var sPageHistory="";
+    for(i=0;i&lt;oXML.length;i++){
+      var TitleProd=oXML[i].getElementsByTagName("title")[0].childNodes[0].nodeValue;
+      var LinkProd=oXML[i].getElementsByTagName("link")[0].childNodes[0].nodeValue;
+      try{ImageProd=oXML[i].getElementsByTagName("image")[0].childNodes[0].nodeValue;}
+      catch(e){ImageProd="/images/shim.gif";}
+      try{PriceProd=(oXML[i].getElementsByTagName("price")[0].childNodes[0].nodeValue);}
+      catch(e){PriceProd="";}
+      TitleProd=TitleProd.substring(0,20);
+      sPageHistory+="&lt;div class='BoxHist'>&lt;div class='TitHist'>&lt;a href='"+ LinkProd +"'>"+  TitleProd +"&lt;/a>&lt;/div>&lt;div class='ImgHist'>&lt;a href='"+ LinkProd +"'>&lt;img src='" + ImageProd + "' title='"+ TitleProd +"'>&lt;/a>&lt;/div>&lt;div class='PricHist'> "+ PriceProd +"&lt;/div>&lt;/div>&lt;/div>";
+    }
+    if(sPageHistory!=""){
+      sPageHistory="&lt;div class='histBorder'>&lt;div class='pageHist'>Histórico de navegação&lt;/div>&lt;div class='pageHistMain'>"+sPageHistory+"&lt;/div>&lt;/div>";
+      oPageHistory.innerHTML=sPageHistory;
+    }
+  }
+}</span></p>
+</pre>
+
+<p><span class="dest NewsPassos">3º Passo</span></p>
+<p>Adicione o código abaixo ao final do arquivo <b>LojaSite.css</b>:</p>
+<pre>
+<p><span>/* Paginas visitadas Ajax */</span></p>
+<p><span>.BoxHist{max-width: 180px;float:left;margin: 7px 15px 5px 15px;text-align: center;font-family: 'OpenSansRegular',verdana,arial;}
+.BoxHist a{text-decoration: none;}
+.BoxHist:hover{border-radius:5px 5px 5px 5px;box-shadow:5px 5px 5px 5px #ccc}
+.ImgHist img{max-width: 140px;padding:10px;max-height: 140px;}
+.TitHist{font-size: 14px;overflow: hidden;white-space: nowrap;min-height: 15px;margin: 5px;}
+.TitHist a{color:#515967;}
+.PricHist{font-weight: bold;color:#2E8B57;margin: 5px;}
+.histBorder{text-align: center;font-family: 'OpenSansRegular',verdana,arial;}
+.pageHist{color: #4169E1;font-weight: bold;font-size: 18px;}
+#PageHistory{margin: 0 auto;width: 50%;}
+<br>
+@media only screen and (max-width: 480px){
+  #PageHistory{display: none;}
+}</span></p>
+</pre>
+
+<p><span class="dest NewsPassos">4º Passo</span></p>
+<p>Adicione o código abaixo no arquivo <b>Rodape.htm</b>, na posição desejada:</p>
+<br>
+<pre><span>&lt;div id="PageHistory">&lt;/div>
+&lt;script>fnShowPageHistory();&lt;/script></span>
+</pre>
+
+<p><b>Obs:</b> O histórico só registra as visitas às seguintes páginas:</p>
+<ul>
+<li><p>Página <b>detalhada</b> ou <b>ampliada</b> dos produtos</p></li>
+<li><p>Categorias dos produtos<br>Acesse a ficha de cada categoria para cadastrar a imagem que representará esta página no histórico da visita.</p></li>
+<li><p>Páginas personalizadas apresentadas pela <b>Custom.asp</b><br>Nestas páginas são obrigatórios o <b>title</b> e a tag especial <b>&lt;PageImage></b> entre o <b>&lt;head></b> e <b>&lt;/head></b> do arquivo html<br><b>Ex.:</b><b>&lt;head>&lt;title>Quem somos&lt;/title>&lt;PageImage>QuemSomos.gif&lt;/PageImage>&lt;/head></b><br><br>A imagem que está entre as tags <b>&lt;PageImage></b> e <b>&lt;/PageImage></b> deve ser enviada para a pasta <b>prod</b>.<br>Esta é a imagem que representará esta página no histórico da visita.</p></li>
+</ul>

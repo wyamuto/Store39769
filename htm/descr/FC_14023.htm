@@ -1,0 +1,37 @@
+<pre>&lt;script>
+function ValidaCampoLog(campo,msg,minimo){
+ if(campo.value=='')
+  {
+  alert('Informe '+msg+'.');return false;
+  }
+ else
+  {
+   if(campo.value.length&lt;minimo)
+    {
+    alert('Preencha '+msg+' corretamente.');return false;
+    }
+  }
+  return true;
+}
+
+function Valida(oForm){
+  if(!ValidaCampoLog(oForm.SenhaAtual,'a senha',6)){oForm.SenhaAtual.focus();return void(0);}
+  if(!ValidaCampoLog(oForm.Email,'seu e-mail',10)){oForm.Email.focus();return void(0);}
+  oForm.submit();
+}
+&lt;/script>
+
+&lt;form name=FormLogin action='https://www.rumo.com.br/cadastro.asp?IDLoja=&lt;IDLojaNum>' method=POST>
+&lt;input type=hidden name=IDLoja value='&lt;IDLojaNum>'>
+&lt;input type=hidden name=pp value='3'>
+&lt;input type=hidden name=passo value='1'>
+&lt;input type=hidden name=Sit value=1>
+email: &lt;input type=text name=Email maxlength=50 value="">
+senha: &lt;input type=password name=SenhaAtual maxlength=20>
+&lt;a href='javascript:Valida(document.FormLogin);'>&lt;img src="&lt;BaseLoja>images/botaologin.gif" border="0">&lt;/a>
+&lt;/form></pre>
+<br>
+
+<p>Adicione o parâmetro <b>pp=3</b> no link para a página <b>Cadastro.asp</b> para que o cliente efetue o login sem passar pela ficha de cadastro.</p>
+
+<p><b>Exemplo:</b> https://www.rumo.com.br/cadastro.asp?IDLoja=&lt;IDLojaNum><b>&pp=3</b></p>

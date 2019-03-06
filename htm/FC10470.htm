@@ -1,0 +1,138 @@
+<link href='http://www.rumo.com.br/lojas/00000009/htm/LojaSite.css' rel='stylesheet' type='text/css'>
+<span class=mdtxt>
+<span class=dest>1º Passo</span><br>
+Crie uma pasta chamada <b>js</b> dentro da pasta <b>htm</b> do gerenciador de arquivos e envie o arquivo <b><a href=http://www.fastcommerce.com.br/dnload/jqzoom.zip>jqzomm.zip</a></b> para esta pasta.<br>
+Crie uma pasta chamada <b>css</b> dentro da pasta <b>htm</b> do gerenciador de arquivos e envie o arquivo <b><a href=http://www.fastcommerce.com.br/dnload/jqzoomcss.zip>jqzommcss.zip</a></b> para esta pasta.<br><br>
+
+<span class=dest>2º Passo</span><br>
+Envie o arquivo <b><a href=http://www.fastcommerce.com.br/dnload/gridhtm.zip>gridhtm.zip</a></b> para a pasta <b>htm</b> do gerenciador de arquivos.<br><br>
+
+<span class=dest>3º Passo</span><br>
+Envie o arquivo <b><a href=http://www.fastcommerce.com.br/dnload/gridimages.zip>gridimages.zip</a></b> para a pasta <b>images</b> do gerenciador de arquivos.<br><br>
+
+<span class=dest>4º Passo</span><br>
+Adicione o código abaixo no começo do arquivo <b>BarraTopo.htm</b>:<br>
+<span class=courrierpeq>
+<pre>&lt;script>
+var IDLoja='&lt;IDLoja>' <span class=titpeqverde>//Obtém IDLoja para montar links</span>
+var IDLojaGrid='&lt;IDLoja>' <span class=titpeqverde>//Obtém IDLoja para Grid</span>
+var IDLojaNum='&lt;IDLojaNum>' <span class=titpeqverde>//Obtém IDLoja para montar links</span>
+var sCaminhoImagens='&lt;BaseLoja>'+'images/'
+var sCaminhoProds='&lt;BaseLoja>'+'prod/'
+var Juros=new Array(0,0,0,0,0,0); <span class=titpeqverde>//Juros e parcelas utilizadas nas funções de parcelamento na capa da loja e lista/detalhes dos produtos</span>
+&lt;/script>
+
+&lt;script src="&lt;Baseloja>htm/js/jquery132min.js" type="text/javascript">&lt;/script>
+&lt;script src="&lt;Baseloja>htm/js/jqzoompack101.js" type="text/javascript">&lt;/script>
+&lt;link rel="stylesheet" href="&lt;Baseloja>htm/css/jqzoom.css" type="text/css">
+&lt;script src=&lt;BaseLoja>htm/LojaLib.js>&lt;/script>
+&lt;script src=&lt;BaseLoja>htm/SpryTabbedPanels.js>&lt;/script>
+&lt;script src=&lt;BaseLoja>htm/FC_Grid.js>&lt;/script>
+</pre>
+</span>
+
+<span class=dest>5º Passo</span><br>
+Adicione o código abaixo no final do arquivo <b>LojaSite.css</b>:<br>
+<span class=courrierpeq>
+<pre>/* GRIDE DE PRODUTOS */
+.NivelOn{background-color:#ffffff;height:1px;}
+.NivelOff{background-color:#ffffff;height:1px;}
+.estOpcaotrue{color:#333333;}
+.estOpcaofalse{color:#AAAAAA;}
+.BotComprarGrid{background:url('../images/BotGridSelecione.png') no-repeat;cursor:pointer;width: 253px;height: 70px;border: none;}
+ul.lstColor{float:center;display:inline;position:relative;zoom:1;overflow:hidden;margin: 0 0 0 0;}
+ul.lstColor li{float:left;display:inline;width:35px;margin-right:1px;padding:1px 1px 1px 1px;}
+ul.lstColor li input{display:none} /* FF */
+.FC_Opcao{cursor:pointer;font-size:18px;}</pre>
+</span>
+
+<span class=dest>6º Passo</span><br>
+Adicione o seguinte código ao final do arquivo <b>LojaLib.js</b>. Se a loja não tiver este arquivo, crie um novo e envie para a pasta <b>htm</b>:
+<span class=courrierpeq>
+<pre>function MostraBotIndique(IDProduto){
+  document.write("&lt;center>&lt;span class=mnText>&lt;a href='javascript:MostraIndiqueCaptcha("+IDLojaNum+","+IDProduto+")' class=RodapeMenu>&lt;img src="+sCaminhoImagens+"r.gif border=0 vspace=2>&lt;br>Recomende&lt;br>este produto&lt;/a>&lt;/span>&lt;/center>");
+}
+
+function MostraBotAval(IDProduto){
+  document.write("&lt;center>&lt;span class=mnText>&lt;a href='Opiniao.asp?IDLoja="+IDLoja+"&IDProduto="+IDProduto+"' class=RodapeMenu>&lt;img src="+sCaminhoImagens+"IcAvalie.png border=0 vspace=2>&lt;br>Avalie este&lt;br>produto&lt;/a>&lt;/span>&lt;/center>");
+}
+
+function MostraPreco(PrecoProd,PrecoOri,IDProd){
+if(PrecoProd==0 && PrecoOri==0){document.write("&lt;span class=EstPrecoProdCapa>&lt;a href=ListaProdutos.asp?"+IDLoja+"&IDProduto="+IDProd+">DETALHES&lt;/a>&lt;/span>");return void(0);}
+if(PrecoProd!=PrecoOri){
+ document.write("&lt;span class=EstPrecoNormal>de:"+FormatPrice(PrecoOri,'R$')+"&lt;/span>&lt;br>&lt;span class=EstPrecoPromocional>por:"+FormatPrice(PrecoProd,'R$')+"&lt;/span>");
+ }
+ else{
+ document.write("&lt;span class=EstPrecoNormal>por: "+FormatPrice(PrecoProd,'R$')+"&lt;/span>");
+ }
+}
+
+function MostraFreteGratis(iPeso){
+  if(iPeso==0)document.write("&lt;img src='"+sCaminhoImagens+"BtFreteGratis.gif'>");
+}
+
+function MostraMaxParcela(PrecoProd,MaxParcelas){
+  var ComSem;
+
+  if(PrecoProd>=300)MaxParcelas=6;
+  else if(PrecoProd>=250)MaxParcelas=5;
+  else if(PrecoProd>=200)MaxParcelas=4;
+  else if(PrecoProd>=150)MaxParcelas=3;
+  else if(PrecoProd>=100)MaxParcelas=2;
+  else if(PrecoProd>=1)MaxParcelas=1;
+
+  if(PrecoProd==0||MaxParcelas==1||Juros.length==0)return;
+  if(MaxParcelas==0||MaxParcelas>Juros.length)MaxParcelas=Juros.length;
+  if(Juros[MaxParcelas-1]>0)ComSem=""; else ComSem="&lt;font color=#990000>&nbsp;sem&nbsp;juros&lt;/font>";
+  document.write("ou&nbsp;&lt;b>"+MaxParcelas+"x&lt;/b>"+ComSem+" de&nbsp;&lt;b>"+FormatPrecoReais(CalculaParcelaJurosCompostos(PrecoProd,MaxParcelas))+"&lt;/b>");
+}
+
+function MostraMaxParcelaJS(PrecoProd,MaxParcelas){
+  var ComSem;
+
+  if(PrecoProd>=300)MaxParcelas=6;
+  else if(PrecoProd>=250)MaxParcelas=5;
+  else if(PrecoProd>=200)MaxParcelas=4;
+  else if(PrecoProd>=150)MaxParcelas=3;
+  else if(PrecoProd>=100)MaxParcelas=2;
+  else if(PrecoProd>=1)MaxParcelas=1;
+
+  if(PrecoProd==0||MaxParcelas==1||Juros.length==0)return "";
+  if(MaxParcelas==0||MaxParcelas>Juros.length)MaxParcelas=Juros.length;
+  if(Juros[MaxParcelas-1]>0)ComSem=""; else ComSem="&lt;font color=#990000>&nbsp;sem&nbsp;juros&lt;/font>";
+  return "&lt;span class=EstParc>ou&nbsp;&lt;b>"+MaxParcelas+"x&lt;/b>"+ComSem+" de&nbsp;&lt;b>"+FormatPrecoReais(CalculaParcelaJurosCompostos(PrecoProd,MaxParcelas))+"&lt;/b>&lt;/span>";}
+</pre>
+</span>
+
+<span class=dest>7º Passo</span><br>
+Altere o valor da variável <b>FC_QtdDescritores</b> no arquivo <b>FC_Grid.js</b>.<br><br>
+Se a loja utiliza cadastro de cores e cadastro de tamanhos no descritor 1, esta variável deve ser:<br>
+<span class=courrierpeq>var FC_QtdDescritores=<span class=destpeq>2</span>;</span><br><br>
+Caso tenha mais descritores, aumente este número. O valor máximo <b>7</b>, que é a cor mais os 6 descritores da página Dados da loja.<br><br>
+
+<span class=dest>8º Passo</span><br>
+Caso o <b>zoom</b> não funcione, apague as seguintes linhas do arquivo <b>BarraTopo.htm</b>:<br><br>
+<span class=courrierpeq>
+<pre>
+&lt;script language=JavaScript src=&lt;BaseLoja>htm/prototype.js>&lt;/script>
+&lt;script language=JavaScript src=&lt;BaseLoja>htm/autocomplete.js>&lt;/script>
+
+
+&lt;script>
+new Autocomplete('query', { 
+    serviceUrl:'BuscaTermosProd.asp?IDLoja=&lt;IDLojaNum>',
+    minChars:2,
+    maxHeight:300,
+    width:320,
+    deferRequestBy:500,
+    showResults:1,
+    autoSubmit:false,
+   onSelect: function(value, data){
+     document.buscaprod.Texto.value=value;
+     document.buscaprod.submit();
+   }
+});
+&lt;/script>
+</pre>
+</span>
+</span>

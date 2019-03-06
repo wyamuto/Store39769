@@ -1,0 +1,90 @@
+<link href='http://www.rumo.com.br/lojas/00000009/htm/LojaSite.css' rel='stylesheet' type='text/css'>
+<style>
+.titpeqverde {font-size:9pt;font-family:courier new,tahoma,verdana;color:#1DA906;font-weight:bold;}
+.courrierpeq {font-size:8pt;font-family:courier new,tahoma,verdana;color:#0D6D9E;}
+.destpeq {font-size:8pt;font-family:tahoma,verdana;color:#990000;font-weight:bold;}
+</style>
+<pre>
+<div id=schemaHtml><h1>&lt;div <b>id</b><i>="LayoutHistoricoVisitaFC"</i> <b>style</b><i>="display:none"</i>>
+&lt;table>
+  &lt;tr>
+    &lt;td <b>colspan</b><i>="2"</i>>
+      &lt;div <b>id</b><i>="showHistory"</i>>&lt;/div>&lt;br />
+    &lt;/td>
+  &lt;/tr>
+  &lt;tr>
+    &lt;td <b>align</b><i>="right"</i>>
+      &lt;input <b>type</b><i>="button"</i> <b>onclick</b><i>="previous()"</i> <b>value</b><i>="&lt;&lt;"</i> />
+    &lt;/td>
+    &lt;td>
+      &lt;input <b>type</b><i>="button"</i> <b>onclick</b><i>="next()"</i> <b>value</b><i>=">>"</i> />
+    &lt;/td>
+  &lt;/tr>
+&lt;/table>
+&lt;/div>
+</h1></div>
+
+<div id=schemaHtml><h1>&lt;script></h1></div><span class="titpeqverde">// Script para ler XML do histórico de visitas</span>
+var IDLoja="&lt;IDLojaNum>";
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.open("GET","XMLPageHistory.asp?IDLoja="+IDLoja+"",false);
+xmlhttp.send();
+xmlDoc=xmlhttp.responseXML; 
+
+x=xmlDoc.getElementsByTagName("item");
+i=0;
+
+function showHistoryFC()
+{
+  titleProd=x[i].getElementsByTagName("title")[0].childNodes[0].nodeValue;
+  linkProd=x[i].getElementsByTagName("link")[0].childNodes[0].nodeValue;
+  try{imageProd=x[i].getElementsByTagName("image")[0].childNodes[0].nodeValue;}
+  catch(e){imageProd="images/shim.gif";}
+  try{priceProd=(x[i].getElementsByTagName("price")[0].childNodes[0].nodeValue);}
+  catch(e){priceProd="";}
+  txt="&lt;style>img {border:0px} a {font-size:8pt;color:#333333;font-family:tahoma,verdana;font-weight:bold;text-decoration:underline}&lt;/style>&lt;table width='250' border='0' cellspacing='0' cellpadding='0'>&lt;tr>&lt;td style='padding:2px 2px 2px 2px;background:#E9E9E9;color:#333333;font-size:9pt;font-family:verdana;font-weight:bold'>Histórico de navegação:&lt;/td>&lt;/tr>&lt;/table>&lt;table width='250' border='0' cellspacing='0' cellpadding='0'>&lt;tr>&lt;td align='center' valign='top'>&lt;br />&lt;table width='150' height='150' border='0' style='border-style:solid;border-width:1px;border-color:#a0a0a0'>&lt;tr>&lt;td align='center' height='20' style='background:#EFEFEF;font-size:8pt;color:#333333;font-family:tahoma,verdana;font-weight:bold'>&lt;a href='"+ linkProd +"'>"+  titleProd +"&lt;/a>&lt;/td>&lt;/tr>&lt;tr>&lt;td align='center'>&lt;a href='"+ linkProd +"'>&lt;img src='" + imageProd + "' border='0' width='100' title='"+ titleProd +"'>&lt;/a>&lt;/td>&lt;/tr>&lt;tr>&lt;td align='center' style='color:#930000;font-size:8pt;font-family:arial;font-weight:bold'>"+ priceProd +"&lt;/td>&lt;/tr>&lt;/table>&lt;/td>&lt;/tr>&lt;/table>";
+  document.getElementById("showHistory").innerHTML=txt;
+}
+
+function next()
+{
+if (i&lt;x.length-1)
+  {
+  i++;
+  showHistoryFC();
+  }
+}
+
+function previous()
+{
+if (i>0)
+  {
+  i--;
+  showHistoryFC();
+  }
+}
+
+<span class="titpeqverde">// Função para verificar se existe o cookie "h1"</span>
+function ReadCookie(cookieName) {
+ var theCookie=""+document.cookie;
+ var ind=theCookie.indexOf(cookieName);
+ if (ind==-1 || cookieName=="") return ""; 
+ var ind1=theCookie.indexOf(';',ind);
+ if (ind1==-1) ind1=theCookie.length; 
+ return unescape(theCookie.substring(ind+cookieName.length+1,ind1));
+}
+
+if(ReadCookie("s&lt;IDLojaNum>").indexOf("h1")!=-1){
+document.onload=showHistoryFC();
+document.getElementById("LayoutHistoricoVisitaFC").style.display='';
+}
+<div id=schemaHtml><h1>&lt;/script></h1></div>
+
+</pre>

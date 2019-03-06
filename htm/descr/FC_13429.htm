@@ -1,0 +1,65 @@
+<center><img src="/lojas/00000009/images/fc/FC13429.gif" class="img-responsive"></center>
+<br>
+
+<p>Veja o procedimento para implantação deste recurso:</p>
+<br>
+
+<p><span class="dest NewsPassos">1° Passo</span></p>
+<p>Faça o backup dos arquivos <b>Home.htm</b> e <b>Rodape.htm</b> (<i><a href="/prod,idloja,9,idproduto,4869611" target="_blank">Clique aqui</a> para mais instruções sobre a geração de backups</i>).</p>
+<br>
+
+<p><span class="dest NewsPassos">2° Passo</span></p>
+<p>Dentro da pasta <b>htm</b>, crie uma pasta chamada <b>popnews</b>.</p>
+<br>
+
+<p><span class="dest NewsPassos">3° Passo</span></p>
+<p><a href="/dnload/PopNews.zip">Clique aqui</a> para baixar o arquivo <b>PopNews.zip</b>, que deverá ser enviado para a pasta <b>htm</b> > <b>popnews</b>.</p>
+<br>
+
+<p><span class="dest NewsPassos">4° Passo</span></p>
+<p>Dentro da pasta <b>images</b>, crie uma pasta chamada <b>popnews</b>.</p>
+<br>
+
+<p><span class="dest NewsPassos">5° Passo</span></p>
+<p><a href="/dnload/PopNewsImg.zip">Clique aqui</a> para baixar o arquivo <b>PopNewsImg.zip</b>, que deverá ser enviado para a pasta <b>images</b> > <b>popnews</b>.</p>
+<br>
+
+<p><span class="dest NewsPassos">6° Passo</span></p>
+<p>Adicione o código abaixo ao início do arquivo <b>Home.htm</b>.</p>
+
+<pre>&lt;!-- PopNews -->
+&lt;script language="JavaScript" src="/jquery-1.8.2.min.js">&lt;/script>
+&lt;script type="text/javascript" src="&lt;BaseLoja>htm/popnews/jQueryCookie.js">&lt;/script>
+&lt;script type="text/javascript" src="&lt;BaseLoja>htm/popnews/popnews.js">&lt;/script>
+&lt;link type="text/css" rel="stylesheet" href="&lt;BaseLoja>htm/popnews/popnews.css">
+
+&lt;div id="FullBackground">&lt;/div>
+&lt;div id="popupNews">
+&lt;a href="#" class="btnClose">
+&lt;img src="&lt;BaseLoja>images/popnews/closePopup.png" width="24" height="24" alt="" border="0">
+&lt;/a>
+&lt;h1>&lt;NomeLoja>&lt;/h1>
+&lt;span>Cadastre-se e aproveite nossas ofertas incríveis!&lt;/span>&lt;br>
+&lt;form class="formNews" id="formPopup" name=FormNewsletter method=GET action="Newsletter.asp" onSubmit="return ValidaNew();"/>
+&lt;input type=hidden name=IDLoja value="&lt;idloja>">
+&lt;input type=hidden name=Y value="&lt;Y>">
+&lt;input type=hidden name=FormatoHTML value="True">
+&lt;input type=hidden name=EnviarAssinante value="Enviar">
+&lt;input type="text" required name=NomeAssinante placeholder="Nome">
+&lt;input type="email" required name=Email placeholder="Seu e-mail">&lt;br>&lt;br>
+&lt;input type="submit" class="bt_news btnSubPop" name=ok value="" />
+&lt;/form>
+&lt;/div>
+&lt;script type="text/javascript">PopNews();&lt;/script>
+&lt;!-- PopNews --></pre>
+<br>
+<p><b>Obs:</b> O formulário de assinante será apresentado uma vez ao dia para cada visitante.</p>
+<br>
+<p>Para alterar este comportamento, é necessário alterar o número de dias no arquivo <b>popnews.js</b>, dentro da pasta <b>htm</b> > <b>popnews</b>.</p>
+
+<p>Segue trecho de código que deve ser alterado:</p>
+
+<p><span>days:1, // Define o tempo em dias para a exibição do popup</p>
+<p>hours:0, // Define o tempo em horas para a exibição do popup</p>
+<p>minutes:0 // Define o tempo em minutos para a exibição do popup</span></p>
+<br>

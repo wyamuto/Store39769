@@ -1,0 +1,54 @@
+<p>Na página <b>Dimensões & menus</b> do site administrativo, no campo <b>Layout das páginas de produtos</b>, escolha o layout de apresentação das informações de produtos.</p>
+
+<p>Para ver as características de cada layout pré-definido, visite:
+<a href="http://www.rumo.com.br/sistema/adm/LayoutProdutos.htm" target="_blank">www.rumo.com.br/sistema/adm/LayoutProdutos.htm</a></p>
+
+<p>Selecione a opção <b>Personalizado</b> para determinar o posicionamento de cada informação: nome do produto, descrição, preço, carrinho, imagens, descritores, etc.</p>
+
+<p>A personalização é feita através de um arquivo HTM (<a href="http://www.rumo.com.br/sistema/adm/AjudaAdm.asp?ajuda=249" target="_blank">EstiloProduto.htm</a>) contendo o design das páginas de lista, detalhe e ampliação de produto.</p>
+
+<p>Este arquivo poderá conter tags especiais de produtos, que serão substituídas pelos dados de cada produto. Para conhecer estas tags especiais, visite:
+<a href="http://www.rumo.com.br/sistema/adm/TagsEspeciaisProdutos.htm" target="_blank">www.rumo.com.br/sistema/adm/TagsEspeciaisProdutos.htm</a></p>
+<br>
+
+<h4>Parcelamento na lista de produtos</h4>
+
+<p>É possível também inserir uma tabela de parcelamentos, na página que mostra cada layout pré-definido a coluna <a href="http://www.rumo.com.br/sistema/adm/LayoutProdutos.htm" target="_blank"><b>Tabela parcelas</b></a> indica se a seção (Lista, Detalhe ou ampliação) apresenta as tabelas de parcelamento de cada produto. Nos layouts 5 e 6, os juros também são informados. </p>
+
+<p>As tabelas podem ser personalizadas para exibir o valor de cada parcela, o total à vista e à prazo, as formas de pagamento, etc. Envie ou altere o arquivo JurosParcelas.js da pasta HTM do grerenciador de arquivos loja. Este arquivo deve conter os juros para cada número de parcelas. </p>
+
+<p>Veja abaixo um exemplo do conteúdo do arquivo <a href="http://www.rumo.com.br/sistema/Capas/JurosParcelas.js">JurosParcelas.js</a> que deve ser enviado.</p>
+
+<p>Por exemplo se sua loja trabalha desta forma:</p>
+
+<p>1x sem juros</p>  
+<p>2x sem juros</p>
+<p>3x sem juros</p>
+<p>4x com juros de 1.99%</p>
+<p>5x com juros de 2.99%</p>
+<br>
+
+<p>O Arquivo JurosParcelas.js seria assim:</p>
+<pre>//Informe abaixo os juros para parcelamento em 1x, 2x, 3x, etc.
+var Juros=new Array(0,0,0,1.99,2.99);</pre>
+<br>
+<p>Estas parcelas e juros devem estar cadastradas nas formas de pagamento que aceitam estes parcelamentos.</p>
+
+<p>Se sua loja por exemplo parcela com cartão de crédito, clique na seta ao lado da bandeira do cartão na página de pagamentos para cadastrar as faixas de parcelamento. </p>
+<br>
+
+<h4>Parcelamento por valor de produto e não pela regra do JurosParcelas.js</h4>
+
+<p>Você pode inserir um script nas funções que exibem os parcelamentos para exibir a parcela de acordo com o valor do produto e não com as regras definidas no arquivo JurosParcelas.js</p>
+
+<p>Nas funções MostraMaxParcela e MostraParcelas você deve inserir uma verificação para que já na lista de produtos o parcelamento seja mostrado de acordo com a parcela mínima, por exemplo (parcela mínima de R$50,00):</p>
+
+<p><span><pre>if(PrecoProd>=300)MaxParcelas=6; 
+else if(PrecoProd>=250)MaxParcelas=5;
+else if(PrecoProd>=200)MaxParcelas=4;
+else if(PrecoProd>=150)MaxParcelas=3;
+else if(PrecoProd>=100)MaxParcelas=2;
+else if(PrecoProd>=1)MaxParcelas=1;</pre></span></p>
+<br>
+
+<p>Coloque esta verificação no começo das funções. Esta verificação altera o número das parcelas na lista de produtos e detalhe para aquele produto de acordo com o preço dele.</p>

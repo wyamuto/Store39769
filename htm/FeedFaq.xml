@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='iso-8859-1'?>
+<fac>
+	<item>
+	<title>Como utilizar o recurso de sub-categorias?</title>
+	<link>http://ajuda.fastcommerce.com.br/ajuda/subcategorias</link>
+	</item>
+	
+	<item>
+	<title>É possível personalizar o design da loja?</title>
+	<link>http://ajuda.fastcommerce.com.br/ajuda/design</link>
+	</item>
+	
+	<item>
+	<title>Posso utilizar meu domínio www.minhaloja.com.br para acessar a loja?</title>
+	<link>http://ajuda.fastcommerce.com.br/ajuda/dominio</link>
+	</item>
+	
+	<item>
+	<title>Como configuro as tabelas de frete da minha loja?</title>
+	<link>http://ajuda.fastcommerce.com.br/ajuda/frete</link>
+	</item>
+	
+	<item>
+	<title>Posso retirar ou escolher os banners exibidos no topo das páginas da loja?</title>
+	<link>http://ajuda.fastcommerce.com.br/ajuda/banners</link>
+	</item>
+	
+	<item>
+	<title>Como divulgar a minha loja virtual?</title>
+	<link>http://ajuda.fastcommerce.com.br/ajuda/divulgacao</link>
+	</item>
+	
+	<item>
+	<title>Como enviar newsletter para clientes?</title>
+	<link>http://ajuda.fastcommerce.com.br/ajuda/newsletter</link>
+	</item>
+	
+	<item>
+	<title>Como identificar origens de visitação e cadastrar parceiros afiliados em minha loja?</title>
+	<link>http://ajuda.fastcommerce.com.br/ajuda/parceiro</link>
+	</item>
+	
+	<item>
+	<title>Como disponibilizar cartões de crédito na loja?</title>
+	<link>http://ajuda.fastcommerce.com.br/ajuda/cartao</link>
+	</item>
+	
+	<item>
+	<title>Qual a URL para exibir a lista dos produtos da loja em XML?</title>
+	<link>http://ajuda.fastcommerce.com.br/ajuda/xml</link>
+	</item>
+	
+	<item>
+	<title>Como trabalhar com arquivos de lote (CSV) para manutenção dos meus produtos?</title>
+	<link>http://ajuda.fastcommerce.com.br/ajuda/csv</link>
+	</item>
+	
+	<item>
+	<title>Novos modelos de layouts pré-definidos</title>
+	<link>http://ajuda.fastcommerce.com.br/ajuda/modelos</link>
+	</item>
+	
+	<item>
+	<title>Como configurar parcelamentos nas páginas da minha loja?</title>
+	<link>http://ajuda.fastcommerce.com.br/ajuda/parcelamento</link>
+	</item>
+	
+	<item>
+	<title>Posso utilizar flash em minha loja?</title>
+	<link>http://ajuda.fastcommerce.com.br/ajuda/flash</link>
+	</item>
+	<item>
+	
+	<title>É possível personalizar a página inicial de minha loja?</title>
+	<link>http://ajuda.fastcommerce.com.br/ajuda/capa</link>
+	</item>
+	
+	<item>
+	<title>Como acessar minhas contas de e-mail?</title>
+	<link>http://ajuda.fastcommerce.com.br/ajuda/email</link>
+	</item>
+	
+	<item>
+	<title>Dicas de personalização de design e erros mais comuns</title>
+	<link>http://ajuda.fastcommerce.com.br/ajuda/dicaserros</link>
+	</item>
+	
+	<item>
+	<title>Como verificar os acessos da loja e filtrar visitas indesejadas?</title>
+	<link>http://ajuda.fastcommerce.com.br/ajuda/firewall</link>
+	</item>
+	
+	<item>
+	<title>Como enviar mensagens SMS para o celular do cliente?</title>
+	<link>http://ajuda.fastcommerce.com.br/ajuda/sms</link>
+	</item>
+	
+	<item>
+	<title>Integração via API</title>
+	<link>http://ajuda.fastcommerce.com.br/ajuda/api</link>
+	</item>
+</fac>

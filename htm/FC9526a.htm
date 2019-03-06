@@ -1,0 +1,36 @@
+<style>
+#schemaHtml {font-size:9pt;font-weight:bold;font-family:tahoma,verdana}
+#schemaHtml h1 {font-size:9pt;color:#800000}
+#schemaHtml h2 {font-size:9pt;color:green}
+#schemaHtml b {font-size:9pt;color:#ff2200}
+#schemaHtml i {font-size:9pt;color:#0000FF}
+</style>
+
+<div id=schemaHtml>
+<pre>
+&lt;input type="radio" name="P2PedCampo1" id="P2PedCampo1" onchange="F$.fnCleanErrField('P2PedCampo1');" value="Sem preferência">Sem preferência&lt;br>
+&lt;input type="radio" name="P2PedCampo1" id="P2PedCampo1" onchange="F$.fnCleanErrField('P2PedCampo1');" value="Manhã (das 7h as 12h)">Manhã (das 7h as 12h)&lt;br>
+&lt;input type="radio" name="P2PedCampo1" id="P2PedCampo1" onchange="F$.fnCleanErrField('P2PedCampo1');" value="Tarde (12h as 18h)">Tarde (12h as 18h)&lt;br>
+&lt;input type="radio" name="P2PedCampo1" id="P2PedCampo1" onchange="F$.fnCleanErrField('P2PedCampo1');" value="Noite (18h as 23h)">Noite (18h as 23h)&lt;br>
+&lt;div id=idErrFieldP2PedCampo1FC style="display:none" class=EstErrField>&lt;span id=idTxtErrFieldP2PedCampo1FC class=EstTxtErrField>&lt;/span>&lt;/div>
+
+<h1>&lt;script></h1><i>var</i> ErrPedCampo1=0;
+<i>function</i> PedValidaCampo1(){
+  <i>var</i> iSelect=0,Achei=<i>false</i>;
+  <i>while</i>(iSelect&lt;document.Form1.P2PedCampo1.length && !Achei){
+    <i>if</i>(document.Form1.P2PedCampo1[iSelect].checked)Achei=<i>true</i>;
+    <i>else</i> iSelect++;
+  }
+  <i>if</i>(!Achei){
+    oP2PedCampo1=F$.GetID('P2PedCampo1');
+    ErrPedCampo1++;
+    <i>if</i>(ErrPedCampo1==1)F$.fnShowErrField(oP2PedCampo1,"Selecione um período de entrega");
+    <i>else</i> alert("Selecione um período de entrega");
+    document.Form1.P2PedCampo1[0].focus();
+    <i>return false;</i>
+  }
+  <i>else return true;</i>
+}
+<h1>&lt;/script></h1>
+</pre>
+</div>

@@ -1,0 +1,278 @@
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'>
+<title>FastCommerce :: Tags especiais de produtos</title>
+<link href="https://www.rumo.com.br/sistema/adm/Estilos1.css" rel="stylesheet" type="text/css">
+<style>
+body,td,span,p {font-size:10pt;}
+.tagtxt{font-size:11pt;font-family:Consolas,Courier New,Courier,Terminal;}
+</style>
+</head>
+<body topmargin=0 leftmargin=0 marginwidth=0 marginheight=0 class=EstTabPag>
+<table width=760 cellspacing=0 cellpadding=10 align=center>
+  <tr>
+    <td><center><span class=EstTopoGen><h3>Tags especiais de produtos</h3></span></center>
+    <p>O arquivo <b>EstiloProduto.htm</b> pode conter as seguintes <i>tags especiais de produtos</i>, que serão substituídas por conteúdo obtido a partir do cadastro de produtos da loja:<br>
+    </p>
+
+<table width=760 cellspacing=0 cellpadding=0 align=center class=EstTabBorda bgcolor=#333><tr><td>
+<table width=760 cellspacing=1 cellpadding=20 align=center>
+
+<tr><td align=center class=EstCaixaTit>Tag especial</td><td align=center class=EstCaixaTit>Descrição</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;ProdLista&gt;<br>&lt;/ProdLista&gt;</td><td valign=top>Delimitam o código HTML das listas de produtos.<br>Se a loja utiliza autopaginação, somente o conteúdo entre estas tags será repetido a cada página de produtos automaticamente carregada.<br><b>Tags obrigatórias</b>.</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;ProdDet&gt;<br>&lt;/ProdDet&gt;</td><td valign=top>Delimitam o código HTML de detalhe de cada produto.<br><b>Tags obrigatórias</b>.</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;ProdAmp&gt;<br>&lt;/ProdAmp&gt;</td><td valign=top>Delimitam o código HTML de ampliação de imagem de cada produto.<br><b>Tags obrigatórias</b>.</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;FormProd&gt;<br>&lt;/FormProd&gt;</td><td valign=top>Delimitam o posicionamento das tags de descritores, cor e de carrinho de compras.<br><b>Tags obrigatórias</b>: deve haver um conjunto para cada tag delimitadora acima.</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;Sub&gt;<br>&lt;/Sub&gt;</td><td valign=top>Delimitam o código HTML de cada subproduto. Estas tags são obrigatórias somente se a loja utiliza subprodutos. Neste caso, deve haver um conjunto para cada tag delimitadora: &lt;ProdLista&gt;, &lt;ProdLista&gt; e &lt;ProdLista&gt;</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;ProdTop&gt;<br>&lt;/ProdTop&gt;</td><td valign=top>Delimitam o código HTML exibido no início de todas as páginas de produtos. Utilizada para incluir scripts <i>client-side</i> que calculam e exibem os parcelamentos disponíveis para cada produto.</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;ProdBottom&gt;<br>&lt;/ProdBottom&gt;</td><td valign=top>Delimitam o código HTML exibido no final de todas as páginas de produtos. Utilizada para incluir tag &lt;/FormProdMult> para fechamento de form de múltiplos produtos (veja detalhes ao final desta página).</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;WebSlice><br>&lt;/WebSlice></td><td valign=top>Delimitam o código HTML que será relacionado a um Web Slice, que é um recurso existente a partir do Internet Explorer 8 para exibir páginas pela barra de favoritos. Quando o visitante clicar no ícone verde do Web Slice, o produto será colocado na sua barra de favoritos. Ao selecionar este favorito, os dados do produto serão exibidos pelo arquivo <b>WebSlice.htm</b>, que deverá existir na pasta HTM da loja contendo ao menos uma tag &lt;prod>. Quando houver alteração no preço ou na disponibilidade do produto, este favorito será exibido em negrito pelo navegador.</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;JurosParcelas&gt;</td><td valign=top>Tag exclusiva para a seção &lt;ProdTop&gt;, que deve ser incluída caso a loja exiba os parcelamentos disponíveis para cada produto. Se esta tag existir, o arquivo JurosParcelas.js deverá ser enviado para a pasta htm da loja, contendo os juros para cada número de parcelas.</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;IDLoja&gt;</td><td valign=top>Utilizada para criar links para as páginas ASP do <b>FastCommerce</b>.<br><b>Ex:</b> Para criar link para a página <i>Ajuda.asp</i>, utilize<br>&lt;a href=Ajuda.asp?IDLoja=<b>&lt;IDLoja&gt;</b>&gt;</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;IDLojaNum&gt;</td><td valign=top>Utilizada para criar formulários e links para arquivos da loja. Esta tag é substituída somente pelo ID da loja, SEM o parâmetro dinâmico Y.<br><br><b>Ex:</b> Para criar formulário contendo o ID da loja, utilize<br><br><span class=tagtxt>&lt;input type=hidden name=IDLoja value=<b>&lt;IDLojaNum&gt;</b>&gt;</span></td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;Y&gt;</td><td  valign=top>Esta tag é substituída pelo valor do Y dinâmico, que varia para cada visitante. Utilizada para criar forms para as páginas ASP do <b>FastCommerce</b>.<br><br><b>Ex:</b> Para incluir campo hidden com o Y correto, utilize<br><br><span class=tagtxt>&lt;input type=hidden name=Y value=<b>&lt;Y&gt;</b>&gt;</span><br><br>A linha acima resulta em:<br><br><span class=tagtxt>&lt;input type=hidden name=Y value=<b>1166564875496</b>&gt;</span></td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;BaseLoja&gt;</td><td valign=top>Utilizada para compor caminhos para as pastas da loja.<br><b>Ex:</b> Para obter o caminho para o arquivo BotCarrinho.gif na pasta IMAGES, utilize &lt;img src=<b>&lt;BaseLoja></b>images/BotCarrinho.gif&gt;</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;IDProduto&gt;</td><td valign=top>Substituída pelo número que identifica internamente cada produto.</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;NomeProd&gt;</td><td valign=top>Nome do produto. Subprodutos utilizarão o nome do produto pai.</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;NomeProdUA&gt;</td><td valign=top>Nome do produto para criar URLs amigáveis, contendo somente caracteres alfanuméricos. Os demais caracteres serão substituídos por hífens.</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;CodProd&gt;</td><td valign=top>Código de referência do produto.</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;BarCode&gt;</td><td valign=top>Código de barras do produto, exibido de acordo com o padrão definido na página <i>Dados da loja</i>.</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;LegendaCat&gt;</td><td valign=top>Palavra para categorização dos produtos da loja, determinada no campo <b>Produtos agrupados por</b> da página <i>Dados da loja</i>.<br><b>Ex:</b> categoria, departamento, coleção.</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;NomeCat&gt;</td><td valign=top>Nome da categoria (ou departamento, coleção, etc) a qual pertence o produto. Veja detalhes no campo <b>Produtos agrupados por</b> da página <i>Dados da loja</i>.</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;PathCat&gt;</td><td valign=top>Informa o caminho completo até a categoria (ou departamento, coleção, etc) a qual pertence o produto (ex: DVDs > Filmes > Ação). Veja detalhes no campo de subcategorias da página <i>Dados da loja</i>.</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;ImagemProd&gt;</td><td valign=top>Substituída pela imagem do produto. A imagem exibida estará de acordo com a tag delimitadora onde esta tag está contida. Por exemplo, se a tag &lt;ImagemProd&gt; estiver contida entre as tags &lt;ProdAmp&gt; e &lt;/ProdAmp&gt;, será exibida a <b>imagem ampliada</b> do produto.</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;ImagemProdPri><br>&lt;ImagemProdDet><br>&lt;ImagemProdAmp></td><td valign=top>Substituídas respectivamente pela imagem principal, de detalhe e ampliada do produto. Utilizadas na programação de scripts personalizados para exibição das imagens.</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;ImagemProdPriPai><br>&lt;ImagemProdDetPai><br>&lt;ImagemProdAmpPai></td><td valign=top>Substituídas respectivamente pela imagem principal, de detalhe e ampliada do produto-pai do subproduto. Utilizadas na programação de scripts personalizados para exibição das imagens.</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;VideoProd></td><td valign=top>Substituída pelo código HTML que exibe o vídeo no YouTube associado ao produto.</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;CodVideoProd></td><td valign=top>Substituída pelo código alfanumérico que identifica o vídeo no YouTube associado ao produto. Este códido permite a personalização do vídeo com mais opções oferecidas pelo YouTube ou para integrar a outro serviço de hospedagem de vídeos.</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;ProdLargura&gt;</td><td valign=top>Substituída pelo valor do campo <b>Largura máxima das fotos</b> informado na página <i>Dimensões & menus</i>.</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;ProdAltura&gt;</td><td valign=top>Substituída pelo valor do campo <b>Altura mínima das fotos</b> informado na página <i>Dimensões & menus</i>.</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;Lancamento&gt;</td><td valign=top>Se o produto for lançamento, esta tag será substituída pela imagem <b>BotLancamento.gif</b> da loja.</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;Destaque&gt;</td><td valign=top>Se o produto tiver o campo <b>Destaque</b> marcado na sua ficha, esta tag será substituída pela imagem <b>BotDestaque.gif</b> da loja. A imagem pode conter o texto da preferência do lojista (ex: Mais vendido), de acordo com o uso do campo Destaque (ex: para marcar os produtos mais vendidos).</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;Descricao&gt;</td><td valign=top>Será substituída pela <b>descrição longa</b> do produto se esta for preenchida e se a tag &lt;Descricao&gt; estiver contida entre as tags &lt;ProdDet&gt; e &lt;/ProdDet&gt;. Caso contrário será exibida a <b>descrição curta</b> do produto.</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;Adicional1&gt;<br>&lt;Adicional2&gt;<br>&lt;Adicional3&gt;</td><td valign=top>Substituídas pelos <b>descritores especiais</b> de cada produto, definidos na página <i>Dados da loja</i>. Uma caixa de seleção será exibida se o descritor for multi-valorado. O cliente terá que escolher uma opção para cada descritor multi-valorado para adicionar o produto ao seu carrinho.</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;AdicionalD1&gt;<br>&lt;AdicionalD2&gt;<br>&lt;AdicionalD3&gt;</td><td valign=top>Substituídas pelos <b>descritores simples</b> de cada produto, definidos na página <i>Dados da loja</i>. Uma caixa de seleção será exibida se o descritor for multi-valorado. O cliente terá que escolher uma opção para cada descritor multi-valorado para adicionar o produto ao seu carrinho.</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;Cor&gt;</td><td valign=top>Substituída pelas <b>cores</b> de cada produto. Uma caixa de seleção será exibida se houver mais de uma cor no produto. Nesta caso, o cliente terá que escolher uma opção para adicionar o produto ao seu carrinho.</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;Peso&gt;</td><td valign=top>Substituída pelo <b>peso</b> de cada produto.</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;WidthProd&gt;</td><td valign=top>Substituída pela <b>largura</b> de cada produto. A unidade de largura também será exibida (ex: 25,1 cm). Acesse a página Dados da loja para definir a unidade utilizada pela loja.</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;HeightProd&gt;</td><td valign=top>Substituída pela <b>altura</b> de cada produto (ex: 34,3 cm).</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;DepthProd&gt;</td><td valign=top>Substituída pela <b>profundidade</b> de cada produto (ex: 20,5 cm).</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;Estoque&gt;</td><td valign=top>Substituída pela <b>quantidade em estoque</b> de cada produto.</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;LinkDet&gt;</td><td valign=top>Se o produto tiver descrição longa ou imagem de detalhe, esta tag será substituída pela imagem <b>BotMaisDetalhes.gif</b> da loja. Esta imagem poderá ser clicada para que o cliente veja mais detalhes sobre o produto.</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;LinkAmp&gt;</td><td valign=top>Se o produto tiver imagem ampliada, esta tag será substituída pela imagem <b>BotAmpliar.gif</b> da loja. Esta imagem conterá link para que o cliente veja a imagem ampliada do produto.</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;LinkComprar&gt;</td><td valign=top>Se o produto estiver disponível para compra, esta tag será substituída pela imagem <b>BotCarrinho.gif</b> da loja. Esta imagem conterá link para que o cliente inclua o produto no carrinho.</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;Preco&gt;</td><td valign=top>Substituída pelo preço normal e/ou preço promocional do produto, no formato <i>De/Por</i>.</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;PrecoSimples&gt;</td><td valign=top>Substituída pelo preço normal ou preço promocional do produto, com a legenda da moeda (R$) mas nenhuma outra formatação.</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;PrecoNum&gt;</td><td valign=top>Substituída pelo preço normal ou preço promocional do produto, sem legenda da moeda (R$) ou qualquer outra formatação. Utilizada em scripts <i>client-side</i> que calculam e exibem os parcelamentos disponíveis para cada produto.</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;PrecoOri&gt;</td><td valign=top>Substituída pelo preço normal do produto (fora do período promocional), ou pelo preço promocional do produto caso o preço normal não esteja preenchido na ficha do produto, sem legenda da moeda (R$) ou qualquer outra formatação. Utilizada em scripts <i>client-side</i> que calculam e exibem o valor ou o percentual economizado pelo cliente na compra do produto.</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;MaxParcelasProd&gt;</td><td valign=top>Informa o número máximo de parcelas, conforme preenchido no campo <b>Máx Parc</b> de cada produto. Se este campo contiver 1, esta tag será substituída por <i>à vista</i>. Se contiver 0, a tag será removida.</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;MaxParcelasProdNum&gt;</td><td valign=top>Informa o número máximo de parcelas do produto, conforme preenchido no campo <b>Máx Parc</b> de cada produto. Utilizada em scripts <i>client-side</i> que calculam e exibem os parcelamentos disponíveis para cada produto.</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;DataPromFim&gt;</td><td valign=top>Substituída pela data/hora de término da validade do preço promocional de cada produto.</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;CrossSelling&gt;</td><td valign=top>Substituída pelos produtos relacionados a este produto, no campo de cross selling da sua ficha cadastral. Esta tag é utilizada somente se o campo <b>Usar tag <i>&lt;CrossSelling></i></b> da página <i>Textos & imagens</i> estiver marcado. Caso contrário, a tag será ignorada e os produtos relacionados serão exibidos ao final da página com os detalhes do produto.</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;Comments&gt;</td><td valign=top>Substituída pelos comentários feitos pelos clientes sobre este produto. Esta tag é utilizada somente se o campo <b>Usar tag <i>&lt;Comments></i></b> da página <i>Dados da loja</i> estiver marcado. Caso contrário, a tag será ignorada e os comentários serão exibidos ao final da página com os detalhes do produto.</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;OpiniaoMedia&gt;</td><td valign=top>Substituída pela média das avaliações sobre os produtos feitas pelos clientes, liberadas até a véspera. Normalmente a nota é indicada com estrelas.</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;OpiniaoMediaNum&gt;</td><td valign=top>Substituída pelo valor médio das avaliações sobre os produtos feitas pelos clientes, liberadas até a véspera. O valor é arredondado na 3ª casa decimal.</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;OpiniaoQtd&gt;</td><td valign=top>Substituída pela quantidade de avaliações sobre os produtos feitas pelos clientes, liberadas até a véspera.</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;LinkOpiniao&gt;</td><td valign=top>Substituída por link para que o cliente opine sobre o produto. Será necessário selecionar opção ativa para o campo <b>Avaliação pelo cliente</b> na página <i>Dados da loja</i>.</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;AvisoDisp&gt;</td><td valign=top>Caso o produto esteja esgotado, esta tag será substituída por link para que o cliente solicite para ser avisado automaticamente quando o produto estiver novamente disponível. Será necessário selecionar o campo <b>Aviso de disponibilidade</b> na página <i>Dados da loja</i>.</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;IndicaProd&gt;</td><td valign=top>Substituída por link para que o cliente recomende este produto a terceiros por e-mail. Será necessário selecionar o campo <b>Link de recomendação</b> na página <i>Estilos & cores</i>.</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;DescrURL&gt;</td><td valign=top>Substituída por link para página que contém mais informações sobre o produto, no site do fabricante ou em página especial na própria loja, conforme informado no cadastro do produto. Será necessário selecionar o campo <b>Texto para link de mais informações</b> na página <i>Textos & imagens</i>.</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;DescrHTM&gt;</td><td valign=top>Substituída pelo conteúdo do arquivo HTM informado no campo <b>Descrição HTML</b> da ficha do produto.</td></tr>
+
+<tr>
+  <td class=EstTabInt valign=top align=center><span class=tagtxt>&lt;IncludeHTML&gt;</span></td>
+  <td class=EstTabInt>Substituída pelo arquivo .htm ou .html indicado no atributo <b>src=</b> da tag. Este arquivo deve existir na pasta HTM ou subpasta desta.<br><br><b>Exemplo:</b><p class=tagtxt>&lt;IncludeHTML src="outros/more.htm"&gt;</p>Opcionalmente, pode-se utilizar os atributos <b>param1=</b> até <b>param9=</b>. Estes atributos serão substituídos respectivamente pelas tags &lt;param1> até &lt;param9>, caso estas existam nos arquivo incluídos.<br><br><b>Exemplo:</b><p class=tagtxt>&lt;IncludeHTML src="teste.htm" param1="Vitrine especial" param2="50"
+param3="#BB0000"></p>Os arquivos incluídos podem conter tags &lt;IncludeHTML>, ou seja, é possível fazer inclusões dentro de inclusões, de forma recursiva. No total, até 5 tags &lt;IncludeHTML&gt; serão substituídas por arquivo e suas inclusões.<br><br></td>
+</tr>
+
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;EstiloSubProduto&gt;</td><td valign=top>Substituída alternadamente pelas classes <i>CSS</i> <b>EstCorParSubProd</b> e <b>EstCorImparSubProd</b>. Esta tag permite alternar as cores de subprodutos adjacentes em um mesmo produto.</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;Vakinha&gt;</td><td valign=top>Substituída por link para que o visitante possa criar uma vaquinha para comprar o produto. Veja mais informações sobre o Vakinha na página <i>Pagamentos</i>.</td></tr>
+</table></td></tr></table>
+
+
+<br><hr><br><b>Tags para contextualização e refinamento de buscas:</b><br>As seguintes tags são exclusivas para a seção &lt;ProdTop&gt; e são utilizadas para exibição de conteúdo referente aos filtros de busca da página atual.
+<br><br>
+
+<table width=760 cellspacing=0 cellpadding=0 align=center class=EstTabBorda bgcolor=#333><tr><td>
+<table width=760 cellspacing=1 cellpadding=20 align=center>
+<tr><td align=center class=EstCaixaTit>Tag especial</td><td align=center class=EstCaixaTit>Descrição</td></tr>
+
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;QtProd&gt;</td><td valign=top>Indica a quantidade de produtos encontrados. Não são contabilizados os subprodutos.</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;LinkAdvancedSearch&gt;</td><td valign=top>Substituída por link para a página de busca detalhada de produtos, utilizando os filtros da página atual.</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;ListPathSearch&gt;</td><td valign=top>Substituída pelo caminho completo da página atual de produtos, com todos os filtros de busca utilizados, incluindo os termos digitados pelo visitante (ex: DVDs > Filmes > Ação > "tom cruise"). Ao lado de cada filtro, será exibido um ícone para removê-lo. Ao clicar no termo de busca, será possível digitar outro termo para fazer nova busca utilizando os demais filtros. Ao clicar nos demais filtros, será feita busca exclusiva pelo filtro clicado.</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;ListPathCatQt&gt;</td><td valign=top>Lista as quantidades de produtos encontrados em cada categoria dos produtos listados na página atual.</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;ListAdic1Qt&gt;<br>&lt;ListAdic2Qt&gt;<br>&lt;ListAdic3Qt&gt;</td><td valign=top>Lista as quantidades de produtos encontrados em cada descritor especial dos produtos listados na página atual.</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;NomeAdicional1&gt;<br>&lt;NomeAdicional2&gt;<br>&lt;NomeAdicional3&gt;</td><td valign=top>Substituídos pelos nomes dos descritores especiais 1, 2 e 3.<br><br>Exemplos: Tamanho, Marca, Voltagem</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;LegendaCat&gt;<br>&lt;LegendaCats&gt;</td><td valign=top>Substituídas pela legenda escolhida para representar as categorias da loja, no campo <i>Produtos agrupados por</i> da página <b>Dados da loja.</b><br>Exemplos: Departamento, Seção<br><br>A tag &lt;LegendaCats&gt; é substituída pela legenda no plural.<br>Exemplos: Departamentos, Seções</td></tr>
+
+
+
+</table></td></tr></table>
+
+
+<br><hr><br><b>Tags para grades de produtos:</b><br>Utilizadas por scripts para a escolha de tamanhos e cores de subprodutos.
+<br><br>
+
+<table width=760 cellspacing=0 cellpadding=0 align=center class=EstTabBorda bgcolor=#333><tr><td>
+<table width=760 cellspacing=1 cellpadding=20 align=center>
+<tr><td align=center class=EstCaixaTit>Tag especial</td><td align=center class=EstCaixaTit>Descrição</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;NomeAdicional1&gt;<br>&lt;NomeAdicional2&gt;<br>&lt;NomeAdicional3&gt;</td><td valign=top>Substituídas pelos nomes dos descritores especiais 1, 2 e 3, cadastrados nos três campos de descritores especiais da página <b>Dados da loja</b>.</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;NomeAdicionalD1&gt;<br>&lt;NomeAdicionalD2&gt;<br>&lt;NomeAdicionalD3&gt;</td><td valign=top>Substituídas pelo nomes dos descritores simples 1, 2 e 3, cadastrados nos três campos de descritores simples da página <b>Dados da loja</b>.</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;Adicional1Val&gt;<br>&lt;Adicional2Val&gt;<br>&lt;Adicional3Val&gt;</td><td valign=top>Substituídas pelos valores dos descritores especiais 1, 2 e 3 cadastrados na ficha do subproduto.</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;AdicionalD1Val&gt;<br>&lt;AdicionalD2Val&gt;<br>&lt;AdicionalD3Val&gt;</td><td valign=top>Substituídas pelos valores dos descritores simples 1, 2 e 3 cadastrados na ficha do subproduto.</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;CorVal&gt;</td><td valign=top>Substituída pelo nome da cor cadastrada na ficha do subproduto.</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;CorRGB&gt;</td><td valign=top>Substituída pelo valor RGB da cor cadastrada na ficha do subproduto.</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;PesoNum&gt;</td><td valign=top>Substituída pelo valor do <b>peso</b> de cada produto. Utilizada também em scripts <i>client-side</i> que utilizam o peso do produto (por exemplo, para exibir promoções de frete grátis se o peso cadastrado for zero).</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;WidthProdNum&gt;</td><td valign=top>Substituída pelo valor da <b>largura</b> de cada produto.</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;HeightProdNum&gt;</td><td valign=top>Substituída pelo valor da <b>altura</b> de cada produto.</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;DepthProdNum&gt;</td><td valign=top>Substituída pelo valor da <b>profundidade</b> de cada produto.</td></tr>
+
+</table></td></tr></table>
+
+<br><b>Obs<sup>1</sup>:</b> Todas as tags são opcionais, exceto os quatro primeiros conjuntos de tags delimitadoras.
+<br>
+<br><b>Obs<sup>2</sup>:</b> As tags especiais genéricas <b>não podem</b> ser utilizadas no arquivo <b>EstiloProduto.htm</b>.<br>
+
+<br><hr><br><span class=EstTitTopo>Tags para adicionar múltiplos produtos e quantidades à cesta:</span><br><br>
+
+As seguites tags são necessárias para que as páginas de produtos exibam campos de quantidade e seleção e possam enviar os produtos selecionados simultaneamente para a cesta.<br><br>
+
+<table width=760 cellspacing=0 cellpadding=0 align=center class=EstTabBorda bgcolor=#333><tr><td>
+<table width=760 cellspacing=1 cellpadding=20 align=center>
+
+<tr><td align=center class=EstCaixaTit>Tag especial</td><td align=center class=EstCaixaTit>Descrição</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;FormProdMult&gt;</td><td valign=top>Deve ser inserida dentro da tag &lt;ProdTop>.</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;/FormProdMult&gt;</td><td valign=top>Deve ser inserida dentro da tag &lt;ProdBottom>.</td></tr>
+
+<tr class=EstTabInt><td valign=top align=center class=tagtxt>&lt;IncMult&gt;</td><td valign=top>Substituída por caixa de seleção (<i>checkbox</i>) e campo de texto para informar a quantidade desejada do produto.</td></tr>
+
+</table></td></tr></table>
+
+<br>Para colocar apenas um link de comprar ao final da página, inclua a tag &lt;LinkComprar> somente na seção &lt;ProdBottom>. Adicionalmente, deve-se remover todas as ocorrências das tags &lt;FormProd> e &lt;/FormProd>.
+
+<br><br><hr><br><a name=RedesSociais></a><b>Tags especiais para redes sociais:</b><br><br>
+Para utilizar estas tags, é necessário marcar o campo <b>Usar tags especiais</b> da seção de redes sociais da página <i>Dados da loja</i>.
+<br><br>
+
+    <table width=760 border=0 cellspacing=0 cellpadding=0 align=center class=EstTabBorda bgcolor=#333>
+      <tr>
+        <td><table border=0 width=760 cellspacing=1 cellpadding=20 align=center>
+          <tr>
+            <td align=center class=EstCaixaTit>Tag</td>
+            <td align=center class=EstCaixaTit>Descrição</td>
+          </tr>
+          <tr>
+            <td class=EstTabInt valign=top align=center><span class=tagtxt>&lt;ShareFacebook&gt;</span></td>
+            <td class=EstTabInt>Substituída pelo ícone pequeno do Facebook, que poderá ser clicado pelo visitante para compartilhar o produto no seu perfil no Facebook.</td>
+          </tr>
+          <tr>
+            <td class=EstTabInt valign=top align=center><span class=tagtxt>&lt;ShareTwitter&gt;</span></td>
+            <td class=EstTabInt>Substituída pelo ícone pequeno do Twitter, que poderá ser clicado pelo visitante para <i>twittar</i> o produto em seu profile no Twitter.</td>
+          </tr>
+          <tr>
+            <td class=EstTabInt valign=top align=center><span class=tagtxt>&lt;GooglePlusOne&gt;</span></td>
+            <td class=EstTabInt>Substituída pelo código do Google que exibirá botão para que o visitante possa recomendar o produto nos resultados de busca do Google. É possível incluir parâmetros para alterar o tamanho do botão e exibir a quantidade de recomendações do produto.<br><br><b>Exemplos:</b><br><br><span class=tagtxt>&lt;GooglePlusOne size="small"&gt;</span>: exibe o botão no menor formato, com contador de recomendações.<br><br><span class=tagtxt>&lt;GooglePlusOne size="medium" count="false"&gt;</span>: exibe o botão no tamanho médio, sem contador de recomendações.<br><br></td>
+          </tr>
+          <tr>
+            <td class=EstTabInt valign=top align=center nowrap><span class=tagtxt>&lt;Facebook type="<span class=Ativo>plugin</span>"&gt;</span></td>
+            <td class=EstTabInt>Substituída pelo código do Facebook que exibirá um <i>social plugin</i> do Facebook. Estes <span class=Ativo>plugins</span> são utilizados para que o visitante possa comentar, recomendar, curtir ou enviar o produto para seu perfil no Facebook.<br><br><b>Plugins mais utilizados em produtos:</b><br><br>
+<span class=tagtxt>&lt;Facebook type="<span class=Ativo>comments</span>"&gt;</span>: exibe os comentários feitos pelos visitantes sobre o produto. Estes comentários podem ser moderados pela loja, se o campo <b>Facebook AppID</b> da página Dados da loja estiver preenchido e a aplicação estiver corretamente configurada no Facebook.<br><br>
+<span class=tagtxt>&lt;Facebook type="<span class=Ativo>like</span>"&gt;</span>: exibe o botão Curtir. Esta tag pode também ser configurada para exibir o botão <b>Recomendar</b> (veja abaixo nos exemplos de parâmetros).<br><br>
+<span class=tagtxt>&lt;Facebook type="<span class=Ativo>send</span>"&gt;</span>: exibe o botão Enviar. Esta tag permite ao visitante enviar um resumo do produto para um amigo no Facebook.<br><br>
+
+É possível incluir parâmetros para configurar os recursos de cada plugin.
+<br><br><b>Exemplos:</b><br><br>
+<span class=tagtxt>&lt;Facebook type="<span class=Ativo>comments</span>" width="700" num_posts="5"></span><br>Exibe os 5 posts mais recentes em uma caixa de 700 pixels de largura.<br><br>
+<span class=tagtxt>&lt;Facebook type="<span class=Ativo>like</span>" send="true" layout="button_count" show_faces="false"></span><br>Exibe botão Curtir com contador e sem exemplificar nomes de pessoas que curtiram o produto.<br><br></td>
+          </tr>
+        </table>
+        </td>
+      </tr>
+    </table>
+
+
+    </td>
+  </tr>
+</table>
+</body>
+</html>

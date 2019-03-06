@@ -1,0 +1,20 @@
+<style>
+.courrierpeq {font-size:8pt;font-family:courier new,tahoma,verdana;color:#0D6D9E;}
+.destpeq {font-size:8pt;font-family:tahoma,verdana;color:#990000;font-weight:bold;}
+</style>
+
+<pre>
+<span class=courrierpeq>
+&lt;script&gt;
+function AddSearchEngine() {
+ if (window.external && ("AddSearchProvider" in window.external)){
+   window.external.AddSearchProvider("http://www.rumo.com.br/sistema/XMLSearchEngine.asp?IDLoja=&lt;IDLoja&gt;&NomeLoja=<span class=destpeq>MicroMix</span>&Host=www.rumo.com.br");
+ }
+}
+
+if (window.external && ("AddSearchProvider" in window.external)){
+ document.write("&lt;div class=EstLinkASE&gt;&lt;center&gt;&lt;a href=#ase onclick=AddSearchEngine();&gt;<span class=destpeq>Inclua esta busca no navegador</span>&lt;/a&gt;&lt;/center&gt;&lt;/div&gt;");
+}
+&lt;/script&gt;
+</span>
+</pre>

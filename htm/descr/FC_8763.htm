@@ -1,0 +1,25 @@
+<pre>/* ESTILOS PARA AS FOTOS DE PRODUTOS */
+#ProdCapaDiv .EstImgFC{width:<b class="dest">100</b>}/* TAMANHO DAS IMAGENS NA CAPA */
+#ProdListaDiv .EstImgFC{width:<b class="dest">100</b>}/* TAMANHO DAS IMAGENS PRINCIPAIS */
+#ProdDetDiv .EstImgFC{width:<b class="dest">200</b>}/* TAMANHO DAS IMAGENS DE DETALHE */
+#ProdAmpDiv .EstImgFC{width:<b class="dest">400</b>}/* TAMANHO DAS IMAGENS AMPLIADAS */</pre>
+<br>
+
+<p>No código acima, altere os trechos que estão em <span class="dest">vermelho</span> para a largura em pixels que deseja mostrar as imagens.</p>
+
+<p>Em seguida, altere as tags <b>&lt;ImagemProd></b> do arquivo <b>EstiloProduto.htm</b> da seguinte maneira:</p>
+
+<ol>
+<li><p>Para a tag <b>&lt;ImagemProd></b> que fica entre &lt;ProdLista> e &lt;/ProdLista>:<br>
+<span>&lt;div id="ProdListaDiv">&lt;ImagemProd>&lt;/div></span></p></li>
+<li><p>Para a tag <b>&lt;ImagemProd></b> que fica entre &lt;ProdDet> e &lt;/ProdDet>:<br>
+<span>&lt;div id="ProdDetDiv">&lt;ImagemProd>&lt;/div></span><br></p></li>
+<li><p>Para a tag <b>&lt;ImagemProd></b> que fica entre &lt;ProdAmp> e &lt;/ProdAmp>:<br>
+<span>&lt;div id="ProdAmpDiv">&lt;ImagemProd>&lt;/div></span><br></p></li></ol>
+<br>
+
+<p><b>Obs¹:</b> A altura de cada imagem será automaticamente determinada de forma proporcional à largura padronizada, para que não fique distorcida (esticada ou achatada).</p>
+
+<p><b>Obs²:</b> Não sugerimos que as fotos dos produtos sejam redimensionadas via CSS. O correto é que as fotos originais dos produtos tenham a sua largura e altura proporcionais. Diversos portais de comparação de preços e shoppings virtuais exibem as fotos dos produtos no tamanho 100x100 pixels. Caso a foto do produto da loja tenha suas dimensões 120x30 por exemplo, esta foto será exibida de forma distorcida nestes portais, prejudicando a conversão de clicks no produto.</p>
+
+<p><b>Obs³:</b> Nunca utilize flash para a foto principal do produto.</p>

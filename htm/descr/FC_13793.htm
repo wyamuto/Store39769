@@ -1,0 +1,22 @@
+<p>Mesmo os usuários que não utilizam o internet banking podem ser vítimas deste golpe. Se o boleto for impresso em um computador infectado, ele continuará tendo os números incorretos e o dinheiro pago irá para uma conta diferente daquela que deveria receber o valor.</p>
+
+<p>O vencimento e o valor do boleto não são alterados, de modo que não é possível perceber a fraude facilmente.</p>
+
+<p>A alteração do formato de geração do boleto de HTML para PDF impede a adulteração, pois os dados binários do PDF são gerados com proteção contra alteração. Entretanto, a alteração para PDF só pode ser efetuada se a loja utiliza a opção de <b>Boleto genérico</b>. Nas demais opções de boleto, a geração é de responsabilidade de cada instituição financeira (exemplos: Itaú Shopline, Comércio Eletrônico do Banco do Brasil).</p>
+
+<p>A mudança deste formato é feita na janela <b>Configuração para geração de boletos</b> que fica na página <b>Pagamentos</b> do site administrativo, clicando na seta ao lado direito do campo <b>Aceita</b> da seção boleto bancário.</p>
+
+<p><img src="/lojas/00000009/images/fc/FC13793.png" class="img-responsive"></p>
+<br>
+
+<p><b>Obs¹:</b> Alguns clientes podem ter dificuldades em abrir os boletos neste formato, por não terem instalado um leitor de PDF. Nestes casos é possível utilizar o parâmetro <b>&f=1</b> ao final da URL para gerar o boleto no formato HTML.</p>
+
+<p><b>Ex:</b></p>
+<pre>http://www.minhaloja.com.br/Boleto3.asp?IDLoja=99999&N=16110<span><b>&f=1</b></span></pre>
+<br>
+
+<p><b>Obs²:</b> É possível gerar boletos em PDF mesmo que a loja continue usando o formato HTML. Para isto, utilize o parâmetro <b>&f=2</b> ao final da URL.</p>
+
+<p><b>Ex:</b></p>
+<pre>http://www.minhaloja.com.br/Boleto3.asp?IDLoja=99999&N=16110<span><b>&f=2</b></span></pre>
+

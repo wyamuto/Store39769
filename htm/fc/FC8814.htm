@@ -1,0 +1,208 @@
+<link href='/lojas/00000009/htm/LojaSite.css' rel='stylesheet' type='text/css'>
+<script language=JavaScript src=/sistema/LojaSite.js></script>
+<style>
+.TableModelos{border-color:#0A1611;border-width:1;border-style:solid}
+</style>
+<table width=100% cellspacing=1 cellpadding=0>
+  <tr>
+    <td>
+      O modelo <b>FCPlayerSmall</b> <i>(.mp3)</i> possui <b>seis modelos</b> de players. A cor de fundo pode ser alterada de acordo com a preferência da loja.<br><br>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <table width=100% cellspacing=0 cellpadding=0 class="TableModelos">
+        <tr>
+          <td align=center class="TableModelos">
+            Modelo 1
+          </td>
+          <td align=center class="TableModelos">
+            Modelo 2
+          </td>
+          <td align=center class="TableModelos">
+            Modelo 3
+          </td>
+          <td align=center class="TableModelos">
+            Modelo 4
+          </td>
+          <td align=center class="TableModelos">
+            Modelo 5
+          </td>
+          <td align=center class="TableModelos">
+            Modelo 6
+          </td>
+        </tr>
+        <tr>
+          <td align=center height=60 class="TableModelos">
+            <script>
+            FlashSemBorda('/sistema/FCPlayerSmall1?file=/dnload/media/Itchy And Scratchy Theme.mp3&cf=003366&l=1',34,34,'ffffff',''); // Modelos 1 ao 6 e só aceita MP3 - cf= cor de fundo do player
+            </script>
+          </td>
+          <td align=center class="TableModelos">
+            <script>
+            FlashSemBorda('/sistema/FCPlayerSmall2?file=/dnload/media/Itchy And Scratchy Theme.mp3&cf=006600&l=1',34,34,'ffffff',''); // Modelos 1 ao 6 e só aceita MP3 - cf= cor de fundo do player
+            </script>
+          </td>
+          <td align=center class="TableModelos">
+            <script>
+            FlashSemBorda('/sistema/FCPlayerSmall3?file=/dnload/media/Itchy And Scratchy Theme.mp3&cf=663366&l=1',34,34,'ffffff',''); // Modelos 1 ao 6 e só aceita MP3 - cf= cor de fundo do player
+            </script>
+          </td>
+          <td align=center class="TableModelos">
+            <script>
+            FlashSemBorda('/sistema/FCPlayerSmall4?file=/dnload/media/Itchy And Scratchy Theme.mp3&cf=660000&l=1',34,34,'ffffff',''); // Modelos 1 ao 6 e só aceita MP3 - cf= cor de fundo do player
+            </script>
+          </td>
+          <td align=center class="TableModelos">
+            <script>
+            FlashSemBorda('/sistema/FCPlayerSmall5?file=/dnload/media/Itchy And Scratchy Theme.mp3&cf=9933FF&l=1',34,34,'ffffff',''); // Modelos 1 ao 6 e só aceita MP3 - cf= cor de fundo do player
+            </script>
+          </td>
+          <td align=center class="TableModelos">
+            <script>
+            FlashSemBorda('/sistema/FCPlayerSmall6?file=/dnload/media/Itchy And Scratchy Theme.mp3&cf=99FF00&l=1',34,34,'ffffff',''); // Modelos 1 ao 6 e só aceita MP3 - cf= cor de fundo do player
+            </script>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <br>Seguem instruções de implantação deste player:<br><br>
+      <span class=dest>1º Passo</span><br>O arquivo de audio deve ser hospedado em outro servidor, fora do Fastcommerce.<br><br>
+      <span class=dest>2º Passo</span><br>Entre na ficha do produto e informe no campo <b>URL de apoio</b> o caminho para o arquivo de áudio, precedido do caractere <b>#</b>.<br><br><b>Exemplo:</b> <span class=dest>#</span><span class=courrierpeq>http://www.sitemusic.com.br/meuarquivo.mp3</span><br><br>
+      <span class=dest>3º Passo</span><br>No arquivo <b>EstiloProduto.htm</b> coloque no lugar da tag <b>&lt;DescrURL></b> o código abaixo <i>(no exemplo abaixo utilizamos o modelo <b>1</b>)</i>:<br><br>
+      <span class=courrierpeq>&lt;script><br>
+      if('&lt;DescrURL>'.charAt(0)=='&lt;')document.write('&lt;DescrURL>');<br>
+      else if('&lt;DescrURL>'.toLowerCase().indexOf('.mp3')>0)<br>
+        &nbsp;&nbsp;FlashSemBorda('FCPlayerSmall<span class=dest>1</span>?file=&lt;DescrURL>&cf=<span class=dest>003366</span>&l=<span class=dest>1</span>',34,34,'ffffff','');<br>
+      &lt;/script></span><br><br>
+      <span class=dest>4º Passo</span><br>Para escolher outro modelo, altere onde está <span class=dest>1</span>, para o número do modelo desejado.<br><br>
+      <span class=dest>5º Passo</span><br>Para alterar a legenda que fica abaixo do player, altere o parâmetro <span class=courrierpeq>&l=1</span> de acordo com o idioma da loja (1=português brasileiro 2=inglês 3=espanhol 4=português de Portugal). Para não exibir a legenda, remova o parâmetro <span class=courrierpeq>&l=1</span>.<br><br>
+      <span class=dest>6º Passo</span><br>Para alterar a cor, mude onde está <span class=dest>003366</span> para o código da cor desejada.
+<br><br><b>Exemplo:</b> Código da cor vermelha <b>ff0000</b> com o <b>modelo 5</b><br><br>
+      <script>
+      FlashSemBorda('/sistema/FCPlayerSmall5?file=/dnload/media/Itchy And Scratchy Theme.mp3&cf=ff0000&l=1',34,34,'ffffff',''); // Modelos 1 ao 6 e só aceita MP3 - cf= cor de fundo do player
+      </script> 
+    </td>
+  </tr>
+</table>
+
+<br><br><br>
+
+<table width=99% cellspacing=1 cellpadding=0>
+  <tr>
+    <td>
+      O modelo <b>FCPlayerVideoSound</b> possui <b>três modelos</b> de players. A cor de fundo pode ser alterada.<br><br>Com este player é possível ouvir só o audio de um arquivo <i>.flv ou .swf</i>. O vídeo do arquivo não será exibido. Caso queira mostrar o vídeo, utilize nosso <a href=http://ajuda.fastcommerce.com.br/sistema/Noticias.asp?IDLoja=9&IDNoticia=7407&TextoBuscaNews=v%EDdeo target=_blank>player interno de vídeo</a> ou o <a href=http://ajuda.fastcommerce.com.br/sistema/Noticias.asp?IDLoja=9&IDNoticia=7046&TextoBuscaNews=youtube target=_blank>player do YouTube</a>.<br><br>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <table width=100% cellspacing=0 cellpadding=0 class="TableModelos">
+        <tr>
+          <td align=center class="TableModelos">
+            Modelo 1
+          </td>
+          <td align=center class="TableModelos">
+            Modelo 2
+          </td>
+          <td align=center class="TableModelos">
+            Modelo 3
+          </td>
+        </tr>
+        <tr>
+          <td align=center height=60 class="TableModelos">
+            <script>
+            FlashSemBorda('/sistema/FCPlayerVideoSound1?file=/dnload/media/madonna.flv&cf=FFBB00&l=1',34,34,'ffffff',''); // Modelos 1 ao 6 e só aceita MP3 - cf= cor de fundo do player
+            </script>
+          </td>
+          <td align=center class="TableModelos">
+            <script>
+            FlashSemBorda('/sistema/FCPlayerVideoSound2?file=/dnload/media/madonna.flv&cf=006600&l=1',34,34,'ffffff',''); // Modelos 1 ao 6 e só aceita MP3 - cf= cor de fundo do player
+            </script>
+          </td>
+          <td align=center class="TableModelos">
+            <script>
+            FlashSemBorda('/sistema/FCPlayerVideoSound3?file=/dnload/media/madonna.flv&cf=000066&l=1',34,34,'ffffff',''); // Modelos 1 ao 6 e só aceita MP3 - cf= cor de fundo do player
+            </script>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <br>Seguem instruções de implantação deste player:<br><br>
+      <span class=dest>1º Passo</span><br>O arquivo <b>.flv</b> ou <b>.swf</b> deve ser hospedado em outro servidor, fora do Fastcommerce.<br><br>
+      <span class=dest>2º Passo</span><br>Entre na ficha do produto e informe no campo <b>URL de apoio</b> o caminho para o arquivo de áudio, precedido do caractere <b>#</b>.<br><br><b>Ex¹.</b> <span class=dest>#</span><span class=courrierpeq>http://www.sitemusic.com.br/meuarquivo.flv</span><br><br><b>Ex².</b> <span class=dest>#</span><span class=courrierpeq>http://www.sitemusic.com.br/meuarquivo.swf</span><br><br>
+      <span class=dest>3º Passo</span><br>No arquivo <b>EstiloProduto.htm</b> coloque no lugar da tag <b>&lt;DescrURL></b> o código abaixo <i>(neste exemplo utilizaremos o modelo <b>1</b>)</i>:<br><br>
+      <span class=courrierpeq>&lt;script><br>
+      if('&lt;DescrURL>'.charAt(0)=='&lt;')document.write('&lt;DescrURL>');<br>
+      else if('&lt;DescrURL>'.toLowerCase().indexOf('.swf')>0||'&lt;DescrURL>'.toLowerCase().indexOf('.flv')>0)<br>
+        &nbsp;&nbsp;FlashSemBorda('FCPlayerVideoSound<span class=dest>1</span>?file=&lt;DescrURL>&cf=<span class=dest>003366</span>',34,34,'ffffff','');<br>
+      &lt;/script></span><br><br>
+      <span class=dest>4º Passo</span><br>Para escolher outro modelo, altere onde está <span class=dest>1</span>, para o número do modelo desejado.<br><br>
+      <span class=dest>5º Passo</span><br>Para alterar a legenda que fica abaixo do player, altere o parâmetro <span class=courrierpeq>&l=1</span> de acordo com o idioma da loja (1=português brasileiro 2=inglês 3=espanhol 4=português de Portugal). Para não exibir a legenda, remova o parâmetro <span class=courrierpeq>&l=1</span>.<br><br>
+      <span class=dest>6º Passo</span><br>Para alterar a cor, mude onde está <span class=dest>003366</span> para o código da cor desejada.<br><br><b>Exemplo:</b> Código da cor vermelha <b>ff0000</b> com o <b>modelo 2</b><br><br>
+      <script>
+      FlashSemBorda('/sistema/FCPlayerVideoSound2?file=/dnload/media/madonna.flv&cf=ff0000&l=1',34,34,'ffffff',''); // Modelos 1 ao 6 e só aceita MP3 - cf= cor de fundo do player
+      </script> 
+    </td>
+  </tr>
+</table>
+
+<br><br><br>
+
+<table width=100% cellspacing=1 cellpadding=0>
+  <tr>
+    <td>
+      O modelo <b>FCPlayerFull</b> possui <b>um modelo</b> de player. A cor de fundo pode ser alterada.<br><br>Com este player é possível ouvir só o audio de um arquivo <i>.flv ou .swf</i> com vídeo.<br><br>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <table width=100% cellspacing=0 cellpadding=0 class="TableModelos">
+        <tr>
+          <td align=center class="TableModelos">
+            Modelo 1
+          </td>
+        </tr>
+        <tr>
+          <td align=center height=60 class="TableModelos">
+            <script>
+            document.write('<br>');            FlashSemBorda('/sistema/FCPlayerFull?file=/dnload/media/playlist.xml&cf=003366',290,140,'ffffff',''); // Modelos 1 ao 6 e só aceita MP3 - cf= cor de fundo do player
+            </script>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <br>Seguem instruções de implantação deste player:<br><br>
+      <span class=dest>1º Passo</span><br>O arquivo <b>.flv</b> ou <b>.swf</b> deve ser hospedado em outro servidor, fora do Fastcommerce.<br><br>
+      <span class=dest>2º Passo</span><br>Crie um arquivo XML com o caminho onde os arquivos de áudio estão hospedados. Este arquivo XML deverá ser enviado para a pasta PROD da loja. <b>Exemplo:</b> <b>Playlist.xml</b><br>
+<pre><span class=courrierpeq>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;musicas>
+&lt;musica <span class=destpeq>nomeMusica</span>="Music 1" <span class=destpeq>nomeArtista</span>="Bob" <span class=destpeq>mp3</span>="http://www.sitemusic.com.br/music1.mp3"/>
+&lt;musica <span class=destpeq>nomeMusica</span>="Music 2" <span class=destpeq>nomeArtista</span>="Bob" <span class=destpeq>mp3</span>="http://www.sitemusic.com.br/music2.mp3"/>
+&lt;musica <span class=destpeq>nomeMusica</span>="Music 3" <span class=destpeq>nomeArtista</span>="Bob" <span class=destpeq>mp3</span>="http://www.sitemusic.com.br/music3.mp3"/>
+&lt;/musicas></span></pre>
+      <b>Onde:</b><br><span class=destpeq>nomeMusica</span> deve ser informado o nome da música<br><span class=destpeq>nomeArtista</span> deve ser informado o nome do artista<br><span class=destpeq>mp3</span> deve ser informado o caminho onde o MP3 foi hospedado
+      <br><br>
+      <span class=dest>3º Passo</span><br>Entre na ficha do produto e informe no campo <b>URL de apoio</b> o caminho onde o XML foi hospedado, precedido do caractere <b>#</b>.<br><br><b>Exemplo:</b> <span class=dest>#</span><span class=courrierpeq>/lojas/<span class=dest>99999999</span>/prod/meuarquivo.xml</span> (altere <span class=dest>99999999</span> pelo ID da loja com 8 dígitos. Ex: 00000154)<br><br>
+      <span class=dest>4º Passo</span><br>No arquivo <b>EstiloProduto.htm</b> coloque no lugar da tag <b>&lt;DescrURL></b> o código abaixo:<br><br>
+      <span class=courrierpeq>&lt;script><br>
+      if('&lt;DescrURL>'.charAt(0)=='&lt;')document.write('&lt;DescrURL>');<br>
+      else if('&lt;DescrURL>'.toLowerCase().indexOf('.xml')>0)<br>
+        &nbsp;&nbsp;FlashSemBorda('FCPlayerFull?file=&lt;DescrURL>&cf=<span class=dest>003366</span>',290,140,'ffffff','');<br>
+      &lt;/script></span><br><br>
+      <span class=dest>5º Passo</span><br>A cor pode ser alterada mudando, onde está <span class=dest>003366</span> para o código da cor desejada.<br><br><b>Exemplo:</b> Código da cor vermelha <b>ff0000</b> com o <b>modelo 2</b><br><br>
+            <script>
+            document.write('<br>');            FlashSemBorda('/sistema/FCPlayerFull?file=/dnload/media/playlist.xml&cf=ff0000',290,140,'ffffff',''); // Modelos 1 ao 6 e só aceita MP3 - cf= cor de fundo do player
+            document.write('<br><br>');
+            </script>
+    </td>
+  </tr>
+</table>

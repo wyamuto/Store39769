@@ -1,0 +1,58 @@
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'>
+<title>FC 11753 :: Como inserir um banner rotativo?</title>
+<link href='LojaSite.css' rel='stylesheet' type='text/css'>
+<style>body {font-size:8pt;font-family:verdana,arial;color:#333333;}</style>
+<meta name=generator content='Fastcommerce'>
+</head>
+<body>
+<script language="javascript">
+document.write("<div id='caixa' style='width:700px; height:172px;'></div>");
+bannerRotativo();
+function bannerRotativo(){
+setTimeout("mostraBanner1()",0000);
+setTimeout("mostraBanner2()",4000);
+setTimeout("mostraBanner3()",8000);
+setTimeout("bannerRotativo()",12000);
+}
+function mostraBanner1(){
+var a = document.getElementById('caixa').innerHTML="<a href='#'><img src='../images/banner1.jpg' width='700' border='0'/></a>";	
+}
+function mostraBanner2(){
+document.getElementById('caixa').innerHTML="<a href='#'><img src='../images/banner2.jpg' width='700' border='0'/></a>";	
+}
+function mostraBanner3(){
+document.getElementById('caixa').innerHTML="<a href='#'><img src='../images/banner3.jpg' width='700' border='0'/></a>";	
+}
+</script>
+
+Para personalizar este exemplo, envie as imagens individuais para a pasta <b>images</b>, todas com o mesmo tamanho em pixels, e insira o código abaixo no arquivo em que deseja aplicar o banner rotativo (ex: home.htm):
+
+<font face="arial" size="-1" color="#3c89b1">
+<p>&lt;script&gt;<br />
+document.write(&quot;&lt;div id='caixa' style='width:<font color="#6600FF"><b>700px</b></font>; height:<font color="#6600FF"><b>172px</b></font>; background-color:red;'&gt;&lt;/div&gt;&quot;);</p>
+<p> bannerRotativo();</p>
+<p> function bannerRotativo(){<br />
+  setTimeout(&quot;mostraBanner1()&quot;,0000);<br />
+  setTimeout(&quot;mostraBanner2()&quot;,4000);<br />
+  setTimeout(&quot;mostraBanner3()&quot;,8000);<br />
+  setTimeout(&quot;bannerRotativo()&quot;,12000);<br />
+  }<br />
+  function mostraBanner1(){<br />
+  document.getElementById('caixa').innerHTML=&quot;&lt;a href='<font color="red">http://www.fastcommerce.com.br/</font>'&gt;&lt;img src='/lojas/<font color="#FF0000">00009999</font>/images/<font color="#006600""><b>banner1.gif</b></font>'/&gt;&lt;/a&gt;&quot;; <br />
+  }<br />
+  function mostraBanner2(){<br />
+  document.getElementById('caixa').innerHTML=&quot;&lt;a href='<font color="red">http://www.fastcommerce.com.br/</font>'&gt;&lt;img src='/lojas/<font color="#FF0000">00009999</font>/images/<font color="#006600""><b>banner2.gif</b></font>'/&gt;&lt;/a&gt;&quot;; <br />
+  }<br />
+  function mostraBanner3(){<br />
+  document.getElementById('caixa').innerHTML=&quot;&lt;a href='<font color="red">http://www.fastcommerce.com.br/</font>'&gt;&lt;img src='/lojas/<font color="#FF0000">00009999</font>/images/<font color="#006600""><b>banner3.gif</b></font>'/&gt;&lt;/a&gt;&quot;; <br />
+  }<br />
+  &lt;/script&gt;</p>
+</font>
+
+<br><br><b>ATENÇÃO:</b>
+<ol><li>Altere os endereços em <font color="#FF0000"><b>VERMELHO</b></font> para URLs de destino de seus banners.</li><li>Altere o nome dos arquivos em <font color="#006600"><b>VERDE</b></font> para URLs de destino de seus banners.</li><li>Altere a largura e altura do banner nos campos em <font color="#6600FF"><b>ROXO</b></font>.</li><li>Altere de <font color="#FF0000">00009999</font> para o ID da loja com 8 posiçoes. Por exemplo, se o ID de sua loja é <b>123</b> coloque <b>00000123</b>.</li></ol>
+
+<font face="arial" size="-1">Após inserir o código, clique em "Gravar", limpe o <a href="http://fastcommerce.com.br/l9/n6623">cache</a> da loja virtual e faça testes de navegação, clicando nas imagens rotativas.</font>
+</body><html>

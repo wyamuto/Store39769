@@ -1,0 +1,69 @@
+<p>O Lazy Load é um recurso que permite que a carga de imagens ocorra somente quando estas são exibidas na tela. Imagens fora da tela só serão baixadas quando o visitante fizer a rolagem da página, fazendo com que fiquem visíveis. Isto melhora drasticamente a performance e otimiza o uso de rede, pois as imagens não exibidas de uma página longa não são baixadas desnecessariamente, caso o visitante não role a página até o final.</p>
+
+<p>Em resumo o Lazy Load baixa as imagens dos produtos somente quando estiverem dentro da área visivel da tela. Isto aumenta a velocidade percebida em até 80%, em especial nos acessos feitos com smartphone.</p>
+
+<p>Para utilizar este recurso, acesse a página <b>Dados da Loja</b> no site administrativo. Na seção <b>Produtos</b>, selecione o <i>nível 2</i> no campo Lazy Load de imagens. Após gravar, navegue pelas páginas da loja para verificar se todas as imagens estão sendo exibidas.</p>
+
+<p>Seguem abaixo as variáveis javascript disponíveis para alterar o comportamento padrão do Lazy Load. Estas variáveis podem ser inseridas/alteradas no <b>Rodape.htm</b> ou em arquivo .JS externo:</p>
+<br>
+
+<span><b>FCLib$.LazyLoadWaitImage</b></span>
+<p>Utilizada para trocar a Imagem de wait/load exibida antes de mostrar a imagem carregada.</p>
+<p>Valor padrão=<b>"/images/loading.gif"</b> <img src="/images/loading.gif"></p>
+
+<p><b>Exemplo:</b><pre>FCLib$.LazyLoadWaitImage="&lt;BaseLoja>images/suaImagem.svg";</pre></p>
+
+<br>
+<span><b>FCLib$.xOffsetScreenLimits</b></span> e <span><b>FCLib$.yOffsetScreenLimits</b></span>
+<p>Valores adicionais em pixels para ampliar a janela de carga das imagens, além da área visível.</p>
+<p>Valor padrão=<b>50</b></p>
+
+
+<p><b>Exemplo:</b></p>
+<pre>FCLib$.xOffsetScreenLimits=100;</pre>
+<br>
+
+<span><b>FCLib$.xMinShiftLazyLoad</b></span> e <span><b>FCLib$.yMinShiftLazyLoad</b></span> 
+<p>Valores em pixels de deslocamento mínimo da janela, que ocorre em scroll ou resize, para ativar os processamento de Lazy Load.</p>
+<p>Valor padrão=<b>50</b></p>
+
+
+<p><b>Exemplo:</b></p>
+<pre>FCLib$.xMinShiftLazyLoad=150;</pre>
+<br>
+
+<span><b>FCLib$.iMinTimerLazyLoad</b></span>
+<p>Tempo mínimo em milissegundos entre cada execução de LazyLoad, que ocorre em scroll ou resize.</p>
+<p>Valor padrão=<b>250</b></p>
+
+
+<p><b>Exemplo</b></p>
+<pre>FCLib$.iMinShiftLazyLoad=200;</pre>
+<br>
+
+<span><b>FCLib$.iFadeTimeLazyLoad</b></span>
+<p>Tempo em milissegundos para o fade in.</p>
+<p>Valor padrão=<b>500 </b></p>
+
+
+<p><b>Exemplo</b></p>
+<pre>FCLib$.iFadeTimeLazyLoad=800;</pre>
+<br>
+
+<span><b>FCLib$.iFadeStepsLazyLoad</b></span>
+<p>Quantidade de passos do fade in.</p>
+<p>Valor padrão=<b>10</b></p>
+
+<p><b>Exemplo</b></p>
+<pre>FCLib$.iFadeStepsLazyLoad=40;</pre>
+<br>
+
+<p><b>Importante:</b></p>
+
+<ol><li><p>Para evitar redimensionamentos durante a carga das imagens, padronize ou reserve espaço para as imagens no design da loja.</p></li>
+<li><p>Se a loja utilizar sliders com imagens, é preciso chamar a função <span>FCLib$.execLazyLoad()</span> a cada evento de slide.</p></li>
+<li><p>As opções <b>3</b> e <b>4</b> do campo de Lazy Load são para a utilização de Lazy Load desenvolvido pela loja. As tags &lt;img> da loja serão geradas com parâmetro <b>data-src=</b>. O Lazy Load da loja deve localizar este parâmetro em cada img e substituir por <b>src=</b>.</p></li>
+<li><p>Para desabilitar o fade in do Lazy Load, basta inserir a seguinte linha no arquivo Rodape.htm:
+<b>FCLib$.iFadeTimeLazyLoad=0;</b>
+</p></li>
+</ol>

@@ -1,0 +1,40 @@
+<p>Seguem os passos para a implantação:</p>
+
+<span class="dest NewsPassos">1º Passo</span>
+<p>Efetue um backup dos arquivos <b>BarraTopo.htm</b> e <b>EstiloProduto.htm</b>, que serão alterados nesta implantação.</p>
+<br>
+
+<span class="dest NewsPassos">2º Passo</span>
+<p>Adicione as linhas abaixo no começo do arquivo <b>BarraTopo.htm</b>:</p>
+<br>
+
+<pre>&lt;link rel="stylesheet" type="text/css" href="/js/MagicToolbox/MagicZoomPlusV2/magiczoomplus.css" />
+&lt;script type="text/javascript" src="/js/MagicToolbox/MagicZoomPlusV2/magiczoomplus.js">&lt;/script></pre>
+<br>
+
+<span class="dest NewsPassos">3º Passo</span>
+<p>Adicione as seguintes linhas no local onde existe a tag especial que mostra a imagem do produto no arquivo <b>EstiloProduto.htm</b>, entre as tags <b>&lt;ProdDet></b>...<b>&lt;/ProdDet></b>.</p>
+
+<br>
+<pre><iframe frameborder="0" style="width:900px;height:790px" src="/lojas/00000009/htm/descr/FC14437B.htm"></iframe></pre>
+<br>
+
+<span class="dest NewsPassos">4º Passo</span>
+<p>Todas as imagens devem ser cadastradas entre vírgulas nos campos <b>Imagem de detalhe</b> e <b>Imagem ampliada</b> na ficha dos produtos.</p>
+<br>
+
+<p><b>Exemplo</b>:</p>
+
+<p><b>Imagem de detalhe:</b> ImagemDetalhe01.jpg,ImagemDetalhe02.jpg,ImagemDetalhe03.jpg,ImagemDetalhe04.jpg</p>
+<p><b>Imagem ampliada:</b> ImagemAmpliada01.jpg,ImagemAmpliada02.jpg,ImagemAmpliada03.jpg,ImagemAmpliada04.jpg</p>
+<br>
+
+<p><b>Obs:</b> Todas as imagens devem ser enviadas para a pasta <b>prod</b>, antes do preenchimento dos campos na ficha de produto.</p>
+
+<br>
+<p><b>ATENÇÃO:</b> Se a quantidade de imagens cadastras nos campos de imagem for diferente, só será exibida a primeira imagem.</p>
+
+<p><b>Exemplo:</b> Se forem cadastradas 3 imagens de detalhe e apenas 2 imagens ampliadas, somente a primeira imagem será exibida.</p>
+
+<br>
+<p><b class="dest">ATENÇÃO:</b> Para o recurso de zoom funcionar corretamente na loja virtual é necessário ativar o <b>Nível 1</b> no campo <b>Lazy load de imagens</b> na página <b>Dados da loja</b>.</p>

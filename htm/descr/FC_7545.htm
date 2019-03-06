@@ -1,0 +1,43 @@
+<table align="center" border="1"><tr><th>Status</th><th>Texto</th></tr><tr><td>Novo</td><td>Recebido pela loja</td></tr><tr><td>Cancelado</td><td>Cancelado</td></tr><tr><td>Em aprovação</td><td>Aguardando aprovação</td></tr><tr><td>Pendente</td><td>Com pendências</td></tr><tr><td>Aprovado</td><td>Pagamento verificado<b> </b></sup></td></tr><tr><td>Liberado</td><td>Liberado para envio</td></tr><tr><td>Remetido</td><td>Remetido</td></tr></table>
+<br>
+
+<p><br>É possível personalizar o texto exibido em cada <b>status</b> do pedido.<br></p>
+<br>
+
+<p><span class="dest NewsPassos">1º Passo</span></p>
+<p>Altere o <b>texto</b> para cada status na função abaixo e inclua no arquivo <b>LojaLib.js</b>:</p>
+<pre><span>function AlteraTextoSitPedido(){
+&nbsp;  var sitNovo=document.getElementById("idTxtSit1OrderFC");
+&nbsp;  if(sitNovo)sitNovo.innerHTML="<b>Status pedido Novo</b>";
+&nbsp;  else{  
+&nbsp;&nbsp;   var sitCancelado=document.getElementById("idTxtSit2OrderFC");
+&nbsp;&nbsp;   if(sitCancelado)sitCancelado.innerHTML="<b>Status pedido Cancelado</b>";
+&nbsp;&nbsp;   else{  
+&nbsp;&nbsp;&nbsp;   var sitEmAprovacao=document.getElementById("idTxtSit3OrderFC");
+&nbsp;&nbsp;&nbsp;   if(sitEmAprovacao)sitEmAprovacao.innerHTML="<b>Status pedido Em aprovação</b>";
+&nbsp;&nbsp;&nbsp;    else{    
+&nbsp;&nbsp;&nbsp;&nbsp;     var sitPendente=document.getElementById("idTxtSit4OrderFC");
+&nbsp;&nbsp;&nbsp;&nbsp;     if(sitPendente)sitPendente.innerHTML="<b>Status pedido Pendente</b>";
+&nbsp;&nbsp;&nbsp;&nbsp;     else{    
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      var sitAprovado=document.getElementById("idTxtSit5OrderFC");
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      if(sitAprovado)sitAprovado.innerHTML="<b>Status pedido Aprovado</b>";
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      else{      
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      var sitLiberado=document.getElementById("idTxtSit6OrderFC");
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      if(sitLiberado)sitLiberado.innerHTML="<b>Status pedido Liberado</b>";
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       else{       
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       var sitRemetido=document.getElementById("idTxtSit7OrderFC");
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       if(sitRemetido)sitRemetido.innerHTML="<b>Status pedido Remetido</b>";
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       }
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      }
+&nbsp;&nbsp;&nbsp;&nbsp;     }
+&nbsp;&nbsp;&nbsp;    }
+&nbsp;&nbsp;   }
+&nbsp;  }
+}</span></pre>
+<br>
+<p><span class="dest NewsPassos">2º Passo</span></p>
+<p>inclua no arquivo <b>Rodape.htm</b> o script abaixo:<br></p>
+
+<pre>&lt;script&gt;
+if(document.getElementById("idOrdersTrackFC"))AlteraTextoSitPedido();
+&lt;/script&gt;</pre>

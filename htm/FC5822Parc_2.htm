@@ -1,0 +1,89 @@
+<style>
+.courrierpeq {font-size:8pt;font-family:courier new,tahoma,verdana;color:#0D6D9E;}
+.destpeq {font-size:8pt;font-family:tahoma,verdana;color:#990000;font-weight:bold;}
+</style>
+
+<pre>
+<span class=courrierpeq>
+  <b>function fnShowPrice(Price,OriginalPrice,Cod,iMaxParcels,ProductID){</b>
+
+    if(Price>=300)iMaxParcels=6;
+  else if(Price>=250)iMaxParcels=5;
+  else if(Price>=200)iMaxParcels=4;
+  else if(Price>=150)iMaxParcels=3;
+  else if(Price>=100)iMaxParcels=2;
+  else if(Price>=1)iMaxParcels=1;
+
+    iPL++;
+    //console.log(ProductID+ " iPL="+ iPL +" Price="+Price +" OriginalPrice="+ OriginalPrice +" Cod="+ Cod);
+    var idPrice=fnGetID("idProdPrice"+ProductID);
+    var sPrice="";
+    if(Price==0 && OriginalPrice==0){
+      if(idPrice)idPrice.innerHTML="&lt;div class=\"prices\">&lt;br>&lt;div class=price>&lt;div class=currency>&lt;a href=/faleconosco.asp?idloja="+FC$.IDLoja+"&assunto=Consulta%20sobre%20produto%20(Código%20"+Cod+")>Consulte-nos&lt;/a>&lt;/div>&lt;/div>&lt;/div>";
+      return void(0);
+    }
+    var iPrice=Price.toString().split(".");
+    if(iPrice.length==2){
+      var iPriceInt=iPrice[0];
+      var PriceDecimal=iPrice[1];
+      if(PriceDecimal.length==1)PriceDecimal+="0";
+    }
+    else{
+      var iPriceInt=iPrice;
+      var PriceDecimal="00";
+    }    
+
+    var sInterest;
+
+    if(typeof Juros!="undefined"){
+      if(iMaxParcels==0||iMaxParcels>Juros.length)iMaxParcels=Juros.length;
+      if(Juros[iMaxParcels-1]>0)sInterest=""; else sInterest=" sem juros";
+    }
+    else{
+      iMaxParcels=0;
+    }
+
+    if(Price!=OriginalPrice){
+      sPrice+="&lt;div class=\"prices\">";
+      sPrice+="  &lt;div class=\"old-price\">De&nbsp; &lt;span>"+FormatPrice(OriginalPrice,'R$')+"&lt;/span>&lt;div class=\"por\">Por&lt;/div>&lt;/div>";
+      sPrice+="  &lt;div class=\"price\">&lt;span class=\"currency\">&lt;strong>R$ &lt;/span>&lt;span class=\"int\">"+ fnFormatNumber(iPriceInt) +"&lt;/span>&lt;span class=\"dec\">,"+ PriceDecimal +"&lt;/span>&lt;/strong>&lt;/div>";
+      if(iMaxParcels>1)sPrice+="  &lt;div class=\"installments\">&lt;strong>&lt;span class=\"installment-count\">"+ iMaxParcels +"&lt;/span>x&lt;/strong> de &lt;strong>&lt;span class=\"installment-price\">"+FormatPrecoReais(CalculaParcelaJurosCompostos(Price,iMaxParcels))+"&lt;/span>&lt;/strong>"+ sInterest +"&lt;/div>";
+      sPrice+="&lt;/div>";
+    }
+    else{
+      sPrice+="&lt;div class=\"prices\">";
+      sPrice+="  &lt;div class=\"old-price\">&lt;span>&nbsp;&lt;/span>&lt;div class=\"por\">Por&lt;/div>&lt;/div>";
+      sPrice+="  &lt;div class=\"price\">&lt;span class=\"currency\">&lt;strong>R$ &lt;/span>&lt;span class=\"int\">"+ fnFormatNumber(iPriceInt) +"&lt;/span>&lt;span class=\"dec\">,"+ PriceDecimal +"&lt;/span>&lt;/strong>&lt;/div>";
+      if(iMaxParcels>1)sPrice+="  &lt;div class=\"installments\">&lt;strong>&lt;span class=\"installment-count\">"+ iMaxParcels +"&lt;/span>x&lt;/strong> de &lt;strong>&lt;span class=\"installment-price\">"+FormatPrecoReais(CalculaParcelaJurosCompostos(Price,iMaxParcels))+"&lt;/span>&lt;/strong>"+ sInterest +"&lt;/div>";
+      sPrice+="&lt;/div>";
+    }
+
+    if(idPrice)idPrice.innerHTML=sPrice;
+
+  }
+
+
+  <b>function fnShowParcels(Price,iMaxParcels,ProductID){</b>
+
+      if(Price>=300)iMaxParcels=6;
+  else if(Price>=250)iMaxParcels=5;
+  else if(Price>=200)iMaxParcels=4;
+  else if(Price>=150)iMaxParcels=3;
+  else if(Price>=100)iMaxParcels=2;
+  else if(Price>=1)iMaxParcels=1;
+
+    var idParcelsProd=fnGetID("idProdParcels"+ProductID);
+    var sPrice="";
+    var sInterest;
+    if(typeof Juros!="undefined"){
+      if(iMaxParcels==0||iMaxParcels>Juros.length)iMaxParcels=Juros.length;
+      if(Juros[iMaxParcels-1]>0)sInterest=""; else sInterest=" sem juros";
+    }
+    else{
+      iMaxParcels=0;
+    }
+    if(iMaxParcels>1)sPrice+="&lt;div class=\"installments\">ou &lt;strong>&lt;span class=\"installment-count\">"+ iMaxParcels +"&lt;/span>x&lt;/strong> de &lt;strong>&lt;span class=\"installment-price\">"+FormatPrecoReais(CalculaParcelaJurosCompostos(Price,iMaxParcels))+"&lt;/span>&lt;/strong>"+ sInterest +"&lt;/div>";
+    if(idParcelsProd)idParcelsProd.innerHTML=sPrice;
+  }
+</span>
+</pre>

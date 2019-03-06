@@ -1,0 +1,104 @@
+<center><img src="/lojas/00000009/prod/Ajuda11408.png" class="img-responsive"></center>
+<br>
+<p><b>Segue abaixo o passo-a-passo:</b></p>
+
+<p><span>1)</span> Coloque as funções abaixo no final do arquivo <b>LojaLib.js</b>. Verifique se a loja tem este include JS no arquivo <b>BarraTopo.htm</b> ou outro include JS que pode ser utilizado para agrupar estas funções.</p>
+
+<pre><span>function AlteraEstIcPagto(oIcone){
+  oIcone.style.width='65px';
+  oIcone.style.height='41px';
+  oIcone.style.cursor='pointer';
+}
+
+function AlteraImgsFormaPagto(){
+  IcPagtoBB=document.getElementById("idImgPagto1FC"); //Boleto bancário
+  if(IcPagtoBB){IcPagtoBB.src=sCaminhoImages+'IcPagtoBB.png';AlteraEstIcPagto(IcPagtoBB);}
+  IcPagtoCE=document.getElementById("idImgPagto6FC"); //Contra entrega
+  if(IcPagtoCE){IcPagtoCE.src=sCaminhoImages+'IcPagtoCE.png';AlteraEstIcPagto(IcPagtoCE);}
+  IcPagtoDB=document.getElementById("idImgPagto4FC"); //Depósito bancário
+  if(IcPagtoDB){IcPagtoDB.src=sCaminhoImages+'IcPagtoDB.png';AlteraEstIcPagto(IcPagtoDB);}
+  IcPagtoBR=document.getElementById("idImgPagto19FC"); //Banco do Brasil
+  if(IcPagtoBR){IcPagtoBR.src=sCaminhoImages+'IcPagtoBR.png';AlteraEstIcPagto(IcPagtoBR);}
+  IcPagtoIS=document.getElementById("idImgPagto5FC"); //Itaú Shopline
+  if(IcPagtoIS){IcPagtoIS.src=sCaminhoImages+'IcPagtoIS.png';AlteraEstIcPagto(IcPagtoIS);}
+  IcPagtoRP=document.getElementById("idImgPagto17FC"); //RealPague
+  if(IcPagtoRP){IcPagtoRP.src=sCaminhoImages+'IcPagtoRP.png';AlteraEstIcPagto(IcPagtoRP);}
+  IcPagtoVE=document.getElementById("idImgPagto16FC"); //VISA Electron
+  if(IcPagtoVE){IcPagtoVE.src=sCaminhoImages+'IcPagtoVE.png';AlteraEstIcPagto(IcPagtoVE);}
+  IcPagtoPP=document.getElementById("idImgPagto15FC"); //PayPal
+  if(IcPagtoPP){IcPagtoPP.src=sCaminhoImages+'IcPagtoPP.png';AlteraEstIcPagto(IcPagtoPP);}
+  CCAmex=document.getElementById("idImgPagto3_1FC"); //AMEX
+  if(CCAmex){CCAmex.src=sCaminhoImages+'IcPagtoAE.png';AlteraEstIcPagto(CCAmex);}
+  CCAura=document.getElementById("idImgPagto3_6FC"); //Aura
+  if(CCAura){CCAura.src=sCaminhoImages+'IcPagtoAU.png';AlteraEstIcPagto(CCAura);}
+  CCDine=document.getElementById("idImgPagto3_2FC"); //Diners
+  if(CCDine){CCDine.src=sCaminhoImages+'IcPagtoDN.png';AlteraEstIcPagto(CCDine);}
+  CCElo=document.getElementById("idImgPagto3_7FC"); //Elo
+  if(CCElo){CCElo.src=sCaminhoImages+'IcPagtoEL.png';AlteraEstIcPagto(CCElo);}
+  CCHiperCard=document.getElementById("idImgPagto3_5FC"); //Hipercard
+  if(CCHiperCard){CCHiperCard.src=sCaminhoImages+'IcPagtoHC.png';AlteraEstIcPagto(CCHiperCard);}
+  CCMast=document.getElementById("idImgPagto3_3FC"); //MasterCard
+  if(CCMast){CCMast.src=sCaminhoImages+'IcPagtoMC.png';AlteraEstIcPagto(CCMast);}
+  CCVisa=document.getElementById("idImgPagto3_4FC"); //VISA
+  if(CCVisa){CCVisa.src=sCaminhoImages+'IcPagtoVS.png';AlteraEstIcPagto(CCVisa);}
+  IcPagtoPS=document.getElementById("idImgPagto18FC"); //PagSeguro
+  if(IcPagtoPS){IcPagtoPS.src=sCaminhoImages+'IcPagtoPS.png';AlteraEstIcPagto(IcPagtoPS);}
+  IcPagtoMP=document.getElementById("idImgPagto21FC"); //MercadoPago
+  if(IcPagtoMP){IcPagtoMP.src=sCaminhoImages+'IcPagtoMP.png';AlteraEstIcPagto(IcPagtoMP);}
+  IcPagtoMI=document.getElementById("idImgPagto22FC"); //MoIP
+  if(IcPagtoMI){IcPagtoMI.src=sCaminhoImages+'IcPagtoMI.png';AlteraEstIcPagto(IcPagtoMI);}
+  IcPagtoVK=document.getElementById("idImgPagto20FC"); //Vakinha
+  if(IcPagtoVK){IcPagtoVK.src=sCaminhoImages+'IcPagtoVK.png';AlteraEstIcPagto(IcPagtoVK);}
+}</span></pre>
+<br>
+
+<p><span>2)</span> Caso queira alterar a fonte dos nomes das formas de pagamento, coloque ao final do arquivo <b>LojaSite.css</b> a seguinte linha:</p>
+
+<span><pre>#TabRadio .EstTabPedido{font-size:11pt;color:#666666;font-family:tahoma,arial;font-weight:bold}</pre></span>
+<br>
+
+<p><span>3)</span> Envie as imagens dos ícones personalizados das formas de pagamento para a pasta <b>IMAGES</b> do gerenciador de arquivos da loja. <a href="http://www.rumo.com.br/dnload/IconesGrandesPagtos.zip" target="_blank">Clique aqui</a> para baixar exemplos destas imagens.</p>
+<br>
+
+<p><span>4)</span> Insira o seguinte código no final do arquivo <b>Rodape.htm</b></p>
+
+<pre>&lt;script&gt;
+var sPagAtual=document.location.href.toUpperCase();
+var sCaminhoImages="&lt;BaseLoja&gt;images/"
+//Personalização das imagens das formas de pagamento
+if(sPagAtual.indexOf(""FORMAPAGTO.ASP"")>=0)AlteraImgsFormaPagto();
+&lt;/script&gt;</pre>
+<br>
+
+<p><b>Obs:</b> Caso a loja tenha formas de pagamentos adicionais cadastradas, a função deverá ser adaptada.</p>
+
+<hr>
+
+<p><span>Personalização da legenda da forma de pagamento</span></p>
+
+<p>Para personalizar o nome da forma de pagamento nesta página, deve ser feita a seguinte alteração na função <b>AlteraImgsFormaPagto</b>.</p>
+
+<p>Exemplo para a forma de pagamento <b>PagSeguro</b> (<span>idTxtPagto18FC</span>). <a  href="http://rumo.com.br/lojas/00000009/htm/FormaPagto.htm" target="_blank">Clique aqui</a> para ver os IDs demais formas de pagamento.</p>
+
+<p>Altere de:</p> 
+
+<span><pre>IcPagtoPS=document.getElementById("idImgPagto18FC"); //PagSeguro<br>
+if(IcPagtoPS){IcPagtoPS.src=sCaminhoImages+'IcPagtoPS.png';AlteraEstIcPagto(IcPagtoPS);}</pre></span>
+
+<p>Para:</p>
+
+<pre>IcPagtoPS=document.getElementById("idImgPagto18FC"); //PagSeguro
+if(IcPagtoPS){
+&nbsp;&nbsp;IcPagtoPS.src=sCaminhoImages+'IcPagtoPS.png';
+&nbsp;&nbsp;AlteraEstIcPagto(IcPagtoPS);
+&nbsp;&nbsp;TxtPagtoPS=document.getElementById("idTxtPagto18FC");
+&nbsp;&nbsp;if(TxtPagtoPS){
+&nbsp;&nbsp;&nbsp;&nbsp;TxtPagtoPS.innerHTML="&lt;label for=Pagto18><span>&lt;span style='color:#333333;font-size:12pt;'>PagSeguro&lt;/span> (parcelamento em até &lt;b>18x&lt;/b> no cartão)&nbsp;&lt;br>&lt;span style='font-size=8pt'>VISA, MasterCard, Diners, Amex, Hipercard, Aura, transferência bancária e boleto.&lt;/span></span>&lt;/label>";
+&nbsp;&nbsp;}
+}</pre>
+<br>
+
+<p>O conteúdo personalizado que ficará no lugar do nome da forma de pagamento está em destaque na imagem abaixo:</p>
+
+<center><img src="/lojas/00000009/prod/Ajuda11408_2.png" class="img-responsive"></center>
+<!--NewsDesignFC-->

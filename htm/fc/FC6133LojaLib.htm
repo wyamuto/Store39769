@@ -1,0 +1,71 @@
+<style>
+.courrierpeq {font-size:8pt;font-family:courier new,tahoma,verdana;color:#0D6D9E;}
+</style>
+
+<pre>
+<span class=courrierpeq>
+//### Funções que mostram diferentes parcelamentos
+
+function MostraMaxParcela(PrecoProd,MaxParcelas){
+  var ComSem;
+  if(PrecoProd==0||MaxParcelas==1||Juros.length==0)return;
+  if(MaxParcelas==0||MaxParcelas&gt;Juros.length)MaxParcelas=Juros.length;
+  if(Juros[MaxParcelas-1]&gt;0)ComSem=""; else ComSem="&lt;font color=#990000&gt;&nbsp;sem&nbsp;juros&lt;/font&gt;";
+  document.write("ou&nbsp;&lt;b&gt;"+MaxParcelas+"x&lt;/b&gt;"+ComSem+" de&nbsp;&lt;b&gt;"+FormatPrecoReais(CalculaParcelaJurosCompostos(PrecoProd,MaxParcelas))+"&lt;/b&gt;");
+}
+
+function MostraDesconto(PrecoProd){
+ if(PrecoProd==0)return;
+ document.write("&lt;br&gt;Pague com depósito bancário, boleto bancário ou ItaúShopline e ganhe &lt;font color=#990000&gt;&lt;b&gt;10%&lt;/font&gt; de desconto&lt;/b&gt;.&lt;hr size=1 align=center width=90% style='color:#B4B4B4;'&gt; Valor com desconto &lt;span class=EstPrecoProd&gt;"+FormatPrecoReais(PrecoProd*0.90)+"&lt;/span&gt;&lt;br&gt;&lt;br&gt;");
+}
+
+function MostraParcelasMASTERCARD(PrecoProd,MaxParcelas){
+  var ComSemMASTERCARD,EstiloLinhaMASTERCARD;
+  if(PrecoProd==0||MaxParcelas==1||Juros.length==0)return;
+  if(MaxParcelas==0||MaxParcelas&gt;Juros.length)MaxParcelas=Juros.length;
+  document.write("&lt;br&gt;&lt;table align=center cellpadding=3 cellspacing=1 width=270 class=FundoCorParc&gt;&lt;tr class=FundoCorParc&gt;&lt;td colspan=3 height=22 class=TitTabParc align=center&gt;&lt;b&gt;Opções de parcelamento&lt;/td&gt;&lt;/tr&gt;&lt;tr class=FundoCorNumVal&gt;&lt;td class=TitTabParc&gt;Número de&lt;br&gt;parcelas&lt;/td&gt;&lt;td align=right class=TitTabParc&gt;Valor&nbsp;de&lt;br&gt;cada&nbsp;parcela&lt;/td&gt;&lt;td align=right class=TitTabParc&gt;Valor total&lt;br&gt;parcelado&lt;/td&gt;&lt;/tr&gt;");
+  for(var i=0;i&lt;MaxParcelas;i++){
+    if(Juros[i]&gt;0)ComSemMASTERCARD="com juros"; else ComSemMASTERCARD="&lt;font color=#990000&gt;sem&nbsp;juros&lt;/font&gt;";
+    if((i%2)==0)EstiloLinhaMASTERCARD='EstParcPar'; else EstiloLinhaMASTERCARD='EstParcImpar';
+    document.write("&lt;tr class="+EstiloLinhaMASTERCARD+"&gt;&lt;td class="+EstiloLinhaMASTERCARD+"&gt;"+(i+1)+"x "+ComSemMASTERCARD+"&lt;/td&gt;&lt;td class="+EstiloLinhaMASTERCARD+" align=right&gt;"+FormatPrecoReais(CalculaParcelaJurosCompostos(PrecoProd,i+1))+"&lt;/td&gt;&lt;td class="+EstiloLinhaMASTERCARD+" align=right&gt;"+FormatPrecoReais(CalculaParcelaJurosCompostos(PrecoProd,i+1)*(i+1))+"&lt;/td&gt;&lt;/tr&gt;");
+  }
+  document.write("&lt;/table&gt;&lt;br&gt;");
+}
+
+function CalculaParcelaJurosCompostosVISA(Preco,Parcelas){
+  if(JurosVISA[Parcelas-1]==0)return Preco/Parcelas;
+  else return Math.round(Preco*(Math.pow(1+JurosVISA[Parcelas-1]/100,Parcelas)*JurosVISA[Parcelas-1]/100)/(Math.pow(1+JurosVISA[Parcelas-1]/100,Parcelas)-1)*100)/100;
+}
+
+function MostraParcelasVISA(PrecoProdVISA,MaxParcelasVISA){
+  var ComSemVISA,EstiloLinhaVISA;
+  if(PrecoProdVISA==0||MaxParcelasVISA==1||JurosVISA.length==0)return;
+  if(MaxParcelasVISA==0||MaxParcelasVISA&gt;JurosVISA.length)MaxParcelasVISA=JurosVISA.length;
+  document.write("&lt;br&gt;&lt;table align=center cellpadding=3 cellspacing=1 width=270 class=FundoCorParc&gt;&lt;tr class=FundoCorParc&gt;&lt;td colspan=3 height=22 class=TitTabParc align=center&gt;&lt;b&gt;Opções de parcelamento&lt;/td&gt;&lt;/tr&gt;&lt;tr class=FundoCorNumVal&gt;&lt;td class=TitTabParc&gt;Número de&lt;br&gt;parcelas&lt;/td&gt;&lt;td align=right class=TitTabParc&gt;Valor&nbsp;de&lt;br&gt;cada&nbsp;parcela&lt;/td&gt;&lt;td align=right class=TitTabParc&gt;Valor total&lt;br&gt;parcelado&lt;/td&gt;&lt;/tr&gt;");
+  for(var i=0;i&lt;MaxParcelasVISA;i++){
+    if(JurosVISA[i]&gt;0)ComSemVISA="com juros"; else ComSemVISA="&lt;font color=#990000&gt;sem&nbsp;juros&lt;/font&gt;";
+    if((i%2)==0)EstiloLinhaVISA='EstParcPar'; else EstiloLinhaVISA='EstParcImpar';
+    document.write("&lt;tr class="+EstiloLinhaVISA+"&gt;&lt;td class="+EstiloLinhaVISA+"&gt;"+(i+1)+"x "+ComSemVISA+"&lt;/td&gt;&lt;td class="+EstiloLinhaVISA+" align=right&gt;"+FormatPrecoReais(CalculaParcelaJurosCompostosVISA(PrecoProdVISA,i+1))+"&lt;/td&gt;&lt;td class="+EstiloLinhaVISA+" align=right&gt;"+FormatPrecoReais(CalculaParcelaJurosCompostosVISA(PrecoProdVISA,i+1)*(i+1))+"&lt;/td&gt;&lt;/tr&gt;");
+  }
+  document.write("&lt;/table&gt;&lt;br&gt;");
+}
+
+function CalculaParcelaJurosCompostosAMEX(Preco,Parcelas){
+  if(JurosAMEX[Parcelas-1]==0)return Preco/Parcelas;
+  else return Math.round(Preco*(Math.pow(1+JurosAMEX[Parcelas-1]/100,Parcelas)*JurosAMEX[Parcelas-1]/100)/(Math.pow(1+JurosAMEX[Parcelas-1]/100,Parcelas)-1)*100)/100;
+}
+
+function MostraParcelasAMEX(PrecoProdAMEX,MaxParcelasAMEX){
+  var ComSemAMEX,EstiloLinhaAMEX;
+  if(PrecoProdAMEX==0||MaxParcelasAMEX==1||JurosAMEX.length==0)return;
+  if(MaxParcelasAMEX==0||MaxParcelasAMEX&gt;JurosAMEX.length)MaxParcelasAMEX=JurosAMEX.length;
+  document.write("&lt;br&gt;&lt;table align=center cellpadding=3 cellspacing=1 width=270 class=FundoCorParc&gt;&lt;tr class=FundoCorParc&gt;&lt;td colspan=3 height=22 class=TitTabParc align=center&gt;&lt;b&gt;Opções de parcelamento&lt;/td&gt;&lt;/tr&gt;&lt;tr class=FundoCorNumVal&gt;&lt;td class=TitTabParc&gt;Número de&lt;br&gt;parcelas&lt;/td&gt;&lt;td align=right class=TitTabParc&gt;Valor&nbsp;de&lt;br&gt;cada&nbsp;parcela&lt;/td&gt;&lt;td align=right class=TitTabParc&gt;Valor total&lt;br&gt;parcelado&lt;/td&gt;&lt;/tr&gt;");
+  for(var i=0;i&lt;MaxParcelasAMEX;i++){
+    if(JurosAMEX[i]&gt;0)ComSemAMEX="com juros"; else ComSemAMEX="&lt;font color=#990000&gt;sem&nbsp;juros&lt;/font&gt;";
+    if((i%2)==0)EstiloLinhaAMEX='EstParcPar'; else EstiloLinhaAMEX='EstParcImpar';
+    document.write("&lt;tr class="+EstiloLinhaAMEX+"&gt;&lt;td class="+EstiloLinhaAMEX+"&gt;"+(i+1)+"x "+ComSemAMEX+"&lt;/td&gt;&lt;td class="+EstiloLinhaAMEX+" align=right&gt;"+FormatPrecoReais(CalculaParcelaJurosCompostosAMEX(PrecoProdAMEX,i+1))+"&lt;/td&gt;&lt;td class="+EstiloLinhaAMEX+" align=right&gt;"+FormatPrecoReais(CalculaParcelaJurosCompostosAMEX(PrecoProdAMEX,i+1)*(i+1))+"&lt;/td&gt;&lt;/tr&gt;");
+  }
+  document.write("&lt;/table&gt;&lt;br&gt;");
+}
+</span>
+</pre>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
+<ShortName>Ajuda FastCommerce</ShortName>
+<Description>Ajuda FastCommerce provider</Description>
+<Url type="text/html" template="http://www.rumo.com.br/sistema/Noticias.asp?IDLoja=9&amp;Origem=searchprovider&amp;TextoBuscaNews={searchTerms}"/>
+</OpenSearchDescription>

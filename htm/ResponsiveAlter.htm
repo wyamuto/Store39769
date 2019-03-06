@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link href="/lojas/00000009/htm/LojaSite.css?226404" rel="stylesheet" type="text/css">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="P3Pv1" href="/w3c/p3p.xml">
+<script language="JavaScript" src="LojaSite.js?226404"></script>
+<meta name="generator" content="Fastcommerce">
+<meta name="description" content="Ajuda Online do Fastcommerce">
+<meta name="keywords" content="ajuda, suporte, Fastcommerce">
+<!--[if lt IE 9]>
+<script src="js/html5shiv.js"></script>
+<script src="js/respond.min.js"></script>
+<![endif]-->
+<title>Ajuda Online</title>
+<!--[if IE]>
+<link rel="shortcut icon" href="/lojas/00000009/images/favicon.swf">
+<![endif]-->
+
+<link title="Ajuda Online" rel="search" type="application/opensearchdescription+xml" href="XMLSearchEngine.asp?IDLoja=9&NomeLoja=Ajuda+Online">
+<script type="text/javascript">
+var FC$=(function(){
+  var IDLoja=9;
+  var PathPrd="/lojas/00000009/prod/";
+  var PathImg="/lojas/00000009/images/";
+  var PathHtm="/lojas/00000009/htm/";
+  var Page="Custom";
+  var Step="";
+  var NextStep="";
+  return{
+    IDLoja: IDLoja,
+    PathPrd: PathPrd,
+    PathImg: PathImg,
+    PathHtm: PathHtm,
+    Page: Page,
+    Step: Step,
+    NextStep: NextStep
+  }
+})();
+</script>
+</head>
+
+
+<body leftmargin=0 topmargin=0 marginwidth=0 marginheight=0 rightmargin=0 bgcolor=#eeeeee text=#333333 link=#0066CC vlink=#0066CC alink=#0099FF><script language="JavaScript" src="/jquery-1.8.2.min.js"></script>
+<script language="JavaScript" src="/jquery-ui-1.9.1.custom.js"></script>
+
+<header id="headerFC">
+	<nav class="navHeaderFC">
+		<ul>
+			<li><a alt="desktobBack" description="Desktop" href="#"></a></li>
+			<li><a alt="tabletLandscapebBack" description="tabletLandscape"  href="#"></a></li>
+			<li><a alt="tabletPortraitBack" description="tabletPortrait"  href="#"></a></li>
+			<li><a alt="iphoneLandscapeBack" description="iphoneLandscape" href="#"></a></li>
+			<li><a alt="iphonePortraitBack" description="iphonePortrait" href="#"></a></li>
+		</ul>
+	</nav>
+	<div id="formUrl">
+		<input type="text" name="load" id="getURL" placeholder="Digite seu site aqui" value="">
+		<input type="submit" id="button" onclick="VerificaTexto();" value="enviar" name="ok">
+	</div>	
+</header>	
+
+	<center><article id="container"><iframe id="MainFrame" name="ifr" class="Desktop" src="" ></iframe></article></center>
+
+
+<style>
+#headerFC{width: 100%; max-width: 100%;}
+.navHeaderFC{width: 100%; height: 40px; background: #ccc; }
+.navHeaderFC ul{margin: 0px auto; padding: 5px 0 5px 0; display: table; width: auto; height: auto;}
+.navHeaderFC a{ display:block; width: 34px; height: 26px;}
+.navHeaderFC ul li{list-style:none; float:left; background:url(/lojas/00000009/images/Design/spriteR.png); margin: 0 5px;}
+.navHeaderFC ul li+li{background-position: -39px 0;}
+.navHeaderFC ul li+li+li{background-position: -79px 0;}
+.navHeaderFC ul li+li+li+li{background-position: -119px 0;}
+.navHeaderFC ul li+li+li+li+li{background-position: -159px 0;}
+.desktopSize{width: 100%; max-height: 100%; height: 500px;  position: relative;}
+
+/*Iframes sizes*/
+#MainFrame{background:#fff;}
+iframe.Desktop{width: 100%; max-height: 100%; height: 850px;  position: relative;}
+iframe.tabletLandscape{width: 1049px; max-height: 100%; height: 693px; position: relative; margin: 48px 36px 0 0;}
+iframe.tabletPortrait{width: 780px; max-height: 100%; height: 1035px; position: relative;  margin: 64px 0 0 0;}
+iframe.iphoneLandscape{width: 493px; max-height: 100%; height: 332px; position: relative;  margin: 28px 0 0 0;}
+iframe.iphonePortrait{width: 335px; max-height: 100%; height: 495px;  position: relative;  margin: 132px 0 0 0;}
+
+/*iFrames backgrounds*/
+.tabletLandscapebBack{background: url(/lojas/00000009/images/Design/padland.png); width: 1242px; max-height: 100%; height: 798px; margin: 20px auto;}
+.tabletPortraitBack{background: url(/lojas/00000009/images/Design/padport.png); width: 901px; max-height: 100%; height: 1213px; margin: 20px auto; position: relative;}
+.iphoneLandscapeBack{background: url(/lojas/00000009/images/Design/phoneland.png); width: 759px; max-height: 100%; height: 395px; margin: 20px auto; position: relative;}
+.iphonePortraitBack{background: url(/lojas/00000009/images/Design/phoneport.png); width: 395px; max-height: 100%; height: 762px; margin: 20px auto; position: relative;}
+
+#formUrl{display: table; height: auto; margin: 10px auto;}
+#formUrl input[type="text"]{padding: 4px 5px; width: 350px; height: 35px; border: 0px;}
+#formUrl input[type="submit"]{background: #666; border: 0px; color: #fff; height:43px; width: 55px;}
+
+</style>
+
+<script type="text/javascript">
+
+function ResizeClicks(){
+
+jQuery('.navHeaderFC > ul > li > a').each(function() {
+	jQuery(this).click(function(){
+		var sClass = jQuery(this).attr('description');
+		var sClassBack = jQuery(this).attr('alt');
+		jQuery('#MainFrame').attr('class', sClass);
+		jQuery('#container').attr('class', sClassBack);
+	});
+});
+}ResizeClicks();
+
+
+///Pega a URL do campo
+function updateframe() {
+var url = $("#getURL").val();
+//alert(url);
+/// verifica o http
+if ($("#getURL").val().match(/^http/)) {
+$('#MainFrame').attr('src', url);
+}
+else {
+validURL = 'http://' + url;
+
+$('#MainFrame').attr('src', validURL);
+return false;
+}
+}
+/// form ações do form
+$("#button").click(function() {
+updateframe();
+});
+$('#getURL').keypress(function(e){
+if(e.which == 13){
+updateframe();
+}
+});
+$(function() {
+$('input[type=text]').focus(function() {
+$(this).val('')
+});
+});
+//// verifica url na url
+var givenURL = (RegExp('url=' + '(.+?)(&|$)').exec(location.search)||[,null])[1];
+if (givenURL == null){
+
+base = "http://www.";
+}else{
+$('#getURL').attr('value',givenURL );
+$('#MainFrame').attr('src',givenURL);
+} 
+
+function VerificaTexto(){
+	var oInput = document.getElementById('getURL');
+	if(oInput.value == ""){
+		confirm("Preencha o campo!");
+	};
+}
+
+</script>
+</body>
+</html>

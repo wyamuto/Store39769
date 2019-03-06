@@ -1,0 +1,261 @@
+<p>Para implantar o GTM, preencha o campo <b>Código do Contêiner</b> em <b>Dados da loja > Serviços e produtos do Google > Google Tag Manager > Código do Contêiner</b>. Para obter este código, acesse o <a href="https://www.google.com/analytics/tag-manager/" target="_blank">Google Tag Manager</a>, clique na opção <b>Administrador</b> que fica na parte superior e copie o código que fica abaixo do campo <b>CONTÊINER</b> (exemplo: GTM-XXXXXX).</p>
+
+<p>Ao usar este recurso, os códigos javascript do Google Tag Manager assim como os códigos de eventos e informações de <i>Data Layer</i> serão automaticamente incluídos na loja.</p>
+
+<p>O sistema insere automaticamente as informações que poderão ser utilizadas na criação de variáveis (macros) no GTM.</p>
+<br>
+<p><b>Consumindo informações de eventos e informações do <a href="https://developers.google.com/tag-manager/reference#datalayer" target="_blank">dataLayer</a></b></p>
+<br>
+<style>
+.tableDataLayer{border:1px solid #666666;}
+.tableDataLayer td{padding:5px;border:1px solid #666666;}
+.ULDiv{margin-left:25px;margin-top:10px;}
+</style>
+<table class=tableDataLayer>
+  <tr style="background:#dedede">
+    <td valign="top"><b>Página da loja</b></td>
+    <td valign="top"><b>pageType (página)</b></td>
+    <td valign="top"><b>event (nome do evento)</b></td>
+    <td valign="top"><b>dataLayer</b></td>
+  </tr>
+
+  <tr>
+    <td valign="top">Home</td>
+    <td valign="top">Home</td>
+    <td valign="top">ViewHome<br><br>Evento de acesso a página. É disparado quando o usuário acessa a página home da loja.</td>
+    <td valign="top"><pre>    
+dataLayer = [{
+  "pageType": "Home",
+  "event": "ViewHome",
+  "mobile": false
+}];
+    </pre></td>
+  </tr>
+  <tr>
+    <td valign="top">Detalhe do produto</td>
+    <td valign="top">Products</td>
+    <td valign="top">ViewProduct<br><br>Evento de acesso a página. É disparado quando o usuário acessa a página de detalhe de produto da loja.</td>    
+    <td valign="top"><pre>    
+dataLayer = [{
+  "pageType": "Products",
+  "event": "ViewProduct",
+  "mobile": false,
+  "prodId": 9999999,
+  "prodSKU": "SKU0001",
+  "prodName": "Nome do prod",
+  "prodCat": "Nome da categoria",
+  "prodPrice": 1700.0,
+  "prodOriPrice": 1700.0,
+  "ecommerce": {
+    "detail": {
+      "actionField": {"list": "Nome da categoria"},
+      "products": [{
+        "name": "Nome do prod",
+        "id": "9999999",
+        "price": "1700.0",
+        "category": "Nome da categoria"
+       }]
+     }
+   }
+}];
+    </pre></td>
+  </tr>
+
+  <tr>
+    <td valign="top">Carrinho / cesta de produtos</td>
+    <td valign="top">Cart</td>
+    <td valign="top">ViewCart<br><br>Evento de acesso a página. É disparado quando o usuário acessa a página carrinho da loja.</td>
+    <td valign="top"><pre>    
+dataLayer = [{
+  "pageType": "Cart",
+  "event": "ViewCart",
+  "mobile": false,
+  "prodId": [888888, 999999],
+  "prodSKU": ["SKU0001", "SKU0002"],
+  "prodName": ["Nome do prod 1", "Nome do prod 2"],
+  "prodCat": ["Nome da cat 1", "Nome da cat 2"],
+  "prodPrice": [120.0, 340.0],
+  "prodQty": [1, 2],
+  "ecommerce": {
+    "add": {
+      "products": [
+        {
+        "name": "Nome do prod 1",
+        "id": "888888",
+        "price": "120.0",
+        "category": "Nome da categoria 1",
+        "quantity": 1
+        }, 
+        {
+        "name": "Nome do prod 2",
+        "id": "999999",
+        "price": "340.0",
+        "category": "Nome da categoria 2",
+        "quantity": 2
+        }
+      ]
+     },
+    "checkout": {
+      "actionField": {"step": "Cart"}
+     }
+   }
+}];
+    </pre></td>
+  </tr>
+
+  <tr>
+    <td valign="top">Finalização de pedido</td>
+    <td valign="top">Purchase</td>
+    <td valign="top">Purchase<br><br>Evento de finalização de compra. É disparado quando o usuário finaliza o pedido, na página final de confirmação.</td>    
+    <td valign="top"><pre>    
+dataLayer.push({
+  "event": "Purchase",
+  "pageType": "Purchase",
+  "prodId": [888888, 999999],
+  "prodSKU": ["SKU0001", "SKU0002"],
+  "prodName": ["Nome do prod 1", "Nome do prod 2"],
+  "prodCat": ["Nome da cat 1", "Nome da cat 2"],
+  "prodPrice": [120.0, 340.0],
+  "prodQty": [1, 2],
+  "email" : "email@docliente.com.br",
+  "orderNumber" : 10123456789,
+  "orderTotal": 480.0,
+  "orderShipping": 20.0,
+  "ecommerce": {
+    "purchase": {
+      "actionField": {
+        "id": "10123456789",
+        "affiliation": "Nome da loja",
+        "revenue": "480.0",
+        "tax":"0.00",
+        "shipping": "20.0",
+        "coupon": ""
+      },
+      "products": [
+        {
+          "name": "Nome do prod 1",
+          "id": "888888",
+          "price": "120.0",
+          "category": "Nome da cat 1",
+          "quantity": 1
+        }, 
+        {
+          "name": "Nome do prod 2",
+          "id": "999999",
+          "price": "340.0",
+          "category": "Nome da cat 2",
+          "quantity": 2
+        }
+      ]
+    }
+  }
+});
+    </pre></td>
+  </tr>
+
+  <tr>
+    <td valign="top">Passos do checkout</td>
+    <td valign="top">Checkout</td>
+    <td valign="top">
+    VirtualPageview<br><br>Eventos que ocorrem em cada passo do login. É disparado a cada interação do usuário com os passos do checkout para finalização de pedido.
+    <br><br>
+    Valores de <b>eventName</b> de acordo com o passo:<br><div class=ULDiv><ul style=ULOpDataLayer><li>OrderLogin [Login]</li><li>OrderRegistration [Cadastro]</li><li>ShippingChoice [Frete]</li><li>PaymentChoice [Pagamento]</li><li>OrderCompletion [Pedido finalizado]</li></ul></div>
+    </td>    
+    <td valign="top"><pre>
+dataLayer = [{
+  "pageType": "Checkout",
+  "event": "ViewCheckout",
+  "mobile": false
+}];
+
+dataLayer.push({
+  "event": "VirtualPageview",
+  "eventName": "OrderLogin",
+  "eventTitle": "CheckoutOrderLogin",
+  "urlPage": "/OrderLogin",
+  "ecommerce": {
+    "checkout": {
+      "actionField": {"step": "OrderLogin"}
+    }
+  }
+});
+    </pre></td>
+  </tr>
+
+  <tr>
+    <td valign="top">Páginas Minha conta</td>
+    <td valign="top">MyAccount</td>
+    <td valign="top">
+    VirtualPageview<br><br>Eventos que ocorrem no acesso a cada seção da página minha conta. É disparado a cada interação do usuário, ao acessar a seção.
+    <br><br>
+    Valores de <b>eventName</b> de acordo com a página:<br><div class=ULDiv><ul style=ULOpDataLayer><li>MyAccount [Minha conta]</li><li>MyAddress [Endereços de entrega]</li><li>MyOrders [Meus pedidos]</li><li>MyRegister [Meus dados cadastrais]</li><li>MyAccess [Meus dados de acesso]</li><li>MyCards [Meus cartões de crédito]</li><li>MyRating [Minhas avaliações]</li><li>MyProdAv [Disponibilidades de produtos]</li></ul></div>
+    </td>    
+    <td valign="top"><pre>
+dataLayer = [{
+  "pageType": "MyAccount",
+  "event": "ViewMyAccount",
+  "mobile": false,
+  "email": "email@docliente.com.br"
+}];
+
+dataLayer.push({
+  "event": "VirtualPageview",
+  "eventName": "MyOrders",
+  "eventTitle": "MyAccountMyOrders",
+  "urlPage": "/MyOrders"
+}); 
+    </pre></td>
+  </tr>
+    
+  <tr>
+    <td valign="top">Autopaginação (AJAX)</td>
+    <td valign="top">ProductsList</td>
+    <td valign="top">
+    VirtualPageview<br><br>Evento que ocorre a cada carregamento de página na autopaginação.
+    </td>    
+    <td valign="top"><pre>
+dataLayer.push({
+  "event": "VirtualPageview",
+  "eventName": "autoListProducts",
+  "eventTitle": "Título da página (2)",
+  "urlPage": "/url-da-pagina"
+});
+    </pre></td>
+  </tr>
+
+  <tr>
+    <td valign="top">Adicionar produto à cesta (AJAX)</td>
+    <td valign="top">Products / ProductsList</td>
+    <td valign="top">
+    VirtualPageview<br><br>Evento que ocorre ao clicar no botão de comprar (quando utilizado o recurso de comprar sem sair da página padrão do sistema "CartOnPage").
+    </td>    
+    <td valign="top"><pre>
+dataLayer.push({
+  "event": "VirtualPageview",
+  "eventName": "addToCart",
+  "eventTitle": "Título da página",
+  "urlPage": "/url-da-pagina"
+});
+    </pre></td>
+  </tr>
+
+</table>
+<br><br>
+
+<h3><b>Como criar uma variável no Google Tag Manager?</b></h3>
+
+<p>Dentro do Google Tag Manager, na <b>Espaço de trabalho</b>, acessar no menu a opção <b>Variáveis</b> e em <b>Variáveis definidas pelo usuário</b>, clicar em NOVA. Segue exemplo:</p>
+<br><br>
+<center><span id="idTextNewsFC" itemprop="articleBody"><img src="/lojas/00000009/images/fc/A_15031.png" class="img-responsive"></span></center>
+<br><br>
+<p>Desta forma a variável estará criada e poderá ser utilizada para criar acionadores (triggers) e nas tags.</p>
+<br><br>
+
+<p>Veja mais detalhes:</p>
+<div class=ULDiv><ul style=ULOpDataLayer>
+  <li><a href="https://support.google.com/tagmanager/answer/6103657?hl=pt-BR&ref_topic=3441530" target="_blank">Tags, acionadores, variáveis e a camada de dados</a></li>
+  <li><a href="https://support.google.com/tagmanager/answer/3281060?hl=pt-BR&ref_topic=3281056" target="_blank">Sobre tags</a></li>
+  <li><a href="https://support.google.com/tagmanager/answer/6106899?hl=pt-BR" target="_blank">Variáveis</a></li>
+  <li><a href="https://support.google.com/tagmanager/answer/6106961?hl=pt-BR&ref_topic=3441647" target="_blank">Acionadores</a></li>
+</ul></div>
+

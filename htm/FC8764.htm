@@ -1,0 +1,506 @@
+<table width=100% border=1>
+  <tr>
+    <td width=30%>
+      Exemplo de menu com personalização apenas no CSS
+    </td>
+    <td height="50">
+      <style>.CatOpened{}.CatClosed{display:none}.EstListCat ul{margin:0 0 0 12px;padding:0}.EstListCat li{margin:0;list-style-type:none;padding:5px 0 0 0}.EstListCat .wid{width:12px}.PathCatActive{font-weight:bold}.EstListCat .ImgClosed{width:12px;cursor:pointer;background:url(images/PathClosed.gif) no-repeat bottom left}.EstListCat .ImgOpened{width:12px;cursor:pointer;background:url(images/PathOpened.gif) no-repeat bottom left}</style>
+
+<script>IDLoja='<IDLoja>' //Obtém IDLoja para montar links</script>
+<script src=<BaseLoja>htm/LojaLib.js></script>
+
+<script>
+navHover = function() {
+	var lis = document.getElementById("idMenuCat1").getElementsByTagName("LI");
+	for (var i=0; i<lis.length; i++) {
+		lis[i].onmouseover=function() {
+			this.className+=" iehover";
+		}
+		lis[i].onmouseout=function() {
+			this.className=this.className.replace(new RegExp(" iehover\\b"), "");
+		}
+	}
+}
+if (window.attachEvent) window.attachEvent("onload", navHover);
+</script>
+
+<style>
+#idMenuCat1 .wid{width:0px}
+
+/* Root = Horizontal, Secondary = Vertical */
+ul#idMenuCat1 {
+  margin: 0;
+  border: 0 none;
+  padding: 0;
+  width: 100%; /*For KHTML*/
+  list-style: none;
+  height: 24px;
+}
+
+ul#idMenuCat1 li {
+  margin: 0;
+  border: 0 none;
+  padding: 0;
+  float: left; /*For Gecko*/
+  display: inline;
+  list-style: none;
+  position: relative;
+  height: 24px;
+}
+
+ul#idMenuCat1 ul {
+  margin: 0;
+  border: 0 none;
+  padding: 0;
+  width: 160px;
+  list-style: none;
+  display: none;
+  position: absolute;
+  top: 24px;
+  left: 0;
+}
+
+ul#idMenuCat1 ul:after /*From IE 7 lack of compliance*/{
+  clear: both;
+  display: block;
+  font: 1px/0px serif;
+  content: ".";
+  height: 0;
+  visibility: hidden;
+}
+
+ul#idMenuCat1 ul li {
+  width: 160px;
+  float: left; /*For IE 7 lack of compliance*/
+  display: block !important;
+  display: inline; /*For IE*/
+}
+
+/* Root Menu */
+ul#idMenuCat1 a {
+  border: 1px solid #FFF;
+  border-right-color: #CCC;
+  border-bottom-color: #CCC;
+  padding: 0 6px;
+  float: none !important; /*For Opera*/
+  float: left; /*For IE*/
+  display: block;
+  background-color: #EEE;
+  color: #666;
+  font: bold 10px/22px Verdana, Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  height: auto !important;
+  height: 1%; /*For IE*/
+}
+
+/* Root Menu Hover Persistence */
+ul#idMenuCat1 a:hover,
+ul#idMenuCat1 li:hover a,
+ul#idMenuCat1 li.iehover a {
+  background: #CCC;
+  color: #FFF;
+}
+
+/* 2nd Menu */
+ul#idMenuCat1 li:hover li a,
+ul#idMenuCat1 li.iehover li a {
+  float: none;
+  background: #EEE;
+  color: #666;
+}
+
+/* 2nd Menu Hover Persistence */
+ul#idMenuCat1 li:hover li a:hover,
+ul#idMenuCat1 li:hover li:hover a,
+ul#idMenuCat1 li.iehover li a:hover,
+ul#idMenuCat1 li.iehover li.iehover a {
+  background: #CCC;
+  color: #FFF;
+}
+
+/* 3rd Menu */
+ul#idMenuCat1 li:hover li:hover li a,
+ul#idMenuCat1 li.iehover li.iehover li a {
+  background: #EEE;
+  color: #666;
+}
+
+/* 3rd Menu Hover Persistence */
+ul#idMenuCat1 li:hover li:hover li a:hover,
+ul#idMenuCat1 li:hover li:hover li:hover a,
+ul#idMenuCat1 li.iehover li.iehover li a:hover,
+ul#idMenuCat1 li.iehover li.iehover li.iehover a {
+  background: #CCC;
+  color: #FFF;
+}
+
+/* 4th Menu */
+ul#idMenuCat1 li:hover li:hover li:hover li a,
+ul#idMenuCat1 li.iehover li.iehover li.iehover li a {
+  background: #EEE;
+  color: #666;
+}
+
+/* 4th Menu Hover */
+ul#idMenuCat1 li:hover li:hover li:hover li a:hover,
+ul#idMenuCat1 li:hover li:hover li:hover li:hover a,
+ul#idMenuCat1 li.iehover li.iehover li.iehover li a:hover,
+ul#idMenuCat1 li.iehover li.iehover li.iehover li.iehover a {
+  background: #CCC;
+  color: #FFF;
+}
+
+
+/* 5th Menu */
+ul#idMenuCat1  li:hover li:hover li:hover li:hover li a,
+ul#idMenuCat1 li.iehover li.iehover li.iehover li.iehover li a {
+  background: #EEE;
+  color: #666;
+}
+
+/* 5th Menu Hover */
+ul#idMenuCat1-v li:hover li:hover li:hover li:hover li a:hover,
+ul#idMenuCat1-v li.iehover li.iehover li.iehover li.iehover li a:hover {
+  background: #CCC;
+  color: #FFF;
+}
+
+ul#idMenuCat1 ul ul,
+ul#idMenuCat1 ul ul ul,
+ul#idMenuCat1 ul ul ul ul,
+ul#idMenuCat1 ul ul ul ul ul {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 160px;
+}
+
+/* Do Not Move - Must Come Before display:block for Gecko */
+ul#idMenuCat1 li:hover ul ul,
+ul#idMenuCat1 li:hover ul ul ul,
+ul#idMenuCat1 li:hover ul ul ul ul,
+ul#idMenuCat1 li:hover ul ul ul ul ul,
+ul#idMenuCat1 li.iehover ul ul,
+ul#idMenuCat1 li.iehover ul ul ul,
+ul#idMenuCat1 li.iehover ul ul ul ul,
+ul#idMenuCat1 li.iehover ul ul ul ul ul {
+  display: none;
+}
+
+ul#idMenuCat1 li:hover ul,
+ul#idMenuCat1 ul li:hover ul,
+ul#idMenuCat1 ul ul li:hover ul,
+ul#idMenuCat1 ul ul ul li:hover ul,
+ul#idMenuCat1 ul ul ul ul li:hover ul,
+ul#idMenuCat1 li.iehover ul,
+ul#idMenuCat1 ul li.iehover ul,
+ul#idMenuCat1 ul ul li.iehover ul,
+ul#idMenuCat1 ul ul ul li.iehover ul,
+ul#idMenuCat1 ul ul ul ul li.iehover ul {
+  display: block;
+}
+</style>
+
+<!--[if IE]><style>ul#idMenuCat1 ul {top: 36px}</style><![endif]-->
+      
+
+      <span class=EstListCat>
+      <ul id=idMenuCat1 class=CatOpened>
+        <li id=Cat2_2802><span class=wid><span id=img_Cat2_2802 class=ImgClosed onclick=CatToggle('Cat2_2802')><img src=images/shim.gif class=wid></span></span><span class=PathCat0 id=idPathCat2802><a href=#2802&q=Apple>Apple</a></span>
+          <ul id=ul_Cat2_2802 class=CatClosed>
+            <li id=Cat2_2864><span class=wid><span id=img_Cat2_2864 class=ImgClosed onclick=CatToggle('Cat2_2864')><img src=images/shim.gif class=wid></span></span><span class=PathCat1 id=idPathCat2864><a href=#2864&q=IPhone>IPhone</a></span>
+              <ul id=ul_Cat2_2864 class=CatClosed>
+                <li id=Cat2_2867><span class=wid><img src=images/shim.gif class=wid></span><span class=PathCat2 id=idPathCat2867><a href=#2867&q=Claro>Claro</a></span>
+                </li>
+                <li id=Cat2_2869><span class=wid><img src=images/shim.gif class=wid></span><span class=PathCat2 id=idPathCat2869><a href=#2869&q=Tim>Tim</a></span>
+                </li>
+                <li id=Cat2_2868><span class=wid><img src=images/shim.gif class=wid></span><span class=PathCat2 id=idPathCat2868><a href=#2868&q=Vivo>Vivo</a></span>
+                </li>
+              </ul>
+            </li>
+            <li id=Cat2_2862><span class=wid><span id=img_Cat2_2862 class=ImgClosed onclick=CatToggle('Cat2_2862')><img src=images/shim.gif class=wid></span></span><span class=PathCat1 id=idPathCat2862><a href=#2862&q=Ipod>Ipod</a></span>
+              <ul id=ul_Cat2_2862 class=CatClosed>
+                <li id=Cat2_2866><span class=wid><img src=images/shim.gif class=wid></span><span class=PathCat2 id=idPathCat2866><a href=#2866&q=80Gb>80Gb</a></span>
+                </li>
+                <li id=Cat2_2865><span class=wid><img src=images/shim.gif class=wid></span><span class=PathCat2 id=idPathCat2865><a href=#2865&q=8Gb>8Gb</a></span>
+                </li>
+              </ul>
+            </li>
+            <li id=Cat2_2863><span class=wid><img src=images/shim.gif class=wid></span><span class=PathCat1 id=idPathCat2863><a href=#2863&q=Notebook>Notebook</a></span>
+            </li>
+          </ul>
+        </li>
+        <li id=Cat2_2803><span class=wid><span id=img_Cat2_2803 class=ImgClosed onclick=CatToggle('Cat2_2803')><img src=images/shim.gif class=wid></span></span><span class=PathCat0 id=idPathCat2803><a href=#2803&q=C%E2meras+digitais>Câmeras digitais</a></span>
+          <ul id=ul_Cat2_2803 class=CatClosed>
+            <li id=Cat2_2872><span class=wid><img src=images/shim.gif class=wid></span><span class=PathCat1 id=idPathCat2872><a href=#2872&q=Filmadoras>Filmadoras</a></span>
+            </li>
+            <li id=Cat2_2871><span class=wid><img src=images/shim.gif class=wid></span><span class=PathCat1 id=idPathCat2871><a href=#2871&q=Fotogr%E1ficas>Fotográficas</a></span>
+            </li>
+          </ul>
+        </li>
+        <li id=Cat2_2804><span class=wid><img src=images/shim.gif class=wid></span><span class=PathCat0 id=idPathCat2804><a href=#2804&q=DVDs>DVDs</a></span>
+        </li>
+        <li id=Cat2_2805><span class=wid><span id=img_Cat2_2805 class=ImgClosed onclick=CatToggle('Cat2_2805')><img src=images/shim.gif class=wid></span></span><span class=PathCat0 id=idPathCat2805><a href=#2805&q=Eletr%F4nicos>Eletrônicos</a></span>
+          <ul id=ul_Cat2_2805 class=CatClosed>
+            <li id=Cat2_2874><span class=wid><img src=images/shim.gif class=wid></span><span class=PathCat1 id=idPathCat2874><a href=#2874&q=DVD>DVD</a></span>
+            </li>
+            <li id=Cat2_2875><span class=wid><span id=img_Cat2_2875 class=ImgClosed onclick=CatToggle('Cat2_2875')><img src=images/shim.gif class=wid></span></span><span class=PathCat1 id=idPathCat2875><a href=#2875&q=LCD>LCD</a></span>
+              <ul id=ul_Cat2_2875 class=CatClosed>
+                <li id=Cat2_2877><span class=wid><span id=img_Cat2_2877 class=ImgClosed onclick=CatToggle('Cat2_2877')><img src=images/shim.gif class=wid></span></span><span class=PathCat2 id=idPathCat2877><a href=#2877&q=LG>LG</a></span>
+                  <ul id=ul_Cat2_2877 class=CatClosed>
+                    <li id=Cat2_2879><span class=wid><img src=images/shim.gif class=wid></span><span class=PathCat3 id=idPathCat2879><a href=#2879&q=36%27>36'</a></span>
+                    </li>
+                    <li id=Cat2_2880><span class=wid><img src=images/shim.gif class=wid></span><span class=PathCat3 id=idPathCat2880><a href=#2880&q=42%27>42'</a></span>
+                    </li>
+                  </ul>
+                </li>
+                <li id=Cat2_2878><span class=wid><span id=img_Cat2_2878 class=ImgClosed onclick=CatToggle('Cat2_2878')><img src=images/shim.gif class=wid></span></span><span class=PathCat2 id=idPathCat2878><a href=#2878&q=Samsung>Samsung</a></span>
+                  <ul id=ul_Cat2_2878 class=CatClosed>
+                    <li id=Cat2_2881><span class=wid><img src=images/shim.gif class=wid></span><span class=PathCat3 id=idPathCat2881><a href=#2881&q=19%27>19'</a></span>
+                    </li>
+                    <li id=Cat2_2882><span class=wid><img src=images/shim.gif class=wid></span><span class=PathCat3 id=idPathCat2882><a href=#2882&q=52%27>52'</a></span>
+                    </li>
+                  </ul>
+                </li>
+                <li id=Cat2_2876><span class=wid><span id=img_Cat2_2876 class=ImgClosed onclick=CatToggle('Cat2_2876')><img src=images/shim.gif class=wid></span></span><span class=PathCat2 id=idPathCat2876><a href=#2876&q=Sony>Sony</a></span>
+                  <ul id=ul_Cat2_2876 class=CatClosed>
+                    <li id=Cat2_2884><span class=wid><img src=images/shim.gif class=wid></span><span class=PathCat3 id=idPathCat2884><a href=#2884&q=100%27>100'</a></span>
+                    </li>
+                    <li id=Cat2_2883><span class=wid><img src=images/shim.gif class=wid></span><span class=PathCat3 id=idPathCat2883><a href=#2883&q=5%27>5'</a></span>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      </span>
+    </td>
+  </tr>
+</table>
+
+
+
+<pre><span class=courrier>
+
+<b>Segue exemplo de arquivo html com personalização apenas no CSS:</b>
+
+
+<span class=dest>&lt; !-- ### Este conteúdo será adicionado de forma automática pelo sistema ### --></span>
+&lt;style>
+  .CatOpened{}
+  .CatClosed{display:none}
+  .EstListCat ul{margin:0 0 0 12px;padding:0}
+  .EstListCat li{margin:0;list-style-type:none;padding:5px 0 0 0}
+  .EstListCat .wid{width:12px}
+  .PathCatActive{font-weight:bold}
+  .EstListCat .ImgClosed{width:12px;cursor:pointer;background:url(images/PathClosed.gif) no-repeat bottom left}
+  .EstListCat .ImgOpened{width:12px;cursor:pointer;background:url(images/PathOpened.gif) no-repeat bottom left}
+&lt;/style>
+<span class=dest>&lt; !-- ### Fim deste comentário ### --></span>
+
+
+<span class=dest>&lt; !-- ### O código abaixo deve ser adicionado em seu arquivo html ### --></span>
+&lt;script>
+navHover = function() {
+	var lis = document.getElementById("idMenuCat1").getElementsByTagName("LI");
+	for (var i=0; i&lt;lis.length; i++) {
+		lis[i].onmouseover=function() {
+			this.className+=" iehover";
+		}
+		lis[i].onmouseout=function() {
+			this.className=this.className.replace(new RegExp(" iehover\\b"), "");
+		}
+	}
+}
+if (window.attachEvent) window.attachEvent("onload", navHover);
+&lt;/script>
+
+&lt;style>
+#idMenuCat1 .wid{width:0px}
+
+/* Root = Horizontal, Secondary = Vertical */
+ul#idMenuCat1 {
+  margin: 0;
+  border: 0 none;
+  padding: 0;
+  width: 100%; /*For KHTML*/
+  list-style: none;
+  height: 24px;
+}
+
+ul#idMenuCat1 li {
+  margin: 0;
+  border: 0 none;
+  padding: 0;
+  float: left; /*For Gecko*/
+  display: inline;
+  list-style: none;
+  position: relative;
+  height: 24px;
+}
+
+ul#idMenuCat1 ul {
+  margin: 0;
+  border: 0 none;
+  padding: 0;
+  width: 160px;
+  list-style: none;
+  display: none;
+  position: absolute;
+  top: 24px;
+  left: 0;
+}
+
+ul#idMenuCat1 ul:after /*From IE 7 lack of compliance*/{
+  clear: both;
+  display: block;
+  font: 1px/0px serif;
+  content: ".";
+  height: 0;
+  visibility: hidden;
+}
+
+ul#idMenuCat1 ul li {
+  width: 160px;
+  float: left; /*For IE 7 lack of compliance*/
+  display: block !important;
+  display: inline; /*For IE*/
+}
+
+/* Root Menu */
+ul#idMenuCat1 a {
+  border: 1px solid #FFF;
+  border-right-color: #CCC;
+  border-bottom-color: #CCC;
+  padding: 0 6px;
+  float: none !important; /*For Opera*/
+  float: left; /*For IE*/
+  display: block;
+  background-color: #EEE;
+  color: #666;
+  font: bold 10px/22px Verdana, Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  height: auto !important;
+  height: 1%; /*For IE*/
+}
+
+/* Root Menu Hover Persistence */
+ul#idMenuCat1 a:hover,
+ul#idMenuCat1 li:hover a,
+ul#idMenuCat1 li.iehover a {
+  background: #CCC;
+  color: #FFF;
+}
+
+/* 2nd Menu */
+ul#idMenuCat1 li:hover li a,
+ul#idMenuCat1 li.iehover li a {
+  float: none;
+  background: #EEE;
+  color: #666;
+}
+
+/* 2nd Menu Hover Persistence */
+ul#idMenuCat1 li:hover li a:hover,
+ul#idMenuCat1 li:hover li:hover a,
+ul#idMenuCat1 li.iehover li a:hover,
+ul#idMenuCat1 li.iehover li.iehover a {
+  background: #CCC;
+  color: #FFF;
+}
+
+/* 3rd Menu */
+ul#idMenuCat1 li:hover li:hover li a,
+ul#idMenuCat1 li.iehover li.iehover li a {
+  background: #EEE;
+  color: #666;
+}
+
+/* 3rd Menu Hover Persistence */
+ul#idMenuCat1 li:hover li:hover li a:hover,
+ul#idMenuCat1 li:hover li:hover li:hover a,
+ul#idMenuCat1 li.iehover li.iehover li a:hover,
+ul#idMenuCat1 li.iehover li.iehover li.iehover a {
+  background: #CCC;
+  color: #FFF;
+}
+
+/* 4th Menu */
+ul#idMenuCat1 li:hover li:hover li:hover li a,
+ul#idMenuCat1 li.iehover li.iehover li.iehover li a {
+  background: #EEE;
+  color: #666;
+}
+
+/* 4th Menu Hover */
+ul#idMenuCat1 li:hover li:hover li:hover li a:hover,
+ul#idMenuCat1 li:hover li:hover li:hover li:hover a,
+ul#idMenuCat1 li.iehover li.iehover li.iehover li a:hover,
+ul#idMenuCat1 li.iehover li.iehover li.iehover li.iehover a {
+  background: #CCC;
+  color: #FFF;
+}
+
+
+/* 5th Menu */
+ul#idMenuCat1  li:hover li:hover li:hover li:hover li a,
+ul#idMenuCat1 li.iehover li.iehover li.iehover li.iehover li a {
+  background: #EEE;
+  color: #666;
+}
+
+/* 5th Menu Hover */
+ul#idMenuCat1-v li:hover li:hover li:hover li:hover li a:hover,
+ul#idMenuCat1-v li.iehover li.iehover li.iehover li.iehover li a:hover {
+  background: #CCC;
+  color: #FFF;
+}
+
+ul#idMenuCat1 ul ul,
+ul#idMenuCat1 ul ul ul,
+ul#idMenuCat1 ul ul ul ul,
+ul#idMenuCat1 ul ul ul ul ul {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 160px;
+}
+
+/* Do Not Move - Must Come Before display:block for Gecko */
+ul#idMenuCat1 li:hover ul ul,
+ul#idMenuCat1 li:hover ul ul ul,
+ul#idMenuCat1 li:hover ul ul ul ul,
+ul#idMenuCat1 li:hover ul ul ul ul ul,
+ul#idMenuCat1 li.iehover ul ul,
+ul#idMenuCat1 li.iehover ul ul ul,
+ul#idMenuCat1 li.iehover ul ul ul ul,
+ul#idMenuCat1 li.iehover ul ul ul ul ul {
+  display: none;
+}
+
+ul#idMenuCat1 li:hover ul,
+ul#idMenuCat1 ul li:hover ul,
+ul#idMenuCat1 ul ul li:hover ul,
+ul#idMenuCat1 ul ul ul li:hover ul,
+ul#idMenuCat1 ul ul ul ul li:hover ul,
+ul#idMenuCat1 li.iehover ul,
+ul#idMenuCat1 ul li.iehover ul,
+ul#idMenuCat1 ul ul li.iehover ul,
+ul#idMenuCat1 ul ul ul li.iehover ul,
+ul#idMenuCat1 ul ul ul ul li.iehover ul {
+  display: block;
+}
+&lt;/style>
+<span class=dest>&lt; !-- ### Fim deste comentário ### --></span>
+
+
+&lt;table width=100%>
+  &lt;tr>
+    &lt;td>
+      &lt;ListPathCat out="2">  <span class=dest>&lt; !-- ### Tag especial utilizada para a criaçãodo menu ### --></span>
+    &lt;/td>
+  &lt;/tr>
+&lt;/table>
+</span><pre>

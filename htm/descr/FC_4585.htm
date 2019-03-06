@@ -1,0 +1,91 @@
+<p><center><a href='JavaScript:Ajuda("/lojas/00028496/images/botcomprarg.jpg")'><img src="/lojas/00028496/images/botcomprarp.jpg" border="0"></a><br>Veja exemplo</center></p>
+
+<p><span>1)</span> Arquivo <b>BarraTopo.htm</b></p>
+
+<p>Verifique se no arquivo <b>BarraTopo.htm</b> existe o seguinte código, caso não exista, insira no começo:</p>
+
+<p><span>
+<pre> &lt;script>
+var sPag=document.location.href.toUpperCase();
+IDLojaNum='&lt;IDLojaNum>';
+sCaminhoImages='&lt;BaseLoja>images/';
+&lt;/script></pre>
+</span></p>
+
+
+<p><span>2)</span> Arquivo <b>LojaLib.js</b></p>
+
+<p>Segue código que deverá ser inserido dentro do arquivo <b>LojaLib.js</b>:<br><br></p>
+
+<!-- Inicio do Antigo Frame FC4585continuar.htm-->
+<pre>
+function ExibeBotoesCesta(bExibeDuasLinhasBotoes){
+  try{
+    document.write("&lt;style>.EstContinuarComprando{display:none;}&lt;/style>");
+    var table=document.getElementById('TabItens');
+
+    if(bExibeDuasLinhasBotoes){
+      var row=table.insertRow(0);
+      var cell=row.insertCell(-1);
+      cell.colSpan=4;
+      var sCel1="&lt;table width='100%'>&lt;tr>";
+            sCel1+="&lt;td width='33%' align='left'>&lt;a href='home.asp?IDLoja="+ IDLojaNum +"'>&lt;img src='"+ sCaminhoImages +"BotContComprando.png' title='Continuar comprando' border='0'>&lt;/a>&lt;/td>";
+            sCel1+="&lt;td width='34%' align='center'>&lt;a href='#R' onclick='document.Lista.submit()'>&lt;img src='"+ sCaminhoImages +"BotRecalcular.png' title='Recalcular' border='0'>&lt;/a>&lt;/td>";
+            sCel1+="&lt;td width='33%' align='right'>&lt;a href='#C' onclick='ComprarImg()'>&lt;img src='"+ sCaminhoImages +"BotComprar.png' title='Comprar' border='0'>&lt;/a>&lt;/td>";
+          sCel1+="&lt;/tr>&lt;/table>";
+      cell.innerHTML=sCel1;
+    }
+
+    var row=table.insertRow(-1);
+    var cell=row.insertCell(-1);
+    cell.colSpan=4;
+    var sCel2="&lt;table width='100%'>&lt;tr>";
+          sCel2+="&lt;td width='33%' align='left'>&lt;a href='home.asp?IDLoja="+ IDLojaNum +"'>&lt;img src='"+ sCaminhoImages +"BotContComprando.png' title='Continuar comprando' border='0'>&lt;/a>&lt;/td>";
+          sCel2+="&lt;td width='34%' align='center'>&lt;a href='#R' onclick='document.Lista.submit()'>&lt;img src='"+ sCaminhoImages +"BotRecalcular.png' title='Recalcular' border='0'>&lt;/a>&lt;/td>";
+          sCel2+="&lt;td width='33%' align='right'>&lt;a href='#C' onclick='ComprarImg()'>&lt;img src='"+ sCaminhoImages +"BotComprar.png' title='Comprar' border='0'>&lt;/a>&lt;/td>";
+        sCel2+="&lt;/tr>&lt;/table>";
+    cell.innerHTML=sCel2;
+
+  }catch(e){}
+  try{document.getElementById("TabBotoes").style.display='none';}catch(e){}
+}
+
+function ComprarImg(){
+  document.getElementsByName("Comprar")[0].click();
+}
+</pre>
+
+<!-- Fim do Antigo Frame FC4585continuar.htm-->
+
+<p>Caso a loja não tenha este arquivo na pasta <b>HTM</b> do gerenciador de arquivos, será necessário criar um arquivo com este nome e no arquivo <b>BarraTopo.htm</b> inserir o seguinte código:</p>
+<p><span> 
+&lt;script src="&lt;BaseLoja>htm/LojaLib.js">&lt;/script>
+</span></p>
+
+<p><span>3)</span> Arquivo <b>Rodape.htm</b></p>
+
+<p>Segue código que deverá ser inserido dentro do arquivo <b>Rodape.htm</b>:</p>
+
+<p><span>
+<pre>&lt;script> 
+//Personalização dos botões no carrinho
+if(sPag.indexOf("ADDPRODUTO.ASP")>=0 || sPag.indexOf("ADDMULT.ASP")>=0){
+&nbsp;&nbsp;ExibeBotoesCesta(true);
+}
+&lt;/script></pre>
+</span></p>
+
+<p>Caso queira exibir apenas a segunda linha de botões que fica na parte inferior, altere de <span>ExibeBotoesCesta(<b>true</b>);</span> para <span>ExibeBotoesCesta(<b>false</b>);</span></p>
+
+
+<p><span>4)</span> Imagens dos botões</p>
+
+<p>Este recurso utiliza 3 imagens na parte superior e as mesmas 3 imagens na parte inferior da cesta. Devem existir na pasta IMAGES do gerenciador de arquivos as seguintes imagens:</p><ul>
+<li>BotContComprando.png</li>
+<li>BotRecalcular.png</li>
+<li>BotComprar.png</li>
+</ul>Veja abaixo exemplos destes botões:
+
+<img src="ModelosLoja/001/images/BotContComprando.png" hspace="10"><img src="ModelosLoja/001/images/BotRecalcular.png" hspace="10"><img src="ModelosLoja/001/images/BotComprar.png" hspace="10">
+
+<p>Caso queira utilizá-los, clique com o botão direito do mouse sobre os botões acima para baixá-los e envie os arquivos para a pasta IMAGES da loja.</p>

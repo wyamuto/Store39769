@@ -1,0 +1,69 @@
+<p>Mais informações sobre as tags visite:</p>
+<p><a href='JavaScript:Ajuda("https://www.rumo.com.br/sistema/adm/TagsEspeciaisProdutosOut.htm")'>https://www.rumo.com.br/sistema/adm/TagsEspeciaisProdutosOut.htm</a></p>
+
+<p>Veja outros modelos prontos de OUT</p>
+<p><a href="http://www.rumo.com.br/lojas/00000358/htm/InicioOuts.htm" target="_blank">http://www.rumo.com.br/lojas/00000358/htm/InicioOuts.htm</a></p>
+
+<p>Código exemplo do arquivo <b>EstiloProdutoOut</b>:</p>
+
+<!-- Inicio do Antigo Frame FC6303Estout.htm-->
+<pre>
+<span>
+<span>&lt;p1&gt;</span>
+&lt;table id="Table_01" width="175" height="294" border="0" cellpadding="0" cellspacing="0"&gt;
+&lt;tr&gt;
+&lt;td colspan="3" background="../lojas/00000276/images/TabListaProd_01.gif" width="175" height="34" align=center&gt;&lt;a href=ListaProdutos.asp?IDLoja=&lt;IDLoja&gt;&IDProduto=&lt;IDProduto&gt; class=EstNomeProdLista&gt;<span>&lt;NomeProd&gt;</span>&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td rowspan="2"&gt;
+&lt;img src="../lojas/00000276/images/TabListaProd_02.gif" width="5" height="260" alt=""&gt;&lt;/td&gt;
+&lt;td width="161" height="249" bgcolor=white align=center&gt;
+&lt;table&gt;
+  &lt;tr&gt;&lt;td align=center&gt;&lt;a href=listaprodutos.asp?IDLoja=&lt;IDloja&gt;&IDProduto=&lt;IDProduto&gt;&gt;<span>&lt;ImagemProd&gt;</span>&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td align=center height=35 class=EstPrecoProdLista&gt;<span>&lt;PrecoSimples&gt;</span> &lt;script&gt;MostraMaxParcela(&lt;PrecoNum&gt;,&lt;MaxParcelasProdNum&gt;);&lt;/script&gt;&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td align=center&gt;<span>&lt;LinkDet&gt;</span>&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/td&gt;
+&lt;td rowspan="2"&gt;
+&lt;img src="../lojas/00000276/images/TabListaProd_04.gif" width="9" height="260" alt=""&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;img src="../lojas/00000276/images/TabListaProd_05.gif" width="161" height="11" alt=""&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+<span>&lt;/p1&gt;</span>
+</span>
+</pre>
+<!-- Fim do Antigo Frame-->
+
+<p>O código html do layout <b>"p1"</b> fica entre as tags <b>&lt;p1&gt;</b> e <b>&lt;/p1&gt;</b>.</p>
+
+<p>Para utilizá-los nos demais arquivos HTM da loja, utilize a tag <b>&lt;prod&gt;</b> com a cláusula out=<b>pn</b>, onde n é 1.</p>
+
+<p><b>Exemplo:</b></p>
+<p><span>&lt;prod out="p1" em="prom"&gt;</span></p>
+
+<p>Segue conteúdo do arquivo <b>home.htm</b>:</p>
+
+<pre>&lt;table width=100%&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;prod out="<span>p1</span>" em="rand"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;prod out="<span>p1</span>" em="rand"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;prod out="<span>p1</span>" em="rand"&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;prod out="<span>p1</span>" em="rand"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;prod out="<span>p1</span>" em="rand"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;prod out="<span>p1</span>" em="rand"&gt;&lt;/td&gt;
+&lt;/tr&gt;
+<&lt;/table&gt;<pre>
+
+<p>Veja como este layout vai ficar na loja:</p>
+
+<center><img src="/lojas/00028496/images/FC6303.png"></center>
+
+<p><b>Obs:</b> Sub-produtos não são incluídos nas tags &lt;prod&gt;.</p>
+
+<!--AJUDAINIC-->
+<!--2007A09M03D-->

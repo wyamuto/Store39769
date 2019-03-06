@@ -1,0 +1,31 @@
+<style>
+.courrierpeq {font-size:8pt;font-family:courier new,tahoma,verdana;color:#0D6D9E;}
+.destpeq {font-size:8pt;font-family:tahoma,verdana;color:#990000;font-weight:bold;}
+</style>
+
+<pre>
+<span class=courrierpeq>
+&lt;script&gt;
+var sPag=document.location.href.toUpperCase();
+
+if(sPag.indexOf("<span class=destpeq>TESTAR</span>")&lt;0){
+document.location.href='&lt;BaseLoja&gt;htm/<span class=destpeq>aviso.htm</span>';
+}
+&lt;/script&gt;
+</span>
+</pre>
+<br>
+
+<p>Em seguida, envie o arquivo <span class="dest"><b>aviso.htm</b></span> para a página HTM. Este arquivo será exibido aos visitantes que acessarem a loja sem o parâmetro <b>&testar=1</b> na URL.</p>
+
+<p>Acesso normal (com aviso):</p>
+<b>www.sualoja.com.br</b>
+<br><br>
+
+<p>Acesso para teste (sem aviso):</p>
+<pre><b>http://<span class="dest">minhaloja</span>.lojavirtualfc.com.br/home.asp?IDLoja=9999&<span class="dest">testar=1</span></b></pre>
+
+<ul><li>Altere idloja=<span class="dest">99999</span> para o ID real da loja. Exemplo: idloja=<b>154</b></li><li>Altere <span class="dest">minhaloja</span> de acordo com o campo <b>Endereço Internet</b> em <b>Navegação</b> da página <b>Dados da loja</b> do site administrativo</li></ul>
+
+<!--AJUDAINIC-->
+<!--2007A09M03D-->

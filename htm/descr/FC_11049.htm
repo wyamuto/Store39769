@@ -1,0 +1,44 @@
+<p>Para dar maior visibilidade ao botão continuar na página de pedido confirmado, posicione o botão <b>Continuar</b> no topo da página. Para fazer isto, adicione o código abaixo no arquivo <b>ConfirmacaoPedido.htm</b>. Se este arquivo não existir na pasta <b>HTM</b> crie um novo e envie para a pasta.</p>
+
+<style>
+.courrierpeq {font-size:9pt;font-family:courier new,tahoma,verdana;color:#0D6D9E;}
+.destpeq {font-size:9pt;font-family:tahoma,verdana;color:#990000;font-weight:bold;}
+</style>
+<pre><span class="courrierpeq"> &lt;style>
+#idTxtPedConfirmadoFC{height:30px;padding:10px;background-color:#007dd4;color:#fcfcfc;font-size:14pt;}
+#idDadosPagtoFC{font-size:9pt;}
+#EstNomePagto{color:#555555;font-size:11pt;font-weight:bold;}
+.idTxtPrintFC{display:none;}
+.EstPassosCompra{display:none;}
+&lt;/style>
+
+&lt;script>
+var iFormaPagto="&lt;IDFormaPagamento>";
+
+if(iFormaPagto=="3"){ //Cartão de crédito
+  var sFormaPagto="&lt;FormaPagamento> (&lt;TipoCartao>)"
+  setTimeout("document.getElementById('idDadosPagtoTitFC').innerHTML='&lt;td class=EstTabTopo colspan=2 align=center>Forma de pagamento&lt;/td>';",1); //Altera titulo da parte inferior dos dados para pagamento
+  }
+  else{
+  var sFormaPagto="&lt;FormaPagamento>"
+  setTimeout("document.getElementById('idDadosPagtoTitFC').style.display='none';",1); //Altera titulo da parte inferior dos dados para pagamento
+}
+
+var sDadosPagto="&lt;br>&lt;br>&lt;table width=97% align=center class=EstTabPedido>&lt;tr height=25>&lt;td class=EstTabPedidoTit align=center>Dados para pagamento&lt;/td>&lt;/tr>&lt;tr>&lt;td align=center>&lt;br>&lt;span id=EstNomePagto>"+ sFormaPagto +"&lt;/span>&lt;br>&lt;br>"+document.getElementById('idDadosPagtoFC').innerHTML+"&lt;/td>&lt;/tr>&lt;/table>"; //Instruções e botão para pagamento
+var sBannerEbit="&lt;br>";  //Banner do e-bit
+
+setTimeout("document.getElementById('idTopoConfirmacaoFC').innerHTML=sDadosPagto+sBannerEbit+'&lt;br>&lt;br>&lt;span class=Titulos>Informações do seu pedido:&lt;/span>';",1);  //Insere no topo da página de pedido confirmado as instruções para pagamento + banner do ebit
+setTimeout("document.getElementById('idDadosPagtoFC').innerHTML='';",1); //Remove da parte inferior os dados para pagamento
+&lt;/script></span></pre>
+<br>
+
+<p>Sugerimos que personalize os estilos dos botões <b>Continuar</b> na confirmação do pedido. Veja como no artigo <a href="http://ajuda.Fastcommerce.com.br/n6549" target="_blank">FC 6549</a></p>
+
+<p>Veja exemplo desta personalização realizando um pedido teste com cartão VISA na seguinte loja de testes <a href="http://spdepartamentos.lojavirtualfc.com.br" target=_blank>http://spdepartamentos.lojavirtualfc.com.br</a>)</p>
+
+<p><a href="https://www.rumo.com.br/sistema/adm/CodigoFonte.asp?path=/lojas/00000184/htm/&arq=ConfirmacaoPedido.htm" target="_blank">Clique aqui</a> para ver exemplo do arquivo <b>ConfirmacaoPedido.htm</b> desta loja.</p>
+
+<hr>
+<p><b>Obs¹:</b> Para a criação deste artigo, foram utilizadas as tags especiais para o arquivo <b>ConfirmacaoPedido.htm</b>. <a href="https://www.rumo.com.br/sistema/adm/FrameGenericoAdm.asp?Pag=TagsEspeciaisConfirmacaoPedido.htm" target="_blank">Clique aqui</a> para ver a lista de tags especiais que podem ser utilizadas neste arquivo.</p>
+
+<!--NewsPagtoFC-->

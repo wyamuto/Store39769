@@ -1,0 +1,278 @@
+<p>Veja exemplo deste recurso na página abaixo, passando o ponteiro do mouse sobre a imagem do produto:</p>
+<p><a href="http://www.rumo.com.br/hightechstore/home+theater+7.2/prod.htm" target="_blank">http://www.rumo.com.br/hightechstore/home+theater+7.2/prod.htm</a></p>
+
+
+<p><span>1º Passo</span></p>
+<p>Inclua o código abaixo ao final do arquivo <b>BarraTopo.htm</b>:</p>
+<div><pre>&lt;script language<i>="JavaScript"</i> <b>src</b><i>="../sistema/magiczoom.js"</i>>&lt;/script></pre></div>
+<p><span>2º Passo</span></p>
+<p>Ao final do arquivo <b>LojaSite.css</b>, adicione as seguintes classes:</p>
+<p><span><pre>
+/* Zoom IMG Detalhe */ 
+.MagicZoom img {border: 0 !important;padding: 0 !important;margin: 0 !important;}
+.MagicZoomBigImageCont {border: 1px solid #999;}
+.MagicZoomHeader {font-size: 8pt !important;line-height: normal !important;color: #fff;background: #666;text-align: center !important;}
+.MagicZoomPup {border: 1px solid #aaa;background: #fff;cursor: move;}
+.MagicZoomLoading {border: 1px solid #ccc;background: #fff url(../images/ajax-loader.gif) no-repeat 2px 50%;padding: 4px 4px 4px 24px !important;margin: 0;text-decoration: none;text-align: left;font-size: 8pt;font-family: sans-serif;color: #444;}</pre></span></p>
+ 
+<p><span>3º Passo</span></p>
+<p>No arquivo <b>EstiloProduto.htm</b>, altere a tag <b>&lt;ImagemProd></b>  que está entre as tags <b>&lt;ProdDet>.....&lt;/ProdDet></b> para um dos exemplos abaixo, que oferecem diversas variações de uso:</p>
+
+<p><b>Obs:</b> Este recurso só funcionará se for cadastrada as 3 imagens do produto (Principal, Detalhada e Ampliada)</p>
+
+<!-- Inicio do Antigo Frame FC11003.htm-->
+<table width="100%">
+  <!-- Exemplo 1 -->
+  <tr>
+    <td>
+      <b><u>Exemplo 1</u></b> (Sem personalização)
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <br>Altere a tag <b>&lt;ImagemProd></b> para:<div><pre><h1>&lt;a href<i>="&lt;ImagemProdAmp>"</i> title<i>="&lt;CodProd>"</i> class<i>="MagicZoom"</i>>&lt;img src<i>="&lt;ImagemProdDet>"</i>/>&lt;/a></h1></pre></div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Veja recurso em funcionamento ao passar o cursor do mouse por cima da imagem:<br>
+      <a href="http://www.rumo.com.br/lojas/00000009/prod/ImagemAmpliada.jpg" title="Super Máquina" class="MagicZoom"><img src="https://www.rumo.com.br/lojas/00000009/prod/ImagemDetalhe.jpg"/></a>
+    </td>
+  </tr>
+  <!-- Exemplo 2 -->
+  <tr>
+    <td>
+      <br><br><br><br>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <b><u>Exemplo 2</u></b> (Personalização da largura e altura de exibição do Zoom)
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <br>Altere a tag <b>&lt;ImagemProd></b> para:<div><pre><h1>&lt;a href<i>="&lt;ImagemProdAmp>"</i> rel<i>="zoom-width:<b>400px</b>;zoom-height:<b>170px;</b>"</i> class<i>="MagicZoom"</i>>&lt;img src<i>="&lt;ImagemProdDet>"</i>/>&lt;/a></h1></pre></div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Veja recurso em funcionamento ao passar o cursor do mouse por cima da imagem:<br>
+      <a href="http://www.rumo.com.br/lojas/00000009/prod/ImagemAmpliada.jpg" rel="zoom-width:400px;zoom-height:170px;" class="MagicZoom"><img src="https://www.rumo.com.br/lojas/00000009/prod/ImagemDetalhe.jpg"/></a>
+    </td>
+  </tr>
+  <!-- Exemplo 3 -->
+  <tr>
+    <td>
+      <br><br><br><br>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <b><u>Exemplo 3</u></b> (Personalização da posição do Zoom)
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <br>Altere a tag <b>&lt;ImagemProd></b> para:<div><pre><h1>&lt;a href<i>="&lt;ImagemProdAmp>"</i> rel<i>="zoom-position:inner;zoom-fade: true"</i> class<i>="MagicZoom"</i>>&lt;img src<i>="&lt;ImagemProdDet>"</i>/>&lt;/a></h1></pre></div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <b><i>Exibir o Zoom dentro da própria imagem</i></b> - Veja recurso em funcionamento ao passar o cursor do mouse por cima da imagem:<br>
+      <a href="http://www.rumo.com.br/lojas/00000009/prod/ImagemAmpliada.jpg" rel="zoom-position:inner;zoom-fade: true" class="MagicZoom"><img src="https://www.rumo.com.br/lojas/00000009/prod/ImagemDetalhe.jpg"/></a>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <br><br><br><br>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <br>Altere a tag <b>&lt;ImagemProd></b> para:<div><pre><h1>&lt;a href<i>="&lt;ImagemProdAmp>"</i> rel<i>="zoom-position:bottom;zoom-height:170px;"</i> class<i>="MagicZoom"</i>>&lt;img src<i>="&lt;ImagemProdDet>"</i>/>&lt;/a></h1></pre></div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <b><i>Exibir o Zoom abaixo da imagem</i></b> - Veja recurso em funcionamento ao passar o cursor do mouse por cima da imagem:<br>
+      <a href="http://www.rumo.com.br/lojas/00000009/prod/ImagemAmpliada.jpg" class="MagicZoom" rel="zoom-position:bottom;zoom-height:170px;"><img src="https://www.rumo.com.br/lojas/00000009/prod/ImagemDetalhe.jpg"/></a>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <br><br><br><br>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <br>Altere a tag <b>&lt;ImagemProd></b> para:<div><pre><h1>&lt;a href<i>="&lt;ImagemProdAmp>"</i> rel<i>="zoom-position:top;zoom-height:170px;"</i> class<i>="MagicZoom"</i>>&lt;img src<i>="&lt;ImagemProdDet>"</i>/>&lt;/a></h1></pre></div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <b><i>Exibir o Zoom acima da imagem</i></b> - Veja recurso em funcionamento ao passar o cursor do mouse por cima da imagem:<br>
+      <a href="http://www.rumo.com.br/lojas/00000009/prod/ImagemAmpliada.jpg" class="MagicZoom" rel="zoom-position:top;zoom-height:170px;"><img src="https://www.rumo.com.br/lojas/00000009/prod/ImagemDetalhe.jpg"/></a>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <br><br><br><br>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <br>Altere a tag <b>&lt;ImagemProd></b> para:<div><pre><h1>&lt;a href<i>="&lt;ImagemProdAmp>"</i> rel<i>="zoom-position:left;zoom-height:170px;"</i> class<i>="MagicZoom"</i>>&lt;img src<i>="&lt;ImagemProdDet>"</i>/>&lt;/a></h1></pre></div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <b><i>Exibir o Zoom ao lado esquerdo da imagem</i></b> - Veja recurso em funcionamento ao passar o cursor do mouse por cima da imagem:<br>
+      <center>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.rumo.com.br/lojas/00000009/prod/ImagemAmpliada.jpg" class="MagicZoom" rel="zoom-position:left;zoom-height:170px;"><img src="https://www.rumo.com.br/lojas/00000009/prod/ImagemDetalhe.jpg"/></a></center>
+    </td>
+  </tr>
+  <!-- Exemplo 4 -->
+  <tr>
+    <td>
+      <br><br><br><br>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <b><u>Exemplo 4</u></b> (Efeito aparecer e desaparecer)
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <br>Altere a tag <b>&lt;ImagemProd></b> para:<div><pre><h1>&lt;a href<i>="&lt;ImagemProdAmp>"</i> rel<i>="zoom-fade:true; smoothing-speed:17"</i> class<i>="MagicZoom"</i>>&lt;img src<i>="&lt;ImagemProdDet>"</i>/>&lt;/a></h1></pre></div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Veja recurso em funcionamento ao passar o cursor do mouse por cima da imagem:<br>
+      <a href="http://www.rumo.com.br/lojas/00000009/prod/ImagemAmpliada.jpg" rel="zoom-fade:true; smoothing-speed:17" class="MagicZoom"><img src="https://www.rumo.com.br/lojas/00000009/prod/ImagemDetalhe.jpg"/></a>
+    </td>
+  </tr>
+  <!-- Exemplo 5 -->
+  <tr>
+    <td>
+      <br><br><br><br>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <b><u>Exemplo 5</u></b> (Opções de opacidade)
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <br>Altere a tag <b>&lt;ImagemProd></b> para:<div><pre><h1>&lt;a href<i>="&lt;ImagemProdAmp>"</i> rel<i>="opacity:25; zoom-height:170;"</i> class<i>="MagicZoom"</i>>&lt;img src<i>="&lt;ImagemProdDet>"</i>/>&lt;/a></h1></pre></div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <b><i>Opacidade 25%</i></b> - Veja recurso em funcionamento ao passar o cursor do mouse por cima da imagem:<br>
+      <a href="http://www.rumo.com.br/lojas/00000009/prod/ImagemAmpliada.jpg" rel="opacity:25; zoom-height:170;" class="MagicZoom"><img src="https://www.rumo.com.br/lojas/00000009/prod/ImagemDetalhe.jpg"/></a>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <br><br><br><br>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <br>Altere a tag <b>&lt;ImagemProd></b> para:<div><pre><h1>&lt;a href<i>="&lt;ImagemProdAmp>"</i> rel<i>="opacity-reverse:true; zoom-height:170;"</i> class<i>="MagicZoom"</i>>&lt;img src<i>="&lt;ImagemProdDet>"</i>/>&lt;/a></h1></pre></div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <b><i>Opacidade inversa</i></b> - Veja recurso em funcionamento ao passar o cursor do mouse por cima da imagem:<br>
+      <a href="http://www.rumo.com.br/lojas/00000009/prod/ImagemAmpliada.jpg" class="MagicZoom" rel="opacity-reverse:true; zoom-height:170;"><img src="https://www.rumo.com.br/lojas/00000009/prod/ImagemDetalhe.jpg"/></a>
+    </td>
+  </tr>
+  <!-- Exemplo 6 -->
+  <tr>
+    <td>
+      <br><br><br><br>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <b><u>Exemplo 6</u></b> (Apresentar imagem inteira)
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <br>Altere a tag <b>&lt;ImagemProd></b> para:<div><pre><h1>&lt;a href<i>="&lt;ImagemProdAmp>"</i> rel<i>="entire-image: true; zoom-fade: true; show-title: false"</i> class<i>="MagicZoom"</i>><br>&lt;img src<i>="&lt;ImagemProdDet>"</i>/><br>&lt;/a></h1></pre></div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Veja recurso em funcionamento ao passar o cursor do mouse por cima da imagem:<br>
+      <a href="http://www.rumo.com.br/lojas/00000009/prod/ImagemAmpliada.jpg" rel="entire-image: true; zoom-fade: true; show-title: false" class="MagicZoom"><img src="https://www.rumo.com.br/lojas/00000009/prod/ImagemDetalhe.jpg"/></a>
+    </td>
+  </tr>
+  <!-- Exemplo 7 -->
+  <tr>
+    <td>
+      <br><br><br><br>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <b><u>Exemplo 7</u></b> (Clique e arraste)
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <br>Altere a tag <b>&lt;ImagemProd></b> para:<div><pre><h1>&lt;a href<i>="&lt;ImagemProdAmp>"</i> rel<i>="drag-mode:true; move-on-click: true; zoom-height: 170px; x: 250; y: 120"</i> class<i>="MagicZoom"</i>><br>&lt;img src<i>="&lt;ImagemProdDet>"</i>/><br>&lt;/a></h1></pre></div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Veja recurso em funcionamento ao clicar e arrastar o cursor do mouse por cima da imagem:<br>
+      <a href="http://www.rumo.com.br/lojas/00000009/prod/ImagemAmpliada.jpg" rel="drag-mode:true; move-on-click: true; zoom-height: 170px; x: 250; y: 120" class="MagicZoom"><img src="https://www.rumo.com.br/lojas/00000009/prod/ImagemDetalhe.jpg"/></a>
+    </td>
+  </tr>
+  <!-- Exemplo 8 -->
+  <tr>
+    <td>
+      <br><br><br><br>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <b><u>Exemplo 8</u></b> (Ativar / Inicializar)
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <br>Altere a tag <b>&lt;ImagemProd></b> para:<div><pre><h1>&lt;a href<i>="&lt;ImagemProdAmp>"</i> rel<i>="click-to-activate:true"</i> class<i>="MagicZoom"</i>>&lt;img src<i>="&lt;ImagemProdDet>"</i>/>&lt;/a></h1></pre></div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <b><i>Ativar o Zoom</i></b> - Veja recurso em funcionamento ao clicar e arrastar o cursor do mouse por cima da imagem:<br>
+      <a href="http://www.rumo.com.br/lojas/00000009/prod/ImagemAmpliada.jpg" rel="click-to-activate:true" class="MagicZoom"><img src="https://www.rumo.com.br/lojas/00000009/prod/ImagemDetalhe.jpg"/></a>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <br><br><br><br>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <br>Altere a tag <b>&lt;ImagemProd></b> para:<div><pre><h1>&lt;a href<i>="&lt;ImagemProdAmp>"</i> rel<i>="click-to-initialize:true"</i> class<i>="MagicZoom"</i>>&lt;img src<i>="&lt;ImagemProdDet>"</i>/>&lt;/a></h1></pre></div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <b><i>Inicializar o Zoom</i></b> - Veja recurso em funcionamento ao clicar e arrastar o cursor do mouse por cima da imagem:<br>
+      <a href="http://www.rumo.com.br/lojas/00000009/prod/ImagemAmpliada.jpg" class="MagicZoom" rel="click-to-initialize:true"><img src="https://www.rumo.com.br/lojas/00000009/prod/ImagemDetalhe.jpg"/></a>
+    </td>
+  </tr>
+</table>
+<!-- Fim do Antigo Frame-->
+<!--NewsDesignFC-->

@@ -1,0 +1,36 @@
+<p>Para habilitar este recurso, acesse <b>Dados da loja</b> > <b>Produtos</b> e marque o campo <b>Lista de desejos</b>.</p>
+
+<p>Para que o botão <b>Adicionar na lista de desejos</b> seja exibido no produto, os arquivos de design da loja devem estar preparados para exibir este botão.</p>
+
+<br><br><p>Existem duas opções de implementar este recurso:</p>
+
+<br><br><p><span class="dest NewsPassos">1ª Opção</span></p>
+
+<p><h3>Utilizando a tag especial &lt;WishList></h3></p>
+
+<p>Esta opção é recomendada para quem deseja que o cliente insira apenas os produtos principais na lista de desejos e não os subprodutos (<i>variações da grade</i>) e para lojas que não tenham produtos com variações.</p>
+
+<p>Primeiramente, insira a seguinte linha no arquivo <b>LojaLib.js</b>:</p>
+
+<pre>var bBuyWishlist=false;</pre>
+
+<p>A linha acima desativa o botão comprar direto na lista de desejos. Para comprar, o cliente deverá clicar em <i>mais detalhes</i> para ver o produto e escolher a variação desejada.</p>
+
+<p><b>1.1</b> Para inserir na lista e no detalhe de produtos, altere o arquivo <b><a href="/adm/tagsespeciaisprodutos.htm" target="_blank">EstiloProduto.htm</a></b></p>
+
+<p>Para inserir na lista, a tag &lt;WishList> deve estar dentro de <code>&lt;ProdLista>...&lt;/ProdLista></code>.</p>
+
+<p>Para inserir no detalhe, a tag &lt;WishList> deve ser inserida dentro de <code>&lt;ProdDet>...&lt;/ProdDet></code>.</p>
+
+<p><b>1.2</b> Para inserir no layout de produtos da home o arquivo é o <b><a href="/adm/tagsespeciaisprodutosOut.htm" target="_blank">EstiloProdutoOut.htm</a></b></p>
+
+<p>A tag &lt;WishList> deve ser inserida dentro do layout desejado. Exemplo: <code>&lt;p255>...&lt;WishList>......&lt;/p255></code></p>
+
+
+<br><br><p><span class="dest NewsPassos">2ª Opção</span></p>
+
+<p><h3>Lista da desejos na grade de produtos</h3></p>
+
+<p>Esta opção é recomendada para quem deseja que o cliente escolha variações dos produtos na lista de desejos. Neste caso, o cliente pode comprar o produto posteriormente direto da lista de desejos.</p>
+
+<p>A implementação via alteração de grade não tem um passo a passo, pois depende do tipo de grade que a loja utiliza. Para este tipo de implementação o arquivo javascript que exibe a grade deve ser alterado. Para mais informações, entre em contato com nossa equipe de suporte.</p>

@@ -1,0 +1,117 @@
+<style>
+.imgbordercolor{border:1px solid #eeeeee;margin-top:15px;margin-bottom:15px;}
+</style>
+<p>Para adicionar um produto na lista de desejos, basta clicar no botão <b>Adicionar na lista de desejos</b>:</p>
+
+<p><img src="/lojas/00000009/prod/fc/fc15050a.jpg" class="img-responsive imgbordercolor"></a></p>
+
+<p>Após adicionar o produto na lista na lista de desejos, o botão de adição será apresentado da seguinte forma:</p>
+
+<p><img src="/lojas/00000009/prod/fc/fc15050b.jpg" class="img-responsive imgbordercolor"></a></p>
+
+<p><b>ATENÇÃO:</b> Para configurar a lista de desejos , siga os passos <a href="/como-configurar-a-lista-de-desejos">deste artigo</a>.
+
+<p>É possível personalizar estes botões da seguinte forma:</p>
+
+<p>Para trocar o formato do botão, insira no arquivo <b>lojalib.js</b> da pasta HTM do gerenciador de arquivos a variável <b><i>iModWishlist</i></b> com valor <b>1</b> ou <b>2</b>:</p>
+
+<pre>var iModWishlist=1;</pre>
+
+<p><img src="/lojas/00000009/prod/fc/fc15050c.jpg" class="img-responsive imgbordercolor"></a></p>
+
+<p><img src="/lojas/00000009/prod/fc/fc15050d.jpg" class="img-responsive imgbordercolor"></a></p>
+
+<pre>var iModWishlist=2;</pre>
+
+<p><img src="/lojas/00000009/prod/fc/fc15050e.jpg" class="img-responsive imgbordercolor"></a></p>
+
+<p><img src="/lojas/00000009/prod/fc/fc15050f.jpg" class="img-responsive imgbordercolor"></a></p>
+
+<p><hr></p>
+
+<p>Para criar um design personalizado, uma função com o nome <b>FuncButtonAddToWL</b> deverá ser inserida no arquivo <b>lojalib.js</b> da pasta <b>HTM</b> do gerenciador de arquivos:</p>
+
+<pre>function FuncButtonAddToWL(idp,bAdd){
+  var sCont="";
+  if(bAdd==true)sCont="&lt;a title='Produto adicionado na lista de desejos. Clique aqui para ir para a lista de desejos.' href=\"/account.asp?idloja="+ FC$.IDLoja +"&wishlist=1#Wishlist\">&lt;img src='"+ FC$.PathImg +"wishlist_on.png'>&lt;/a>";
+  else sCont="&lt;a href=\"#wl\" title='Clique aqui para adicionar o produto a lista de desejos' onclick=\"WL$.fnAddToWishlist("+idp+")\" rel=\"nofollow\">&lt;img src='"+ FC$.PathImg +"wishlist_off.png'>&lt;/a>";
+  return sCont;
+}</pre>
+
+<p><hr></p>
+
+<p>Para alterar o botão exibido na home da loja e na lista de produtos:</p>
+
+<pre>function FuncButtonAddToWL(idp,bAdd){
+  var sCont="";
+  var bProdDet=(document.body.className.search("ProductDet")>0);
+  if(bProdDet){
+    if(bAdd==true)sCont="&lt;div class=\"FCBtnDesejosLista\">&lt;a title='Produto adicionado na lista de desejos. Clique aqui para ir para a lista.' href=\"/account.asp?idloja="+ FC$.IDLoja +"&wishlist=1#Wishlist\">&lt;img src='"+ FC$.PathImg +"botdesejosdet_on.svg'>&lt;/a>&lt;/div>";
+    else sCont="&lt;div class=\"FCBtnDesejosLista\">&lt;a href=\"#wl\" title='Adicione este produto a lista de desejos' onclick=\"WL$.fnAddToWishlist("+idp+")\" rel=\"nofollow\">&lt;img src='"+ FC$.PathImg +"botdesejosdet_off.svg'>&lt;/a>&lt;/div>";
+  }
+  else{
+    if(bAdd==true)sCont="&lt;a title='Produto adicionado na lista de desejos. Clique aqui para ir para a lista.' href=\"/account.asp?idloja="+ FC$.IDLoja +"&wishlist=1#Wishlist\">&lt;img src='"+ FC$.PathImg +"botdesejoslista_on.svg'>&lt;/a>";
+    else sCont="&lt;a href=\"#wl\" title='Adicione este produto a lista de desejos' onclick=\"WL$.fnAddToWishlist("+idp+")\" rel=\"nofollow\">&lt;img src='"+ FC$.PathImg +"botdesejoslista_off.svg'>&lt;/a>";
+  }
+  return sCont;
+}</pre>
+
+<p><hr></p>
+
+<h3>Lista de variáveis de configuração para colocar no arquivo <b>lojalib.js</b>:</h3>
+
+<pre>FC$.Wishlist=0;</pre>
+
+<p>Desativa a exibição do botão para adicionar na lista de desejos dentro do script da grade de produtos. Útil para quando a loja for utilizar a tag <b>&lt;wishlist></b> para inserir o botão no produto principal através dos arquivos EstiloProduto.htm (lista e detalhe do produto) e EstiloProdutoOut.htm (capa).</p>
+
+<pre>var bUseLinkToSubWishlist=true;</pre>
+
+<p>O default é que o link que existe no produto na lista de desejos vá para o produto principal. Caso a loja defina esta variável como true, o link irá direto para o subproduto, caso seja um subproduto e a loja tenha URL personalizada cadastrada em todos os subprodutos.</p>
+
+<pre>var bBuyWishlist=false;</pre>
+
+<p>O default na lista de desejos é exibir o botão "Comprar". Caso a loja não queira exibir o botão Comprar na lista de desejos, colocar como false.<br><br>É útil por exemplo para lojas que não queiram que o cliente coloque subprodutos na lista de desejos, deixando colocar apenas produtos principais. Neste caso, pode usar a tag <b>&lt;wishlist></b> em produtos na capa da loja, na lista e no detalhe, sempre colocando no produto principal. Dessa forma não haverá o botão Comprar na lista de desejos. O cliente clicará em "+ detalhes" para comprar um dos subprodutos disponíveis.<p>
+
+<p><hr></p>
+
+<h3>Personalizar a lista de desejos</h3>
+
+<p>É possível personalizar a página onde são listados os produtos na lista de desejos que o cliente ve em "Minha conta" e também a página em que são listados os produtos quando compartilhado por link (<i>página wishlist.asp</i>)</p>
+
+<p>Para personalizar, uma função com o nome <b>FuncWishlist</b> deverá ser criada na loja:</p>
+
+<pre>function FuncWishlist(){
+  FCLib$.onReady(FuncWishlistStore$.fnMain());
+}
+
+var FuncWishlistStore$=(function(){
+ ... aqui vai toda a programação personalizada...
+}</pre>
+
+<p><a href="/dnload/WishlistStore.zip">Clique aqui</a> para baixar um exemplo do arquivo <b>WishlistStore.js</b></p>
+
+<p><hr></p>
+
+<h3>Opção de colocar produtos da lista de desejos no design da loja</h3>
+
+<p>É possível também exibir os produtos que estão na lista de desejos do cliente logado no design da loja, recomendando estes produtos para ele.</p>
+
+<p><b>Exemplo:</b></p>
+
+<p>Dentro de <b>fnFooter()</b> coloque a seguinte linha abaixo da linha <b>sF$.fnLoadXMLPageHistory();</b>:</p>
+
+<pre>if(FC$.ClientID>0)MyWL$.fnLoadWL(); //exemplo de como inserir os produtos da lista de desejos no design da loja</pre>
+
+<p>Neste exemplo os produtos serão exibidos no rodapé da loja (<i>arquivo Rodape.htm</i>). Crie um design e coloque o id <b>idWishlist</b> que é onde será exibido os produtos da lista de desejos:</p>
+
+<pre>&lt;!-- Begin: Wishlist-->
+&lt;div class="MainContainer">
+  &lt;div class="row">
+    &lt;div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12 text-center">
+      &lt;div id="idWishlist">&lt;/div>
+    &lt;/div>
+  &lt;/div>
+&lt;/div>
+&lt;!-- End: wishlist --></pre>
+
+<p>Em <b>lojalib.js</b> coloque o script do arquivo <a href="/dnload/MyWL.zip">MyWL.js</a></p>

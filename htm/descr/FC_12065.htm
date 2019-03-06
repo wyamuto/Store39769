@@ -1,0 +1,30 @@
+<p>É possível exibir um ícone informando que seu frete é gratuito:</p>
+
+<p><center><img src="/lojas/00000009/images/FreteGratisFCa.jpg" border="1" class="img-responsive"></center>
+<br>
+
+<p><b>Segue o passo-a-passo:</b></p>
+
+<p><span class="dest NewsPassos">1º passo:</span></p>
+<p>Insira a função abaixo no final do arquivo <b>LojaLib.js</b>:</p>
+<pre><span>function MostraFreteGratis(iPeso){
+&nbsp;&nbsp;iPeso=parseFloat(iPeso.replace(",","."));
+&nbsp;&nbsp;if(iPeso==0)document.write("&lt;img src='"+FC$.PathImg+"btfretegratis.gif'>");
+}</span></pre>
+<br>
+
+<p><span class="dest NewsPassos">2º passo:</span></p>
+<p>Crie uma imagem com o nome <b>BtFreteGratis.gif</b> e envie para a pasta <b>images</b>.</p>
+
+<p>Segue exemplo da imagem utilizada neste artigo:</p>
+
+<p><img src="/lojas/00000009/images/BtFreteGratis.gif" class="img-responsive"></p>
+<br>
+
+<p><span class="dest NewsPassos">3º passo:</span></p>
+<p>Para esta imagem aparecer na página principal da loja, o código abaixo deve ser adicionado no arquivo <b>EstiloProdutoOut.htm</b>. Para a imagem aparecer na lista de produtos, o arquivo é <b>EstiloProduto.htm</b>.</p>
+
+<pre><span>&lt;script>MostraFreteGratis("&lt;PesoNum>");&lt;/script></span></pre>
+<br>
+
+<p><b class="dest">ATENÇÃO:</b> Para utilizar este recurso, marque a opção de <b>Frete gratuito para peso zero</b> na página "Envio & frete" do site administrativo. Em seguida, informe peso zero na ficha de cada produto que terá frete gratuito. Certifique-se também de que o campo <b>Exibe peso</b> que fica na página "Dados da loja" esteja marcado.</p>

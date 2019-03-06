@@ -1,0 +1,19 @@
+<style>
+.courrierpeq {font-size:8pt;font-family:courier new,tahoma,verdana;color:#0D6D9E;}
+.destpeq {font-size:8pt;font-family:tahoma,verdana;color:#990000;font-weight:bold;}
+</style>
+
+<pre>&lt;script&gt;
+function MostraChatLoja()
+  {
+  popup=window.open("http://www.rumo.com.br/sistema/ChatLogin.asp?IDLoja=&lt;IDLoja&gt;","Chat","top=20,left=20,height=280,width=390,scrollbars=no,resizable=yes");
+  popup.focus();
+  return void(0);
+  }
+&lt;/script&gt;
+
+&lt;a href='javascript:MostraChatLoja()'&gt;&lt;img src="&lt;BaseLoja&gt;images/ImagemAtendimento.gif" border=0&gt;&lt;/a&gt;</pre>
+
+<p>Para que este exemplo funcione, será necessário enviar a imagem <b>ImagemAtendimento.gif</b> para a pasta images.</p>
+
+<p>Para evitar erros, inclua o código acima em uma única linha (sem quebras).</p>

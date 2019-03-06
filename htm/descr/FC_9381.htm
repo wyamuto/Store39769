@@ -1,0 +1,36 @@
+<p><span class="dest NewsPassos">1º passo</span></p>
+<p>Cadastre o campo adicional, clicando na seta ao lado direito do campo <b></b> na página <b>Dados da loja</b> do site administrativo.</p>
+
+<p>Na janela <b>Campos adicionais de clientes</b>, informe <b>Redigite seu e-mail</b> no campo <b>Campo 1</b> da tabela <b>Cadastro do cliente</b> e selecione no campo <b>50</b> no campo <b>Máx</b>.</p>
+
+<center><img src="/lojas/00000009/prod/FC9381a.png" class="img-responsive"></center>
+<br>
+
+<p><span class="dest NewsPassos">2º passo</span></p>
+<p>Copie o código abaixo ao final do arquivo <b>LojaSite.css</b>, para que o novo campo fique com a cor dos campos obrigatórios.</p>
+
+<p><span>#idCliCampo1 .EstNomeCampo {color:#ff2200}</span></p>
+
+<p>Neste exemplo utilizamos a cor <span>vermelha</span>. Caso utilize outra cor, altere o código <b>ff2200</b>.</p>
+<br>
+
+<p><span class="dest NewsPassos">3º passo</span></p>
+<p>Crie um arquivo chamado <b>CliCampo1.htm</b> com o conteúdo abaixo e envie este arquivo para a pasta <b>htm</b> da loja.</p>
+<div>
+<pre>&lt;input <b>class</b><i>=InputText</i> <b>type</b><i>=text</i> <b>name</b><i>=P2CliCampo1</i> <b>id</b><i>=P2CliCampo1</i> <b>maxlength</b><i>=50</i> <b>style</b><i>=width:300px</i>>
+&lt;script><i>function</i> CliValidaCampo1(){
+  <i>if</i>(document.Form1.P2CliCampo1.value==""){
+    alert('Redigite seu e-mail.');
+    document.Form1.P2CliCampo1.focus();
+    <i>return false</i>;
+  }
+  <i>else if</i>(document.Form1.P2CliCampo1.value!=document.Form1.P2Email.value){
+    alert('E-mail e confirmação diferem.');
+    document.Form1.P2CliCampo1.focus();
+    }
+  <i>else</i>{<i>return true</i>;}
+}
+&lt;/script></pre>
+</div>
+<br>
+<p><b class="dest">ATENÇÃO:</b> Este recurso está programado para funcionar no <b>Campo 1</b>. Se for utilizar outro campo, será necessário alterações em todo o código acima.</p>

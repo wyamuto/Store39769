@@ -1,0 +1,46 @@
+<p><span class="dest NewsPassos">1º Passo </span></p>
+
+<p>Acesse <b>Textos & imagens > Textos e Tags</b>, na seção <i>Tags personalizadas</i> marque o campo <b>Utilizar tags personalizadas</b> e clique em <b>Gravar</b> ao final da página.</p>
+<p>Acesse novamente a seção <b>Textos e Tags</b> e clique na seta ao lado direito do campo <b>Utilizar tags personalizadas</b>.</p>
+<br>
+<img src="/lojas/00028496/images/A_15020_1.png" alt="" class="img-responsive">
+<br><br><br>
+
+<p><span class="dest NewsPassos">2º Passo </span></p>
+
+<p>Na janela <b>Cadastro de Tags</b>, preencha os seguintes campos:</p>
+<ul>
+  <li><b>Nome:</b> informe o nome da tag (exemplo: Telefone).</li>
+  <li><b>Descrição:</b> informe a finalidade da tag (exemplo: mostrar o telefone de contato).</li>
+  <li><b>Tipo:</b> marque o campo JS se a tag for utilizada em arquivos .js, CSS para arquivos .css, HTM para arquivos .htm e .html e PROD para os arquivos EstiloProduto.htm e EstiloProdutoOut.htm.</li>
+  <li><b>Grupo:</b> opcionalmente, selecione no campo Grupo o arquivo onde a tag é mais utilizada. Se preferir, clique no ícone ao lado do campo para criar um novo grupo.</li>
+  <li><b>Ativa:</b> marque para ativar ou desativar a tag.</li>
+  <li><b>Conteúdo:</b> preencha com o conteúdo da sua tag, seja ela um texto simples, um código CSS, JS ou HTM.</li>
+</ul>
+<br>
+<img src="/lojas/00028496/images/A_15020_2.png" alt="" class="img-responsive">
+<br>
+<p>Após preencher os campos, clique no botão <b>Incluir</b> para gravar a nova tag.</p>
+<br><br><br>
+
+<p><span class="dest NewsPassos">3º Passo </span></p>
+
+<p>Para saber qual é o nome da sua tag que vai adicionar ao código basta clicar sobre a tag e verificar a informação indicada no destaque.</p>
+<br>
+<img src="/lojas/00028496/images/A_15020_3.png" alt="" class="img-responsive">
+<br><br><br>
+
+<p><span class="dest NewsPassos">4º Passo </span></p>
+
+<p>Agora basta editar o arquivo no qual a tag vai ser utilizada, inserir a tag e gravar. Assim ela vai poder aparecer na loja.</p>
+<br>
+<img src="/lojas/00028496/images/A_15020_4.png" alt="" class="img-responsive">
+<br>
+
+<p>As tags personalizadas podem ser utizadas diretamente nos arquivos HTML que compõem o design loja (exemplo: BarraEsquerda.htm). Para incluir estas tags em arquivos .js e .css, utilize a tag especial &lt;IncludeTagged> para referenciar estes arquivos.</p>
+
+<p>A tag <b>&lt;IncludeTagged></b> é substituída por referência ao arquivo .js ou .css indicado no atributo src= da tag. Este arquivo deve existir na pasta HTM ou subpasta desta. O arquivo poderá conter tags personalizadas pela loja, para facilitar sua alteração.
+<br><br>
+Utilize o atributo async para que o carregamento do arquivo ocorra de forma assíncrona.
+<br><br>
+<b>Exemplo:</b> &lt;IncludeTagged src="css/cores.css" async></p>

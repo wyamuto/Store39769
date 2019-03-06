@@ -1,0 +1,157 @@
+<META http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<style type="text/css">
+.FCAjudaContent{width: 100%; height: auto; position: relative;}
+.FCTabGridTutor{width: 100%}
+.FCTabGridTutor td{font: inherit; font: 14px arial !important; border-bottom: 1px solid #eee; padding: 8px 4px; text-align: left;}
+.FCTabGridTutorTit{background: #ccc; text-align: left !important;}
+</style>
+<div class="FCAjudaContent">
+
+<pre>
+FCGrid$.myOptions={
+  autoSelect: true,
+  cartOnPage: false,
+  incMultGrid: true,
+  idElementGrid: '#idMainGrid',
+  separadorRGBCor: '|',
+  qtyDescriptors: 2,
+  htmlFlagChecked: '&lt;i class="FCCheckedGrid">&lt;/i>', 
+  imageProduct:'cor',
+  colorImg: true,
+  colorImgFormat : '.gif',
+  order: ['cor', 'descritor1', 'descritor2', 'descritor3', 'descritorD1', 'descritorD2', 'descritorD3'],
+  nameDescriptor: { 
+    cor:'Cor html',
+    descritor1:'Tamanho html',
+    descritor2:'Selecione Adicional 2',
+    descritor3: 'Fivela',
+    descritorD1:'Selecione AdicionalD1',
+    descritorD2:'Selecione AdicionalD2',
+    descritorD3:'Selecione AdicionalD3'
+  }
+};
+
+FCGrid$.init(&lt;IDProduto>, aProducts)
+</pre>
+<br>
+<table class="FCTabGridTutor">
+  <tbody>
+    <tr>
+      <td width="15%"><b>Parâmetro</b></td>
+      <td width="20%"><b>Padrão</b></td>
+      <td width="25%"><b>Opções</b></td>
+      <td width="60%"><b>Descrição</b></td>
+    </tr>
+  	<tr>
+      <td colspan="4" class="FCTabGridTutorTit">myOptions</td>
+    </tr>
+    <tr>
+      <td>autoSelect</td>
+      <td>true</td>
+      <td><b>true</b>/ <b>false</b></td>
+      <td>Selecione automaticamente o primeiro subproduto caso seja utilizado a opção <b>true</b></td>
+    </tr>
+    <tr>
+      <td>cartOnPage</td>
+      <td>true</td>
+      <td><b>true</b>/ <b>false</b></td>
+      <td>Ativa o recurso <a href="http://ajuda.fastcommerce.com.br/n12059" target="_blank">Adiciona produto à cesta sem sair da página</a> na <i><b>Grade</b></i> caso seja utilizado a opção <b>true</b> </td>
+    </tr>
+    <tr>
+      <td>incMultGrid</td>
+      <td>true</td>
+      <td><b>true</b>/ <b>false</b></td>
+      <td>Ativa o recurso para <a href="http://ajuda.fastcommerce.com.br/n7750" target="_blank">informar a quantidade de cada produto antes de colocá-lo na cesta</a> na <i><b>Grade</b></i> caso seja utilizado a opção <b>true</b> </td>
+    </tr>
+    <tr>
+      <td>idElementGrid</td>
+      <td>#idMainGrid</td>
+      <td><i>id</i> do elemento DIV</td>
+      <td>Define o elemento HTML DIV a onde será inserido a <i><b>Grade</b></i></td>
+    </tr>
+    <tr>
+      <td>separadorRGBCor</td>
+      <td>#idMainGrid</td>
+      <td>|</td>
+      <td>Define o caractere para seperar o <b>nome</b> e o valor Hexadecimal da <b>cor</b> cadastrado no produto</td>
+    </tr>
+    <tr>
+      <td>qtyDescriptors</td>
+      <td>2</td>
+      <td>números entre 1 e 7</td>
+      <td>Define a quantidade máxima de descritores especiais e simples utilizandos nos produtos, incluí também a cor</td>
+    </tr>
+    <tr>
+      <td>htmlFlagChecked</td>
+      <td><i>&lt;i class="FCCheckedGrid"&lt;/i></i></td>
+      <td>html</td>
+      <td>Define o HTML para exibir o <i>check</i></td>
+    </tr>
+    <tr>
+      <td>imageProduct</td>
+      <td><i>cor</i></td>
+      <td>nome de um descritor ex.: <i>cor</i> e <i>descritor1</i></td>
+      <td>Define qual descritor será usado para exibir a imagem dos subprodutos ex. <img src="http://tenis.lojavirtualfct.com.br/lojas/00010130/prod/cores/Preto_Vermelho.gif"></td>
+    </tr>
+    <tr>
+      <td>colorImgFormat</td>
+      <td><i>.gif</i></td>
+      <td>extensões de arquivos de imagem ex. <i>.svg</i> e <i>.png</i></td>
+      <td>Define a extensão dos arquivos de imagem que serão para as cores ex. <img src="http://tenis.lojavirtualfct.com.br/lojas/00010130/prod/cores/Preto_Vermelho.gif"></td>
+    </tr>
+    <tr>
+      <td>order</td>
+      <td><i>['cor', 'descritor1', 'descritor2', 'descritor3', 'descritorD1', 'descritorD2', 'descritorD3']</i></td>
+      <td></td>
+      <td>Define a ordenação que os descritores serão exibidos na <i><b>Grade</b></i></td>
+    </tr>
+    <tr>
+      <td colspan="4" class="FCTabGridTutorTit">myOptions : nameDescriptor [ ]</td>
+    </tr>
+    <tr>
+      <td>cor</td>
+      <td>Selecione</i></td>
+      <td><i>texto livre, ex. selecione a cor</i></td>
+      <td>Define o texto que será exibido para a <b>Cor</b></td>
+    </tr>
+    <tr>
+      <td>descritor1</td>
+      <td>Selecione</i></td>
+      <td><i>texto livre, ex. selecione o tamanho</i></td>
+      <td>Define o texto que será exibido para o <b>Descritor Adicional 1</b></td>
+    </tr>
+    <tr>
+      <td>descritor2</td>
+      <td>Selecione</i></td>
+      <td><i>texto livre</i></td>
+      <td>Define o texto que será exibido para o <b>Descritor Adicional 2</b></td>
+    </tr>
+    <tr>
+      <td>descritor3</td>
+      <td>Selecione</i></td>
+      <td><i>texto livre</i></td>
+      <td>Define o texto que será exibido para o <b>Descritor Adicional 3</b></td>
+    </tr>
+    <tr>
+      <td>descritorD1</td>
+      <td>Selecione</i></td>
+      <td><i>texto livre</i></td>
+      <td>Define o texto que será exibido para o <b>Descritor Simples 1</b></td>
+    </tr>
+    <tr>
+      <td>descritorD2</td>
+      <td>Selecione</i></td>
+      <td><i>texto livre</i></td>
+      <td>Define o texto que será exibido para o <b>Descritor Simples 2</b></td>
+    </tr>
+    <tr>
+      <td>descritorD3</td>
+      <td>Selecione</i></td>
+      <td><i>texto livre</i></td>
+      <td>Define o texto que será exibido para o <b>Descritor Simples 3</b></td>
+    </tr>
+  </tbody>
+</table>
+<br><br><br>
+
+</div>

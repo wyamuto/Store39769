@@ -1,0 +1,45 @@
+<p>Segue o procedimento para a configuração desta opção de pagamento:</p>
+
+<br><span class="dest NewsPassos">1º Passo</span>
+
+<p>Acesse o site <a href="https://developer.paypal.com" target="_blank">https://developer.paypal.com</a> e faça login com a sua conta do PayPal.</p>
+
+<br><span class="dest NewsPassos">2º Passo</span>
+
+<p>Acesse <a href="https://developer.paypal.com/developer/applications/" target="_blank">https://developer.paypal.com/developer/applications/</a> para ir para a seção <b>My Apps & Credentials</b> do Dashboard do PayPal.</p>
+
+<br><span class="dest NewsPassos">3º Passo</span>
+
+<p>Clique no botão <b>Create App</b>:</p>
+
+<img src=/lojas/00000009/images/descr/FC15040a.png vspace=30>
+
+<br><span class="dest NewsPassos">4º Passo</span>
+
+<p>Defina um nome para a aplicação em <b>App Name</b> e clique no botão <b>Create App</b>:</p>
+
+<img src=/lojas/00000009/images/descr/FC15040b.png vspace=30>
+
+<br><span class="dest NewsPassos">5º Passo</span>
+
+<p>Depois que o PayPal criar a aplicação, copie em API CREDENTIALS o <b>Client ID</b> e <b>Secret</b> e insira nos respectivos campos em <b>PayPal > Credenciais PayPal</b> no site administrativo de sua loja no Fastcommerce.</p>
+
+<img src=/lojas/00000009/images/descr/FC15040c.png vspace=30>
+
+<br><span class="dest NewsPassos">6º Passo</span>
+
+<p>Na mesma tela do PayPal onde estão as informações da aplicação, em <b>Webhook</b> clique em <b>Add Webhook</b>. Em <b>Webhook Url</b> preencha com a URL <span class="dest"><b>https://SEUDOMINIO/RetornoPPP.asp</b></span> e em <b>Event types</b> marque <b>All events</b>. Clique no botão <b>Save</b>. Este procedimento é necessário para receber as notificações das transações (retorno) do PayPal.</p>
+
+<p><b>ATENÇÃO:</b> Na URL acima, altere <b class="dest">SEUDOMINIO</b> para o endereço da loja (ex: <code>www.minhabelaloja.com.br</code>).</p>
+
+<img src=/lojas/00000009/images/descr/FC15040d.png vspace=15>
+
+<img src=/lojas/00000009/images/descr/FC15040e.png vspace=15>
+
+<br><span class="dest NewsPassos">7º Passo</span>
+
+<p>Marque o campo <b>Aceita</b> para PayPal plus e faça pedidos de teste na loja para ver se a configuração foi feita corretamente.</p>
+
+<img src=/lojas/00000009/images/descr/FC15040f.png vspace=30>
+
+<p><b>Obs:</b> Para usar o PayPal Plus solicite ao PayPal a liberação deste recurso em sua conta no PayPal.</p>

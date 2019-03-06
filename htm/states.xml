@@ -1,0 +1,42 @@
+<atendentes>
+	<atendente>
+		<name>Selecione atendente...</name>
+		<url>atendente.xml</url>
+	</atendente>
+	<atendente>
+		<name>Adriano Yamuto</name>
+		<url>ayamuto.xml</url>
+	</atendente>
+	<atendente>
+		<name>Alexandre Berringer</name>
+		<url>aberringer.xml</url>
+	</atendente>
+	<atendente>
+		<name>Eduardo Lima</name>
+		<url>elima.xml</url>
+	</atendente>
+	<atendente>
+		<name>Élida Rudnitzki</name>
+		<url>erudnitzki.xml</url>
+	</atendente>
+	<atendente>
+		<name>Guilherme Rudnitzki</name>
+		<url>grudnitzki.xml</url>
+	</atendente>
+	<atendente>
+		<name>Mônica Nobre</name>
+		<url>mnobre.xml</url>
+	</atendente>
+	<atendente>
+		<name>Queli Oliveira</name>
+		<url>qoliveira.xml</url>
+	</atendente>
+	<atendente>
+		<name>Régias Cândido</name>
+		<url>rcandido.xml</url>
+	</atendente>
+	<atendente>
+		<name>Wagner Yamuto</name>
+		<url>wyamuto.xml</url>
+	</atendente>
+</atendentes>

@@ -1,0 +1,119 @@
+<style>
+.courrierpeq {font-size:8pt;font-family:courier new,tahoma,verdana;color:#0D6D9E;}
+.destpeq {font-size:8pt;font-family:tahoma,verdana;color:#990000;font-weight:bold;}
+</style>
+
+<pre>
+<span class=courrierpeq>
+<span class=destpeq>&lt;!-- Atenção</span>
+
+Dentro da tag &lt;ProdDet&gt; onde estiver &lt;ImagemProd&gt;, altere por:
+<span class=destpeq>&lt;a style="cursor: hand" href="#"&gt;&lt;img onmouseover="showtrail('../lojas/<span class=courrierpeq><b>00009999</b></span>/prod/&lt;CodProd&gt;a.jpg ','&lt;NomeProd&gt;',<span class=courrierpeq><b>420</b></span>,<span class=courrierpeq><b>420</b></span>)" style="border-left-color: #777777; border-bottom-color: #777777; border-top-color: #777777; border-right-color: #777777" onmouseout=hidetrail() src="../lojas/<span class=courrierpeq><b>00009999</b></span>/prod/&lt;CodProd&gt;d.jpg" border=0&gt;&lt;/a&gt;&lt;div id=preview_div style="display: none; z-index: 200; position: absolute"&gt;&lt;/div&gt;&lt;div style="left: 0px; visibility: hidden; position: absolute; top: 0px"&gt;&lt;/div&gt;</span>
+
+<span class=destpeq>--&gt;</span>
+
+// Fastcommerce - Estilo personalizado para mostrar imagem ampliada sem ter que ir para outra página
+&lt;ProdTop&gt;
+&lt;style&gt;
+.TitTabParc{font-weight:bold;font-size:8pt;font-family:tahoma,arial}
+.EstParcPar{background:#F5F5F5;font-size:8pt;font-family:tahoma,verdana}
+.EstParcImpar{background:#FFFFFF;font-size:8pt;font-family:tahoma,verdana}
+&lt;/style&gt;
+&lt;/ProdTop&gt;
+
+&lt;ProdLista&gt;
+&lt;table cellspacing=3 cellpadding=1 width=100%&gt;
+  &lt;tr&gt;&lt;td colspan=2&gt;&lt;hr class=EstLinhaProd&gt;&lt;/td&gt;&lt;/tr&gt; 
+  &lt;tr&gt;
+    &lt;td valign=top align=center width=&lt;ProdLargura&gt; height=&lt;ProdAltura&gt;&gt;&lt;ImagemProd&gt;&lt;/td&gt;
+    &lt;td valign=top&gt;&lt;FormProd&gt;
+      &lt;table&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;span class=EstNomeProd&gt;&lt;NomeProd&gt;&lt;/span&gt;&nbsp; | &nbsp;&lt;span class=EstRefProd&gt;&lt;NomeCat&gt;&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td class=EstRefProd&gt;Ref. &lt;CodProd&gt; &lt;Lancamento&gt;&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td class=EstDescrProd&gt;&lt;Descricao&gt;&lt;br&gt;&lt;br&gt;&lt;a href=ListaProdutos.asp?IDLoja=&lt;IDLoja&gt;&IDProduto=&lt;IDProduto&gt; class=BotMaisDetalhes&gt;Clique aqui e veja mais detalhes&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;
+            &lt;table name=TabAdicionaisSub&lt;IDProduto&gt; cellpadding=0 cellspacing=0&gt;
+              &lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
+              &lt;tr&gt;
+                &lt;td&gt;
+                  &lt;table name=Tab1Adic&lt;IDProduto&gt; cellpadding=0 cellspacing=0&gt;
+                    &lt;tr&gt;
+                      &lt;td nowrap&gt;&lt;Adicional1&gt;&lt;/td&gt;
+                      &lt;td nowrap&gt;&lt;Adicional2&gt;&lt;/td&gt;
+                      &lt;td nowrap&gt;&lt;Adicional3&gt;&lt;/td&gt;
+                    &lt;/tr&gt;
+                  &lt;/table&gt;
+                &lt;/td&gt;
+              &lt;/tr&gt;
+              &lt;tr&gt;
+                &lt;td&gt;
+                  &lt;table name=Tab2Adic&lt;IDProduto&gt; cellpadding=0 cellspacing=0&gt;
+                    &lt;tr&gt;
+                      &lt;td nowrap&gt;&lt;Cor&gt;&lt;/td&gt;
+                      &lt;td nowrap&gt;&lt;AdicionalD1&gt;&lt;/td&gt;
+                      &lt;td nowrap&gt;&lt;AdicionalD2&gt;&lt;/td&gt;
+                      &lt;td nowrap&gt;&lt;AdicionalD3&gt;&lt;/td&gt;
+                      &lt;td nowrap&gt;&lt;Peso&gt;&lt;/td&gt;
+                    &lt;/tr&gt;
+                  &lt;/table&gt;
+                &lt;/td&gt;
+              &lt;/tr&gt;
+            &lt;/table&gt;
+          &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;&lt;table&gt;&lt;tr&gt;&lt;td width=200 class=EstPrecoProd&gt;&lt;PrecoSimples&gt;&lt;br&gt;&lt;span style="font-size:12"&gt;&lt;script&gt;MostraMaxParcela(&lt;PrecoNum&gt;,&lt;MaxParcelasProdNum&gt;);&lt;/script&gt; no cartão.&lt;/span&gt;&lt;br&gt;&lt;br&gt;à vista: &lt;b&gt;&lt;script&gt;document.write(FormatPrecoReais(&lt;PrecoNum&gt;*0.90));&lt;/script&gt;&lt;/b&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;img src=images/shim.gif width=10 height=1&gt;&lt;/td&gt;&lt;td&gt;&lt;LinkComprar&gt;&lt;br&gt;&lt;AvisoDisp&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/table&gt;  
+    &lt;/td&gt;&lt;/FormProd&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+&lt;/ProdLista&gt;
+
+&lt;ProdDet&gt;
+&lt;table width=100% name=TabProduto&lt;IDProduto&gt; cellpadding=0 cellspacing=0&gt;
+  &lt;tr&gt;&lt;td align=center colspan=3&gt;&lt;br&gt;&lt;hr class=EstLinhaProd&gt;&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;FormProd&gt;
+  &lt;tr&gt;&lt;td colspan=3&gt;&lt;span class=EstNomeProd&gt;&lt;NomeProd&gt;&lt;/span&gt; | &lt;span class=EstRefProd&gt;&lt;LegendaCat&gt; &lt;NomeCat&gt;&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td colspan=3 class=EstRefProd&gt;(&lt;CodProd&gt;)&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt; <span class=destpeq>&lt;!-- Só altere o ID da loja e as dimensões 420,420 --&gt;</span>
+   &lt;td align=center valign=top width=300&gt;&lt;br&gt;<span class=destpeq>&lt;a style="cursor: hand" href="#"&gt;&lt;img onmouseover="showtrail('../lojas/<span class=courrierpeq><b>00009999</b></span>/prod/&lt;CodProd&gt;a.jpg ','&lt;NomeProd&gt;',<span class=courrierpeq><b>420</b></span>,<span class=courrierpeq><b>420</b></span>)" style="border-left-color: #777777; border-bottom-color: #777777; border-top-color: #777777; border-right-color: #777777" onmouseout=hidetrail() src="../lojas/<span class=courrierpeq><b>00009999</b></span>/prod/&lt;CodProd&gt;d.jpg" border=0&gt;&lt;/a&gt;&lt;div id=preview_div style="display: none; z-index: 200; position: absolute"&gt;&lt;/div&gt;&lt;div style="left: 0px; visibility: hidden; position: absolute; top: 0px"&gt;&lt;/div&gt;</span>&lt;br&gt;&lt;br&gt;&lt;LinkComprar&gt;&lt;br&gt;&lt;AvisoDisp&gt;&lt;br&gt;&lt;table&gt;&lt;tr&gt;&lt;td align=center class=EstPrecoProd&gt;&lt;Preco&gt;&lt;br&gt;&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=EstDescrProd&gt;&lt;Lancamento&gt;&lt;br&gt;&lt;Descricao&gt;&lt;br&gt;&lt;IndicaProd&gt;&lt;br&gt;&lt;LinkOpiniao&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/td&gt;
+   &lt;td width=7&gt;&lt;img src=images/shim.gif width=7 height=1&gt;&lt;/td&gt;
+   &lt;td valign=top&gt;
+
+
+      &lt;table name=TabNomeRefProd&lt;IDProduto&gt; width=100% cellpadding=0 cellspacing=0&gt;
+        &lt;tr&gt;
+          &lt;td align=center&gt;
+            &lt;script&gt;MostraPagtoVista(&lt;PrecoNum&gt;);&lt;/script&gt;
+            &lt;script&gt;MostraParcelasVISA(&lt;PrecoNum&gt;,&lt;MaxParcelasProdNum&gt;);&lt;/script&gt;
+            &lt;script&gt;MostraParcelasMaster(&lt;PrecoNum&gt;,&lt;MaxParcelasProdNum&gt;);&lt;/script&gt;
+            &lt;script&gt;MostraParcelasHipercard(&lt;PrecoNum&gt;,&lt;MaxParcelasProdNum&gt;);&lt;/script&gt;
+          &lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/table&gt;
+
+   &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td valign=top colspan=3&gt;
+      &lt;table name=Tab1Adic&lt;IDProduto&gt; cellpadding=0 cellspacing=0&gt;
+        &lt;tr&gt;&lt;td nowrap&gt;&lt;Adicional1&gt;&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td nowrap&gt;&lt;Adicional2&gt;&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td nowrap&gt;&lt;Adicional3&gt;&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td nowrap&gt;&lt;AdicionalD1&gt;&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td nowrap&gt;&lt;AdicionalD2&gt;&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td nowrap&gt;&lt;AdicionalD3&gt;&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td nowrap&gt;&lt;Peso&gt;&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td nowrap&gt;&lt;Cor&gt;&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td nowrap nowrap&gt;&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td valign=top&gt;&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td align=right class=EstMaisInfo nowrap&gt;&lt;DescrURL&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/FormProd&gt;
+      &lt;/table&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+&lt;/ProdDet&gt;
+</span>
+</pre>

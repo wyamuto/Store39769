@@ -1,0 +1,67 @@
+/* FastCommerce - Estilo Personalizado */
+
+.hideSuggestClass{border:1px solid #D4D4D4;cursor:pointer;background-color:#FFFFFF;height:150px;overflow:auto;display:none;width:550px;margin:0px}
+.showSuggestClass .hideSuggestClass{display:block}
+.showSuggestClass .hoverSuggestClass{background-color:#E4E4E4}
+.productMenuClass{position:absolute;z-index:255}
+.productItemClass{padding:0px 0px 0px 2px;height:11pt}
+
+body {font-size:10pt;font-family:verdana,arial;color:#333333;}
+p {font-size:8pt;font-family:verdana,arial}
+TH {background:#FFFFCC;color:#336699;font-size:9pt;font-family:verdana,arial}
+TD {font-size:8pt;font-family:tahoma,verdana}
+ul {list-style:outside url('../images/UL.gif');margin-top:0px;margin-left:30px;padding:0}
+li {padding:3}
+.smText {font-size:9pt;font-family:verdana,tahoma,verdana}
+.dest {font-size:9pt;font-family:tahoma,verdana;color:#990000;font-weight:bold;}
+.courrier {font-size:10pt;font-family:courier new,tahoma,verdana;color:#0D6D9E;}
+.mnText {font-size:7pt;font-family:verdana,arial}
+.mdtxt {font-size:9pt;font-family:verdana,arial}
+.lgtxt {font-size:11pt;font-weight:bold;color:#0066CC;font-family:tahoma,verdana;text-decoration:none}
+.smSelect {font-size:8pt;font-family:tahoma,verdana,Arial,Helvetica,sans-serif;}
+
+a {color:#0B5A82;font-family:tahoma;font-size:9pt;}
+a:visited {color:#0B5A82;font-family:tahoma;}
+a:Active {color:#F93030;font-family:tahoma;}
+a:hover{color:#30A1DB;font-family:tahoma;}
+
+.LinkRodape {color:#0B5A82;font-family:tahoma;font-size:8pt;}
+.LinkRodape:visited {color:#0B5A82;font-family:tahoma;}
+.LinkRodape:Active {color:#F93030;font-family:tahoma;}
+.LinkRodape:hover{color:#30A1DB;font-family:tahoma;}
+
+.FundoSiteCentro{background:#FFFFFF}
+.FundoTopoExt{background:#39594B}
+.FundoSiteInt{background:#FFFFFF}
+
+.InputText {border-color:#0A1611;border-width:1;border-style:solid;background-color:#F5F5F5;font-size:11;font-family:tahoma,verdana;color:#333333}
+.InputButton {border-width:1;font-size:11;font-family:verdana}
+.BotVerMais {color:#FFFFFF;font-size:8pt;font-family:verdana,arial;font-weight:bold;text-decoration:none}
+.BotVerMais:hover {color:#FFFFFF;text-decoration:underline}
+.EstTabQuadro {background:#FFFFFF;font-size:8pt;font-family:arial}
+
+.EstTabQuadroNew {position:absolute;top:102px;left:20px;background:#E8E8E8;font-size:8pt;font-family:Arial,Helvetica,sans-serif;border-width:1;border-style:solid;background-color:#F5F5F5;}
+
+.FundoBarraDireita{background:#000000}
+
+.EstTabQuadro {background:#E8E8E8;font-size:8pt;font-family:Arial,Helvetica,sans-serif;border-width:1;border-style:solid;background-color:#F5F5F5;}
+.TitTab {background:#C0C0C0;color:black;font-size:8pt;font-family:Verdana,Arial,Helvetica,sans-serif;font-weight:bold;}
+.EstCampo {font-size:8pt;font-family:Verdana,Arial,Helvetica,sans-serif;}
+
+.Lista2  {background:#E8E8E8}
+.Lista3  {background:#CFE4F1;color:#183C61}
+
+/* Estilos do PEDIDO */
+.EstTabPedidoTit {background:#E0D3FF;color:#000000;font-size:8pt;font-family:Verdana,Arial;font-weight:bold;}
+.EstTabPedidoNome {color:#AF4200;font-size:8pt;font-weight:bold;font-family:verdana,Arial;}
+.EstTabPedidoNome:visited {color:#AF4200;}
+.EstTabPedidoNome:hover {color:#000000;}
+.EstTabPedido {font-size:8pt;background:#CDC1EA;}
+.EstTabPedidoNum {font-size:8pt;background:#E7E5ED;font-family:Courier New,Courier;}
+.EstTabPedidoTotal {font-size:8pt;background:#E2CDA8;font-weight:bold;}
+.EstTabPedidoFrete {font-size:8pt;background:#E8E0FA;font-weight:bold;}
+.EstTabPedidoBot {color:#000000;font-size:8pt;font-weight:bold;font-family:verdana,Arial;}
+.EstTabPedidoRef {color:black;font-size:8pt;font-family:verdana,Arial;}
+.EstTabPedidoAdicNome {font-size:8pt;font-family:verdana,Arial;}
+.EstTabPedidoAdicItem {font-size:8pt;font-family:verdana,Arial;font-weight:bold;}
+.EstTextoQtd {font-size:8pt;font-family:verdana,Arial,Helvetica,sans-serif;text-align:right;}

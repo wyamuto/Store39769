@@ -1,0 +1,24 @@
+<p><span class="dest NewsPassos">Opção 1</span></p>
+<p>Se a loja utilizar sub-produtos, faça o cadastro da seguinte maneira para que não seja exibido o link <b>Consulte-nos</b> nos produtos principais:</p>
+<br>
+
+<ol>
+<li><p>Somente os <b>sub-produtos</b> serão vendidos. Assim, será necessário cadastrar pelo menos um sub-produto por produto.</p></li>
+<li><p>Todos os produtos <b>PAI</b> deverão receber preços (mesmo que tenha que repetir o preço dos sub-produtos).</p></li>
+</ol>
+<br>
+
+<p>Feito isso, no arquivo <b>EstiloProduto.htm</b> deve-se apagar a tag <span><b>&lt;LinkComprar></b></span> e <span><b>&lt;Preco></b></span> dentro do <span><b>&lt;ProdDet>...&lt;/ProdDet></b></span> e <span><b>&lt;ProdAmp>...&lt;/ProdAmp></b></span>.</p>
+
+<p>Dentro das tags <span><b>&lt;ProdDet>...&lt;/ProdDet></b></span> e <span><b>&lt;ProdAmp>...&lt;/ProdAmp></b></span>, existem as tags <span><b>&lt;SUB></b></span>. Não apague as tags <span><b>&lt;LinkComprar></b></span> e <span><b>&lt;Preco></b></span> que estão dentro das <span><b>&lt;SUB></b></span>.</p>
+<br>
+
+<p><span class="dest NewsPassos">Opção 2</span></p>
+<p>Fazer uma personalização na <b>lista/detalhes</b> dos produtos:</p>
+
+<p>Esta personalização é feita através do arquivo <b>EstiloProduto.htm</b>, campo <b>Layout das páginas de produtos</b> da página <b>Dimensões & menus</b> do site administrativo.</p>
+
+<p>Normalmente a tag <span><b>&lt;Preco></b></span> exibe o preço do produto, ou quando este for igual a zero, o link Consulte-nos. Para mudar este comportamento, será necessário programar neste arquivo um javascript para só exibir o preço se este não for zero. Para isto, utilize a tag especial <span><b>&lt;PrecoNum></b></span>. Segue exemplo:</p>
+
+<div><pre>&lt;script><i>if</i>(&lt;PrecoNum>>0){document.write("&lt;Preco>");}&lt;/script></pre></div>
+<p>Utilize este script no lugar da tag <span><b>&lt;Preco></b></span> no arquivo <b>EstiloProduto.htm</b>. Desta forma, se o preço for zero, não será exibido nada.</p>

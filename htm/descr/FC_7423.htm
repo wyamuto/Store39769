@@ -1,0 +1,50 @@
+<p>Se o arquivo "LojaLib.js" não existir na pasta HTM, adicione o código no começo do arquivo "BarraTopo.htm", conforme exemplos abaixo.</p>
+
+<p><span><b>ATENÇÃO:</b></span> A implantação deste recurso requer <b>CONHECIMENTOS AVANÇADOS</b> de <b>html</b> e <b>JavaScript</b>.</p>
+
+<p>Segue código para ser adicionado em seu arquivo <b>LojaLib.js</b>:</p>
+<pre>
+<p><span>function MostraEconomia(PrecoProd,PrecoOri){ <br>
+  if(PrecoProd!=PrecoOri)document.write("&lt;br&gt;&lt;font color=#6f9e45&gt;Economize&nbsp;&lt;b&gt;"+FormatPrice(PrecoOri-PrecoProd,'R$')+"&lt;/b&gt; ("+FormatNum(((PrecoOri-PrecoProd)/PrecoOri)*100)+"%)&lt;/font&gt;");<br>
+}</p>
+
+<p>function FormatNum(num){<br>
+  num=num.toString().replace(/\$|\,/g,'');<br>
+  if(isNaN(num))num="0";<br>
+  sign=(num==(num=Math.abs(num)));<br>
+  num=Math.floor(num*100+0.50000000001);<br>
+  num=Math.floor(num/100).toString();<br>
+  for(var i=0;i&lt;Math.floor((num.length-(1+i))/3);i++)num=num.substring(0,num.length-(4*i+3))+'.'+num.substring(num.length-(4*i+3));<br>
+  return ((sign)?'':'-')+num;<br>
+}</span></p>
+</pre>
+
+<p>Segue código para ser adicionado no começo de seu arquivo <b>BarraTopo.htm</b>, caso não exista o arquivo "LojaLib.js":</p>
+<pre>
+<p><span>&lt;script&gt;<br>
+function MostraEconomia(PrecoProd,PrecoOri){<br>
+  if(PrecoProd!=PrecoOri)document.write("&lt;br&gt;&lt;font color=#6f9e45&gt;Economize&nbsp;&lt;b&gt;"+FormatPrice(PrecoOri-PrecoProd,'R$')+"&lt;/b&gt; ("+FormatNum(((PrecoOri-PrecoProd)/PrecoOri)*100)+"%)&lt;/font&gt;");<br>
+}</p>
+
+<p>function FormatNum(num){<br>
+  num=num.toString().replace(/\$|\,/g,'');<br>
+  if(isNaN(num))num="0";<br>
+  sign=(num==(num=Math.abs(num)));<br>
+  num=Math.floor(num*100+0.50000000001);<br>
+  num=Math.floor(num/100).toString();<br>
+  for(var i=0;i&lt;Math.floor((num.length-(1+i))/3);i++)num=num.substring(0,num.length-(4*i+3))+'.'+num.substring(num.length-(4*i+3));<br>
+  return ((sign)?'':'-')+num;<br>
+}<br>
+&lt;/script&gt;</span></p>
+</pre>
+
+<p>A chamada para a função deverá ser adicionada no arquivo onde deseja mostrar a informação <b>Economize</b>.</p>
+
+<p><b>Ex.:</b> Para mostrar na página inicial da loja, adicione a chamada no arquivo <b>EstiloProdutoOut.htm</b> e para mostrar na listagem de produtos, adicione no arquivo <b>EstiloProduto.htm</b>.</p>
+
+<p>Segue a chamada da função:</p>
+<p><span>&lt;script&gt;MostraEconomia(&lt;PrecoNum&gt;,&lt;PrecoOri&gt;);&lt;/script&gt;</span></p>
+
+
+
+<center>Veja exemplo deste recurso na loja <a href="http://www.rumo.com.br/teledemo" target="_blank">http://www.rumo.com.br/teledemo</a><br><br><img src="/lojas/00028496/images/FC7423.gif"></center>

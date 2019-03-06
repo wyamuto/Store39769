@@ -1,0 +1,141 @@
+function MostraImgAmpliadaFC(){
+
+var Parte1="<center><a style=\"cursor: hand\" href=\"";
+var Parte1a="\" target=\"_blank\"><img onmouseover=\"showtrail('http://www.rumo.com.br/lojas/00000009/prod/";
+var Parte2=",520,520)\" style=\"border-left-color: #777777; border-bottom-color: #777777; border-top-color: #777777; border-right-color: #777777\" onmouseout=hidetrail() src=\"http://www.rumo.com.br/lojas/00000009/prod/";
+var Parte3="\" border=1></a><div id=preview_div style=\"display: none; z-index: 200; position: absolute\"></div><div style=\"left: 0px; visibility: hidden; position: absolute; top: 0px\"></div></center>";
+var UrlLoja="http://www.fastcommerce.com.br/modelo";
+
+document.write("<style>");
+document.write("/* Estilos para mostrar a foto ampliada */");
+document.write("h2 {padding-right:0px; padding-left:0px; padding-bottom:0px; margin:0px; padding-top:0px; font-size: 13px; font-family: tahoma, verdana, arial;}");
+document.write("#loader_bg {font-size: 1px; left: 8px; width: 113px; position: relative; top: 8px; height: 7px; background-color: #ebebe4}");
+document.write(".title_h2 {padding-right: 0px; padding-left: 18px; padding-bottom: 0px; width: 300px; padding-top: 12px}");
+document.write(".border_preview {border-right: #444 1px solid; border-top: #444 1px solid; z-index: 100; background: #fff; border-left: #444 1px solid; border-bottom: #444 1px solid; position: absolute}");
+document.write(".preview_temp_load {padding-right: 10px; padding-left: 10px; padding-bottom: 10px; vertical-align: middle; padding-top: 10px; text-align: center}");
+document.write(".preview_temp_load img {vertical-align: middle; text-align: center}");
+document.write("</style>");
+
+document.write("<table width=\"900\" border=0>");
+//Modelos 1 ao 4
+document.write("  <tr>");
+document.write("    <td align=\"225\"><br><center><h2>Layout 1</h2><center>");
+document.write("      "+Parte1+UrlLoja+"1"+Parte1a+"01ModeloAmp.jpg','Layout 1'"+Parte2+"01ModeloPeq.jpg"+Parte3+"");
+document.write("    </td>");
+document.write("    <td align=\"225\"><br><center><h2>Layout 2</h2><center>");
+document.write("      "+Parte1+UrlLoja+"2"+Parte1a+"02ModeloAmp.jpg','Layout 2'"+Parte2+"02ModeloPeq.jpg"+Parte3+"");
+document.write("    </td>");
+document.write("    <td align=\"225\"><br><center><h2>Layout 3</h2><center>");
+document.write("      "+Parte1+UrlLoja+"3"+Parte1a+"03ModeloAmp.jpg','Layout 3'"+Parte2+"03ModeloPeq.jpg"+Parte3+"");
+document.write("    </td>");
+document.write("    <td align=\"225\"><br><center><h2>Layout 4</h2><center>");
+document.write("      "+Parte1+UrlLoja+"4"+Parte1a+"04ModeloAmp.jpg','Layout 4'"+Parte2+"04ModeloPeq.jpg"+Parte3+"");
+document.write("    </td>");
+document.write("  </tr>");
+//Modelos 4 ao 8
+document.write("  <tr>");
+document.write("    <td align=\"225\"><br><center><h2>Layout 5</h2><center>");
+document.write("      "+Parte1+UrlLoja+"5"+Parte1a+"05ModeloAmp.jpg','Layout 5'"+Parte2+"05ModeloPeq.jpg"+Parte3+"");
+document.write("    </td>");
+document.write("    <td align=\"225\"><br><center><h2>Layout 6</h2><center>");
+document.write("      "+Parte1+UrlLoja+"6"+Parte1a+"06ModeloAmp.jpg','Layout 6'"+Parte2+"06ModeloPeq.jpg"+Parte3+"");
+document.write("    </td>");
+document.write("    <td align=\"225\"><br><center><h2>Layout 7</h2><center>");
+document.write("      "+Parte1+UrlLoja+"7"+Parte1a+"07ModeloAmp.jpg','Layout 7'"+Parte2+"07ModeloPeq.jpg"+Parte3+"");
+document.write("    </td>");
+document.write("    <td align=\"225\"><br><center><h2>Layout 8</h2><center>");
+document.write("      "+Parte1+UrlLoja+"8"+Parte1a+"08ModeloAmp.jpg','Layout 8'"+Parte2+"08ModeloPeq.jpg"+Parte3+"");
+document.write("    </td>");
+document.write("  </tr>");
+//Modelos 9 ao 12
+document.write("  <tr>");
+document.write("    <td align=\"225\"><br><center><h2>Layout 9</h2><center>");
+document.write("      "+Parte1+UrlLoja+"9"+Parte1a+"09ModeloAmp.jpg','Layout 9'"+Parte2+"09ModeloPeq.jpg"+Parte3+"");
+document.write("    </td>");
+document.write("    <td align=\"225\"><br><center><h2>Layout 10</h2><center>");
+document.write("      "+Parte1+UrlLoja+"10"+Parte1a+"10ModeloAmp.jpg','Layout 10'"+Parte2+"10ModeloPeq.jpg"+Parte3+"");
+document.write("    </td>");
+document.write("    <td align=\"225\"><br><center><h2>Layout 11</h2><center>");
+document.write("      "+Parte1+UrlLoja+"11"+Parte1a+"11ModeloAmp.jpg','Layout 11'"+Parte2+"11ModeloPeq.jpg"+Parte3+"");
+document.write("    </td>");
+document.write("    <td align=\"225\"><br><center><h2>Layout 12</h2><center>");
+document.write("      "+Parte1+UrlLoja+"12"+Parte1a+"12ModeloAmp.jpg','Layout 12'"+Parte2+"12ModeloPeq.jpg"+Parte3+"");
+document.write("    </td>");
+document.write("  </tr>");
+//Modelos 13 ao 16
+document.write("  <tr>");
+document.write("    <td align=\"225\"><br><center><h2>Layout 13</h2><center>");
+document.write("      "+Parte1+UrlLoja+"13"+Parte1a+"13ModeloAmp.jpg','Layout 13'"+Parte2+"13ModeloPeq.jpg"+Parte3+"");
+document.write("    </td>");
+document.write("    <td align=\"225\"><br><center><h2>Layout 14</h2><center>");
+document.write("      "+Parte1+UrlLoja+"14"+Parte1a+"14ModeloAmp.jpg','Layout 14'"+Parte2+"14ModeloPeq.jpg"+Parte3+"");
+document.write("    </td>");
+document.write("    <td align=\"225\"><br><center><h2>Layout 15</h2><center>");
+document.write("      "+Parte1+UrlLoja+"15"+Parte1a+"15ModeloAmp.jpg','Layout 15'"+Parte2+"15ModeloPeq.jpg"+Parte3+"");
+document.write("    </td>");
+document.write("    <td align=\"225\"><br><center><h2>Layout 16</h2><center>");
+document.write("      "+Parte1+UrlLoja+"16"+Parte1a+"16ModeloAmp.jpg','Layout 16'"+Parte2+"16ModeloPeq.jpg"+Parte3+"");
+document.write("    </td>");
+document.write("  </tr>");
+//Modelos 17 ao 20
+document.write("  <tr>");
+document.write("    <td align=\"225\"><br><center><h2>Layout 17</h2><center>");
+document.write("      "+Parte1+UrlLoja+"17"+Parte1a+"17ModeloAmp.jpg','Layout 17'"+Parte2+"17ModeloPeq.jpg"+Parte3+"");
+document.write("    </td>");
+document.write("    <td align=\"225\"><br><center><h2>Layout 18</h2><center>");
+document.write("      "+Parte1+UrlLoja+"18"+Parte1a+"18ModeloAmp.jpg','Layout 18'"+Parte2+"18ModeloPeq.jpg"+Parte3+"");
+document.write("    </td>");
+document.write("    <td align=\"225\"><br><center><h2>Layout 19</h2><center>");
+document.write("      "+Parte1+UrlLoja+"19"+Parte1a+"19ModeloAmp.jpg','Layout 19'"+Parte2+"19ModeloPeq.jpg"+Parte3+"");
+document.write("    </td>");
+document.write("    <td align=\"225\"><br><center><h2>Layout 20</h2><center>");
+document.write("      "+Parte1+UrlLoja+"20"+Parte1a+"20ModeloAmp.jpg','Layout 20'"+Parte2+"20ModeloPeq.jpg"+Parte3+"");
+document.write("    </td>");
+document.write("  </tr>");
+//Modelos 21 ao 24
+document.write("  <tr>");
+document.write("    <td align=\"225\"><br><center><h2>Layout 21</h2><center>");
+document.write("      "+Parte1+UrlLoja+"21"+Parte1a+"21ModeloAmp.jpg','Layout 21'"+Parte2+"21ModeloPeq.jpg"+Parte3+"");
+document.write("    </td>");
+document.write("    <td align=\"225\"><br><center><h2>Layout 22</h2><center>");
+document.write("      "+Parte1+UrlLoja+"22"+Parte1a+"22ModeloAmp.jpg','Layout 22'"+Parte2+"22ModeloPeq.jpg"+Parte3+"");
+document.write("    </td>");
+document.write("    <td align=\"225\"><br><center><h2>Layout 23</h2><center>");
+document.write("      "+Parte1+UrlLoja+"23"+Parte1a+"23ModeloAmp.jpg','Layout 23'"+Parte2+"23ModeloPeq.jpg"+Parte3+"");
+document.write("    </td>");
+document.write("    <td align=\"225\"><br><center><h2>Layout 24</h2><center>");
+document.write("      "+Parte1+UrlLoja+"24"+Parte1a+"24ModeloAmp.jpg','Layout 24'"+Parte2+"24ModeloPeq.jpg"+Parte3+"");
+document.write("    </td>");
+document.write("  </tr>");
+//Modelos 25 ao 28
+document.write("  <tr>");
+document.write("    <td align=\"225\"><br><center><h2>Layout 25</h2><center>");
+document.write("      "+Parte1+UrlLoja+"25"+Parte1a+"25ModeloAmp.jpg','Layout 25'"+Parte2+"25ModeloPeq.jpg"+Parte3+"");
+document.write("    </td>");
+document.write("    <td align=\"225\"><br><center><h2>Layout 26</h2><center>");
+document.write("      "+Parte1+UrlLoja+"26"+Parte1a+"26ModeloAmp.jpg','Layout 26'"+Parte2+"26ModeloPeq.jpg"+Parte3+"");
+document.write("    </td>");
+document.write("    <td align=\"225\"><br><center><h2>Layout 27</h2><center>");
+document.write("      "+Parte1+UrlLoja+"27"+Parte1a+"27ModeloAmp.jpg','Layout 27'"+Parte2+"27ModeloPeq.jpg"+Parte3+"");
+document.write("    </td>");
+document.write("    <td align=\"225\"><br><center><h2>Layout 28</h2><center>");
+document.write("      "+Parte1+UrlLoja+"28"+Parte1a+"28ModeloAmp.jpg','Layout 28'"+Parte2+"28ModeloPeq.jpg"+Parte3+"");
+document.write("    </td>");
+document.write("  </tr>");
+//Modelos 29 ao 23
+document.write("  <tr>");
+document.write("    <td align=\"229\"><br><center><h2>Layout 29</h2><center>");
+document.write("      "+Parte1+UrlLoja+"29"+Parte1a+"29ModeloAmp.jpg','Layout 29'"+Parte2+"29ModeloPeq.jpg"+Parte3+"");
+document.write("    </td>");
+document.write("    <td align=\"225\"><br><center><h2>Layout 30</h2><center>");
+document.write("      "+Parte1+UrlLoja+"30"+Parte1a+"30ModeloAmp.jpg','Layout 30'"+Parte2+"30ModeloPeq.jpg"+Parte3+"");
+document.write("    </td>");
+document.write("    <td align=\"225\"><br><center><h2></h2><center>");
+document.write("      ");
+document.write("    </td>");
+document.write("    <td align=\"225\"><br><center><h2></h2><center>");
+document.write("      ");
+document.write("    </td>");
+document.write("  </tr>");
+document.write("</table>");
+}

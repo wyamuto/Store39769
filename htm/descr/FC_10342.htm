@@ -1,0 +1,37 @@
+<p>É possível exibir os dados da cesta em qualquer página da loja e em qualquer posição (ex: barra direita).</p>
+
+<p>Veja abaixo exemplo de design com os dados da cesta, exibido através de um iframe contendo um XML formatado por XSL:</p>
+
+<center><img src="/lojas/00028496/prod/FC10342.jpg"></center>
+
+<p>Seguem instruções de implantação deste recurso:</p>
+
+<p><span>1º Passo</span></p>
+<p>Marque o campo <b>Exibe dados da cesta</b> na página <b>Dados da loja</b> do site administrativo.</p>
+
+
+<p><span>2º Passo</span></p>
+<p>Adicione o código abaixo no local onde os dados da cesta serão exibidos (ex: BarraLateral.htm):</p>
+<pre><div><h1>&lt;span <b>id</b><i>="idMostraDadosCestaFC"</i>>&lt;/span></h1></div></pre>
+
+
+<p><span>3º Passo</span></p>
+<p>Adicione o código abaixo ao final do arquivo <b>Rodape.htm</b>:</p>
+<p><span><pre><h1>&lt;script></h1></span><span>// Mostrar cesta apenas quando tiver produtos adicionados</span></p>
+<p>function MostraDadosCestaFC(){
+var PosCarrinho=document.getElementById("idMostraDadosCestaFC"); 
+PosCarrinho.innerHTML="&lt;div id='MostraDadosCestaIDFC' style='display:none'>&lt;table width='350' border='0'>&lt;tr>&lt;td align='center'>&lt;iframe frameborder=0 scrolling=no src=XMLCart.asp?IDLoja=&lt;IDLoja>&style=xsl style=width:350;height:50>&lt;/iframe>&lt;/td>&lt;/tr>&lt;/table>&lt;/div>";
+}
+MostraDadosCestaFC();
+
+var QtdCesta="&lt;QtdCesta>";
+if (QtdCesta>0){<br>
+document.getElementById("MostraDadosCestaIDFC").style.display='';
+}<span><h1>&lt;/script></h1></span></p></pre>
+
+
+<p><span>4º Passo</span></p>
+<p><a target="_blank" href="/dnload/XMLCart.xml">Clique aqui</a> com o botão direito do mouse e selecione a opção de Salvar. Envie o arquivo salvo para a pasta <b>htm</b>, com o nome <b>XMLCart.xml</b>. Este é o arquivo que irá determinar o design do XML e poderá ser personalizado pelo webdesigner da loja.</p>
+
+
+<p><b>Obs:</b> O XML do carrinho lista somente os 5 primeiros produtos existentes no carrinho, além do valor total de todos produtos adicionados e a quantidade de itens.</p>

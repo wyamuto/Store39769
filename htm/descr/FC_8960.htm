@@ -1,0 +1,63 @@
+<p>Antes de iniciar a implantação do <b>DinheiroMail</b>, certfique-se que em <b>Formas de pagamento adicionais</b> tenha alguma opção (Pagto 1, Pagto 2, Pagto 3, Pagto 4 e Pagto 5) sem uso.</p>
+
+<p>Neste exemplo vamos utilizar a opção <b>Aceita Pagto 1</b>. Segue o passo-a-passo:</p>
+<br>
+
+<p><span class="dest NewsPassos">1º Passo</span></p>
+<p>Selecione <b>Sim</b> no campo <b>Aceita Pagto 1</b>. No campo <b>Legenda</b>, informe <b>Dinheiro Mail</b>. Se desejar adicione uma <b>Descrição</b>.</p>
+<br>
+<center><img src="/lojas/00000009/prod/FC8960a.gif" class="img-responsive"></center>
+<br>
+
+<p><span class="dest NewsPassos">2º Passo</span></p>
+<p>Copie a imagem abaixo e envie pela seta ao lado direito do campo <b>GIF</b> no <b>Aceita Pagto 1</b>.</p>
+
+<p>Para copiar as imagens clique com o botão direito do mouse em cima da imagem desejada e selecione a opção <b>Salvar Imagem Como...</b>.</p>
+
+<center><br><a href="/lojas/00000009/prod/Pagto1.gif" target="_blank"><br><img src="/lojas/00000009/prod/PagtoDinero.gif" border="0" class="img-responsive"></a></center>
+<br>
+
+<p><span class="dest NewsPassos">3º Passo</span></p>
+<p><a href="/dnload/DineroMail.zip">Clique aqui</a> para baixar ZIP com os arquivo <b>DineroMailErro.htm</b> e <b>DineroMailOK.htm</b> que deverão ser enviados para a pasta <b>htm</b> da loja.</p>
+<br>
+
+<p><span class="dest NewsPassos">4º Passo</span></p>
+<p>Copie o código abaixo, cole no <b>bloco de notas</b> e salve com o nome <b>ConfirmacaoPedido.htm</b> na pasta <b>htm</b> no gerenciador de arquivos da loja.</p>
+
+
+<!-- Inicio do Antigo Frame FC8960.htm-->
+<pre><span><span>
+&lt;!-- Altere onde está <b>9</b> de acordo com o Pagto utilizado na loja -->
+&lt;!-- Pagto 1 = <b>9</b>, Pagto 2 = <b>10</b>, Pagto 3 = <b>11</b>, Pagto 4 = <b>12</b> e Pagto 5 = <b>13</b> -->
+&lt;!-- Altere onde está <b>12345</b> de acordo com o seu "E_Comercio" (fornecido pelo DinheiroMail) <br><br> O "E_Comercio" é o número da conta DinheiroMail do comércio ou vendedor (sem zeros e sem o dígito final, que é um dígito verificador). -->
+&lt;!-- Altere onde está <b>00009999</b> para o ID da loja com 8 posiçoes. Por exemplo, se o ID da loja for 12345 coloque 00012345. -->
+&lt;!-- Altere onde está <b>9999</b> para o ID de sua loja -->
+&lt;!-- Altere onde está <b>High Store</b> para o nome de sua loja -->
+</span>
+
+&lt;!-- Pagto adicional 1 -->
+&lt;script>
+if(&lt;IDFormaPagamento>==<b>9</b>){
+  document.write('&lt;br>&lt;br>&lt;center>');
+  document.write('&lt;form name="dineromailfc" action="https://brasil.dineromail.com/dinero-tools/login/shop/shop_ingreso.asp" method="post" target="_blank">');
+  document.write('&lt;input type="hidden" name="TipoMoneda" value="1">');
+  document.write('&lt;input type="hidden" name="E_Comercio" value="<b>12345</b>">');
+  document.write('&lt;input type="hidden" name="image_url" value="https://www.rumo.com.br/lojas/<b>00009999</b>/images/LogoTopo.gif">');
+  document.write('&lt;input type="hidden" name="DireccionExito" value="https://www.rumo.com.br/sistema/Custom.asp?IDLoja=<b>9999</b>&amp;arq=DineroMailOK.htm">');
+  document.write('&lt;input type="hidden" name="DireccionFracaso" value="https://www.rumo.com.br/sistema/Custom.asp?IDLoja=<b>9999</b>&amp;arq=DineroMailErro.htm">');
+  document.write('&lt;input type="hidden" name="MediosPago" value="4,5,6,14,15,19,20,21,22,23,24,25,18,26,27,28,29,30,31,32,33,34,35,36,37,7">');
+  document.write('&lt;input type="hidden" name="Flete" value="&lt;Frete>">');
+  document.write('&lt;input type="hidden" name="NombreItem" value="Pedido efetuado na <b>High Store</b>">');
+  document.write('&lt;input type="hidden" name="NroItem" value="# &lt;NumPedido>">');
+  document.write('&lt;input type="hidden" name="PrecioItem" value="&lt;TotalSemFrete>">');
+  document.write('&lt;input type="image" src="https://brasil.dineromail.com/imagen/botones/tools/boton-pagar-04-BR.gif" border="0" name="submit" alt="Pagar com DineroMail">');
+  document.write('&lt;/form>');
+  document.write('&lt;/center>');
+}
+&lt;/script>
+</span>
+</pre>
+<!-- Fim do Antigo Frame-->
+<br>
+<p><span class="dest NewsPassos">5º Passo</span></p>
+<p>Efetue pedidos de teste em sua loja com esta forma de pagamento. Em seguida, acesse o site do <b>DinheiroMail</b> para verificar se as transações destes pedidos ocorreram corretamente, ou seja, se foram aprovadas ou não aprovadas.</p>

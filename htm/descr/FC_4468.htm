@@ -1,0 +1,67 @@
+<style>
+  #calc{max-width: 300px;border: 1px solid #808080; text-align: center;padding-top: 10px;border-radius: 10px;margin-left: 25%;}
+  .digt{max-width: 45px; margin-left: 5px;}
+  #result{background-color: #87CEFA;}
+  #bt{max-width: 35px;}
+  #bt:hover{background-color:#B0E0E6;border:2px solid #DCDCDC;border-radius:5px;}
+</style>
+
+<p>Para evitar diferenças, cadastre seus produtos com peso cúbico ou peso real, de acordo com as regras abaixo, definidas pelos <a href="http://www.correios.com.br/para-sua-empresa/comercio-eletronico/como-calcular-precos-e-prazos-de-entrega-em-sua-loja-on-line" target="_blank">Correios</a>:</p>
+
+<ol>
+<li><p>Calcular seu peso cúbico, de acordo com os seguintes passos:<br>- medir as dimensões do objeto (comprimento, largura e altura), em centímetros<br>- calcular o volume do objeto multiplicando o comprimento pela largura e pela altura<br>- dividir o produto da multiplicação por 6000 <br>- o resultado será o peso cúbico do objeto</p></li>
+<li><p>Pesar o objeto, para obter seu peso real</p></li>
+<li><p>Se o peso cúbico do objeto for menor ou igual a 10 kg, será atribuído o peso físico (ou real)</p></li>
+<li><p>Para objetos com peso cúbico maior que 10 kg, valerá o maior resultado após a comparação dos resultados entre o peso físico (kg) e o peso cúbico (C x L x A)/6.000</p></li>
+</ol>
+<br>
+<p><b>Um exemplo:</b></p>
+
+<p>Um objeto pesando 3,76 kg e medindo 40 cm de comprimento, 35 cm de largura e 30 cm de altura terá seu preço determinado da seguinte forma:</p>
+
+<ol>
+<li><p>Calcular o peso cúbico<br>- volume = 40 x 35 x 30 = 42.000 cm3<br>- peso cúbico = 42.000 / 6000 = 7, ou seja, 7 kg</p></li>
+<li><p>Pesar o objeto<br>- peso real = 4 kg</p></li>
+<li><p>O peso cúbico foi menor que 10kg. Sendo assim deve-ser utilizar o peso real do produto de 4kg</p></li>
+</ol>
+
+<div id="calc">
+  <form name="caculadora">
+    <p>Informe o peso Real (kg)
+      <input type="text" id="pReal" class="digt"></p>
+    <p> Informe a Largura (cm)
+      <input type="text" id="largura" class="digt"></p>
+    <p>Informe a Altura (cm)
+      <input type="text" id="altura" class="digt"></p>
+    <p>Informe a Profundidade (cm)
+      <input type="text" id="profundidade" class="digt"></p>
+    <p><img src="https://www.rumo.com.br/lojas/00028496/images/sign.svg" alt="" onclick="Calc_m3()" id="bt"></p>
+  </form>
+  <p id="result"></p>
+</div>
+
+<script>
+  function Calc_m3(){
+
+    if (document.getElementById('largura').value == "" || document.getElementById('altura').value == "" || document.getElementById('profundidade').value == "") {
+      alert("Favor preencher todos os campos");
+    };
+    var lg = document.getElementById('largura').value;
+    var at = document.getElementById('altura').value;
+    var pd = document.getElementById('profundidade').value;
+    var pr = document.getElementById('pReal').value;
+    parseFloat(pr);
+    var volume = parseFloat(lg) * parseFloat(at) * parseFloat(pd);
+    var pcubico = volume / 6000;
+    
+    if(pcubico <= 10){
+      document.getElementById("result").innerHTML = "O peso cúbico é menor que <b>10kg</b>, utilize o peso real";
+    }
+    else if(pcubico > 10 && pcubico > pr ){
+      document.getElementById("result").innerHTML = "Peso cúbico: <b>" + (pcubico.toFixed(2) + "kg</b>" );
+    }
+    else{
+      document.getElementById('result').innerHTML = "Seu pesso <b>Real</b> é maior que o <b>Cúbico</b>, utilize o peso real";
+    }
+  }
+</script>

@@ -1,0 +1,29 @@
+<style>
+.courrierpeq {font-size:8pt;font-family:courier new,tahoma,verdana;color:#0D6D9E;}
+.destpeq {font-size:8pt;font-family:tahoma,verdana;color:#990000;font-weight:bold;}
+</style>
+
+<pre>
+<span class=courrierpeq>
+&lt;SCRIPT&gt;
+function Banners()
+{
+  var MNews = new Array(); 
+  MNews[<span class=destpeq>0</span>]= '&lt;a href=ListaProdutos.asp?IDLoja=&lt;IDLoja&gt;&IDProduto=1&gt;&lt;img src="&lt;BaseLoja&gt;images/Banner1.gif" border="0"&gt;&lt;/a&gt;'
+  MNews[<span class=destpeq>1</span>]= '&lt;a href=ListaProdutos.asp?IDLoja=&lt;IDLoja&gt;&IDProduto=2&gt;&lt;img src="&lt;BaseLoja&gt;images/Banner2.gif" border="0"&gt;&lt;/a&gt;'
+  MNews[<span class=destpeq>2</span>]= '&lt;a href=ListaProdutos.asp?IDLoja=&lt;IDLoja&gt;&IDProduto=3&gt;&lt;img src="&lt;BaseLoja&gt;images/Banner3.gif" border="0"&gt;&lt;/a&gt;'
+  MNews[<span class=destpeq>3</span>]= '&lt;a href=ListaProdutos.asp?IDLoja=&lt;IDLoja&gt;&IDProduto=4&gt;&lt;img src="&lt;BaseLoja&gt;images/Banner4.gif" border="0"&gt;&lt;/a&gt;'
+  MNews[<span class=destpeq>4</span>]= '&lt;a href=ListaProdutos.asp?IDLoja=&lt;IDLoja&gt;&IDProduto=5&gt;&lt;img src="&lt;BaseLoja&gt;images/Banner5.gif" border="0"&gt;&lt;/a&gt;'
+   
+  var Numero = Math.floor(Math.random()*5);
+  document.write(MNews[Numero]);
+}
+&lt;/script&gt;
+
+&lt;SCRIPT&gt;
+Veja_Banner = Banners();
+&lt;/script&gt;
+</span>
+</pre>
+
+

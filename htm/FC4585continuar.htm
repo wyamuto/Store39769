@@ -1,0 +1,45 @@
+<style>
+.courrierpeq {font-size:9pt;font-family:courier new,tahoma,verdana;color:#0D6D9E;}
+.destpeq {font-size:9pt;font-family:tahoma,verdana;color:#990000;font-weight:bold;}
+</style>
+
+<pre>
+<span class=courrierpeq> 
+function ExibeBotoesCesta(bExibeDuasLinhasBotoes){
+  try{
+    document.write("&lt;style>.EstContinuarComprando{display:none;}&lt;/style>");
+    var table=document.getElementById('TabItens');
+
+    if(bExibeDuasLinhasBotoes){
+      var row=table.insertRow(0);
+      var cell=row.insertCell(-1);
+      cell.colSpan=4;
+      var sCel1="&lt;table width='100%'>&lt;tr>";
+            sCel1+="&lt;td width='33%' align='left'>&lt;a href='home.asp?IDLoja="+ IDLojaNum +"'>&lt;img src='"+ sCaminhoImages +"BotContComprando.png' title='Continuar comprando' border='0'>&lt;/a>&lt;/td>";
+            sCel1+="&lt;td width='34%' align='center'>&lt;a href='#R' onclick='document.Lista.submit()'>&lt;img src='"+ sCaminhoImages +"BotRecalcular.png' title='Recalcular' border='0'>&lt;/a>&lt;/td>";
+            sCel1+="&lt;td width='33%' align='right'>&lt;a href='#C' onclick='ComprarImg()'>&lt;img src='"+ sCaminhoImages +"BotComprar.png' title='Comprar' border='0'>&lt;/a>&lt;/td>";
+          sCel1+="&lt;/tr>&lt;/table>";
+      cell.innerHTML=sCel1;
+    }
+
+    var row=table.insertRow(-1);
+    var cell=row.insertCell(-1);
+    cell.colSpan=4;
+    var sCel2="&lt;table width='100%'>&lt;tr>";
+          sCel2+="&lt;td width='33%' align='left'>&lt;a href='home.asp?IDLoja="+ IDLojaNum +"'>&lt;img src='"+ sCaminhoImages +"BotContComprando.png' title='Continuar comprando' border='0'>&lt;/a>&lt;/td>";
+          sCel2+="&lt;td width='34%' align='center'>&lt;a href='#R' onclick='document.Lista.submit()'>&lt;img src='"+ sCaminhoImages +"BotRecalcular.png' title='Recalcular' border='0'>&lt;/a>&lt;/td>";
+          sCel2+="&lt;td width='33%' align='right'>&lt;a href='#C' onclick='ComprarImg()'>&lt;img src='"+ sCaminhoImages +"BotComprar.png' title='Comprar' border='0'>&lt;/a>&lt;/td>";
+        sCel2+="&lt;/tr>&lt;/table>";
+    cell.innerHTML=sCel2;
+
+  }catch(e){}
+  try{document.getElementById("TabBotoes").style.display='none';}catch(e){}
+}
+
+function ComprarImg(){
+  document.getElementsByName("Comprar")[0].click();
+}
+
+
+</span>
+</pre>

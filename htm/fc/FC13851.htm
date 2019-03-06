@@ -1,0 +1,37 @@
+<link href="http://ajuda.fastcommerce.com.br/lojas/00000009/htm/LojaSite.css" rel="stylesheet" type="text/css">
+<link type="text/css" rel="stylesheet" href="http://ajuda.fastcommerce.com.br/lojas/00000009/htm/bootstrap/css/bootstrap.css" media="screen">
+
+
+<pre>
+&lt;script type="text/javascript">
+  var apiKey = "<span class="dest"><b>apiKeyapiKeyapiKeyapiKeyapiKey</b></span>";
+  var apiLogin = "<span class="dest"><b>apiLoginapiLogin</b></span>";
+  var accountId = "<span class="dest"><b>accountId</b></span>";
+  var merchantId = "<span class="dest"><b>merchantId</b></span>";
+  var referenceCode = "&lt;IDLoja>-&lt;NumPedido>-&lt;IDPedido>"; // Número do pedido formado por IDLoja-NumPedido-IDPedido
+  var valorPedido = "&lt;TotalPrazo>"; // Valor total do pedido
+  var partnerId = "512022";
+  var signature = apiKey +"~"+ merchantId +"~"+ referenceCode +"~"+ valorPedido +"~BRL";
+  var  hash = CryptoJS.MD5(signature);
+
+ if(&lt;IDFormaPagamento>==13){
+  var sPayU= '&lt;form action="https://gateway.payulatam.com/ppp-web-gateway/" name="payu" method="post" id="payulatam-form" target="_blank">';
+  sPayU+='&lt;input type="hidden" name="merchantId" value="'+ merchantId +'">';
+  sPayU+='&lt;input type="hidden" name="accountId"  value="'+ accountId +'"/>';
+  sPayU+='&lt;input type="hidden" name="referenceCode" value="'+ referenceCode +'">';
+  sPayU+='&lt;input type="hidden" name="partnerId" value="'+ partnerId +'">';
+  sPayU+='&lt;input type="hidden" name="description" value="Pedido #&lt;NumPedido> realizado na loja &lt;NomeLoja>">';
+  sPayU+='&lt;input type="hidden" name="amount" value="'+ valorPedido +'">';
+  sPayU+='&lt;input type="hidden" name="tax" value="0">';
+  sPayU+='&lt;input type="hidden" name="taxReturnBase" value="0">';
+  sPayU+='&lt;input type="hidden" name="algorithmSignature" value="MD5">';
+  sPayU+='&lt;input type="hidden" name="signature" value="'+ hash +'">';
+  sPayU+='&lt;input type="hidden" name="currency" value="BRL">';
+  sPayU+='&lt;input type="hidden" name="buyerEmail" value="&lt;EmailPedido>">';
+  sPayU+='&lt;input name="test" type="hidden" value="0"/>';
+  sPayU+='&lt;input type="image" border="0" alt="" src="http://www.payulatam.com/img_botones_herramientas/btn-pagar-port-mediano.png "/>';
+  sPayU+='&lt;/form>';
+  document.getElementById('idTxtPaymentMethodFC').innerHTML='&lt;br />&lt;center>&lt;b>Clique no botão abaixo para prosseguir&lt;/b>&lt;br />&lt;br />'+ sPayU +'&lt;/center>';
+ }
+&lt;/script>
+</pre>

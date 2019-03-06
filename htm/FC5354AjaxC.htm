@@ -1,0 +1,34 @@
+<style>
+.courrierpeq {font-size:8pt;font-family:courier new,tahoma,verdana;color:#0D6D9E;}
+.destpeq {font-size:8pt;font-family:tahoma,verdana;color:#990000;font-weight:bold;}
+</style>
+
+<pre>
+<span class=courrierpeq>
+&lt;table cellspacing=0 cellpadding=0&gt;
+  &lt;tr&gt;
+  &lt;form name=fBusca method=POST action=listaProdutos.asp?IDLoja=&lt;IDLoja&gt; onSubmit='return VerTexto(this)'&gt;
+  &lt;input type=hidden name=Digitada value=True&gt;&lt;input type=hidden name=BuscaNomeRef value=True&gt;
+    &lt;td&gt;
+
+      <b><i>&lt;!--[if IE]&gt;&lt;style&gt;.productMenuClass {margin-left:-73px;margin-top:18px;}.productMenuClass3 {margin-left:-70px;margin-top:19px;}&lt;/style&gt;&lt;![endif]--&gt;
+      &lt;div id=texto3&gt;</i></b>
+
+        &lt;input type=text name=Texto class=InputTextBusca style=width:70px&gt;
+
+        <b><i>&lt;div id=productMenu3 class=productMenuClass3 spry:region=dsProducts&gt;
+          &lt;div class=productItemClass spry:repeat=dsProducts spry:suggest={n}&gt;{n}&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;script&gt;
+      var SprySuggest3=new Spry.Widget.AutoSuggest('texto3','productMenu3','dsProducts','n',{containsString:true,minCharsType:3});
+      &lt;/script&gt;</i></b>
+
+    &lt;/td&gt;
+    &lt;td&gt;&lt;img src=images/shim.gif width=5 height=5&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;input type=image name=ok src=&lt;BaseLoja&gt;images/BotOkBusca.gif&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/form&gt;
+&lt;/table&gt;
+</span>
+</pre>

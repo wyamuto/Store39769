@@ -1,0 +1,81 @@
+<html>
+<head>
+<link type="text/css" rel="stylesheet" href="http://ajuda.fastcommerce.com.br/lojas/00000009/htm/bootstrap/css/bootstrap.css" media="screen">
+<link href='http://ajuda.fastcommerce.com.br/lojas/00000009/htm/LojaSite.css' rel='stylesheet' type='text/css'>
+
+<link rel="stylesheet" href="http://ajuda.fastcommerce.com.br/lojas/00000009/htm/jquery_ui.css"> 
+<script language="JavaScript" src="/jquery-1.8.2.min.js"></script>
+<script language="JavaScript" src="/jquery-ui-1.9.1.custom.js"></script>
+<script type="text/javascript" src="http://ajuda.fastcommerce.com.br/lojas/00000009/htm/autosuggest.js"></script>
+<script type="text/javascript" src="http://ajuda.fastcommerce.com.br/lojas/00000009/htm/LojaLib.js"></script>
+
+
+</head>
+<body>
+<span id="idTextNewsFC" itemprop="articleBody">
+<span style="font-size:15px">Este procedimento explica como incluir uma aba para a loja virtual na página da empresa no Facebook.</span><br><br>
+<b>Obs:</b> Antes de seguir os passos de integração, é necessário que a loja tenha uma página no <b>Facebook</b>. <a href="http://ajuda.fastcommerce.com.br/Noticias.asp?IDLoja=9&IDNoticia=11259" target="_blank">Clique aqui</a> para ver os detalhes sobre esta criação.<hr><br>
+<br>
+<span class="dest NewsPassos">1º Passo</span><br>
+Acesse a página <b>Dados da loja</b> do site administrativo e marque o campo <b>Design da loja interna</b> da seção "Facebook":<br>
+<br>
+<center><img src="http://ajuda.fastcommerce.com.br/lojas/00000009/images/FB_Aba_01.png"></center><br>
+<br>
+<br>
+<span class="dest NewsPassos">2º Passo</span><br>
+Crie e envie os arquivos que irão compor o design da loja quando acessada de dentro do Facebook. Para ver as instruções, clique no <a target=_blank href=/adm/FrameAjudaAdm.asp?ajuda=404>ícone de interrogação</a> que fica ao lado do campo <b>Design da loja interna</b>. Caso queira utilizar um modelo pronto como ponto de partida, com design semelhante ao do próprio Facebook (fontes, cores, botões etc), clique nos links abaixo para baixar os arquivos que serão enviados para as pastas HTM e IMAGES:<br>
+<br>
+Arquivos de design do Facebook para a pasta <b>HTM</b>: <a href=/dnload/FacebookHTM.zip>FacebookHTM.zip</a><br>
+<br>
+Arquivos de imagem do Facebook para a pasta <b>IMAGES</b>. Escolha de acordo com o formato definido no campo <b>Tipo das imagens</b> na página <b>Estilos & cores</b>:<br>
+<br>
+<ul><li><b>PNG:</b> <a href=/dnload/FacebookPNG.zip>FacebookPNG.zip</a></li><li><b>JPG:</b> <a href=/dnload/FacebookJPG.zip>FacebookJPG.zip</a></li><li><b>GIF:</b> <a href=/dnload/FacebookGIF.zip>FacebookGIF.zip</a></li></ul><br>
+<span class="dest NewsPassos">3º Passo</span><br>
+Acesse <a href="http://developers.facebook.com/apps" target="_blank">http://developers.facebook.com/apps</a> e digite seus dados de acesso.<br><br>
+<a href="http://ajuda.fastcommerce.com.br/sistema/Custom.asp?IDLoja=9&arq=FB_11357_A.htm" target="_blank">Clique aqui</a>, caso seja solicitado a autênticação de sua conta por telefone.<br>
+<br>
+<span class="dest NewsPassos">4º Passo</span><br>
+Entre no menu <b>Apps</b> e em seguida clique no item <b>Add a New App</b>
+<br><br><center><img src="http://ajuda.fastcommerce.com.br/lojas/00000009/images/fc/FC11357_02.png"></center><br>
+<span class="dest NewsPassos">5º Passo</span><br>
+Clique na opção <b>advanced setup</b>
+<br><br><center><img src="http://ajuda.fastcommerce.com.br/lojas/00000009/images/fc/FC11357_03.png"></center><br>
+<span class="dest NewsPassos">6º Passo</span><br>
+No campo <b>Display Name</b> informe o nome da aba que vai ser apresentada em sua página do Facebook, no campo <b>Namespace</b> informe o nome da loja sem espaços, selecione <b>Não</b> no campo <b>Is this a test version of another app? Saiba mais.</b>, selecione no campo <b>Categoria</b> a melhor opção que representa seu ramo de atividade e clique no botão <b>Create App ID</b>
+<br><br><center><img src="http://ajuda.fastcommerce.com.br/lojas/00000009/images/fc/FC11357_04.png"></center><br>
+<span class="dest NewsPassos">7º Passo</span><br>
+Clique no botão <b>+ Add Platform</b>
+<br><br><center><img src="http://ajuda.fastcommerce.com.br/lojas/00000009/images/fc/FC11357_05.png"></center><br>
+<span class="dest NewsPassos">8º Passo</span><br>
+Clique no item <b>Page Tab</b>
+<br><br><center><img src="http://ajuda.fastcommerce.com.br/lojas/00000009/images/fc/FC11357_06.png"></center><br>
+<span class="dest NewsPassos">9º passo</span><br>
+<ul><li><b>Page Tab Name:</b> Informe o nome da loja
+<li><b>Page Tab URL:</b> Informe o endereço da loja, que deve ter a seguinte estrutura:<br>
+Loja <b>com</b> domínio próprio no Fastcommerce: <b>http://www.minhaloja.com.br/home.asp?IDLoja=999999&fbh=true</b><br>
+Loja <b>sem</b> domínio próprio no Fastcommerce: <b>http://minhaloja.lojavirtualfc.com.br/home.asp?IDLoja=999999&fbh=true</b><br>
+<li><b>Secure Page Tab URL:</b> Informe o endereço da loja usando https:// e o domínio lojavirtualfc.com.br:<br>
+<b>https://minhaloja.lojavirtualfc.com.br/home.asp?IDLoja=999999&fbh=true</b></ul><br>
+<br>
+Nos endereços acima, altere 999999 pelo ID da loja.<br>
+<br>
+<img src="/lojas/00000009/images/fc/FC11357_Passo_8a.png"><br>
+<br>
+<br>
+<span class="dest NewsPassos">10º passo</span>
+<br>Copie o endereço abaixo, altere somente o parâmetro <b>app_id</b> pelo <b>Número de identificação do Aplicativo</b> de sua aplicação e em seguida acesse esta URL em seu navegador:
+<br><br><span class=courrierpeq>http://www.facebook.com/dialog/pagetab?app_id=<span class=dest>999999999999999</span>&next=http://www.facebook.com</span>
+<br><br>
+<img src="/lojas/00000009/images/fc/FC11357_Passo_9a.png"><br>
+<br><br>
+Selecione a página do Facebook em que a guia deverá ser adicionada e clique em <b>Adicionar aba da página</b><br><br>
+<img src="/lojas/00000009/images/FC11357_Passo_7.JPG"><br>
+<br><span class="dest NewsPassos">11º passo</span><br>
+Acesse a página da empresa no Facebook e veja que uma nova aba foi adicionada ao menu.<br>
+<br>
+<img src="/lojas/00000009/images/LojaFacebook.jpg"><br>
+<br>
+<br>
+</span>
+</body>
+</html>

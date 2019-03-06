@@ -1,0 +1,109 @@
+<p>A ativação deste recurso deve ser feita através do <a href="https://www.google.com/merchants" target="_blank">Google Merchant</a>.</p>
+
+<p>Veja os passos para ativação:</p>
+
+<br><p><span class="dest NewsPassos">1º Passo</span></p>
+
+<p>Clique no ícone de três pontos na conta do <b>Google Merchant Center</b>:</p>
+<span id="idTextNewsFC" itemprop="articleBody"><img src="/lojas/00000009/images/fc/GMAa.jpg" class="img-responsive"></span><br><br>
+
+<p><span class="dest NewsPassos">2º Passo</span></p>
+
+<p>Abra a seção <b>Programas do Merchant Center</b>:</p>
+<span id="idTextNewsFC" itemprop="articleBody"><img src="/lojas/00000009/images/fc/GMAb.jpg" class="img-responsive"></span><br><br>
+
+<p><span class="dest NewsPassos">3º Passo</span></p>
+
+<p>Clique em <b>Participar</b>:</p>
+<span id="idTextNewsFC" itemprop="articleBody"><img src="/lojas/00000009/images/fc/GMAc.jpg" class="img-responsive"></span><br><br>
+
+<p><span class="dest NewsPassos">4º Passo</span></p>
+
+<p>Clique em <b>Avaliações do consumidor</b>
+<span id="idTextNewsFC" itemprop="articleBody"><img src="/lojas/00000009/images/fc/GMAd.jpg" class="img-responsive"></span><br><br>
+
+<p><span class="dest NewsPassos">5º Passo</span></p>
+
+<p> Na guia <b>Configuração</b>, copie o código do <b>merchant_id</b> da seção <b>Integração da função de permissão</b>:</p>
+<span id="idTextNewsFC" itemprop="articleBody"><img src="/lojas/00000009/images/fc/GMAe.jpg" class="img-responsive"></span><br><br>
+
+<p><span class="dest NewsPassos">6º Passo</span></p>
+
+<p>Copie o código abaixo, cole ao final do arquivo <b>ConfimacaoPedido.htm</b> e altere onde está <b style="color:#ff2200">9999999999</b> para o seu código <b>merchant_id</b>:</p>
+
+<pre>
+&lt;!-- BEGIN Google Avaliações do Consumidor  -->
+&lt;script>
+Date.prototype.addDays = function(days) {
+  this.setDate(this.getDate() + parseInt(days));
+  return this;
+};
+
+function fnDateGoogle(){
+  var currentDate=new Date();
+  currentDate.addDays(7);
+  var month=currentDate.getUTCMonth()+1;
+  var day=currentDate.getUTCDate();
+  var year=currentDate.getUTCFullYear();
+  day=day+"";
+  month=month+"";
+  if(day.length==1)day="0"+day;
+  if(month.length==1)month="0"+month;
+  var newdateGoogle=year +"-"+ month +"-"+ day;
+  return newdateGoogle; 
+}
+
+F$.fnLoadScript('https://apis.google.com/js/platform.js?onload=renderOptIn',true);
+&lt;/script>
+
+&lt;script>
+  window.renderOptIn = function() {
+    window.gapi.load('surveyoptin', function() {
+      window.gapi.surveyoptin.render(
+        {
+          "merchant_id": <b style="color:#ff2200">9999999999</b>,
+          "order_id": "&lt;NumPedido>",
+          "email": "&lt;EmailPedido>",
+          "delivery_country": "BR",
+          "estimated_delivery_date": fnDateGoogle()
+        });
+    });
+  }
+&lt;/script>
+
+&lt;script>
+  window.___gcfg = {
+    lang: 'pt_BR'
+  };
+&lt;/script>
+&lt;!-- END Google Avaliações do Consumidor  -->
+</pre><br><br>
+
+<p><span class="dest NewsPassos">7º Passo</span></p>
+
+<p> Na guia <b>Configuração</b>, copie o código do <b>merchant_id</b> da seção <b>Integração do símbolo</b>:</p>
+
+<center><span id="idTextNewsFC" itemprop="articleBody"><img src="/lojas/00000009/images/fc/GMAf.jpg" class="img-responsive"></span></center><br><br>
+
+<p><span class="dest NewsPassos">8º Passo</span></p>
+
+<p>Copie o código abaixo, cole ao final do arquivo <b>Rodape.htm</b> e altere onde está <b style="color:#ff2200">9999999999</b> para o seu código <b>merchant_id</b>:</p>
+
+<pre>
+&lt;script src="https://apis.google.com/js/platform.js?onload=renderBadge" async defer>&lt;/script>
+
+&lt;script>
+  window.renderBadge = function() {
+    var ratingBadgeContainer = document.createElement("div");
+    document.body.appendChild(ratingBadgeContainer);
+    window.gapi.load('ratingbadge', function() {
+      window.gapi.ratingbadge.render(ratingBadgeContainer, {"merchant_id": <b style="color:#ff2200">9999999999</b>});
+    });
+  }
+&lt;/script>
+&lt;script>
+  window.___gcfg = {
+    lang: 'pt_BR'
+  };
+&lt;/script>
+</pre><br><br>

@@ -1,0 +1,30 @@
+<style>
+.courrierpeq {font-size:8pt;font-family:courier new,tahoma,verdana;color:#0D6D9E;}
+.destpeq {font-size:8pt;font-family:tahoma,verdana;color:#990000;font-weight:bold;}
+</style>
+
+<pre>
+<span class=courrierpeq>
+&lt;html&gt;
+&lt;head&gt;
+&lt;script language=JavaScript src=/sistema/RequestObject.js&gt;&lt;/script&gt;
+&lt;script language=JavaScript src=/sistema/LojaSite.js&gt;&lt;/script&gt;
+&lt;script&gt;
+function f(){
+  setTimeout('try{fechaIf();}catch(e){}',1);
+}
+&lt;/script&gt;
+&lt;title&gt;Foto ampliada&lt;/title&gt;
+&lt;/head&gt;
+&lt;body leftmargin=0 topmargin=0 marginwidth=0 marginheight=0 bgcolor=#FFFFFF bgproperties=fixed text=#333333 link=#0000FF vlink=#FF0000 alink=#6E7CFF onLoad='self.focus();'&gt;
+
+&lt;table align=center&gt;&lt;tr&gt;&lt;td&gt;
+&lt;script&gt;
+document.write('&lt;img src=../../../'+(Request.QueryString("foto"))+' onclick="f();" alt="clique para fechar" style="cursor:hand;">&lt;/b>&lt;br>&lt;br>');
+&lt;/script&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</span>
+</pre>

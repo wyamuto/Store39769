@@ -1,0 +1,152 @@
+<link href='http://www.rumo.com.br/lojas/00000009/htm/LojaSite.css' rel='stylesheet' type='text/css'>
+<style>
+pre {
+  display: block;
+  padding: 9.5px;
+  margin: 0 0 10px;
+  font-size: 13px;
+  line-height: 1.428571429;
+  color: #333333;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #f5f5f5;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+}
+p{font: 14px arial, tahoma;}
+</style>
+<p>É possível inserir um título, alterar o texto e até mesmo trocar a imagem das formas de pagamento do Xtreme Checkout! Veja abaixo alguns exemplos:</p>
+
+<p>Obs¹: Todos os exemplos são feitos editando o arquvivo <b>Checkout.htm</b> da loja que fica na pasta HTM</p>
+
+<p>Obs²: Todas as alterações são feitas por scripts. Portanto, é desejável conhecimento em <i>JavaScript</i>.</p>
+
+<hr><p style="font-size:20px;">Como inserir um títutlo acima da forma de pagamento?</p>
+
+<p><span class="dest NewsPassos">1º Passo</span></p>
+
+<p>Insira o código abaixo ao final do arquivo <b>Checkout.htm</b>:</p>
+
+<pre>
+&lt;script>   
+
+function FuncChkPaymentEnd(){
+    FuncChkChangeTitPagto("<span style="color:#B22222;">1</span>","Boleto bancário",""); //Boleto
+    FuncChkChangeTitPagto("<span style="color:#B22222;">4</span>","Depósito Online","15px"); //Depósito
+}
+
+function FuncChkChangeTitPagto(sPagto,sTit,sMtop){
+  var oPagto=F$.GetID("idPagto"+ sPagto +"FC");
+  if(oPagto){
+    var oNewElement=document.createElement("div");
+    var oDivSecao=oPagto.parentNode.insertBefore(oNewElement,oPagto);
+    oDivSecao.innerHTML=sTit;
+    oDivSecao.style.padding="5px";    
+    if(sMtop!='')oDivSecao.style.marginTop=sMtop;
+    oDivSecao.style.fontWeight="bold";
+    oDivSecao.style.fontSize="1.1em";
+  }
+}
+
+&lt;/script>
+</pre>
+
+<p>No exemplo acima estamos inserindo um título acima das formas de pagamento <b>Boleto</b> e <b>Depósito</b>. A função <span style="color:#4682B4;">FuncChkChangeTitPagto</span> é responsável pela montagem e design desses títulos.</p>
+
+<p>Para definir acima de qual forma de pagamento o título será adicionado, altere o ID para a desejada. O ID é o código em destaque. O texto do título é o que está à frente do respectivo ID.</p>
+
+<p>Segue exemplo de aplicação:</p>
+
+<center> <img src="/lojas/00000009/images/FC_14920.png"> </center>
+
+<p><span class="dest NewsPassos">2º Passo</span></p>
+
+<p>Para efetivar a mudança, grave a alteração e apague o cache da loja. Faça pedidos de teste para verificar se está tudo OK.</p>
+
+<hr><p style="font-size:20px;">Como alterar o texto da forma de pagamento?</p>
+
+<p><span class="dest NewsPassos">1º Passo</span></p>
+
+<p>Insira o código abaixo ao final do arquivo <b>Checkout.htm</b>:</p>
+
+<pre>
+&lt;script>
+
+function FuncChkPaymentEnd(){
+    FuncChkChangeTxtPagto("<span style="color:#B22222;">21</span>","&lt;label for=Pagto21>&lt;div style='line-height:20px;'>&lt;span style='font-weight:bold;'>MercadoPago&lt;/span>&lt;br>Parcelamento em até &lt;b>18x&lt;/b> no cartão:&lt;br>&lt;span style='font-size:8pt'>VISA, MasterCard, Diners, Amex, Hipercard, Aura, transferência bancária e boleto.&lt;/span>&lt;/div>&lt;/label>");
+}
+
+function FuncChkChangeTxtPagto(sPagto,sTxt){
+  var oPagto=F$.GetID("idTxtPagto"+ sPagto +"FC");
+  if(oPagto){oPagto.innerHTML=sTxt;}
+}
+
+&lt;/script>
+</pre>
+
+<p>No exemplo acima, estamos alterando o texto da forma de pagamento <b>MercadoPago</b>. A função <span style="color:#4682B4;">FuncChkChangeTxtPagto</span> é responsável por localizar a forma de pagamento e trocar o texto atual.</p>
+
+<p>Para indicar qual forma de pagamento tera seu texto alterado basta alterar o ID para a desejada. O ID é o código em destaque. O texto formatado é o que está à frente do ID respectivo.</p>
+
+<p>Abaixo segue exemplo do código acima aplicado.</p>
+
+<center> <img src="/lojas/00000009/images/FC_14920_1.png"> </center>
+
+<p><span class="dest NewsPassos">2º Passo</span></p>
+
+<p>Para efetivar a mudança, grave a alteração e apague o cache da loja. Faça pedidos de teste para verificar se está tudo OK.</p>
+
+<hr><p style="font-size:20px;">Como alterar a imagem da minha forma de pagamento?</p>
+
+<p><span class="dest NewsPassos">1º Passo</span></p>
+
+<p>Insira o código abaixo ao final do arquivo <b>Checkout.htm</b>:</p>
+
+<pre>
+&lt;script>
+
+function FuncChkPaymentEnd(){
+    FuncChkChangeImgPagto("<span style="color:#B22222;">3_3</span>","mastercard_ico.jpg");
+}
+
+function FuncChkChangeImgPagto(sPagto,sImg){
+  var oPagto=F$.GetID("idImgPagto"+ sPagto +"FC");
+  if(oPagto){
+    oPagto.src=FC$.PathImg+sImg;
+    oPagto.style.width='65px';
+    oPagto.style.height='41px';
+    oPagto.style.cursor='pointer';
+  }
+}
+
+&lt;/script>
+</pre>
+
+<p>No exemplo acima estamos alterando a imagem da forma de pagamento <b>MasterCard</b>. A função <span style="color:#4682B4;">FuncChkChangeImgPagto</span> é responsável por localizar a forma de pagamento e trocar a imagem atual.</p>
+
+<p>Para indicar qual forma de pagamento terá sua imagem personalizada, altere o ID para a da forma desejada e indique o nome da imagem e sua extensão que está a frente do ID respectivo. O ID é o código em destaque. A imagem a ser utilizada deve estar na pasta <i>Images</i> da loja.</p>
+
+<p>Segue exemplo do código aplicado:</p>
+
+<center> <img src="/lojas/00000009/images/FC_14920_2.png"> </center>
+
+<p><span class="dest NewsPassos">2º Passo</span></p>
+
+<p>Para efetivar a mudança, grave a alteração e apague o cache da loja. Faça pedidos de teste para verificar se está tudo OK.</p>
+
+
+<p><span class="dest">ATENÇÃO:</span> O arquivo <b>Checkout.htm</b> só pode ter uma função <i>FuncChkPaymentEnd</i> declarada. Sendo assim, caso queira utilizar as 3 alterações acima, basta inseri-las todas dentro dessa função como no seguinte exemplo:</p>
+
+<pre>
+&lt;script>
+
+function FuncChkPaymentEnd(){
+    FuncChkChangeTitPagto("<span style="color:#B22222;">1</span>","Boleto bancário",""); //Boleto
+    FuncChkChangeTitPagto("<span style="color:#B22222;">4</span>","Depósito Online","15px"); //Depósito
+    FuncChkChangeTxtPagto("<span style="color:#B22222;">21</span>","&lt;label for=Pagto21>&lt;div style='line-height:20px;'>&lt;span style='font-weight:bold;'>MercadoPago&lt;/span>&lt;br>Parcelamento em até &lt;b>18x&lt;/b> no cartão:&lt;br>&lt;span style='font-size:8pt'>VISA, MasterCard, Diners, Amex, Hipercard, Aura, transferência bancária e boleto.&lt;/span>&lt;/div>&lt;/label>");
+    FuncChkChangeImgPagto("<span style="color:#B22222;">3_3</span>","mastercard_ico.jpg");
+}
+
+&lt;/script>
+</pre>
+

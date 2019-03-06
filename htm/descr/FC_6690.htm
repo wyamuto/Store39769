@@ -1,0 +1,182 @@
+<p><span><b>ATENÇÃO:</b></span> A implantação deste recurso requer <b>CONHECIMENTOS AVANÇADOS</b> de <b>html</b> e <b>JavaScript</b>. O conteúdo mencionado neste exemplo é apenas uma sugestão. A <b>Rumo Informática</b> não se responsabiliza por apresentar mais detalhes a respeito de alterações e implantações. Para mais informações, solicite recomendações de webdesigner ou entre em contato com o de sua preferência.</p>
+
+<p>Veja exemplo em nossa loja <a href="http://www.fastcommerce.com.br/shoptenis" target="_blank">www.fastcommerce.com.br/shoptenis</a>.</p>
+
+<center><img src="/lojas/00028496/images/FC6690aa.gif"></center>
+
+<p><span>Atenção:</span> As imagens devem ter o mesmo padrão de dimensões:</p><ul>
+<li>Imagem principal (100px de largura por 100px de altura)<li>Imagem detalhada (200px de largura por 200px de altura)<li>Imagem ampliada (400px de largura por 400px de altura)</ul>
+	<p><b>Obs.:</b> Todas as imagens deverão ser <b>.jpg</b>.</p>
+
+<p>Com o cadastro do produto de forma correta, envie um arquivo chamado <b>AmpliaFoto.htm</b> com o seguinte conteúdo:</p>
+
+<!-- Inicio do Antigo Frame AmpliaFoto.htm-->
+<pre>
+<span>
+&lt;html&gt;
+&lt;head&gt;
+&lt;script language=JavaScript src=/sistema/RequestObject.js&gt;&lt;/script&gt;
+&lt;script language=JavaScript src=/sistema/LojaSite.js&gt;&lt;/script&gt;
+&lt;script&gt;
+function f(){
+  setTimeout('try{fechaIf();}catch(e){}',1);
+}
+&lt;/script&gt;
+&lt;title&gt;Foto ampliada&lt;/title&gt;
+&lt;/head&gt;
+&lt;body leftmargin=0 topmargin=0 marginwidth=0 marginheight=0 bgcolor=#FFFFFF bgproperties=fixed text=#333333 link=#0000FF vlink=#FF0000 alink=#6E7CFF onLoad='self.focus();'&gt;
+
+&lt;table align=center&gt;&lt;tr&gt;&lt;td&gt;
+&lt;script&gt;
+document.write('&lt;img src=../../../'+(Request.QueryString("foto"))+' onclick="f();" alt="clique para fechar" style="cursor:hand;">&lt;/b>&lt;br>&lt;br>');
+&lt;/script&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</span>
+</pre>
+<!-- Fim do Antigo Frame-->
+
+<p>Adicione o seguinte código no arquivo <b>EstiloProduto.htm</b>:</p>
+
+<!-- Inicio do Antigo Frame FC6690imgamp.htm-->
+<pre>
+<span>
+&lt;ProdTop&gt;
+  &lt;script&gt;
+  function AmpliaFoto(cod){
+    windowopen('<span>ShopTênis</span>','/lojas/<span>00009999</span>/htm/AmpliaFoto.htm?foto='+cod,40,40,440,440);
+  }
+  &lt;/script&gt;
+&lt;/ProdTop&gt;
+
+
+&lt;ProdDet&gt;
+&lt;style&gt;
+.Titulos {display:none}
+&lt;/style&gt;
+&lt;br&gt;
+&lt;table width=562 border=0 cellspacing=0 cellpadding=0 bgcolor=#f3f3f3&gt;
+  &lt;tr height=43&gt;&lt;td valign=top bgproperties=fixed background=../lojas/00000276/images/TabelaDetProd1.gif colspan=3&gt;&lt;span class=EstNomeProdDet&gt;&lt;NomeProd&gt;&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td width=15 bgproperties=fixed background=../lojas/00000276/images/TabelaDetProd2.gif&gt;&lt;/td&gt;
+    &lt;td bgcolor=white&gt;
+
+
+&lt;table width=100% name=TabProduto&lt;IDProduto&gt; cellpadding=0 cellspacing=0&gt;
+  &lt;tr&gt;
+    &lt;td align=center valign=top&gt;
+      <span>&lt;a target=_self href=javascript:AmpliaFoto("&lt;ImagemProdAmp>");>&lt;img src="&lt;ImagemProdDet>" border="0">&lt;/a>&lt;br>
+      &lt;a target=_self href=javascript:AmpliaFoto("&lt;ImagemProdAmp>");>&lt;img src=/lojas/<span>00009999</span>/images/AMP.gif border=0 alt="Clique para ver foto ampliada"&gt;&lt;/a&gt;&lt;br&gt;</span>
+      &lt;script&gt;IndicaProd(&lt;IDProduto&gt;);&lt;/script&gt;
+    &lt;/td&gt;
+    &lt;td width=7&gt;&lt;img src=images/shim.gif width=7&gt;&lt;/td&gt;
+    &lt;td valign=top&gt;
+      &lt;table name=TabDadosProduto&lt;IDProduto&gt; width=100% cellpadding=5 cellspacing=0&gt;
+        &lt;tr&gt;
+          &lt;td valign=top&gt;
+            &lt;table name=TabNomeRefProd&lt;IDProduto&gt; width=100% cellpadding=2 cellspacing=0&gt;
+              &lt;tr&gt;
+                &lt;td valign=top&gt;&lt;/td&gt;
+                &lt;td width=7&gt;&lt;img src=images/shim.gif width=7 height=1&gt;&lt;/td&gt;
+                &lt;td valign=top align=right rowspan=2 nowrap&gt;&lt;Lancamento&gt;&lt;/td&gt;
+              &lt;/tr&gt;
+              &lt;tr&gt;
+                &lt;td valign=top class=EstRefProd&gt;Ref. &lt;CodProd&gt; - &lt;LegendaCat&gt; &lt;NomeCat&gt;&lt;/td&gt;
+                &lt;td&gt;&lt;/td&gt;
+              &lt;/tr&gt;
+            &lt;/table&gt;
+          &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;&lt;td height=7&gt;&lt;img src=images/shim.gif width=1 height=7&gt;&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td valign=top class=EstDescrProd&gt;&lt;Descricao&gt;&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td valign=top&gt;
+            &lt;table name=TabAdicionais&lt;IDProduto&gt; cellpadding=0 cellspacing=0&gt;
+              &lt;tr&gt;&lt;td height=3&gt;&lt;img src=images/shim.gif width=1 height=3&gt;&lt;/td&gt;&lt;/tr&gt;
+              &lt;tr&gt;
+                &lt;td&gt;
+                  &lt;table name=Tab1Adic&lt;IDProduto&gt; cellpadding=0 cellspacing=0&gt;
+                    &lt;tr&gt;
+                      &lt;td nowrap&gt;&lt;Adicional1&gt;&lt;/td&gt;
+                      &lt;td nowrap&gt;&lt;Adicional2&gt;&lt;/td&gt;
+                      &lt;td nowrap&gt;&lt;Adicional3&gt;&lt;/td&gt;
+                    &lt;/tr&gt;
+                  &lt;/table&gt;
+                &lt;/td&gt;
+              &lt;/tr&gt;
+              &lt;tr&gt;
+                &lt;td&gt;
+                  &lt;table name=Tab2Adic&lt;IDProduto&gt; cellpadding=0 cellspacing=0&gt;
+                    &lt;tr&gt;
+                      &lt;td nowrap&gt;&lt;Cor&gt;&lt;/td&gt;
+                      &lt;td nowrap&gt;&lt;AdicionalD1&gt;&lt;/td&gt;
+                      &lt;td nowrap&gt;&lt;AdicionalD2&gt;&lt;/td&gt;
+                      &lt;td nowrap&gt;&lt;AdicionalD3&gt;&lt;/td&gt;
+                      &lt;td nowrap&gt;&lt;Peso&gt;&lt;/td&gt;
+                    &lt;/tr&gt;
+                  &lt;/table&gt;
+                &lt;/td&gt;
+              &lt;/tr&gt;
+            &lt;/table&gt;
+          &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;&lt;td align=right class=EstMaisInfo nowrap&gt;&lt;DescrURL&gt;&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td valign=top&gt;
+            &lt;table name=TabPreco&lt;IDProduto&gt; width=100% cellpadding=3 cellspacing=0&gt;
+              &lt;tr&gt;&lt;td height=1 colspan=5&gt;&lt;img src=images/shim.gif width=1 height=1&gt;&lt;/td&gt;&lt;/tr&gt;
+              &lt;tr&gt;
+                &lt;td width=15% nowrap&gt;&lt;/td&gt;
+                &lt;td width=7&gt;&lt;img src=images/shim.gif width=7 height=1&gt;&lt;/td&gt;
+                &lt;td align=center width=15% nowrap&gt;&lt;/td&gt;
+                &lt;td width=7&gt;&lt;img src=images/shim.gif width=7 height=1&gt;&lt;/td&gt;
+                &lt;td nowrap class=EstPrecoProd nowrap&gt;&lt;Preco&gt;&lt;MaxParcelasProd&gt;&lt;AvisoDisp&gt;&lt;IndicaProd&gt;&lt;br&gt;&lt;LinkOpiniao&gt;&lt;/td&gt;
+              &lt;/tr&gt;
+            &lt;/table&gt;&lt;br&gt;
+          &lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/table&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+&lt;table width=100% border=0 cellspacing=0 cellpadding=0&gt;
+  &lt;tr&gt;
+    &lt;td width=192 valign=top&gt;
+
+      &lt;table width=192 bgcolor=#dedede border=0 cellspacing=1 cellpadding=3&gt;
+&lt;!-- SUBPRODUTO INI --&gt;
+&lt;Sub&gt;
+  &lt;tr bgcolor=#fcfcfc&gt;&lt;FormProd&gt;
+    &lt;td&gt;&lt;table width=192 cellspacing=0 cellpadding=0&gt;&lt;tr&gt;&lt;td&gt;&lt;Adicional3&gt;&lt;/td&gt;&lt;td&gt;&lt;script&gt;MostraCarrinhoDisp(&lt;Estoque&gt;,&lt;IDProduto&gt;,'&lt;CodProd&gt;');&lt;/script&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/td&gt;
+  &lt;/tr&gt;&lt;/FormProd&gt;
+&lt;/Sub&gt;
+&lt;!-- SUBPRODUTO FIM --&gt;
+      &lt;/table&gt;
+    &lt;/td&gt;
+    &lt;td valign=top&gt;
+      &lt;script&gt;MostraParcelas(&lt;PrecoNum&gt;,&lt;MaxParcelasProdNum&gt;);&lt;/script&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+    &lt;/td&gt;
+    &lt;td width=15 bgproperties=fixed background=../lojas/00000276/images/TabelaDetProd3.gif&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr height=16&gt;&lt;td bgproperties=fixed background=../lojas/00000276/images/TabelaDetProd4.gif colspan=3&gt;&nbsp;&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;  
+&lt;/ProdDet&gt;
+</span>
+</pre>
+<!-- Fim do Antigo Frame-->
+
+
+
+<p>O código deve ser adicionado onde tem a tag <span>&lt;ImagemProd&gt;</span>.</p>
+
+<p>Neste exemplo, altere onde está <span>ShopTênis</span> para o nome de sua loja e altere de <span>00009999</span> para o ID da loja com 8 posiçoes, por exemplo, se o ID de sua loja for <b>123</b> coloque <b>00000123</b>.</p>
+
+<p><b>Obs.:</b> Envie para a pasta <b>IMAGES</b> da loja uma imagem em <b>gif</b> chamada <span>AMP.gif</span>. Esta imagem é a que tem a legenda <b>VEJA IMAGEM AMPLIADA</b>.</p>
+
+<center><img src="/lojas/00028496/images/FC6690cc.gif"></center>

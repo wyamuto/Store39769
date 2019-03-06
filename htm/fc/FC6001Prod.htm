@@ -1,0 +1,19 @@
+<style>
+.courrierpeq {font-size:8pt;font-family:courier new,tahoma,verdana;color:#0D6D9E;}
+.destpeq {font-size:8pt;font-family:tahoma,verdana;color:#990000;font-weight:bold;}
+</style>
+
+<pre>
+<span class=courrierpeq>&lt;ProdTop&gt;</span>
+
+<span class=courrierpeq>&lt;script&gt;
+function MostraDesconto(PrecoProd){
+  if(PrecoProd==0)return;
+  document.write("&lt;br&gt;&lt;table bgcolor=black <span class=destpeq>width=320</span> cellspacing=1 cellpadding=3&gt;&lt;tr <span class=destpeq>bgcolor=#07489A</span>&gt;&lt;td colspan=3 height=22 class=TitTabParc align=center&gt;&lt;b&gt;Desconto&lt;/td&gt;&lt;/tr&gt;&lt;tr class=EstParcPar&gt;&lt;td colspan=3 height=22&gt;Pague com depósito bancário, boleto bancário ou ItaúShopline e ganhe &lt;font color=#990000&gt;&lt;b&gt;5%&lt;/font&gt; de desconto.&lt;hr align=center width=95% style='color:#B4B4B4;'&gt; Valor com desconto &lt;b&gt;&lt;font color=#990000&gt;"+FormatPrecoReais(PrecoProd*<span class=destpeq>0.95</span>)+"&lt;/font&gt;&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;");
+  document.write("&lt;/table&gt;&lt;br&gt;");
+}
+&lt;/script&gt;
+
+&lt;/ProdTop&gt;
+</span>
+</pre>

@@ -1,0 +1,121 @@
+<p><a href="/prod,idloja,9,idproduto,4869611" target="_blank">Clique aqui</a> e veja mais detalhes sobre como fazer uma cópia de segurança.</p>
+
+<p><span class="dest NewsPassos">1º Passo</span></p>
+<p>Adicione o código abaixo ao final do arquivo <b>JurosParcelas.js</b>:</p>
+<span><pre>// Taxa de juros do PagSeguro
+var Juros=new Array(1,0.52255,0.35347,0.26898,0.21830,0.18453,0.16044,0.14240,0.12838,0.11717,0.10802,0.10040,0.09397,0.08846,0.08371,0.07955,0.07589,0.07265);</pre></span>
+<br>
+
+<p><b>Obs:</b> Se sua loja trabalha desta forma (em até 3x sem juros e com juros nas parcelas 4 e 5):</p>
+
+<pre>1x sem juros
+2x sem juros
+3x sem juros
+4x com juros
+5x com juros</pre>
+<br>
+
+<p>O Arquivo JurosParcelas.js deve ser assim (informe o número <b>1</b> para exibir a parcela sem juros):</p>
+<pre>// Taxa de juros do PagSeguro
+var Juros=new Array(1,1,1,0.26898,0.21830);</pre>
+<br>
+
+
+<p><span class="dest NewsPassos">2º Passo</span></p>
+<p>Encontre no seu arquivo <b>LojaLib.js</b> as funções <b>MostraMaxParcelaPS</b> e <b>MostraParcelasPS</b>, insira o código abaixo para que o parcelamento seja mostrado de acordo com a parcela mínima utilizada pelo PagSeguro:</p>
+
+<p><b>Obs:</b> Caso essas funções não existam no seu arquivo <i>LojaLib.js</i> Copie as que passamos abaixo e insira no arquivo.</p>
+
+<pre><span>if(PrecoProd&gt=60)MaxParcelas=12;
+else if(PrecoProd&gt=55)MaxParcelas=11;
+else if(PrecoProd&gt=50)MaxParcelas=10;
+else if(PrecoProd&gt=45)MaxParcelas=9;
+else if(PrecoProd&gt=40)MaxParcelas=8;
+else if(PrecoProd&gt=35)MaxParcelas=7;
+else if(PrecoProd&gt=30)MaxParcelas=6;
+else if(PrecoProd&gt=25)MaxParcelas=5;
+else if(PrecoProd&gt=20)MaxParcelas=4;
+else if(PrecoProd&gt=15)MaxParcelas=3;
+else if(PrecoProd&gt=10)MaxParcelas=2;
+else if(PrecoProd&gt=1)MaxParcelas=1;</span></pre>
+<br>
+
+<p>Segue um exemplo deste código dentro das funções:</p>
+
+<pre><span>&lt;script&gt;
+
+function MostraMaxParcelaPS(PrecoProd,MaxParcelas){
+  var ComSem;
+
+  <b>if(PrecoProd&gt=60)MaxParcelas=12;
+else if(PrecoProd&gt=55)MaxParcelas=11;
+else if(PrecoProd&gt=50)MaxParcelas=10;
+else if(PrecoProd&gt=45)MaxParcelas=9;
+else if(PrecoProd&gt=40)MaxParcelas=8;
+else if(PrecoProd&gt=35)MaxParcelas=7;
+else if(PrecoProd&gt=30)MaxParcelas=6;
+else if(PrecoProd&gt=25)MaxParcelas=5;
+else if(PrecoProd&gt=20)MaxParcelas=4;
+else if(PrecoProd&gt=15)MaxParcelas=3;
+else if(PrecoProd&gt=10)MaxParcelas=2;
+else if(PrecoProd&gt=1)MaxParcelas=1;</b>
+
+  if(PrecoProd==0||MaxParcelas==1||Juros.length==0)return;
+  if(MaxParcelas==0||MaxParcelas>Juros.length)MaxParcelas=Juros.length;
+  if(Juros[MaxParcelas-1]&lt;1){
+      ComSem="";
+      document.write(" ou &lt;b>"+MaxParcelas+"x&lt;/b>"+ComSem+" de &lt;b>"+FormatPrecoReais(PrecoProd*Juros[MaxParcelas-1])+"&lt;/b>");      
+  }else{ 
+      ComSem="&lt;font color=#990000> sem juros&lt;/font>";
+      document.write(" ou &lt;b>"+MaxParcelas+"x&lt;/b>"+ComSem+" de &lt;b>"+FormatPrecoReais((PrecoProd)/(MaxParcelas))+"&lt;/b>");
+  }
+}
+
+function MostraParcelasPS(PrecoProd,MaxParcelas){
+  var ComSem,EstiloLinha;
+
+  <b>if(PrecoProd&gt=60)MaxParcelas=12;
+else if(PrecoProd&gt=55)MaxParcelas=11;
+else if(PrecoProd&gt=50)MaxParcelas=10;
+else if(PrecoProd&gt=45)MaxParcelas=9;
+else if(PrecoProd&gt=40)MaxParcelas=8;
+else if(PrecoProd&gt=35)MaxParcelas=7;
+else if(PrecoProd&gt=30)MaxParcelas=6;
+else if(PrecoProd&gt=25)MaxParcelas=5;
+else if(PrecoProd&gt=20)MaxParcelas=4;
+else if(PrecoProd&gt=15)MaxParcelas=3;
+else if(PrecoProd&gt=10)MaxParcelas=2;
+else if(PrecoProd&gt=1)MaxParcelas=1;</b>
+  
+  if(PrecoProd==0||MaxParcelas==1||Juros.length==0)return;
+  if(MaxParcelas==0||MaxParcelas>Juros.length)MaxParcelas=Juros.length;
+  document.write("&lt;br>&lt;table align=center cellpadding=3 cellspacing=1 bgcolor=#CECECE width=270>&lt;tr bgcolor=#DCDCDC>&lt;td colspan=3 height=22 class=TitTabParc align=center>&lt;b>Opções de parcelamento&lt;/td>&lt;/tr>&lt;tr bgcolor=#FFFFFF>&lt;td class=TitTabParc>Parcelas&lt;/td>&lt;td align=right class=TitTabParc>Valor&lt;/td>&lt;td align=right class=TitTabParc>Total&lt;/td>&lt;/tr>");
+  for(var b=0;b&lt;MaxParcelas;b=b+1) {
+     if(Juros[b]&lt;1)ComSem="com juros"; else ComSem="&lt;font color=#990000>sem juros&lt;/font>";
+     if((b%2)==0)EstiloLinha='EstParcPar'; else EstiloLinha='EstParcImpar';
+     if(Juros[b]&lt;1){
+      document.write("&lt;tr class="+EstiloLinha+">&lt;td class="+EstiloLinha+">"+(b+1)+"x "+ComSem+"&lt;/td>&lt;td class="+EstiloLinha+" align=right>"+FormatPrecoReais(PrecoProd*Juros[b])+"&lt;/td>&lt;td class="+EstiloLinha+" align=right>"+FormatPrecoReais((PrecoProd*Juros[b])*(b+1))+"&lt;/td>&lt;/tr>");
+     }else{
+      document.write("&lt;tr class="+EstiloLinha+">&lt;td class="+EstiloLinha+">"+(b+1)+"x "+ComSem+"&lt;/td>&lt;td class="+EstiloLinha+" align=right>"+FormatPrecoReais((PrecoProd)/(b+1))+"&lt;/td>&lt;td class="+EstiloLinha+" align=right>"+FormatPrecoReais(PrecoProd)+"&lt;/td>&lt;/tr>");
+     }
+  }
+  document.write("&lt;/table>&lt;br>");
+}
+&lt;/script&gt;</span></pre>
+<br>
+
+
+<p><span class="dest NewsPassos">3º Passo</span></p>
+
+<p>Altere os nomes das funções dos arquivo <b>EstiloProdutoOut.htm</b> e <b>EstiloProduto.htm</b> de:</p>
+
+<pre>&lt;script>MostraMaxParcela(&lt;PrecoNum>,&lt;MaxParcelasProdNum>);&lt;/script>
+&lt;script>MostraParcelas(&lt;PrecoNum>,&lt;MaxParcelasProdNum>);&lt;/script></pre>
+<br>
+
+<p>Para:</p>
+
+<pre>&lt;script>MostraMaxParcelaPS(&lt;PrecoNum>,&lt;MaxParcelasProdNum>);&lt;/script>
+&lt;script>MostraParcelasPS(&lt;PrecoNum>,&lt;MaxParcelasProdNum>);&lt;/script></pre>
+<br>
+

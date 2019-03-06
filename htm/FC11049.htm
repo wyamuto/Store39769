@@ -1,0 +1,35 @@
+<style>
+.courrierpeq {font-size:9pt;font-family:courier new,tahoma,verdana;color:#0D6D9E;}
+.destpeq {font-size:9pt;font-family:tahoma,verdana;color:#990000;font-weight:bold;}
+</style>
+<pre>
+<span class=courrierpeq> 
+&lt;style>
+#idTxtPedConfirmadoFC{height:30px;padding:10px;background-color:#007dd4;color:#fcfcfc;font-size:14pt;}
+#idDadosPagtoFC{font-size:9pt;}
+#EstNomePagto{color:#555555;font-size:11pt;font-weight:bold;}
+.idTxtPrintFC{display:none;}
+.EstPassosCompra{display:none;}
+&lt;/style>
+
+&lt;script>
+var iFormaPagto="&lt;IDFormaPagamento>";
+
+if(iFormaPagto=="3"){ //Cartão de crédito
+  var sFormaPagto="&lt;FormaPagamento> (&lt;TipoCartao>)"
+  setTimeout("document.getElementById('idDadosPagtoTitFC').innerHTML='&lt;td class=EstTabTopo colspan=2 align=center>Forma de pagamento&lt;/td>';",1); //Altera titulo da parte inferior dos dados para pagamento
+  }
+  else{
+  var sFormaPagto="&lt;FormaPagamento>"
+  setTimeout("document.getElementById('idDadosPagtoTitFC').style.display='none';",1); //Altera titulo da parte inferior dos dados para pagamento
+}
+
+var sDadosPagto="&lt;br>&lt;br>&lt;table width=97% align=center class=EstTabPedido>&lt;tr height=25>&lt;td class=EstTabPedidoTit align=center>Dados para pagamento&lt;/td>&lt;/tr>&lt;tr>&lt;td align=center>&lt;br>&lt;span id=EstNomePagto>"+ sFormaPagto +"&lt;/span>&lt;br>&lt;br>"+document.getElementById('idDadosPagtoFC').innerHTML+"&lt;/td>&lt;/tr>&lt;/table>"; //Instruções e botão para pagamento
+var sBannerEbit="&lt;br>";  //Banner do e-bit
+
+setTimeout("document.getElementById('idTopoConfirmacaoFC').innerHTML=sDadosPagto+sBannerEbit+'&lt;br>&lt;br>&lt;span class=Titulos>Informações do seu pedido:&lt;/span>';",1);  //Insere no topo da página de pedido confirmado as instruções para pagamento + banner do ebit
+setTimeout("document.getElementById('idDadosPagtoFC').innerHTML='';",1); //Remove da parte inferior os dados para pagamento
+&lt;/script>
+
+</span>
+</pre>

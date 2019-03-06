@@ -1,0 +1,584 @@
+<p>Veja exemplo de funcionamento na loja: <a href="http://www.fastcommerce.com.br/webslice" target="_blank">http://www.fastcommerce.com.br/webslice</a></p>
+
+<p>Seguem modelos de arquivos prontos para uso:</p>
+<ul>
+<li><a href="/dnload/WebSliceEstiloProduto.zip">EstiloProduto.htm</a></li>
+<li><a href="/dnload/WebSliceEstiloProdutoOut.zip">EstiloProdutoOut.htm</a></li>
+<li><a href="/dnload/WebSlice.zip">WebSlice.htm</a></li>
+</ul>
+<p><span>ATENÇÃO:</span> Caso a loja tenha efetuado personalizações neste arquivos, como inclusão de tabelas de parcelamentos, imagens ampliadas em novas janelas etc, siga as instruções detalhadas de implantação abaixo e efetue backup de seus arquivos antes de alterá-los:</p>
+
+<p>Seguem instruções detalhadas de implantação do Web Slices:</p>
+
+<p><span>1º Passo</span></p>
+<p>Envie o arquivo <a href="/dnload/WebSlice.zip">WebSlice.zip</a> para a pasta <b>htm</b> no gerenciador de arquivos do site administrativo.</p>
+
+
+<p><span>2º Passo</span></p>
+<p>Crie um <b>Out</b> no arquivo <b>EstiloProdutoOut.htm</b> (altere onde está <spanpeq>Loja WebSlice</span> para o nome da loja).</p>
+
+<p>Segue um modelo:</p>
+
+<!-- Inicio do Antigo Frame FC8907a.htm-->
+<pre>
+<span>&lt;p200>
+&lt;table width=320 cellpadding=0 cellspacing=0 border=0>
+  &lt;tr>
+    &lt;td align=center>
+      &lt;table width=294 cellpadding=0 cellspacing=0 border=0>
+        &lt;tr>
+          &lt;td style=border-style:solid;border-width:1px;border-color:#000;background-color:#020202;line-height:1px>&nbsp;&lt;/td>
+        &lt;/tr>
+        &lt;tr>
+          &lt;td class=lgtxt align=center><span>Loja WebSlice</span>&lt;/td>
+        &lt;/tr>
+        &lt;tr>
+          &lt;td style=border-style:solid;border-width:1px;border-color:#000;background-color:#020202;line-height:1px>&nbsp;&lt;/td>
+        &lt;/tr>
+      &lt;/table>
+    &lt;/td>
+  &lt;/tr>
+  &lt;tr>&lt;td>&lt;br>&lt;br>&lt;/td>&lt;/tr>
+  &lt;tr>
+    &lt;td align=center>
+      &lt;table width=294 cellpadding=0 cellspacing=0 border=0>
+        &lt;tr>
+          &lt;td width=100 style=border-style:solid;border-width:1px;border-color:#c0c0c0;line-height:1px>&lt;a href='ListaProdutos.asp?IDLoja=&lt;IDLoja>&IDProduto=&lt;IDProduto>'>&lt;div id="ProdListaDiv">&lt;ImagemProd>&lt;/div>&lt;/a>&lt;/td>
+          &lt;td width=10>&lt;/td>
+          &lt;td valign=top>
+            &lt;table cellpadding=0 cellspacing=0 border=0>
+              &lt;tr>
+                &lt;td class=EstNomeProd>&lt;a href='ListaProdutos.asp?IDLoja=&lt;IDLoja>&IDProduto=&lt;IDProduto>'>&lt;NomeProd>&lt;/a>&lt;/td>
+              &lt;/tr>
+              &lt;tr>
+                &lt;td>&lt;a href='ListaProdutos.asp?IDLoja=&lt;IDLoja>&IDProduto=&lt;IDProduto>' style=text-decoration:none;color:#000>&lt;DescricaoCurta>&lt;/a>&lt;/td>
+              &lt;/tr>
+            &lt;/table>
+          &lt;/td>
+        &lt;/tr>
+      &lt;/table>
+    &lt;/td>
+  &lt;/tr>
+  &lt;tr>&lt;td>&lt;br>&lt;/td>&lt;/tr>
+  &lt;tr>
+    &lt;td align=center>
+      &lt;table width=294 cellpadding=0 cellspacing=0 border=0>
+        &lt;tr>
+          &lt;td class=EstPrecoProd>&lt;Preco>&lt;/td>
+          &lt;td align=right>&lt;LinkDet>&lt;/td>
+        &lt;/tr>
+      &lt;/table>
+    &lt;/td>
+  &lt;/tr>
+&lt;/table>
+&lt;/p200></span>
+</pre>
+<!-- Fim do Antigo Frame-->
+
+<p><span>3º Passo</span></p>
+<p>Adicione a tag <span>&lt;WebSlice></span> <span>&lt;/WebSlice></span> no arquivo <b>EstiloProduto.htm</b>.</p>
+
+<p><b>Ex.:</b> Para utilizar o Web Slices somente no nome do produto, altere a tag <b>&lt;NomeProd></b> para <span>&lt;WebSlice></span><b>&lt;NomeProd></b><span>&lt;/WebSlice></span></p>
+
+<p>Segue modelo do arquivo <b>EstiloProduto.htm</b> que utiliza o Web Slices em todos os elementos do produto:</p>
+
+<!-- Inicio do Antigo Frame FC8907b.htm-->
+<pre>
+<span>// Fastcommerce - EstiloProduto0.htm
+
+&lt;ProdLista>
+&lt;br>&lt;hr class=EstLinhaProd>&lt;br>
+<span>&lt;WebSlice></span>
+&lt;div id="ProdListaDiv">
+&lt;table width=100% name=TabProduto&lt;IDProduto> cellpadding=0 cellspacing=0>
+  &lt;tr>&lt;td align=center colspan=3>&lt;/td>&lt;/tr>
+  &lt;tr>
+    &lt;td width=&lt;ProdLargura>>&lt;img src=images/shim.gif width=&lt;ProdLargura> height=1>&lt;/td>
+    &lt;td>&lt;/td>
+    &lt;td>&lt;/td>
+  &lt;/tr>
+  &lt;tr>
+    &lt;td align=center valign=top width=&lt;ProdLargura>>&lt;ImagemProd>&lt;/td>
+    &lt;td width=7 height=&lt;ProdAltura>>&lt;img src=images/shim.gif width=7 height=&lt;ProdAltura>>&lt;/td>
+    &lt;td valign=top>
+      &lt;table name=TabDadosProduto&lt;IDProduto> width=100% cellpadding=0 cellspacing=0>
+        &lt;tr>
+          &lt;td valign=top>
+            &lt;table name=TabNomeRefProd&lt;IDProduto> width=100% cellpadding=0 cellspacing=0>
+              &lt;tr>
+                &lt;td valign=top class=EstNomeProd>&lt;NomeProd>&lt;/td>
+                &lt;td width=7>&lt;img src=images/shim.gif width=7 height=1>&lt;/td>
+                &lt;td valign=top align=right rowspan=2 nowrap>&lt;Lancamento>&lt;/td>
+              &lt;/tr>
+              &lt;tr>
+                &lt;td valign=top class=EstRefProd>Ref. &lt;CodProd> - &lt;LegendaCat> &lt;NomeCat>&lt;/td>
+                &lt;td>&lt;/td>
+              &lt;/tr>
+            &lt;/table>
+          &lt;/td>
+        &lt;/tr>
+        &lt;tr>&lt;td height=7>&lt;img src=images/shim.gif width=1 height=7>&lt;/td>&lt;/tr>
+        &lt;tr>&lt;td valign=top class=EstDescrProd>&lt;Descricao>&lt;/td>&lt;/tr>
+        &lt;tr>
+          &lt;td valign=top>
+            &lt;table name=TabAdicionais&lt;IDProduto> cellpadding=0 cellspacing=0>
+              &lt;tr>&lt;td height=3>&lt;img src=images/shim.gif width=1 height=3>&lt;/td>&lt;/tr>&lt;FormProd>
+              &lt;tr>
+                &lt;td>
+                  &lt;table name=Tab1Adic&lt;IDProduto> cellpadding=0 cellspacing=0>
+                    &lt;tr>
+                      &lt;td nowrap>&lt;Adicional1>&lt;/td>
+                      &lt;td nowrap>&lt;Adicional2>&lt;/td>
+                      &lt;td nowrap>&lt;Adicional3>&lt;/td>
+                    &lt;/tr>
+                  &lt;/table>
+                &lt;/td>
+              &lt;/tr>
+              &lt;tr>
+                &lt;td>
+                  &lt;table name=Tab2Adic&lt;IDProduto> cellpadding=0 cellspacing=0>
+                    &lt;tr>
+                      &lt;td nowrap>&lt;Cor>&lt;/td>
+                      &lt;td nowrap>&lt;AdicionalD1>&lt;/td>
+                      &lt;td nowrap>&lt;AdicionalD2>&lt;/td>
+                      &lt;td nowrap>&lt;AdicionalD3>&lt;/td>
+                      &lt;td nowrap>&lt;Peso>&lt;/td>
+                    &lt;/tr>
+                  &lt;/table>
+                &lt;/td>
+              &lt;/tr>
+            &lt;/table>
+          &lt;/td>
+        &lt;/tr>
+        &lt;tr>
+          &lt;td valign=top>
+            &lt;table name=TabPreco&lt;IDProduto> width=100% cellpadding=0 cellspacing=0>
+              &lt;tr>&lt;td height=1 colspan=5>&lt;img src=images/shim.gif width=1 height=1>&lt;/td>&lt;/tr>
+              &lt;tr>
+                &lt;td width=15% nowrap>&lt;LinkDet>&lt;/td>
+                &lt;td width=7>&lt;img src=images/shim.gif width=7 height=1>&lt;/td>
+                &lt;td align=center width=15% nowrap>&lt;LinkComprar>&lt;/td>&lt;/FormProd>
+                &lt;td width=7>&lt;img src=images/shim.gif width=7 height=1>&lt;/td>
+                &lt;td nowrap class=EstPrecoProd nowrap>&lt;Preco>&lt;AvisoDisp>&lt;IndicaProd>&lt;/td>
+              &lt;/tr>
+            &lt;/table>
+          &lt;/td>
+        &lt;/tr>
+      &lt;/table>
+    &lt;/td>
+  &lt;/tr>
+&lt;Sub>
+  &lt;tr>
+    &lt;td align=right valign=top width=&lt;ProdLargura>>
+      &lt;table cellspacing=0 cellpadding=3>
+        &lt;tr>
+          &lt;td valign=top align=center>&lt;ImagemProd>&lt;/td>
+          &lt;td valign=middle align=center>&lt;LinkComprar>&lt;br>&lt;img src=images/shim.gif width=50 height=1>&lt;/td>
+        &lt;/tr>
+      &lt;/table>
+    &lt;/td>
+    &lt;td width=7>&lt;img src=images/shim.gif width=7 height=1>&lt;/td>
+    &lt;td valign=top>
+      &lt;table name=TabDadosSubProduto&lt;IDProduto> cellpadding=0 cellspacing=3 width=100% class=&lt;EstiloSubProduto>>
+        &lt;tr>
+          &lt;td class=EstLinhaSubProd height=1>&lt;img src=images/shim.gif width=1 height=1>&lt;/td>
+        &lt;/tr>
+        &lt;tr>
+          &lt;td valign=top>
+            &lt;table name=TabRefSubProd&lt;IDProduto> width=100% cellpadding=2 cellspacing=0>
+              &lt;tr>
+                &lt;td valign=top class=EstRefSubProd>&lt;CodProd>&lt;/td>
+              &lt;/tr>
+            &lt;/table>
+          &lt;/td>
+        &lt;/tr>
+        &lt;tr>&lt;td valign=top class=EstDescrSubProd>&lt;Descricao>&lt;/td>&lt;/tr>
+        &lt;tr>
+          &lt;td valign=top>
+            &lt;table name=TabAdicionaisSub&lt;IDProduto> cellpadding=0 cellspacing=0>
+              &lt;tr>&lt;td>&lt;/td>&lt;/tr>
+              &lt;tr>
+                &lt;td>
+                  &lt;table name=Tab1Adic&lt;IDProduto> cellpadding=0 cellspacing=0>&lt;FormProd>
+                    &lt;tr>
+                      &lt;td nowrap>&lt;Adicional1>&lt;/td>
+                      &lt;td nowrap>&lt;Adicional2>&lt;/td>
+                      &lt;td nowrap>&lt;Adicional3>&lt;/td>
+                    &lt;/tr>
+                  &lt;/table>
+                &lt;/td>
+              &lt;/tr>
+              &lt;tr>
+                &lt;td>
+                  &lt;table name=Tab2Adic&lt;IDProduto> cellpadding=0 cellspacing=0>
+                    &lt;tr>
+                      &lt;td nowrap>&lt;Cor>&lt;/td>
+                      &lt;td nowrap>&lt;AdicionalD1>&lt;/td>
+                      &lt;td nowrap>&lt;AdicionalD2>&lt;/td>
+                      &lt;td nowrap>&lt;AdicionalD3>&lt;/td>
+                      &lt;td nowrap>&lt;Peso>&lt;/td>
+                    &lt;/tr>
+                  &lt;/table>
+                &lt;/td>
+              &lt;/tr>
+            &lt;/table>
+          &lt;/td>
+        &lt;/tr>
+        &lt;tr>
+          &lt;td valign=top>
+            &lt;table name=TabPrecoSub&lt;IDProduto> width=100% cellpadding=0 cellspacing=0>
+              &lt;tr>
+                &lt;td width=15% nowrap>&lt;LinkDet>&lt;/td>
+                &lt;td width=7>&lt;img src=images/shim.gif width=7 height=1>&lt;/td>
+                &lt;td align=center width=15% nowrap>&lt;/td>&lt;/FormProd>
+                &lt;td width=7>&lt;img src=images/shim.gif width=7 height=1>&lt;/td>
+                &lt;td nowrap class=EstPrecoSubProd nowrap>&lt;Preco>&lt;AvisoDisp>&lt;/td>
+                &lt;td width=7>&lt;img src=images/shim.gif width=7 height=1>&lt;/td>
+                &lt;td valign=top align=right nowrap>&lt;Lancamento>&lt;/td>
+              &lt;/tr>
+            &lt;/table>
+          &lt;/td>
+        &lt;/tr>
+      &lt;/table>
+    &lt;/td>
+  &lt;/tr>
+&lt;/Sub>
+&lt;/table>
+&lt;/div>
+<span>&lt;/WebSlice></span>
+&lt;/ProdLista>
+
+
+&lt;ProdDet>
+&lt;br>&lt;hr class=EstLinhaProd>&lt;br>
+<span>&lt;WebSlice></span>
+&lt;div id="ProdDetDiv">
+&lt;table width=100% name=TabProduto&lt;IDProduto> cellpadding=0 cellspacing=0>
+  &lt;tr>&lt;td align=center colspan=3>&lt;/td>&lt;/tr>
+  &lt;tr>
+    &lt;td align=center valign=top width=&lt;ProdLargura>>&lt;ImagemProd>&lt;/td>
+    &lt;td width=7 height=&lt;ProdAltura>>&lt;img src=images/shim.gif width=7 height=&lt;ProdAltura>>&lt;/td>
+    &lt;td valign=top>
+      &lt;table name=TabDadosProduto&lt;IDProduto> width=100% cellpadding=0 cellspacing=0>
+        &lt;tr>
+          &lt;td valign=top>
+            &lt;table name=TabNomeRefProd&lt;IDProduto> width=100% cellpadding=0 cellspacing=0>
+              &lt;tr>
+                &lt;td valign=top class=EstNomeProd>&lt;NomeProd>&lt;/td>
+                &lt;td width=7>&lt;img src=images/shim.gif width=7 height=1>&lt;/td>
+                &lt;td valign=top align=right rowspan=2 nowrap>&lt;Lancamento>&lt;/td>
+              &lt;/tr>
+              &lt;tr>
+                &lt;td valign=top class=EstRefProd>Ref. &lt;CodProd> - &lt;LegendaCat> &lt;NomeCat>&lt;/td>
+                &lt;td>&lt;/td>
+              &lt;/tr>
+            &lt;/table>
+          &lt;/td>
+        &lt;/tr>
+        &lt;tr>&lt;td height=7>&lt;img src=images/shim.gif width=1 height=7>&lt;/td>&lt;/tr>
+        &lt;tr>&lt;td valign=top class=EstDescrProd>&lt;Descricao>&lt;DescrHTM>&lt;/td>&lt;/tr>
+        &lt;tr>
+          &lt;td valign=top>
+            &lt;table name=TabAdicionais&lt;IDProduto> cellpadding=0 cellspacing=0>
+              &lt;tr>&lt;td height=3>&lt;img src=images/shim.gif width=1 height=3>&lt;/td>&lt;/tr>&lt;FormProd>
+              &lt;tr>
+                &lt;td>
+                  &lt;table name=Tab1Adic&lt;IDProduto> cellpadding=0 cellspacing=0>
+                    &lt;tr>
+                      &lt;td nowrap>&lt;Adicional1>&lt;/td>
+                      &lt;td nowrap>&lt;Adicional2>&lt;/td>
+                      &lt;td nowrap>&lt;Adicional3>&lt;/td>
+                    &lt;/tr>
+                  &lt;/table>
+                &lt;/td>
+              &lt;/tr>
+              &lt;tr>
+                &lt;td>
+                  &lt;table name=Tab2Adic&lt;IDProduto> cellpadding=0 cellspacing=0>
+                    &lt;tr>
+                      &lt;td nowrap>&lt;Cor>&lt;/td>
+                      &lt;td nowrap>&lt;AdicionalD1>&lt;/td>
+                      &lt;td nowrap>&lt;AdicionalD2>&lt;/td>
+                      &lt;td nowrap>&lt;AdicionalD3>&lt;/td>
+                      &lt;td nowrap>&lt;Peso>&lt;/td>
+                    &lt;/tr>
+                  &lt;/table>
+                &lt;/td>
+              &lt;/tr>
+            &lt;/table>
+          &lt;/td>
+        &lt;/tr>
+        &lt;tr>&lt;td align=right class=EstMaisInfo nowrap>&lt;DescrURL>&lt;/td>&lt;/tr>
+        &lt;tr>
+          &lt;td valign=top>
+            &lt;table name=TabPreco&lt;IDProduto> width=100% cellpadding=0 cellspacing=0>
+              &lt;tr>&lt;td height=1 colspan=5>&lt;img src=images/shim.gif width=1 height=1>&lt;/td>&lt;/tr>
+              &lt;tr>
+                &lt;td width=15% nowrap>&lt;LinkAmp>&lt;/td>
+                &lt;td width=7>&lt;img src=images/shim.gif width=7 height=1>&lt;/td>
+                &lt;td align=center width=15% nowrap>&lt;LinkComprar>&lt;/td>&lt;/FormProd>
+                &lt;td width=7>&lt;img src=images/shim.gif width=7 height=1>&lt;/td>
+                &lt;td nowrap class=EstPrecoProd nowrap>&lt;Preco>&lt;MaxParcelasProd>&lt;AvisoDisp>&lt;IndicaProd>&lt;br>&lt;LinkOpiniao>&lt;/td>
+              &lt;/tr>
+            &lt;/table>&lt;br>
+          &lt;/td>
+        &lt;/tr>
+      &lt;/table>
+    &lt;/td>
+  &lt;/tr>
+&lt;Sub>
+  &lt;tr>
+    &lt;td align=right valign=top width=&lt;ProdLargura>>
+      &lt;table cellspacing=0 cellpadding=3>&lt;tr>&lt;td valign=top align=center>&lt;ImagemProd>&lt;/td>&lt;/tr>&lt;/table>
+    &lt;/td>
+    &lt;td width=7>&lt;img src=images/shim.gif width=7 height=1>&lt;/td>
+    &lt;td valign=top>
+
+      &lt;table name=TabDadosSubProduto&lt;IDProduto> cellpadding=0 cellspacing=3 width=100% class=&lt;EstiloSubProduto>>
+        &lt;tr>
+          &lt;td class=EstLinhaSubProd height=1>&lt;img src=images/shim.gif width=1 height=1>&lt;/td>
+        &lt;/tr>
+        &lt;tr>
+          &lt;td valign=top>
+            &lt;table name=TabRefSubProd&lt;IDProduto> width=100% cellpadding=2 cellspacing=0>
+              &lt;tr>
+                &lt;td valign=top class=EstRefSubProd>&lt;CodProd>&lt;/td>
+              &lt;/tr>
+            &lt;/table>
+          &lt;/td>
+        &lt;/tr>
+        &lt;tr>&lt;td valign=top class=EstDescrSubProd>&lt;Descricao>&lt;DescrHTM>&lt;/td>&lt;/tr>
+        &lt;tr>
+          &lt;td valign=top>
+            &lt;table name=TabAdicionaisSub&lt;IDProduto> cellpadding=0 cellspacing=0>
+              &lt;tr>&lt;td>&lt;/td>&lt;/tr>
+              &lt;tr>
+                &lt;td>
+                  &lt;table name=Tab1Adic&lt;IDProduto> cellpadding=0 cellspacing=0>&lt;FormProd>
+                    &lt;tr>
+                      &lt;td nowrap>&lt;Adicional1>&lt;/td>
+                      &lt;td nowrap>&lt;Adicional2>&lt;/td>
+                      &lt;td nowrap>&lt;Adicional3>&lt;/td>
+                    &lt;/tr>
+                  &lt;/table>
+                &lt;/td>
+              &lt;/tr>
+              &lt;tr>
+                &lt;td>
+                  &lt;table name=Tab2Adic&lt;IDProduto> cellpadding=0 cellspacing=0>
+                    &lt;tr>
+                      &lt;td nowrap>&lt;Cor>&lt;/td>
+                      &lt;td nowrap>&lt;AdicionalD1>&lt;/td>
+                      &lt;td nowrap>&lt;AdicionalD2>&lt;/td>
+                      &lt;td nowrap>&lt;AdicionalD3>&lt;/td>
+                      &lt;td nowrap>&lt;Peso>&lt;/td>
+                    &lt;/tr>
+                  &lt;/table>
+                &lt;/td>
+              &lt;/tr>
+            &lt;/table>
+          &lt;/td>
+        &lt;/tr>
+        &lt;tr>&lt;td align=right class=EstMaisInfo nowrap>&lt;DescrURL>&lt;/td>&lt;/tr>
+        &lt;tr>
+          &lt;td valign=top>
+            &lt;table name=TabPrecoSub&lt;IDProduto> width=100% cellpadding=0 cellspacing=0>
+              &lt;tr>
+                &lt;td width=15% nowrap>&lt;LinkDet>&lt;/td>
+                &lt;td width=7>&lt;img src=images/shim.gif width=7 height=1>&lt;/td>
+                &lt;td align=center width=15% nowrap>&lt;LinkComprar>&lt;/td>&lt;/FormProd>
+                &lt;td width=7>&lt;img src=images/shim.gif width=7 height=1>&lt;/td>
+                &lt;td nowrap class=EstPrecoSubProd nowrap>&lt;Preco>&lt;AvisoDisp>&lt;/td>
+                &lt;td width=7>&lt;img src=images/shim.gif width=7 height=1>&lt;/td>
+                &lt;td valign=top align=right nowrap>&lt;Lancamento>&lt;/td>
+              &lt;/tr>
+            &lt;/table>
+          &lt;/td>
+        &lt;/tr>
+      &lt;/table>
+    &lt;/td>
+  &lt;/tr>
+&lt;/Sub>
+&lt;/table>
+&lt;/div>
+<span>&lt;/WebSlice></span>
+&lt;/ProdDet>
+
+
+&lt;ProdAmp>
+&lt;br>&lt;hr class=EstLinhaProd>&lt;br>
+<span>&lt;WebSlice></span>
+&lt;div id="ProdAmpDiv">
+&lt;table width=100% name=TabProduto&lt;IDProduto> cellpadding=0 cellspacing=0>
+  &lt;tr>&lt;td align=center colspan=2>&lt;/td>&lt;/tr>
+  &lt;tr>
+    &lt;td width=7 height=&lt;ProdAltura>>&lt;img src=images/shim.gif width=7 height=&lt;ProdAltura>>&lt;/td>
+    &lt;td valign=top>
+      &lt;table name=TabDadosProduto&lt;IDProduto> width=100% cellpadding=0 cellspacing=0>
+        &lt;tr>
+          &lt;td valign=top>
+            &lt;table name=TabNomeRefProd&lt;IDProduto> width=100% cellpadding=0 cellspacing=0>
+              &lt;tr>
+                &lt;td valign=top class=EstNomeProd>&lt;NomeProd>&lt;/td>
+                &lt;td width=7>&lt;img src=images/shim.gif width=7 height=1>&lt;/td>
+                &lt;td valign=top align=right rowspan=2 nowrap>&lt;Lancamento>&lt;/td>
+              &lt;/tr>
+              &lt;tr>
+                &lt;td valign=top class=EstRefProd>Ref. &lt;CodProd> - &lt;LegendaCat> &lt;NomeCat>&lt;/td>
+                &lt;td>&lt;/td>
+              &lt;/tr>
+            &lt;/table>
+          &lt;/td>
+        &lt;/tr>
+        &lt;tr>&lt;td height=7>&lt;img src=images/shim.gif width=1 height=7>&lt;/td>&lt;/tr>
+        &lt;tr>&lt;td>&lt;ImagemProd>&lt;/td>&lt;/tr>
+        &lt;tr>
+          &lt;td valign=top>
+            &lt;table name=TabAdicionais&lt;IDProduto> cellpadding=0 cellspacing=0>
+              &lt;tr>&lt;td height=3>&lt;img src=images/shim.gif width=1 height=3>&lt;/td>&lt;/tr>&lt;FormProd>
+              &lt;tr>
+                &lt;td>
+                  &lt;table name=Tab1Adic&lt;IDProduto> cellpadding=0 cellspacing=0>
+                    &lt;tr>
+                      &lt;td nowrap>&lt;Adicional1>&lt;/td>
+                      &lt;td nowrap>&lt;Adicional2>&lt;/td>
+                      &lt;td nowrap>&lt;Adicional3>&lt;/td>
+                    &lt;/tr>
+                  &lt;/table>
+                &lt;/td>
+              &lt;/tr>
+              &lt;tr>
+                &lt;td>
+                  &lt;table name=Tab2Adic&lt;IDProduto> cellpadding=0 cellspacing=0>
+                    &lt;tr>
+                      &lt;td nowrap>&lt;Cor>&lt;/td>
+                      &lt;td nowrap>&lt;AdicionalD1>&lt;/td>
+                      &lt;td nowrap>&lt;AdicionalD2>&lt;/td>
+                      &lt;td nowrap>&lt;AdicionalD3>&lt;/td>
+                      &lt;td nowrap>&lt;Peso>&lt;/td>
+                    &lt;/tr>
+                  &lt;/table>
+                &lt;/td>
+              &lt;/tr>
+            &lt;/table>
+          &lt;/td>
+        &lt;/tr>
+        &lt;tr>&lt;td align=right class=EstMaisInfo nowrap>&lt;DescrURL>&lt;/td>&lt;/tr>
+        &lt;tr>
+          &lt;td valign=top>
+            &lt;table name=TabPreco&lt;IDProduto> width=100% cellpadding=0 cellspacing=0>
+              &lt;tr>&lt;td height=1 colspan=5>&lt;img src=images/shim.gif width=1 height=1>&lt;/td>&lt;/tr>
+              &lt;tr>
+                &lt;td width=15% nowrap>&lt;LinkDet>&lt;/td>
+                &lt;td width=7>&lt;img src=images/shim.gif width=7 height=1>&lt;/td>
+                &lt;td align=center width=15% nowrap>&lt;LinkComprar>&lt;/td>&lt;/FormProd>
+                &lt;td width=7>&lt;img src=images/shim.gif width=7 height=1>&lt;/td>
+                &lt;td nowrap class=EstPrecoProd nowrap>&lt;Preco>&lt;AvisoDisp>&lt;IndicaProd>&lt;br>&lt;LinkOpiniao>&lt;/td>
+              &lt;/tr>
+            &lt;/table>&lt;br>
+          &lt;/td>
+        &lt;/tr>
+        &lt;tr>
+          &lt;td>
+            &lt;table width=100% name=TabSubs cellpadding=0 cellspacing=0>
+&lt;Sub>
+              &lt;tr>
+                &lt;td align=right valign=top width=&lt;ProdLargura>>
+                  &lt;table cellspacing=0 cellpadding=3>&lt;tr>&lt;td valign=top align=center>&lt;ImagemProd>&lt;/td>&lt;/tr>&lt;/table>
+                &lt;/td>
+                &lt;td width=7>&lt;img src=images/shim.gif width=7 height=1>&lt;/td>
+                &lt;td valign=top>
+                  &lt;table name=TabDadosSubProduto&lt;IDProduto> cellpadding=0 cellspacing=3 width=100% class=&lt;EstiloSubProduto>>
+                    &lt;tr>
+                      &lt;td class=EstLinhaSubProd height=1>&lt;img src=images/shim.gif width=1 height=1>&lt;/td>
+                    &lt;/tr>
+                    &lt;tr>
+                      &lt;td valign=top>
+                        &lt;table name=TabRefSubProd&lt;IDProduto> width=100% cellpadding=2 cellspacing=0>
+                          &lt;tr>
+                            &lt;td valign=top class=EstRefSubProd>&lt;CodProd>&lt;/td>
+                          &lt;/tr>
+                        &lt;/table>
+                      &lt;/td>
+                    &lt;/tr>
+                    &lt;tr>&lt;td valign=top class=EstDescrSubProd>&lt;Descricao>&lt;/td>&lt;/tr>
+                    &lt;tr>
+                      &lt;td valign=top>
+                        &lt;table name=TabAdicionaisSub&lt;IDProduto> cellpadding=0 cellspacing=0>
+                          &lt;tr>&lt;td>&lt;/td>&lt;/tr>
+                          &lt;tr>
+                            &lt;td>
+                              &lt;table name=Tab1Adic&lt;IDProduto> cellpadding=0 cellspacing=0>&lt;FormProd>
+                                &lt;tr>
+                                  &lt;td nowrap>&lt;Adicional1>&lt;/td>
+                                  &lt;td nowrap>&lt;Adicional2>&lt;/td>
+                                  &lt;td nowrap>&lt;Adicional3>&lt;/td>
+                                &lt;/tr>
+                              &lt;/table>
+                            &lt;/td>
+                          &lt;/tr>
+                          &lt;tr>
+                            &lt;td>
+                              &lt;table name=Tab2Adic&lt;IDProduto> cellpadding=0 cellspacing=0>
+                                &lt;tr>
+                                  &lt;td nowrap>&lt;Cor>&lt;/td>
+                                  &lt;td nowrap>&lt;AdicionalD1>&lt;/td>
+                                  &lt;td nowrap>&lt;AdicionalD2>&lt;/td>
+                                  &lt;td nowrap>&lt;AdicionalD3>&lt;/td>
+                                  &lt;td nowrap>&lt;Peso>&lt;/td>
+                                &lt;/tr>
+                              &lt;/table>
+                            &lt;/td>
+                          &lt;/tr>
+                        &lt;/table>
+                      &lt;/td>
+                    &lt;/tr>
+                    &lt;tr>&lt;td align=right class=EstMaisInfo nowrap>&lt;DescrURL>&lt;/td>&lt;/tr>
+                    &lt;tr>
+                      &lt;td valign=top>
+                        &lt;table name=TabPrecoSub&lt;IDProduto> width=100% cellpadding=0 cellspacing=0>
+                          &lt;tr>
+                            &lt;td width=15% nowrap>&lt;LinkDet>&lt;/td>
+                            &lt;td width=7>&lt;img src=images/shim.gif width=7 height=1>&lt;/td>
+                            &lt;td align=center width=15% nowrap>&lt;LinkComprar>&lt;/td>&lt;/FormProd>
+                            &lt;td width=7>&lt;img src=images/shim.gif width=7 height=1>&lt;/td>
+                            &lt;td nowrap class=EstPrecoSubProd nowrap>&lt;Preco>&lt;AvisoDisp>&lt;/td>
+                            &lt;td width=7>&lt;img src=images/shim.gif width=7 height=1>&lt;/td>
+                            &lt;td valign=top align=right nowrap>&lt;Lancamento>&lt;/td>
+                          &lt;/tr>
+                        &lt;/table>
+                      &lt;/td>
+                    &lt;/tr>
+                  &lt;/table>
+                &lt;/td>
+              &lt;/tr>
+&lt;/Sub>
+            &lt;/table>
+          &lt;/td>
+        &lt;/tr>
+      &lt;/table>
+    &lt;/td>
+  &lt;/tr>
+&lt;/table>
+&lt;/div>
+<span>&lt;/WebSlice></span>
+&lt;/ProdAmp></span>
+</pre>
+<!-- Fim do Antigo Frame-->
+
+<p><b>Obs.:</b> Também é possível utilizar este recurso nos produtos que ficam na página inicial da loja utilizando a tag <span>&lt;WebSlice></span> <span>&lt;/WebSlice></span>.</p>
+
+<p>Neste caso, adicione esta tag no <b>Out</b> do arquivo <b>EstiloProdutoOut.htm</b> que é utilizado no arquivo <b>Home.htm</b>.</p>
+
+<p>Segue a alteração que deverá ser efetuada no Out existente:</p>
+<p><pre><span>&lt;p255>
+<span>&lt;WebSlice></span>
+&lt;table width=320 cellpadding=0 cellspacing=0 border=0>
+  &lt;tr>
+    ...
+    ...
+    ...
+  &lt;/tr>
+&lt;/table>
+<span>&lt;/WebSlice></span>
+&lt;/p255></span></pre></p>

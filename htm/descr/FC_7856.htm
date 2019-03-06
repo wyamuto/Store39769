@@ -1,0 +1,28 @@
+<p>Seguem abaixo todas as opções de ordenação:</p>
+<ol start="0">
+<li><p>Padrão</p></li>
+<li><p>Lançamentos</p></li>
+<li><p>Destaques</p></li>
+<li><p>Nomes das categorias</p></li>
+<li><p>Nomes dos produtos</p></li>
+<li><p>Avaliações dos clientes</p></li>
+<li><p>Promoções</p></li>
+<li><p>Preços menores</p></li>
+<li><p>Preços maiores</p></li>
+</ol>
+<br>
+<p>Para alterar o nome destas opções ou para remover alguma delas, inclua o código abaixo ao final do arquivo <b>Rodape.htm</b>:</p>
+
+<pre>&lt;script>
+var sPag=document.location.href.toUpperCase();
+if(sPag.indexOf("BUSCAAVANCADA.ASP")>0){
+  var oOrder=document.getElementsByName('order')[0];
+  oOrder.options[2].text='Mais vendidos'; <b>//altera o nome da opção "Destaques"</b>
+  oOrder.options[5]=null; <b>//remove a opção "Avaliações dos clientes"</b>
+}
+&lt;/script></pre>
+<br>
+
+<p>Se necessário, altere o código acima para exibir ou alterar as opções desejadas. Os valores padronizados de <b>oOrder.options</b> estão listados na lista acima, à esquerda de cada opção de ordenação.</p>
+
+<p>No exemplo acima, a opção <b>Destaques</b> será substituída pelo texto <b>Mais vendidos</b>. Neste caso, execute periodicamente o utilitário "Definição de produtos mais vendidos" para que os produtos mais vendidos sejma marcados como "Destaque" e a ordenação priorize de fato estes produtos.</p>

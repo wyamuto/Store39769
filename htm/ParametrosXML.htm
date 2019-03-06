@@ -1,0 +1,193 @@
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'>
+<title>Fastcommerce :: Parâmetros de XML de produtos</title>
+<link href="https://www.rumo.com.br/lojas/00000009/htm/LojaSite.css" rel="stylesheet" type="text/css">
+<style>
+.EstCaixaTit{color:#fcfcfc;font-weight:bold;}
+.EstTabBorda{background-color:#333333;}
+.EstTabBorda2{background-color:#888888;}
+.EstTabInt{background-color:#fcfcfc;}
+</style>
+</head>
+
+<body topmargin=0 leftmargin=0 marginwidth=0 marginheight=0 class=FundoSite>
+
+<table width=100% cellspacing=0 cellpadding=1>
+  <tr>
+    <td align=center>
+
+<br><br>
+      <span style="font-size:14pt;">Parâmetros de URL aceitos pela <b>XMLProdutos.asp</b></span><br><br>
+
+      <table width=800 align=center cellspacing=0 cellpadding=1 class=EstTabBorda>
+        <tr>
+          <td>
+          <table width=800 cellspacing=1 cellpadding=10 align=center class=EstTabBorda2>
+            <tr>
+              <td align=center class=EstCaixaTit>Parâmetro</td>
+              <td align=center class=EstCaixaTit>Descrição</td>
+
+            </tr>
+            <tr>
+              <td class=EstTabInt valign=top align=center><span class=tagtxt>IDLoja=154</span></td>
+              <td class=EstTabInt>Informa o IDLoja. <b>Único parâmetro obrigatório</b>.</td>
+            </tr>
+            <tr>
+              <td class=EstTabInt valign=top align=center><span class=tagtxt>Texto=palavra</span></td>
+
+              <td class=EstTabInt>Exibe produtos que tenham o texto indicado.</td>
+            </tr>
+            <tr>
+              <td class=EstTabInt valign=top align=center><span class=tagtxt>any=1</span></td>
+              <td class=EstTabInt>Exibe somente os produtos cujas descrições contenham qualquer uma das palavras do parâmetro <i>texto</i>. O padrão é exibir somente os produtos com <i>todas</i> as palavras do parâmetro <i>texto</i>.</td>
+
+            </tr>
+            <tr>
+              <td class=EstTabInt valign=top align=center><span class=tagtxt>IDProduto=99999</span></td>
+              <td class=EstTabInt>Exibe apenas o produto que tenha o ID interno do produto indicado.</td>
+            </tr>
+            <tr>
+              <td class=EstTabInt valign=top align=center><span class=tagtxt>IDCategoria=99999</span></td>
+
+              <td class=EstTabInt>Exibe apenas os produtos que tenham o ID interno da griffe.</td>
+            </tr>
+            <tr>
+              <td class=EstTabInt valign=top align=center><span class=tagtxt>RamoProd=99999</span></td>
+              <td class=EstTabInt>Exibe apenas os produtos que tenham a classe selecionada.</td>
+            </tr>
+            <tr>
+
+              <td class=EstTabInt valign=top align=center><span class=tagtxt>PrecoDe=99,99</span></td>
+              <td class=EstTabInt>Exibe apenas os produtos que tenham o preço maior que o indicado.</td>
+            </tr>
+            <tr>
+              <td class=EstTabInt valign=top align=center><span class=tagtxt>PrecoAte=99,99</span></td>
+              <td class=EstTabInt>Exibe apenas os produtos que tenham o preço menor que o indicado.</td>
+            </tr>
+
+            <tr>
+              <td class=EstTabInt valign=top align=center><span class=tagtxt>SelImg=0</span></td>
+              <td class=EstTabInt>Define qual imagem será exibida na tag &lt;imagem&gt; (0=principal [padrão], 1=detalhe, 2=ampliada).</td>
+            </tr>
+            <tr>
+              <td class=EstTabInt valign=top align=center><span class=tagtxt>ExibeDescricao=0</span></td>
+
+              <td class=EstTabInt>Define a exibição da descrição do produto:<br><br>0=Sem descrição (exceto Google Shopping)<br>1=Utiliza a descrição curta<br>2=Utiliza a descrição longa<br>3=Utiliza ambas as descrição (exceto Google Shopping)<br>4=Utiliza descrição curta sem descritores (somente Google Shopping)<br>5=Utiliza descrição longa sem descritores (somente Google Shopping)<br><br>Para o formato de XML do Google Shopping, as informações dos descritores serão adicionadas à descrição nas opções 1 e 2. Para que as informações dos descritores não sejam adicionadas, utilize as opções 4 ou 5.</td>
+            </tr>
+            <tr>
+              <td class=EstTabInt valign=top align=center><span class=tagtxt>origem=nomeorigem</span></td>
+
+              <td class=EstTabInt>Define se nos links para os produtos gerados pelo XML será inserido uma origem.</td>
+            </tr>
+            <tr>
+              <td class=EstTabInt valign=top align=center><span class=tagtxt>est=1</span></td>
+              <td class=EstTabInt>Para listar apenas produtos disponíveis com estoque de 1 ou superior.</td>
+            </tr>
+            <tr>
+
+              <td class=EstTabInt valign=top align=center><span class=tagtxt>Lancamento=1</span></td>
+              <td class=EstTabInt>Para listar apenas produtos em lançamento.</td>
+            </tr>
+            <tr>
+              <td class=EstTabInt valign=top align=center><span class=tagtxt>Promocao=1</span></td>
+              <td class=EstTabInt>Para listar apenas produtos em promoção.</td>
+            </tr>
+
+            <tr>
+              <td class=EstTabInt valign=top align=center><span class=tagtxt>Ref=1</span></td>
+              <td class=EstTabInt>Para mostrar a referência no XML dos produtos.</td>
+            </tr>
+            <tr>
+              <td class=EstTabInt valign=top align=center><span class=tagtxt>Peso=1</span></td>
+              <td class=EstTabInt>Para mostrar o peso no XML dos produtos.</td>
+
+            </tr>
+            <tr>
+              <td class=EstTabInt valign=top align=center><span class=tagtxt>PrecoZero=1</span></td>
+              <td class=EstTabInt>Para mostrar produtos com preço zero no XML dos produtos.</td>
+            </tr>
+            <tr>
+              <td class=EstTabInt valign=top align=center><span class=tagtxt>DescrMult=1</span></td>
+
+              <td class=EstTabInt>Para listar os produtos com descritores múltiplos, entre vírgulas.<br><b>Ex:</b> P,M,G</td>
+            </tr>
+            <tr>
+              <td class=EstTabInt valign=top align=center><span class=tagtxt>Keywords=1</span></td>
+              <td class=EstTabInt>Para mostrar as <i>keywords</i> cadastradas no XML dos produtos.</td>
+
+            </tr>     
+
+            <tr>
+              <td class=EstTabInt valign=top align=center><span class=tagtxt>ImgSubPai=1</span></td>
+              <td class=EstTabInt>Para utilizar sempre a imagem do produdo principal na tag &lt;imagem&gt; do sub-produto. Caso contrário é exibida a imagem do próprio sub-produto, caso exista.</td>
+            </tr>
+            <tr>
+              <td class=EstTabInt valign=top align=center><span class=tagtxt>NomeSubPai=1</span></td>
+
+              <td class=EstTabInt>Para utilizar sempre o nome do produto principal na tag &lt;descrição&gt; do sub-produto. Se o campo descrição curta do sub-produto esta preenchida o default é utilizar esta descrição.</td>
+            </tr>
+            <tr>
+              <td class=EstTabInt valign=top align=center><span class=tagtxt>NoSub=1</span></td>
+              <td class=EstTabInt>Define se serão exibidos apenas os produtos principais da loja (omitindo os sub-produtos).</td>
+            </tr>
+
+            <tr>
+              <td class=EstTabInt valign=top align=center><span class=tagtxt>DifName=2,1,3,4</span></td>
+              <td class=EstTabInt>Utilize este campo para que sejam adicionadas informações descritivas ao nome do produto.<br><br>1=Adiciona o descritor especial 1<br>2=Adiciona o descritor especial 2<br>3=Adiciona o descritor especial 3<br>4=Adiciona o descritor simples 1<br>5=Adiciona o descritor simples 2<br>6=Adiciona o descritor simples 3<br>7=Adiciona o código do produto<br>8=Adiciona o nome da categoria<br>9=Adiciona adicionais e nome da categoria<br><br>Informe os números na ordem desejada de inclusão das informações.<br><br><b>Ex:</b> para adicionar o descritor simples 2, o descritor especial 3 e o nome da categoria, nesta ordem, informe DifName=5,3,8<br><br>Os campos adicionados ao nome serão separados por vírgula.<br><br><b>Ex:</b> Hugo, Eau de Toilette, masculino, 30 ml</td>
+
+            </tr>     
+            <tr>
+              <td class=EstTabInt valign=top align=center><span class=tagtxt>Mult=99,99</span></td>
+              <td class=EstTabInt>Multiplicador para descontos de pagamentos à vista.<br><b>Ex:</b> para dar desconto de 20%, informe Mult=0,8</td>
+            </tr>     
+            <tr>
+              <td class=EstTabInt valign=top align=center><span class=tagtxt>Juros=99,99</span></td>
+
+              <td class=EstTabInt>Utilizado para calcular as parcelas, que serão exibidas quando o campo <i>XML Parc</i> estiver preenchido na ficha do produto. Se o campo <i>XML Parc</i> não for informado, o XML utilizará o campo <i>Máx Parc</i> para exibir o parcelamento do produto, caso este campo esteja preenchido.<br><b>Ex:</b> Para juros de 1,35% ao mês, informe Juros=1,35<br>Mesmo se a loja não cobrar juros, informe Juros=0 para que o parcelamento apareça no XML.<br><b>Obs:</b> Para determinar um valor padrão de juros, preencha o campo <b>Juros padrão</b> da página Dados da loja, que será utilizado somente se o parâmetro <i>juros</i> não for informado.</td>
+
+            </tr>     
+            <tr>
+              <td class=EstTabInt valign=top align=center><span class=tagtxt>UA=1</span></td>
+              <td class=EstTabInt>Utilize este campo para que os links gerados para as páginas de produtos sejam otimizados para os robôs de indexação dos sites de busca (Google, Bing, Yahoo! etc). Veja mais detalhes sobre as <b>URLs amigáveis</b>.</td>
+            </tr>     
+
+            <tr>
+              <td class=EstTabInt valign=top align=center><span class=tagtxt>Format=0</span></td>
+
+              <td class=EstTabInt>Indica o formato de saída do XML. Utilize Format=1 para gerar XML no formato de feed do <a href="http://www.google.com.br/merchants" target=_blank>Google Shopping</a>.</td>
+            </tr>
+            <tr>
+              <td class=EstTabInt valign=top align=center><span class=tagtxt>Brand=1</span></td>
+              <td class=EstTabInt>Indica qual dos descritores a loja utiliza para cadastrar a marca do produto, ou se utiliza a marca como categoria. Desta forma, será inserida a informação de marca na cláusula <b>&lt;g:brand></b> do XML gerado para o Google Shopping.<br><br>1=Utiliza o descritor especial 1<br>2=Utiliza o descritor especial 2<br>3=Utiliza o descritor especial 3<br>4=Utiliza o descritor simples 1<br>5=Utiliza o descritor simples 2<br>6=Utiliza o descritor simples 3<br>7=Utiliza a categoria<br><br><b>Ex:</b> &lt;g:brand>Sony&lt;/g:brand></td>
+
+            </tr>
+            <tr>
+              <td class=EstTabInt valign=top align=center><span class=tagtxt>Size=1</span></td>
+              <td class=EstTabInt>Indica qual dos descritores é usado para informar o tamanho do produto. Desta forma, será inserida a informação de tamanho na cláusula <b>&lt;g:size></b> do XML gerado para o Google Shopping.<br><br>1=Utiliza o descritor especial 1<br>2=Utiliza o descritor especial 2<br>3=Utiliza o descritor especial 3<br>4=Utiliza o descritor simples 1<br>5=Utiliza o descritor simples 2<br>6=Utiliza o descritor simples 3<br><br><b>Ex:</b> &lt;g:size>30ml&lt;/g:size></td>
+
+            </tr>
+            <tr>
+              <td class=EstTabInt valign=top align=center><span class=tagtxt>CatGoogle=Categoria</span></td>
+              <td class=EstTabInt>Indica em qual <a href="http://www.google.com/support/merchants/bin/answer.py?answer=160081" target="_blank">categoria do Google Shopping</a> os produtos que constam no XML estão associados. É recomendado gerar vários feeds XML com as respectivas categorias do Google, associados ao parâmetro de categoria da loja.<br><br><b>Ex:</b> &lt;g:google_product_category>Health & Beauty > Personal Care > Cosmetics > Perfume & Cologne&lt;/g:google_product_category></td>
+
+            </tr>
+
+          </table>
+          </td>
+        </tr>
+      </table>    
+      <br><br>
+      <b>Ex:</b> XML dos produtos da loja 153, incluindo a descrição curta e 20% de desconto para o UOL:<br>
+<br>
+      <span class=MnTxt><a href=http://www.sogravatas.com.br/XMLProdutos.asp?IDLoja=153&ExibeDescricao=1&mult=0,8&origem=uol target=_blank>http://www.sogravatas.com.br/XMLProdutos.asp?IDLoja=153&ExibeDescricao=1&mult=0,8&origem=uol</a></span>
+
+<br><br>
+
+    </td>
+  </tr>  
+</table>
+
+
+</body>
+</html>

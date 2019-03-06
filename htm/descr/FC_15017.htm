@@ -1,0 +1,25 @@
+<style>p {padding:20px 0 0 0}</style>
+<p><a target=_blank href=http://filtros.lojavirtualfc.com.br>Conheça uma loja</a> que exemplifica bem o uso deste recurso. Navegue pelas <b>categorias da loja</b> ou procure por um termo para ver como é fácil chegar até o produto desejado, clicando nos filtros exibidos na barra esquerda.</p>
+
+<p><center><iframe src="https://player.vimeo.com/video/151957682?color=ffffff&title=0&byline=0&portrait=0" width="800" height="450" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></center></p>
+
+<p>Para habilitar este recurso, acesse a página <b>Dados da loja</b> e marque o campo <b>Filtros de atributos de produtos</b>. Em seguida, clique na seta ao lado deste campo para cadastrar os filtros e suas respectivas opções.</p>
+
+<p>Adicione o código abaixo no arquivo html onde deseja exibir esta funcionalidade (ex: BarraEsquerda.htm):</p>
+
+<p><pre>&lt;div id="ProductsFilterFC">&lt;/div></pre></p>
+
+<p><center><img src="/lojas/00000009/images/fc/FC15017a.png" class="img-responsive"></center></p>
+
+<p>É possível exibir os filtros do produto utilizando a tag especial <b>&lt;ProdFilters></b> nos arquivos <a target=_blank href=/adm/TagsEspeciaisProdutos.htm>EstiloProduto.htm</a> e <a target=_blank href=/adm/TagsEspeciaisProdutosOut.htm>EstiloProdutoOut.htm</a>. Esta tag será substituída pelos filtros do produto. Os filtros e respectivos itens serão exibidos em uma estrutura de tags &lt;ul>&lt;/ul> e &lt;li>&lt;/li>, que poderão ser personalizados via CSS conforme o exemplo abaixo:</p>
+
+<p><pre>
+.EstProdFilterFC{padding:5px;margin:0;list-style-type:none}
+.EstProdFilterFC ul{padding:2px;margin:0;list-style-type:none}
+.EstProdFilterFC ul li{padding-left:5px;;display:inline}
+.EstFilterLabel0FC{display:none !important;}
+.EstFilterLabel1FC{font-weight:bold;}
+.EstFilterLabel1FC:after{content:":";margin-right: 3px;}
+</pre></p>
+
+<p><center><img src="/lojas/00000009/images/fc/FC15017b.png" class="img-responsive"></center></p>

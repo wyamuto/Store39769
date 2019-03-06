@@ -1,0 +1,90 @@
+<style>
+.titpeqverde {font-size:9pt;font-family:courier new,tahoma,verdana;color:#1DA906;font-weight:bold;}
+.courrierpeq {font-size:8pt;font-family:courier new,tahoma,verdana;color:#0D6D9E;}
+.destpeq {font-size:8pt;font-family:tahoma,verdana;color:#990000;font-weight:bold;}
+</style>
+<pre>
+<span class=courrierpeq>
+<span class=titpeqverde>&lt;!-- Radio button --></span>
+&lt;input id="P2CliCampoX" name=<span class=destpeq>"P2CliCampoX"</span> onchange="F$.fnCleanErrField(<span class=destpeq>'P2CliCampoX</span>');" type="radio" value="Blogs">Blogs<br>
+
+&lt;input id="P2CliCampoX" name=<span class=destpeq>"P2CliCampoX"</span> onchange="F$.fnCleanErrField(<span class=destpeq>'P2CliCampoX</span>');" type="radio" value="Indicação de Amigos"> Indicação de Amigos<br>
+
+&lt;input id="P2CliCampoX" name=<span class=destpeq>"P2CliCampoX"</span> onchange="F$.fnCleanErrField(<span class=destpeq>'P2CliCampoX</span>');" type="radio" value="Instagram"> Instagram<br>
+
+&lt;input id="P2CliCampoX" name=<span class=destpeq>"P2CliCampoX"</span> onchange="F$.fnCleanErrField(<span class=destpeq>'P2CliCampoX</span>');" type="radio" value="Facebook"> Facebook<br>
+
+&lt;input id="P2CliCampoX" name=<span class=destpeq>"P2CliCampoX"</span> onchange="F$.fnCleanErrField(<span class=destpeq>'P2CliCampoX</span>');" type="radio" value="YouTube"> YouTube<br>
+
+&lt;input id="P2CliCampoX" name=<span class=destpeq>"P2CliCampoX"</span> onchange="F$.fnCleanErrField(<span class=destpeq>'P2CliCampoX'</span>);" type="radio" value="Google"> Google<br>
+
+&lt;input id="P2CliCampoX" name=<span class=destpeq>"P2CliCampoX"</span> onchange="F$.fnCleanErrField(<span class=destpeq>'P2CliCampoX'</span>);" type="radio" value="Revistas"> Revistas<br>
+
+&lt;input id="P2CliCampoX" name=<span class=destpeq>"P2CliCampoX"</span> onchange="F$.fnCleanErrField(<span class=destpeq>'P2CliCampoX'</span>);" type="radio" value="Outras Redes Sociais"> Outras Redes Sociais<br>
+
+&lt;input id="P2CliCampoX" name=<span class=destpeq>"P2CliCampoX"</span> onchange="F$.fnCleanErrField(<span class=destpeq>'P2CliCampoX'</span>);" type="radio" value="Outros"> Outros
+
+&lt;script>
+setTimeout("<span class=destpeq>fnCliCampoX()</span>",1);
+function <span class=destpeq>fnCliCampoX()</span>{
+ 
+  var iSelect=0,Achei=false;
+while(iSelect&lt;document.Form1.<span class=destpeq>P2CliCampoX</span>.length && !Achei){
+  if(document.Form1.<span class=destpeq>P2CliCampoX</span>[iSelect].value=="&lt;ValorCampo>"){document.Form1.<span class=destpeq>P2CliCampoX</span>[iSelect].checked=true;Achei=true;}
+  else iSelect++;
+}
+}
+&lt;/script>
+<span class=titpeqverde>&lt;!-- Altere onde está <span class=destpeq>P2CliCampoX</span> para o "name" de acordo com o campo utilizado.<br>
+Ex: Se utilizou o "campo 1" altere para <span class=destpeq>P2CliCampo1</span> e a função para <span class=destpeq>fnCliCampo1</span> --></span>
+
+
+
+<span class=titpeqverde>&lt;!-- Select --></span>
+&lt;select name='<span class=destpeq>P2CliCampoX</span>' id='<span class=destpeq>P2CliCampoX</span>' size='1' onchange="F$.fnCleanErrField('<span class=destpeq>P2CliCampoX</span>');">
+      &lt;option value=''>Selecione&lt;/option>
+      &lt;option value="Amadeirado">Amadeirado&lt;/option>
+      &lt;option value="Floral">Floral&lt;/option>
+      &lt;option value="Cítrico">Cítrico&lt;/option>
+      &lt;option value="Não sei">Não sei&lt;/option>
+&lt;/select>
+
+&lt;script>
+setTimeout("<span class=destpeq>fnCliCampoX</span>()",1);
+function <span class=destpeq>fnCliCampoX</span>(){
+
+  var iSelect=0,Achei=false;
+while(iSelect&lt;document.Form1.<span class=destpeq>P2CliCampoX</span>.length && !Achei){
+  if(document.Form1.<span class=destpeq>P2CliCampoX</span>[iSelect].value=="&lt;ValorCampo>"){document.Form1.<span class=destpeq>P2CliCampoX</span>.selectedIndex=iSelect;Achei=true;}
+  iSelect++;
+}
+
+}
+&lt;/script>
+<span class=titpeqverde>&lt;!-- Altere onde está <span class=destpeq>P2CliCampoX</span> para o "name" de acordo com o campo utilizado.<br>
+Ex: Se utilizou o "campo 1" altere para <span class=destpeq>P2CliCampo1</span> e a função para <span class=destpeq>fnCliCampo1</span> --></span>
+
+<span class=titpeqverde>&lt;!-- Checkbox --></span>
+&lt;input type="checkbox" name="<span class=destpeq>P2CliCampoX</span>" value="Esporte"> Esporte<br>
+&lt;input type="checkbox" name="<span class=destpeq>P2CliCampoX</span>" value="Saúde"> Saúde<br>
+&lt;input type="checkbox" name="<span class=destpeq>P2CliCampoX</span>" value="Negócios"> Negócios<br>
+
+&lt;script>
+function <span class=destpeq>fnCliCampoX</span>(){
+  var aValores="&lt;ValorCampo>".split(", ");
+  var iSelect=0,Achei,iArray;
+  while(iSelect&lt;document.Form1.<span class=destpeq>P2CliCampoX</span>.length){
+    Achei=false;
+    iArray=0;
+    while(iArray&lt;aValores.length && !Achei){
+      if(document.Form1.<span class=destpeq>P2CliCampoX</span>[iSelect].value==aValores[iArray]){document.Form1.<span class=destpeq>P2CliCampoX</span>[iSelect].checked=true;Achei=true;}
+      else iArray++;
+    }
+    iSelect++;
+  }
+}
+setTimeout("<span class=destpeq>fnCliCampoX</span>()",1000);
+&lt;/script>
+<span class=titpeqverde>&lt;!-- Altere onde está <span class=destpeq>P2CliCampoX</span> para o "name" de acordo com o campo utilizado.<br>
+Ex: Se utilizou o "campo 1" altere para <span class=destpeq>P2CliCampo1</span> e a função para <span class=destpeq>fnCliCampo>1</span> --></span>
+</pre>

@@ -1,0 +1,73 @@
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'>
+<title>FC 12853 :: Guia de implantação do Xtreme Checkout</title>
+<link href='http://www.rumo.com.br/lojas/00000009/htm/LojaSite.css' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+<table cellspacing="0" cellpadding="0"><tr><td>
+<br>
+<b>Arquivo ConfirmacaoPedido.htm</b>
+<br><br>
+Caso este arquivo exista na pasta HTM da loja, ele será automaticamente incluído na etapa final, onde é exibido o pedido concluído.<br>
+<br>
+Se a loja utiliza a forma de pagamento Bcash, o script de integração, que normalmente fica no arquivo ConfirmacaoPedido.htm, deve ser alterado. <a href="http://ajuda.fastcommerce.com.br/Noticias.asp?IDLoja=9&IDNoticia=8462&v=1" target="_blank">Clique aqui</a> para ver os detalhes.<br>
+<br>
+Também deverão ser feitos testes e adaptações (se necessárias) nas seguintes ocasiões:<br>
+<br>
+  - Caso a loja utilize códigos JavaScript personalizados<br>
+<br>
+  - Caso a loja tenha código que insere <b>banner do e-bit</b> ou algum outro design personalizado. <a href="http://ajuda.fastcommerce.com.br/Noticias.asp?IDLoja=9&idnoticia=3790" target="_blank">Clique aqui</a> para ver o código sugerido para exibir este banner.<br>
+<br>
+<br>
+<b>Arquivos HTML para forma de pagamento adicional</b><br>
+<br>
+Para fornecer maiores explicações ao cliente sobre a forma de pagamento adicional, é possível enviar arquivo HTML contendo detalhes sobre cada forma adicional ou programação JavaScript. Este arquivo será incluído na etapa onde é exibido o pedido concluído, junto à descrição da forma de pagamento escolhida pelo cliente.<br>
+<br>
+Caso a loja utilize alguma programação especial JavaScript nestes arquivos, deverão ser feitos testes e adaptações se necessárias.<br>
+<br>
+<br>
+<b>Implementação com Teste A/B</b><br>
+<br>
+O <a href="http://www.rumo.com.br/adm/AjudaAdm.asp?ajuda=420" target="_blank">Teste A/B</a> é o método mais utilizado para realizar testes de usabilidade em lojas virtuais. Ele permite, por exemplo, comparar os resultados em vendas para duas versões de design do site, a versão A e a versão B.<br>
+<br>
+Para direcionar apenas uma parte dos visitantes (ex: 10%) para o novo checkout e assim comparar as vendas obtidas com cada tipo de checkout, ative o <b>Xtreme Checkout</b> e o recurso de <b>Teste A/B</b>. Crie um arquivo com o nome <i>AbtCheckout.htm</i>, que deverá ser enviado para a pasta HTM. Este arquivo conterá um redirecionamento, conforme o exemplo abaixo:<br>
+<br>
+<span class=courrier>
+&lt;script&gt;<br>
+document.location.href="/recalcula.asp?idloja=&lt;idloja&gt;&comprar=1";<br>
+&lt;/script&gt;<br>
+</span>
+<br>
+Desta forma os visitantes do design A irão efetuar os pedidos através no Xtreme Checkout e os visitantes do design B irão efetuar pedidos através do tradicional checkout passo-a-passo. Após um período com esta configuração (ex: 30 dias), utilize os relatórios de vendas para comparar os resultados obtidos com cada tipo de checkout. Se os 10% dos visitantes que foram direcionados para o Xtreme Checkout fizerem mais do que 10% do total de vendas da loja, então estará comprovado que vale a pena adotar o novo checkout em 100% das visitas.<br>
+<br>
+<br>
+<b>Outras observações</b><br>
+<br>
+- Ao ativar a opção de <b>Xtreme Checkout</b>, o recurso de <a href="http://www.rumo.com.br/adm/AjudaAdm.asp?ajuda=413" target="_blank">Layout diferenciado nas páginas de pedido</a> ficará ativo por padrão na loja. Este recurso remove elementos desnecessários do design das páginas de fechamento de pedidos. Desta forma é necessário o envio de arquivos específicos (Ped*.htm) caso estes ainda não tenham sido enviados. Veja mais detalhes <a href="http://ajuda.fastcommerce.com.br/Noticias.asp?IDLoja=9&IDNoticia=10433" target="_blank">aqui</a>.<br>
+<br>
+- O método JavaScript <b>document.write não pode ser utilizado</b> nos arquivos HTM utilizados no checkout, pois é conflitante com AJAX.<br>
+<br>
+- Caso a loja tenha códigos JavaScript personalizados nos arquivos HTMLs da loja (Ex: Rodape.htm, PedRodape.htm, etc) estes devem ser verificados e adaptados caso necessário.<br>
+<br>
+- Textos personalizados de frete e de pagamento devem ser verificados, pois podem não caber no design ou podem conter JavaScript não suportado.<br>
+<br>
+- Textos personalizados dos campos <b>Texto ao início do cadastro</b> e <b>Texto ao final do cadastro</b> da página <b>Textos & imagens</b> do site administrativo devem ser verificados, pois podem não caber no design ou podem conter JavaScript não suportado.<br>
+<br>
+- Campos adicionais de clientes e de pedidos com scripts de validação devem ser testados e adaptados se necessário.<br><br>
+- Caso a loja tenha configurado o funil do Google Analytics, a loja deverá alterar as etapas deste funil ou criar uma nova meta de funil com as etapas do Xtreme Checkout. <a href="http://ajuda.fastcommerce.com.br/N8532" target="_blank">Veja exemplo destas etapas</a>.<br>
+<br>
+<br>
+<span class=dest>Atenção:</span> Como este recurso altera o processo de finalização de pedidos, faça testes com todas as formas de pagamento disponibilizadas pela loja, principalmente as formas personalizadas.<br>
+<br>
+<center><font color="#990000" size="3" face="arial"><b>Antes de ativar o Xtreme Checkout, não hesite em esclarecer todas as suas dúvidas<br>junto aos profissionais da nossa equipe de suporte.</b></font></center><br>
+<br>
+<br>
+<b>Assuntos relacionados:</b>
+<ul>
+<li><a href=http://www.fastcommerce.com.br/home.asp?idloja=1&pagina=RecXtremeCheckout&origem=ar target=_blank>O que torna o <b>Xtreme Checkout</b> tão especial?</a></li>
+<li><a href=/Noticias.asp?IDLoja=9&IDNoticia=12867&origem=ar target=_blank>FC 12867 :: Como personalizar o <b>Xtreme Checkout</b>?</a></li>
+</ul>
+</td></tr></table>
+</html>

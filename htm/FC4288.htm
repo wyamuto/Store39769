@@ -1,0 +1,129 @@
+<style>.destverde {color: #139606;font-family: tahoma,verdana;font-size: 10pt; font-weight: bold;}</style>
+<h4><b>Colors</b></h4>
+
+<p>To register for new colors, go to the <b>STORE CONFIGURATION</b> page on the administrative site in the <b>Products</b> section:</p>
+
+<br>
+<img src="/lojas/00000156/images/descr/FC4288Descritores1.png" class="img-responsive" />
+<br>
+
+<span class="dest NewsPassos">1º Step</span>
+<p>Check the <b>Show colors</b> field.</p>
+<br>
+
+<span class="dest NewsPassos">2º Step</span>
+<p>Click the arrow to the right of the <b>Show colors</b> field.</p>
+<br>
+
+<br>
+<img src="/lojas/00000156/images/descr/FC4288Descritores2.png" class="img-responsive" />
+<br>
+
+<span class="dest NewsPassos">3º Step</span>
+<p>Click the <b>[New color]</b> option.</p>
+<br>
+
+<span class="dest NewsPassos">4º Step</span>
+<p>Enter or <b>Color name</b>.</p>
+<br>
+
+<span class="dest NewsPassos">5º Step</span>
+<p>Select the <b>color</b> in the color palette.</p>
+<br>
+
+<span class="dest NewsPassos">6º Step</span>
+<p>Click the <b>Add</b> button.</p>
+<br>
+
+<span class="dest NewsPassos">7º Step</span>
+<p>Click the <b>Save</b> button at the bottom of the <b>STORE CONFIGURATION</b> page.</p>
+<br>
+
+<hr>
+<br>
+
+<h4><b>Special descriptors</b></h4>
+
+<p>To register a special descriptor, go to the <b>STORE CONFIGURATION</b> page on the administrative site in the <b>Products</b> section:</p>
+
+<br>
+<img src="/lojas/00000156/images/descr/FC4288Descritores3.png" class="img-responsive" />
+<br>
+
+<span class="dest NewsPassos">1º Step</span>
+<p>Fill in the name of the descriptor (e.g.: <b>Size</b>).</p>
+<br>
+
+<span class="dest NewsPassos">2º Step</span>
+<p>Click the arrow to the right of the descriptor name field to register the values.</p>
+<br>
+
+<br>
+<img src="/lojas/00000156/images/descr/FC4288Descritores4.png" class="img-responsive" />
+<br>
+
+<span class="dest NewsPassos">3º Step</span> 
+<p>Click the <b>[new item]</b> option.</p>
+<br>
+
+<span class="dest NewsPassos">4º Step</span>
+<p>Enter the value of the descriptor (e.g.: <b>7,5</b>).</p>
+<br>
+
+<span class="dest NewsPassos">5º Step</span>
+<p>Click the <b>Add</b>.</p>
+<br>
+
+<span class="dest NewsPassos">6º Step</span>
+<p>Click the <b>Save</b> button located at the bottom of the <b>STORE CONFIGURATION</b>.</p>
+<br>
+
+<p><b>Obs.:</b> The order of the sizes register will be the same order as shown in the store. For example, for sizes register first P, then M and then G, so that these sizes are displayed in this order, which is not alphabetic.</p>
+<p>Sign all existing sizes, even if you do not already have products with some of these sizes. Thus, when registering a product of a new size, this size will already be registered and in the correct order.</p>
+<br>
+<br>
+
+<h4><b>HTML Customization</b></h4>
+
+<p>To link to a particular special descriptor (e.g.: products of a certain size), use the following format:</p>
+
+<pre>&lt;a href="/ListaProdutos.asp?Avancada=1&<span class="dest">Adicional1</span>=<b class="destverde">000000</b>"&gt;Size 7,5&lt;/a&gt;</pre>
+<br>
+
+<p><b>Exemplo utilizando o formato de URL amigável:</b></p>
+
+<pre> &lt;a href="/prod,avancada,1,<span class="dest">adicional1,<b class="destverde">000000</b>,size-75"</span>&gt;Size 7,5&lt;/a&gt; </pre>
+<br>
+
+<p>In the examples above, change <b>000000</b> by the ID of the <b>Size</b> <span class="dest">P</span>.</p>
+
+<ul style="margin:0px 0px 0px 10px">
+ <li><p><span class="dest">adicional1:</span> indicates which descriptor is used (e.g: <b>Size</b>)</p></li>
+ <li><p><b class="destverde">000000:</b> indicates the ID of the <b>Size</b> <span class="dest">7,5</span> (e.g.: <b>988</b>)</p></li>
+ <li><p><span class="dest">size-75:</span> indicates the name of the descriptor to be displayed in the URL</p></li>
+</ul>
+
+<p>The link above lists all products that are registered with the <b>Size</b> <span class="dest">7,5</span>.</p>
+
+<br>
+
+<hr>
+
+<h4><b>Simple descriptors</b></h4>
+
+<p>To register a simple descriptor, go to the <b>STORE CONFIGURATION</b> page in the administrative site in the <b>Products</b> section:</p>
+
+<br>
+<img src="/lojas/00000156/images/descr/FC4288Descritores5.png" class="img-responsive" />
+<br>
+
+<span class="dest NewsPassos">1º Step</span>
+<p>Fill in the name of the descriptor (e.g.: <b>Oz/ml</b>).</p>
+<br>
+
+<span class="dest NewsPassos">2º Step</span>
+<p>Click the <b>Save</b> button located at the bottom of the <b>STORE CONFIGURATION</b></p>
+<br>
+
+<p><b>Obs.:</b> The value of the simple descriptor must be entered on the product registration page (e.g.: <b>100ml</b>).</p>
+<br>

@@ -1,0 +1,54 @@
+<pre>/* RWD Grid */
+function MostraBotIndique(IDProduto){
+  document.write("&lt;center>&lt;span class=mnText>&lt;a href='javascript:MostraIndiqueCaptcha("+FC$.IDLoja+","+IDProduto+")' class=RodapeMenu>&lt;img src="+FC$.PathImg+"r.gif border=0 vspace=2>&lt;br>Recomende&lt;br>este produto&lt;/a>&lt;/span>&lt;/center>");
+}
+
+function MostraBotAval(IDProduto){
+  document.write("&lt;center>&lt;span class=mnText>&lt;a href='Opiniao.asp?IDLoja="+IDLoja+"&IDProduto="+IDProduto+"' class=RodapeMenu>&lt;img src="+FC$.PathImg+"icavalie.png border=0 vspace=2>&lt;br>Avalie este&lt;br>produto&lt;/a>&lt;/span>&lt;/center>");
+}
+
+function MostraPreco(PrecoProd,PrecoOri,IDProd){
+if(PrecoProd==0 && PrecoOri==0){document.write("&lt;span class=EstPrecoProdCapa>&lt;a href=ListaProdutos.asp?"+IDLoja+"&IDProduto="+IDProd+">DETALHES&lt;/a>&lt;/span>");return void(0);}
+if(PrecoProd!=PrecoOri){
+ document.write("&lt;span class=EstPrecoNormal>de:"+FormatPrice(PrecoOri,'R$')+"&lt;/span>&lt;br>&lt;span class=EstPrecoPromocional>por:"+FormatPrice(PrecoProd,'R$')+"&lt;/span>");
+ }
+ else{
+ document.write("&lt;span class=EstPrecoNormal>por: "+FormatPrice(PrecoProd,'R$')+"&lt;/span>");
+ }
+}
+
+function MostraFreteGratis(iPeso){
+  if(iPeso==0)document.write("&lt;img src='"+FC$.PathImg+"btfretegratis.gif'>");
+}
+
+function MostraMaxParcela(PrecoProd,MaxParcelas){
+  var ComSem;
+
+  if(PrecoProd>=300)MaxParcelas=6;
+  else if(PrecoProd>=250)MaxParcelas=5;
+  else if(PrecoProd>=200)MaxParcelas=4;
+  else if(PrecoProd>=150)MaxParcelas=3;
+  else if(PrecoProd>=100)MaxParcelas=2;
+  else if(PrecoProd>=1)MaxParcelas=1;
+
+  if(PrecoProd==0||MaxParcelas==1||Juros.length==0)return;
+  if(MaxParcelas==0||MaxParcelas>Juros.length)MaxParcelas=Juros.length;
+  if(Juros[MaxParcelas-1]>0)ComSem=""; else ComSem="&lt;font color=#990000> sem juros&lt;/font>";
+  document.write(" ou &lt;b>"+MaxParcelas+"x&lt;/b>"+ComSem+" de &lt;b>"+FormatPrecoReais(CalculaParcelaJurosCompostos(PrecoProd,MaxParcelas))+"&lt;/b>");
+}
+
+function MostraMaxParcelaJS(PrecoProd,MaxParcelas){
+  var ComSem;
+
+  if(PrecoProd>=300)MaxParcelas=6;
+  else if(PrecoProd>=250)MaxParcelas=5;
+  else if(PrecoProd>=200)MaxParcelas=4;
+  else if(PrecoProd>=150)MaxParcelas=3;
+  else if(PrecoProd>=100)MaxParcelas=2;
+  else if(PrecoProd>=1)MaxParcelas=1;
+
+  if(PrecoProd==0||MaxParcelas==1||Juros.length==0)return "";
+  if(MaxParcelas==0||MaxParcelas>Juros.length)MaxParcelas=Juros.length;
+  if(Juros[MaxParcelas-1]>0)ComSem=""; else ComSem="&lt;font color=#990000> sem juros&lt;/font>";
+  return "&lt;span class=EstParc> ou &lt;b>"+MaxParcelas+"x&lt;/b>"+ComSem+" de &lt;b>"+FormatPrecoReais(CalculaParcelaJurosCompostos(PrecoProd,MaxParcelas))+"&lt;/b>&lt;/span>";
+}</pre>

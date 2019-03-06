@@ -1,0 +1,193 @@
+<script language="JavaScript" type="text/javascript" src="https://www.rumo.com.br/sistema/spry.js"></script>
+<script type="text/javascript">
+var dsstates = new Spry.Data.XMLDataSet("<baseloja>htm/states.xml", "atendentes/atendente");
+var dsCities = new Spry.Data.XMLDataSet("<baseloja>htm/{dsstates::url}", "atendente/emails/city");
+</script>
+
+<script>
+function ValidaForm(){
+
+ //Contato Nome
+ if(isEmpty(document.form.NomeDe.value)){
+ AvisoErroCampo(document.form.NomeDe,'Informe seu nome.');
+ return false;
+ }
+
+ //E-mail
+ if(isEmpty(document.form.EmailDe.value) || !ValidaEmailInt(document.form.EmailDe.value)){
+ AvisoErroCampo(document.form.EmailDe,'Informe seu e-mail.');
+ return false;
+ }
+
+ //Descrição
+ if(isEmpty(document.form.Mensagem.value)){
+ AvisoErroCampo(document.form.Mensagem,'Informe sua dúvida.');
+ return false;
+ }
+ document.form.submit();
+}
+
+function ValidaEmailInt(sEmail) {
+ var regex=/^[a-zA-Z0-9._-]+@([a-zA-Z0-9.-]+\.)+[a-zA-Z0-9.-]{2,4}$/;
+ return regex.test(sEmail);
+}
+
+function retiraEspaco(theString) {
+//retira espaços de string
+ if(theString.indexOf(" ")>=0){
+ var i=0;
+ while(theString.indexOf(" ")>=0){
+ if(theString.charAt(i)==" ")theString=theString.substring(0,i)+theString.substring(i+1,theString.length);
+ else i++;
+ }
+ newString=theString;
+ } 
+ else newString=theString;
+ return newString;
+}
+
+function isEmpty(s){return((retiraEspaco(s)==null)||(retiraEspaco(s).length==0));}
+
+function AvisoErroCampo(theField,warnText){
+ theField.focus();
+ theField.select();
+ alert(warnText);
+ return false;
+}
+
+function AvisoErroCampo_SelectBox(theField,s){
+ theField.focus();
+ alert(s);
+ return false;
+}
+</script>
+<table width=100%>
+   <tr>
+     <td valign=top height=70><a href=home.asp?IDLoja=<IDLoja>><img src="<baseloja>images/TitNoticia.gif" width=476 height=52 border=0></a></td>
+   </tr>
+   <tr><td height=100>&nbsp;</td></tr>
+   <tr>
+    <td align=center>
+      <table width=540 cellspacing=0 cellpadding=3 align=center class=EstTabQuadroNew>
+        <tr>
+          <td align=center height=30 class=TitTab colspan=2>Formulário para abertura de chamado</td>
+        </tr>
+        <tr>
+          <td colspan=2 align=center><br></td>
+        </tr>
+            <form name="form" method="POST" action="EnviaMail.asp">
+            <input type=hidden name=NomePara value='Equipe Fastcommerce'>
+            <input type=hidden name=EmailPara value='suporte@fastcommerce.com.br'>
+            <input type=hidden name=URLRetorno value='custom.asp?IDLoja=<IDLoja>&arq=ChamadoFC.htm'>
+            <input type=hidden name=OrdemCampos value='Loja,NomeDoCliente,EmailParaRetorno,Mensagem'>
+        <tr>
+          <td align=right><b>Nome:</b></td>
+          <td>
+            <span spry:region="dsstates" id="stateselector">
+            	<select spry:repeatchildren="dsstates" name="NomeDe" onchange="document.forms[0].citySelect.disabled = true; dsstates.setCurrentRowNumber(this.selectedIndex);" class="Lista3">
+            		<option spry:if="{ds_RowNumber} == {ds_CurrentRowNumber}" value="{name}" selected="selected">Wagner Yamuto</option>
+            		<option spry:if="{ds_RowNumber} != {ds_CurrentRowNumber}" value="{name}">Wagner Yamuto</option>
+            	</select>
+            </span>
+            <!--<input type=text name=NomeDe size=25 maxlength=50 class=InputText1 style="width:240px;">-->
+          </td>
+        </tr>
+        <tr>
+          <td align=right><b>E-mail:</b></td>
+          <td>
+            <span spry:region="dsCities" id="citySelector">
+            	<select spry:repeatchildren="dsCities" id="citySelect" name="EmailDe" class="Lista3">
+            		<option spry:if="{ds_RowNumber} == {ds_CurrentRowNumber}" value="{name}" selected="selected">{name}</option>
+            		<option spry:if="{ds_RowNumber} != {ds_CurrentRowNumber}" value="{name}">{name}</option>
+            	</select>
+            </span>
+            <!--<input type=text name=EmailDe size=25 maxlength=50 class=InputText1 style="width:240px;">-->
+          </td>
+        </tr>
+        <tr>
+          <td align=right><b>IDLoja:</b></td>
+          <td><input type=text name=Loja size=25 maxlength=50 class=InputText1 style="width:180px;">&nbsp; (se não souber, informe o nome da loja)</td>
+        </tr>
+        <tr>
+          <td align=right><b>Nome do cliente:</b></td>
+          <td><input type=text name=NomeDoCliente size=25 maxlength=50 class=InputText1 style="width:180px;"></td>
+        </tr>
+        <tr>
+          <td align=right><b>E-mail para retorno:</b></td>
+          <td><input type=text name=EmailParaRetorno size=25 maxlength=50 class=InputText1 style="width:180px;"></td>
+        </tr>
+        <tr>
+          <td align=right><b>Assunto:</b></td>
+          <td><select name=Assunto size=1 class=InputText1>
+              <option value='[FC CRM] ::  ' selected class=Lista3>&nbsp;Selecione...</option>
+              <option value='[FC CRM] ::  Configurações gerais da loja' class=Lista3>&nbsp;Configurações gerais da loja</option>
+              <option value='[FC CRM] ::  Chat' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Chat</option>
+              <option value='[FC CRM] ::  Domínio próprio' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Domínio próprio</option>
+              <option value='[FC CRM] ::  E-mails da loja' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;E-mails da loja</option>
+              <option value='[FC CRM] ::  Envio & Frete' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Envio & Frete</option>
+              <option value='[FC CRM] ::  ' class=Lista3>&nbsp;Design & conteúdo</option>
+              <option value='[FC CRM] ::  Cores da loja' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Cores da loja</option>
+              <option value='[FC CRM] ::  Arquivo CSS' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Arquivo CSS</option>
+              <option value='[FC CRM] ::  Arquivos HTMLs personalizados' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Arquivos HTMLs personalizados</option>
+              <option value='[FC CRM] ::  Layout da loja' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Layout da loja</option>
+              <option value='[FC CRM] ::  Barras laterais' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Barras laterais</option>
+              <option value='[FC CRM] ::  Estilo da lista de produtos' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Estilo da lista de produtos</option>
+              <option value='[FC CRM] ::  Area de busca no topo' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Area de busca no topo</option>
+              <option value='[FC CRM] ::  Titulos das páginas' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Titulos das páginas</option>
+              <option value='[FC CRM] ::  Botões da loja' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Botões da loja</option>
+              <option value='[FC CRM] ::  Menus de navegação' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Menus de navegação</option>
+              <option value='[FC CRM] ::  Links para páginas' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Links para páginas</option>
+              <option value='[FC CRM] ::  Banners da loja' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Banners da loja</option>
+              <option value='[FC CRM] ::  Pagamentos' class=Lista3>&nbsp;Pagamentos</option>
+              <option value='[FC CRM] ::  Cartão VISA' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Cartão VISA</option>
+              <option value='[FC CRM] ::  Cartão Mastercard' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Cartão Mastercard</option>
+              <option value='[FC CRM] ::  Cartão Diners' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Cartão Diners</option>
+              <option value='[FC CRM] ::  Cartão AMEX' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Cartão AMEX</option>
+              <option value='[FC CRM] ::  Cartão Hipercard' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Cartão Hipercard</option>
+              <option value='[FC CRM] ::  Itaú ShopLine' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Itaú ShopLine</option>
+              <option value='[FC CRM] ::  RealPague' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;RealPague</option>
+              <option value='[FC CRM] ::  PayPal' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;PayPal</option>
+              <option value='[FC CRM] ::  F2B' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;F2B</option>
+              <option value='[FC CRM] ::  Finasa Online' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Finasa Online</option>
+              <option value='[FC CRM] ::  Boleto bancário' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Boleto bancário</option>
+              <option value='[FC CRM] ::  Sobre fraudes' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Sobre fraudes</option>
+              <option value='[FC CRM] ::  Venda com parcelamento' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Venda com parcelamento</option>
+              <option value='[FC CRM] ::  Parcelamento na lista de produtos' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Parcelamento na lista de produtos</option>
+              <option value='[FC CRM] ::  Pedidos' class=Lista3>&nbsp;Pedidos</option>
+              <option value='[FC CRM] ::  Emissão de nota fiscal' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Emissão de nota fiscal</option>
+              <option value='[FC CRM] ::  Impressão de etiquetas' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Impressão de etiquetas</option>
+              <option value='[FC CRM] ::  Status dos pedidos' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Status dos pedidos</option>
+              <option value='[FC CRM] ::  Fluxo de pedidos' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Fluxo de pedidos</option>
+              <option value='[FC CRM] ::  Produtos' class=Lista3>&nbsp;Produtos</option>
+              <option value='[FC CRM] ::  Cadastro de produtos' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Cadastro de produtos</option>
+              <option value='[FC CRM] ::  Cadastro em lote (CSV)' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Cadastro em lote (CSV)</option>
+              <option value='[FC CRM] ::  Cores de produtos' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Cores de produtos</option>
+              <option value='[FC CRM] ::  Sub-produtos' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Sub-produtos</option>
+              <option value='[FC CRM] ::  Categorias da loja' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Categorias da loja</option>
+              <option value='[FC CRM] ::  Sub-categorias' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Sub-categorias</option>
+              <option value='[FC CRM] :: Parceiros' class=Lista3>&nbsp;Parceiros</option>
+              <option value='[FC CRM] ::  Cadastro de parceiros' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Cadastro de parceiros</option>
+              <option value='[FC CRM] ::  Links para parceiros' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Links para parceiros</option>
+              <option value='[FC CRM] ::  Cadastro de produtos via XML' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Cadastro de produtos via XML</option>
+              <option value='[FC CRM] ::  Integração com sites de comparação de preços' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Integração com sites de comparação de preços</option>
+              <option value='[FC CRM] :: Outros' class=Lista3>&nbsp;Outros</option>
+              <option value='[FC CRM] ::  Divulgação da loja' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Divulgação da loja</option>
+              <option value='[FC CRM] ::  Informações' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Informações</option>
+              <option value='[FC CRM] ::  Pageviews da loja' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Pageviews da loja</option>
+              <option value='[FC CRM] ::  Planos especiais' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Planos especiais</option>
+              <option value='[FC CRM] ::  Reclamações' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Reclamações</option>
+              <option value='[FC CRM] ::  Shopping Virtuose' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Shopping Virtuose</option>
+              <option value='[FC CRM] ::  Sugestões' class=Lista2>&nbsp;&nbsp;-&nbsp;&nbsp;Sugestões</option>
+              </select></td>
+        </tr>
+        <tr>
+          <td align=right><b>Mensagem:</b></td>
+          <td><textarea cols=18 rows=5 name=Mensagem class=InputText1 style="width:345px;height:120px;"></textarea></td>
+        </tr>
+        <tr>
+          <td colspan=2 align=center><input type=button name=Enviar value=' Enviar ' class=InputButton1 onclick='javascript:ValidaForm()'><br><br></td>
+        </tr>  
+      </table></form>
+    </td>
+  </tr>
+</table><br>

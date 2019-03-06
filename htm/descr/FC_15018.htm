@@ -1,0 +1,82 @@
+<h4>Opção 1 (Logout feito em cadastro.asp)</h4>
+
+<p>Nesta opção é criado um link para a página cadastro.asp com o parâmetro <b>&logoff=1</b>. Desta forma é feito o logout e o cliente fica na tela de login em cadastro.asp </p>
+
+<pre>
+&lt;script>
+function fnLoginUserName(NameUser){
+  var oContentLogin=document.getElementById("loginInfo");
+  if(NameUser!=""){
+    oContentLogin.innerHTML="Olá, &lt;b>"+NameUser+"&lt;/b>,&lt;a href='/cadastro.asp?idloja="+FC$.IDLoja+"&logoff=1' target='_top'>&lt;b>sair&lt;/b>&lt;/a>";
+  }
+  else{
+    oContentLogin.innerHTML="Olá, &lt;b>visitante&lt;/b> | Faça seu &lt;a href='/cadastro.asp?idloja="+FC$.IDLoja+"&pp=3&passo=1&sit=1'>&lt;b>login&lt;/b>&lt;/a>";
+  }
+}
+&lt;/script>
+</pre>
+<br>
+<h4>Opção 2 (Logout feito em AJAX com redirecionamento)</h4>
+
+<p>Nesta opção é criado um link ou botão com a chamada de uma função AJAX que irá realizar o logout e redirecionar para página desejada.</p>
+
+<p>Neste exemplo abaixo, ocorre o logout e redireciona para a cesta da loja.</p>
+
+<p>O parâmetro é o nome da página ASP, sem a extensão.</p>
+
+<pre>
+&lt;script>
+function fnLoginUserName(NameUser){
+  var oContentLogin=document.getElementById("loginInfo");
+  if(NameUser!=""){
+    oContentLogin.innerHTML="Olá, &lt;b>"+NameUser+"&lt;/b>,&lt;a href='#logout' onclick=FCLib$.fnClientLogout('addproduto') target='_top'>&lt;b>sair&lt;/b>&lt;/a>";
+  }
+  else{
+    oContentLogin.innerHTML="Olá, &lt;b>visitante&lt;/b> | Faça seu &lt;a href='/cadastro.asp?idloja="+FC$.IDLoja+"&pp=3&passo=1&sit=1'>&lt;b>login&lt;/b>&lt;/a>";
+  }
+}
+&lt;/script>
+</pre>
+<br>
+<p>Se ao invés de redirecionar para uma página, a intenção for executar uma função javascript, basta informar o nome da função que deverá ser chamada:</p>
+
+<h4>Opção 3 (Logout feito em AJAX com chamada de função personalizada javascript)</h4>
+
+<pre>
+&lt;script>
+function fnLoginUserName(NameUser){
+  var oContentLogin=document.getElementById("loginInfo");
+  if(NameUser!=""){
+    oContentLogin.innerHTML="Olá, &lt;b>"+NameUser+"&lt;/b>,&lt;a href='#logout' onclick=FCLib$.fnClientLogout('account',LogoutCli) target='_top'>&lt;b>sair&lt;/b>&lt;/a>";
+  }
+  else{
+    oContentLogin.innerHTML="Olá, &lt;b>visitante&lt;/b> | Faça seu &lt;a href='/cadastro.asp?idloja="+FC$.IDLoja+"&pp=3&passo=1&sit=1'>&lt;b>login&lt;/b>&lt;/a>";
+  }
+}
+&lt;/script>
+</pre>
+<br>
+<p>Neste caso será chamada a função <b>LogoutCli</b> e o redirecionamento não ocorrerá.</p>
+
+<p>A função recebe o nome da página que foi enviado e o objeto xml de retorno da chamada do ajax. (ex: <b>&lt;logout>true&lt;/logout></b>)</p>            
+
+<p><b>Obs</b>: Copie e cole no <b>LojaLib.js</b> da pasta <b>HTM</b> da loja apenas uma das funções de acordo com a sua necessidade.</p>
+
+
+<p>Trecho que deverá ser inserido onde irá aparecer a opção de login ou logout (por exemplo, em <b>BarraTopo.htm</b>):</p>
+
+<pre>
+&lt;div id="loginInfo">
+  &lt;script>fnLoginUserName("&lt;NomeCliente>");&lt;/script>
+&lt;/div>
+</pre>
+<br>
+<p>Exemplo de função personalizada citada na opção 3:</p>
+
+<pre>
+function LogoutCli(obj,sPag){
+  //aqui será programado o que será feito após a chamada da função que realiza o logout em ajax
+  console.log("objeto="+obj);
+  console.log("página="+sPag);
+}
+</pre>

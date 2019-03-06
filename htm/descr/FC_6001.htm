@@ -1,0 +1,49 @@
+<p>1<b>Ex.</b></p>
+
+<!-- Inicio do Antigo Frame FC6001Prod.htm-->
+<pre>
+<span>&lt;ProdTop&gt;</span>
+
+<span>&lt;script&gt;
+function MostraDesconto(PrecoProd){
+  if(PrecoProd==0)return;
+  document.write("&lt;br&gt;&lt;table bgcolor=black <span>width=320</span> cellspacing=1 cellpadding=3&gt;&lt;tr <span>bgcolor=#07489A</span>&gt;&lt;td colspan=3 height=22 class=TitTabParc align=center&gt;&lt;b&gt;Desconto&lt;/td&gt;&lt;/tr&gt;&lt;tr class=EstParcPar&gt;&lt;td colspan=3 height=22&gt;Pague com depósito bancário, boleto bancário ou ItaúShopline e ganhe &lt;font color=#990000&gt;&lt;b&gt;5%&lt;/font&gt; de desconto.&lt;hr align=center width=95% style='color:#B4B4B4;'&gt; Valor com desconto &lt;b&gt;&lt;font color=#990000&gt;"+FormatPrecoReais(PrecoProd*<span>0.95</span>)+"&lt;/font&gt;&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;");
+  document.write("&lt;/table&gt;&lt;br&gt;");
+}
+&lt;/script&gt;
+
+&lt;/ProdTop&gt;
+</span>
+</pre>
+<!-- Fim do Antigo Frame-->
+
+<br>
+<p>- Altere onde está <span>width=320</span> para mudar a largura da tabela</p>
+<p>- Altere onde está <span>bgcolor=#07489A</span> para mudar a cor azul do cabeçalho da tabela</p>
+<p>- Altere onde está <span>0.95</span> para mudar o valor do desconto, neste exemplo o desconto é de <span>5%</span> para as vendas à vista</p>
+
+<p>Feito isso, no local desejado do arquivo <b>EstiloProduto.htm</b> informe a chamada para a função <b>MostraDesconto</b>.</p>
+
+<p><b>Ex.</b></p>
+<p>Neste exemplo a chamada da função (<span>&lt;script&gt;MostraDesconto(&lt;PrecoNum&gt;);&lt;/script&gt;</span>) está dentro da tag <span>&lt;ProdDet&gt;</span>.</p>
+
+<p>Segue trecho de código:</p>
+
+<!-- Inicio do Antigo Frame FC6001ProdT.htm-->
+<pre>
+                <span>&lt;td nowrap class=EstPrecoProd height=40 nowrap&gt;&lt;Preco&gt;&lt;AvisoDisp&gt;&lt;/td&gt;
+              &lt;/tr&gt;
+            &lt;/table&gt;&lt;br&gt;
+
+&lt;script&gt;MostraParcelas(&lt;PrecoNum&gt;,&lt;MaxParcelasProdNum&gt;);&lt;/script&gt;&lt;br&gt;<span>&lt;script&gt;MostraDesconto(&lt;PrecoNum&gt;);&lt;/script&gt;</span>
+
+          &lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/table&gt;
+</span>
+</pre>
+<!-- Fim do Antigo Frame-->
+
+<p>Veja produto com valor normal, tabela de parcelamento e o valor com desconto. Caso o produto esteja sem valor a tabela <b>não</b> vai aparecer.</p>
+
+<center><img src="https://www.rumo.com.br/lojas/00028496/images/ValorDesconto.gif"></center>

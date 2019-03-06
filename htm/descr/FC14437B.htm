@@ -1,0 +1,51 @@
+<!--<link href='http://ajuda.Fastcommerce.com.br/lojas/00000009/htm/LojaSite.css' rel='stylesheet' type='text/css'>-->
+<style>
+body{overflow-x: hidden;}
+</style>
+<pre>
+<span style="font-size:14px;color:blue">
+&lt;!-- começo :: zoom com várias imagens -->
+&lt;script>
+var imgDetAll = "&lt;ImagemProdDet>";
+var imgAmpAll = "&lt;ImagemProdAmp>";
+var novoArray = imgDetAll.split(',');
+var novoArrayAmp = imgAmpAll.split(',');
+var CountImgDet=novoArray.length;
+var CountImgAmp=novoArrayAmp.length;
+
+if (imgDetAll=="" || imgAmpAll==""){
+  document.write("");
+}
+else{
+  if (CountImgDet==CountImgAmp){
+    var FC_MaxImages=CountImgDet-1;
+    MostraZoomImgFC();
+  }
+  else{
+    var FC_MaxImages=0;
+    MostraZoomImgFC();
+  }
+}
+
+function MostraZoomImgFC(){
+  for (var i=0;i<=FC_MaxImages;i++)
+  {
+    if(i==0)
+    {
+       imgDetMini=novoArray[i];
+       imgAmpMini=novoArrayAmp[i];
+       document.write("&lt;a href="+imgAmpMini+" title='&lt;NomeProd>' class='MagicZoom' id='zoom2' data-options='hint:off;selectorTrigger:hover;transitionEffect:false;'>&lt;img src="+ imgDetMini +">&lt;/a>&lt;br>");
+       document.write('&lt;p>&lt;a onclick="MagicZoom.expand(zoom2); return false;" href="#">Ampliar imagem&lt;/a>&lt;/p>');
+       document.write("&lt;a href="+imgAmpMini+" data-zoom-id='zoom2' data-image="+ imgDetMini +">&lt;img src="+ imgDetMini +" width=75 height=45 class=ZoomIMG2>&lt;/a>");
+    }
+    else{
+          imgDetMini="&lt;BaseLoja>prod/"+novoArray[i];
+          imgAmpMini="&lt;BaseLoja>prod/"+novoArrayAmp[i];
+          document.write("&lt;a href="+imgAmpMini+" data-zoom-id='zoom2' data-image="+ imgDetMini +">&lt;img src="+ imgDetMini +" width=75 height=45 class=ZoomIMG2>&lt;/a>");
+    }
+  }
+}
+&lt;/script>
+&lt;!-- fim :: zoom com várias imagens -->
+</span>
+</pre>

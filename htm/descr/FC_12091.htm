@@ -1,0 +1,55 @@
+<p>Para evitar que estes ataques ocorram, o Fastcommerce analisa cada acesso e bloqueia aqueles considerados "automatizados". As <b>únicas exceções</b> não bloqueadas são os robôs de acesso do Google (<b>Googlebot</b>) e do Bing da Microsoft (<b>Bingbot</b>). Caso queira, o lojista pode utilizar o firewall do Fastcommerce para bloquear estes robôs "do bem". Entretanto, estes acessos não devem ser bloqueados porque são necessários para que o Google e o Bing indexem o conteúdo da loja e mostrem seus produtos nos resultados de buscas.</p>
+
+<p>É importante frisar que boa parte das vendas da maioria das lojas começa pelas buscas feitas no Google e no Bing. Para atualizar seus bancos de dados e oferecer resultados de buscas mais precisos, o Googlebot e o Bingbot procuram visitar todas as páginas da loja pelo menos uma vez por dia. Isto inclui todas as categorias, as páginas de detalhes de cada produto e de sub-produtos, mais a home, página de ajuda, hotsites etc.</p>
+
+<p>Infelizmente às vezes estes dois robôs "se descontrolam" e acessam até 50 vezes a mesma página em um mesmo dia. As visitas excessivas destes robôs de indexação não trazem benefícios para a loja. Pelo contrário, elas geram carga desnecessária na rede e nos servidores do Fastcommerce e podem até mesmo prejudicar a performance da loja. Por esta razão, a loja deve checar seus acessos periodicamente e se necessário diminuir a taxa de rastreamento dos robôs de indexação.</p>
+
+<p>Utilize o relatório <b>Principais configurações de sistema dos visitantes</b> para obter a quantidade de acessos dos robôs de indexação no período desejado.</p>
+<p>Em seguida, verifique os pageviews com os UserAgents do Google e do Bing:</p>
+
+<ul><li><p>UserAgent principal do Google: <b>Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)</b></p></li>
+<li><p>UserAgent principal do Bing: <b>Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm)</b></p></li>
+</ul>
+
+<p>Para diminuir os acessos dos robôs, acesse os sites para webmasters do Google e do Bing e siga as instruções abaixo:</p>
+
+<p><hr><b><span>Googlebot</span> (robô do <a href="http://www.google.com.br" target="_blank">Google</a>)</b></p>
+<hr>
+<br>
+<p>Segue o passo-a-passo para diminuir a taxa de rastreamento do Googlebot:<br></p>
+<br>
+<ol><li><p>Acesse <a href="http://www.google.com.br/webmasters/" target="_blank">http://www.google.com.br/webmasters/</a><br></p></li>
+<li><p>Clique no botão "Faça login nas Ferramentas do Google para webmasters"<br></p></li>
+<li><p>Informe sua conta @gmail.com ou clique no link "Crie uma conta agora", caso não tenha conta @gmail.com<br></p></li>
+<li><p>Clique no botão "Adicionar um site"<br></p></li>
+<li><p>Informe o domínio da loja e aperte o botão Continuar<br></p></li>
+<li><p>Na página "Verificar titularidade" que se abrirá, clique na aba "Métodos alternativos".<br></p></li>
+<li><p>Selecione a opção "Adicionar uma metatag à página inicial do seu site".<br></p></li>
+<li><p>Copie a meta-tag que será exibida e cole no campo de headers adicionais da página Dados da loja, no site administrativo da loja virtual<br></p></li>
+<li><p>Clique no botão Verificar<br></p></li>
+<li><p>No painel lateral, abra a opção Configuração do site e clique no subitem Configurações<br></p></li>
+<li><p>Selecione a opção "Limitar a taxa máxima de rastreamento do Google" e deslize a barra para a esquerda, até a posição "Baixa" e grave. A nova taxa de rastreamento será válida por 90 dias. O Google informará a data até quando esta alteração será mantida. Será necessário repetir este procedimento após esta data.</li></p></ol>
+
+<p><b>Referências oficiais:</b></p>
+<ul><li><p><a href="http://support.google.com/webmasters/bin/answer.py?hl=pt-BR&answer=182072" target="_blank">O que é o Googlebot?</a></p></li>
+<li><p><a href="http://support.google.com/webmasters/bin/answer.py?hl=pt-BR&answer=48620" target="_blank">Como alterar a taxa de rastreamento do Google</a></p></li>
+</ul>
+
+<br>
+<p><hr><b><span>Bingbot</span> (robô do <a href="http://www.bing.com.br" target="_blank">Bing</a>)</b><br></p>
+<hr>
+<br>
+<p>Segue o passo-a-passo para diminuir a taxa de rastreamento do Bingbot:<br></p>
+<br>
+<ol><li><p>Acesse <a href="http://www.bing.com/webmaster" target="_blank">http://www.bing.com/webmaster</a><br></p></li>
+<li><p>Clique no link "Entrada no Ferramentas para Webmaster". Caso não tenha uma conta LiveID, clique em "Inscreva-se com o Windows LiveID".<br></p></li>
+<li><p>Clique em "Adicionar site" e informe o domínio da loja.<br></p></li>
+<li><p>Escolha a opção 2 para verificar a propriedade do domínio. Copie a linha da tag <meta> que será exibida logo abaixo da opção 2 e cole no campo de headers adicionas da página Dados da loja, no site administrativo. Depois, clique no botão Verificar.<br></p></li>
+<li><p>No menu a esquerda acesse a opção "Configurar meu site" em seguida clique na opção "Controle de Rastreamento".<br></p></li>
+<li><p>No gráfico azul da taxa de rastreamento, altere todos os horários para o opção mínima ("Muito lento").<br></p></li>
+<li><p>Clique em "Salvar".</li></p></ol>
+<br>
+<br>
+<p><b>OBS:</b> É possível bloquear completamente os acessos indesejados, através do firewall personalizado da loja. Para configurá-lo, acesse a página <b>Dados da loja</b> e clique na seta ao lado do campo <b>Firewall</b>.<br></p>
+<br>
+<!--NewsProductsFC-->

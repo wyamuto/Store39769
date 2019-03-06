@@ -1,0 +1,60 @@
+<style>
+.courrierpeq {font-size:8pt;font-family:courier new,tahoma,verdana;color:#0D6D9E;}
+.destpeq {font-size:8pt;font-family:tahoma,verdana;color:#990000;font-weight:bold;}
+</style>
+
+<pre>
+<span class=courrierpeq>
+&lt;table width=100% class=EstTabPedido align=center border=0&gt;
+  &lt;form name=form method=GET action="Newsletter.asp?IDLoja=&lt;IDLoja&gt;" onsubmit="return ValidaNew();"&gt;
+    &lt;input type=hidden name=IDLoja value=<span class=destpeq>9999</span>&gt;
+    &lt;input type=hidden name=FormatoHTML value=True&gt;
+    &lt;input type=hidden name=EnviarAssinante value="Enviar"&gt;
+ &lt;tr&gt;&lt;td class=EstNomeCampo&gt;Nome:&lt;/td&gt;&lt;/tr&gt; 
+ &lt;tr&gt;
+   &lt;td&gt;
+     &lt;input type=text name=NomeAssinante size=10 maxlength=35 class=InputText style="width:100px;"&gt;
+   &lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+   &lt;td class=EstNomeCampo&gt;Email:&lt;/td&gt;
+ &lt;/tr&gt; 
+ &lt;tr&gt;
+   &lt;td&gt;&lt;input type=text name=Email size=10 maxlength=35 class=InputText style="width:100px;"&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+   &lt;td colspan=2 align=center&gt;&lt;input type=submit class=InputButton name=ok value="Enviar"&gt;&lt;/td&gt;
+  &lt;/tr&gt;&lt;/form&gt;
+&lt;/table&gt;
+
+&lt;script&gt;
+function ValidaNew() {
+
+  function ValidaEmail(sEmail) {
+    var regex=/^[a-zA-Z0-9._-]+@([a-zA-Z0-9.-]+\.)+[a-zA-Z0-9.-]{2,4}$/;
+    return regex.test(sEmail);
+  }
+
+  if (document.form.NomeAssinante.value.length==""){
+    alert("Campo 'Nome' não pode estar em branco!");
+    document.form.NomeAssinante.focus();
+    return false;
+  }
+
+
+  if (document.form.Email.value.length==""){
+    alert("Campo 'E-mail' não pode estar em branco!");
+    document.form.Email.focus();
+    return false;
+  }
+
+  if (!ValidaEmail(document.form.Email.value)) {
+    alert("Campo 'E-mail' inválido!");
+    document.form.Email.focus();
+    return false;
+  }
+
+}
+&lt;/script&gt;
+</span>
+</pre>

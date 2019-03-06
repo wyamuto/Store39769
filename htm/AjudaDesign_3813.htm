@@ -1,0 +1,134 @@
+<style>
+.courrier {font-size:11pt;color:#0D6D9E;}
+.courrierpeq {font-size:8pt;color:#0D6D9E;}
+.tit {font-size:14pt}
+.dest {font-size:10pt;color:#990000;font-weight:bold;}
+.destverde {font-size:10pt;color:#139606;font-weight:bold;}
+a.LinkAjudaDesign:link {color:black;text-decoration:none;font-size:11pt;}
+a.LinkAjudaDesign:visited {color:#999999;text-decoration:none;text-decoration:none;font-size:11pt;}
+a.LinkAjudaDesign:hover {color:navy;text-decoration:underline}
+</style>
+
+<h4><b>1) Estrutura dos arquivos</b></h4>
+
+<p>As páginas do site são compostas por cabeçalho + rodapé + barra direita + barra esquerda, além do corpo da página. Cada parte deve ser enviada em arquivo HTML separado para a pasta HTM do gerenciador de arquivos da loja. O sistema se encarrega de agrupá-las para gerar as páginas.</p>
+
+<p><b>1.1</b>) Estrutura padrão para lojas virtuais:</p>
+
+<img src="/lojas/00000009/images/ArquivosSemBanners.png" class="img-responsive">
+<br>
+
+<p>Veja <a href="http://rumo.com.br/l3312" target="_blank">mais detalhes</a> sobre os arquivos que compõe o design da loja na página <b>Textos & imagens</b> do site administrativo.</p>
+<br>
+
+<h4><b>2) Tags especiais para criar links, caminhos para imagens, etc</b></h4>
+
+<p>Veja exemplos de como montar links internos para os produtos, categorias, contato, etc:</p>
+
+<p><a href="http://www.rumo.com.br/sistema/adm/ExemplosLinks.htm" target="_blank">http://www.rumo.com.br/sistema/adm/ExemplosLinks.htm</a></p>
+<br>
+
+<p>Você pode utilizar qualquer tag html + javascript + java + dhtml em seus projetos, além das tags especiais do cHTML:</p>
+
+<p><a href="http://www.rumo.com.br/sistema/adm/TagsEspeciais.htm" target="_blank">http://www.rumo.com.br/sistema/adm/TagsEspeciais.htm</a></p>
+<br>
+
+<p><b class="destverde">Exemplo <sup>1</sup></b> : Para criar link para uma página chamada QuemSomos.htm, utilize:</p>
+
+<p><span class="courrier">&lt;a href="<span class="dest">&lt;HTMLoja&gt;</span>QuemSomos.htm"&gt;Quem somos&lt;/a&gt;</span></p>
+
+<p>ou</p>
+
+<p><span class="courrier">&lt;a href="Custom.asp?IDLoja=<span class="dest">&lt;IDLoja&gt;</span>&arq=QuemSomos.htm"&gt;Quem somos&lt;/a&gt;</span></p>
+<br>
+
+<p>com <a href="http://www.rumo.com.br/sistema/adm/AjudaAdm.asp?ajuda=373" target="_blank">URL amigável</a>:</p>
+
+<p><span class="courrier">&lt;a href="/page,idloja,<span class="dest">&lt;IDLojaNum&gt;</span>,arq,QuemSomos.htm,sobre-a-nossa-empresa"&gt;Quem somos&lt;/a&gt;</span></p>
+<br>
+
+<p><b class="destverde">Exemplo <sup>2</sup></b> : Para criar link para uma imagem chamada Imagemdaloja.jpg, utilize:</p>
+
+<p><span class="courrier">&lt;img src="<span class="dest">&lt;BaseLoja&gt;</span>images/Imagemdaloja.jpg"&gt;</span></p>
+<br>
+
+<p>A tag <span class="dest">&lt;Baseloja&gt;</span> é substituída automaticamente pelo sistema por <span class="dest">../lojas/00000000/</span>, desta forma o caminho para a imagem fica <span class="dest">../lojas/00000000/images/Imagemdaloja.jpg</span>. (<b>00000000</b> é o nome da pasta correspondente ao ID da loja com 8 posições. Se o ID da loja for 154, ficaria <b>00000154</b>)</p>
+<br>
+
+<h4><b>3) Títulos, botões e fundo da loja</b></h4>
+
+<p>Os títulos, botões e fundo da loja são definidos na página <b>Estilos & cores</b> do site administrativo, onde é possível também definir o tipo das imagens (GIF, JPG ou PNG)</p>
+
+<p>Para ver o nome dos arquivos de títulos e ícones de navegação, clique no primeiro botão <b>Visualizar</b> da página <i>Estilos & cores</i>, no site administrativo.</p>
+<br>
+
+<h4><b>4) Estilos CSS da loja</b></h4>
+
+<p>As fontes são definidas através de CSS, desde o tamanho de letra para os preços e textos descritivos de produtos até as cores dos formulários de cadastramento.</p>
+
+<p>Criamos uma loja fictícia para exemplificar algumas classes <b>CSS</b> e para disponibilizar alguns códigos HTML. Visite esta loja em:</p>
+
+<p><a href="http://css.fastcommerce.com.br" target="_blank">http://css.fastcommerce.com.br</a></p>
+<br>
+
+<h4><b>5) Outras personalizações</b></h4>
+
+<p>Seguem abaixo algumas das personalizações que podem ser realizadas no design da loja:</p>
+
+<p><a href="/prod,idloja,9,idproduto,4869495" class="LinkAjudaDesign" target="_blank"><b>5.1</b>) Como inserir o parcelamento na página inicial da loja</a></p>
+
+<p><a href="/prod,idloja,9,idproduto,4869614" class="LinkAjudaDesign" target="_blank"><b>5.2</b>) Layout da lista/detalhes de produtos</a></p>
+
+<p><a href="/prod,idloja,9,idproduto,4869572" class="LinkAjudaDesign" target="_blank"><b>5.3</b>) Personalização de estilos no cross selling</a></p>
+
+<p><a href="/prod,idloja,9,idproduto,4869544" class="LinkAjudaDesign" target="_blank"><b>5.4</b>) Como adicionar ordenação na lista de produtos da loja</a></p>
+
+<p><a href="/prod,idloja,9,idproduto,4869563" class="LinkAjudaDesign" target="_blank"><b>5.5</b>) Como padronizar a largura das imagens de produtos</a></p>
+
+<p><a href="/prod,idloja,9,idproduto,4869531" class="LinkAjudaDesign" target="_blank"><b>5.6</b>) Personalização do link "Indique este produto a um amigo"</a></p>
+
+<p><a href="/prod,idloja,9,idproduto,4814457" class="LinkAjudaDesign" target="_blank"><b>5.7</b>) Código HTML para inserir link para o chat em outras páginas da loja</a></p>
+
+<p><a href="/prod,idloja,9,idproduto,4869599" class="LinkAjudaDesign" target="_blank"><b>5.8</b>) Código HTML para inserir e-mail na lista de assinantes de e-mail marketing da loja</a></p>
+
+<p><a href="/prod,idloja,9,idproduto,4814476" class="LinkAjudaDesign" target="_blank"><b>5.9</b>) Código HTML para criar busca personalizada na loja</a></p>
+
+<p><a href="/prod,idloja,9,idproduto,4869520" class="LinkAjudaDesign" target="_blank"><b>5.10</b>) Parâmetros de busca a página que lista os produtos aceita</a></p>
+
+<p><a href="/prod,idloja,9,idproduto,4814473" class="LinkAjudaDesign" target="_blank"><b>5.11</b>) Código HTML para criar formulário personalizado</a></p>
+
+<p><a href="/prod,idloja,9,idproduto,4869593" class="LinkAjudaDesign" target="_blank"><b>5.12</b>) Como simplificar o design das páginas de finalização do pedido</a></p>
+
+<p><a href="/prod,idloja,9,idproduto,4869548" class="LinkAjudaDesign" target="_blank"><b>5.13</b>) Como ver a loja na versão "Mobile" em meu computador</a></p>
+
+<p><a href="/prod,idloja,9,idproduto,4869543" class="LinkAjudaDesign" target="_blank"><b>5.14</b>) Como informar a quantidade de cada produto antes de colocá-lo na cesta</a></p>
+
+<p><a href="/prod,idloja,9,idproduto,4869516" class="LinkAjudaDesign" target="_blank"><b>5.15</b>) Como alterar os estilos dos botões Continuar na confirmação do pedido</a></p>
+
+<p><a href="/prod,idloja,9,idproduto,4814510" class="LinkAjudaDesign" target="_blank"><b>5.16</b>) Posso mudar o estilo da descrição da forma de pagamento na página de confirmação</a></p>
+
+<p><a href="/prod,idloja,9,idproduto,4814453" class="LinkAjudaDesign" target="_blank"><b>5.17</b>) Como alterar o conteúdo da página de Ajuda da loja</a></p>
+
+<p><a href="/prod,idloja,9,idproduto,4814421" class="LinkAjudaDesign" target="_blank"><b>5.18</b>) Posso enviar os arquivos para minha loja via FTP?</a></p>
+
+<p><a href="/prod,idloja,9,idproduto,4814422" class="LinkAjudaDesign" target="_blank"><b>5.19</b>) Posso hospedar arquivos de programação ASP, PHP no Fastcommerce?</a></p>
+
+<p><a href="/prod,idloja,9,idproduto,4996739" class="LinkAjudaDesign" target="_blank"><b>5.20</b>) Como utilizar fontes de texto adicionais?</a></p>
+<br>
+
+<h4><b>6) Dicas de personalização de design e erros mais comuns</b></h4>
+
+<p>Ao alterar os arquivos deve-se ter muito cuidado para manter o correto funcionamento da loja. Ao longo dos anos verificamos os erros mais comuns cometidos pelos lojistas e pelos webdesigners das lojas, que listamos abaixo.</p>
+
+<p>Alguns destes erros causam a exibição de alerta de segurança em páginas acessadas com https:. Outros impedem a exibição de imagens ou prejudicam a performance da navegação. Tais erros podem ter consequências negativas nos resultados financeiros da loja.</p>
+
+<br>
+
+<h4><b>7) Recomendações de webdesigners</b></h4>
+
+<p>Caso necessite de recomendações de webdesigners para sua loja, solicite através do e-mail <a href="mailto:suporte@fastcommerce.com.br?subject=Recomendações%20de%20WebDesigners">suporte@fastcommerce.com.br</a></p>
+<br>
+
+<h4><b>8) Informações importantes para o desenvolvimento de novos layouts </b></h4>
+
+<p><a href="http://blog.fastcommerce.com.br/2011/07/informacoes-importantes-para-o.html" target="_blank">Clique aqui</a> para ver informações que devem ser levadas em consideração, quando for criar ou contratar uma empresa para desenvolver o layout para sua loja virtual.</p>

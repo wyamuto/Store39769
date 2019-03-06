@@ -1,0 +1,231 @@
+<p>Tags especiais para o arquivo <b>Checkout.htm</b>:</p>
+
+<img src="/lojas/00000009/images/fc/FC12867IMG1.png" class="img-responsive">
+<br>
+
+<p>Caso a loja não tenha arquivos <b>*Checkout.htm</b> na sua pasta HTM, os modelos internos serão automaticamente utilizados. Segue abaixo o código HTML de cada um destes modelos, para cada versão de design da loja (computador, smartphone e Facebook):</p>
+
+<p><b>Arquivo HTML modelo para a versão desktop (Checkout.htm)</b></p>
+
+<pre>&lt;table align="center"&gt;&lt;tr&gt;&lt;td&gt;&lt;Login&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;table cellpadding="0" cellspacing="3" align="center"&gt;
+  &lt;tr&gt;
+    &lt;td id="idChkTopFC" colspan="3"&gt;
+      &lt;table cellspacing="0" cellpadding="0" align="right"&gt;
+        &lt;tr&gt;
+          &lt;td&gt;
+            &lt;div id="idChkOrderConfirmationFloat"&gt;&lt;OrderConfirmation&gt;&lt;/div&gt;
+          &lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/table&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td id="idChkCol1FC" valign="top"&gt;&lt;Register&gt;&lt;/td&gt;
+    &lt;td id="idChkCol2FC" valign="top"&gt;
+      &lt;span id="idChkIniCol2FC"&gt;&lt;/span&gt;
+      &lt;div id="idChkTagsCol2FC"&gt;&lt;OrderCompletion&gt;&lt;Freight&gt;&lt;Payment&gt;&lt;/div&gt;
+    &lt;/td&gt;
+    &lt;td id="idChkCol3FC" valign="top"&gt;&lt;Cart&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td id="idChkBottomFC" colspan="3"&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</pre>
+
+<p><b>Arquivo HTML modelo para a versão Mobile (MbhCheckout.htm)</b></p>
+
+<pre>&lt;br&gt;&lt;OrderCompletion&gt;&lt;Login&gt;&lt;Register&gt;&lt;Freight&gt;&lt;Payment&gt;&lt;Cart&gt;&lt;OrderConfirmation&gt;&lt;br&gt;
+&lt;style&gt;
+#idChkAllFC, #idChkLoginIntFC, #idChkRegisterIntFC, #idChkCompletionIntFC{width:100%;}
+#idChkCartIntFC, #idChkFreightIntFC, #idChkPaymentIntFC{width:100%;}
+#idChkCCIntFC{width:100%;margin-top:10px;}
+&lt;/style&gt;
+&lt;script&gt;function FuncChkFloat(){}&lt;/script&gt;</pre>
+
+<p><b>Arquivo HTML modelo para a versão Facebook (FbhCheckout.htm)</b></p>
+
+<pre>&lt;table align="center"&gt;&lt;tr&gt;&lt;td&gt;&lt;Login&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;table cellpadding="0" cellspacing="2" align="center"&gt;
+  &lt;tr&gt;
+    &lt;td id="idChkTopFC" colspan="2"&gt;
+      &lt;table cellspacing="0" cellpadding="0" align="right"&gt;
+        &lt;tr&gt;
+          &lt;td&gt;&lt;OrderConfirmation&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/table&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td id="idChkCol1FC" valign="top"&gt;&lt;Register&gt;&lt;/td&gt;
+    &lt;td id="idChkCol2FC" valign="top"&gt;
+      &lt;span id="idChkIniCol2FC"&gt;&lt;/span&gt;&lt;OrderCompletion&gt;&lt;Freight&gt;&lt;Payment&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td id="idChkCol3FC" colspan="2" valign="top"&gt;&lt;Cart&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td id="idChkBottomFC" colspan="2"&gt;
+      &lt;table cellspacing="0" cellpadding="0" align="right"&gt;&lt;tr&gt;&lt;td&gt;&lt;OrderConfirmation&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+&lt;br&gt;
+&lt;style&gt;
+#idCheckoutFC #idChkCol1FC{width:350px;}
+#idCheckoutFC #idChkCol2FC{width:350px;}
+#idCheckoutFC #idChkCol3FC{width:750px;}
+#idChkAllFC{width:750px;}
+#idChkLoginIntFC{width:300px;}
+#idChkRegisterIntFC{width:340px;}
+#idChkCompletionIntFC{width:340px;}
+#idChkCartIntFC{width:740px;}
+#idChkFreightIntFC{width:340px;}
+#idChkPaymentIntFC{width:340px;}
+#idChkCCIntFC{width:320px;margin-top:10px;}
+&lt;/style&gt;
+&lt;script&gt;function FuncChkFloat(){}&lt;/script&gt;</pre>
+
+<br>
+<p><b>Teste A/B</b></p>
+<p>Se a loja utiliza teste A/B para comparação de resultados de vendas entre duas versões de design, é necessário enviar os arquivos da "versão B" de cada tipo de acesso:</p>
+<br>
+<ul>
+<li><p>Acessos por <i>computador</i>: AbtCheckout.htm</p></li>
+<li><p>Acessos por <i>smartphone</i>: AbtMbhCheckout.htm</p></li>
+<li><p>Acessos pelo <i>Facebook</i>: AbtFbhCheckout.htm</p></li>
+</ul>
+<br>
+<p><b>Uso de funções JavaScript de "gatilho"</b></p>
+<p>A maior parte das personalizações pode ser feita com HTML e CSS. Entretanto, para alterações mais avançadas, é necessário utilizar as funções JavaScript de "gatilho".</p>
+
+<p>Quando cada seção do checkout é processada, como por exemplo a atualização da escolha de forma de pagamento, uma função personalizável é chamada antes e outra função é chamada depois do evento, caso estas existam no arquivo *Checkout.htm da loja. Os nomes destas funções são:</p>
+<br>
+<img src="/lojas/00000009/images/fc/FC12867IMG2.png" class="img-responsive">
+<br>
+<b>Exemplo:</b>
+<pre>function FuncChkCartEnd(){
+  .....
+}</pre>
+
+<p>Exemplo prático: Caso a loja queira personalizar os ícones e nomes das formas de pagamento da seção de escolha de forma de pagamento, deve ser criada a função FuncChkPaymentEnd no seu arquivo Checkout.htm:</p>
+<pre>
+function FuncChkPaymentEnd(){
+  AlteraImgsFormaPagto();
+}
+</pre>
+<br>
+<p>Neste exemplo, a função <i>FuncChkPaymentEnd</i> é chamada após a exibição da seção de escolha das formas de pagamento e então é chamada a função <i>AlteraImgsFormaPagto</i>, que irá personalizar as formas de pagamento. Veja exemplo desta função <a href="/prod,idloja,9,idproduto,4996733" target="_blank">aqui</a>.</p>
+<br>
+<p>A variável <b>F$.Step</b> pode ser utilizada nas funções caso necessário. Esta variável indica o passo atual dentro do contexto do cadastro do cliente, onde: 0=login, 1=ficha de cadastro, 2=pedido concluído. Exemplo:</p>
+<br>
+<pre>function FuncChkRegisterEnd(){
+  if(F$.Step==2){
+    .....
+  }
+}</pre>
+<br>
+
+<p><b>Personalização com jQuery</b></p>
+<br>
+<p>É possível inserir jQuery e criar efeitos de transição como <i>fade, slice e blind</i> nos eventos que ocorrem no checkout, como a exibição de uma mensagem de erro ou a exibição de uma das seções do checkout. Veja exemplos destas transições na loja fictícia <a href="http://spdepartamentos.lojavirtualfc.com.br" target="_blank">SP Departamentos</a>.</p>
+<br>
+<p>Para esta personalização, deve-se criar as seguintes funções:</p>
+<img src="/lojas/00000009/images/fc/FC12867IMG3.png" class="img-responsive">
+
+<br>
+<p><b>Exemplo:</b></p>
+<pre>&lt;script type="text/javascript"&gt;
+function FuncChkShow(oObj){
+  jQuery(oObj).slideDown(500);
+}
+
+function FuncChkHide(oObj){
+  jQuery(oObj).fadeOut(100);
+}
+
+function FuncChkIntoView(oObjIntoView){
+  jQuery('html,body').animate({scrollTop: jQuery(oObjIntoView).offset().top},500);
+}
+&lt;/script&gt;</pre>
+<br>
+<p>Caso a loja não tenha o include do jQuery, este deverá ser inserido no começo do arquivo Checkout.htm, como no exemplo abaixo:</p>
+<pre>&lt;!--[if lt IE 9]&gt;
+    &lt;script src="jquery-1.10.1.min.js"&gt;&lt;/script&gt;
+&lt;![endif]--&gt;
+&lt;!--[if gte IE 9]&gt;&lt;!--&gt;
+    &lt;script src="jquery-2.0.2.min.js"&gt;&lt;/script&gt;
+&lt;!--&lt;![endif]--&gt;</pre>
+<br>
+<p><b>Classes e IDs</b></p>
+<br>
+<p>O conteúdo de cada seção do checkout é inserido dentro de uma DIV. Sugerimos que estas DIVs não sejam alteradas via JS e CSS. Segue abaixo a lista destas DIVs:</p>
+<br>
+<img src="/lojas/00000009/images/fc/FC12867IMG4.png" class="img-responsive">
+<br>
+<br>
+<p>Exemplo de conteúdo inserido dentro da DIV idChkCartFC:</p>
+
+<pre>&lt;div id=idChkCartIntFC class=EstChkDiv&gt;
+  &lt;div id=idTitCartFC class=EstTitCheckoutFC&gt;Resumo do pedido&lt;/div&gt;
+  Conteúdo HTML do carrinho
+&lt;/div&gt;</pre>
+<br>
+<p>Segue os IDs das DIVs "internas", que podem ser alteradas via JS e CSS:</p>
+<br>
+<img src="/lojas/00000009/images/fc/FC12867IMG5.png" class="img-responsive">
+<br>
+<p>Estas DIVs utilizam a classe <b>EstChkDiv</b>. Utilize esta classe para criar um estilo, borda, cor. (Exemplo do HTML gerado: &lt;div id=idChkCartIntFC class=EstChkDiv&gt;... conteúdo ...&lt;/div&gt;)</p>
+<br>
+<p>Para cada seção, existe no começo uma DIV com seu título. (Exemplo do HTML gerado: &lt;div id=idTitCartFC class=EstTitCheckoutFC&gt;Resumo do pedido&lt;/div&gt;)</p>
+<br>
+<br>
+<p>Se a loja não trabalha com frete (ex: produtos enviados por download, como software ou música), deve desabilitar a seção do frete, como neste exemplo:</p>
+
+<pre>&lt;style&gt;
+#idChkFreightFC{display:none;}
+&lt;/style&gt;</pre>
+<br>
+<p>Outros IDs e classes:</p>
+<br>
+<img src="/lojas/00000009/images/fc/FC12867IMG6.png" class="img-responsive">
+
+<br><br>
+<p><b>Exibindo os locais de entrega automaticamente</b></p>
+<br>
+<p>Para que as fichas dos endereços de entrega pré-cadastrados pelo cliente sejam automaticamente exibidas, deve-se inserir na loja o seguinte código:</p>
+<br>
+<pre>&lt;style&gt;
+#idFichasLocalFC{display:none}
+&lt;/style&gt;
+
+&lt;script type="text/javascript"&gt;
+function FuncChkRegisterEnd(){
+  if(F$.Step==1)F$.fnChkShowPlaces();
+}
+&lt;/script&gt;</pre>
+
+<br><br>
+<br>
+<p><b>Personalização da imagem de "em processamento" no Xtreme checkout</b></p>
+<br>
+<p>Quando uma seção do checkout está sendo processada, a imagem abaixo é exibida durante este processamento:</p>
+<br>
+<img src="/images/Xtreme_Checkout.gif" class="img-responsive"><br>
+<br>
+<p>É possível personalizar esta imagem. Caso a loja utilize arquivo <b>Checkout.htm</b>, insira as linhas abaixo no final deste arquivo. Se a loja utiliza o modelo padrão, insira estas linhas no arquivo <b>PedRodape.htm</b>.</p>
+<br>
+<pre>if(FC$.Page=="Checkout"){
+  var oImageWaitCheckout=document.getElementById("idWaitingFullImgFC");
+  if(oImageWaitCheckout)oImageWaitCheckout.src=FC$.PathImg+"loading_ajax.gif";
+}</pre>
+<br>
+<p>No exemplo acima, o nome da imagem utilizada foi <b>loading_ajax.gif</b>. Esta imagem deve ser previamente enviada para a pasta IMAGES do gerenciador de arquivos da loja.</p>
+<br><br>
+<br>
+<br>
+<p><b class="dest">Atenção:</b> Depois de realizar as personalizações, realize pedidos de teste com cada uma das formas de pagamento disponibilizadas pela loja, principalmente as personalizadas. Se a loja estiver em produção, utilize o recurso de preview do checkout para fazer os testes sem que seus clientes seja afetados. <a href="/prod,idloja,9,idproduto,4996770">Veja os detalhes</a> no guia de implantação do Xtreme Checkout.</p>
+<br>
+<center><p><b>Antes de ativar este recurso, não hesite em esclarecer todas as suas dúvidas<br>junto aos profissionais da nossa equipe de suporte.</b></p></center><br>
+<br>

@@ -1,0 +1,130 @@
+<link href='/lojas/00000009/htm/LojaSite.css' rel='stylesheet' type='text/css'>
+<script type="text/javascript" src="/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="/lojas/00000009/htm/nivo_slider.js"></script>
+<link rel="stylesheet" href="/lojas/00000009/htm/nivo.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="/lojas/00000009/htm/nivo_slider.css" type="text/css" media="screen"/> <script type="text/javascript">
+    jQuery.noConflict();
+  jQuery(window).load(function() {
+    jQuery('#slider').nivoSlider({
+        effect:"fade",
+        slices:15,
+        boxCols:8,
+        boxRows:4,
+        animSpeed:500,
+        pauseTime:2000,
+        startSlide:0,
+        directionNav:true,
+        directionNavHide:true,
+        controlNav:true,
+        controlNavThumbs:false,
+        controlNavThumbsFromRel:true,
+        keyboardNav:true,
+        pauseOnHover:false,
+        manualAdvance:false
+      });
+  });
+</script>
+
+
+<style>
+body,p {font-size:8pt;font-family:verdana,arial}
+.dest {font-size:09pt;font-family:tahoma,verdana;color:#990000;font-weight:bold;}
+.destaque {font-size:08pt;font-family:tahoma,verdana;color:#990000;font-weight:bold;}
+.destverde {font-size:10pt;font-family:tahoma,verdana;color:#139606;font-weight:bold;}
+a.LinkAjudaDesign:link {color:black;text-decoration:none;font-family:verdana;font-size:11pt;}
+a.LinkAjudaDesign:visited {color:#999999;text-decoration:none;text-decoration:none;font-family:verdana;font-size:11pt;}
+a.LinkAjudaDesign:hover {color:navy;text-decoration:underline}
+ul {list-style:outside url('images/UL.gif');margin-top:0px;margin-left:18px;padding:0}
+ul.prox {list-style:outside url('images/UL2.gif');margin-top:0px;margin-left:18px;padding:0}
+li {padding:0}
+</style>
+
+Veja o <i>Nivo Slider</i> em funcionamento, na troca de imagens abaixo:<br><br>
+
+        <div id="slider" class="nivoSlider">
+          <img src="/lojas/00000009/images/slide1.jpg"/>
+          <img src="/lojas/00000009/images/slide2.jpg"/>
+          <img src="/lojas/00000009/images/slide3.jpg"/>  
+          <img src="/lojas/00000009/images/slide4.jpg"/>
+          <img src="/lojas/00000009/images/slide5.jpg"/>
+          <img src="/lojas/00000009/images/slide6.jpg"/>
+        </div>      
+<br><br>
+<span class=destpeq>1º Passo</span><br>Envie o arquivo <b>NivoHTM.zip</b> para a pasta <b>htm</b> da loja:<br><b>Download: </b><a href="/dnload/NivoHTM.zip" target="_blank">NivoHTM.zip</a><br><br>
+
+<span class=destpeq>2º Passo</span><br>Envie o arquivo <b>NivoImages.zip</b> para a pasta <b>images</b> da loja:<br><b>Download: </b><a href="/dnload/NivoImages.zip" target="_blank">NivoImages.zip</a><br><br>
+
+<span class=destpeq>3º Passo</span><br>Adicione as linhas abaixo no inicio do arquivo <b>BarraTopo.htm</b>:<br>
+
+<span class=courrierpeq>
+&lt;script type=&quot;text/javascript&quot; src=&quot;/jquery-1.7.1.min.js&quot;&gt;&lt;/script&gt;<br>
+&lt;script type=&quot;text/javascript&quot; src=&quot;&lt;BaseLoja&gt;<BaseLoja>htm/nivo_slider.js&quot;&gt;&lt;/script&gt;<br>
+&lt;link rel=&quot;stylesheet&quot; href=&quot;&lt;BaseLoja&gt;<BaseLoja>htm/nivo.css&quot; type=&quot;text/css&quot; media=&quot;screen&quot; /&gt;<br>
+&lt;link rel=&quot;stylesheet&quot; href=&quot;&lt;BaseLoja&gt;<BaseLoja>htm/nivo_slider.css&quot; type=&quot;text/css&quot; media=&quot;screen&quot;/&gt;<br>
+&lt;script type=&quot;text/javascript&quot;&gt;<br>
+&nbsp;&nbsp;jQuery.noConflict();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;jQuery(window).load(function() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jQuery('#slider').nivoSlider({<br>
+&nbsp;&nbsp;&nbsp;&nbsp;});<br>
+&nbsp;&nbsp;});<br> 
+&lt;/script&gt;          
+</span>
+
+<br><br><span class=destpeq>4º Passo</span><br>Adicione o código abaixo no arquivo onde deseja inserir o slider. Exemplo: <b>Home.htm</b><br><br>
+<span class=courrierpeq>
+&lt;div id=&quot;slider&quot; class=&quot;nivoSlider&quot;&gt;<br>
+&nbsp;&nbsp;&nbsp;&lt;img src=&quot;&lt;BaseLoja&gt;<BaseLoja>images/XXXXX1.jpg&quot;/&gt;<br>
+&nbsp;&nbsp;&nbsp;&lt;img src=&quot;&lt;BaseLoja&gt;<BaseLoja>images/XXXXX2.jpg&quot;/&gt;<br>
+&nbsp;&nbsp;&nbsp;&lt;img src=&quot;&lt;BaseLoja&gt;<BaseLoja>images/XXXXX3.jpg&quot;/&gt; <br>
+&nbsp;&nbsp;&nbsp;&lt;img src=&quot;&lt;BaseLoja&gt;<BaseLoja>images/XXXXX4.jpg&quot;/&gt;<br>
+&nbsp;&nbsp;&nbsp;&lt;img src=&quot;&lt;BaseLoja&gt;<BaseLoja>images/XXXXX5.jpg&quot;/&gt;<br>
+&nbsp;&nbsp;&nbsp;&lt;img src=&quot;&lt;BaseLoja&gt;<BaseLoja>images/XXXXX6.jpg&quot;/&gt;<br>
+&lt;/div&gt;                
+</span>
+
+<br><br>
+<p><b>Obs¹:</b> Altere <b>XXXXX1.jpg</b> a <b>XXXXX6.jpg</b> pelos nomes das imagens que irão rotacionar no slide. As imagens devem ser enviadas para a pasta <b>images</b> da loja.<br/><br/></p>
+
+<p><b>Obs²:</b> Para adicionar um link nas imagens do slider, basta incluir o código abaixo, alterando <b>www.Fastcommerce.com</b> para o endereço desejado:<br/><span class=courrierpeq>&lt;a href="<b>http://www.Fastcommerce.com</b>">&lt;img src=&quot;&lt;BaseLoja&gt;<BaseLoja>images/XXXXX.jpg&quot;/&gt;&lt;/a></span><br><br/><br/></p> 
+
+
+<!--<b>Customização</b><br>
+O Nivo Slider tem muitas opções de customização. Veja abaixo um exemplo de código com algumas opções disponíveis e seus padrões:<br><br>
+
+<span class=courrierpeq>      
+&lt;script type=&quot;text/javascript&quot;&gt;<br>
+  $(window).load(function() {<br>
+&nbsp;&nbsp;&nbsp;$('#slider').nivoSlider({<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;effect: 'random', // Tipo de efeito para transi&ccedil;&atilde;o de slides (*)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;animSpeed: 500, // Velocidade de transi&ccedil;&atilde;o do slide<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pauseTime: 3000, // Tempo de exibi&ccedil;&atilde;o de cada slide<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;directionNav: true, // Avan&ccedil;ar &amp; Retroceder, use false para desativar<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;directionNavHide: true, // Exibe os bot&otilde;es de Avan&ccedil;ar &amp; Retroceder somente se o mouse estiver sobre o slider<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;controlNav: true, // 1,2,3... Navega&ccedil;&atilde;o..<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;keyboardNav: true, // Use seta esquerda &amp; seta direita para avan&ccedil;ar e retroceder o slider<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pauseOnHover: true, // A troca de imagens não ocorre se o mouse estiver em cima do slider<br>
+  
+  &nbsp;&nbsp;&nbsp;});<br>
+  });<br>
+&lt;/script&gt; 
+</span>
+
+<br><p><b>(*) Parâmetros possíveis para o atributo "effect":</b></p>
+<ul class=courrierpeq>
+<li>sliceDown</li>
+<li>sliceDownLeft</li>
+<li>sliceUp</li>
+<li>sliceUpLeft</li>
+<li>sliceUpDown</li>
+<li>sliceUpDownLeft</li>
+<li>fold</li>
+<li>fade</li>
+<li>random</li>
+<li>slideInRight</li>
+<li>slideInLeft</li>
+<li>boxRandom</li>
+<li>boxRain</li>
+<li>boxRainReverse</li>
+<li>boxRainGrow</li>
+<li>boxRainGrowReverse</li>
+</ul>-->

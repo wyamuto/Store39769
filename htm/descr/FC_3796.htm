@@ -1,0 +1,69 @@
+<p>Seguem as opções para a geração desta URL:</p>
+<br>
+<h4>Opção 1</h4>
+
+<p>Clique no item <b>Produtos</b> do menu esquerdo do site administrativo:</p>
+
+<img src="/lojas/00000009/images/A_3796_3.png" class="img-responsive">
+<br>
+
+Após entrar na página <b>Gerenciamento de categorias & produtos</b> clique no link <b>XML de Produtos</b>.</p>
+
+<img src="/lojas/00000009/images/A_3796_4.png" class="img-responsive">
+<br>
+
+<p>No formulário para a geração de XML é possível determinar quais produtos serão listados ou listar todos os produtos da loja se nenhum campo for marcado.</p>
+
+<img src="/lojas/00000009/images/A_3796_5.png" class="img-responsive">
+<br>
+
+<p>Clique no botão <b>Exibir URL</b> e copie a URL apresentada ou utilize a opção "Acessar esta URL no navegador".</p>
+
+<img src="/lojas/00000009/images/A_3796_6.png" class="img-responsive">
+<br>
+
+
+<h4>Opção 2 (<i>avançado</i>)</h4>
+
+<p>Exemplo de URL para listar todos os produtos da loja em XML:</p>
+
+<p><b>https://<span class="dest">minhaloja</span>.lojavirtualfc.com.br/xmlprodutos.asp?IDLoja=99999<span class="dest">&origem=nomeorigem</span></b></p>
+
+<p>O parâmetro <span class="dest">&origem=nomeorigem</span> é opcional e serve para que os links no <a href="/prod,idloja,9,idproduto,4814419">parceiro</a> para os produtos da loja venham com a origem na URL. Caso "nomeorigem" esteja cadastrado como um parceiro no site administrativo, será possível identificar a origem da visitação através dos relatórios de parceiros. É muito útil para verificar o retorno de ações de marketing e divulgação em Shoppings virtuais e outros portais. Veja funcionalidade de <a href="/prod,idloja,9,idproduto,4814419">Parceiros</a>.</p>
+
+<p>É possível filtrar os produtos que são exibidos no XML.</p>
+<br>
+
+<p><b>Exemplo:</b></p>
+
+<p>Parâmetro <b>Texto</b> (Texto=palavra)</p>
+<p>URL para listar apenas produtos que contenham a palavra específicada preenchendo o campo "Texto"</p>
+<ul><li><p>https://<span class="dest">minhaloja</span>.lojavirtualfc.com.br/xmlprodutos.asp?IDLoja=99999&origem=nomeorigem&<b>Texto=livro</b></p></li></ul>
+<br>
+
+<p>Parâmetro <b>IDProduto</b> (IDProduto=00000)</p>
+<p>URL para listar apenas o produto com ID interno preenchendo o ID no campo "ID do produto"</p>
+<ul><li><p>https://<span class="dest">minhaloja</span>.lojavirtualfc.com.br/xmlprodutos.asp?IDLoja=99999&origem=nomeorigem&<b>IDProduto=00000</b></p></li></ul>
+<br>
+
+<p>Parâmetro <b>Est</b> (est=1)</p>
+<p>URL para listar apenas produtos disponíveis com estoque de 1 ou superior denifidos na opção "Estoque mínimo"</p>
+<ul><li><p>https://<span class="dest">minhaloja</span>.lojavirtualfc.com.br/xmlprodutos.asp?IDLoja=99999&origem=nomeorigem&<b>est=1</b></p></li></ul>
+<br>
+<p>É possível combinar vários parâmetros: (produtos em lançamento que contenham o texto "reebok")</p>
+<ul><li><p>https://<span class="dest">minhaloja</span>.lojavirtualfc.com.br/xmlprodutos.asp?IDLoja=99999&origem=nomeorigem&<b>Lancamento=True</b>&<b>Texto=reebok</b></p></li></ul>
+<br><br>
+<h4>Parcelamento no XML</h4>
+<p>Parâmetro <b>Juros</b> (<i>juros=0</i>)</p>
+<p>Para exibir parcelamento no XML utilize o parâmetro Juros (ou preencha o campo "Juros (% a.m.)") e na ficha de cadastro de cada produto, informe o campo <b>XML Parc</b></p>
+<ul><li><p>https://<span class="dest">minhaloja</span>.lojavirtualfc.com.br/xmlprodutos.asp?IDLoja=99999&origem=nomeorigem&<b>juros=0</b></p></li></ul>
+<br>
+
+<p><b>OBS 1:</b> Nos exemplos acima altere o ID da loja 99999, para o ID de sua loja no Fastcommerce.</p>
+ 
+<p><b>OBS 2:</b> Altere <span>minhaloja</span> de acordo com o campo <b>Endereço Internet</b> em <b>Navegação</b> da página <b>Dados da loja</b> do site administrativo.</p>
+
+<p><b>OBS 3:</b> Caso a loja tenha o serviço de domínio próprio contratado no Fastcommerce, você deverá alterar o domínio <i>minhaloja.lojavirtualfc.com.br</i> para o domínio de sua loja (Ex: <i>www.sualoja.com.br</i>)</p>
+<br>
+
+<p><b><a href="http://www.rumo.com.br/lojas/00028496/htm/ParametrosXML.htm" target="_blank">Clique aqui</a> para ver a lista com outros parâmetros.</b></p>

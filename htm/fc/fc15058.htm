@@ -1,0 +1,457 @@
+<style>
+.imgbordercolor{border:1px solid #eeeeee;margin-top:15px;margin-bottom:15px;}
+.fc-warning{color:red;}
+</style>
+
+<h2>Veja como implementar:</h2>
+<br>
+
+<p><span class="dest NewsPassos">1º Passo</span></p>
+<p>No arquivo <b>barratopo.htm</b> localize o form referente à busca. Verifique se existem IDs na tag &lt;form <b>id="autocomplete-form"</b>> e no &lt;input <b>id="autocomplete"</b>></p>
+
+<pre>&lt;form name="TopSearchForm" method="GET" <b>id="autocomplete-form"</b> action="/listaprodutos.asp">
+&lt;input type="text" <b>id="autocomplete"</b> value="&lt;SearchText>" name="Texto" class="InputTextBusca" placeholder="Digite sua busca aqui"></pre>
+
+<p>Se não existirem estes IDs, será necessário criá-los. Se já existirem, anote os nomes dos IDs existentes. Eles serão usados no script do 5º passo.</p>
+<br>
+
+<p><span class="dest NewsPassos">2º Passo</span></p>
+
+<p>Abaixo do &lt;input <b>id="autocomplete"</b>> insira o ícone do microfone.</p>
+
+<pre>&lt;input type="text" <b>id="autocomplete"</b> value="&lt;SearchText>" name="Texto" class="InputTextBusca" placeholder="Digite sua busca aqui">
+&lt;img class="header-speech-icon" id="voiceSearch" onclick="fnStartDictation()" src="&lt;BaseLoja>images/icon-speech.svg?cccfc=1" width="30" height="30" alt="Fale" /></pre>
+<br>
+
+<p><span class="dest NewsPassos">3º Passo</span></p>
+<p>Insira o ID <b>id="voiceSearchMGlass"</b> no ícone da lupa ou no botão referente à busca.</p>
+<pre>&lt;img src="&lt;BaseLoja>images/iconsearch.svg?cccfc=1" width="25" height="25" alt="Buscar" <b>id="voiceSearchMGlass"</b>></pre>
+<br>
+
+<p><span class="dest NewsPassos">4º Passo</span></p>
+<p>A tag &lt;form> está dentro de uma &lt;div>. Insira a classe <b>speech</b> dentro dessa &lt;div>.</p>
+
+<pre>&lt;div class="fc-header-form <b>speech</b>">
+&lt;form name="TopSearchForm" method="GET" id="autocomplete-form" action="/listaprodutos.asp"></pre>
+<br>
+
+<p><span class="dest NewsPassos">5º Passo</span></p>
+<p>No final do arquivo <b>lojalib.js</b> inclua os scripts abaixo:</p>
+
+<pre>//Voice Search
+function fnStartDictation(){
+  if (window.hasOwnProperty('webkitSpeechRecognition')) {
+    var recognition = new webkitSpeechRecognition();
+    recognition.continuous = false;
+    recognition.interimResults = false;
+    recognition.lang = "pt-BR";
+    recognition.start();
+    recognition.onresult = function(e) {
+      document.getElementById('<b>autocomplete</b>').value = e.results[0][0].transcript;
+      recognition.stop();
+      document.getElementById('<b>autocomplete-form</b>').submit();
+    };
+    recognition.onerror = function(e) {
+      recognition.stop();
+    }
+  }
+}
+
+/* Disable Speech Recognition IOS  */
+function fnSpeechRecognitionIOS(){
+  if (window.hasOwnProperty('webkitSpeechRecognition')) {
+    document.getElementById("voiceSearch").style.display="block";
+  }else{
+    document.getElementById("voiceSearch").style.display="none";
+    document.getElementById("voiceSearchMGlass").style.display="block";
+  }
+}</pre>
+
+<p>Obs: No código acima os <b>IDs</b> estão em negrito. Verifique no seu form se são os mesmos nomes anotados no 1º passo.</p>
+<br>
+
+<p><span class="dest NewsPassos">6º Passo</span></p>
+<p>No final do arquivo <b>rodape.htm</b> insira a chamada da função <b>fnSpeechRecognitionIOS()</b>.</p>
+<pre>&lt;script>fnSpeechRecognitionIOS();&lt;/script></pre>
+<br>
+
+<p><span class="dest NewsPassos">7º Passo</span></p>
+<p>No arquivo <b>lojasite.css</b> inclua o CSS abaixo:</p>
+
+<pre>/* Voice Search */
+.speech .header-speech-icon{display:none;}
+@media only screen and(max-width:640px){
+.speech .header-speech-icon{float:right;display:block;position:relative;top:1px;left:-10px;}
+button#search-button img{display:none;}
+}</pre>
+<br>
+
+<p><span class="dest NewsPassos">8º Passo</span></p>
+<p><a href="/dnload/iconespeech.zip">Clique aqui</a> para baixar os ícones utilizados neste procedimento. Envie este arquivo ZIP para a pasta <b>IMAGES</b>, onde ele será automaticamente descompactado.</p>
+<br>
+
+
+
+<p><b>Obs</b>: Se sua loja utiliza nossos modelos de design, siga os passos abaixo:</p>
+
+<h3><a href="https://modelo.lojavirtualfc.com.br/" target="_blank">Modelo</a></h3>
+
+<p><b>Versão Desktop Responsivo</b></p>
+<p><img src="/lojas/00000009/prod/fc/fc15058a.png" class="img-responsive imgbordercolor"></a></p>
+<br>
+<p>Arquivo: <b>barratopo.htm</b></p>
+<pre>&lt;form name="TopSearchForm" method="GET" id="autocomplete-form" action="/listaprodutos.asp">
+  &lt;input type="hidden" name="idloja" value="&lt;IDLojaNum>">
+  &lt;input type="hidden" name="digitada" value="true">
+  &lt;div class="HeaderSearchFC">
+    &lt;div id="DivSearch" class="collapse">
+      &lt;div class="col-small-9 col-medium-9 col-large-9 col-xlarge-9">
+        &lt;input type="text" id="autocomplete" value="&lt;SearchText>" name="Texto" class="InputTextBusca" placeholder="Digite sua busca aqui">
+      &lt;/div>
+      &lt;div class="col-small-3 col-medium-3 col-large-3 col-xlarge-3 speech">
+        &lt;a href="#search" class="btn1 btn-sent HeaderIconSearchButtonFC">
+          &lt;img class="header-speech-icon" id="voiceSearch" onclick="fnStartDictation()" src="&lt;BaseLoja>images/icon-speech.svg?cccfc=1" width="30" height="30" alt="Fale" />
+          &lt;span class="HeaderSerachIMGIconFC" onclick="sF$.fnSearchSubmit(document.TopSearchForm);">&lt;img id="voiceSearchMGlass" src="&lt;BaseLoja>images/iconsearch.svg" width="25" height="25" alt="Buscar" title="Buscar">&lt;/span>
+        &lt;/a>
+      &lt;/div>
+    &lt;/div>
+  &lt;/div>
+&lt;/form></pre>
+<br>
+
+<p>Arquivo: <b>rodape.js</b></p>
+<pre>&lt;script>
+//Voice Search
+function fnStartDictation(){
+  if (window.hasOwnProperty('webkitSpeechRecognition')) {
+    var recognition = new webkitSpeechRecognition();
+    recognition.continuous = false;
+    recognition.interimResults = false;
+    recognition.lang = "pt-BR";
+    recognition.start();
+    recognition.onresult = function(e) {
+      document.getElementById('<b>autocomplete</b>').value = e.results[0][0].transcript;
+      recognition.stop();
+      document.getElementById('<b>autocomplete-form</b>').submit();
+    };
+    recognition.onerror = function(e) {
+      recognition.stop();
+    }
+  }
+}
+
+/* Disable Speech Recognition IOS  */
+function fnSpeechRecognitionIOS(){
+  if (window.hasOwnProperty('webkitSpeechRecognition')) {
+    document.getElementById("voiceSearch").style.display="block";
+  }else{
+    document.getElementById("voiceSearch").style.display="none";
+    document.getElementById("voiceSearchMGlass").style.display="block";
+    document.getElementById("voiceSearchMGlass").style.position="relative";
+    document.getElementById("voiceSearchMGlass").style.left="15px";
+  }
+}
+fnSpeechRecognitionIOS();&lt;/script></pre>
+<br>
+
+<p>Arquivo: <b>lojasite.css</b></p>
+<pre>/* Voice Search */
+.speech .header-speech-icon{display:none;}
+@media only screen and (max-width:640px){
+.speech .header-speech-icon{float:right;display:block;position:relative;top:5px;left:-8px;width:23px;height:23px;}
+#voiceSearchMGlass{position:relative;top:3px;left:-5px;width:20px;height:20px;}
+}
+@media only screen and (min-width:641px) and (max-width:1024px) {
+.speech .header-speech-icon{display:none!important}
+.HeaderSerachIMGIconFC img{display:block!important;position:relative;left:12px;}
+}
+@media only screen and (min-width:1025px){
+.speech .header-speech-icon{display:none!important}
+.HeaderSerachIMGIconFC img{display:block!important;position:relative;left:12px;}
+}</pre>
+<br>
+
+<p><b>Versão Mobile</b></p>
+<p><img src="/lojas/00000009/prod/fc/fc15058b.png" class="img-responsive imgbordercolor"></a></p>
+<br>
+<p>Arquivo: <b>mbhbarratopo.htm</b></p>
+<pre>
+&lt;div class="amp-search-container speech">
+  &lt;form name="TopSearchForm" id="autocomplete-form" method="GET" target="_top" action="/listaprodutos.asp">
+    &lt;input type="hidden" name="idloja" value="&lt;IDLoja>">
+    &lt;input type="hidden" name="digitada" value="true">
+    &lt;input type="text" id="autocomplete" value="&lt;SearchText>" name="Texto" class="InputTextBusca amp-search-input" placeholder="Digite sua busca aqui">
+    &lt;div class="amp-search-btn" id="amp-search-btn-size">
+      &lt;img src="&lt;BaseLoja>images/amp-search.svg" onclick="fnSearchSubmit(document.TopSearchForm);" id="voiceSearchMGlass" width="22" height="22" title="Buscar">
+      &lt;img class="header-speech-icon" id="voiceSearch" onclick="fnStartDictation()" src="&lt;BaseLoja>images/icon-speech-mobile.svg?cccfc=1" width="24" height="24" alt="Fale" />
+    &lt;/div>
+  &lt;/form>
+&lt;/div></pre>
+<br>
+
+<p>Arquivo: <b>mbhrodape.htm</b></p>
+<pre>&lt;script>
+//Voice Search
+function fnStartDictation(){
+  if (window.hasOwnProperty('webkitSpeechRecognition')) {
+    var recognition = new webkitSpeechRecognition();
+    recognition.continuous = false;
+    recognition.interimResults = false;
+    recognition.lang = "pt-BR";
+    recognition.start();
+    recognition.onresult = function(e) {
+      document.getElementById('<b>autocomplete</b>').value = e.results[0][0].transcript;
+      recognition.stop();
+      document.getElementById('<b>autocomplete-form</b>').submit();
+    };
+    recognition.onerror = function(e) {
+      recognition.stop();
+    }
+  }
+}
+
+/* Disable Speech Recognition IOS  */
+function fnSpeechRecognitionIOS(){
+  if (window.hasOwnProperty('webkitSpeechRecognition')) {
+    document.getElementById("voiceSearch").style.display="block";
+    document.getElementById("voiceSearch").style.position="relative";
+    document.getElementById("voiceSearch").style.left="20px";
+    document.getElementById("voiceSearch").style.top="8px";    
+    document.getElementById("amp-search-btn-size").style.width="75px";
+  }else{
+    document.getElementById("voiceSearch").style.display="none";
+    document.getElementById("voiceSearchMGlass").style.display="block";
+    document.getElementById("voiceSearchMGlass").style.position="relative";
+    document.getElementById("voiceSearchMGlass").style.left="8px";
+    document.getElementById("voiceSearchMGlass").style.top="7px";
+    document.getElementById("amp-search-btn-size").style.width="41px";
+  }
+}
+fnSpeechRecognitionIOS();&lt;/script></pre>
+<br>
+
+<p>Arquivo: <b>mbhlojasite.css</b></p>
+<pre>/* Voice Search */
+#voiceSearchMGlass{display:block;position:relative;top:9px;left:9px;}
+.amp-search-btn{display:flex;}</pre>
+<br>
+
+<h3><a href="https://modelo2.lojavirtualfc.com.br/" target="_blank">Modelo 2</a></h3>
+
+<p><b>Versão Mobile</b></p>
+<p><img src="/lojas/00000009/prod/fc/fc15058b.png" class="img-responsive imgbordercolor"></a></p>
+<br>
+<p>Arquivo: <b>mbhbarratopo.htm</b></p>
+<pre>
+&lt;div class="amp-search-container speech">
+  &lt;form name="TopSearchForm" id="autocomplete-form" method="GET" target="_top" action="/listaprodutos.asp">
+    &lt;input type="hidden" name="idloja" value="&lt;IDLoja>">
+    &lt;input type="hidden" name="digitada" value="true">
+    &lt;input type="text" id="autocomplete" value="&lt;SearchText>" name="Texto" class="InputTextBusca amp-search-input" placeholder="Digite sua busca aqui">
+    &lt;div class="amp-search-btn" id="amp-search-btn-size">
+      &lt;img src="&lt;BaseLoja>images/amp-search.svg" onclick="sF$.fnSearchSubmit(document.TopSearchForm);" id="voiceSearchMGlass" width="22" height="22" title="Buscar">
+      &lt;img class="header-speech-icon" id="voiceSearch" onclick="fnStartDictation()" src="&lt;BaseLoja>images/icon-speech-mobile.svg?cccfc=1" width="24" height="24" alt="Fale" />
+    &lt;/div>
+  &lt;/form>
+&lt;/div></pre>
+<br>
+
+<p>Arquivo: <b>mbhrodape.htm</b></p>
+<pre>&lt;script>
+//Voice Search
+function fnStartDictation(){
+  if (window.hasOwnProperty('webkitSpeechRecognition')) {
+    var recognition = new webkitSpeechRecognition();
+    recognition.continuous = false;
+    recognition.interimResults = false;
+    recognition.lang = "pt-BR";
+    recognition.start();
+    recognition.onresult = function(e) {
+      document.getElementById('<b>autocomplete</b>').value = e.results[0][0].transcript;
+      recognition.stop();
+      document.getElementById('<b>autocomplete-form</b>').submit();
+    };
+    recognition.onerror = function(e) {
+      recognition.stop();
+    }
+  }
+}
+
+/* Disable Speech Recognition IOS  */
+function fnSpeechRecognitionIOS(){
+  if (window.hasOwnProperty('webkitSpeechRecognition')) {
+    document.getElementById("voiceSearch").style.display="block";
+    document.getElementById("voiceSearch").style.position="relative";
+    document.getElementById("voiceSearch").style.left="20px";
+    document.getElementById("voiceSearch").style.top="8px";    
+    document.getElementById("amp-search-btn-size").style.width="75px";
+  }else{
+    document.getElementById("voiceSearch").style.display="none";
+    document.getElementById("voiceSearchMGlass").style.display="block";
+    document.getElementById("voiceSearchMGlass").style.position="relative";
+    document.getElementById("voiceSearchMGlass").style.left="8px";
+    document.getElementById("voiceSearchMGlass").style.top="7px";
+    document.getElementById("amp-search-btn-size").style.width="41px";
+  }
+}
+fnSpeechRecognitionIOS();
+&lt;/script></pre>
+<br>
+
+<p>Arquivo: <b>mbhlojasite.css</b></p>
+<pre>/* Voice Search */
+#voiceSearchMGlass{display:block;position:relative;top:9px;left:9px;}
+.amp-search-btn{display:flex;}</pre>
+<br>
+
+
+
+<h3><a href="https://modelo3.lojavirtualfc.com.br/" target="_blank">Modelo 3</a></h3>
+
+<p><img src="/lojas/00000009/prod/fc/fc15058c.png" class="img-responsive imgbordercolor"></a></p>
+<br>
+<p>Arquivo: <b>barratopo.htm</b></p>
+<pre>&lt;div class="child-header-mainbar header-mainbar-flex-search speech" id="search-box">
+  &lt;form name="TopSearchForm" method="GET" id="autocomplete-form" action="/listaprodutos.asp">
+    &lt;input type="hidden" name="idloja" value="&lt;IDLojaNum>">
+    &lt;input type="hidden" name="digitada" value="true">
+    &lt;input type="text" id="autocomplete" value="&lt;SearchText>" name="Texto" class="InputTextBusca" placeholder="Digite sua busca aqui">
+    &lt;img class="header-speech-icon" id="voiceSearch" onclick="fnStartDictation()" src="&lt;BaseLoja>images/icon-speech.svg?cccfc=1" width="24" height="24" alt="Fale" />
+    &lt;button id="search-button" type="submit" aria-label="Buscar">
+      &lt;img src="&lt;BaseLoja>images/iconsearch.svg?cccfc=1" width="22" height="22" alt="Buscar" id="voiceSearchMGlass">
+    &lt;/button>
+  &lt;/form>
+&lt;/div></pre>
+<br>
+
+<p>Arquivo: <b>lojalib.js</b></p>
+<pre>//Voice Search
+function fnStartDictation(){
+  if (window.hasOwnProperty('webkitSpeechRecognition')) {
+    var recognition = new webkitSpeechRecognition();
+    recognition.continuous = false;
+    recognition.interimResults = false;
+    recognition.lang = "pt-BR";
+    recognition.start();
+    recognition.onresult = function(e) {
+      document.getElementById('<b>autocomplete</b>').value = e.results[0][0].transcript;
+      recognition.stop();
+      document.getElementById('<b>autocomplete-form</b>').submit();
+    };
+    recognition.onerror = function(e) {
+      recognition.stop();
+    }
+  }
+}
+
+/* Disable Speech Recognition IOS  */
+function fnSpeechRecognitionIOS(){
+  if (window.hasOwnProperty('webkitSpeechRecognition')) {
+    document.getElementById("voiceSearch").style.display="block";
+    document.getElementById("search-button").style.width="85px";
+  }else{
+    document.getElementById("voiceSearch").style.display="none";
+    document.getElementById("voiceSearchMGlass").style.display="block";
+    document.getElementById("search-button").style.width="55px";
+  }
+}</pre>
+<br>
+
+<p>Arquivo: <b>rodape.htm</b></p>
+<pre>&lt;script>fnSpeechRecognitionIOS();&lt;/script></pre>
+<br>
+
+<p>Arquivo: <b>lojasite.css</b></p>
+<pre>/* Voice Search */
+.speech .header-speech-icon{display:none;}
+@media only screen and (min-width:1px) and (max-width:355px) {
+.speech .header-speech-icon{position:relative;top:8px!important;}
+}
+@media only screen and (min-width:1px) and (max-width:640px){
+.speech .header-speech-icon{float:right;display:block;position:relative;top:9px;left:-10px;z-index:9;}
+#voiceSearchMGlass{margin:initial!important;position:relative;left:8px;}
+}
+@media only screen and (min-width:641px) and (max-width:1024px){
+.speech .header-speech-icon{float:right;display:block;position:relative;top:9px;left:-10px;z-index:9;}
+#voiceSearchMGlass{margin:initial!important;position:relative;left:8px;}
+}
+@media only screen and (min-width:1025px){
+.speech .header-speech-icon{display:none!important;}
+}</pre>
+<br>
+
+<h3>Adicione à busca por voz nas notícias da loja.</h3>
+<br>
+<p><img src="/lojas/00000009/prod/fc/fc15058d.png" class="img-responsive imgbordercolor"></a></p>
+<br>
+
+<p><span class="dest NewsPassos">1º Passo</span></p>
+<p>Insira o script abaixo no final do arquivo <b>lojalib.js</b>.</p>
+<pre>/* Enable Speech Recognition News */
+function fnNewsVoiceSearch(){
+  if(FC$.Page=="News"){
+    function fnStartDictationNews(){
+      if (window.hasOwnProperty('webkitSpeechRecognition')) {
+        var recognition = new webkitSpeechRecognition();
+        recognition.continuous = false;
+        recognition.interimResults = false;
+        recognition.lang = "pt-BR";
+        recognition.start();
+        recognition.onresult = function(e) {
+          document.getElementById('TextoBuscaNews').value = e.results[0][0].transcript;
+          recognition.stop();
+          document.getElementById('fc-news-voice-search').submit();
+        };
+        recognition.onerror = function(e) {
+          recognition.stop();
+        }
+      }
+    }
+    var oForm = document.forms["BuscaNoticia"];
+    oForm.setAttribute("id", "fc-news-voice-search"); 
+    var newDivSpeech = document.createElement("div");
+    newDivSpeech.innerHTML="&lt;div id='fc-icon-voice-news'>&lt;img src='"+ FC$.PathImg +"icon-speech-news.svg?cccfc=1' class='header-speech-icon' id='voiceSearch'  width='30' height='30' alt='Fale'>&lt;/div>"
+    var btnSpeech = newDivSpeech;
+    btnSpeech.addEventListener('click', function () {
+       fnStartDictationNews();
+    });
+    var reference = document.getElementById('Procurar');
+    reference.parentNode.insertBefore(newDivSpeech, reference);
+    if (window.hasOwnProperty('webkitSpeechRecognition')) {
+      document.getElementById("voiceSearch").style.display="block";
+    }else{
+      document.getElementById("voiceSearch").style.display="none";
+      document.getElementById("fc-icon-voice-news").style.display="none";
+    }
+  }
+}</pre>
+<br>
+
+<p><span class="dest NewsPassos">2º Passo</span></p>
+<p>No final do arquivo <b>rodape.htm</b> insira a chamada da função <b>fnNewsVoiceSearch().</b></p>
+<pre>&lt;script>fnNewsVoiceSearch();&lt;/script></pre>
+<br>
+
+<p><span class="dest NewsPassos">3º Passo</span></p>
+<p>No arquivo <b>lojasite.css</b> inclua o CSS abaixo:</p>
+<pre>/* News Speech Recognition */
+#fc-icon-voice-news{display:none;}
+@media only screen and (max-width:640px){
+#fc-icon-voice-news{display:block;background:#03A9F4;;border-radius:2px;width:100%;height:40px;}
+#fc-icon-voice-news img{position:relative;top:4px;}
+}</pre>
+<br>
+
+<p><span class="dest NewsPassos">4º Passo</span></p>
+<p><a href="/dnload/iconespeechnews.zip">Clique aqui</a> para baixar o ícone utilizado neste procedimento. Envie este arquivo ZIP para a pasta <b>IMAGES</b>, onde ele será automaticamente descompactado.</p>
+
+<br><br>
+<p><b class="fc-warning">Atenção</b>: Atualmente a busca por voz (Speech Recognition API) funciona somente em smartphones com o sistema operacional Android, que são a maioria do mercado.</p>
+
+<p><b>Obs</b>: Além da voz, o campo de busca pode ser utilizado também através de digitação normal.</p><br>
+
+
+<p><b>Referências</b>:</p>
+<a href="https://developers.google.com/web/updates/2013/01/Voice-Driven-Web-Apps-Introduction-to-the-Web-Speech-API" target="_blank">Google: Voice Driven Web Apps</a><br>
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API" target="_blank">Mozilla: Web Speech API</a><br>
+<a href="https://caniuse.com/#feat=speech-recognition" target="_blank">Can I use: Speech Recognition API</a><br>

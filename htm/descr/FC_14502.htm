@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <style>
+  body{margin-top:0px;margin-left:0px;margin-right:0px;background:#eeeeee;color:#333333;}
+  a{color:#0066CC;}
+  a:visited{color:#0066CC;}
+  a:active{color:#0099FF;}
+  </style>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <link type="text/css" rel="stylesheet" href="/lojas/00000009/htm/LojaSite.css">
+  <link type="text/css" rel="stylesheet" href="/lojas/00000009/htm/bootstrap/css/bootstrap.css" media="screen">
+  <style type="text/css">
+
+  .FCSettingsLoja{}
+  .FCSettingsLoja li{padding: 5px 0; line-height: 25px;}
+
+  .FCAjudaContent{width: 100%; height: auto; position: relative; color:#333 !important;}
+  .FCTabGridTutor{width: 100%;}
+  .FCTabGridTutor th, .FCTabGridTutor td{font: inherit; font: 14px arial !important; border-bottom: 1px solid #eee; padding: 8px 4px; text-align: left; line-height: 26px !important;}
+
+  .FCTabGridTutor td:first-child{color: #090;}
+  .FCTabGridTutor td:nth-child(2){color: #F63;}
+
+  .FCTabGridTutor td img{max-width: 20px;}
+  .FCTabGridTutorTit{background: #ccc; text-align: left !important;}
+
+  .FCDisabled {background-color: #ccc;}
+
+  .FCColorRed{color: #FF0000!important;}
+  .FCColorGreen9{color: #009900 !important;}
+  .FCColorBlueNormal{color: #0066FF !important;}
+  .FCColorBlueLight{color: #0099FF !important;}
+  .FCColorOrageLight{color: #FF6633 !important;}
+  .FCColorRedBlack{color: #990000 !important;}
+
+  .FCTabGridTutorCorlors{width: 100%; height: auto; min-height: 150px; position: relative; display: table;}
+  .FCTabGridTutorCorlors div{width: 310px; height: 100px; position: relative; float: left; text-align: center;}
+  .FCTabGridTutorCorlors b{display: block; padding-bottom: 10px;}
+  .FCTabGridTutorCorlors span{display: block; font-size: 12px; padding-top: 5px;}
+
+  .FCColorsList{width: 100%; height: auto; position: relative; display: table;}
+  .FCColorsList div.FCSimpleColor{width: 170px; height: 85px; float: left; text-align: center;}
+  .FCColorsList div.FCCombineColor{width: 170px; height: 85px; float: left; text-align: center;}
+  .FCColorsList img{display: block; margin: 4px auto;}
+  .FCColorsList h5{width: 100%; height: 30px; display: block; padding: 10px 0; clear: both; font-weight: bold;}
+
+  .FCTabGridTutorSub{padding-left: 15px !important;}
+
+  .FCStepOneList{line-height: 28px; list-style-type: upper-roman;}
+  .FCStepOneList li{padding-bottom: 10px;}
+
+  .FCRequiredIDs span{display: inline-block;}
+  .FCRequiredIDs ul li{padding: 5px 0;}
+
+  .FCResourceMain{width: 100%; padding: 0px;}
+  .FCResourceMain h5{font-size: 1.2em; font-weight: bold;}
+  .FCResourceMain ul{padding-left: 20px;}
+
+  .FCBasicsSettingsMain{width: 100%; position: relative; padding: 0px;}
+  .FCBasicsSettingsMain h5{font-size: 1.2em; font-weight: bold;}
+  .FCBasicsSettingsContent{margin: 0px; padding: 0; list-style-type: none; border-top: 1px solid #ccc;}
+  .FCBasicsSettingsContent li{padding: 15px 10px; border-bottom: 1px solid #ccc; line-height: 28px;}
+  .FCBasicsSettingsContent li span{display: inline-block;}
+  .FCBasicsSettingsContent li div{padding-left: 10px;}
+  </style>
+</head>
+<body>
+<div class="FCAjudaContent">
+
+<br>
+<h5>Este artigo foi criado para as lojas que utilizam o <a href="http://modelo.lojavirtualfc.com.br/" target="_blank">modelo de design responsivo (RWD)</a> do Fastcommerce.</h5>
+<br>
+<p>Este recurso só funcionará corretamente nas seguintes condições:</p>
+<ul class="FCSettingsLoja">
+  <li>
+    O campo <b>Subprodutos</b> da página <b>Dados da loja</b> do site administrativo deve estar marcado.
+  </li>
+  <li>
+    O campo <b>Exibe peso</b> da página <b>Dados da loja</b> do site administrativo deve estar marcado.
+  </li>
+  <li>
+    O subproduto deve conter pelo menos um descritor cadastrado.<br>
+    <b>ex.</b> Tamanho: <b>P</b>
+  </li>
+  <li>
+    Ao cadastrar cores personalizadas, coloque + (sinal de mais) ao invés de espaços entre os nomes.<br>
+    <b>ex.</b> Amarelo<b>+</b>Azul
+  </li>
+  <li>
+    Cada combinação de tamanho e cor deve ser cadastrada como um subproduto.<br>
+    <b>ex.</b> Cadastre um subproduto para o <i>Tênis Ultra Mega</i> - Tamanho <b>37</b> - Cor <b>Preta</b>, outro subproduto para o <i>Tênis Ultra Mega</i> - Tamanho <b>38</b> - Cor <b>Preta</b>, etc)
+  </li>
+  <li>
+    Deve ser cadastrada a Imagem principal, Imagem de detalhe e Imagem ampliada em todos os produtos e subprodutos, mesmo que as imagens sejam iguais.<br>
+
+    Para o zoom funcionar corretamente, sugerimos que as imagens tenham as seguintes dimensões:<br>
+    <ul>
+      <li>Imagem detalhada: entre <b>200px</b> de largura x <b>200px</b> de altura até <b>350px</b> de largura x <b>350px</b> de altura</li>
+      <li>Imagem ampliada: entre <b>600px</b> de largura x <b>600px</b> de altura até <b>800px</b> de largura x <b>800px</b> de altura</li>
+    </ul>
+    <a href="http://ajuda.Fastcommerce.com.br/n12928" target="_blank">Veja aqui</a> algumas recomendações para as imagens de produtos.
+  </li>
+  <li>
+    Para exibir várias imagens do produto é necessário que todas estas imagens sejam cadastradas entre vírgulas nos campos <b>Imagem de detalhe</b> e <b>Imagem ampliada</b> na ficha dos produtos.<br>
+
+    <b>Exemplo:</b><br>
+    <ul>
+      <li><b>Imagem de detalhe:</b> <span style="display:inline-block; padding:5px 10px; border:1px solid #ccc">ImagemDetalhe01.jpg,ImagemDetalhe02.jpg,ImagemDetalhe03.jpg,ImagemDetalhe04.jpg</span></li>
+      <li><b>Imagem ampliada:</b> <span style="display:inline-block; padding:5px 10px; border:1px solid #ccc">ImagemAmpliada01.jpg,ImagemAmpliada02.jpg,ImagemAmpliada03.jpg,ImagemAmpliada04.jpg</span></li>
+    </ul><br>
+
+    <b>Obs:</b> Todas as imagens devem ser enviadas para a pasta <b>PROD</b>, antes do preenchimento dos campos na ficha de produto.<br>
+    <b>ATENÇÃO:</b> Se a quantidade de imagens cadastras nos campos de imagem for diferente, só será exibida a primeira imagem.<br>
+    <ul>
+      <li><b>Exemplo:</b> Se forem cadastradas 3 imagens de detalhe e apenas 2 imagens ampliadas, somente a primeira imagem será exibida.<br></li>
+    </ul>
+
+  </li>
+</ul>
+<br>
+<p><b>Obs.:</b> Se a loja não seguir as regras acima, este recurso não funcionará corretamente.</p>
+
+<br><br>
+<h5><b>Passos para a implementação</b></h5><br>
+<span class="dest NewsPassos">1° Passo</span>
+<br>
+<ol class="FCStepOneList">
+  <li>
+    Salve o arquivo <a href="/dnload/FC_Grid_v1_css.zip"><b>FC_Grid_v1_css.zip</b></a> em seu computador. Em seguida, envie o arquivo para a pasta <b>CSS</b> dentro da pasta <b>HTM</b> do <b>Gerenciador de Arquivos</b> da loja. Se a pasta não existe crie uma nova pasta com o nome <b>CSS</b> e envie o arquivo para a pasta.
+  </li>
+  <li>
+    Salve o arquivo <a href="/dnload/FC_Grid_v1_js.zip"><b>FC_Grid_v1_js.zip</b></a> em seu computador. Em seguida, envie para a pasta <b>JS</b> dentro da pasta <b>HTM</b> do <b>Gerenciador de Arquivos</b> da loja. Se a pasta não existe crie uma nova pasta com o nome <b>JS</b> e envie o arquivo para a pasta.
+  </li>
+  <li>
+    Salve o arquivo <a href="/dnload/FC_Grid_v1_IMG.zip"><b>FC_Grid_v1_IMG.zip</b></a> em seu computador. Em seguida, envie para a pasta <b>IMAGES</b> do <b>Gerenciador de Arquivos</b> da loja.<br>
+
+    O arquivo <b>FC_Grid_v1_IMG.zip</b> possui as seguintas imagens:
+    <ul>
+      <li>BotCarrinho.svg (botão comprar)</li>
+      <li>BotCarrinhoEsgotado.svg (botão esgotado)</li>
+      <li>BotConsulteGrid.svg (botão consulte-nos)</li>      
+      <li>BotSelecioneGrid.svg (botão selecionar as opções)</li>
+    </ul>
+  </li>
+</ol>
+
+<br>
+<span class="dest NewsPassos">2° Passo</span>
+<p>No arquivo <b>EstiloProduto.htm</b> inclua entre as tags <b class="FCColorRed">&lt;ProdDet></b> e <b class="FCColorRed">&lt;/ProdDet></b> o seguinte bloco de código:</p>
+
+<pre class="FCDisabled">
+<b class="FCColorRed">&lt;ProdDet></b>
+</pre>
+<pre>
+<code class="FCColorGreen9">&lt;!-- Begin: HTML structure --></code>
+&lt;link rel="stylesheet" type="text/css" href="&lt;BaseLoja>htm/css/FC_Grid_v1.css">
+&lt;link rel="stylesheet" href="/js/MagicToolbox/MagicZoomPlusV1/magiczoomplus.css">
+
+&lt;div class="FCGridMain">
+  &lt;div id="<code class="FCColorRed">idDivGridImg</code>" class="col-small-12 col-medium-12 col-large-5 col-xlarge-5">
+    &lt;img src="<code class="FCColorBlueNormal">&lt;ImagemProdDet></code>">
+  &lt;/div>
+  &lt;div class="col-small-12 col-medium-12 col-large-7 col-xlarge-7 FCContentGrid">
+    &lt;h1 id="<code class="FCColorRed">idNameProductGridFC</code>" class="FCNameProductGrid"><code class="FCColorBlueNormal">&lt;NomeProd></code>&lt;/h1>
+    &lt;br>
+    &lt;span class="FCCodProdGrid">
+      Ref.: &lt;small id="<code class="FCColorRed">idCodProdGrid</code>"><code class="FCColorBlueNormal">&lt;CodProd></code>&lt;/small> 
+    &lt;/span>
+    &lt;br>
+    &lt;p id="<code class="FCColorRed">idPriceGridFC</code>" class="FCPriceGrid">
+      <code class="FCColorBlueNormal">&lt;PrecoSimples></code>
+    &lt;/p>
+    <b>&lt;script></b>
+    (function(){ var e=document.getElementById("idPriceGridFC"); if(e)e.innerHTML+= <code class="FCColorRedBlack">fnMaxInstallmentsGrid</code>(<code class="FCColorBlueNormal">&lt;PrecoNum></code>,<code class="FCColorBlueNormal">&lt;MaxParcelasProdNum></code>) + <code class="FCColorRedBlack">fnShowEconomyGrid</code>(<code class="FCColorBlueNormal">&lt;PrecoNum></code>,<code class="FCColorBlueNormal">&lt;PrecoOri></code>); })();
+    <b>&lt;/script></b>
+    &lt;br>    
+    &lt;div id="<code class="FCColorRed">idMainGridFC_&lt;IDProduto></code>">&lt;/div>    
+    &lt;br>  
+    <code class="FCColorGreen9">&lt;!-- ZipCode: Begin --></code>
+    &lt;div class="ProductStyleBoxFC col-small-12 col-medium-12 col-large-8 col-xlarge-5">
+      &lt;div id="<code class="FCColorRed">ShowCEP&lt;IDProduto></code>">&lt;/div>
+    &lt;/div>
+    <code class="FCColorGreen9">&lt;!-- ZipCode: End --></code>
+  &lt;/div>
+  &lt;div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12 text-left descr-prod">
+    &lt;div class="ProductStyleBoxDescriptionFC">
+      &lt;h2>Descrição:&lt;/h2>
+    &lt;/div>
+    &lt;div class="ProductStyleBoxDescriptionFC">
+      <code class="FCColorBlueNormal">&lt;Descricao></code>
+    &lt;/div>
+    &lt;div class="ProductStyleBoxDescriptionFC">
+      <code class="FCColorBlueNormal">&lt;DescrHTM></code>
+    &lt;/div>
+    &lt;div class="ProductStyleBoxDescriptionFC">
+      <code class="FCColorBlueNormal">&lt;DescrURL></code>
+    &lt;/div>
+  &lt;/div>
+
+&lt;/div>
+&lt;br>
+<code class="FCColorGreen9">&lt;!-- End: HTML structure --></code>
+
+<code class="FCColorGreen9">&lt;!-- Begin: JS scripts --></code>
+&lt;script src="/js/MagicToolbox/MagicZoomPlusV1/magiczoomplus.js">&lt;/script>
+&lt;script src="&lt;BaseLoja>htm/js/FC_Grid_v1.js">&lt;/script>
+
+<b>&lt;script></b>
+<code class="FCColorRedBlack">fnShowCEPGrid</code>(<code class="FCColorBlueNormal">&lt;IDProduto></code>); <code class="FCColorGreen9">/*FC simulação de frete */</code>
+<b>FCGrid$</b>.<code class="FCColorRedBlack">fnMultipleZoom</code>("<code class="FCColorBlueNormal">&lt;ImagemProdDet></code>","<code class="FCColorBlueNormal">&lt;ImagemProdAmp></code>", <b>false</b>);
+<b>&lt;/script></b>
+
+<b>&lt;script></b>
+<b>var</b> aProductOnlyOneGrid=[], aProductListGrid=[];
+
+<code class="FCColorGreen9">/* Begin: Produto principal */</code>
+<b>var</b> sCor = ("&lt;CorVal>" !="") ? "&lt;CorVal>|&lt;CorRGB>":"";
+aProductOnlyOneGrid.push(JSON.stringify({IDProduto: &lt;IDProduto>,codProd: "&lt;CodProd>", cor: sCor, estoque: &lt;Estoque>, peso: "&lt;PesoNum>", priceOri: "&lt;PrecoOri>", priceNum: "&lt;PrecoNum>", maxInstallmentsNum: &lt;MaxParcelasProdNum>, adicional1: "&lt;Adicional1Val>", adicional2: "&lt;Adicional2Val>", adicional3: "&lt;Adicional3Val>", adicionalD1: "&lt;AdicionalD1Val>", adicionalD2:"&lt;AdicionalD2Val>", adicionalD3:"&lt;AdicionalD3Val>", imgDet:"&lt;ImagemProdDet>", imgAmp:"&lt;ImagemProdAmp>"}));
+<code class="FCColorGreen9">/* End: Produto principal */</code>
+
+<code class="FCColorGreen9">/* Begin: Lista subprodutos */</code>
+<b class="FCColorBlueNormal">&lt;sub></b>
+<b>var</b> sCor = ("&lt;CorVal>" !="") ? "&lt;CorVal>|&lt;CorRGB>":"";
+aProductListGrid.push(JSON.stringify({IDProduto: &lt;IDProduto>, codProd: "&lt;CodProd>", cor: sCor, estoque: &lt;Estoque>, peso: "&lt;PesoNum>", priceOri: "&lt;PrecoOri>", priceNum: "&lt;PrecoNum>", maxInstallmentsNum: &lt;MaxParcelasProdNum>, adicional1: "&lt;Adicional1Val>", adicional2: "&lt;Adicional2Val>", adicional3: "&lt;Adicional3Val>", adicionalD1: "&lt;AdicionalD1Val>", adicionalD2:"&lt;AdicionalD2Val>", adicionalD3:"&lt;AdicionalD3Val>", imgDet:"&lt;ImagemProdDet>", imgAmp:"&lt;ImagemProdAmp>"}));
+<b class="FCColorBlueNormal">&lt;/sub></b>
+<code class="FCColorGreen9">/* End: Lista subprodutos */</code>
+
+<code class="FCColorGreen9">/* Begin: Código opcional para alterar as configurações da grade */</code>
+<b>FCGrid$</b>.<code class="FCColorRedBlack">myOptions</code> = {
+  autoSelect : false,
+  cartOnPage : true,
+  shippingUpdate : true,
+  incMultGrid : false,
+  separadorRGBCor : '|',
+  qtyDescriptors : 7,
+  htmlFlagChecked : '&lt;i class="FCCheckedGrid">&lt;/i>',
+  imageProduct : 'cor',
+  colorName : false,
+  colorImg : false, 
+  colorImgFormat : '.gif',
+  stock: false,
+  btnSelectImg : 'BotSelecioneGrid.svg', 
+  btnBuyImg : 'BotCarrinho.svg',
+  btnContactUSImg : 'BotConsulteGrid.svg',
+  btnSoldOut : 'BotCarrinhoEsgotado.svg', 
+  textGrid : 'Selecione as opções abaixo',
+  order : ['cor', 'adicional1', 'adicional2', 'adicional3', 'adicionalD1', 'adicionalD2', 'adicionalD3'],
+  nameDescriptor : { 
+    cor : 'Cor',
+    adicional1 : 'Descritor 1',
+    adicional2 : 'Descritor 2',
+    adicional3 : 'Descritor 3',
+    adicionalD1 : 'Descritor 4',
+    adicionalD2 : 'Descritor 5',
+    adicionalD3 : 'Descritor 6'
+  },
+  textDescriptor : {
+    cor : 'Selecione',
+    adicional1 : 'Selecione',
+    adicional2 : 'Selecione',
+    adicional3 : 'Selecione',
+    adicionalD1 : 'Selecione',
+    adicionalD2 : 'Selecione',
+    adicionalD3 : 'Selecione'
+  }
+};
+<code class="FCColorGreen9">/* End: Código opcional para alterar as configurações da grade */</code>
+
+<b>FCGrid$</b>.<code class="FCColorRedBlack">init</code>("idMainGridFC_&lt;IDProduto>", aProductListGrid, aProductOnlyOneGrid); <code class="FCColorGreen9">/* Inicia a grade */</code>
+<b>&lt;/script></b>
+<code class="FCColorGreen9">&lt;!-- End: JS scripts --></code>
+
+</pre>
+<pre class="FCDisabled">
+<b class="FCColorRed">&lt;/ProdDet></b>
+</pre>
+<br>
+
+<div class="FCRequiredIDs">
+  <span>
+    A estrutura <i><b>html</b></i> inserida entre as tags <b>&lt;ProdDet></b> e <b>&lt;/ProdDet></b> pode ser personalizada para mudar a posição dos elementos ou incluir mais informações, porém alguns <b>IDs</b> <i><b>html</b></i> são obrigatórios na estrutura:
+  </span><br><br>
+  <ul>
+    <li><code class="FCColorRed">idDivGridImg</code> : elemento html DIV que apresenta a imagem do produto com <i>zoom</i> </li>
+    <li><code class="FCColorRed">idNameProductGridFC</code> : o texto (nome do produto) dentro do elemento com este ID é utilizado no título da imagem apresentada no zoom</li>
+    <li><code class="FCColorRed">idCodProdGrid</code> : elemento html que é atualizado com o código de referência do subproduto selecionado</li>
+    <li><code class="FCColorRed">idPriceGridFC</code> : elemento html que é atualizado com o preço do subproduto selecionado</li>
+    <li><code class="FCColorRed">idMainGridFC_&lt;IDProduto></code> : elemento html DIV que apresenta a grade com as opções de escolha dos subprodutos</li>
+    <li><code class="FCColorRed">ShowCEP&lt;IDProduto></code> : elemento html DIV que apresenta os campos para simulação do frete</li>
+  </ul>
+</div>
+
+<p>
+  O código <b>HTML</b> apresentado neste passo é um exemplo simplificado para o layout da página de detalhe do produto. Se preferir salve o arquivo completo <a href="/dnload/EstiloProdGrid_v1.zip"><b>EstiloProdGrid_v1.zip</b></a> em seu computador. Em seguida, envie o arquivo para a pasta <b>HTM</b> dentro do <b>Gerenciador de Arquivos</b> da loja.
+</p>
+<p>
+  <b>Obs.:</b> esse arquivo está preparado para ser implementado no <a href="http://modelo.lojavirtualfc.com.br/" target="_blank">modelo de design responsivo (RWD)</a> do Fastcommerce. Caso o loja utilize um modelo diferente/ personalizado será necessário realizar as devidas adaptações nos códigos <b>HTML</b>, <b>CSS</b> e <b>javascript</b>.
+</p>
+
+<br><br>
+
+<span class="dest NewsPassos">3° Passo</span>
+<p>Parcelamento dos produtos.</p>
+<p>Inclua no final do arquivo <b>LojaLib.js</b> as funções abaixo:</p>
+<!-- Parcelamento:begin -->
+<pre>
+<span class="FCColorGreen9">/*Função para mostrar parcelamento*/</span>
+<b>function</b> <code class="FCColorBlueLight">fnMaxInstallmentsGrid</code>(PrecoProd,MaxParcelas){
+  var ComSem;  
+  if(typeof Juros!="undefined"){
+    if(PrecoProd==0||MaxParcelas==1||Juros.length==0)return "";
+    if(MaxParcelas==0||MaxParcelas>Juros.length)MaxParcelas=Juros.length;
+    if(Juros[MaxParcelas-1]>0)ComSem=""; else ComSem="&lt;font color=#990000> sem juros&lt;/font>";
+    return "&lt;span class=EstParc> ou &lt;b>"+MaxParcelas+"x&lt;/b>"+ComSem+" de &lt;b>"+FormatPrecoReais(CalculaParcelaJurosCompostos(PrecoProd,MaxParcelas))+"&lt;/b>&lt;/span>";
+  }else{
+    return "";
+  }
+}
+
+<span class="FCColorGreen9">/*Função para mostrar valor formatado*/</span>
+<b>function</b> <code class="FCColorBlueLight">FormatNumber</code>(num){
+  var num=num.toString().replace(/\$|\,/g,'');
+  if(isNaN(num))num="0";
+  sign=(num==(num=Math.abs(num))); num=Math.floor(num*100+0.50000000001); num=Math.floor(num/100).toString();
+  for(var i=0;i&lt;Math.floor((num.length-(1+i))/3);i++)num=num.substring(0,num.length-(4*i+3))+'.'+num.substring(num.length-(4*i+3));
+  return ((sign)?'':'-')+num;
+}
+
+<span class="FCColorGreen9">/*Função para mostrar valor economizado em produtos em promoção*/</span>
+<b>function</b> <code class="FCColorBlueLight">fnShowEconomyGrid</code>(ProdPrice,ProdPriceOri){
+  if(ProdPrice!=ProdPriceOri && typeof FormatNumber == 'function' && typeof FormatPrice == 'function' ){
+    return "&lt;font style='font-size:16px;display:block;margin:10px 0;' color=#6f9e45>Economize &lt;b>"+ FormatPrice(ProdPriceOri-ProdPrice,'R$') +"&lt;/b> ("+ FormatNumber(((ProdPriceOri-ProdPrice)/ProdPriceOri)*100)+"%)&lt;/font>";
+  }else{return "";}
+}
+</pre>
+<!-- Parcelamento:end -->
+<p>A função <code class="FCColorBlueLight">fnMaxInstallmentsGrid</code> é responsável por exibir o valor do parcelamento do produto, ex.:<br>
+  <code> R$ 1.000,00 <code class="FCColorBlueLight">ou 6x de R$ 178,47</code></code></p>
+<p>A função <code class="FCColorBlueLight">fnShowEconomyGrid</code> é responsável por exibir o valor economizado em produtos em promoção, ex.:<br>
+  <code> de R$ 2.500,00 por R$ 2.100,00 <code class="FCColorBlueLight">Economize R$ 400,00 (16%)</code></code></p>
+<br>
+<span class="dest NewsPassos">4° Passo</span>
+<p>Simulação de frete para os subprodutos.</p>
+<p><b>Obs.:</b> A simulação de frete no detalhe do produto funciona somente se a loja utiliza a opção <i><b>Utilizar faixas de CEP (Brasil)</b></i> na página <i><b>Envio & frete</b></i> da loja. Para mais detalhes sobre a configuração do frete da loja por <b>faixas de CEP</b> <a href="http://ajuda.Fastcommerce.com.br/n3794" target="_blank">clique aqui</a> e veja a <b>3° opção</b>.</p>
+<p>Para o funcinamento correto do recurso de simulação de frete para os subproduto marque na página <b>Dados da Loja</b> a opção <b>Exibe Peso</b> e cadastre o respectivo peso em cada subproduto.</p>
+<p>Inclua no final do código do arquivo <b>LojaLib.js</b> as funções abaixo:</p>
+
+<!-- Simulação de frete:begin -->
+<pre>
+
+<code class="FCColorGreen9">// ZipCode Grid FC - CEP - Begin </code>
+<b>function</b> <code class="FCColorBlueLight">fnShowCEPGrid</code>(IDProd){
+  if(FC$.TypeFrt==3){
+    var sNumCEP=fnGetCookie('CEP'+FC$.IDLoja);
+    if(sNumCEP==null)sNumCEP="";
+    sCEP="&lt;div id='idDivCEPFC'>";
+    sCEP+="  &lt;div id='idDivTitCEP'>&lt;img src='"+ FC$.PathImg +"iconziptruck.svg' width='25' height='25' alt='Zip box' />&lt;span>Simule o valor do frete&lt;/span>&lt;/div>";
+    sCEP+="  &lt;div id='idDivContentCEP'>";
+    sCEP+="    &lt;div id='idDivContentFieldsCEP'>";
+    sCEP+="      &lt;div id='idDivCEPCalc'>";
+    sCEP+="        &lt;div class='FieldCEP FieldCEPQty'>&lt;label>Qtd.&lt;/label>&lt;input type='number' id='idQtdZip"+ IDProd +"' value='1' maxlength='4'>&lt;/div>";
+    sCEP+="        &lt;div class='FieldCEP FieldCEPNum'>&lt;input type='text' placeholder='CEP' id='idZip"+ IDProd +"' value='"+ sNumCEP +"' maxlength='9'>&lt;/div>";
+    sCEP+="        &lt;img src='"+ FC$.PathImg +"iconnewsletter.svg' height='29px' id='idCEPButton' class='FieldCEPBtn' onclick='fnGetShippingValuesProdGrid("+ IDProd +")'>";
+    sCEP+="      &lt;/div>";
+    sCEP+="    &lt;/div>";
+    sCEP+="    &lt;div id='idDivImgLoadingCEPFC'>&lt;img src='"+ FC$.PathImg +"loadingcep.gif' vspace=3 style='display:none;' id=ImgLoadingCEP>&lt;/div>";
+    sCEP+="    &lt;div id='idShippingValues"+ IDProd +"'>&lt;/div>&lt;/div>";
+    sCEP+="  &lt;/div>";
+    sCEP+="&lt;/div>";
+    var oShowCEP=document.getElementById("ShowCEP"+IDProd);
+    if(oShowCEP)oShowCEP.innerHTML=sCEP;
+  }
+}
+
+
+<b>function</b> <code class="FCColorBlueLight">fnGetShippingValuesProdGrid</code>(IDProd){
+  sCEP=document.getElementById("idZip"+ IDProd).value;
+  fnSetCookie('CEP'+FC$.IDLoja,sCEP);
+  if(sCEP==""){document.getElementById("idShippingValues"+IDProd).innerHTML="&lt;span class='freightResult' style=color:#990000;>Informe o CEP&lt;/span>";return;}
+  document.getElementById("idShippingValues"+IDProd).innerHTML="";
+  document.getElementById("ImgLoadingCEP").style.display='';
+  var iQty=document.getElementById("idQtdZip"+IDProd).value;
+  if(IDProd)var sParamProd="&idproduto="+ IDProd;
+  else var sParamProd="";
+  AjaxExecFC("/XMLShippingCEP.asp","IDLoja="+ FC$.IDLoja +"&qty="+ iQty +"&cep="+ sCEP + sParamProd,false,processXMLCEPGrid,IDProd);
+
+}
+
+<b>function</b> <code class="FCColorBlueLight">processXMLCEPGrid</code>(obj,IDProd){
+  var sShipping="";
+  var oShippingValues=document.getElementById("idShippingValues"+IDProd);
+  var iErr=ReadXMLNode(obj,"err");if(iErr==null)return;
+  if(iErr!="0"){
+    document.getElementById("ImgLoadingCEP").style.display='none';
+    oShippingValues.innerHTML="&lt;span class='freightResult' style=color:#990000;>"+ ReadXMLNode(obj,"msg") +"&lt;/span>";
+    return;
+  }
+  oShippingValues.innerHTML="";
+  var UseCart=ReadXMLNode(obj,"UseCart");
+  if(UseCart=="False"){
+    var ProdName=ReadXMLNode(obj,"ProdName");
+    var ProdRef=ReadXMLNode(obj,"ProdRef");  
+  }
+  sShipping+="&lt;div class='ZipOptions'>";
+  var iOpt=ReadXMLNode(obj,"OptQt");
+  for(var i=1;i&lt;=iOpt;i++){
+    var OptName=ReadXMLNode(obj,"Opt"+ i +"Name");
+    var OptImage=ReadXMLNode(obj,"Opt"+ i +"Image");
+    var OptObs=ReadXMLNode(obj,"Opt"+ i +"Obs");
+    if(OptObs==null)OptObs="";
+    sValorFrete=ReadXMLNode(obj,"Opt"+ i +"Value");
+    if(sValorFrete=="R$ 0,00")sValorFrete="FRETE GRÁTIS";
+    sShipping+="&lt;div class='ZipOption'>";
+    sShipping+="  &lt;div class='ZipNameObs'>";
+    sShipping+="    &lt;div class='ZipName'>"+ OptName +"&lt;/div>";
+    sShipping+="    &lt;div class='ZipObsVal'>"+ OptObs +"&lt;/div>";
+    sShipping+="  &lt;/div>";
+    sShipping+="  &lt;div class='ZipValue'>"+ sValorFrete +"&lt;/div>";
+    sShipping+="&lt;/div>";
+  }
+  oShippingValues.innerHTML=sShipping;
+  oShippingValues.style.display="block"; 
+  sShipping+="&lt;/div>";
+  document.getElementById("ImgLoadingCEP").style.display='none';
+}
+
+<code class="FCColorGreen9">// ZipCode Grid FC - CEP - End </code>
+
+</pre>
+<!-- Simulação de frete:end -->
+
+<p>Verifique se o arquivo <b>LojaLib.js</b> já possui as funções abaixo. Caso o arquivo não possua essas funções faça a inclução delas no final do código do arquivo.</p>
+<pre>
+
+<b>function</b> <code class="FCColorBlueLight">fnGetCookie</code>(name){
+  var arg=name+"=";
+  var alen=arg.length;
+  var clen=document.cookie.length;
+  var i=0;
+  while (i&lt;clen){
+    var j=i+alen;
+    if(document.cookie.substring(i,j)==arg)return fnGetCookieVal(j);
+    i=document.cookie.indexOf(" ",i)+1;
+    if(i==0)break;
+  }
+  return null;
+}
+
+<b>function</b> <code class="FCColorBlueLight">fnGetCookieVal</code>(offset){
+  var endstr=document.cookie.indexOf(";",offset);
+  if (endstr==-1)endstr=document.cookie.length;
+  return unescape(document.cookie.substring(offset,endstr));
+}
+
+<b>function</b> <code class="FCColorBlueLight">fnSetCookie</code>(name,value){
+  var argv=fnSetCookie.arguments;
+  var argc=fnSetCookie.arguments.length;
+  var expires=(argc>2)?argv[2]:null;
+  var path=(argc>3)?argv[3]:null;
+  var domain=(argc>4)?argv[4]:null;
+  var secure=(argc>5)?argv[5]:false;
+  document.cookie=name+"="+escape(value)+((expires==null)?"":(";expires=" + expires.toGMTString()))+((path==null)?"":(";path="+path))+((domain==null)?"":(";domain="+domain))+((secure==true)?"; secure":"");
+}
+
+</pre>
+
+<br><br>
+
+<div class="FCResourceMain">
+  <h5>Parâmetros de configuração</h5>
+  <p>Através de variáveis javascript é possível personalizar as funcionalidades da grade, como por exemplo, habilitar ou desabilitar a seleção automática do 1º subproduto.</p><br>
+
+  <h5>Recursos integrados com a grade</h5>
+  <ul>
+    <li>
+      <a href="http://ajuda.Fastcommerce.com.br/n12059" target="_blank">
+        Adicionar produto à cesta sem sair da página
+      </a>
+    </li>
+    <li>
+      <a href="http://ajuda.Fastcommerce.com.br/n12045" target="_blank">
+        Simulação de frete por subproduto
+      </a>
+    </li>
+    <li>
+      <a href="http://ajuda.Fastcommerce.com.br/n7750" target="_blank">
+        Informar a quantidade de cada produto antes de colocá-lo na cesta
+      </a>
+    </li>
+    <li>
+      <a href="http://ajuda.Fastcommerce.com.br/n14437" target="_blank">
+        Zoom com várias imagens
+      </a>
+    </li>
+  </ul>
+</div>
+<br>
+<div class="FCBasicsSettingsMain">
+  <h5>Configurações Básicas</h5>
+
+  <ul class="FCBasicsSettingsContent">
+    <li>
+      <span>Quantidade de descritores (cor, tamanho, voltagem etc)</span>
+      <div>
+        <i><code class="FCColorGreen9">qtyDescriptors</code></i> : <code class="FCColorBlueLight">define a quantidade de descritores utilizados pela loja.</code><br>
+        ex. se a loja utiliza <b>Cor</b> e <b>Tamanho</b> cadastrado no <i><a href="http://ajuda.Fastcommerce.com.br/n4288" target="_blank">Descritor Especial 1</a></i> o valor será <b class="FCColorOrageLight">2</b>:<br>
+        <pre><code class="FCColorGreen9">qtyDescriptors</code> : <b class="FCColorOrageLight">2</b></pre>
+      </div>
+    </li>
+    <li>
+      <span>Ordem de apresentação dos descritores ( 1° cor,  2° tamanho etc)</span>
+      <div>
+        <i><code class="FCColorGreen9">order</code></i> : <code class="FCColorBlueLight">define a ordem dos descritores que o cliente irá escolher.</code><br>
+        ex. para que o cliente escolhar primeiro a <b>cor</b> e depois o <b>tamanho</b> cadastrado no <i><a href="http://ajuda.Fastcommerce.com.br/n4288" target="_blank">Descritor Especial 1</a></i> o valor será:<br>
+        <pre><code class="FCColorGreen9">order</code> : [ <b class="FCColorOrageLight">'cor'</b>, <b class="FCColorOrageLight">'adicional1'</b> ] </pre>
+        Os descritores devem ser informados dentro de <i>colchetes</i>, entre <i>aspas simpes</i> (<b>'</b>) e separados por <i>vírgula</i> (<b>,</b>).
+      </div>
+    </li>
+    <li>
+      <span>Nome de apresentação para os descritores</span>
+      <div>
+        <i><code class="FCColorGreen9">nameDescriptor</code></i> : <code class="FCColorBlueLight">define o nome que será apresentado na grade para cada descritor</code><br>
+        ex. se a loja utiliza <b>Cor</b> e <b>Tamanho</b> cadastrado no <i><a href="http://ajuda.Fastcommerce.com.br/n4288" target="_blank">Descritor Especial 1</a></i> o valor será: <br>
+        <pre><code class="FCColorGreen9">nameDescriptor</code> : { cor : <b class="FCColorOrageLight">'Cor'</b>, adicional1 : <b class="FCColorOrageLight">'Tamanho'</b> } </pre>
+        Os descritores e seus repectivos nomes devem ser informados dentro de <i>chaves</i>, entre <i>aspas simpes</i> (<b>'</b>) para os nomes e separados por <i>vírgula</i> (<b>,</b>).
+      </div>
+    </li>
+    <li>
+      <span>Texto para exibir acima dos descritores</span>
+      <div>
+        <i><code class="FCColorGreen9">textDescriptor</code></i> : <code class="FCColorBlueLight">define um texto para cada descritor (opção) da grade</code><br>
+        ex. para o descritor <b>cor</b> é possível definir o texto: <i class="FCColorOrageLight">"Selecione a Cor"</i>. 
+        <pre><code class="FCColorGreen9">textDescriptor</code> : { cor : <b class="FCColorOrageLight">'Selecione a Cor'</b>, adicional1 : <b class="FCColorOrageLight">'Selecione o tamanho'</b> } </pre>
+      </div>
+    </li>
+
+  </ul>
+</div>
+
+<br><br>
+
+<h5>Veja as opções de personalização.</h5>
+<br>
+<br>
+<table class="FCTabGridTutor">
+  <tbody>
+    <tr>
+      <th width="15%"><b>Parâmetro</b></th>
+      <th width="22%"><b>Padrão</b></th>
+      <th width="25%"><b>Opções</b></th>
+      <th width="58%"><b>Descrição</b></th>
+    </tr>
+    <tr>
+      <td colspan="4" class="FCTabGridTutorTit">myOptions</td>
+    </tr>
+    <tr>
+      <td>autoSelect</td>
+      <td>true</td>
+      <td><b>true</b>/ <b>false</b></td>
+      <td>Seleciona automaticamente o primeiro subproduto caso seja utilizado a opção <b>true</b></td>
+    </tr>
+    <tr>
+      <td>cartOnPage</td>
+      <td>true</td>
+      <td><b>true</b>/ <b>false</b></td>
+      <td>Ativa o recurso <a href="http://ajuda.Fastcommerce.com.br/n12059" target="_blank">Adiciona produto à cesta sem sair da página</a> na <i><b>Grade</b></i> caso seja utilizado a opção <b>true</b> </td>
+    </tr>
+    <tr>
+      <td>shippingUpdate</td>
+      <td>true</td>
+      <td><b>true</b>/ <b>false</b></td>
+      <td>Ativa o recurso a simulação de frete com o peso do subproduto caso utilizado a opção <b>true</b> </td>
+    </tr>    
+    <tr>
+      <td>incMultGrid</td>
+      <td>true</td>
+      <td><b>true</b>/ <b>false</b></td>
+      <td>Ativa o recurso para <a href="http://ajuda.Fastcommerce.com.br/n7750" target="_blank">informar a quantidade de cada produto antes de colocá-lo na cesta</a> na <i><b>Grade</b></i> caso seja utilizado a opção <b>true</b> </td>
+    </tr>
+    <tr>
+      <td>separadorRGBCor</td>
+      <td>'|'</td>
+      <td>Caracteres</td>
+      <td>Define o caractere para seperar o <b>nome</b> e o valor Hexadecimal da <b>cor</b> cadastrado no produto</td>
+    </tr>
+    <tr>
+      <td>qtyDescriptors</td>
+      <td>2</td>
+      <td>números de 1 à 7</td>
+      <td>Define a quantidade máxima de descritores especiais e simples utilizandos nos produtos, incluí também a cor</td>
+    </tr>
+    <tr>
+      <td>htmlFlagChecked</td>
+      <td><i>'&lt;i class="FCCheckedGrid">&lt;/i>'</i></td>
+      <td>elemento html</td>
+      <td>Define o HTML para exibir o <i>check</i></td>
+    </tr>
+    <tr>
+      <td>imageProduct</td>
+      <td><i>'cor'</i></td>
+      <td>nome de um descritor ex.: <i>cor</i> e <i>descritor1</i></td>
+      <td>Define qual descritor será usado para alterar a imagem dos produto de acordo com o descritor clicado</td>
+    </tr>
+
+    <tr>
+      <td>colorName</td>
+      <td><i>false</i></td>
+      <td> <b>true</b>/ <b>false</b> </td>
+      <td>Define se será exibido o nome das cores, ex. vermelho</td>
+    </tr>
+
+    <tr>
+      <td>colorImg</td>
+      <td><i>false</i></td>
+      <td> <b>true</b>/ <b>false</b> </td>
+      <td>Define se será exibido imagens para as cores, ex. <img src="https://tenis.lojavirtualfct.com.br/lojas/00010130/prod/cores/Preto_Vermelho.gif"></td>
+    </tr>
+
+    <tr>
+      <td>colorImgFormat</td>
+      <td><i>'.gif'</i></td>
+      <td>extensões de arquivos de imagem ex. <i>.svg</i> e <i>.png</i></td>
+      <td>Define a extensão dos arquivos de imagem que serão para as cores ex. <img src="https://tenis.lojavirtualfct.com.br/lojas/00010130/prod/cores/Preto_Vermelho.gif"></td>
+    </tr>
+    <tr>
+      <td>stock</td>
+      <td>false</td>
+      <td><b>true</b>/ <b>false</b></td>
+      <td>Exibe o quantidade em estoque dos produtos caso seja utilizado a opção <b>true</b></td>
+    </tr>     
+    <tr>
+      <td>btnSelectImg</td>
+      <td>'BotSelecioneGrid.svg'</td>
+      <td>nome da imagem do botão</td>
+      <td>Nome do arquivo de imagem para o botão "selecionar"</td>
+    </tr>
+    <tr>
+      <td>btnBuyImg</td>
+      <td>'BotCarrinho.svg'</td>
+      <td>nome da imagem do botão</td>
+      <td>Nome do arquivo de imagem para o botão "comprar"</td>
+    </tr>
+    <tr>
+      <td>btnContactUSImg</td>
+      <td>'BotConsulteGrid.svg'</td>
+      <td>nome da imagem do botão</td>
+      <td>Nome do arquivo de imagem para o botão "consulte-nos"</td>
+    </tr>
+    <tr>
+      <td>btnSoldOut</td>
+      <td>'BotCarrinhoEsgotado.svg'</td>
+      <td>nome da imagem do botão</td>
+      <td>Nome do arquivo de imagem para o botão "esgotado"</td>
+    </tr>
+    <tr>
+      <td>textGrid</td>
+      <td>'Selecione as opções abaixo'</td>
+      <td><i>texto livre</i></td>
+      <td>Exibe um texto acima das opções da grade</td>
+    </tr>
+    <tr>
+      <td>order</td>
+      <td><i>['cor', 'descritor1', 'descritor2', 'descritor3', 'descritorD1', 'descritorD2', 'descritorD3']</i></td>
+      <td></td>
+      <td>Define a ordenação que os descritores serão exibidos na <i><b>Grade</b></i></td>
+    </tr>
+    <tr>
+      <td colspan="4" class="FCTabGridTutorTit">myOptions : nameDescriptor [ ]</td>
+    </tr>
+    <tr>
+      <td class="FCTabGridTutorSub">cor</td>
+      <td><i>'Cor'</i></td>
+      <td><i>nome para o descrito cor</i></td>
+      <td>Define o nome que será exibido para o descritor <b>Cor</b></td>
+    </tr>
+    <tr>
+      <td class="FCTabGridTutorSub">descritor1</td>
+      <td><i>'Adicional 1'</i></td>
+      <td><i>nome do descritor 1, ex. tamanho</i></td>
+      <td>Define o nome que será exibido para o <b>Descritor Adicional 1</b></td>
+    </tr>
+    <tr>
+      <td class="FCTabGridTutorSub">descritor2</td>
+      <td><i>'Adicional 2'</i></td>
+      <td><i>nome do descritor 2, ex. marca</i></td>
+      <td>Define o nome que será exibido para o <b>Descritor Adicional 2</b></td>
+    </tr>
+    <tr>
+    <tr>
+      <td class="FCTabGridTutorSub">descritor1</td>
+      <td><i>'Adicional 3'</i></td>
+      <td><i>nome do descritor 3</i></td>
+      <td>Define o nome que será exibido para o <b>Descritor Adicional 3</b></td>
+    </tr>
+    <tr>
+      <td class="FCTabGridTutorSub">descritorD1</td>
+      <td><i>'Adicional 4'</i></td>
+      <td><i>nome do descritor 4</i></td>
+      <td>Define o nome que será exibido para o <b>Descritor Simples 1</b></td>
+    </tr>
+    <tr>
+      <td class="FCTabGridTutorSub">descritorD2</td>
+      <td><i>'Adicional 5'</i></td>
+      <td><i>nome do descritor 5</i></td>
+      <td>Define o nome que será exibido para o <b>Descritor Simples 2</b></td>
+    </tr>
+    <tr>
+      <td class="FCTabGridTutorSub">descritorD3</td>
+      <td><i>'Adicional 6'</i></td>
+      <td><i>nome do descritor 6</i></td>
+      <td>Define o nome que será exibido para o <b>Descritor Simples 3</b></td>
+    </tr>
+    <tr>
+      <td colspan="4" class="FCTabGridTutorTit">myOptions : textDescriptor [ ]</td>
+    </tr>
+    <tr>
+      <td class="FCTabGridTutorSub">cor</td>
+      <td><i>'Selecione'</i></td>
+      <td><i>texto livre, ex. selecione a cor</i></td>
+      <td>Define o texto que será exibido para o descritor <b>Cor</b></td>
+    </tr>
+    <tr>
+      <td class="FCTabGridTutorSub">descritor1</td>
+      <td>'Selecione'</i></td>
+      <td><i>texto livre, ex. selecione o tamanho</i></td>
+      <td>Define o texto que será exibido para o <b>Descritor Adicional 1</b></td>
+    </tr>
+    <tr>
+      <td class="FCTabGridTutorSub">descritor2</td>
+      <td><i>'Selecione'</i></td>
+      <td><i>texto livre, ex. selecione o modelo</i></td>
+      <td>Define o texto que será exibido para o <b>Descritor Adicional 2</b></td>
+    </tr>
+    <tr>
+      <td class="FCTabGridTutorSub">descritor3</td>
+      <td><i>'Selecione'</i></td>
+      <td><i>texto livre, ex. selecione a voltagem</i></td>
+      <td>Define o texto que será exibido para o <b>Descritor Adicional 3</b></td>
+    </tr>
+    <tr>
+      <td class="FCTabGridTutorSub">descritorD1</td>
+      <td><i>'Selecione'</i></td>
+      <td><i>texto livre</i></td>
+      <td>Define o texto que será exibido para o <b>Descritor Simples 1</b></td>
+    </tr>
+    <tr>
+      <td class="FCTabGridTutorSub">descritorD2</td>
+      <td><i>'Selecione'</i></td>
+      <td><i>texto livre</i></td>
+      <td>Define o texto que será exibido para o <b>Descritor Simples 2</b></td>
+    </tr>
+    <tr>
+      <td class="FCTabGridTutorSub">descritorD3</td>
+      <td><i>'Selecione'</i></td>
+      <td><i>texto livre</i></td>
+      <td>Define o texto que será exibido para o <b>Descritor Simples 3</b></td>
+    </tr>
+  </tbody>
+</table>
+<br>
+
+<h4>Exemplos</h4>
+
+<p>Configuração simples para grade que utiliza Cor e Tamanho (Descritor Especial 1):</p>
+<pre>
+&lt;script type="text/javascript">
+<b>FCGrid$</b>.<code class="FCColorRedBlack">myOptions</code> = {
+  qtyDescriptors : <b class="FCColorOrageLight">2</b>,
+  order : [<b class="FCColorOrageLight">'cor'</b>, <b class="FCColorOrageLight">'adicional1'</b>],
+  nameDescriptor : { 
+    cor : <b class="FCColorOrageLight">'Cor'</b>,
+    adicional1 : <b class="FCColorOrageLight">'Tamanho'</b>
+  },
+  textDescriptor : {
+    cor : <b class="FCColorOrageLight">'Selecione a cor'</b>,
+    adicional1 : <b class="FCColorOrageLight">'Selecione o tamanho'</b>
+  }
+};
+&lt;/script>
+</pre>
+<br>
+
+<p>Configuração completa</p>
+<pre>
+&lt;script type="text/javascript">
+<b>FCGrid$</b>.<code class="FCColorRedBlack">myOptions</code> = {
+  autoSelect : <b class="FCColorOrageLight">false</b>,
+  cartOnPage : <b class="FCColorOrageLight">false</b>,
+  shippingUpdate : <b class="FCColorOrageLight">false</b>,
+  incMultGrid : <b class="FCColorOrageLight">false</b>,
+  separadorRGBCor : <b class="FCColorOrageLight">'|'</b>,
+  qtyDescriptors : <b class="FCColorOrageLight">7</b>,
+  htmlFlagChecked : <b class="FCColorOrageLight">'&lt;i class="FCCheckedGrid">&lt;/i>'</b>,
+  imageProduct : <b class="FCColorOrageLight">'cor'</b>,
+  colorName : <b class="FCColorOrageLight">false</b>,
+  colorImg : <b class="FCColorOrageLight">false</b>, 
+  colorImgFormat : <b class="FCColorOrageLight">'.gif'</b>,
+  stock : <b class="FCColorOrageLight">false</b>,
+  btnSelectImg : <b class="FCColorOrageLight">'BotSelecioneGrid.svg'</b>, 
+  btnBuyImg : <b class="FCColorOrageLight">'BotCarrinho.svg'</b>,
+  btnContactUSImg : <b class="FCColorOrageLight">'BotConsulteGrid.svg'</b>,
+  btnSoldOut : <b class="FCColorOrageLight">'BotCarrinhoEsgotado.svg'</b>, 
+  textGrid : <b class="FCColorOrageLight">'Selecione as opções abaixo'</b>,
+  order : [<b class="FCColorOrageLight">'cor', 'adicional1', 'adicional2', 'adicional3', 'adicionalD1', 'adicionalD2', 'adicionalD3'</b>],
+  nameDescriptor : { 
+    cor : <b class="FCColorOrageLight">'Cor'</b>,
+    adicional1 : <b class="FCColorOrageLight">'Descritor 1'</b>,
+    adicional2 : <b class="FCColorOrageLight">'Descritor 2'</b>,
+    adicional3 : <b class="FCColorOrageLight">'Descritor 3'</b>,
+    adicionalD1 : <b class="FCColorOrageLight">'Descritor 4'</b>,
+    adicionalD2 : <b class="FCColorOrageLight">'Descritor 5'</b>,
+    adicionalD3 : <b class="FCColorOrageLight">'Descritor 6'</b>
+  },
+  textDescriptor : {
+    cor : <b class="FCColorOrageLight">'Selecione'</b>,
+    adicional1 : <b class="FCColorOrageLight">'Selecione'</b>,
+    adicional2 : <b class="FCColorOrageLight">'Selecione'</b>,
+    adicional3 : <b class="FCColorOrageLight">'Selecione'</b>,
+    adicionalD1 : <b class="FCColorOrageLight">'Selecione'</b>,
+    adicionalD2 : <b class="FCColorOrageLight">'Selecione'</b>,
+    adicionalD3 : <b class="FCColorOrageLight">'Selecione'</b>
+  }
+};
+&lt;/script>
+</pre>
+
+<br><br>
+
+<h5><b>Como utilizar imagens para as cores?</b></h5><br>
+
+<h5><b>1. Configuração da grade</b></h5>
+<p>Utilize o parâmetro:</p>
+<pre>colorImg : <b class="FCColorOrageLight">true</b></pre>
+
+<h5>Exemplos</h5>
+
+<p>Configuração simples para grade que utiliza Cor e Tamanho (Descritor Especial 1):</p>
+<pre>
+&lt;script type="text/javascript">
+<b>FCGrid$</b>.<code class="FCColorRedBlack">myOptions</code> = {
+  qtyDescriptors : <b class="FCColorOrageLight">2</b>,
+  <code class="FCColorGreen9"><b>colorImg</b></code> : <b class="FCColorOrageLight">true</b>
+  order : [<b class="FCColorOrageLight">'cor'</b>, <b class="FCColorOrageLight">'adicional1'</b>],
+  nameDescriptor : { 
+    cor : <b class="FCColorOrageLight">'Cor'</b>,
+    adicional1 : <b class="FCColorOrageLight">'Tamanho'</b>
+  },
+  textDescriptor : {
+    cor : <b class="FCColorOrageLight">'Selecione a cor'</b>,
+    adicional1 : <b class="FCColorOrageLight">'Selecione o tamanho'</b>
+  }
+};
+&lt;/script>
+</pre>
+
+<br>
+<h5><b>2. Cadastro das cores na loja</b></h5>
+<p>Cadastre as cores na página <i><b>Dados da Loja</b></i> &raquo; <i><b>Produtos</b></i> &raquo;  clicando na seta a direita do campo <i><b>"Exibe cores"</b></i>, informe o nome da cor, selecione uma cor <i>hexadecimal</i> (#<b>000000</b>) na tabela de cores e clique no botão <b><i>incluir</b></i>. Para mais detalhes sobre como cadastrar novas cores e demais descritores para os produtos <a href="http://ajuda.Fastcommerce.com.br/n4288" target="_blank" title="Clique para ver como cadastrar cores e outras características dos produtos">veja o nosso artigo de ajuda</a>.</p>
+
+<p>Crie uma pasta com o nome <b>CORES</b> dentro da pasta <b>PROD</b> no <b>Gerenciador de Arquivos</b> da loja e envie os arquivos de imagens das cores.</p> 
+<p>O nome do arquivo da imagem deve ser igual ao nome da cor cadastrada na loja. Caso a cor seja composta por mais de um nome, utilize o sinal de <b>+</b> (mais).</p>
+<p><b>Exemplo:</b> se o nome da cor é <code>Azul<b>+</b>Escuro</code>, o nome da imagem enviada para a pasta <i><b>CORES</i></b> deve ser  <code>Azul_Escuro.gif</code>, substitua o sinal de <b>+</b> (mais) por <b>_</b> (<i>underscore / underline</i>).</p>
+
+<br>
+<h5><b>Exemplos</b></h5><br>
+
+<div class="FCTabGridTutorCorlors">
+  <div>
+    <b>Cor simples</b>
+    
+    <span>Nome cadastrado na loja: <code>vermelho</code></span>
+    <span>Nome do arquivo de imagem: <code>vermelho.gif</code></span>    
+  </div>
+  <div>
+    <b>Cor simples</b>
+    
+    <span>Nome cadastrado na loja: <code>azul</code></span>
+    <span>Nome do arquivo de imagem: <code>azul.gif</code></span> 
+  </div>
+  <div>
+    <b>Combinação de cores</b>
+    
+    <span>Nome cadastrado na loja: <code>preto+</b>vermelho </code></span>
+    <span>Nome do arquivo de imagem: <code>preto_</b>vermelho.gif</code></span>    
+  </div>
+</div>
+<br>
+<div class="FCColorsList">
+  <h5>Cores simples</h5>
+  <div class="FCSimpleColor">
+        <code>Rosa <br> Rosa.gif</code> 
+  </div>
+  <div class="FCSimpleColor">
+        <code>Cinza <br> Cinza.gif</code>
+  </div>
+  <div class="FCSimpleColor" class="FCSimpleColor">
+    
+    <code>vermelho <br> vermelho.gif</code>
+  </div>
+  <div class="FCSimpleColor">
+    
+    <code>Preto <br> Preto.gif</code>
+  </div>
+  <div class="FCSimpleColor">
+    
+    <code>Azul <br> Azul.gif</code>
+  </div>
+
+  <h5>Cores combinadas</h5>
+  <div class="FCCombineColor">
+   
+    <code>Preto+Rosa <br> Preto_Rosa.gif</code>
+  </div>
+  <div class="FCCombineColor">
+    
+    <code>Preto+Cinza <br> Preto_Cinza.gif</code>
+  </div>
+  <div class="FCCombineColor">
+ 
+    <code>Preto+azul <br> Preto_azul.gif</code>
+  </div>
+  <div class="FCCombineColor">
+    
+    <code>Preto+Amarelo <br> Preto_Amarelo.gif</code>
+  </div>
+  <div class="FCCombineColor">
+   
+    <code>Vermelho+Laranja <br> Vermelho_Laranja.gif</code>
+  </div>
+  <div class="FCCombineColor">
+    
+    <code>Cinza+AzulClaro <br> Cinza_AzulClaro.gif</code>
+  </div>
+  <div class="FCCombineColor">
+  
+    <code>Cinza+Vermelho <br> Cinza_Vermelho.gif</code>
+  </div>
+</div>
+
+<br>
+<!--
+<div class="FCBasicsSettingsMain">
+  <h5>Personalziação CSS</h5>
+  <p>Seguem as principais classes CSS para personalização da grade:</p>
+</div>
+-->
+
+</div>
+</body>

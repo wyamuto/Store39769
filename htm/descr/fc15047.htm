@@ -1,0 +1,191 @@
+<style>
+.fc-container-full-video{width:100%;display:flex;flex-flow:row wrap;justify-content:space-between;}
+.fc-container-video .fc-product-name a{color:#000000;}
+.fc-container-video .fc-product-btn a{color:#ffffff;}
+.fc-container-video{background:#ffffff;padding:15px;margin:10px 0;border:1px solid #e0e0e0;max-width:210px;cursor:pointer;}
+.fc-container-video .fc-product-name{width:180px;font-size:1.6rem;font-weight:bold;text-align:center;margin-bottom:20px;display:flex;align-items:center;justify-content:center;display:-webkit-flex;-webkit-align-items:center;-webkit-justify-content:center;}
+.fc-container-video .fc-product-btn{background:#c3aa6b;padding:15px;margin-top:15px;color:#ffffff;font-weight:bold;border-radius:2px;display:flex;align-items:center;justify-content:center;display:-webkit-flex;-webkit-align-items:center;-webkit-justify-content:center;}
+.imgbordercolor{border:1px solid #eeeeee;}
+</style>
+
+<p>A principal vantagem do vídeo é mostrar o produto em diversos ângulos. O vídeo atrairá a atenção do visitante para o produto, mesmo que ele esteja em uma lista de produtos.</p>
+
+<p>Veja o exemplo abaixo, que contém vários produtos mas apenas um utiliza vídeo. Estatisticamente este produto venderá mais:
+<br>
+
+<div class="fc-container-full-video">
+  <div class="fc-container-video">
+    <a href="#"><img src="/lojas/00000009/prod/fc/fc15047-tfas053p1.png?cccfc=1" border=0></a>
+    <span class="fc-product-name"><a href="#" target="_blank">Vestido Facinelli Paris Longo</a></span>
+    <span class="fc-product-btn"><a href="#" target="_blank">MAIS DETALHES</a></span>
+  </div>
+  <div class="fc-container-video">
+    <video preload="auto" autoplay loop src="/dnload/dress01.mp4?cccfc=1" style="height:220px;margin:10px 0 15px 0"></video>
+    <span class="fc-product-name"><a href="#" target="_blank">Vestido Lucidez Longo Listrado Vermelho</a></span>
+    <span class="fc-product-btn"><a href="#" target="_blank">MAIS DETALHES</a></span>
+  </div>
+  <div class="fc-container-video">
+    <a href="#"><img src="/lojas/00000009/prod/fc/fc15047-tfas054p1.png?cccfc=1" border=0></a>
+    <span class="fc-product-name"><a href="#" target="_blank">Vestido jeans FiveBlue Babado Azul</a></span>
+    <span class="fc-product-btn"><a href="#" target="_blank">MAIS DETALHES</a></span>
+  </div>
+</div>
+<br>
+
+<p>O vídeo não deve interferir no design e na usabilidade da loja. Para isto, ele precisa utilizar a mesma área destinada à imagem do produto. Além disso, ao acessar a loja por tablet e celular o vídeo não tocará automaticamente, melhorando a performance da loja e a experiência do usuário.</p>
+
+<h3>Veja como implementar:</h3>
+<br>
+<span class="dest NewsPassos">1º Passo</span>
+<p>Para hospedar o vídeo, escolha um serviço consagrado e que ofereça garantias de performance e estabilidade (ex: <a href=https://aws.amazon.com/pt/s3/ target=_blank>Amazon S3</a>). Para testes, hospede gratuitamente no <a href="https://mixtape.moe/" target="_blank">Mixtape.moe</a>, seguindo o procedimento abaixo:</p>
+<br>
+
+<p>&bull; Clique em <b>Select or drop your file(s)</b> e envie o vídeo.</p>
+<a href="https://mixtape.moe/" target="_blank"><img src="/lojas/00000009/prod/fc/fc15047-9.png" border="0" width="450" class="img-responsive imgbordercolor"></a>
+<br><br>
+
+<p>&bull; Após enviar o arquivo uma URL é criada dinamicamente.</p>
+<img src="/lojas/00028496/prod/fc/fc15047-10.png" border="0" width="450" class="img-responsive imgbordercolor">
+<br><br>
+
+<p>&bull; Copie da URL somente o nome do arquivo que está em negrito: https://my.mixtape.moe/<b>zjmqbn</b>.mp4</p>
+<br>
+
+<p><b>OBS:</b> Cada vídeo tem um <b>nome</b> próprio. Repita as etapas acima para obter o <b>nome</b> de cada vídeo.</p>
+
+<br>
+<span class="dest NewsPassos">2º Passo</span>
+<p>No menu esquerdo da administração, clique em <b>Dados da loja</b>. Na seção <b>Produtos</b> cadastre um filtro chamado <b>video</b>:</p>
+<img src="/lojas/00000009/prod/fc/fc15047-11.png" border="0" width="584" class="img-responsive imgbordercolor">
+<br><br>
+
+<p>Preencha os campos do filtro da seguinte forma:</p>
+<p>&bull; O nome do filtro <b>video</b> deverá ser escrito em minúsculo e sem acento.</p>
+<p>&bull; No campo <b>Tipo</b> selecione a opção <b>Geral</b>.</p>
+<p>&bull; Nos campos <b>Pedido</b> e <b>Loja</b> selecione a opção <b>Não exibe</b>.</p>
+<p>&bull; Marque o campo <b>Ativo</b> e clique em <b>Incluir</b>.</p>
+<img src="/lojas/00000009/prod/fc/fc15047-12.png" border="0" width="752" class="img-responsive imgbordercolor">
+<br><br>
+
+<p>&bull; Após cadastrar o filtro <b>video</b>, selecione o filtro <b>video</b> à esquerda e clique em <b>Ver itens</b>.</p>
+<img src="/lojas/00000009/prod/fc/fc15047-13.png" border="0" width="752" class="img-responsive imgbordercolor">
+<br><br>
+
+<p>&bull; No campo <b>Item</b>, cole o <b>nome</b> do vídeo sem a extensão .mp4 e clique em <b>Incluir</b>.</p>
+<img src="/lojas/00000009/prod/fc/fc15047-14.png" border="0" width="752" class="img-responsive imgbordercolor">
+<br><br>
+
+<p>&bull; Após cadastrar os vídeos no filtro, acesse a ficha do produto.</p>
+
+<p>&bull; Na seção filtros, selecione o <b>vídeo</b> e clique em <b>Adicionar</b>.</p>
+<img src="/lojas/00000009/prod/fc/fc15047-15.png" border="0" width="685" class="img-responsive imgbordercolor">
+<br><br>
+
+<p>&bull; Clique no botão verde <b>Alterar</b> no final da página para salvar o produto.</p>
+<br>
+
+<h3>Veja como implementar na lista de produtos</h3>
+
+<br>
+<span class="dest NewsPassos">1º Passo</span>
+<p>Insira as linhas abaixo no final do arquivo <b>lojasite.css</b>:</p>
+<pre>/* Video and Image Product */
+.videoProd{max-width:180px;max-height:200px;}</pre>
+<br>
+
+<span class="dest NewsPassos">2º Passo</span>
+<p>Acesse o arquivo <b>lojalib.js</b> e cole o script no final do arquivo:</p>
+<pre>// Video and Image Product
+function fnShowVideo(IDProduto,oProdFilters,sImagemProdPri,sNomeProd){
+var sVideo="";
+if(oProdFilters.length>0){
+var iFiltroVideo=oProdFilters[0].pFilNames["video"];
+if(iFiltroVideo!=undefined)sVideo=oProdFilters[0].pFil[iFiltroVideo].value;
+}
+fnVideoImage(IDProduto,sVideo,sImagemProdPri,sNomeProd);
+}
+
+function fnVideoImage(IDProduto,videoProduct,ImagemProdPri,NomeProd){
+var replaceNomeProd = NomeProd.replace(/-/g,' ');
+if (videoProduct==""){
+document.getElementById("id-video-image"+IDProduto).innerHTML="&lt;div class='ImgCapaListProd DivListproductStyleImagemZoom'>&lt;img src="+ ImagemProdPri +"  alt=\""+ replaceNomeProd +"\" onerror='MostraImgOnError(this,0)'>&lt;/div>";
+}else{
+document.getElementById("id-video-image"+IDProduto).innerHTML = "&lt;video id=prodVideo"+ IDProduto +" class='videoProd' preload=auto onmouseover=this.play() src='https://my.mixtape.moe/"+ videoProduct +".mp4'>&lt;/video>";
+}
+}</pre>
+
+<br>
+<span class="dest NewsPassos">3º Passo</span>
+<p>Acesse o arquivo <b>estiloproduto.htm</b>. Dentro da tag <b>&lt;ProdLista></b> insira o script abaixo no local da tag <b>&lt;ImagemProd></b> e salve o arquivo.</p>
+
+<pre>&lt;div id="id-video-image&lt;IDProduto>">&lt;/div>
+&lt;script>fnShowVideo(&lt;IDProduto>,[&lt;ProdFiltersJS>],'&lt;ImagemProdPri>',"&lt;NomeProdUA>");&lt;/script></pre>
+<br><br>
+
+<h3>Veja como implementar na página principal da loja (Home)</h3>
+
+<br>
+<span class="dest NewsPassos">1º Passo</span>
+<p>Se existir o estilo abaixo não é necessário incluir.</p>
+<p>Insira as linhas abaixo no final do arquivo <b>lojasite.css</b>:</p>
+<pre>/* Video and Image Product */
+.videoProd{max-width:180px;max-height:200px;}</pre>
+<br>
+
+<span class="dest NewsPassos">2º Passo</span>
+<p>Se existir o script abaixo não é necessário incluir.</p>
+<p>Acesse o arquivo <b>lojalib.js</b> e cole o script no final do arquivo:</p>
+<pre>// Video and Image Product
+function fnShowVideo(IDProduto,oProdFilters,sImagemProdPri,sNomeProd){
+  var sVideo="";
+  if(oProdFilters.length>0){
+    var iFiltroVideo=oProdFilters[0].pFilNames["video"];
+    if(iFiltroVideo!=undefined)sVideo=oProdFilters[0].pFil[iFiltroVideo].value;
+  }
+  fnVideoImage(IDProduto,sVideo,sImagemProdPri,sNomeProd);
+}
+
+function fnVideoImage(IDProduto,videoProduct,ImagemProdPri,NomeProd){
+  var replaceNomeProd = NomeProd.replace(/-/g,' ');
+  if (videoProduct==""){
+    document.getElementById("id-video-image"+IDProduto).innerHTML="&lt;div class='ImgCapaListProd DivListproductStyleImagemZoom'>&lt;img src="+ ImagemProdPri +"  alt=\""+ replaceNomeProd +"\" onerror='MostraImgOnError(this,0)'>&lt;/div>";
+  }else{
+   document.getElementById("id-video-image"+IDProduto).innerHTML="&lt;video id=prodVideo"+ IDProduto +" class='videoProd' preload=auto loop src='https://my.mixtape.moe/"+ videoProduct +".mp4'>&lt;/video>";
+   function execVideoEvents(){
+    var oVideo=document.getElementById("prodVideo"+IDProduto);
+    if(FCLib$.isOnScreen(oVideo))oVideo.play();
+   }
+   execVideoEvents();
+   FCLib$.AddEvent(document,"scroll",execVideoEvents);
+  }
+}</pre>
+
+<br>
+<span class="dest NewsPassos">3º Passo</span>
+<p>Acesse o arquivo <b>estiloprodutoout.htm</b> e altere de:</p>
+<pre>&lt;a href="&lt;URLProd>" class="ImgCapaProd">&lt;ImagemProd>&lt;/a></pre>
+<br>
+
+<p>Para:</p>
+<pre>&lt;div id="id-video-image&lt;IDProduto>">&lt;/div>
+&lt;script>fnShowVideo(&lt;IDProduto>,[&lt;ProdFiltersJS>],'&lt;ImagemProdPri>',"&lt;NomeProdUA>");&lt;/script></pre>
+<br><br>
+
+<h3>Como implementar na página de detalhes do produto</h3>
+<br>
+<p>Existem várias maneiras de apresentar vídeo na página de detalhes de produtos. Por exemplo, o vídeo pode ser exibido junto com as imagens ampliadas do produto. Se a loja utiliza grade de produtos para mostrar variações de tamanho e cor de um produto, o vídeo poderá ser exibido de acordo com a cor escolhida. Entre em contato com nossa equipe de suporte para mais informações.</p>
+
+<br><br>
+<hr>
+<h3>Dicas para vender mais com vídeos</h3>
+<ul>
+<li>Escolha seus melhores produtos</li>
+<li>Tamanho máximo de 2MB por vídeo</li>
+<li>Evite vídeos tremidos</li>
+<li>Nunca utilize áudio</li>
+<li>Coloque background transparente ou branco</li>
+<li>Extensão .mp4</li>
+</ul>
+<hr>
+<br><br>
+<p><b>ATENÇÃO:</b> O <b>Mixtape.moe</b> é um serviço gratuito e pouco conhecido para hospedagem de arquivos. Sugerimos que ele seja utilizado somente para testes. Para hospedar seus vídeos de produtos, escolha um serviço consagrado e que ofereça garantias de performance e estabilidade, como por exemplo o <a href=https://aws.amazon.com/pt/s3/ target=_blank>Amazon S3</a>.</p>

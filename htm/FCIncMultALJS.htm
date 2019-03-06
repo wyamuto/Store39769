@@ -1,0 +1,28 @@
+<link href='http://www.fastcommerce.com.br/lojas/00000009/htm/LojaSite.css' rel='stylesheet' type='text/css'>
+
+<span class=courrierpeq>//Filtros<br />
+function AjustaFiltros(){ <br />
+  var bTemPathQts=false;<br />
+  var oUlPathCatQt=document.getElementById("idUlPathCatQtFC");<br />
+  if(oUlPathCatQt){bTemPathQts=true;}else{document.getElementById('idListaProdCategoriasFC').style.display='none';}<br />
+  var oUlAdic1Qt=document.getElementById("idUlAdic1QtFC");<br />
+  if(oUlAdic1Qt){bTemPathQts=true;}else{document.getElementById('idListaProdAdicional1FC').style.display='none';}<br />
+  var oUlAdic2Qt=document.getElementById("idUlAdic2QtFC");<br />
+  if(oUlAdic2Qt){bTemPathQts=true;}else{document.getElementById('idListaProdAdicional2FC').style.display='none';}<br />
+  var oUlAdic3Qt=document.getElementById("idUlAdic3QtFC");<br />
+  if(oUlAdic3Qt){bTemPathQts=true;}else{document.getElementById('idListaProdAdicional3FC').style.display='none';}<br />
+  //Caso não tenha produtos em categorias/adicionais encontrados, remove div<br />
+  if(!bTemPathQts)document.getElementById("idDivPath").style.display='none';<br />
+  //Caso não tenha filtros de busca, remove div com filtros<br />
+  var oUlPathSearch=document.getElementById("idUlPathSearchFC");<br />
+  if(oUlPathSearch==null)document.getElementById("idDivSearch").style.display='none';<br />
+}<br /><br />
+
+//Exibir botão Indique o produto<br />
+function MostraBotIndique(IDProduto){<br />
+  document.write("&lt;center>&lt;span class=mnText>&lt;a href='javascript:MostraIndiqueCaptcha("+IDLojaNum+","+IDProduto+")' class=RodapeMenu>&lt;img src="+sCaminhoImagens+"r.gif border=0 vspace=2>&lt;br>Recomende&lt;br>este produto&lt;/a>&lt;/span>&lt;/center>");<br />
+}<br />
+//Exibir botão Avaliação do produto<br />
+function MostraBotAval(IDProduto){<br />
+  document.write("&lt;center>&lt;span class=mnText>&lt;a href='Opiniao.asp?IDLoja="+IDLoja+"&IDProduto="+IDProduto+"' class=RodapeMenu>&lt;img src="+sCaminhoImagens+"IcAvalie.png border=0 vspace=2>&lt;br>Avalie este&lt;br>produto&lt;/a>&lt;/span>&lt;/center>");<br />
+}</span>

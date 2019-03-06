@@ -1,0 +1,54 @@
+<link rel="stylesheet" type="text/css" href="../lojas/00028496/htm/Descr.css">
+
+<p>Através de um questionário de avaliação de compra, o IBOPE certificará as lojas de comércio eletrônico pelo seu desempenho pós-venda com um selo de qualidade.</p>
+
+
+
+<p>Ao final do pedido, os clientes preencherão um questionário opcional de avaliação e darão uma nota para a loja virtual, que será publicada em seu site, junto com seus comentários.</p>
+
+
+<p><b>Benefícios do E-tail Review:</b></p>
+
+<ul><li>Certificado com a marca IBOPE</li><li>Mais confiança e segurança para e-consumidores</li><li>Melhora na reputação da loja</li><li>Melhora da conversão</li><li>Crescimento das vendas</li></ul>
+
+<p>Para conhecer melhor esse produto, entre em contato com a equipe comercial do IBOPE, através do e-mail <a href='mailto:ecommerce@ibope.com.br'>ecommerce@ibope.com.br</a>.</p>
+
+<p>Após a contratação, adicione o script abaixo ao final do arquivo <b>ConfirmacaoPedido.htm</b>. Altere onde está <b>99AA-99999-9AAA-99A99</b> pelo código da loja enviado pelo IBOPE.</p>
+
+<span>
+<pre>
+&lt;script type="text/javascript">
+function sendBuy(e,t,n,r,i,s){
+  var o=document.createElement("div");
+  o.innerHTML='&lt;iframe height="1" width="1" style="visibility:hidden;display:none" >&lt;/iframe>';
+  document.body.appendChild(o);
+  var u=o.firstChild;
+  var a=u.contentDocument||u.contentWindow.document;
+  a.open();
+  a.close();
+  var f=a.createElement("form");a.body.appendChild(f);
+  f.setAttribute("action",s);
+  f.setAttribute("method","POST");
+  var l=[{name:"storeSerialNumber",val:e},{name:"buyerName",val:t},{name:"buyerEmail",val:n},{name:"buyOrder",val:r},{name:"buyDate",val:i}];
+  var c=0;for(c=0;c&lt;l.length;c++){var h=a.createElement("input");h.setAttribute("type","hidden");h.setAttribute("name",l[c].name);h.setAttribute("value",l[c].val);f.appendChild(h)}
+  f.submit()
+}
+
+var oDataIbope=new Date();
+var iAnoIbope=oDataIbope.getFullYear();
+var iMesIbope=oDataIbope.getMonth()+1;
+var iDiaIbope=oDataIbope.getDate();
+
+if(iMesIbope&lt;=9){iMesIbope="0"+iMesIbope;}
+if(iDiaIbope&lt;=9){iDiaIbope="0"+iDiaIbope;}
+
+var buyerName = "&lt;NomeCompletoCliente>";
+var buyerEmail = "&lt;EmailCliente>";
+var buyOrder = "&lt;NumPedido>";
+var buyDate = iAnoIbope+"-"+iMesIbope+"-"+iDiaIbope;
+var storeSerialNumber = "<span><b>99AA-99999-9AAA-99A99</b></span>";
+sendBuy(storeSerialNumber, buyerName, buyerEmail, buyOrder, buyDate, "https://loja.etailreview.ibopeecommerce.com.br/receiver/post");
+&lt;/script>
+
+</pre></span>
+<p>O IBOPE enviará também um script para exibir o selo do E-tail Review, que pode ser adicionado em qualquer local de design da loja.</p>

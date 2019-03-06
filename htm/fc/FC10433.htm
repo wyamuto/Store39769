@@ -1,0 +1,60 @@
+<link href='http://www.fastcommerce.com.br/lojas/00000009/htm/LojaSite.css' rel='stylesheet' type='text/css'>
+
+<span class=dest>1º Passo</span>
+Adicione no começo do arquivo <b>BarraTopo.htm</b> o código abaixo:
+
+<pre><div id=schemaHtml><h1>&lt;script></h1><span class=titpeqverde>//Guarda em variável a página atual</span>
+var sPagAtual<b>=</b>document.location.href.toUpperCase<b>()</b>;
+var isPaginaPedido<b>=(</b>sPagAtual.indexOf<b>(</b><i>"FORMAPAGTO.ASP"</i><b>)!=-</b><i>1</i> <b>||</b> sPagAtual.indexOf<b>(</b><i>"RECALCULA.ASP"</i><b>)!=-</b><i>1</i> <b>||</b> sPagAtual.indexOf<b>(</b><i>"CADASTRO"</i><b>)!=-</b><i>1</i><b>)</b>
+<h1>&lt;/script></h1></div></pre>
+
+<br><br>
+
+<span class=dest>2º Passo</span>
+Segue exemplo de código para ser utilizado no arquivo <b>BarraTopo.htm</b>:
+
+<pre><div id=schemaHtml><h1>&lt;div id<i>=LayoutNormal_BarraTopo</i> style<i>="display:none"</i>></h1>  Design do topo normal (até a cesta de produtos).
+<h1>&lt;/div>
+
+&lt;div id<i>=LayoutPedido_BarraTopo</i> style<i>="display:none"</i>></h1>  Design do topo para os passos de finalização do pedido:
+  (cálculo de frete, escolha da forma de pagamento, cadastro, confirmação do pedido e pedido confirmado.)
+<h1>&lt;/div>
+
+&lt;script></h1>if<b>(</b>isPaginaPedido<b>)</b><h1>{</h1>  document.getElementById<b>(</b>"<i>LayoutNormal_BarraTopo"</i><b>)</b>.style.display=<i>'none'</i>;
+  document.getElementById<b>(</b>"<i>LayoutPedido_BarraTopo"</i><b>)</b>.style.display=<i>''</i>;
+<h1>}</h1>else <h1>{</h1>  document.getElementById<b>(</b>"<i>LayoutPedido_BarraTopo"</i><b>)</b>.style.display=<i>'none'</i>;
+  document.getElementById<b>(</b>"<i>LayoutNormal_BarraTopo"</i><b>)</b>.style.display=<i>''</i>;
+<h1>}</h1><h1>&lt;/script></h1></div></pre>
+
+
+<br><br>
+
+<span class=dest>3º Passo</span>
+Segue exemplo de código para ser utilizado no arquivo <b>BarraEsquerda.htm</b> (caso a loja utilize esta barra):
+
+<pre><div id=schemaHtml><h1>&lt;div id<i>=LayoutNormal_BarraEsquerda</i> style<i>="display:none"</i>></h1>  Design da barra da esquerda normal (até a cesta de produtos).
+<h1>&lt;/div>
+
+&lt;script></h1>if<b>(</b>isPaginaPedido<b>)</b><h1>{</h1>  document.getElementById<b>(</b>"<i>LayoutNormal_BarraEsquerda"</i><b>)</b>.style.display=<i>'none'</i>;
+  document.write<b>(</b>"<i>&lt;style>.FundoBarraEsquerda{width:1px}&lt;/style>"</i><b>)</b>;
+  document.write<b>(</b>"<i>&lt;!--[if IE]>&lt;style>.FundoBarraEsquerda{width:40px}&lt;/style>&lt;![endif]-->"</i><b>)</b>;
+<h1>}</h1>else <h1>{</h1>  document.getElementById<b>(</b>"<i>LayoutNormal_BarraEsquerda"</i><b>)</b>.style.display=<i>''</i>;
+<h1>}</h1><h1>&lt;/script></h1></div></pre>
+
+<br><br>
+
+<span class=dest>4º Passo</span>
+Segue exemplo de código para ser utilizado no arquivo <b>Rodape.htm</b>:
+
+<pre><div id=schemaHtml><h1>&lt;div id<i>=LayoutNormal_Rodape</i> style<i>="display:none"</i>></h1>  Design do rodapé normal (até a cesta de produtos).
+<h1>&lt;/div>
+
+&lt;div id<i>=LayoutPedido_Rodape</i> style<i>="display:none"</i>></h1>  Design do rodapé para os passos de finalização do pedido:
+  (cálculo de frete, escolha da forma de pagamento, cadastro, confirmação do pedido e pedido confirmado.)
+<h1>&lt;/div>
+
+&lt;script></h1>if<b>(</b>isPaginaPedido<b>)</b><h1>{</h1>  document.getElementById<b>(</b>"<i>LayoutNormal_Rodape"</i><b>)</b>.style.display=<i>'none'</i>;
+  document.getElementById<b>(</b>"<i>LayoutPedido_Rodape"</i><b>)</b>.style.display=<i>''</i>;
+<h1>}</h1>else <h1>{</h1>  document.getElementById<b>(</b>"<i>LayoutPedido_Rodape"</i><b>)</b>.style.display=<i>'none'</i>;
+  document.getElementById<b>(</b>"<i>LayoutNormal_Rodape"</i><b>)</b>.style.display=<i>''</i>;
+<h1>}</h1><h1>&lt;/script></h1></div></pre>

@@ -1,0 +1,153 @@
+<link href='http://ajuda.fastcommerce.com.br/lojas/00000009/htm/LojaSite.css' rel='stylesheet' type='text/css'>
+<script language="JavaScript" src="https://www.rumo.com.br/sistema/magiczoom.js"></script>
+<style>
+/* Zoom IMG Detalhe */
+.ZoomIMG {border-width: 1px;border-style:solid;border-color:#e0e0e0}
+.MagicZoom img {border-width: 0px; !important;padding: 0 !important;margin: 0 !important;}
+.MagicZoomBigImageCont {border: 1px solid #999;}
+.MagicZoomHeader {font-size: 8pt !important;line-height: normal !important;color: #fff;background: #666;text-align: center !important;}
+.MagicZoomPup {border: 1px solid #aaa;background: #fff;cursor: move;}
+.MagicZoomLoading {border: 1px solid #ccc;background: #fff url(../images/ajax-loader.gif) no-repeat 2px 50%;padding: 4px 4px 4px 24px !important;margin: 0;text-decoration: none;text-align: left;font-size: 8pt;font-family: sans-serif;color: #444;}
+</style>
+<center>
+<!-- começo :: zoom com várias imagens -->
+<script>
+var imgDetAll = "IP0001_1_P.png,IP0001_2_P.png,IP0001_3_P.png,IP0001_4_P.png";
+var imgAmpAll = "IP0001_1.png,IP0001_2.png,IP0001_3.png,IP0001_4.png";
+var novoArray = imgDetAll.split(',');
+var novoArrayAmp = imgAmpAll.split(',');
+var CountImgDet=novoArray.length;
+var CountImgAmp=novoArrayAmp.length;
+
+if (imgDetAll=="" || imgAmpAll==""){
+  document.write("");
+}
+else{
+  if (CountImgDet==CountImgAmp){
+    var FC_MaxImages=CountImgDet-1;
+    MostraZoomImgFC();
+  }
+  else{
+    var FC_MaxImages=0;
+    MostraZoomImgFC();
+  }
+}
+
+function MostraZoomImgFC(){
+  for (var i=0;i<=FC_MaxImages;i++)
+  {
+    if(i==0)
+    {
+      imgDetMini=novoArray[i];
+      imgAmpMini=novoArrayAmp[i];
+      document.write("<a href=../prod/"+imgAmpMini+" title='IPhone 4S' class='MagicZoom' id='Zoomer'><img src=../prod/"+ imgDetMini +"></a><br>");
+      document.write("<a href=../prod/"+imgAmpMini+"  rel='zoom-id:Zoomer;' rev=../prod/"+ imgDetMini +"><img src=../prod/"+ imgDetMini +" width=45 border=1 height=45 class=ZoomIMG style='margin-left:2px;margin-top:5px;border-color:#c4c4c4;'></a>");
+    }
+    else{
+          imgDetMini="../prod/"+novoArray[i];
+          imgAmpMini="../prod/"+novoArrayAmp[i];
+          document.write("<a href=../prod/"+imgAmpMini+" rel='zoom-id:Zoomer;' rev=../prod/"+ imgDetMini +"><img src=../prod/"+ imgDetMini +" width=45 border=1 height=45 class=ZoomIMG style='margin-left:2px;margin-top:5px;border-color:#c4c4c4;'></a>");
+    }
+  }
+}
+</script>
+<!-- fim :: zoom com várias imagens -->
+</center>
+
+
+<table width=100%>
+  <tr>
+    <td>
+      <br /><br />Seguem os passos para a implantação:
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <br /><span class=dest>1º Passo</span><br />Efetue um backup dos arquivos <b>BarraTopo.htm</b>, <b>LojaSite.css</b> e <b>EstiloProduto.htm</b> que serão utilizados nesta implantação.
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <br /><span class=dest>2º Passo</span><br />Adicione o código abaixo no começo do arquivo <b>BarraTopo.htm</b>, caso ele ainda não exista.<br /><span class=courrier>&lt;script language="JavaScript" src="../sistema/magiczoom.js">&lt;/script></span>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <br /><span class=dest>3º Passo</span><br />Adicione o código abaixo ao final arquivo <b>LojaSite.css</b>, caso ele ainda não exista.<br />
+      <span class=courrierpeq>
+        /* Zoom IMG Detalhe */<br />
+        .ZoomIMG {border-width: 1px;border-style:solid;border-color:#e0e0e0}<br />
+        .MagicZoom img {border-width: 0px !important;padding: 0 !important;margin: 0 !important;}<br />
+        .MagicZoomBigImageCont {border: 1px solid #999;}<br />
+        .MagicZoomHeader {font-size: 8pt !important;line-height: normal !important;color: #fff;background: #666;<br />text-align: center !important;}<br />
+        .MagicZoomPup {border: 1px solid #aaa;background: #fff;cursor: move;}<br />
+        .MagicZoomLoading {border: 1px solid #ccc;background: #fff url(../images/ajax-loader.gif) no-repeat 2px 50%;<br />padding: 4px 4px 4px 24px !important;margin: 0;text-decoration: none;text-align: left;font-size: 8pt;font-family: sans-serif;color: #444;}<br />
+      </span>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <br /><span class=dest>4º Passo</span><br />Adicione o código abaixo no local onde existe a tag especial que mostra a imagem do produto no arquivo <b>EstiloProduto.htm</b> entre as tags<br /><b>&lt;ProdDet></b>...<b>&lt;/ProdDet></b>.<br /><br />Se preferir, <a href="http://rumo.com.br/dnload/ZoomImagens.zip">clique aqui</a> para baixar um modelo do <b>EstiloProduto.htm</b> com este código.<br />
+      <span class=courrierpeq><pre>
+      &lt;!-- começo :: zoom com várias imagens -->
+      &lt;script>
+      var imgDetAll = "&lt;ImagemProdDet>";
+      var imgAmpAll = "&lt;ImagemProdAmp>";
+      var novoArray = imgDetAll.split(',');
+      var novoArrayAmp = imgAmpAll.split(',');
+      var CountImgDet=novoArray.length;
+      var CountImgAmp=novoArrayAmp.length;
+      
+      if (imgDetAll=="" || imgAmpAll==""){
+        document.write("");
+      }
+      else{
+        if (CountImgDet==CountImgAmp){
+          var FC_MaxImages=CountImgDet-1;
+          MostraZoomImgFC();
+        }
+        else{
+          var FC_MaxImages=0;
+          MostraZoomImgFC();
+        }
+      }
+      
+      function MostraZoomImgFC(){
+        for (var i=0;i&lt;=FC_MaxImages;i++)
+        {
+          if(i==0)
+          {
+            imgDetMini=novoArray[i];
+            imgAmpMini=novoArrayAmp[i];
+            document.write("&lt;a href="+imgAmpMini+" title=&lt;NomeProd> class=MagicZoom id=Zoomer>&lt;img src="+ imgDetMini +">&lt;/a>&lt;br>");
+            document.write("&lt;a href="+imgAmpMini+"  rel='zoom-id:Zoomer;' rev="+ imgDetMini +">&lt;img src="+ imgDetMini +" width=75 height=75 class=ZoomIMG>&lt;/a>");
+          }
+          else{
+                imgDetMini="&lt;BaseLoja>prod/"+novoArray[i];
+                imgAmpMini="&lt;BaseLoja>prod/"+novoArrayAmp[i];
+                document.write("&lt;a href="+imgAmpMini+" rel='zoom-id:Zoomer;' rev="+ imgDetMini +">&lt;img src="+ imgDetMini +" width=75 height=75 class=ZoomIMG>&lt;/a>");
+          }
+        }
+      }
+      &lt;/script>
+      &lt;!-- fim :: zoom com várias imagens --></pre>
+      </span>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <br /><span class=dest>5º Passo</span><br />Todas as imagens que são apresentadas devem ser cadastradas entre vírgulas nos campos <b>Imagem de detalhe</b> e <b>Imagem ampliada</b> na ficha<br /> dos produtos.<br /><br /><b>Exemplo:</b><br /><b>Imagem de detalhe:</b> ImagemDetalhe01.jpg,ImagemDetalhe02.jpg,ImagemDetalhe03.jpg,ImagemDetalhe04.jpg<br /><b>Imagem ampliada:</b> ImagemAmpliada01.jpg,ImagemAmpliada02.jpg,ImagemAmpliada03.jpg,ImagemAmpliada04.jpg<br /><br /><b>Obs:</b>Todas as imagens devem ser enviadas para a pasta <b>prod</b> antes de preencher os campos na ficha de produto.
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <br /><br /><b><u>Comportamento previsto:</u></b>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <br />Se o número de imagens preenchidas na ficha do produto for diferente, só será exibida a primeira imagem.<br /><br /><b>Exemplo:</b> Cadastradas 3 imagens de detalhe e apenas 2 imagens ampliadas.
+</b>
+    </td>
+  </tr>
+</table>

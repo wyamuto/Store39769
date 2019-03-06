@@ -1,0 +1,87 @@
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'>
+<title>Passos para personalizar os ícones das redes sociais</title>
+<link href='LojaSite.css' rel='stylesheet' type='text/css'>
+<style>body {font-size:8pt;font-family:verdana,arial;color:#333333;}</style>
+<meta name=generator content='Fastcommerce'>
+<meta name=description content='Ao contrário dos shoppings concorrentes, este é serviço 100% gratuito e de alto retorno.'>
+</head>
+<body>
+É possível personalizar estes ícones:<br>
+<table align=center cellspacing=0 cellpadding=5 border=1><tr>
+	<td>Ícones padrões</td><td>Exemplos de ícones personalizados</td>
+	</tr>
+	<tr>
+		<td align=center><img src=/lojas/00000009/images/ShareFacebook.png></td>
+		<td align=center><img src="/lojas/00000009/images/IcoFacebook.svg" style="width: 20px; height: 20px;"></td>
+	</tr>
+	<tr>
+		<td align=center><img src=/lojas/00000009/images/ShareTwitter.png></td>
+		<td align=center><img src="/lojas/00000009/images/IcoTwitter.svg" style="width: 20px; height: 20px;"></td>
+	</tr>
+	<tr>
+		<td align=center><img src=/lojas/00000009/images/ShareGooglePlus.png></td>
+		<td align=center><img src="/lojas/00000009/images/IcoGooglePlus.svg" style="width: 20px; height: 20px;"></td>
+	</tr>
+	<tr>
+		<td align=center><img src=/lojas/00000009/images/SharePinterest.png></td>
+		<td align=center><img src="/lojas/00000009/images/IcoPinterest.svg" style="width: 20px; height: 20px;"></td>
+	</tr>
+</table>
+
+Segue exemplo de código para personalização destes ícones. Insira este código no arquivo rodape.htm da loja:<br>
+
+<span class=courrier>
+&lt;table id=<span class=dest>IconesRedesSociais_Rodape</span>>&lt;tr><br>
+&nbsp;&nbsp;&lt;td>&lt;ShareFacebook>&lt;/td><br>
+&nbsp;&nbsp;&lt;td>&lt;ShareTwitter>&lt;/td><br>
+&nbsp;&nbsp;&lt;td>&lt;ShareGooglePlus>&lt;/td><br>
+&nbsp;&nbsp;&lt;td>&lt;SharePinterest>&lt;/td><br>
+&nbsp;&nbsp;&lt;td>&lt;Facebook type="like" send="true" layout="button_count" width="150" show_faces="false">&lt;/td><br>
+&nbsp;&nbsp;&lt;td>&lt;GooglePlusOne size="small">&lt;/td><br>
+&lt;/tr>&lt;/table><br>
+</span>
+
+No exemplo acima, o id <span class=dest>IconesRedesSociais_Rodape</span> foi colocado na table que exibe os botões de compartilhamento. Se preferir, utilize uma &lt;div> com este ID.<br>
+
+No arquivo Rodape.htm insira o seguinte código para personalizar os ícones:<br>
+
+<span class=courrier>
+&lt;script><br>
+var sRodapeContent=document.getElementById("<span class=dest>IconesRedesSociais_Rodape</span>");<br>
+if(sRodapeContent)var aImgsShare=sRodapeContent.getElementsByTagName('img');<br>
+if(aImgsShare)<br>
+&nbsp;&nbsp;for(var i=0;i&lt;aImgsShare.length;i++){<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if(aImgsShare[i].className=='EstImgShareFacebook'){<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;aImgsShare[i].setAttribute('data-src',FC$. +'icofacebook.png');<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;aImgsShare[i].src=FC$.PathImg +'icfacebook.png';<br>
+&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if(aImgsShare[i].className=='EstImgShareTwitter'){<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;aImgsShare[i].setAttribute('data-src',FC$.PathImg +'icotwitter.png');<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;aImgsShare[i].src=FC$.PathImg +'ictwitter_1.png';<br>
+&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if(aImgsShare[i].className=='EstImgShareGooglePlus'){<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;aImgsShare[i].setAttribute('data-src',FC$.PathImg +'icogoogleplus.png');<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;aImgsShare[i].src=FC$.PathImg +'icogoogleplus.png';<br>
+&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if(aImgsShare[i].className=='EstImgSharePinterest'){<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;aImgsShare[i].setAttribute('data-src',FC$.PathImg +'icopinterest.png');<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;aImgsShare[i].src=FC$.PathImg +'icopinterest.png';<br>
+&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;}<br>
+&lt;/script><br>
+</span>
+
+No exemplo acima, a loja deve enviar as imagens IcTwitter.png, IcFacebook.png, IcoGooglePlus.png e IcoPinterest personalizadas para a pasta <b>IMAGES</b>, através do gerenciador de arquivos da loja.<br>
+
+
+<b>Assuntos relacionados:</b><br>
+<ul>
+<li><a href=http://ajuda.fastcommerce.com.br/sistema/Noticias.asp?IDLoja=9&IDNoticia=10304 target=_blank>FC 10304 :: Como inserir links para redes sociais nas páginas de detalhe do produto?</a></li>
+<li><a href=http://ajuda.fastcommerce.com.br/sistema/Noticias.asp?IDLoja=9&IDNoticia=11260 target=_blank>FC 11260 :: Como personalizar as cores da tag TwitterProfile?</a></li>
+<li><a href=http://ajuda.fastcommerce.com.br/sistema/Noticias.asp?IDLoja=9&IDNoticia=11259 target=_blank>FC 11259 :: Como criar uma página da loja no Facebook?</a></li>
+<li><a href=http://ajuda.fastcommerce.com.br/sistema/Noticias.asp?IDLoja=9&IDNoticia=11258 target=_blank>FC 11258 :: Como criar uma aplicação no Facebook?</a></li>
+</ul>
+</body>
+</html>

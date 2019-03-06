@@ -1,0 +1,69 @@
+<style>
+.courrierpeq {font-size:8pt;font-family:courier new,tahoma,verdana;color:#0D6D9E;}
+.destpeq {font-size:8pt;font-family:tahoma,verdana;color:#990000;font-weight:bold;}
+</style>
+
+<pre>
+<span class=courrierpeq>
+&lt;script&gt;
+
+function MostraMaxParcelaPS(PrecoProd,MaxParcelas){
+  var ComSem;
+
+  <span class=destpeq>if(PrecoProd&gt=60)MaxParcelas=12;
+else if(PrecoProd&gt=55)MaxParcelas=11;
+else if(PrecoProd&gt=50)MaxParcelas=10;
+else if(PrecoProd&gt=45)MaxParcelas=9;
+else if(PrecoProd&gt=40)MaxParcelas=8;
+else if(PrecoProd&gt=35)MaxParcelas=7;
+else if(PrecoProd&gt=30)MaxParcelas=6;
+else if(PrecoProd&gt=25)MaxParcelas=5;
+else if(PrecoProd&gt=20)MaxParcelas=4;
+else if(PrecoProd&gt=15)MaxParcelas=3;
+else if(PrecoProd&gt=10)MaxParcelas=2;
+else if(PrecoProd&gt=1)MaxParcelas=1;</span>
+
+  if(PrecoProd==0||MaxParcelas==1||Juros.length==0)return;
+  if(MaxParcelas==0||MaxParcelas>Juros.length)MaxParcelas=Juros.length;
+  if(Juros[MaxParcelas-1]&lt;1){
+      ComSem="";
+      document.write(" ou &lt;b>"+MaxParcelas+"x&lt;/b>"+ComSem+" de &lt;b>"+FormatPrecoReais(PrecoProd*Juros[MaxParcelas-1])+"&lt;/b>");      
+  }else{ 
+      ComSem="&lt;font color=#990000> sem juros&lt;/font>";
+      document.write(" ou &lt;b>"+MaxParcelas+"x&lt;/b>"+ComSem+" de &lt;b>"+FormatPrecoReais((PrecoProd)/(MaxParcelas))+"&lt;/b>");
+  }
+}
+
+function MostraParcelasPS(PrecoProd,MaxParcelas){
+  var ComSem,EstiloLinha;
+
+  <span class=destpeq>if(PrecoProd&gt=60)MaxParcelas=12;
+else if(PrecoProd&gt=55)MaxParcelas=11;
+else if(PrecoProd&gt=50)MaxParcelas=10;
+else if(PrecoProd&gt=45)MaxParcelas=9;
+else if(PrecoProd&gt=40)MaxParcelas=8;
+else if(PrecoProd&gt=35)MaxParcelas=7;
+else if(PrecoProd&gt=30)MaxParcelas=6;
+else if(PrecoProd&gt=25)MaxParcelas=5;
+else if(PrecoProd&gt=20)MaxParcelas=4;
+else if(PrecoProd&gt=15)MaxParcelas=3;
+else if(PrecoProd&gt=10)MaxParcelas=2;
+else if(PrecoProd&gt=1)MaxParcelas=1;</span>
+  
+  if(PrecoProd==0||MaxParcelas==1||Juros.length==0)return;
+  if(MaxParcelas==0||MaxParcelas>Juros.length)MaxParcelas=Juros.length;
+  document.write("&lt;br>&lt;table align=center cellpadding=3 cellspacing=1 bgcolor=#CECECE width=270>&lt;tr bgcolor=#DCDCDC>&lt;td colspan=3 height=22 class=TitTabParc align=center>&lt;b>Opções de parcelamento&lt;/td>&lt;/tr>&lt;tr bgcolor=#FFFFFF>&lt;td class=TitTabParc>Parcelas&lt;/td>&lt;td align=right class=TitTabParc>Valor&lt;/td>&lt;td align=right class=TitTabParc>Total&lt;/td>&lt;/tr>");
+  for(var b=0;b&lt;MaxParcelas;b=b+1) {
+     if(Juros[b]&lt;1)ComSem="com juros"; else ComSem="&lt;font color=#990000>sem juros&lt;/font>";
+     if((b%2)==0)EstiloLinha='EstParcPar'; else EstiloLinha='EstParcImpar';
+     if(Juros[b]&lt;1){
+      document.write("&lt;tr class="+EstiloLinha+">&lt;td class="+EstiloLinha+">"+(b+1)+"x "+ComSem+"&lt;/td>&lt;td class="+EstiloLinha+" align=right>"+FormatPrecoReais(PrecoProd*Juros[b])+"&lt;/td>&lt;td class="+EstiloLinha+" align=right>"+FormatPrecoReais((PrecoProd*Juros[b])*(b+1))+"&lt;/td>&lt;/tr>");
+     }else{
+      document.write("&lt;tr class="+EstiloLinha+">&lt;td class="+EstiloLinha+">"+(b+1)+"x "+ComSem+"&lt;/td>&lt;td class="+EstiloLinha+" align=right>"+FormatPrecoReais((PrecoProd)/(b+1))+"&lt;/td>&lt;td class="+EstiloLinha+" align=right>"+FormatPrecoReais(PrecoProd)+"&lt;/td>&lt;/tr>");
+     }
+  }
+  document.write("&lt;/table>&lt;br>");
+}
+&lt;/script&gt;
+</span>
+</pre>

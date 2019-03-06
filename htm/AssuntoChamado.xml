@@ -1,0 +1,288 @@
+<?xml version='1.0' encoding='iso-8859-1'?>
+<produtos> 
+<p><n>DL / Config gerais : Loja aberta</n></p> 
+<p><n>DL / Config gerais : Nome da loja</n></p> 
+<p><n>DL / Config gerais : Fuso horário da loja</n></p> 
+<p><n>DL / Config gerais : Idioma da loja:</n></p> 
+<p><n>DL / Config gerais : Usuário Administrador</n></p> 
+<p><n>DL / Config gerais : Senhas de uso único (OTP)</n></p> 
+<p><n>DL / Config gerais : Restrição a novos clientes:</n></p> 
+<p><n>DL / Config gerais : Tipos de clientes</n></p> 
+<p><n>DL / Config gerais : Campo RG</n></p> 
+<p><n>DL / Config gerais : Campo Data Nascimento</n></p> 
+<p><n>DL / Config gerais : Campos adicionais de clientes</n></p> 
+<p><n>DL / Config gerais : Restrição a telefones</n></p> 
+<p><n>DL / Config gerais : CAPTCHA</n></p> 
+<p><n>DL / Config gerais : Exibe teclado virtual</n></p> 
+<p><n>DL / Config gerais : Mobile design</n></p> 
+<p><n>DL / Config gerais : Cliente programa entrega</n></p> 
+<p><n>DL / Config gerais : Cupom de desconto</n></p> 
+<p><n>DL / Config gerais : Publicação de notícias</n></p> 
+<p><n>DL / Config gerais : Atendimento on-line (chat)</n></p> 
+<p><n>DL / Config gerais : Chat avançado (Zopim)</n></p> 
+<p><n>DL / Config gerais : Mecanismo Anti-anti-popup</n></p> 
+<p><n>DL / Config gerais : HTML Server Cache</n></p> 
+<p><n>DL / Config gerais : Exibe histórico da visita</n></p> 
+<p><n>DL / Config gerais : Exibe dados da cesta</n></p> 
+<p><n>DL / Config gerais : Adiciona produto à cesta sem sair da página</n></p> 
+<p><n>DL / Config gerais : Cesta mantida por</n></p> 
+<p><n>DL / Config gerais : Checkout</n></p> 
+<p><n>DL / Config gerais : Tag cloud</n></p> 
+<p><n>DL / Config gerais : Nº do próximo pedido</n></p> 
+<p><n>DL / Prods : Indexador de preços</n></p> 
+<p><n>DL / Prods : Moeda de venda</n></p> 
+<p><n>DL / Prods : Paridade R$</n></p> 
+<p><n>DL / Prods : Juros padrão</n></p> 
+<p><n>DL / Prods : Controle de estoque</n></p> 
+<p><n>DL / Prods : Sincronismo de estoque entre lojas</n></p> 
+<p><n>DL / Prods : Aviso de disponibilidade</n></p> 
+<p><n>DL / Prods : Aviso de reposição</n></p> 
+<p><n>DL / Prods : Aviso de vencimento</n></p> 
+<p><n>DL / Prods : Subcategorias</n></p> 
+<p><n>DL / Prods : Subprodutos</n></p> 
+<p><n>DL / Prods : Oculta carrinho em produto com subproduto</n></p>
+<p><n>DL / Prods : Exibe cores</n></p> 
+<p><n>DL / Prods : Exibe peso</n></p> 
+<p><n>DL / Prods : Unidade de peso</n></p> 
+<p><n>DL / Prods : Unidade de tamanho</n></p> 
+<p><n>DL / Prods : Avaliação pelo cliente</n></p> 
+<p><n>DL / Prods : Usar tag Comments</n></p> 
+<p><n>DL / Prods : Caminho das imagens</n></p> 
+<p><n>DL / Prods : Lazy load de imagens</n></p> 
+<p><n>DL / Prods : Produtos ordenados por</n></p> 
+<p><n>DL / Prods : Produtos agrupados por</n></p> 
+<p><n>DL / Prods : Descritores especiais</n></p> 
+<p><n>DL / Prods : Descritores simples</n></p> 
+<p><n>DL / Prods : Filtros</n></p> 
+<p><n>DL / Prods : Código de barras</n></p> 
+<p><n>DL / Contatos da loja e mensagens : E-mail dos pedidos</n></p> 
+<p><n>DL / Contatos da loja e mensagens : E-mail para contato</n></p> 
+<p><n>DL / Contatos da loja e mensagens : E-mail de auditoria</n></p> 
+<p><n>DL / Contatos da loja e mensagens : Tagline das mensagens</n></p> 
+<p><n>DL / Contatos da loja e mensagens : Mensagens em HTML</n></p> 
+<p><n>DL / Contatos da loja e mensagens : HTML cadastro</n></p> 
+<p><n>DL / Contatos da loja e mensagens : HTML pedido</n></p> 
+<p><n>DL / Contatos da loja e mensagens : Envio de SMS</n></p> 
+<p><n>DL / Contatos da loja e mensagens : Remetente SMS</n></p> 
+<p><n>DL / Contatos da loja e mensagens : Contato SMS</n></p> 
+<p><n>DL / MercadoLivre</n></p> 
+<p><n>DL / MercadoLivre : Sincronismo de estoque</n></p> 
+<p><n>DL / MercadoLivre : Sincronismo de preço</n></p> 
+<p><n>DL / MercadoLivre : Título padrão dos anúncios</n></p> 
+<p><n>DL / MercadoLivre : Tags especiais</n></p> 
+<p><n>DL / MercadoLivre : Modelo HTM de descrição</n></p> 
+<p><n>DL / Serv Prods Google : Analytics</n></p> 
+<p><n>DL / Serv Prods Google : Analytics - Web Property ID</n></p> 
+<p><n>DL / Serv Prods Google : AdWords</n></p> 
+<p><n>DL / Serv Prods Google : AdWords - Conversion ID</n></p> 
+<p><n>DL / Serv Prods Google : AdWords - Conversion Label</n></p> 
+<p><n>DL / Serv Prods Google : AdWords - Remarketing</n></p> 
+<p><n>DL / Serv Prods Google : AdWords - Remarketing Label</n></p> 
+<p><n>DL / Serv Prods Google : Site Search - Código Google CX</n></p> 
+<p><n>DL / Redes sociais : Usar tags especiais</n></p> 
+<p><n>DL / Redes sociais : Usar logotipo padrão</n></p> 
+<p><n>DL / Redes sociais : Facebook</n></p> 
+<p><n>DL / Redes sociais : Facebook - UserID</n></p> 
+<p><n>DL / Redes sociais : Facebook - AppID</n></p> 
+<p><n>DL / Redes sociais : Facebook - PageID</n></p> 
+<p><n>DL / Redes sociais : Facebook - Page</n></p> 
+<p><n>DL / Redes sociais : Facebook - Design da loja interna</n></p> 
+<p><n>DL / Redes sociais : Facebook - Publicar loja</n></p> 
+<p><n>DL / Redes sociais : Facebook - Criar página</n></p> 
+<p><n>DL / Redes sociais : Twitter</n></p> 
+<p><n>DL / Vakinha</n></p> 
+<p><n>DL / Navegação e SEO</n></p> 
+<p><n>DL / Navegação e SEO : Conteúdo da tag <title></n></p> 
+<p><n>DL / Navegação e SEO : Descrição da loja em tag meta description (até 200 caracteres)</n></p> 
+<p><n>DL / Navegação e SEO : Palavras-chave da loja em tag meta keywords. Use vírgulas para separar palavras (até 200 caracteres)</n></p> 
+<p><n>DL / Navegação e SEO : Header HTML adicional</n></p> 
+<p><n>DL / Domínio e redirecionamentos</n></p> 
+<p><n>DL / Domínio e redirecionamentos : Domínio próprio</n></p> 
+<p><n>DL / Domínio e redirecionamentos : Configuração SSL</n></p> 
+<p><n>DL / Domínio e redirecionamentos : Certificado SSL próprio</n></p> 
+<p><n>DL / Domínio e redirecionamentos : Certificado SSL expira em</n></p> 
+<p><n>DL / Domínio e redirecionamentos : Redireciona para o domínio principal</n></p> 
+<p><n>DL / Domínio e redirecionamentos : Endereço Internet</n></p> 
+<p><n>DL / Domínio e redirecionamentos : Redirecionamentos</n></p> 
+<p><n>DL / Domínio e redirecionamentos : Redirecionamentos Pesquisável</n></p> 
+<p><n>DL / URLs da loja</n></p> 
+<p><n>DL / URLs da loja : URLs amigáveis</n></p> 
+<p><n>DL / URLs da loja : URLs personalizadas</n></p> 
+<p><n>DL / URLs da loja : Caminho para Seções</n></p> 
+<p><n>DL / URLs da loja : Caminho para Notícias</n></p> 
+<p><n>DL / URLs da loja : URLs canônicas</n></p> 
+<p><n>DL / Cadastro de bloqueio de acessos : Firewall</n></p> 
+<p><n>DC / Estilos : Tipo das imagens</n></p> 
+<p><n>DC / Estilos : Títulos</n></p> 
+<p><n>DC / Estilos : Botões</n></p> 
+<p><n>DC / Estilos : Fundo</n></p> 
+<p><n>DC / Estilos : Imagem de fundo</n></p> 
+<p><n>DC / Estilos : Link de recomendação</n></p> 
+<p><n>DC / Dimensões : Dimensões de janela pop-up</n></p> 
+<p><n>DC / Dimensões : Colunas na página Categorias</n></p> 
+<p><n>DC / Dimensões : Produtos com fotos</n></p> 
+<p><n>DC / Dimensões : Largura máxima das fotos</n></p> 
+<p><n>DC / Dimensões : Altura mínima das fotos</n></p> 
+<p><n>DC / Dimensões : Tamanho padrão dos vídeos</n></p> 
+<p><n>DC / Dimensões : Produtos por página (máx)</n></p> 
+<p><n>DC / Dimensões : Autopaginação</n></p> 
+<p><n>DC / Dimensões : Colunas na lista de produtos</n></p> 
+<p><n>DC / Dimensões : Layout das páginas de produtos</n></p> 
+<p><n>DC / Layout Geral : Páginas principais</n></p> 
+<p><n>DC / Layout Geral : Páginas de pedido</n></p> 
+<p><n>DC / Layout Geral : Teste A/B</n></p> 
+<p><n>DC / Design mobile : Páginas principais</n></p> 
+<p><n>DC / Design mobile : Teste A/B</n></p> 
+<p><n>DC / Design Facebook : Páginas principais</n></p> 
+<p><n>DC / Design Fcebook : Teste A/B</n></p> 
+<p><n>DC / Textos e tags personalizadas : Utilizar tags personalizadas</n></p> 
+<p><n>DC / Textos e tags personalizadas : Texto de ajuda</n></p> 
+<p><n>DC / Textos e tags personalizadas : Texto para contato</n></p> 
+<p><n>DC / Textos e tags personalizadas : Texto final da página de confirmação do pedido</n></p> 
+<p><n>DC / Textos e tags personalizadas : Texto final do e-mail de confirmação do pedido</n></p> 
+<p><n>DC / Textos e tags personalizadas : Texto para link de mais informações</n></p> 
+<p><n>DC / Textos e tags personalizadas : Texto ao início do cadastro</n></p> 
+<p><n>DC / Textos e tags personalizadas : Texto ao final do cadastro</n></p> 
+<p><n>DC / Cross Selling : Layout</n></p> 
+<p><n>DC / Cross Selling : Texto</n></p> 
+<p><n>DC / Frequentemente comprados juntos : Layout</n></p> 
+<p><n>DC / Frequentemente comprados juntos : Texto</n></p> 
+<p><n>PC / Parceiros</n></p> 
+<p><n>PC / Cupons</n></p> 
+<p><n>Pagamentos : Informações ao cliente</n></p> 
+<p><n>Pagamentos : Depósito bancário</n></p> 
+<p><n>Pagamentos : Contra-entrega</n></p> 
+<p><n>Pagamentos : Banco do Brasil</n></p> 
+<p><n>Pagamentos : Itaú Shopline</n></p> 
+<p><n>Pagamentos : Boleto bancário</n></p> 
+<p><n>Pagamentos : Boleto genérico</n></p> 
+<p><n>Pagamentos : Boleto stelo</n></p> 
+<p><n>Pagamentos : Cielo</n></p> 
+<p><n>Pagamentos : e-Rede</n></p> 
+<p><n>Pagamentos : CobreBem</n></p> 
+<p><n>Pagamentos : CobreBem integração CobrebemX</n></p> 
+<p><n>Pagamentos : CobreBem integração Aprova Fácil</n></p> 
+<p><n>Pagamentos : Cartão VISA</n></p> 
+<p><n>Pagamentos : Cartão Mastercard</n></p> 
+<p><n>Pagamentos : Cartão Diners</n></p> 
+<p><n>Pagamentos : Cartão AMEX</n></p> 
+<p><n>Pagamentos : Cartão Hipercard</n></p> 
+<p><n>Pagamentos : Cartão Aura</n></p> 
+<p><n>Pagamentos : Cartão Elo</n></p> 
+<p><n>Pagamentos : MoIP</n></p> 
+<p><n>Pagamentos : MoIP Transparente</n></p> 
+<p><n>Pagamentos : MercadoPago</n></p> 
+<p><n>Pagamentos : MercadoPago Transparente</n></p> 
+<p><n>Pagamentos : Stelo</n></p> 
+<p><n>Pagamentos : Stelo Transparente</n></p> 
+<p><n>Pagamentos : PagSeguro</n></p> 
+<p><n>Pagamentos : PagSeguro Transparente</n></p> 
+<p><n>Pagamentos : PayPal</n></p> 
+<p><n>Pagamentos : Parcelamento na lista de produtos</n></p> 
+<p><n>Pagamentos : Nota fiscal eletrônica (NFE) (Vinco)</n></p> 
+<p><n>Pagamentos : Fraudes</n></p> 
+<p><n>Pagamentos : Venda com parcelamento</n></p> 
+<p><n>Pagamentos : Análise de risco - InfoRisk</n></p> 
+<p><n>Pagamentos : Análise de risco - ClearSale</n></p> 
+<p><n>Envio & frete</n></p> 
+<p><n>Envio & frete : Formas de envio</n></p> 
+<p><n>Envio & frete : Tabela de preços</n></p> 
+<p><n>Envio & frete : Frete não é cobrado</n></p> 
+<p><n>Envio & frete : Utilizar tabela SEDEX</n></p> 
+<p><n>Envio & frete : Utilizar tabela de localidades ou frete fixo</n></p> 
+<p><n>Envio & frete : Utilizar faixas de CEP (Brasil)</n></p> 
+<p><n>Envio & frete : Utilizar faixas de CEP (Brasil) e tabela de localidades</n></p> 
+<p><n>Envio & frete : FedEx</n></p> 
+<p><n>Envio & frete : Localidades</n></p> 
+<p><n>Envio & frete : Dados de entrega</n></p> 
+<p><n>Envio & frete : Produtos exportados a partir de</n></p> 
+<p><n>Envio & frete : Estado de origem no Brasil</n></p> 
+<p><n>Envio & frete : Origem das remessas</n></p> 
+<p><n>Envio & frete : Frete gratuito no Estado</n></p> 
+<p><n>Envio & frete : Entregas somente no Brasil</n></p> 
+<p><n>Envio & frete : Cálculo externo de frete - SisFrete</n></p> 
+<p><n>Envio & frete : Cálculo externo de frete - Correios</n></p> 
+<p><n>Envio & frete : Cálculo externo de frete - Axado</n></p> 
+<p><n>Envio & frete : Parâmetros de cálculo</n></p> 
+<p><n>Envio & frete : Presente</n></p> 
+<p><n>Envio & frete : Preço da embalagem</n></p> 
+<p><n>Envio & frete : Frete fixo</n></p> 
+<p><n>Envio & frete : Seguro</n></p> 
+<p><n>Envio & frete : Valor adicional</n></p> 
+<p><n>Envio & frete : Peso adicional</n></p> 
+<p><n>Envio & frete : Multiplicador</n></p> 
+<p><n>Envio & frete : Frete gratuito para peso zero</n></p> 
+<p><n>Envio & frete : Descontos no frete por total do pedido</n></p> 
+<p><n>Envio & frete : Tipo de frete personalizado</n></p> 
+<p><n>Pedidos</n></p> 
+<p><n>Pedidos : Emissão de nota fiscal</n></p> 
+<p><n>Pedidos : Fluxo de pedidos</n></p> 
+<p><n>Pedidos : Impressão de etiquetas</n></p> 
+<p><n>Pedidos : Status dos pedidos</n></p> 
+<p><n>Produtos</n></p> 
+<p><n>Produtos : Cadastro de produtos</n></p> 
+<p><n>Produtos : Cadastro em lote (CSV)</n></p> 
+<p><n>Produtos : Categorias da loja</n></p> 
+<p><n>Produtos : Cores de produtos</n></p> 
+<p><n>Produtos : Cross selling</n></p> 
+<p><n>Produtos : Google Shopping</n></p> 
+<p><n>Produtos : Parcelamento na página de detalhe</n></p> 
+<p><n>Produtos : Subprodutos</n></p> 
+<p><n>Produtos : Subcategorias</n></p> 
+<p><n>Parceiros e Cupons</n></p> 
+<p><n>Parceiros e Cupons : Cadastro de parceiros</n></p> 
+<p><n>Parceiros e Cupons : Cadastro de produtos via XML</n></p> 
+<p><n>Parceiros e Cupons : Cupom de desconto</n></p> 
+<p><n>Parceiros e Cupons : Integração com sites de comparação de preços</n></p> 
+<p><n>Parceiros e Cupons : Links para parceiros</n></p> 
+<p><n>Financeiro</n></p> 
+<p><n>Financeiro : Cancelamento da loja</n></p> 
+<p><n>Financeiro : Crédito e-mail marketing</n></p> 
+<p><n>Financeiro : Crédito Info risk</n></p> 
+<p><n>Financeiro : Informações sobre planos</n></p> 
+<p><n>Financeiro : Pageviews</n></p> 
+<p><n>Financeiro : Planos especiais</n></p> 
+<p><n>Financeiro : Reativação da loja</n></p> 
+<p><n>Financeiro : Serviço banners</n></p> 
+<p><n>Financeiro : Serviço domínio próprio</n></p> 
+<p><n>Financeiro : Outros</n></p>
+<p><n>Outros</n></p> 
+<p><n>Outros : Divulgação da loja</n></p> 
+<p><n>Outros : Informações</n></p> 
+<p><n>Outros : Reclamações</n></p> 
+<p><n>Outros : Relatórios administrativos</n></p> 
+<p><n>Outros : Solicitação de senha ADM</n></p> 
+<p><n>Outros : Shopping MilhoAzul</n></p> 
+<p><n>Outros : Sugestões</n></p> 
+<p><n>Outros : Utilitários administrativos</n></p> 
+<p><n>Outros : Lista de integradores</n></p>
+<p><n>Outros : Lista de ERPs</n></p>
+<p><n>Outros : Ativação HTML5</n></p>
+<p><n>Outros : Ativação Tableless</n></p>
+<p><n>Usuários</n></p> 
+<p><n>Usuários : Permissões de usuários</n></p> 
+<p><n>Mercado Livre : Ativar Integração</n></p>
+<p><n>Mercado Livre : Importar Anúncios</n></p>
+<p><n>Mercado Livre : Exportar Anúncios</n></p>
+<p><n>Mercado Livre : Criar Anúncio</n></p>
+<p><n>Mercado Livre : Sincronização de Preços</n></p>
+<p><n>Mercado Livre : Sincronização de Estoque</n></p>
+<p><n>Mercado Livre : Outros</n></p>
+<p><n>Personalizações : Javascript</n></p>
+<p><n>Personalizações : HTML/CSS</n></p>
+<p><n>API</n></p>
+<p><n>API : Documentação</n></p>
+<p><n>API : Outros</n></p>
+<p><n>Comercial</n></p> 
+<p><n>Comercial : Sobre o FastCommerce</n></p> 
+<p><n>Comercial : Atendimento Novo Cliente</n></p> 
+<p><n>Comercial : Reunião com cliente (Ata)</n></p> 
+<p><n>Comercial : Reunião com parceiro (Ata)</n></p> 
+<p><n>Comercial : Reunião com equipe atendimento (Ata)</n></p> 
+<p><n>Comercial : Reunião com equipe desenvolvimento (Ata)</n></p> 
+<p><n>Comercial : Follow-up Loja em Produção</n></p> 
+<p><n>Comercial : Follow-up Loja Cancelada</n></p> 
+<p><n>Comercial : Follow-up Implantação</n></p> 
+<p><n>Comercial : Follow-up Test-drive</n></p> 
+<p><n>Comercial : Follow-up Cliente de concorrente</n></p> 
+</produtos>

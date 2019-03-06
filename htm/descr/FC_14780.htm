@@ -1,0 +1,31 @@
+<p>Em breve a maior parte das vendas das lojas virtuais serão feitas a partir de smartphones.</p>
+
+<p>Algumas lojas já reportam que 30% de suas vendas ocorrem via celular. Ou seja, para não perder clientes, sua loja deve funcionar bem em <b>qualquer tamanho</b> de tela.</p>
+
+<p><h4>Sua loja está preparada?</h4></p>
+<p>Faça um <b>teste rápido</b>: tente comprar um produto em sua loja virtual com seu smartphone. Se tiver dificuldade para ler os textos e colocar produtos no carrinho <b>sem dar zoom</b>, é porque sua loja não está preparada para acessos com tela pequena.</p>
+
+<p>Faça um outro teste: acesse sua loja pelo computador e mude o tamanho da janela do navegador. Se o design não se adaptar à esta mudança e mostrar barra de rolagem horizontal, é porque ele <b>não é responsivo</b>. Ou seja, não está preparado para acessos por celular!</p>
+
+<p><h4>Qual é a solução rápida?</h4></p>
+<p>Criamos um modelo personalizável de loja, com design responsivo e com as principais funcionalidades do Fastcommerce. Este modelo pode ser facilmente implantado em sua loja, em substituição ao seu design atual.</p>
+
+<p>Faça uma simulação e veja como ficará sua loja com este novo modelo:</p>
+
+  <form name=FormModelPreview id=FormModelPreview method=POST target=_blank><input type=hidden name=ModelPreview value=1><input type=text name=DominioLoja placeholder="Digite o endereço completo de sua loja, começando com http:// ou https://" class=form-control style=width:500px required><br>
+  <p id=ErrURL class="text-danger" style="display:none">Informe o endereço da loja começando com http:// ou https://</p>
+  <input type=button value=" Ligar simulação " class="btn btn-primary" style='width:180px;margin:0 20px 0 0' onclick=fnModelPreview(this.form,1)><input type=button value=" Desligar simulação " class="btn btn-info" style='width:180px' onclick=fnModelPreview(this.form,0)></form><br>
+<script>function fnModelPreview(f,iPreview){if(f.DominioLoja.value.substr(0,4)=='http'){document.getElementById('ErrURL').style.display='none';f.action=f.DominioLoja.value;f.ModelPreview.value=iPreview;f.submit();}else{document.getElementById('ErrURL').style.display='';}}document.getElementById("FormModelPreview").addEventListener("submit",function(e){e.target.checkValidity();e.preventDefault();e.stopPropagation();},false);</script>
+<p><a href=https://www.fastcommerce.com.br/page,arq,recdesignresp target=_blank>Clique aqui</a> para mais informações sobre design responsivo.</p>
+<br>
+<p>Também é possível testar esse novo design dentro da administração da sua loja, através página <b>Design & conteúdo</b> clicando sobre a opção <b>"Preview sem gravar"</b></p>
+<br>
+<center><img src="../lojas/00028496/images/FC14780.png"></center>
+<br>
+<p>Após clicar nessa opção será aberta uma nova guia com a simulação do modelo responsivo.</p>
+
+<p>Caso fique satisfeito com o resultado da simulação basta implantar o novo design, escolhendo o modelo e clicando no botão <b>Alterar o modelo da loja</b>.</p>
+<br>
+<center><img src="../lojas/00028496/images/FC14780_1.png"></center>
+<br>
+<p><b style="color:red">ATENÇÃO:</b> Não é possível voltar ao design anterior em um clique. Portanto, antes de implantar o novo modelo, faça um <b>backup completo</b> do design da loja, caso queira voltar para o modelo anterior.</p>

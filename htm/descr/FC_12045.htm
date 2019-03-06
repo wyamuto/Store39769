@@ -1,0 +1,42 @@
+<center><img src="/lojas/00000009/images/CEP001.gif" class="img-responsive"></center>
+<br>
+
+<p><a href="http://www.perfumes.com.br/prod,IDLoja,154,IDProduto,3391" target="_blank">Clique aqui</a> para ver este recurso em funcionamento.</p>
+
+<p>Seguem instruções para a utilização da simulação do frete na página de detalhe do produto:</p>
+
+<center><div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/dfwKJqFYriY" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+</div></center>
+<br>
+
+<p><span class="dest NewsPassos">1º Passo</span></p>
+<p>Efetue um backup dos arquivos <b>BarraTopo.htm</b> e <b>EstiloProduto.htm</b> que sofrerão alterações nesta implantação.</p>
+<br>
+
+<p><span class="dest NewsPassos">2º Passo</span></p>
+<p><a href="http://rumo.com.br/dnload/SimulaFreteFC.zip" target="_blank">Clique aqui</a> com o botão direito do mouse e selecione a opção de Salvar. Envie o arquivo salvo para a pasta <b>htm</b>.</p>
+<br>
+
+<p><span class="dest NewsPassos">3º Passo</span></p>
+<p>Adicione o código abaixo no começo do arquivo <b>BarraTopo.htm</b>:</p>
+<pre><span>&lt;script language=JavaScript src=&lt;BaseLoja>htm/SimulaFreteFC.js>&lt;/script></span></pre>
+<br>
+
+<p><span class="dest NewsPassos">4º Passo</span>
+<p>Adicione o código abaixo entre as tags <b><i>&lt;ProdDet>...&lt;/ProdDet></i></b> do arquivo <b>EstiloProduto.htm</b></p>
+<pre><span>&lt;div id=""ShowCEP&lt;IDProduto>"">&lt;/div>
+&lt;script>ShowCEP(&lt;IDProduto>);&lt;/script></span></pre>
+<br>
+
+<p><span class="dest NewsPassos">5º Passo</span></p>
+<p>Se o código abaixo não se encontrar no arquivo <b>BarraTopo.htm</b> ele deve ser adicionado.</p>
+<pre><span>&lt;script type=""text/javascript"">
+IDLoja='&lt;IDLoja>'; //Obtém IDLoja para montar links
+IDLojaNum='&lt;IDLojaNum>';
+&lt;/script></span></pre>
+<br>
+
+<p><b>ATENÇÃO:</b> Com este recurso, é possível exibir todas as opções de frete que a loja oferece. Entretanto, para maximizar as vendas da loja, o exemplo acima exibe somente o menor valor de frete do produto. Isto melhora a usabilidade da loja, evitando que o cliente tenha que tomar decisões de frete neste momento.</p>
+
+<!--NewsProductsFC-->

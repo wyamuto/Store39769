@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<SearchSuggestion xmlns="http://schemas.microsoft.com/Search/2008/suggestions">
+    <Query>xbox</Query>
+    <Section>
+	<Item>
+		<Text>Xbox 360</Text>
+		<Description>The official Xbox website from Microsoft</Description>
+		<Url>http://www.xbox.com</Url>
+	</Item>
+	<Item>
+		<Text>Xbox cheats</Text>
+		<Description>Codes and walkthroughs</Description>
+		<Url>http://www.example.com/xboxcheatcodes.aspx</Url>
+	</Item>
+	<Item>
+		<Text>Xbox 360 games</Text>
+		<Description>Games and accessories</Description>
+		<Url>http://www.example.com/games</Url>
+	</Item>
+    </Section>
+</SearchSuggestion>

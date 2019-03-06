@@ -1,0 +1,24 @@
+<p>Veja mais informações sobre o <b>QR Code</b> em:</p>
+<p><a href="http://pt.wikipedia.org/wiki/QR_Code" target="_blank">http://pt.wikipedia.org/wiki/QR_Code</a></p>
+
+<p>O conteúdo deste QR Code é o <b>link</b> da página que está sendo visitada.</p>
+
+<p>Para adicionar na sua loja, envie o arquivo <b>QRCode.js</b> para a pasta htm. <a href="/dnload/QRCode.zip">Clique aqui</a> para baixar este arquivo.</p>
+
+<p>Copie todo o código abaixo e adicione no arquivo htm de acordo com a local desejado para o código (exemplo: rodape.htm):</p>
+<p><pre><span>&lt;style>
+#loader_bg {font-size: 1px; left: 8px; width: 113px; position: relative; top: 8px; height: 7px; background-color: #ebebe4}
+.title_h2 {padding-right: 0px; padding-left: 18px; padding-bottom: 0px; width: 300px; padding-top: 12px;font-size: 13px; font-family: tahoma, verdana, arial}
+.border_preview {border-right: #444 1px solid; border-top: #444 1px solid; z-index: 100; background: #fff; border-left: #444 1px solid; border-bottom: #444 1px solid; position: absolute}
+.preview_temp_load {padding-right: 10px; padding-left: 10px; padding-bottom: 10px; vertical-align: middle; padding-top: 10px; text-align: center}
+.preview_temp_load img {vertical-align: middle; text-align: center}
+&lt;/style>
+&lt;script src=&lt;BaseLoja>htm/QRCode.js>&lt;/script>
+&lt;script>
+if(document.location.href.toLowerCase().indexOf("https://")!=0){
+  document.write("&lt;div style=background:#FFFFFF>");
+  document.write("&lt;center>&lt;small>&lt;a href=http://pt.wikipedia.org/wiki/QR_Code target="_blank">QR Code&lt;/a> desta URL&lt;/small>&lt;br>");
+  MostraQR(150,500);
+  document.write("&lt;br>&lt;small>Passe o mouse para ampliar&lt;/small>&lt;/center>&lt;/div>");
+}
+&lt;/script></span></pre></p>

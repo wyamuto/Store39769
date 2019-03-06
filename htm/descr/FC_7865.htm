@@ -1,0 +1,44 @@
+<ul>
+<li><p>Sub-categorias</p></li>
+<li><p>Sub-linhas</p></li>
+<li><p>Sub-departamentos</p></li>
+<li><p>Sub-famílias</p></li>
+<li><p>Sub-griffes</p></li>
+<li><p>Sub-coleções</p></li>
+<li><p>Sub-marcas</p></li>
+<li><p>Sub-seções</p></li>
+<li><p>Sub-grupos</p></li>
+</ul>
+<br>
+
+<p>O campo de sub-categorias fica na página <b>Dados da loja</b>, logo abaixo do campo <b>Aviso de vencimento</b>:</p>
+
+<blockquote><img src="/lojas/00000009/images/FC7865a.gif" class="img-responsive"></blockquote>
+<br>
+<p>Ao marcá-lo, será possível fazer o cadastro de sub-categorias na ficha de cada categoria e mostrar esta hierarquia colocando as tags especiais <b>&lt;ListPathCat></b> e <b>&lt;PathCat></b> nos arquivos HTM personalizados.</p>
+
+<p>Por exemplo, se a loja possui um menu esquerdo com a lista de categorias simples, para que seja exibida uma lista hierárquica com as categorias e sub-categorias, deve-se trocar no arquivo BarraEsquerda.htm a tag <b>&lt;ListCat out="1"></b> pela tag <b>&lt;ListPathCat out="2"></b> que mostra menu em HTML. Para que o menu venha com as sub-categorias abertas, utilize o parâmetro <b>id</b>, exemplo: <b>&lt;ListPathCat out="2" id="-5"></b> que mostra menu em HTML aberto até o último sub-nível, que é o 5º.</p>
+<br>
+
+<p>Veja mais detalhes sobre as configurações destas tags especiais em:</p>
+<p><a href="http://www.rumo.com.br/sistema/adm/TagsEspeciais.htm" target="_blank">http://www.rumo.com.br/sistema/adm/TagsEspeciais.htm</a></p>
+<br>
+
+<p><b>Obs:</b> O limite é de até 5 sub-níveis, abaixo da categoria principal.</p>
+
+<p><b class="dest">Atenção:</b> Para otimizar a performance da loja, mantenha este campo desmarcado se a hierarquia de sub-categorias for feita somente no design da loja e não no seu cadastro.</p>
+
+<div class="container">
+	<div class="row text-center">
+	  <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+      <p>Exemplo de menu utilizando este recurso:</p>
+      <img src="/lojas/00000009/images/FC7865b.gif" class="img-responsive">
+    </div>
+	  <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+      <p>Exemplo de menu <b>personalizado</b> utilizando este recurso:</p>
+      <img src="/lojas/00000009/images/FC7865c.gif" class="img-responsive">
+    </div>
+	</div>
+</div>
+<br>
+</p>

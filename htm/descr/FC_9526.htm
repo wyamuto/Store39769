@@ -1,0 +1,93 @@
+<p>Segue abaixo o procedimento de implantação deste recurso:</p>
+<br>
+
+<p><span class="dest NewsPassos">1º passo</span></p>
+<p>Cadastre o campo adicional, clicando na seta ao lado direito do campo <b></b> na página <b>Dados da loja</b> do site administrativo.</p>
+
+<p>Na janela <b>Campos adicionais de clientes</b>, informe <b>Período de entrega</b> no campo <b>Campo 1</b> da tabela <b>Entrega do pedido</b> e selecione no campo <b>30</b> no campo <b>Máx</b>.</p>
+
+<center><img src="/lojas/00000009/prod/FC9526.gif" class="img-responsive"></center>
+<br>
+
+
+<p><span class="dest NewsPassos">2º passo</span> (<i>Checkout Passo-a-passo</i>)</p>
+<p>Crie um arquivo chamado <b>PedCampo1.htm</b> com o conteúdo abaixo e envie este arquivo para a pasta <b>htm</b> da loja.</p>
+<br>
+
+<!-- Inicio do Antigo Frame FC9526.htm-->
+<pre>&lt;script><i>var</i> sHiddenCampo1='P2PedCampo1';
+<i>var</i> aTextCampo1=<i>new</i> Array('Sem preferência','Manhã (das 7h as 12h)','Tarde (12h as 18h)','Noite (18h as 23h)');
+<i>var</i> aValueCampo1=<i>new</i> Array('Sem preferência','Manhã (das 7h as 12h)','Tarde (12h as 18h)','Noite (18h as 23h)');
+<i>var</i> sErrMsgCampo1='Selecione período preferencial de entrega.';
+
+document.write("&lt;input type=hidden name="+sHiddenCampo1+" id="+sHiddenCampo1+" onpropertychange=PedAlteraCampo1(this.value)>");
+
+<i>for</i>(<i>var</i> i=0;i&lt;aTextCampo1.length;i++)
+  document.write("&lt;input type=radio name=x"+sHiddenCampo1+" id=x"+sHiddenCampo1+"_"+i+" value='"+aValueCampo1[i]+"' onclick=document.Form1."+sHiddenCampo1+".value=this.value>&lt;label for=x"+sHiddenCampo1+"_"+i+">"+aTextCampo1[i]+"&lt;/label>&lt;br>");
+
+
+<i>function</i> PedAlteraCampo1FF(){PedAlteraCampo1(document.Form1.P2PedCampo1.value);}
+<i>if</i>(navigator.appName.indexOf("Explorer")&lt;0)document.getElementById(sHiddenCampo1).addEventListener('DOMAttrModified',PedAlteraCampo1FF,<i>false</i>);
+
+PedAlteraCampo1("&lt;ValorCampo>");
+
+<i>function</i> PedAlteraCampo1(sValor){
+  <i>var</i> iSelect=0,Achei=<i>false</i>;
+  <i>while</i>(iSelect&lt;document.Form1.xP2PedCampo1.length && !Achei){
+    <i>if</i>(document.Form1.xP2PedCampo1[iSelect].value==sValor){document.Form1.xP2PedCampo1[iSelect].checked=<i>true</i>;Achei=<i>true</i>;}
+    <i>else</i> iSelect++;
+  }
+}
+
+<i>function</i> PedValidaCampo1(){
+  <i>var</i> iSelect=0,Achei=<i>false</i>;
+  <i>while</i>(iSelect&lt;document.Form1.xP2PedCampo1.length && !Achei){
+    <i>if</i>(document.Form1.xP2PedCampo1[iSelect].checked)Achei=<i>true</i>;
+    <i>else</i> iSelect++;
+  }
+  <i>if</i>(!Achei){alert(sErrMsgCampo1);document.Form1.xP2PedCampo1[0].focus();<i>return</i> <i>false</i>;}
+  <i>else</i> <i>return</i> <i>true</i>;
+}
+&lt;/script></pre>
+<!-- Fim do Antigo Frame-->
+
+<p><b class="dest">ATENÇÃO:</b> O exemplo acima foi criado para utilizar o <b>Campo 1</b>. Se for utilizar outro campo, será necessário fazer alterações no código acima.</p>
+<br>
+
+
+<p><span class="dest NewsPassos">3º passo</span> (<i>Extreme Checkout</i>)</p>
+<p>Crie um arquivo chamado <b>PedCampo1.htm</b> com o conteúdo abaixo e envie este arquivo para a pasta <b>htm</b> da loja.</p>
+<br>
+
+<!-- Inicio do Antigo Frame FC9526a.htm-->
+<pre>&lt;input type="radio" name="P2PedCampo1" id="P2PedCampo1" onchange="F$.fnCleanErrField('P2PedCampo1');" value="Sem preferência">Sem preferência&lt;br>
+&lt;input type="radio" name="P2PedCampo1" id="P2PedCampo1" onchange="F$.fnCleanErrField('P2PedCampo1');" value="Manhã (das 7h as 12h)">Manhã (das 7h as 12h)&lt;br>
+&lt;input type="radio" name="P2PedCampo1" id="P2PedCampo1" onchange="F$.fnCleanErrField('P2PedCampo1');" value="Tarde (12h as 18h)">Tarde (12h as 18h)&lt;br>
+&lt;input type="radio" name="P2PedCampo1" id="P2PedCampo1" onchange="F$.fnCleanErrField('P2PedCampo1');" value="Noite (18h as 23h)">Noite (18h as 23h)&lt;br>
+&lt;div id=idErrFieldP2PedCampo1FC style="display:none" class=EstErrField>&lt;span id=idTxtErrFieldP2PedCampo1FC class=EstTxtErrField>&lt;/span>&lt;/div>
+
+&lt;script><i>var</i> ErrPedCampo1=0;
+<i>function</i> PedValidaCampo1(){
+  <i>var</i> iSelect=0,Achei=<i>false</i>;
+  <i>while</i>(iSelect&lt;document.Form1.P2PedCampo1.length && !Achei){
+    <i>if</i>(document.Form1.P2PedCampo1[iSelect].checked)Achei=<i>true</i>;
+    <i>else</i> iSelect++;
+  }
+  <i>if</i>(!Achei){
+    oP2PedCampo1=F$.GetID('P2PedCampo1');
+    ErrPedCampo1++;
+    <i>if</i>(ErrPedCampo1==1)F$.fnShowErrField(oP2PedCampo1,"Selecione um período de entrega");
+    <i>else</i> alert("Selecione um período de entrega");
+    document.Form1.P2PedCampo1[0].focus();
+    <i>return false;</i>
+  }
+  <i>else return true;</i>
+}
+&lt;/script></pre>
+<br>
+<!-- Fim do Antigo Frame-->
+
+<center><b>Segue exemplo:</b><br /><br /><img src="/lojas/00000009/images/EntregaProg.gif" class="img-responsive"></center>
+<br>
+
+<p><b class="dest">ATENÇÃO:</b> O exemplo acima foi criado para utilizar o <b>Campo 1</b>. Se for utilizar outro campo, será necessário fazer alterações no código acima.</p>

@@ -1,0 +1,32 @@
+<img src="/lojas/00000009/images/fc/15063_1.png" width="100%"><br>
+<h2>Para implantar:</h2>
+<br>
+<p><span class="dest NewsPassos">1º Passo</span></p>
+
+<p>Copie o código abaixo e cole no fim do arquivo <b>lojalib.js</b>, que fica na pasta HTM. O número 1 representa o número de páginas de produtos que serão carregadas a cada clique do botão.</p>
+<pre>
+var iNextPageButFC=1;
+</pre>
+<br>
+<p><span class="dest NewsPassos">2º Passo</span></p>
+<p>Copie o código abaixo e cole no fim do arquivo <b>lojasite.css</b>, que fica na pasta HTM:</p>
+<pre>
+.estNextPageButFC{border-radius:3px;background:#44ac55;color:#fff;padding:15px;border:0;min-width:40%;cursor:pointer;margin-top:20px;transition:opacity .5s ease;font-size:1.1em;}
+.estNextPageButFC:hover{opacity:.8;}
+.estNextPageButFC:disabled{opacity:.4;}
+.estNextPageContFC{display:flex;width:100%;flex-direction:column;align-items:center;}
+.estLoadingNextPageFC{visibility:hidden;max-height:50px;margin-top:5px;}
+</pre><br>
+<hr>
+<h2>Personalizações</h2><br>
+<p>Para alterar o texto do botão, copie o código abaixo, altere o <b>TEXTO</b> do código pelo texto desejado e cole no fim do arquivo <b>lojasite.css</b> que fica na pasta HTM:</p>
+<pre>
+.estTxtNextPageButFC{display:none;}
+.estNextPageButFC:before{content:"TEXTO";}
+</pre><br>
+<p>Para alterar a imagem de carregamento exibida quando os produtos estão sendo exibidos, insira a linha abaixo no arquivo <b>lojalib.js</b>, que fica na pasta HTM.</p>
+<pre>
+ImgLoadingFC="/lojas/99999999/images/loading.gif";
+</pre>
+Na linha acima, altere <i>99999999</i> pelo ID da loja com 8 dígitos (complete com zeros à esquerda). Altere <i>loading.gif</i> para o nome do gif animado enviado para a pasta images da loja.
+<br>

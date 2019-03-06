@@ -1,0 +1,38 @@
+<center><img src="/lojas/00039769/images/fc/LogoWhatsApp.jpg" class="img-reponsive"  alt="WhatsApp" title="WhatsApp"></center>
+<br>
+
+<p>This article shows you how to add a button <img src="/lojas/00039769/images/IcWhatsApp.svg" width="25" height="25" alt="Recommend this product by WhatsApp" title="Recommend this product by WhatsApp"> to share your store's product in WhatsApp.</p>
+
+<p>The visitor who clicks the button will see a list of their contacts and groups in WhatsApp. You can then select a contact or group that will receive a message through WhatsApp containing a link to the product page.</p>
+
+<p>It is recommended to insert this button into the <a href="/prod,idloja,9,idproduto,4869546" target="_blank">mobile version</a> the virtual store or in your <a href="https://www.fastcommerce.com.br/loja-virtual-responsiva" target="_blank">responsive version</a>, when the customer is in the design made for smartphones.</p>
+
+
+<div class="container">
+	<div class="row">
+	  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+      <img src="/lojas/00039769/images/fc/14505_1.jpg" alt="Botão com link para compartilhar no WhatsApp" title="Botão com link para compartilhar no WhatsApp" class="img-responsive">
+      <p>Button example in a responsive design</p>
+    </div>
+	  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+      <img src="/lojas/00039769/images/fc/14505_2.jpg" alt="Tela do WhatsApp com a mensagem enviada" title="Tela do WhatsApp com a mensagem enviada" class="img-responsive">
+      <p>Example of message sent to WhatsApp</p>
+    </div>
+	</div>
+</div>
+<br>
+
+
+<p>Here is an example code to insert the button <img src="/lojas/00039769/images/IcWhatsApp.svg" width="25" height="25" alt="Recommend this product by WhatsApp" title="Recommend this product by WhatsApp">:</p>
+
+<pre>&lt;span class="ShareWhatsApp">&lt;a href="whatsapp://send?text=<b>See the product '&lt;NomeProd>'. Follow the link: http://lvfc.co/l&lt;IDLojaNum>/p&lt;IDProduto></b>" target="_blank">&lt;img src="&lt;BaseLoja>images/IcWhatsApp.svg" width="35" height="35" border="0" alt="Recommend this product by WhatsApp" title="Recommend this product by WhatsApp">&lt;/a>&lt;/span></pre>
+<br>
+
+<p>If the store has activated the mobile version of the virtual store, this code must be inserted in the file <b>MbhEstiloProduto.htm</b>, within the section &lt;ProdDet>...&lt;/ProdDet>, which is where the detail design of the product is.</p> 
+
+<p>To enter in the responsive version of the virtual store, this code must be inserted in the file <b>EstiloProduto.htm</b>, within the section &lt;ProdDet>...&lt;/ProdDet>, which is where the detail design of the product is. In addition to entering this code, the store must insert in the file <b>LojaSite.css</b> the class <b>ShareWhatsApp</b> to make the button appear only in the design displayed on the mobile phone.</p>
+<br>
+
+<p><b>Obs<sup>1</sup></b>: The image <b>IcWhatsApp.svg</b> must be sent to the folder <b>Images</b> by the store's file manager. <a href="/lojas/00039769/images/IcWhatsApp.svg" target="_blank">click here</a> to download this image.</p>
+
+<p><b>Obs<sup>2</sup></b>: The position where the code should be inserted will depend on where you want the button to appear.</p>

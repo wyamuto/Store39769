@@ -1,0 +1,65 @@
+<script>
+function ValidaForm2(este) {
+  if(este.TextoBuscaNews.value.length<2){
+    alert("Preencha a busca.");
+    este.TextoBuscaNews.focus();
+    return false;
+  }
+  return true;
+}
+</script>
+<!--[if IE]><style>.productMenuClass {margin-left:-303px;margin-top:18px;}</style><![endif]-->
+<script src=Spry.js></script>
+<script>var dsProducts=new Spry.Data.XMLDataSet('<BaseLoja>htm/buscas.xml','/produtos/p',{})
+</script>
+<form name=BuscaNoticia2 method=GET action=Noticias.asp onSubmit='return ValidaForm2(this)'>
+  <input type=hidden name=IDLoja value=9>
+  <table bgcolor=black cellspacing=0 cellpadding=0 width=100%><tr><td valign=top></td></tr></table>
+  <br>
+  <div id=texto3>
+      <table width=400 cellspacing=0 cellpadding=1 class=EstTabQuadroPos>
+         <tr>
+          <td>&nbsp;</td>
+           <td colspan=3 class=mntxt><b>Pesquisar na base de conhecimento:</b></td>
+         </tr>
+         <tr>
+          <td>&nbsp;</td>
+          <td>
+            <input type=text name=TextoBuscaNews class=InputText1 style=width:300px>
+            <div id=productMenu3 class=productMenuClass spry:region=dsProducts>
+            <div class=productItemClass spry:repeat=dsProducts spry:suggest={n}>{n}</div>
+            </div></div>
+            <script>
+            var SprySuggest3=new Spry.Widget.AutoSuggest('texto3','productMenu3','dsProducts','n',{containsString:true,minCharsType:3});
+            </script>
+          </td>
+          <td valign=top><input type=submit name=Procurar value=" Buscar " class=InputButton1></td>
+          <td>&nbsp;</td>
+         </tr>
+</form>
+     </table>
+<br>
+
+<table bgcolor=black cellspacing=0 cellpadding=0 width=100%><tr><td valign=top></td></tr></table>
+<table bgcolor=#F4F4F4 width=100%><tr>
+<td><a href="http://www.fastcommerce.com.br" target=_blank><img src=/sistema/images/c020/0/BotDesignHospedagem.gif border=0></a></td>
+
+<td>&nbsp;&nbsp;&nbsp;</td>
+<td>
+Visite a loja demo CSS<br>
+<a href="http://css.fastcommerce.com.br" target=_blank class=LinkRodape>http://css.fastcommerce.com.br</a>
+</td>
+
+<td>&nbsp;&nbsp;&nbsp;</td>
+<td>
+Perguntas frequentes<br>
+<a href="http://faq.fastcommerce.com.br" target=_blank class=LinkRodape>http://faq.fastcommerce.com.br</a>
+</td>
+
+<td>&nbsp;&nbsp;&nbsp;</td>
+<td>
+E-mail: <a href="<HtmLoja>Suporte.htm" class=LinkRodape>suporte@fastcommerce.com.br</a><br>
+Skype: <a href=skype:Fastcommerce?chat class=LinkRodape>Fastcommerce</a><br>
+</td>
+
+</tr></table>

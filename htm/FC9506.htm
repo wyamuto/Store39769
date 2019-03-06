@@ -1,0 +1,87 @@
+<style>
+.titpeqverde {font-size:9pt;font-family:courier new,tahoma,verdana;color:#1DA906;font-weight:bold;}
+.courrierpeq {font-size:8pt;font-family:courier new,tahoma,verdana;color:#0D6D9E;}
+.destpeq {font-size:8pt;font-family:tahoma,verdana;color:#990000;font-weight:bold;}
+</style>
+<pre>
+<span class=courrierpeq>
+
+<span class=titpeqverde>
+&lt;!-- Altere onde está <span class=destpeq>9</span> de acordo com o Pagto utilizado na loja -->
+&lt;!-- Pagto 1 = <span class=destpeq>9</span>, Pagto 2 = <span class=destpeq>10</span>, Pagto 3 = <span class=destpeq>11</span>, Pagto 4 = <span class=destpeq>12</span> e Pagto 5 = <span class=destpeq>13</span> -->
+
+&lt;!-- Altere onde está <span class=destpeq>888777888</span> de acordo com o <span class=destpeq>acc_id</span> fornecido pelo MercadoPago -->
+
+&lt;!-- Altere onde está <span class=destpeq>xxxxxxxxxxxxxxxxxxx</span> de acordo com o <span class=destpeq>enc</span> fornecido pelo MercadoPago -->
+
+&lt;!-- Altere onde está <span class=destpeq>www.minhaloja.com.br</span> de acordo com o <span class=destpeq>endereço de sua loja</span> -->
+
+&lt;!-- Altere onde está <span class=destpeq>9999999</span> de acordo com o <span class=destpeq>ID de sua loja</span> -->
+
+&lt;!-- Altere onde está <span class=destpeq>XPTO Store</span> de acordo com o <span class=destpeq>nome de sua loja</span> -->
+</span>
+
+
+&lt;script>
+if(&lt;IDFormaPagamento>==<span class=destpeq>9</span>){
+  document.write('&lt;style>');
+  document.write('#novajanela {width:667px;height:460px;background-color:#cbcbcb;position:absolute;top:20px;left:20px;border-style:solid;border-width:5px}');
+  document.write('&lt;/style>');
+  document.write('&lt;div id=novajanela>');
+  document.write('&lt;table width="667" height="460">');
+  document.write('  &lt;tr>');
+  document.write('    &lt;td align=center valign=middle>');
+  document.write('      Acessando site do &lt;b>MercadoPago&lt;/b> para pagamento do pedido...&lt;br>&lt;br>');
+  document.write('      Clique no botão abaixo para prosseguir.&lt;br>&lt;br>&lt;br>');
+  document.write('&lt;form name="mercadopago" action="https://www.mercadopago.com/mlb/buybutton" method="post" target="_blank">');
+  document.write('&lt;input type="image" src="&lt;BaseLoja>images/buy_now_02_mlb.gif" border="0" title="Comprar Agora">');
+  document.write('&lt;input type="hidden" name="acc_id" value="<span class=destpeq>888777888</span>">');
+  document.write('&lt;input type="hidden" name="enc" value="<span class=destpeq>xxxxxxxxxxxxxxxxxxx</span>">');
+  document.write('&lt;input type="hidden" name="url_succesfull" value="http://<span class=destpeq>www.minhaloja.com.br</span>/sistema/Custom.asp?IDLoja=<span class=destpeq>9999999</span>&arq=MPAprovado.htm">');
+  document.write('&lt;input type="hidden" name="url_process" value="http://<span class=destpeq>www.minhaloja.com.br</span>/sistema/Custom.asp?IDLoja=<span class=destpeq>9999999</span>&arq=MPProcessando.htm">');
+  document.write('&lt;input type="hidden" name="url_cancel" value="http://<span class=destpeq>www.minhaloja.com.br</span>/sistema/Custom.asp?IDLoja=<span class=destpeq>9999999</span>&arq=MPCancelado.htm">');
+  document.write('&lt;input type="hidden" name="item_id" value="&lt;IDPedido>">');
+  document.write('&lt;input type="hidden" name="name" value="Pedido #&lt;NumPedido> efetuado na loja <span class=destpeq>XPTO Store</span>">');
+  document.write('&lt;input type="hidden" name="currency" value="REA">');
+  document.write('&lt;input type="hidden" name="price" value="&lt;TotalSemFrete>">');
+  document.write('&lt;input type="hidden" name="shipping_cost" value="&lt;Frete>">');
+  document.write('&lt;input type="hidden" name="ship_cost_mode" value="FS">');
+  document.write('&lt;input type="hidden" name="op_retira" value="">');
+  document.write('&lt;input type="hidden" name="reseller_acc_id" value="5757296">');
+  document.write('&lt;input type="hidden" name="extra_part" value="&lt;NumPedido>">');
+  document.write('&lt;input type="hidden" name="cart_cep" value="&lt;CEPCliente>">');
+  document.write('&lt;input type="hidden" name="cart_street" value="&lt;EnderecoCliente>">');
+  document.write('&lt;input type="hidden" name="cart_number" value="">');
+  document.write('&lt;input type="hidden" name="cart_complement" value="">');
+  document.write('&lt;input type="hidden" name="cart_phone" value="&lt;TelefoneCliente>">');
+  document.write('&lt;input type="hidden" name="cart_district" value="&lt;BairroCliente>">');
+  document.write('&lt;input type="hidden" name="cart_city" value="&lt;CidadeCliente>">');
+  document.write('&lt;input type="hidden" name="cart_state" value="&lt;EstadoCliente>">');
+  document.write('&lt;input type="hidden" name="cart_name" value="">');
+  document.write('&lt;input type="hidden" name="cart_surname" value="">');
+  document.write('&lt;input type="hidden" name="cart_email" value="&lt;EmailCliente>">');
+  document.write('&lt;input type="hidden" name="cart_doc_nbr" value="&lt;CPFCNPJ>">');
+  document.write('&lt;input type="hidden" name="seller_op_id" value="&lt;NumPedido>&lt;IDPedido>">');
+  document.write('&lt;/form>');
+  document.write('    &lt;/td>');
+  document.write('  &lt;/tr>');
+  document.write('&lt;/table>');
+  document.write('&lt;/div>');
+}
+
+var nomecompleto="&lt;NomeCompletoCliente>";
+var palavras= nomecompleto.split(" ");
+for (i=0; i&lt; palavras.length; i++)
+PriNome=palavras[0]
+SobNome=palavras[1]
+{
+document.write("");
+}
+//coloca o resultado no campo hidden cart_name
+document.mercadopago.cart_name.value=PriNome;
+//coloca o resultado no campo hidden cart_surname
+document.mercadopago.cart_surname.value=SobNome;
+&lt;/script>
+
+</span>
+</pre>

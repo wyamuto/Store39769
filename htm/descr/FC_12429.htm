@@ -1,0 +1,68 @@
+<pre><b>#idWidgetFC0 .DivProdImage</b> - posição da imagem
+<b>#idWidgetFC0 .DivProdName</b> - posição do nome do produto
+<b>#idWidgetFC0 .DivProdDesc</b> - posição da descrição do produto
+<b>#idWidgetFC0 .DivProdPrice</b> - posição do preço do produto</pre>
+<br>
+
+<p><b>Exemplo de uso:</b></p>
+
+<pre><span>_FCw_prod["CSS"]="#idWidgetFC0 {width:740px;height:208px}
+#idWidgetFC0 .DivProdImage{text-align:left;background-color:#d1d1d1;width:102px;height:102px;}
+#idWidgetFC0 .DivProdName{position:relative;top:-128px;height:12px;}
+#idWidgetFC0 .DivProdDesc{position:relative;top:-85px;left:105px;padding:0px 0px 0px 0px;text-align:left;width:50px;}
+#idWidgetFC0 .DivProdPrice{position:relative;top:-35px;height:10px;}";</span></pre>
+<br>
+
+<p><b>Código completo de um widget com personalização de layout:</b></p>
+
+<pre><span>&lt;style type="text/css"&gt;
+#idProdWidgetFC iframe{width:745px;}
+&lt;/style&gt;</span></pre>
+<br>
+
+<pre><span>&lt;div id='idProdWidgetFC'&gt;&lt;/div&gt;</pre>
+<br>
+
+<pre>&lt;script type='text/javascript'&gt;
+var _FCw_aProds=new Array();
+var _FCw_prod=new Array();
+_FCw_prod['StoreID']=999999; //ID da loja obrigatório
+_FCw_prod['Partner']='widget'; //Nome do parceiro obrigatório
+_FCw_prod["AdType"]=0; //Tipo de anúncio 0 ao 6
+_FCw_prod["ShowDescription"]=1; //mostra descrições 0=não 1=curta 2=longa
+_FCw_prod["HideImage"]=false; //Não mostra imagem do produto
+_FCw_prod['SearchText']='Câmera Digital'; //Mostra somente produtos contendo o texto
+_FCw_prod['ProdID']=99998888; //Mostra somente o produto
+_FCw_prod['CatID']=4450; //ID da categoria
+_FCw_prod['OnSale']=true; //Somente promoções
+_FCw_prod['NewReleases']=true; //Somente lançamentos
+_FCw_prod['Custom']='informática'; //Não lembro
+_FCw_prod['PosID']='IDWidget01'; //ID do objeto onde será exibido o widget
+_FCw_prod["DefaultImage"]="https://www.rumo.com.br/lojas/00099999/images/logotopo.gif"; //Imagem utilizada se não existir a do produto
+_FCw_prod["ColorSchema"]=1; //esquema de cores (default=1)
+_FCw_prod['BorderColor']='#0066CC'; //Cor da borda
+_FCw_prod['BackgroundColor']='#FFFFFF'; //Cor de fundo
+_FCw_prod['NameColor']='#0000FF'; //Cor do nome
+_FCw_prod['TextColor']='#202020'; //Cor da descrição
+_FCw_prod['PriceColor']='#008000'; //Cor do preço
+_FCw_prod['Qt']=3; //Quantidade de produtos
+_FCw_prod["Cols"]=3; //Colunas de produtos (default=1)
+_FCw_prod['ImageSizeX']='100'; //Largura da imagem do produto
+_FCw_prod['ImageSizeY']='100'; //Altura da imagem do produto
+_FCw_prod["NoImage"]=1; //0=não mostra tag img (default). 1=reserva espaço 2=mostra img "onerror"
+_FCw_prod["CSS"]="<b>#idWidgetFC0 {width:740px;height:208px} #idWidgetFC0 .DivProdImage{text-align:left;background-color:#d1d1d1;width:102px;height:102px;} #idWidgetFC0 .DivProdName{position:relative;top:-128px;height:12px;} #idWidgetFC0 .DivProdDesc{position:relative;top:-85px;left:105px;padding:0px 0px 0px 0px;text-align:left;width:50px;} #idWidgetFC0 .DivProdPrice{position:relative;top:-35px;height:10px;}</b>"; //Posicionamento dos elementos
+_FCw_aProds[_FCw_aProds.length]=_FCw_prod;
+(function(){
+  var fcw=document.createElement('script');
+  fcw.type='text/javascript';
+  fcw.async=true;
+  fcw.src=('https:'==document.location.protocol?'https://www.fastcommerce.com.br':'http://widget.URLDaLoja.lojavirtualfc.com.br')+'/ProdWidget.js';
+  var s=document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(fcw,s);
+})();
+&lt;/script&gt;
+</pre>
+<br>
+
+<p><b>Exemplo:</b><br /></p>
+<p><img src="/lojas/00000009/images/WidgetPerPasso9.jpg" class="img-responsive"></p>

@@ -1,0 +1,414 @@
+<?xml version='1.0' encoding='iso-8859-1'?>
+<produtos>
+<n><p>FC 3748 :: Como disponibilizar boleto bancário na loja?</p></n>
+<n><p>FC 3749 :: Como disponibilizar cartões de crédito na loja?</p></n>
+<n><p>FC 3751 :: Como disponibilizar o Itaú Shopline na loja?</p></n>
+<n><p>FC 3786 :: Como alterar os produtos da loja com arquivo de lote (CSV)?</p></n>
+<n><p>FC 3787 :: Como incluir produtos da loja com arquivo de lote (CSV)?</p></n>
+<n><p>FC 3788 :: Como divulgar a minha loja virtual?</p></n>
+<n><p>FC 3789 :: Como enviar newsletter para clientes?</p></n>
+<n><p>FC 3790 :: Como inserir o banner do e-bit em minha loja?</p></n>
+<n><p>FC 3792 :: O Fastcommerce é seguro?</p></n>
+<n><p>FC 3793 :: Posso utilizar meu domínio www.minhaloja.com.br para acessar a loja?</p></n>
+<n><p>FC 3794 :: Como configuro as tabelas de frete da minha loja?</p></n>
+<n><p>FC 3796 :: Qual a URL para exibir a lista dos produtos da loja em XML?</p></n>
+<n><p>FC 3797 :: Como identificar origens de visitação e cadastrar parceiros afiliados em minha loja?</p></n>
+<n><p>FC 3813 :: É possível personalizar o design da loja?</p></n>
+<n><p>FC 3815 :: Posso fazer uma cópia de segurança (backup) dos dados e arquivos da minha loja?</p></n>
+<n><p>FC 3816 :: O que é CRM?</p></n>
+<n><p>FC 3817 :: Posso enviar os arquivos para minha loja via FTP?</p></n>
+<n><p>FC 3818 :: Posso hospedar arquivos de programação ASP, PHP no Fastcommerce?</p></n>
+<n><p>FC 3819 :: Posso hospedar minha loja fora dos servidores da Rumo Informática?</p></n>
+<n><p>FC 3820 :: É possível criar lojas em outros idiomas?</p></n>
+<n><p>FC 3821 :: Posso personalizar o layout da listagem de produtos da minha loja?</p></n>
+<n><p>FC 3822 :: Como posso integrar sistemas existentes na minha empresa à loja virtual?</p></n>
+<n><p>FC 3823 :: Links uteis para as páginas de ajuda online e Fastcommerce</p></n>
+<n><p>FC 3824 :: É possível colocar arquivos de vídeo ou áudio em minha loja?</p></n>
+<n><p>FC 3825 :: Como emito notas fiscais?</p></n>
+<n><p>FC 3826 :: Como inserir link em mensagens para remover assinantes que desejam cancelar recebimentos?</p></n>
+<n><p>FC 3885 :: Como inserir o código do Google Analytics na minha loja virtual?</p></n>
+<n><p>FC 3921 :: Links para as páginas do site Fastcommerce.</p></n>
+<n><p>FC 4273 :: É possível definir preços para embalagem de presente?</p></n>
+<n><p>FC 4288 :: Como cadastrar cores e outras características dos produtos através de descritores?</p></n>
+<n><p>FC 4290 :: Posso cobrar taxa de emissão do boleto?</p></n>
+<n><p>FC 4292 :: Como realizar a captura com pedidos efetuados com Visa Electron?</p></n>
+<n><p>FC 4293 :: Quais formas de pagamento estão disponíveis no Fastcommerce?</p></n>
+<n><p>FC 4294 :: Como cadastrar mais contas para depósito bancário?</p></n>
+<n><p>FC 4295 :: Como definir os juros do parcelamento pela administradora?</p></n>
+<n><p>FC 4296 :: Como faço para receber pelo PayPal?</p></n>
+<n><p>FC 4297 :: Como posso gerar boletos vencidos?</p></n>
+<n><p>FC 4308 :: Qual o melhor tamanho de imagem para cadastro de produtos?</p></n>
+<n><p>FC 4309 :: Qual a melhor dimensão de imagem para cadastro de produtos?</p></n>
+<n><p>FC 4310 :: Quais formatos de imagens posso inserir no Fastcommerce?</p></n>
+<n><p>FC 4312 :: Como excluir clientes da loja?</p></n>
+<n><p>FC 4313 :: Como excluir pedidos da loja?</p></n>
+<n><p>FC 4315 :: Como definir o acesso dos clientes na loja?</p></n>
+<n><p>FC 4316 :: É possível solicitar o RG do cliente na ficha de cadastro da loja?</p></n>
+<n><p>FC 4317 :: Como contabilizar clicks em link através de cadastro de banners?</p></n>
+<n><p>FC 4318 :: É possível trabalhar com cupom de desconto?</p></n>
+<n><p>FC 4319 :: Como baixar os arquivos do gerenciador?</p></n>
+<n><p>FC 4320 :: Como imprimir um conjunto grande de etiquetas?</p></n>
+<n><p>FC 4321 :: Posso acessar os arquivos via FTP?</p></n>
+<n><p>FC 4322 :: Posso hospedar arquivos ASP no Fastcommerce?</p></n>
+<n><p>FC 4324 :: Posso inserir arquivos de áudio, para downloads e softwares no Fastcommerce?</p></n>
+<n><p>FC 4326 :: O que são pageviews exclusivos a produtos?</p></n>
+<n><p>FC 4328 :: Como recuperar a senha de acesso de um cliente?</p></n>
+<n><p>FC 4329 :: Qual URL para utilizar em newsletter ou link para remoção do assinante da loja?</p></n>
+<n><p>FC 4468 :: Como trabalhar com produtos volumosos para calcular tarifas de Encomenda PAC?</p></n>
+<n><p>FC 4469 :: Como remover a tabela de parcelamento de minha loja?</p></n>
+<n><p>FC 4471 :: É possível mostrar os produtos mais vendidos na página inicial da minha loja?</p></n>
+<n><p>FC 4472 :: Como enviar o logotipo da loja?</p></n>
+<n><p>FC 4519 :: A loja recebe alguma confirmação de pagamento dos pedidos por e-mail?</p></n>
+<n><p>FC 4521 :: Como cadastrar sub-produtos?</p></n>
+<n><p>FC 4522 :: É possível alterar o conteúdo da página de Ajuda da minha loja?</p></n>
+<n><p>FC 4525 :: Porque meus tamanhos cadastrados no descritor não ordena corretamente nos produtos?</p></n>
+<n><p>FC 4528 :: Como inserir o link para o chat em outras páginas da loja?</p></n>
+<n><p>FC 4808 :: Como importar produtos de uma loja para outra?</p></n>
+<n><p>FC 4905 :: Como alterar a tabela de parcelamento de minha loja?</p></n>
+<n><p>FC 4906 :: Como fazer para deixar minhas imagens com menos de 100Kb?</p></n>
+<n><p>FC 4910 :: É possível determinar quais produtos aparecem na página inicial de minha loja?</p></n>
+<n><p>FC 4915 :: Qual a diferença entre descritor especial e simples?</p></n>
+<n><p>FC 4924 :: Posso oferecer descontos através de um parceiro?</p></n>
+<n><p>FC 4925 :: Posso oferecer um desconto exclusivo em determinados produtos através de um parceiro?</p></n>
+<n><p>FC 4926 :: Como configurar boleto do Banco do Brasil quando o código de convênio tem 7 dígitos?</p></n>
+<n><p>FC 4974 : Porque no momento de efetuar o pagamento com cartão de crédito não aparece o parcelamento?</p></n>
+<n><p>FC 4993 :: Como aumentar o tamanho do texto da minha loja?</p></n>
+<n><p>FC 5010 :: Como criar uma página para mostrar ao visitante enquanto a loja estiver em implantação?</p></n>
+<n><p>FC 5036 :: Como mudar o texto para <i>cross selling</i> (Recomendamos também:)?</p></n>
+<n><p>FC 5079 :: Como definir frete grátis para uma determinada região (Ex. São Paulo - Capital)?</p></n>
+<n><p>FC 5092 :: Como cadastrar outras cores para inserir em meus produtos?</p></n>
+<n><p>FC 5093 :: Como faço para baixar um arquivo com o cadastro de todos meus clientes?</p></n>
+<n><p>FC 5094 :: Como faço para baixar um arquivo com o cadastro de todos meus produtos?</p></n>
+<n><p>FC 5095 :: Como faço para baixar um arquivo com o cadastro de todos meus assinantes?</p></n>
+<n><p>FC 5096 :: Como faço para baixar um arquivo com o informações sobre os pedidos?</p></n>
+<n><p>FC 5097 :: Como faço para baixar um arquivo com o informações detalhadas sobre os pedidos?</p></n>
+<n><p>FC 5098 :: Como faço para baixar um arquivo com o informações sobre os acessos?</p></n>
+<n><p>FC 5101 :: Posso utilizar sistema de afiliados?</p></n>
+<n><p>FC 5249 :: Como faço para conseguir a imagens das formas de pagamento?</p></n>
+<n><p>FC 5250 :: Como criar formulário personalizado?</p></n>
+<n><p>FC 5251 :: Como exibir selo de segurança no design da loja?</p></n>
+<n><p>FC 5252 :: Qual o script para utilizar banners randômicos?</p></n>
+<n><p>FC 5255 :: Posso inserir o parcelamento na página inicial de minha loja?</p></n>
+<n><p>FC 5260 :: Qual é o código html do campo de busca?</p></n>
+<n><p>FC 5277 :: Como configurar boleto do Bradesco?</p></n>
+<n><p>FC 5450 :: Como cadastrar sub-produtos por arquivo de lote (CSV)?</p></n>
+<n><p>FC 5477 :: Porque não posso cadastrar mais imagens de produtos?</p></n>
+<n><p>FC 5822 :: Como fazer o parcelamento por valor de produto e não pela regra do JurosParcelas.js?</p></n>
+<n><p>FC 5884 :: Como incluir sub-produtos na loja?</p></n>
+<n><p>FC 6079 :: É possível trabalhar com vale-presente?</p></n>
+<n><p>FC 6101 :: Como alterar a imagem que pode ser vista na barra de endereços do navegador?</p></n>
+<n><p>FC 6105 :: Porque sou desconectado da administração da loja de forma automática?</p></n>
+<n><p>FC 6106 :: Posso utilizar frete grátis para determinados produtos?</p></n>
+<n><p>FC 6107 :: Como criar uma subcategoria, utilizando apenas um comando HTML?</p></n>
+<n><p>FC 6108 :: Criei um newsletter e gostaria de saber se posso hospedar arquivos com mais de 50kb?</p></n>
+<n><p>FC 6110 :: Porque não recebo alguns e-mails de pedidos?</p></n>
+<n><p>FC 6127 :: Posso oferecer a forma de pagamento transferência bancária utilizando o Aprova Fácil?</p></n>
+<n><p>FC 6128 :: Como posso fazer para acrescentar fotos adicionais dos produtos da minha loja?</p></n>
+<n><p>FC 6129 :: Como remover algumas formas de pagamento do rodapé de minha loja?</p></n>
+<n><p>FC 6133 :: Como utilizar a tabela de parcelamento igual da loja fictícia Flores Web?</p></n>
+<n><p>FC 6183 :: Como criar uma página inicial com o aviso de manutenção?</p></n>
+<n><p>FC 6184 :: A Cobre Bem solicitou a atualização do arquivo de configuração (.conf), como proceder?</p></n>
+<n><p>FC 6186 :: Como posso bloquear a função do botão direito do mouse?</p></n>
+<n><p>FC 6198 :: Como contratar o selo de segurança Site Blindado?</p></n>
+<n><p>FC 6208 :: Estou sendo desconectado da administração, o que pode ser?</p></n>
+<n><p>FC 6209 :: Posso hospedar o domínio próprio com a Rumo e os e-mails em outra empresa?</p></n>
+<n><p>FC 6258 :: Como faço para saber os itens mais vendidos (ou menos), dentro de só uma categoria?</p></n>
+<n><p>FC 6259 :: Como criar link com o código de rastreamento dos Correios?</p></n>
+<n><p>FC 6266 :: Contratei o AdWords como posso fazer para avaliar o retorno deste serviço?</p></n>
+<n><p>FC 6360 :: Tenho uma Sex Shop e gostaria de remover o logo da loja do boleto, como fazer?</p></n>
+<n><p>FC 6381 :: É possível otimizar minha loja para cadastro em sites de busca?</p></n>
+<n><p>FC 6437 :: Contratamos o serviço Aprova Fácil, como realizar a instalação em nossa loja?</p></n>
+<n><p>FC 6476 :: Como fazer para determinada forma de envio aparecer somente para determinados produtos?</p></n>
+<n><p>FC 6477 :: Como divulgar a loja no MilhoAzul.com?</p></n>
+<n><p>FC 6481 :: Como mudar a ordem dos produtos listados na loja?</p></n>
+<n><p>FC 6482 :: Como melhorar a performance das páginas de produtos?</p></n>
+<n><p>FC 6483 :: Porque a mensagem CEP fora da área de cobertura aparece no momento da compra?</p></n>
+<n><p>FC 6532 :: Como saber se os clientes de minha loja realizaram as transações bancárias com sucesso?</p></n>
+<n><p>FC 6533 :: Criei um novo design para minha loja, como posso ver o resultado?</p></n>
+<n><p>FC 6534 :: O que devo fazer para evitar prejuízos com fraudes?</p></n>
+<n><p>FC 6535 :: Como fazer para mostrar na loja as notícias que cadastrei?</p></n>
+<n><p>FC 6546 :: Posso mudar o estilo da descrição da forma de pagamento na página de confirmação?</p></n>
+<n><p>FC 6549 :: Como alterar os estilos dos botões Continuar na confirmação do pedido?</p></n>
+<n><p>FC 6623 :: Como apagar o cache da loja?</p></n>
+<n><p>FC 6625 :: Quais os dados da Rumo Informática que o Itaú solicita para contratação do Itaú Shopline?</p></n>
+<n><p>FC 6626 :: Como configurar o Itaú Shopline?</p></n>
+<n><p>FC 6627 :: Como colocar opção de cores para o cliente escolher em um produto?</p></n>
+<n><p>FC 6696 :: Como faço para configurar o acompanhamento de conversões do Google Adwords?</p></n>
+<n><p>FC 6697 :: Quais parâmetros de busca a página que lista os produtos aceita?</p></n>
+<n><p>FC 6698 :: Como receber pagamentos por cartão de crédito através do PagSeguro UOL?</p></n>
+<n><p>FC 6737 :: Porque não consigo desmarcar o campo HTML Server Cache?</p></n>
+<n><p>FC 6739 :: Como configurar boleto do Itaú com carteira sem registro?</p></n>
+<n><p>FC 6740 :: Minha tabela de frete tem muitas tarifas, como faço para cadastrá-la?</p></n>
+<n><p>FC 7041 :: Porque minhas vendas parceladas não são autorizadas pela Cielo?</p></n>
+<n><p>FC 7042 :: O que quer dizer Por cliente nas opções de formas de pagamento?</p></n>
+<n><p>FC 7044 :: Como fazer para criar um programa de afiliados em minha loja?</p></n>
+<n><p>FC 7092 :: O que acontecerá ao mudar o domínio da loja para fora da Rumo Informática?</p></n>
+<n><p>FC 7108 :: Como configurar contas de e-mail no Microsoft Office Outlook 2007 (Google Apps)?</p></n>
+<n><p>FC 7113 :: Porque a barra esquerda aparece duplicada na loja?</p></n>
+<n><p>FC 7114 :: Porque a barra do topo aparece duplicada na loja?</p></n>
+<n><p>FC 7132 :: Quais são as respostas para o questionário da Redecard?</p></n>
+<n><p>FC 7133 :: Como excluir um produto da loja?</p></n>
+<n><p>FC 7233 :: Porque o Google AdWords reprovou minha URL?</p></n>
+<n><p>FC 7240 :: Como determinar quais produtos serão incluídos no XML?</p></n>
+<n><p>FC 7241 :: Abaixo da imagem do botão comprar, está escrito comprar. Como alterar este texto?</p></n>
+<n><p>FC 7242 :: É possível alterar o texto do link: Indique este produto a um amigo?</p></n>
+<n><p>FC 7419 :: Que tipo de certificado digital é usado no Fastcommerce?</p></n>
+<n><p>FC 7524 :: Como exibir no campo de busca o termo procurado?</p></n>
+<n><p>FC 7525 :: Porque um alerta de segurança é exibido em páginas de minha loja?</p></n>
+<n><p>FC 7545 :: Quais textos são exibidos na página de acompanhamento de pedidos do cliente?</p></n>
+<n><p>FC 7546 :: Quando um pedido é efetuado, quem envia as mensagens para o cliente?</p></n>
+<n><p>FC 7547 :: Como obter a lista dos clientes que querem receber newsletters da loja?</p></n>
+<n><p>FC 7600 :: Como faço para utilizar um código promocional quando me inscrevo no AdWords?</p></n>
+<n><p>FC 7601 :: Usei um código promocional do AdWords. Por que estou recebendo uma cobrança agora?</p></n>
+<n><p>FC 7602 :: Qual o formulário de contato para os clientes que tenham dúvidas sobre o AdWords?</p></n>
+<n><p>FC 7675 :: Quando vendemos um produto, a baixa no estoque ocorre de forma automática?</p></n>
+<n><p>FC 7676 :: Posso personalizar o arquivo robots.txt da loja?</p></n>
+<n><p>FC 7677 :: Como saber se o pagamento com Shopline foi feito com opção transferência ou boleto?</p></n>
+<n><p>FC 7678 :: Posso mostrar ao cliente apenas uma opção de frete ao utilizar Sedex e e-Sedex?</p></n>
+<n><p>FC 7680 :: Porque aparece XML Parsing Error: mismatched tag no XML de produtos?</p></n>
+<n><p>FC 7681 :: Porque nas páginas acessadas com https:// aparece certificado inválido?</p></n>
+<n><p>FC 7683 :: Como faço para que as avaliações de produtos feita por visitantes sejam divulgadas?</p></n>
+<n><p>FC 7749 :: Os acessos dos meses anteriores têm informações reduzidas, porque isso ocorre?</p></n>
+<n><p>FC 7750 :: Como informar a quantidade de cada produto antes de colocá-lo na cesta?</p></n>
+<n><p>FC 7751 :: Qual é o lugar mais indicado para adicionar códigos com scripts externos?</p></n>
+<n><p>FC 7752 :: O que significa Código 51 nas transações com cartões Mastercard e Diners?</p></n>
+<n><p>FC 7753 :: É possível suspender temporariamente somente um método de envio?</p></n>
+<n><p>FC 7772 :: Como adicionar uma escolha de ordenação na lista de produtos da loja?</p></n>
+<n><p>FC 7804 :: Porque o frete está sendo calculado de forma incorreta no PagSeguro?</p></n>
+<n><p>FC 7810 :: O que é Tag Cloud?</p></n>
+<n><p>FC 7841 :: Como preparar a loja para acesso por telefone celular?</p></n>
+<n><p>FC 7854 :: Como cadastrar produtos com descrição longa (acima de 1024 caracteres)?</p></n>
+<n><p>FC 7856 :: Como alterar as opções de ordenação na página de busca detalhada de produtos?</p></n>
+<n><p>FC 7858 :: Como ver a loja na versão Mobile em meu computador?</p></n>
+<n><p>FC 7865 :: Como utilizar o recurso de sub-categorias?</p></n>
+<n><p>FC 7895 :: Como cadastrar categorias e sub-categorias em uma nova loja?</p></n>
+<n><p>FC 7899 :: Como cadastrar categorias e sub-categorias em uma loja já existente?</p></n>
+<n><p>FC 7920 :: Como obter informações sobre os acessos à loja?</p></n>
+<n><p>FC 7921 :: Como filtrar visitas indesejadas?</p></n>
+<n><p>FC 7922 :: Qual é a data base da loja?</p></n>
+<n><p>FC 8115 :: Como exibir janela pop-up quando o visitante acessa a loja?</p></n>
+<n><p>FC 8116 :: No relatório principais origens de pedidos no período, porque há URLs em branco?</p></n>
+<n><p>FC 8118 :: Como configurar a loja para aceitar pedidos de outros países?</p></n>
+<n><p>FC 8178 :: Como enviar mensagens SMS para o celular do cliente?</p></n>
+<n><p>FC 8182 :: Quais são as opções para vendas com cartões de crédito?</p></n>
+<n><p>FC 8399 :: Como cadastrar campos adicionais no cadastro de clientes e dados de entrega?</p></n>
+<n><p>FC 8420 :: Como personalizar os campos adicionais na ficha de cadastro e dados de entrega?</p></n>
+<n><p>FC 8426 :: Existe taxa adicional para aceitar pagamentos com cartões de crédito?</p></n>
+<n><p>FC 8427 :: Como alterar a mensagem enviada ao cliente logo após a realização de um pedido?</p></n>
+<n><p>FC 8429 :: Como personalizar o erro 404?</p></n>
+<n><p>FC 8430 :: Como desabilitar temporariamente as vendas da loja?</p></n>
+<n><p>FC 8432 :: A página que lista os sub-produtos é muito extensa. É possível diminuir?</p></n>
+<n><p>FC 8525 :: Como ter um controle melhor das páginas indexadas pelos buscadores?</p></n>
+<n><p>FC 8526 :: Como o cliente poderá fazer o pagamento de um pedido que já foi cancelado?</p></n>
+<n><p>FC 8527 :: Como informar os prazos de entrega de acordo com a localidade de envio?</p></n>
+<n><p>FC 8532 :: Como configurar um funil de conversão no Google Analytics?</p></n>
+<n><p>FC 8562 :: Como adicionar QR Code na loja?</p></n>
+<n><p>FC 8653 :: O Fastcommerce permite a venda de arquivos via download (ex: software, MP3, etc)?</p></n>
+<n><p>FC 8654 :: Porque os pesos que estou cadastrando para os produtos não estão sendo gravados?</p></n>
+<n><p>FC 8655 :: Como inserir um banner randômico?</p></n>
+<n><p>FC 8657 :: Como hospedar as imagens dos produtos em outro provedor?</p></n>
+<n><p>FC 8763 :: Como padronizar a largura das imagens de produtos?</p></n>
+<n><p>FC 8782 :: Como realizar pedidos através de televendas?</p></n>
+<n><p>FC 8788 :: Como permitir ao cliente solicitar a Nota Fiscal Paulista?</p></n>
+<n><p>FC 8960 :: Como aceitar pagamento pelo DinheiroMail?</p></n>
+<n><p>FC 8962 :: Quais produtos são apresentados nos layouts prontos de e-mail marketing?</p></n>
+<n><p>FC 8968 :: Quais classes podem ser personalizadas no cross selling?</p></n>
+<n><p>FC 9078 :: Quais bônus de divulgação são oferecidos aos novos lojistas?</p></n>
+<n><p>FC 9166 :: Como exibir ou remover a opção de boleto na página de acompanhamento de pedido?</p></n>
+<n><p>FC 9192 :: Como criar uma campanha de e-mail marketing?</p></n>
+<n><p>FC 9381 :: Como solicitar a confirmação de e-mail no cadastro de clientes?</p></n>
+<n><p>FC 9526 :: Como solicitar o período de entrega no fechamento do pedido?</p></n>
+<n><p>FC 9545 :: Como aceitar a forma de pagamento Moip?</p></n>
+<n><p>FC 9628 :: Como configurar o boleto do Banco do Brasil?</p></n>
+<n><p>FC 9667 :: Como criar links e obter URLs para as páginas da loja virtual?</p></n>
+<n><p>FC 9687 :: Como integrar sistemas externos ao Fastcommerce?</p></n>
+<n><p>FC 9696 :: Como alterar a frase Avise-me quando estiver disponível?</p></n>
+<n><p>FC 9697 :: Porque o botão de adicionar produto ao carrinho de compras não funciona?</p></n>
+<n><p>FC 9859 :: Como remover dos produtos o link Consulte-nos?</p></n>
+<n><p>FC 9860 :: Como implantar o layout igual ao da loja-exemplo Shop Tênis?</p></n>
+<n><p>FC 9862 :: Como vender para outros países?</p></n>
+<n><p>FC 10130 :: Como configurar boleto do Banco 033 - Banco do Estado de São Paulo - Santander?</p></n>
+<n><p>FC 10304 :: Como inserir links para redes sociais nas páginas de detalhe do produto?</p></n>
+<n><p>FC 10340 :: Como apresentar o histórico da visita utilizando AJAX?</p></n>
+<n><p>FC 10343 :: Como apresentar os dados da cesta utilizando AJAX?</p></n>
+<n><p>FC 10361 :: Como configurar e personalizar a forma de pagamento PayPal Express Checkout?</p></n>
+<n><p>FC 10433 :: Como simplificar o design das páginas de finalização do pedido?</p></n>
+<n><p>FC 10449 :: Modelos adicionais para e-mail marketing</p></n>
+<n><p>FC 10540 :: Como colocar um produto com destaque na página inicial do MilhoAzul.com?</p></n>
+<n><p>FC 10588 :: Qual o código HTML para inserir e-mail na lista de assinantes de e-mail marketing?</p></n>
+<n><p>FC 10775 :: Como configurar boleto da Caixa Econômica (CEF) com carteira SR - Cobrança sem registro?</p></n>
+<n><p>FC 10868 :: Como configurar o cálculo de frete via Webservice dos Correios?</p></n>
+<n><p>FC 10914 :: Lista dos principais integradores Fastcommerce</p></n>
+<n><p>FC 10977 :: Como cadastrar Vale-presente como um produto?</p></n>
+<n><p>FC 11028 :: Como colocar um produto no e-mail marketing do Marketplace MilhoAzul.com?</p></n>
+<n><p>FC 11048 :: Como preencher o questionário Cielo WebService?</p></n>
+<n><p>FC 11255 :: Como personalizar a paginação da lista de produtos e notícias?</p></n>
+<n><p>FC 11259 :: Como criar uma página da loja no Facebook?</p></n>
+<n><p>FC 11260 :: Como personalizar as cores da tag TwitterProfile?</p></n>
+<n><p>FC 11268 :: Como personalizar os ícones de compartilhar das redes sociais?</p></n>
+<n><p>FC 11272 :: Como alterar os ícones que mostram se a senha digitada é fraca, média ou forte?</p></n>
+<n><p>FC 11306 :: Como mensurar as visitas originadas dos sites de redes sociais em minha loja?</p></n>
+<n><p>FC 11357 :: Como publicar a loja virtual no Facebook?</p></n>
+<n><p>FC 11408 :: Como personalizar os ícones de pagamentos na página de escolha da forma de pagamento?</p></n>
+<n><p>FC 11591 :: Como publicar os produtos da loja no Google Shopping?</p></n>
+<n><p>FC 11612 :: Como apresentar os menus da loja de acordo com a sub-categoria acessada?</p></n>
+<n><p>FC 11674 :: Como apresentar as sub-categorias relacionadas a um hotsite?</p></n>
+<n><p>FC 11675 :: Como utilizar as tags de refinamento de buscas?</p></n>
+<n><p>FC 11728 :: Como exibir o nome do cliente logado na loja?</p></n>
+<n><p>FC 11730 :: Porque a loja está sendo exibida no layout para Facebook em meu computador?</p></n>
+<n><p>FC 11738 :: Como configurar o painel de controle do Windows para trabalhar com arquivos CSV?</p></n>
+<n><p>FC 11750 :: Como indicar com cor diferenciada os campos obrigatórios dos dados para entrega?</p></n>
+<n><p>FC 11751 :: Como apresentar aviso de loja em implantação?</p></n>
+<n><p>FC 11752 :: Como alterar o link de avaliação de cliente para uma imagem?</p></n>
+<n><p>FC 11873 :: Como personalizar os produtos da página inicial da loja?</p></n>
+<n><p>FC 11876 :: Como enviar pesquisas de satisfação aos clientes?</p></n>
+<n><p>FC 11960 :: Qual a diferença entre o InfoRisk e o ClearSale?</p></n>
+<n><p>FC 11996 :: Quais são os arquivos principais que compõem o design das páginas da loja?</p></n>
+<n><p>FC 12022 :: Como agilizar o acesso aos produtos que foram listados em várias páginas?</p></n>
+<n><p>FC 12045 :: Como adicionar a simulação do frete na página de detalhe do produto?</p></n>
+<n><p>FC 12056 :: Como personalizar a autopaginação de produtos?</p></n>
+<n><p>FC 12058 :: Como corrigir os principais problemas que podem ocorrer na autopaginação?</p></n>
+<n><p>FC 12059 :: Como personalizar a funcionalidade de inclusão de produtos na cesta?</p></n>
+<n><p>FC 12065 :: Como apresentar informação de Frete Grátis na exibição do produto?</p></n>
+<n><p>FC 12068 :: Como mostrar ao visitante que a quantidade em estoque de um produto está baixa?</p></n>
+<n><p>FC 12089 :: Como substituir o texto consulte-nos por uma imagem?</p></n>
+<n><p>FC 12091 :: Como definir a taxa de rastreamento dos principais robôs de indexação?</p></n>
+<n><p>FC 12097 :: Como habilitar a autopaginação de produtos?</p></n>
+<n><p>FC 12104 :: Como implantar recurso de arraste-solte de produtos para a cesta?</p></n>
+<n><p>FC 12117 :: Porque existe discrepância entre os relatórios do Google Analytics e do Fastcommerce?</p></n>
+<n><p>FC 12152 :: Como configurar o cabeçalho dos hotsites da loja?</p></n>
+<n><p>FC 12223 :: Porque alguns pedidos feitos com Moip Transparente não têm resultados de transação?</p></n>
+<n><p>FC 12247 :: Como configurar corretamente o Google Analytics e o Google AdWords?</p></n>
+<n><p>FC 12287 :: Como acompanhar os acessos das campanhas do Google AdWords pelo Analytics?</p></n>
+<n><p>FC 12387 :: Posso personalizar o widget de produtos?</p></n>
+<n><p>FC 12424 :: Como aumentar a segurança nos acessos ao site administrativo?</p></n>
+<n><p>FC 12429 :: Como alterar o layout do widget de produtos?</p></n>
+<n><p>FC 12430 :: Quais são os modelos prontos de layout de widgets?</p></n>
+<n><p>FC 12431 :: Como divulgar produtos da loja em site de parceiro?</p></n>
+<n><p>FC 12432 :: Quais aplicativos OTP podem ser utilizados para acessar o site administrativo?</p></n>
+<n><p>FC 12433 :: Como inserir mais de um widget na mesma página?</p></n>
+<n><p>FC 12479 :: Como facilitar a busca por produtos, hotsites e notícias da loja?</p></n>
+<n><p>FC 12482 :: Como inserir a tag de Remarketing do Google AdWords?</p></n>
+<n><p>FC 12483 :: Como definir quais mensagens serão exibidas na ficha do pedido?</p></n>
+<n><p>FC 12535 :: Como ativar minha conta de e-mail hospedada pela Microsoft?</p></n>
+<n><p>FC 12552 :: Como crescer e manter a competitividade da empresa?</p></n>
+<n><p>FC 12651 :: Como verificar se o pagamento realizado pelo PayPal foi aprovado?</p></n>
+<n><p>FC 12667 :: Como inserir parâmetros adicionais às URLs dos produtos no XML de produtos da loja?</p></n>
+<n><p>FC 12725 :: Como configurar contas de e-mail no Microsoft Office Outlook 2010 (Microsoft)?</p></n>
+<n><p>FC 12743 :: Quais permissões atribuir ao usuário da integração com a nota fiscal eletrônica?</p></n>
+<n><p>FC 12808 :: Como anunciar no Shopzilla?</p></n>
+<n><p>FC 12853 :: Guia de implantação do Xtreme Checkout</p></n>
+<n><p>FC 12867 :: Como personalizar o Xtreme Checkout?</p></n>
+<n><p>FC 12928 :: Recomendações para as imagens de produtos</p></n>
+<n><p>FC 12946 :: Princípios básicos de SEO</p></n>
+<n><p>FC 12950 :: Quais são as constantes JavaScript do Fastcommerce?</p></n>
+<n><p>FC 13237 :: Como exibir o contrato da loja no fechamento do pedido?</p></n>
+<n><p>FC 13245 :: Como disponibilizar formulário para solicitar o cancelamento de pedido?</p></n>
+<n><p>FC 13353 :: Como conectar dispositivos e aplicativos com POP para contas de e-mail Microsoft?</p></n>
+<n><p>FC 13355 :: Quando devo apagar o cache da loja?</p></n>
+<n><p>FC 13357 :: Como dividir o pagamento de um pedido em múltiplos cartões?</p></n>
+<n><p>FC 13374 :: Como aceitar o Bcash do buscapé (integração Iframe)?</p></n>
+<n><p>FC 13429 :: Como estimular o visitante a informar seu e-mail para receber as newsletters da loja?</p></n>
+<n><p>FC 13495 :: Como implantar o Fast Preview (espiadinha) na home e nas listas de produtos?</p></n>
+<n><p>FC 13500 :: Como integrar minha loja virtual ao MercadoLivre?</p></n>
+<n><p>FC 13507 :: Como anunciar um produto da loja no MercadoLivre?</p></n>
+<n><p>FC 13508 :: Como exportar produtos em massa para o MercadoLivre?</p></n>
+<n><p>FC 13634 :: Como acessar minhas mensagens de e-mail pelo webmail do Gmail?</p></n>
+<n><p>FC 13703 :: Como acessar minhas mensagens de e-mail pelo webmail do Yahoo! Mail?</p></n>
+<n><p>FC 13707 :: Como acessar minhas mensagens de e-mail pelo webmail do Outlook.com?</p></n>
+<n><p>FC 13708 :: Como acessar minhas mensagens de e-mail usando o Windows Live Mail 2012?</p></n>
+<n><p>FC 13710 :: Como acessar minhas mensagens de e-mail?</p></n>
+<n><p>FC 13711 :: Como acessar minhas mensagens de e-mail usando iPhone e iPad?</p></n>
+<n><p>FC 13716 :: Como acessar minhas mensagens de e-mail usando Android?</p></n>
+<n><p>FC 13735 :: Como habilitar o jQuery?</p></n>
+<n><p>FC 13736 :: Como habilitar o Bootstrap?</p></n>
+<n><p>FC 13737 :: Como habilitar o Foundation?</p></n>
+<n><p>FC 13793 :: Porque é recomendável gerar os boletos de pedidos no formato PDF?</p></n>
+<n><p>FC 13839 :: Como personalizar a página de resultados de busca quando nenhum produto for encontrado?</p></n>
+<n><p>FC 13847 :: Lista completa de tags especiais para HTML</p></n>
+<n><p>FC 14022 :: Como e por que ativar o recurso de código de barras?</p></n>
+<n><p>FC 14023 :: Como criar um formulário de login?</p></n>
+<n><p>FC 14138 :: Como criar links de compra para enviar aos clientes que abandonaram carrinhos?</p></n>
+<n><p>FC 14222 :: Como utilizar os ícones do Bootstrap?</p></n>
+<n><p>FC 14223 :: Como utilizar ícones do Foundation no formato de fonte?</p></n>
+<n><p>FC 14224 :: Como utilizar ícones do Foundation no formato SVG?</p></n>
+<n><p>FC 14225 :: Como utilizar ícones do Glyphicons?</p></n>
+<n><p>FC 14226 :: Como utilizar nossa coleção de ícones no formato SVG?</p></n>
+<n><p>FC 14242 :: Como exibir ícones de alta qualidade no design da loja virtual?</p></n>
+<n><p>FC 14263 :: Como acompanhar a satisfação dos clientes da loja virtual?</p></n>
+<n><p>FC 14282 :: Como fazer o upload de imagens de produtos em grandes quantidades?</p></n>
+<n><p>FC 14331 :: Como utilizar zoom para apresentar a imagem ampliada dos produtos?</p></n>
+<n><p>FC 14333 :: Como inserir um banner na loja com rodízio de imagens?</p></n>
+<n><p>FC 14335 :: Como inserir um carrossel responsivo de marcas?</p></n>
+<n><p>FC 14336 :: Como mostrar uma janela ao clicar na imagem do produto?</p></n>
+<n><p>FC 14338 :: Como mostrar uma imagem de produto em 360º?</p></n>
+<n><p>FC 14343 :: Como exibir seus produtos com zoom, slideshow, carrossel e giro 360º?</p></n>
+<n><p>FC 14345 :: Como integrar sistemas de remarketing ao Fastcommerce?</p></n>
+<n><p>FC 14353 :: Como personalizar o recurso de Lazy Load?</p></n>
+<n><p>FC 14358 :: Como utilizar os ícones do Google Material Design?</p></n>
+<n><p>FC 14377 :: Como exibir o selo de qualidade do IBOPE e-commerce?</p></n>
+<n><p>FC 14395 :: Como configurar o certificado SSL da loja virtual?</p></n>
+<n><p>FC 14437 :: Como habilitar zoom em várias imagens de um produto?</p></n>
+<n><p>FC 14481 :: Como alterar as cores da barra da loja modelo?</p></n>
+<n><p>FC 14492 :: Como alterar as cores da loja modelo?</p></n>
+<n><p>FC 14502 :: Como exibir grade de cores e tamanhos em loja responsiva?</p></n>
+<n><p>FC 14505 :: Como inserir link para compartilhar um produto pelo WhatsApp?</p></n>
+<n><p>FC 14552 :: Como configurar contas de e-mail no Microsoft Office Outlook 2013?</p></n>
+<n><p>FC 14564 :: Como habilitar o Wave CSS?</p></n>
+<n><p>FC 14621 :: Lista dos principais parceiros de fotografia do Fastcommerce</p></n>
+<n><p>FC 14680 :: Como reajustar as tarifas de Correios para lojas sem contrato?</p></n>
+<n><p>FC 14700 :: Como configurar o rastreamento de objetos dos Correios via SMS?</p></n>
+<n><p>FC 14758 :: Por que as URLs amigáveis são tão importantes?</p></n>
+<n><p>FC 14767 :: Devo colocar minha loja virtual em marketplaces?</p></n>
+<n><p>FC 14780 :: Como otimizar a loja para acessos por smartphone em um clique?</p></n>
+<n><p>FC 14826 :: Como manter sua loja virtual sempre rápida e segura?</p></n>
+<n><p>FC 14832 :: Como alterar texto da ficha de cadastro?</p></n>
+<n><p>FC 14907 :: Como criar uma mensagem personalizada para os meus pedidos?</p></n>
+<n><p>FC 14908 :: Como gerar a Public key e o Access token para ativar o MercadoPago?</p></n>
+<n><p>FC 14920:: Como personalizar a apresentação das formas de pagamento?</p></n>
+<n><p>FC 14921 :: Como aumentar o limite do campo de quantidade de produtos no carrinho?</p></n>
+<n><p>FC 14962:: Quais serviços de monitoramento de preços podem acessar minha loja?</p></n>
+<n><p>FC 14989 :: Como posso replicar o design de uma loja para outra?</p></n>
+<n><p>FC 15015:: Como utilizar URLs personalizadas nas páginas de produtos e notícias da loja?</p></n>
+<n><p>FC 15016:: Qual é a diferença entre cross selling e venda conjunta?</p></n>
+<n><p>FC 15017 :: Como facilitar a busca pelos produtos da loja?</p></n>
+<n><p>FC 15018 :: Como exibir link para login e logout do cliente?</p></n>
+<n><p>FC 15019 :: Como cadastrar filtros de produtos?</p></n>
+<n><p>FC 15020 :: Como criar tags personalizadas?</p></n>
+<n><p>FC 15021 :: Quais informações sobre a transação de um pedido são retornadas pela Stone?</p></n>
+<n><p>FC 15022 :: Como utilizar bibliotecas de fontes nos textos da loja?</p></n>
+<n><p>FC 15023 :: Como configurar o login do cliente através do Facebook?</p></n>
+<n><p>FC 15024 :: Sua loja está preparada para vender por celular?</p></n>
+<n><p>FC 15025 :: Como configurar o login do cliente através do Google?</p></n>
+<n><p>FC 15026 :: Como inserir as opções de Login do Google e Facebook em outros lugares da loja?</p></n>
+<n><p>FC 15027 :: Como exibir uma promoção antes do visitante sair da loja?</p></n>
+<n><p>FC 15028 :: Como obter a URL do feed para a coleta de produtos no catálogo de produtos do Facebook?</p></n>
+<n><p>FC 15029 :: Como exibir o botão Salvar produtos do Facebook?</p></n>
+<n><p>FC 15030 :: Como configurar o Intelipost para o cálculo de frete?</p></n>
+<n><p>FC 15031 :: Como funciona a integração com o Google Tag Manager?</p></n>
+<n><p>FC 15032 :: Como importar variáveis e acionadores padrões do Fastcommerce para o Google Tag Manager?</p></n>
+<n><p>FC 15033 :: Como mostrar barra de progresso ao carregar uma página?</p></n>
+<n><p>FC 15034 :: Porque utilizar a integração ao GitHub?</p></n>
+<n><p>FC 15035 :: Como publicar sua loja virtual no AMP (Accelerated Mobile Pages)?</p></n>
+<n><p>FC 15036 :: Como ativar o serviço de Avaliações do Consumidor do Google?</p></n>
+<n><p>FC 15037 :: Como usar o GTM para integrar o serviço de Avaliações do Consumidor do Google?</p></n>
+<n><p>FC 15038 :: Como personalizar as mensagens de acompanhamento de pedidos?</p></n>
+<n><p>FC 15039 :: Como exibir conteúdo personalizado de acordo com as características dos produtos?</p></n>
+<n><p>FC 15040 :: Como configurar o PayPal Plus?</p></n>
+<n><p>FC 15041 :: Como mostrar as sugestões de busca do Google?</p></n>
+<n><p>FC 15042 - Como criar link para atendimento pelo WhatsApp?</p></n>
+<n><p>FC 15043 - Como excluir produtos de demonstração?</p></n>
+<n><p>FC 15044 :: Como personalizar a página de acompanhamento de pedido?</p></n>
+<n><p>FC 15045 :: Produto indisponível ou esgotado?</p></n>
+<n><p>FC 15046 :: Quais formas de pagamento devo oferecer na minha loja?</p></n>
+<n><p>FC 15047 :: Como usar vídeos em produtos?</p></n>
+<n><p>FC 15048 :: Como divulgar seus produtos na Black Friday?</p></n>
+<n><p>FC 15049 :: Como incluir funcionalidade de lista de compra na loja?</p></n>
+<n><p>FC 15050 :: Como personalizar a lista de desejos?</p></n>
+<n><p>FC 15051 :: Como vender com PagSeguro na minha loja virtual?</p></n>
+<n><p>FC 15054 :: Como registrar e configurar um domínio para minha loja?</p></n>
+<n><p>FC 15055 :: Como reajustar as tarifas dos Correios?</p></n>
+<n><p>FC 15056 :: Como pagar a mensalidade da loja com débito automático?</p></n>
+<n><p>FC 15057 :: Como cadastrar várias imagens nos produtos?</p></n>
+<n><p>FC 15058 :: Como buscar na loja virtual usando a voz?</p></n>
+</produtos>

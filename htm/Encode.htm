@@ -1,0 +1,183 @@
+<script type="text/javascript"> 
+
+function readSS()
+{ 
+if (document.getElementById || document.all()) 
+   { 
+    var allCookies = document.cookie; 
+    var Path = ""; 
+    var ss = "2";
+
+    Path = location.href.substring(0,location.href.indexOf("indexdot/")+9);
+
+    if (allCookies != "") // A cookie has been set
+       {
+        var strLen   = allCookies.length;
+        var beginPos = allCookies.indexOf("ss=");
+
+        if (beginPos != -1)
+           { ss = allCookies.substring(beginPos+3, beginPos+4); }
+
+        if (Path != "" && ss != "2")   // Only switch if cookie exists and CSS is not the default
+           { 
+             theFile = Path + "ss/" + ss + ".css";
+             if (document.getElementById)
+                { eval("document.getElementById(\"thecss\").href = \"" + theFile + "\""); }
+             else    // IE 4/5 case
+                { eval("document.all.tags(\"thecss\")[0].href = \"" + theFile + "\""); }
+           }
+       }
+   }
+}
+</script>
+<script type="text/javascript"> 
+var hexVals = new Array("0", "1", "2", "3", "4", "5", "6", "7", "8", "9",
+              "A", "B", "C", "D", "E", "F");
+var unsafeString = "\"<>%\\^[]`\+\$\,";
+// deleted these chars from the include list ";", "/", "?", ":", "@", "=", "&" and #
+// so that we could analyze actual URLs
+ 
+function isUnsafe(compareChar)
+// this function checks to see if a char is URL unsafe.
+// Returns bool result. True = unsafe, False = safe
+{
+if (unsafeString.indexOf(compareChar) == -1 && compareChar.charCodeAt(0) > 32
+    && compareChar.charCodeAt(0) < 123)
+   { return false; } // found no unsafe chars, return false
+else
+   { return true; }
+}
+ 
+function decToHex(num, radix)
+// part of the hex-ifying functionality
+{
+var hexString = "";
+while (num >= radix)
+      {
+       temp = num % radix;
+       num = Math.floor(num / radix);
+       hexString += hexVals[temp];
+      }
+hexString += hexVals[num];
+return reversal(hexString);
+}
+ 
+function reversal(s) // part of the hex-ifying functionality
+{
+var len = s.length;
+var trans = "";
+for (i=0; i<len; i++)
+    { trans = trans + s.substring(len-i-1, len-i); }
+s = trans;
+return s;
+}
+ 
+function convert(val) // this converts a given char to url hex form
+{ return  "%" + decToHex(val.charCodeAt(0), 16); }
+ 
+function setRadio()
+// gets the radio state and swaps it. Returns state
+{
+var state;
+if (document.forms[0].state.value == "none")
+    {
+     document.forms[0].state.value = "urlenc"; // set new state
+     document.forms[0].enc[1].checked = true;  // set new radio button
+    }
+else
+   {
+    document.forms[0].state.value = "none";  // set new state
+    document.forms[0].enc[0].checked = true; // set new radio button
+   }
+return document.forms[0].state.value;
+}
+ 
+function changeIt(val)
+// changed Mar 25, 2002: added if on 122 and else block on 129 to exclude Unicode range
+{
+var state   = setRadio();
+var len     = val.length;
+var backlen = len;
+var i       = 0;
+ 
+var newStr  = "";
+var frag    = "";
+var encval  = "";
+var original = val;
+ 
+if (state == "none") // needs to be converted to normal chars
+   {
+     while (backlen > 0)
+           {
+             lastpercent = val.lastIndexOf("%");
+             if (lastpercent != -1) // we found a % char. Need to handle
+                {
+                  // everything *after* the %
+                  frag = val.substring(lastpercent+1,val.length);
+                  // re-assign val to everything *before* the %
+                  val  = val.substring(0,lastpercent);
+                  if (frag.length >= 2) // end contains unencoded
+                     {
+                     //  alert ("frag is greater than or equal to 2");
+                       encval = frag.substring(0,2);
+                       newStr = frag.substring(2,frag.length) + newStr;
+                       //convert the char here. for now it just doesn't add it.
+                       if ("01234567890abcdefABCDEF".indexOf(encval.substring(0,1)) != -1 &&
+                           "01234567890abcdefABCDEF".indexOf(encval.substring(1,2)) != -1)
+                          {
+                           encval = String.fromCharCode(parseInt(encval, 16)); // hex to base 10
+                           newStr = encval + newStr; // prepend the char in
+                          }
+                       // if so, convert. Else, ignore it.
+                     }
+                  // adjust length of the string to be examined
+                  backlen = lastpercent;
+                 // alert ("backlen at the end of the found % if is: " + backlen);
+                }
+            else { newStr = val + newStr; backlen = 0; } // if there is no %, just leave the value as-is
+           } // end while
+   }         // end 'state=none' conversion
+else         // value needs to be converted to URL encoded chars
+   {
+    for (i=0;i<len;i++)
+        {
+          if (val.substring(i,i+1).charCodeAt(0) < 255)  // hack to eliminate the rest of unicode from this
+             {
+              if (isUnsafe(val.substring(i,i+1)) == false)
+                 { newStr = newStr + val.substring(i,i+1); }
+              else
+                 { newStr = newStr + convert(val.substring(i,i+1)); }
+             }
+          else // woopsie! restore.
+             {
+               alert ("Found a non-ISO-8859-1 character at position: " + (i+1) + ",\nPlease eliminate before continuing.");
+               document.forms[0].state.value = "none";
+               document.forms[0].enc[0].checked = true; // set back to "no encoding"
+               newStr = original; i=len;                // short-circuit the loop and exit
+             }
+        }
+ 
+   }
+    document.forms[0].origval.value = newStr;
+}
+</script> 
+
+<BODY onload="readSS()">
+<form name="urlenc"> 
+<input type="hidden" name="state" value="none"> 
+<blockquote><table border=0> 
+<tr><th colspan=3><input type=text name="origval" value="" size=50></th></tr> 
+<tr><td align=center><input type=radio name="enc" checked></td> 
+    <td align=center><input type=button value="&lt;-- Convert --&gt;"
+        onclick="changeIt(document.forms[0].origval.value);"></td> 
+    <td align=center><input type=radio name="enc"></td> 
+</tr> 
+<tr> 
+   <th><font size=2>No<br>Encoding</font></th> 
+   <th></th> 
+   <th><font size=2>URL-Safe<br>Encoding</font></th> 
+</tr> 
+</table> 
+</blockquote> 
+</form> 
+</body>

@@ -1,0 +1,104 @@
+<br><p>Siga os passos abaixo para implementar a permissão para o Google enviar mensagem para o cliente avaliar a loja:</p>
+
+<br><p><span class="dest NewsPassos">1º Passo</span></p>
+<p>Acesse o <a href="https://www.google.com.br/tagmanager" target="_blank">Google Tag Manager</a>.</p>
+
+<br><p><span class="dest NewsPassos">2º Passo</span></p>
+
+<p>Clique no nome do contêiner que deseja editar.</p>
+
+<br><p><span class="dest NewsPassos">3º Passo</span></p>
+
+<p>Clique em <b>Tags</b> > <b>Nova</b>.<ul><li>No título, coloque <b>Google Avaliações do Consumidor</b></li><li>Em <b>configuração da tag</b>, escolha o tipo da tag <b>HTML personalizado</b>.</li><li>No conteúdo da tag, coloque o código abaixo:</li></ul></p>
+
+<pre>
+&lt;script>
+Date.prototype.addDays = function(days) {
+  this.setDate(this.getDate() + parseInt(days));
+  return this;
+}
+
+function fnDateGoogle(){
+  var DiasEstimativaEntrega=7;
+  var currentDate=new Date();
+  currentDate.addDays(DiasEstimativaEntrega);
+  var month=currentDate.getUTCMonth()+1;
+  var day=currentDate.getUTCDate();
+  var year=currentDate.getUTCFullYear();
+  day=day+"";
+  month=month+"";
+  if(day.length==1)day="0"+day;
+  if(month.length==1)month="0"+month;
+  var newdateGoogle=year +"-"+ month +"-"+ day;
+  return newdateGoogle; 
+}
+
+var DateGoogle=fnDateGoogle();
+
+F$.fnLoadScript('https://apis.google.com/js/platform.js?onload=renderOptIn',true);
+
+window.renderOptIn = function() {
+  window.gapi.load('surveyoptin', function() {
+    window.gapi.surveyoptin.render(
+      {
+        "merchant_id": <b style="color:#ff2200">9999999</b>,
+        "order_id": "{{FC_orderNumber}}",
+        "email": "{{FC_email}}",
+        "delivery_country": "BR",
+        "estimated_delivery_date": DateGoogle
+      });
+  });
+}
+
+window.___gcfg = {
+  lang: 'pt_BR'
+};
+&lt;/script>
+</pre><br><br>
+
+<p><b>OBS¹</b>: Altere o <b style="color:#ff2200">9999999</b> do merchant_id para o código do merchant_id de sua loja. Este código pode ser visto no menu esquerdo do Google Merchant (<i>ID do comerciante</i>).</p>
+
+<p><b>OBS²</b>: Na integração deve ser enviado ao Google a data de estimativa de entrega do pedido. Na variável "DiasEstimativaEntrega" está configurado o valor 7, ou seja, a data enviada para o Google de estimativa de entrega é a data de hoje mais 7 dias. Se desejar, altere este valor de acordo com o maior prazo que o consumidor costuma receber os pedidos da loja.</p>
+
+<br><p><span class="dest NewsPassos">4º Passo</span></p>
+
+<p>Em <b>Acionamento</b>, selecione o acionador <b>FC Evento Pedido Efetuado</b>.</p>
+
+<br><p><span class="dest NewsPassos">5º Passo</span></p>
+
+<p>Clique em <b>Salvar</b> e depois em <b>Publicar</b>.</p>
+
+<br><p><span class="dest NewsPassos">6º Passo</span></p>
+
+<p>Faça pedidos de teste. Na página de confirmação do pedido, deve ser exibida uma solicitação do Google para perguntar se o cliente deseja avaliar posteriormente a loja.</p>
+
+<br><p><hr></p>
+<p><b>Implementação do Selo / badge</b></p>
+<p><hr></p>
+
+<p>Opcionalmente é possível inserir um <b>Badge</b>, que é um selo para mostrar que sua loja virtual participa do programa Google Avaliações do Consumidor e exibir sua classificação de vendedor na sua loja.</p>
+
+<p>Para inserir, adicione o snippet de código abaixo a qualquer página do seu site alterando o merchant_id de <b style="color:#ff2200">9999999</b> para o merchant_id de sua loja. Após adicionar o snippet de código, verifique se o selo aparece no seu site corretamente.</p>
+
+<pre>&lt;script src="https://apis.google.com/js/platform.js?onload=renderBadge" async defer>&lt;/script>
+
+&lt;script>
+  window.renderBadge = function() {
+    var ratingBadgeContainer = document.createElement("div");
+    document.body.appendChild(ratingBadgeContainer);
+    window.gapi.load('ratingbadge', function() {
+      window.gapi.ratingbadge.render(ratingBadgeContainer, {"merchant_id": <b style="color:#ff2200">9999999</b>});
+    });
+  }
+&lt;/script>
+&lt;script>
+  window.___gcfg = {
+    lang: 'pt_BR'
+  };
+&lt;/script></pre>
+
+<p><b>OBS:</b> Se não houver classificações do vendedor, a mensagem <b>Nenhuma classificação disponível</b> será exibida.</p>
+
+<p>Normalmente, sua loja precisa ter pelo menos <b>150 avaliações</b> no último ano para que a sua classificação de vendedor apareça no selo. Por isto, sugerimos que insira o selo apenas quando a loja tiver atingido este número de avaliações.</p>
+
+<p><a href="https://support.google.com/merchants/answer/7105655?hl=pt-BR" target="_blank">Clique aqui</a> para mais detalhes.</p>

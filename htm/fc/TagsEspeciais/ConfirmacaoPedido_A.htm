@@ -1,0 +1,50 @@
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'>
+<title>FastCommerce :: Tags especiais</title>
+<link href="https://www.rumo.com.br/sistema/adm/Estilos1.css" rel="stylesheet" type="text/css">
+<style>
+body,td,span,p {font-size:10pt;}
+.tagtxt {font-size:11pt;font-family:Consolas,Courier New,Courier,Terminal;}
+</style>
+</head>
+<body topmargin=0 leftmargin=0 marginwidth=0 marginheight=0 class=EstTabPag>
+<table width=710 cellspacing=0 cellpadding=10 align=center>
+  <tr>
+    <td><center><span class=EstTopoGen><h3>Tags especiais para ConfirmacaoPedido.htm</h3></span></center>
+    <p>O arquivo <b>ConfirmacaoPedido.htm</b> pode conter as seguintes tags especiais, que serão substituídas por conteúdo obtido a partir do pedido que acabou de ser feito pelo cliente.
+    </p>
+
+<table width=710 cellspacing=0 cellpadding=0 align=center class=EstTabBorda bgcolor=#333>
+  <tr>
+    <td>
+      <table width=710 cellspacing=1 cellpadding=20 align=center>
+        <tr><td align=center class=EstCaixaTit>Tag</td><td align=center class=EstCaixaTit>Descrição</td></tr>
+        <tr><td class=EstTabInt valign=top align=center><span class=tagtxt>&lt;IDCliente><br>&lt;NomeCompletoCliente><br>&lt;EmailCliente><br>&lt;NomeEmpresa><br>&lt;CPFCNPJ><br>&lt;RGIE><br>&lt;EnderecoCliente><br>&lt;LogradouroCliente><br>&lt;EnderecoNumCliente><br>&lt;EnderecoComplCliente><br>&lt;BairroCliente><br>&lt;CidadeCliente><br>&lt;EstadoCliente><br>&lt;PaisCliente><br>&lt;CEPCliente><br>&lt;TelefoneCliente><br>&lt;FaxCliente><br>&lt;CelularCliente><br>&lt;DataNascCliente></span></td><td valign=top class=EstTabInt>Substituídas pelos dados do cliente.</td></tr>
+        <tr><td class=EstTabInt valign=top align=center><span class=tagtxt>&lt;IDPedido><br>&lt;NumPedido><br>&lt;NomePedido><br>&lt;EmailPedido><br>&lt;EnderecoPedido><br>&lt;LogradouroPedido><br>&lt;EnderecoNumPedido><br>&lt;EnderecoComplPedido><br>&lt;BairroPedido><br>&lt;CidadePedido><br>&lt;EstadoPedido><br>&lt;PaisPedido><br>&lt;CEPPedido><br>&lt;TelefonePedido><br>&lt;FAXPedido><br>&lt;LocalEntrega><br>&lt;MsgCliente><br>&lt;DataSolicEntrega><br>&lt;NomeParceiro><br>&lt;DescontoCupom><br>&lt;ValorEmbalagemPedido><br>&lt;TotalSemFrete><br>&lt;Frete><br>&lt;TotalPrazo></span></td><td valign=top class=EstTabInt>Substituídas pelos dados do pedido.<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><b>Obs.:</b> A tag &lt;TotalPrazo> mostrará o valor total do pedido mais o frete, incluindo os juros. Se não houver juros ou se o pagamento for à vista, esta tag exbirá o valor à vista.</td></tr>
+        <tr><td class=EstTabInt valign=top align=center><span class=tagtxt>&lt;FormaPagamento><br>&lt;IDFormaPagamento></span></td><td valign=top class=EstTabInt>Substituídas respectivamente pela forma de pagamento e pelo ID associado, de acordo com a seguinte tabela:<br><br>
+          <table width=98% cellspacing=1 cellpadding=3 align=center class=EstTabPag bgcolor=#333><tr><th>IDFormaPagamento</th><th>FormaPagamento</th></tr><tr><td align=center>1</td><td>Boleto bancário</td></tr><tr><td align=center>3</td><td>Cartão de crédito</td></tr><tr><td align=center>4</td><td>Depósito bancário</td></tr><tr><td align=center>5</td><td>Itaú Shopline</td></tr><tr><td align=center>6</td><td>Contra-entrega</td></tr><tr><td align=center>9 a 13</td><td>Formas de pagto adicionais 1 a 5</td></tr><tr><td align=center>15</td><td>PayPal</td></tr><tr><td align=center>16</td><td>VISA Electron</td></tr><tr><td align=center>17</td><td>RealPague</td></tr><tr><td align=center>18</td><td>PagSeguro</td></tr><tr><td align=center>19</td><td>Banco do Brasil</td></tr></table>
+        </td></tr>
+        <tr><td class=EstTabInt valign=top align=center><span class=tagtxt>&lt;TipoCartao><br>&lt;IDTipoCartao></span></td><td valign=top class=EstTabInt>Substituídas respectivamente pelo tipo de cartão e pelo ID associado, de acordo com a seguinte tabela:<br><br>
+          <table width=98% cellspacing=1 cellpadding=3 align=center class=EstTabPag bgcolor=#333><tr><th>IDTipoCartao</th><th>TipoCartao</th></tr><tr><td align=center>1</td><td>AMEX</td></tr><tr><td align=center>2</td><td>Diners</td></tr><tr><td align=center>3</td><td>Mastercard</td></tr><tr><td align=center>4</td><td>VISA</td></tr><tr><td align=center>5</td><td>Hipercard</td></tr><tr><td align=center>6</td><td>Aura</td></tr><tr><td align=center>7</td><td>Elo</td></tr></table>
+        </td></tr>
+        <tr><td class=EstTabInt valign=top align=center><span class=tagtxt>&lt;NumParcelas></span></td><td valign=top class=EstTabInt>Substituída pelo número de parcelas de pagamento.</td></tr>
+        <tr><td class=EstTabInt valign=top align=center><span class=tagtxt>&lt;Presente></span></td><td valign=top class=EstTabInt>Substituída por <b>S</b> caso o pedido tenha embalagem para presente em um ou mais itens.</td></tr>
+        <tr><td class=EstTabInt valign=top align=center><span class=tagtxt>&lt;NomeLoja></span></td><td valign=top class=EstTabInt>Substituída pelo nome da loja.</td></tr>
+        <tr><td class=EstTabInt valign=top align=center><span class=tagtxt>&lt;QtdProdutosDistintos></span></td><td valign=top class=EstTabInt>Substituída pela quantidade de produtos distintos no pedido.</td></tr>
+        <tr><td class=EstTabInt valign=top align=center><span class=tagtxt>&lt;RefProduto><br>&lt;NomeProduto><br>&lt;CatProduto><br>&lt;QtdProduto><br>&lt;PrecoUnitProduto><br>&lt;ValorEmbalagemProduto><br>&lt;DescritorEspecial1Produto><br>&lt;DescritorEspecial2Produto><br>&lt;DescritorEspecial3Produto><br>&lt;DescritorSimples1Produto><br>&lt;DescritorSimples2Produto><br>&lt;DescritorSimples3Produto><br>&lt;IDProduto><br>&lt;PresenteProduto><br>&lt;CorProduto><br>&lt;PesoProduto></span></td><td valign=top class=EstTabInt>Substituídas pelos dados de cada produto distinto do pedido.<br><br>As tags são acrescidas de sufixo numérico de ordem. Por exemplo, no 1º produto do pedido, as tags são &lt;RefProduto1>, &lt;NomeProduto1>, &lt;QtdProduto1>, etc. No 2º produto do pedido, as tags são &lt;RefProduto2>, &lt;NomeProduto2>, &lt;QtdProduto2>, etc.<br><br>A tag &lt;PresenteProduto<i>X</i>> é substituída por <b>S</b> caso o <i>X</i>º produto tenha sido solicitado com embalagem para presente.</td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+
+<br><br>
+O arquivo <b>ConfirmacaoPedido.htm</b> poderá conter também as tags especiais dos arquivos htm personalizados.
+<br><br>
+
+    </td>
+  </tr>
+</table>
+</body>
+</html>

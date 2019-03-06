@@ -1,0 +1,14 @@
+<style>
+.courrierpeq {font-size:8pt;font-family:courier new,tahoma,verdana;color:#0D6D9E;}
+.destpeq {font-size:8pt;font-family:tahoma,verdana;color:#990000;font-weight:bold;}
+</style>
+
+<pre>
+<span class=courrierpeq>
+&lt;script&gt;
+var sPag=document.location.href.toUpperCase();
+if(sPag.indexOf("ADDPRODUTO")&gt;=0 && sPag.indexOf("LINK")&lt;0 && sPag.indexOf("ADDMULT")&lt;0){
+document.write("&lt;div id=Voltar style='position:absolute;<span class=destpeq>left:60%;top:220px;</span>'&gt;&lt;table width=200&gt;&lt;tr&gt;&lt;td align=center colspan=2&gt;&lt;form method=GET action=AddProduto.asp?IDLoja=&lt;IDLoja&gt;&Y=&lt;Y&gt; name=Form&gt;&lt;input type=hidden name=IDLoja value=<span class=destpeq>244</span>&gt;&lt;input type=hidden name=Y value=&lt;Y&gt;&gt;&lt;img src=&lt;BaseLoja&gt;images/<span class=destpeq>CupomDesconto.gif</span>&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td valign=top&gt;&lt;input type=text size=15 name=origem class=InputText&gt;&lt;/td&gt;&lt;td&gt;&lt;input type=submit value='Calcular' class=InputButton&gt;&lt;/form&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;");}
+&lt;/script&gt;
+</span>
+</pre>

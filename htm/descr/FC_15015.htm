@@ -1,0 +1,64 @@
+<p>Custom URLs must be alphanumeric, with no accents. Spaces should be replaced with hyphens. URLs must be unique, since the store should not have two pages with the same address.</p>
+<p>To enable this feature, go to the <b>Navigation and SEO</b> section of the <b>STORE CONFIGURATION</b> page of the control panel. Check the <i>Custom URLs</i> field and enter the terms that will be used at the beginning of the custom URL that lists the products in a category and news. These terms will be displayed between bars / in the page address.</p>
+<ul>
+<li><u>Path to Categories:</u> When filling in this field with <b>brand</b>, the custom URL for products in each category of the store will be <b>/brand/category-name</b>. Access the tab for each category to set your custom URL. When you visit the URL <b>/brand</b> you will be presented with a page with the list of store categories.</li>
+<li><u>Path to News:</u> When filling this field with news, the custom URL to list the store news will be <b>/news</b>. The individual news will be accessed by the <b>/news/url-news</b>, where url-noticia is what was filled in the URL field of the news story.</li>
+</ul>
+<p><b class="dest">ATTENTION:</b> Before customizing product and news URLs, take the following test:</p>
+<p><span class="dest NewsPassosG">1 Step</span></p>
+<p>Go to a category listing and enter your custom URL.</p>
+
+<p><span class="dest NewsPassosG">2 Step</span></p>
+<p>Go to the custom URL for the category you created in the previous step and access the links on this page. Make sure there are no ERROR 404 on these links and that everything is OK in the store features. <a href="#p4">Click here</a> for guidelines in the <b>Fixed Issues</b> section.</p>
+<p><b>ATTENTION:</b> The tests should also be done in the mobile version and the Facebook version of the store.</p>
+<p>Turn off the custom URL feature if a problem is identified. Please contact our support team if you have any questions.</p>
+
+
+<p><span class="dest NewsPassosG">3 Step</span></p>
+<p>After performing the tests and making sure that no errors were found, disable the custom URLs feature and run the following utilities to create all store URLs:</p>
+<ul>
+  <li>Defines custom product URLs</li>
+  <li>Defines custom category URLs</li>
+  <li>Defines custom news URLs <i>(only if the store has news stories)</i></li>
+</ul>
+<p><b>Obs:</b> URLs can also be created individually via the tab for each product, category and news.</p>
+<br>
+
+<p><span class="dest NewsPassosG">4 Step</span></p>
+<p>After running the utilities from the previous step, access the following reports to list the URLs that were created:</p>
+<ul>
+  <li>Products registered by custom URL and Title</li>
+  <li>Categories registered</li>
+  <li>News registered by custom URL and Title <i>(only if you have registered news)</i></li>
+</ul>
+<p><b>Obs:</b> Make sure there are no duplicate URLs and all of them match the format you want. Corrections should be made in the tab of each product, category and news.</p>
+
+<hr>
+
+<p><b class="dest">ATTENTION</b></p>
+<p>Enabling this feature involves re-indexing search sites for store and product URLs. Accesses to old URLs will automatically be redirected to new custom URLs via redirect 301. Therefore, do not enable this feature without making sure that everything is fine.</p>
+<p>After registering custom URLs, avoid changing them again so that 404 error (page not found) does not occur in hits made to the previous custom URL. When changing the page URL, consider that it is likely that Google has already indexed the previous URL, which will no longer exist.</p>
+
+
+<p id="p4"><hr><p><b>Correction of problems encountered</b></p></p>
+<p>Check the HTML and javascript files that were customized because relative links that do not start with slash (<b>/</b>) will no longer work.</p>
+
+<p><b>Example:</b></p>
+<ul>
+  <li>Incorrect link: <b>&lt;a href="prod,offers,1,offers.htm"&gt;</b></li>
+  <li>Correct Link: <b>&lt;a href="/prod,offers,1,offers.htm"&gt;</b></li>
+</ul>
+<br>
+<p>Another example is the shopping cart function:</p>
+<ul>
+  <li>Incorrect link: <b>oXMLHTTP.open("GET","XMLCart.asp",false);</b></li>
+  <li>Correct Link: <b>oXMLHTTP.open("GET","/XMLCart.asp",false);</b></li>
+</ul>
+ <br>
+<p>If the store has static links for categories, change them as follows.</p>
+<ul>
+  <li>Incorrect link: <b>&lt;a href="/prod,catid,99999,apple"&gt;Appel&lt;/a&gt;</b></li>
+  <li>Correct Link: <b>&lt;a href="/category/apple"&gt;Apple&lt;/a&gt;</b></li>
+</ul>
+<br>
+<p><b>Obs:</b> Tests should also be done on Facebook, Mobile and alternative A / B test designs if the store uses any of these features.</p>

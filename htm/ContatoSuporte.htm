@@ -1,0 +1,318 @@
+
+ 	<style type="text/css">
+ 		form,input,select,textarea{font: 13px arial, verdana; margin:0; padding:0; color:#333;}
+
+        div.boxForm{width: 780px; display: table; position: relative; border:none; margin:0 auto;}
+        div.boxForm h1{font: bold 16px arial; text-align: center; margin: 30px 0;}
+ 		div.boxLine{position: relative; display: table; width: 100%; margin: 10px 0; padding: 0 }
+ 		span.txtField{float: left; font: 13px arial, verdana; display: block; padding: 8px 5px; width: 100px; text-align: right;}
+ 		
+        div.boxLine input.inputFieldtxtSmall{float: left; width: 120px; height: 25px;  padding: 5px;}
+ 		div.boxLine input.inputFieldtxtLarge{float: left; width: 400px; height: 25px; padding: 5px;}
+        select.inputSelect {float: left; width: 412px; height: 37px; padding: 8px 5px;}
+ 		div.boxLine textarea.inputMsgLarge{float: left; width: 630px; height: 200px; padding: 10px;}
+ 		div.boxLine input.inputBtn{width: 150px; height: 30px; background: #2ECB32; color: #fff; font-weight: bold; border-radius: 3px; border:0; float: right; margin-right: 18px;}
+
+        span.txtFieldAss{float: left; font: 13px arial, verdana; display: block; padding: 5px 5px; width: 500px; text-align: right;}
+        div.boxLine input.inputCkd{margin: 8px 0}
+        option.opTitle{background-color: #ccc; padding: 3px}
+        option.opTitleSub{padding: 3px 0 3px 15px ;}
+
+        b.inputObrigatorio{color: #f00}
+
+        .bot-enviar{ text-align: center;}
+        .bot-enviar label{display: block; float: left;}
+        .lb-captcha .input-captcha{ width: 120px; height: 30px; padding: 6px;}
+
+
+ 	</style>
+
+ 	<form name="formContato" method="POST" id="idFormContato" action="EnviaMail.asp">
+        <input type="hidden" name="NomePara" value="Atendimento FC">
+        <input type="hidden" name="EmailPara" value="antonio@fastcommerce.com.br">
+        <input type="hidden" name="Assunto">
+        <input type="hidden" name="URLRetorno" value="<HTMLoja>thks.htm">
+        <input type="hidden" name="OrdemCampos" value="IDLoja,NomeLoja,NomeDe,EmailDe,TelefoneDe,AssuntoSuporte,MensagemDe">
+
+        
+ 	<div class="boxForm">
+ 		<h1>Contato</h1>
+
+ 		<div class="boxLine">
+ 			<label>
+        		<span class="txtField">IDLoja<b class="inputObrigatorio">*</b></span>
+        		<input class="inputFieldtxtSmall" name="IDLoja" type="text" id="IDLoja" placeholder="ex.: 999" />
+ 		    </label>
+            <label>
+ 		        <span class="txtField">Nome da Loja</span>
+        		<input class="inputFieldtxtLarge" name="NomeLoja" type="text" id="NomeLoja" placeholder="ex.: Minha loja" />
+            </label>
+        </div>
+        <div class="boxLine">
+        	<label>
+        		<span class="txtField">Nome<b class="inputObrigatorio">*</b></span>
+        		<input class="inputFieldtxtLarge" name="NomeDe" type="text" id="NomeDE" placeholder="ex.: Nome"/>
+ 		    </label>
+        </div>
+        <div class="boxLine">
+ 			<label>
+        		<span class="txtField">E-mail<b class="inputObrigatorio">*</b></span>
+        		<input class="inputFieldtxtLarge" name="EmailDe" type="email" id="EmailDE" placeholder="ex.: mail@mailto.com"/>
+ 		    </label>
+            <label>
+ 		        <span class="txtField">Telefone</span>
+        		<input class="inputFieldtxtSmall" name="TelefoneDe" type="text" placeholder="ex.: 11 9999-9999" />
+            </label>
+        </div>
+        <div class="boxLine">
+            <label>
+                <span class="txtFieldAss">Digitar um assunto</span>
+                <input class="inputCkd" id="inputCkd" type="checkbox"/>
+            </label>
+        </div>
+        <div class="boxLine" id="idSelectAssunto">
+        	<label>
+        		<span class="txtField">Assunto<b class="inputObrigatorio">*</b></span>
+        		<select class="inputSelect" name="AssuntoSuporte" id="idAssunto">
+                    <option value="0">Selecione...</option>
+  					<option value="Configurações geras da loja" class="opTitle">Configurações geras da loja</option>
+  					<option value="Domínio próprio" class="opTitleSub">Domínio próprio</option>
+  					<option value="E-mails da loja" class="opTitleSub">E-mails da loja</option>
+  					<option value="Envio e Frete" class="opTitleSub">Envio e Frete</option>
+
+                    <option value="Design e conteúdo" class="opTitle">Design e conteúdo</option>
+                    <option value="Cores da loja" class="opTitleSub">Cores da loja</option>
+                    <option value="Arquivo CSS" class="opTitleSub">Arquivo CSS</option>
+                    <option value="Arquivos HTMLs personalizados" class="opTitleSub">Arquivos HTMLs personalizados</option>
+                    <option value="HTML Server Cache" class="opTitleSub">HTML Server Cache</option>
+                    <option value="Layout da loja" class="opTitleSub">Layout da loja</option>
+                    <option value="CAPTCHA" class="opTitleSub">CAPTCHA</option>
+                    <option value="Barras Latreais" class="opTitleSub">Barras Latreais</option>
+                    <option value="Estilo da lista de produtos" class="opTitleSub">Estilo da lista de produtos</option>
+
+				</select> 
+ 		    </label>
+        </div>        
+        <div class="boxLine" id="idAssuntoDig" style="margin:0 !important">
+
+        </div>
+        <div class="boxLine">
+        	<label>
+        		<span class="txtField">Mensagem<b class="inputObrigatorio">*</b></span>
+        		<textarea class="inputMsgLarge" name="MensagemDe" placeholder="ex.: Como cadastrar um tabela de frete?"></textarea>
+ 		    </label>
+        </div>
+        <div class="boxLine bot-enviar">
+        	<label>        		
+				<input type="button" class="inputBtn" id="inputBtn" value="Enviar" />                
+ 		    </label>
+            <label class="lb-captcha">
+              <input name="CodCaptcha" maxlength="10" class="input-captcha">
+              <img src="Captcha.asp?IDLoja=<IDLoja>&Y=<Y>" width="64" height="32">
+            </label>
+        </div>
+       </form>
+ 	</div>
+
+<script>
+var countChecked = function() {
+    var nChk = jQuery( "#inputCkd:checked" ).length;
+        if(nChk>0){
+            
+         var str =  '<label>';
+             str += '<span class="txtField">Assunto<b class="inputObrigatorio">*</b></span>';
+             str += '<input class="inputFieldtxtLarge" name="AssuntoSuporte" type="text" placeholder="ex.: Frete..." />';
+             str += '</label>';
+
+            jQuery('#idSelectAssunto').fadeOut(300, function(){
+                    jQuery('#idAssunto').attr('name','');
+                    jQuery('#idAssuntoDig').html(str).fadeIn(300);
+                    
+                }
+            );    
+        }else{
+            //alert("nao");
+            jQuery('#idAssunto').attr('name','AssuntoSuporte');
+            jQuery('#idSelectAssunto').fadeIn(300);
+            jQuery('#idAssuntoDig').html("");
+            jQuery('#idAssuntoDig').hide(); 
+        } 
+    };
+    countChecked();
+
+    jQuery( "#inputCkd[type=checkbox]" ).on( "click", countChecked );
+
+          //Exibe imagem IDLoja 
+          jQuery("input[name^='IDLoja']").hover(function () {
+
+                    var posInputIDloja = jQuery(this).offset();
+                    str  = "<div id='boxE' style='dispaly:none; position: absolute; width:670px; height:200px; padding:3px; background:none; z-index:1;'>";
+                    str +=  "<img id='idIcFav0' style='position: absolute; width:10px;' src='"+FC$.PathImg+"design/up_arrow.png'/>";
+                    str +=  "<p style='margin-top: 10px; padding:10px; background:#2ECB32; color:#fff'>Como localizar essa informação? <br /><img src='"+FC$.PathImg+"design/idlojaadm.png' /></p>";
+                    str += "</div>";
+                    jQuery("body").prepend(str);
+                
+                    var cssTop = posInputIDloja.top;
+                    var cssLeft = posInputIDloja.left;
+
+                    jQuery('#idIcFav0').css({'marginLeft': 40});
+                    jQuery('#boxE').css({'top':cssTop+50,'left':cssLeft});
+                    jQuery('#boxE').animate({'top':35+posInputIDloja.top},250);
+                    jQuery('#boxE').fadeIn("slow");
+                   
+                }, function () {
+                            jQuery('#boxE').fadeOut('slow', function() {
+                                jQuery('#boxE').remove();
+                            });              
+          });
+
+
+
+//Somente números no campo IDLoja
+jQuery("#idFormContato #IDLoja").keyup(function() {
+    var valor = jQuery(this).val().replace(/[^0-9]+/g,'');
+    jQuery(this).val(valor.slice(0,5));
+});
+
+//Somente letras campo nome cliente
+jQuery("#idFormContato #NomeDE").keyup(function() {
+    var valor = jQuery(this).val().replace(/[^a-z A-Z Ççéêàáã`'´òóôõií]+/g,'');
+    jQuery(this).val(valor.slice(0,90));
+});
+
+//Somente letras e números campo nome cliente
+jQuery("#idFormContato #EmailDE").keyup(function() {
+    var valor = jQuery(this).val().replace(/[^a-z A-Z 0-9 @.-_]+/gi,'');
+    jQuery(this).val(valor.slice(0,90));
+});
+
+
+
+jQuery("#inputBtn").click(function(){ 
+
+    var idlojaForm = jQuery("#idFormContato #IDLoja").val();
+    var NomeLojaForm = jQuery("#idFormContato #NomeLoja").val();
+    var NomeDeForm = jQuery("#idFormContato #NomeDE").val();
+    var EmailDeForm = jQuery("#idFormContato #EmailDe").val();
+
+    var regEX=/[0-9]/;
+    var valor = idlojaForm.replace(/[^0-9]+/,'');
+
+    //IDLoja
+    if(isNaN(idlojaForm)){
+        viewError('#IDLoja','Digite apenas número no campo IDLoja');
+        return false;
+    }else{
+         if(idlojaForm.length <3 || idlojaForm.length >5){
+            viewError('#IDLoja','Número IDLoja incorreto(O campo IDLoja deve ter no mínimo 3 digitos)')
+         return false;
+         }
+    }
+    //NomeLoja
+    if(NomeLojaForm.length <3){
+        viewError('#NomeLoja','O campo nome da loja deve ter mais de 3 letras');
+        return false;
+    }
+    //NomeDe
+    if(NomeDeForm.length <3){
+        viewError('#NomeDE','O campo nome deve ter mais de 3 letras');
+        return false;
+    }
+    //Email
+    var filtro = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+    if(filtro.test(EmailDeForm)){
+      viewError('#NomeDE','O campo nome deve ter mais de 3 letras');
+    return false;  
+    }
+
+    jQuery('#idFormContato').submit();
+
+
+   }
+);
+
+</script>
+
+
+<!-- -->
+<script>
+function viewError(idCampo,msg){        
+
+
+    var sMsg = msg;
+       //var posicaoAll = jQuery('#idFormContato #IDLoja').offset();
+      
+       var janelaAviso = "";
+       janelaAviso ="<table border='0' align='center' cellpadding='3' cellspacing='3'>";
+       janelaAviso +="<tr>";
+       janelaAviso +=  "<td align='right'>";
+       janelaAviso +=    "<a href='#' class='closeWindowErro'>[ Fechar janela ]</a>";
+       janelaAviso +=  "</td>";
+       janelaAviso += "</tr>";
+       janelaAviso +="<tr>";
+       janelaAviso +=  "<td align='center'>";
+       janelaAviso +=   "<p>"+sMsg+"</p>";
+       janelaAviso +=  "</td>";
+       janelaAviso += "</tr>";
+       janelaAviso +="</table>";
+
+        jQuery('#janelaAlerta').html(janelaAviso);
+        lag = jQuery('#janelaAlerta').innerWidth();
+        alt =jQuery('#janelaAlerta').innerHeight();
+
+        var alturaTela = jQuery(document).height();
+        var larguraTela = jQuery(window).width();
+
+        var alturaTela2 = jQuery(document).height()/2;
+        var larguraTela2 = jQuery(window).width()/2;    
+         
+
+
+        //colocando o fundo preto
+        jQuery('#FundoAlerta').css({'width':larguraTela,'height':alturaTela});
+        jQuery('#FundoAlerta').fadeIn(500);
+        jQuery('#FundoAlerta').fadeTo("slow",0.8);
+        //jQuery('#janelaAlerta').css({'top':25+posicaoAll.top,'left':posicaoAll.left});
+        jQuery('#janelaAlerta').css({'top':alturaTela2-alt/2,'left':larguraTela2-lag/2});
+        jQuery('#janelaAlerta').show();  
+ 
+        jQuery("#FundoAlerta").click( function(){
+            jQuery(this).hide();
+            jQuery(".window").hide();
+            jQuery(idCampo).focus(); 
+        });
+     
+        jQuery('.closeWindowErro').click(function(ev){
+            ev.preventDefault();
+            jQuery("#FundoAlerta").hide();
+            jQuery(".window").hide();
+
+            jQuery(idCampo).focus(); 
+        });
+    
+        
+}
+
+</script>
+
+<!-- -->
+
+
+<style>
+.botAddTotal{background:#f1f1f1; border:1px solid #CCC; padding: 8px 25px; display:table; text-decoration:none; font-size:1.5em; font-family: arial;}
+.botAddTotal:hover{background:#32CD32; color:#fff;}
+.window{display:none; position:absolute; left:0; top:0; background:#FFF; z-index:9999; padding:10px 20px; border:1px solid #ccc;}
+.window p{font-family: arial, verdana; font-size:1.4em; margin:10px 0; float:left;}
+.closeWindowErro{float:right; display: block; padding: 10px 20px; background-color: #2ECB32; margin: 0; text-align:right;}
+#FundoAlerta{display:none; position:absolute; left:0; top:0; z-index:9000; background-color:#333;} 
+
+#ProdDetDivSub .EstImgFC{width:100px; margin:1px; border:none;}
+.QTIncMult{border:1px solid #999; height:20px; width:30px}
+.EstBordaCor{border:1px solid #fff;}
+
+</style>
+<!-- FundoAlerta para cobrir o site -->  
+<div id="FundoAlerta"></div>
+<!-- exibibe alerta -->
+<div class="window" id="janelaAlerta"></div>
+<!-- Fim exibibe alerta -->

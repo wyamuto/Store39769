@@ -1,0 +1,49 @@
+<link rel="stylesheet" type="text/css" href="http://www.rumo.com.br/sistema/js/MagicToolbox/MagicZoomPlusV1/magiczoomplus.css" />
+<script type="text/javascript" src="http://www.rumo.com.br/sistema/js/MagicToolbox/MagicZoomPlusV1/magiczoomplus.js"></script>
+
+<!-- começo :: zoom com várias imagens -->
+<script>
+var imgDetAll = "nike01tiny.jpg,nike02tiny.jpg,nike03tiny.jpg,nike04tiny.jpg";
+var imgAmpAll = "nike01.jpg,nike02.jpg,nike03.jpg,nike04.jpg";
+var novoArray = imgDetAll.split(',');
+var novoArrayAmp = imgAmpAll.split(',');
+var CountImgDet=novoArray.length;
+var CountImgAmp=novoArrayAmp.length;
+
+if (imgDetAll=="" || imgAmpAll==""){
+  document.write("");
+}
+else{
+  if (CountImgDet==CountImgAmp){
+    var FC_MaxImages=CountImgDet-1;
+    MostraZoomImgFC();
+  }
+  else{
+    var FC_MaxImages=0;
+    MostraZoomImgFC();
+  }
+}
+
+function MostraZoomImgFC(){
+  for (var i=0;i<=FC_MaxImages;i++)
+  {
+    if(i==0)
+    {
+      imgDetMini=novoArray[i];
+      imgAmpMini=novoArrayAmp[i];
+      document.write("<a href=http://ajuda.fastcommerce.com.br/lojas/00000009/prod/"+imgAmpMini+" title='Nike' class=MagicZoomPlus id=zoom2 rel='selectors-class:active; zoom-width:350px; zoom-height:350px; selectors-change:mouseover;'><img src=http://ajuda.fastcommerce.com.br/lojas/00000009/prod/"+ imgDetMini +"></a><br>");
+			document.write('<p><a onclick="MagicZoomPlus.expand(zoom2); return false;" href="#">Ampliar imagem</a></p>');
+      document.write("<a href=http://ajuda.fastcommerce.com.br/lojas/00000009/prod/"+imgAmpMini+"  rel='zoom-id:zoom2;' rev=http://ajuda.fastcommerce.com.br/lojas/00000009/prod/"+ imgDetMini +"><img src=http://ajuda.fastcommerce.com.br/lojas/00000009/prod/"+ imgDetMini +" width=75 height=45 class=ZoomIMG2></a>");
+
+    }
+    else{
+          imgDetMini="http://ajuda.fastcommerce.com.br/lojas/00000009/prod/"+novoArray[i];
+          imgAmpMini="http://ajuda.fastcommerce.com.br/lojas/00000009/prod/"+novoArrayAmp[i];
+          document.write("<a href="+imgAmpMini+" rel='zoom-id:zoom2;' rev="+ imgDetMini +"><img src="+ imgDetMini +" width=75 height=45 class=ZoomIMG2></a>");
+
+    }
+  }
+}
+</script>
+<!-- fim :: zoom com várias imagens -->
+

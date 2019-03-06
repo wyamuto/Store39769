@@ -1,0 +1,87 @@
+<link href='http://www.rumo.com.br/lojas/00000009/htm/LojaSite.css' rel='stylesheet' type='text/css'>
+<table width="100%" border="0" cellpadding="3" cellspacing="3">
+ <tr>
+  <td>
+    <style>.destverde {color: #139606;font-family: tahoma,verdana;font-size: 10pt; font-weight: bold;}</style>
+
+    Para cada produto, é possível cadastrar até 3 descritores simples, 3 descritores especiais e um descritor especial para cores. Este cadastro é feito na página <b>Dados da loja</b> do site administrativo.<br /><br />
+ 
+ </td>
+ </tr>
+ <tr>
+  <td><hr>
+    <b>Cores</b><br /><br />
+    Para cadastrar novas cores, acesse a página <b>Dados da loja</b> no site administrativo, na seção <b>Produtos</b>:<br /><br />
+    
+    <center><img src="http://www.rumo.com.br/lojas/00000009/images/FC4288Descritores1.jpg" /></center><br /><br />
+    <span class="dest">1º Passo</span> Marque o campo <b>Exibe cores</b> na página <b>Dados da Loja.</b><br />
+    <span class="dest">2º Passo</span> Clique na seta à direita do campo <b>Exibe cores.</b><br /><br />
+    
+    <center><img src="http://www.rumo.com.br/lojas/00000009/images/FC4288Descritores2.jpg" /></center><br /><br />
+    <span class="dest">3º Passo</span> Clique na opção <b>[nova cor].</b><br />
+    <span class="dest">4º Passo</span> Informe o <b>nome da cor</b>.<br />
+    <span class="dest">5º Passo</span> Selecione a <b class="destverde">cor</b> na paleta de cores.<br />
+    <span class="dest">6º Passo</span> Clique no botão <b>Incluir</b>.<br />
+    <span class="dest">7º Passo</span> Clique no botão <b>Gravar</b> no final da página <b>Dados da loja</b>.<br/><br /> 
+  </td>
+ </tr>
+ <tr>
+  <td>
+    <hr>
+    <b>Descritores especiais</b><br /><br />
+   Para cadastrar um descritor especial, acesse a página <b>Dados da loja</b> no site administrativo na seção <b>Produtos</b>:<br /><br />
+    <center><img src="http://www.rumo.com.br/lojas/00000009/images/FC4288Descritores3.jpg" /></center><br /><br />
+    <span class="dest">1º Passo</span> Preencha o nome do descritor (exemplo: <b>Tamanho</b>).<br />
+    <span class="dest">2º Passo</span> Clique na seta à direita do campo do nome do descritor para cadastrar os valores.<br /><br />
+    <center><img src="http://www.rumo.com.br/lojas/00000009/images/FC4288Descritores4.jpg" /></center><br /><br />
+    <span class="dest">3º Passo</span> Clique na opção <b>[nova item]</b>.<br />
+    <span class="dest">4º Passo</span> Informe o valor do descritor (exemplo: <b>GG</b>).<br />
+    <span class="dest">5º Passo</span> Clique no botão <b>Incluir</b>.<br />
+    <span class="dest">6º Passo</span> Clique no botão <b>Gravar</b> localizado no final da página <b>Dados da Loja</b>.<br/><br />
+
+    <b>Obs.:</b>A ordem do cadastro dos tamanhos será a mesma ordem exibida na loja. Por exemplo, para tamanhos cadastre primeiro P, depois M e depois G, para que estes tamanhos sejam exibidos neste ordem, que não é alfabética. <br /><br>Cadastre todos os tamanhos existentes, mesmo que ainda não tenha produtos com alguns destes tamanhos. Assim, quando for cadastrar um produto de um tamanho novo, este tamanho já estará cadastrado e na ordem correta. <br /><br />
+    
+    <div style="background:#f4f4f4;border:1px solid #999;padding:10px;">
+      <b>Personalização HTML</b><br /><br />
+
+      Para montar links para um determinado descritor especial (Ex: produtos de um determinado tamanho), utilize o seguinte formato:<br /><br />
+
+      <span class="courrier">&lt;a href="ListaProdutos.asp?IDLoja=&lt;IDLoja&gt;&Avancada=1&<span class="dest">Adicional1</span>=<b class="destverde">000000</b>"&gt;Tamanho P&lt;/a&gt;</span> <br /><br />
+
+      Exemplo utilizando o formato de URL amigável:<br /><br />
+
+      <span class="courrier"> &lt;a href="/prod,idloja,16391,avancada,1,<span class="dest">adicional1,<b class="destverde">000000</b>,tamanho-P"</span>&gt;Tamanho P&lt;/a&gt; </span><br /><br />
+
+       Nos exemplos acima, altere <b class="destverde">000000</b> pelo ID do <b>Tamanho</b> <span class="dest">P</span>.<br /><br /> 
+
+      <ul>
+       <li><span class="dest">adicional1:</span> indica qual é o descritor usado (por exemplo <b>Tamanho</b>)</li>
+       <li><b class="destverde">000000:</b> indica qual é o ID do <b>Tamanho</b> <span class="dest">P</span> (exemplo: <b>988</b>)</li>
+       <li><span class="dest">tamanho-P:</span> indica o nome do descritor para ser exibido na URL</li>
+      </ul>
+     O link acima lista todos os produtos que estão cadastrados com o <b>Tamanho</b> <span class="dest">P</span>.<br /><br />      
+    
+    </div>
+    <br />
+  </td>
+ </tr>
+ <tr>
+  <td>
+    <hr>
+    <b>Descritores Simples</b><br /><br />
+    Para cadastrar um descritor simples, acesse a página <b>Dados da loja</b> no site administrativo, na seção <b>Produto</b>:<br /><br />
+    <center><img src="http://www.rumo.com.br/lojas/00000009/images/FC4288Descritores5.jpg" /></center><br /><br />
+    <span class="dest">1º Passo</span> Preencha o nome do descritor (exemplo: <b>Volume</b>).<br />
+    <span class="dest">2º Passo</span> Clique no botão <b>Gravar</b> localizado no final da página <b>Dados da Loja</b><br/><br />
+    <b>Obs.:</b> O valor do descritor simples deve ser informado na página de cadastro do produto (exemplo: <b>100ml</b>).<br/><br />
+    <br><br>
+    <b>Assuntos relacionados:</b><br />
+    <ul>
+     <li>
+      FC 4915 :: Qual a diferença entre descritor especial e simples?<br />
+      <a target="_blank" href="http://ajuda.fastcommerce.com.br/n4915">http://ajuda.fastcommerce.com.br/n4915</a><br />
+     </li>
+    </ul>
+  </td>
+ </tr>
+</table>

@@ -1,0 +1,169 @@
+<p><b class="dest">ATENÇÃO: </b>A implantação deste recurso requer <b>CONHECIMENTOS AVANÇADOS</b> de <b>html</b> e <b>JavaScript</b>.</p>
+<p>O conteúdo mencionado neste exemplo é apenas uma sugestão. A <b>Rumo Informática</b> não se responsabiliza por apresentar mais detalhes a respeito<br>de alterações e implantações.</p>
+<p>Para mais informações, solicite recomendações de webdesigner ou entre em contato com o de sua preferência.</p>
+<br>
+<span class="dest NewsPassos">1º Passo</span>
+<p>Envie o arquivo <b>arraste_htm.zip</b> para a pasta <b>htm</b> da loja:</p>
+<p><b>Download: </b><a href="http://rumo.com.br/dnload/arraste_htm.zip">arraste_htm.zip</a></p>
+<br>
+<span class="dest NewsPassos">2º Passo</span>
+<p>Envie o arquivo <b>arraste_img.zip</b> para a pasta <b>images</b> da loja:</p>
+<p>Download: </b><a href="http://rumo.com.br/dnload/arraste_img.zip">arraste_img.zip</a></p>
+<br>               
+<span class="dest NewsPassos">3º Passo</span>
+<p>Insira as linhas abaixo no inicio do arquivo <b>BarraTopo.htm</b>:</p>
+
+<span class=courrierpeq><pre>
+&lt;script&gt;
+IDLoja='&lt;IDLoja&gt;' //Obt&eacute;m IDLoja para montar links
+&lt;/script&gt;
+&lt;script language=&quot;JavaScript&quot; src=&quot;../sistema/jquery-1.7.2.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;&lt;BaseLoja&gt;htm/jquery_ui_min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;&lt;BaseLoja&gt;htm/arraste.js&quot;&gt;&lt;/script&gt;
+&lt;!--Cesta--&gt;
+&lt;div class=&quot;cesta&quot;&gt;
+  &lt;div id=&quot;carrinho-info&quot;&gt;
+    &lt;div id=&quot;x1&quot;&gt;&lt;/div&gt;
+    &lt;div id=&quot;x2&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt; 
+  &lt;div id=&quot;carrinho-top&quot;&gt;
+    &lt;div id=&quot;carrinho-container&quot;&gt;
+      &lt;ul id=&quot;carrinho-produtos&quot;&gt;
+        &lt;li class=&quot;adicione&quot;&gt;&lt;/li&gt; 
+      &lt;/ul&gt;
+      &lt;div style=&quot;width:100%; height:21px; display:block&quot;&gt;&amp;nbsp;
+        &lt;div id=&quot;result-adicao&quot;&gt;&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div id=&quot;bot-cesta&quot;&gt;&lt;a href=&quot;AddProduto.asp?IDLoja=&lt;IDLoja&gt;&quot;&gt;&lt;img src=&quot;&lt;BaseLoja&gt;images/BtnCesta.png&quot; width=&quot;298&quot; height=&quot;21&quot;&gt;&lt;/a&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre></span>
+
+<br>
+      
+<span class="dest NewsPassos">4º Passo</span>
+<p>Adicione o script abaixo no final do arquivo <b>Rodape.htm</b></p>
+
+<span class=courrierpeq><pre>&lt;script type=&quot;text/javascript&quot;&gt;AtualizaCarrinho();&lt;/script&gt;</pre></span>
+
+<br>
+
+<span class="dest NewsPassos">5º Passo</span>
+<p>Adicione o script abaixo no final do arquivo <b>LojaLib.js</b></p>
+
+<span class=courrierpeq><pre>
+function ShowCartOnPage(IDLoja,iErr,sMsg,sCartText,sCheckoutText,este){<br> <br>  if(iErr==0)AtualizaCarrinho();<br>  if(sMsg==&quot;Produto adicionado ao carrinho.&quot;) <br>   document.getElementById(&quot;result-adicao&quot;).innerHTML=&quot;&lt;div style='font-size:8pt; margin-left:65px'&gt;&lt;img src='&lt;BaseLoja&gt;images/BtnOK.png' width='21' height='21'&gt;&quot;+ sMsg +&quot;&lt;/div&gt;&quot;;<br>  else<br>   document.getElementById(&quot;result-adicao&quot;).innerHTML=&quot;&lt;div style='font-size:8pt; margin-left:9px'&gt;&lt;img src='&lt;BaseLoja&gt;images/BtnNotOK.png' width='21' height='21'&gt;&quot;+ sMsg +&quot;&lt;/div&gt;&quot;;<br>}<br>
+function AtualizaCarrinho(){
+   if (window.XMLHttpRequest){xmlhttp=new XMLHttpRequest();}
+   else{xmlhttp=new ActiveXObject(&quot;Microsoft.XMLHTTP&quot;);}
+   xmlhttp.open(&quot;GET&quot;,'XMLCart.asp?IDLoja='+IDLoja,false);
+   xmlhttp.send();
+   xmlDoc=xmlhttp.responseXML; 
+   var x=xmlDoc.getElementsByTagName(&quot;item&quot;);
+   var z=xmlDoc.getElementsByTagName(&quot;cart&quot;);
+   
+   try{currencyProdCart=(z[0].getElementsByTagName(&quot;currency&quot;)[0].childNodes[0].nodeValue);}
+   catch(e){currencyProdCart=&quot;R$&quot;}
+   
+   try{TotalQtyProdCart=(z[0].getElementsByTagName(&quot;TotalQty&quot;)[0].childNodes[0].nodeValue);}
+   catch(e){TotalQtyProdCart=&quot;0&quot;}
+   
+   try{subtotalProdCart=(z[0].getElementsByTagName(&quot;subtotal&quot;)[0].childNodes[0].nodeValue);}
+   catch(e){subtotalProdCart=&quot;0,00&quot;}
+   var iItensCesta=TotalQtyProdCart;
+   var sProdutosNaCesta=&quot;&quot;;
+   for (i=0;i&lt;x.length;i++)
+   { 
+	   var ImgProdCart=(x[i].getElementsByTagName(&quot;image&quot;)[0].childNodes[0].nodeValue);
+	   var NomeProdCart=(x[i].getElementsByTagName(&quot;prod&quot;)[0].childNodes[0].nodeValue);
+	   var qtyProdCart=(x[i].getElementsByTagName(&quot;qty&quot;)[0].childNodes[0].nodeValue);
+	   var priceProdCart=(x[i].getElementsByTagName(&quot;price&quot;)[0].childNodes[0].nodeValue);
+	   var idProdCart=(x[i].getElementsByTagName(&quot;id&quot;)[0].childNodes[0].nodeValue);
+	   if(i&gt;0)sProdutosNaCesta+=&quot;&lt;tr height=1&gt;&lt;td colspan=4 align=center&gt;&lt;img src='images/shim.gif' 
+	   style='background: #d1d0d0'  width=300 height=1&gt;&lt;/td&gt;&lt;/tr&gt;&quot;;
+	   sProdutosNaCesta+=&quot;&lt;tr&gt;&lt;td class=ImgProdCart&gt;&lt;a 
+	   href='listaprodutos.asp?idloja=&quot;+IDLoja+&quot;&amp;idproduto=&quot;+ idProdCart +&quot;'&gt;&lt;img 
+	   src='&quot;+ImgProdCart+&quot;' border='0'&gt;&lt;/a&gt;&lt;/td&gt;&lt;td class=NomeProdCart width=130&gt;&lt;a 
+	   href='listaprodutos.asp?idloja=&quot;+IDLoja+&quot;&amp;idproduto=&quot;+ idProdCart +&quot;'
+	   style='text-decoration:none;'&gt;&quot;+ NomeProdCart.substring(0,22) + &quot;&lt;/a&gt;&lt;/td&gt;&lt;td
+	   class=QtdProdCart&gt;(&quot; + qtyProdCart + &quot;)&lt;/td&gt;&lt;td align=right class=PrecoProdCart nowrap&gt;&quot; +
+	   currencyProdCart + &quot; &quot; + priceProdCart + &quot;&lt;/td&gt;&lt;/tr&gt;&quot;;
+   }
+   if(sProdutosNaCesta==&quot;&quot;){sProdutosNaCesta+=&quot;&lt;tr height=40&gt;&lt;td width=300 height=180 align=center 
+   class=ImgProdCartVazio&gt;&lt;/td&gt;&lt;/tr&gt;&quot;;}
+	   try{document.getElementById(&quot;carrinho-produtos&quot;).innerHTML=&quot;&lt;table width=300&gt;&quot;+ 
+	   sProdutosNaCesta +&quot;&lt;/table&gt;&quot;;}catch(e){}
+	   try{document.getElementById(&quot;x1&quot;).innerHTML=&quot;&lt;b&gt;Item(s):&lt;/b&gt;&amp;nbsp;&quot;+iItensCesta;}catch(e){}
+	   try{document.getElementById(&quot;x2&quot;).innerHTML=&quot;&lt;b&gt;SubTotal:&lt;/b&gt;&amp;nbsp;&quot;+currencyProdCart + &quot; &quot; + 
+	   subtotalProdCart;}catch(e){}
+}</pre></span>
+
+<br>
+<span class="dest NewsPassos">6º Passo</span>
+<p>Adicione as linhas abaixo no final do arquivo <b>LojaSite.css</b></p>
+
+<span class=courrierpeq><pre>ul#produtos{ list-style:none; }<br>ul#produtos li{float: left;background-color:#fff; }<br>div#carrinho-top{position:relative;z-index: 9999;}<br>div#carrinho-info{position:relative; display: block; background: url(../images/BgCart.png) no-repeat;  height:42px; width: 250px; left: 20px; top:auto; z-index: 9999; }<br>div#carrinho-container{position:absolute;background: url(../images/BgContainer.png) no-repeat; width:327px; height:280px; display:none;  z-index: 9999}<br>div#carrinho-container ul{ overflow:auto; height:206px; padding: 14 0 0 8; margin:0px;list-style:none; z-index: 9999}<br>div#carrinho-container ul li{ color:#333; font-size:12px;  text-align:center; margin:0px;z-index: 9999}<br>#result-adicao{font: 12px &quot;Arial&quot;; color: #000; display: none; float: left}<br>#bot-cesta{ margin: 0 0 5 14; display: block}<br>#carrinho-produtos{ height: 100%;z-index:9999}<br>#x1, #x2{color: #000;font-family:tahoma,Arial;font-size:8pt;float: left; padding-top: 13px; padding-left: 7px;}<br>#sMsg{font-size:8pt;}<br>.produto-drag{ background: url(../images/BgDrag.png) no-repeat; padding:10px;margin:0;width:131px;height:143px;text-align: center; z-index: 9999}<br>.ui-state-hover{background: url(../images/BgContainerHover.png) no-repeat; font-weight: bold;}<br>.ImgProdCartVazio{ background: url(../images/ImgProdCartVazio.png) no-repeat;}<br>.ImgProdCart img{width:30px;height:30px; }<br>.NomeProdCart a{font-family:tahoma,Arial;font-size:8pt;color:#000}<br>.QtdProdCart{font-family:tahoma,Arial;font-size:8pt;color:#000}<br>.PrecoProdCart{font-family:tahoma,Arial;font-size:8pt;color:#000;font-weight:bold}<br>.Cesta{width: 241px; height:42px; float:right; margin: 0; display: block}</pre></span>
+
+<br>
+
+<span class="dest NewsPassos">7º Passo</span>
+<p><b>Incluindo a funcionalidade de arraste na home da loja</b></p>
+<p>O arquivo Home.htm entre as tags <b>&lt;prod&gt;</b> deve conter a tag <b>&lt;ul id=&quot;produtos&quot;&gt;</b>. Exemplo:</p>  		
+
+<span class=courrierpeq>    	<pre>&lt;table&gt;<br>  &lt;tr&gt;<br>    &lt;td&gt;<br>      &lt;ul id=&quot;produtos&quot;&gt;<br>        &lt;div style=&quot;float:left&quot;&gt;&lt;prod out=&quot;p5&quot; em=&quot;rand&quot;&gt;&lt;/div&gt;<br>        &lt;div style=&quot;float:left&quot;&gt;&lt;prod out=&quot;p5&quot; em=&quot;rand&quot;&gt;&lt;/div&gt;<br>        &lt;div style=&quot;float:left&quot;&gt;&lt;prod out=&quot;p5&quot; em=&quot;rand&quot;&gt;&lt;/div&gt;<br>        &lt;div style=&quot;float:left&quot;&gt;&lt;prod out=&quot;p5&quot; em=&quot;rand&quot;&gt;&lt;/div&gt;<br>      &lt;/ul&gt;    <br>    &lt;/td&gt;<br>  &lt;/tr&gt;<br>&lt;/table&gt;</pre></span>
+
+<br>
+
+<p>O arquivo <b>EstiloProdutoOut.htm</b> entre as tags <b>&lt;p&gt;</b> deve conter a tag <b>&lt;li class=&quot;produto&quot;&gt;</b> e dentro dela os inputs e form. Exemplo:</p>  		
+
+<span class=courrierpeq><pre>&lt;p255&gt;<br> &lt;table&gt;<br>  &lt;tr&gt;&lt;td class=&quot;EstNomeProd&quot;&gt;&lt;NomeProd&gt;&lt;/td&gt;&lt;/tr&gt;<br>  &lt;tr&gt;&lt;td&gt;<br>    &lt;li class=&quot;produto&quot;&gt;<br>     &lt;input type=&quot;hidden&quot; class=&quot;produto-id&quot; value=&quot;&lt;IDProduto&gt;&quot;/&gt;<br>     &lt;input type=&quot;hidden&quot; class=&quot;produto-id-loja&quot; value=&quot;&lt;IDLoja&gt;&quot;/&gt;<br>     &lt;form name=&quot;Form&lt;IDProduto&gt;&quot;&gt;	<br>      &lt;div&gt;&lt;a href='/prod,idloja,&lt;idlojanum&gt;,idproduto,&lt;IDProduto&gt;,&lt;NomeProdUA&gt;' rel=&quot;&lt;IDProduto&gt;&quot;&gt;&lt;ImagemProd&gt;&lt;/a&gt;&lt;/div&gt;<br>     &lt;/form&gt;	<br>    &lt;/li&gt;<br>  &lt;/td&gt;&lt;/tr&gt;<br>  &lt;tr&gt;&lt;td class=&quot;EstPrecoProd&quot;&gt;&lt;PrecoSimples&gt;&lt;/td&gt;&lt;/tr&gt;<br> &lt;/table&gt;<br>&lt;/p255&gt;</pre></span>
+
+<br>
+
+<span class="dest NewsPassos">8º Passo</span>
+<p><b>Adicionando arraste na listagem e na página de detalhe do produto</b></p>
+<p>O arquivo <b>EstiloProduto.htm</b> entre as tags <b>&lt;ProdTop&gt;</b> e <b>&lt;/ProdTop&gt;</b> deve conter a tag <b>&lt;ul id=&quot;produtos&quot;&gt;</b>. Exemplo:</p>
+
+<span class=courrierpeq><pre>&lt;ProdTop&gt;<br>&nbsp;&nbsp;&lt;ul id=&quot;produtos&quot;&gt;<br>&lt;/ProdTop&gt;</pre></span>
+
+<br>
+
+<p>O arquivo <b>EstiloProduto.htm</b> entre as tags <b>&lt;ProdBottom&gt;</b> e <b>&lt;/ProdBottom&gt;</b> deve conter a tag <b>&lt;/ul&gt;</b>. Exemplo:</p>
+
+<span class=courrierpeq><pre>&lt;ProdBottom&gt;<br>&nbsp;&nbsp;&lt;/ul&gt;<br>&lt;/ProdBottom&gt;</pre></span>
+
+<br>
+
+<p>Adicionando arraste no detalhe de produto</b></p>		        
+<p>O arquivo <b>EstiloProduto.htm</b> entre as tags <b>&lt;ProdDet&gt;</b> e <b>&lt;/ProdDet&gt;</b> deve conter a tag <b>&lt;li class=&quot;produto&quot;&gt;</b> e dentro<br>dela os inputs. Exemplo:</p>          
+
+<span class=courrierpeq><pre>&lt;ProdDet&gt;<br>  &lt;table&gt;<br>    &lt;tr&gt;
+      &lt;td&gt;
+        &lt;li class=&quot;produto&quot;&gt;
+            &lt;input type=&quot;hidden&quot; class=&quot;produto-id&quot; value=&quot;&lt;IDProduto&gt;&quot;/&gt;
+            &lt;input type=&quot;hidden&quot; class=&quot;produto-id-loja&quot; value=&quot;&lt;IDLoja&gt;&quot;/&gt;
+            &lt;img class=&quot;EstImgFC&quot; src=&quot;&lt;ImagemProdDet&gt;&quot;/&gt;
+        &lt;/li&gt;          
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/ProdDet&gt;</pre></span>
+
+<br>
+
+<p><b>Adicionando arraste na listagem de produtos</b></p>		        
+<p>O arquivo <b>EstiloProduto.htm</b> entre as tags <b>&lt;ProdLista&gt;</b> e <b>&lt;/ProdLista&gt;</b> deve conter a tag <b>&lt;li class=&quot;produto&quot;&gt;</b> e dentro<br>dela os inputs. Exemplo:</p>  
+
+<span class=courrierpeq><pre>&lt;ProdLista&gt;
+    &lt;table&gt;
+      &lt;tr&gt;
+        &lt;td&gt;
+          &lt;li class=&quot;produto&quot;&gt;
+            &lt;input type=&quot;hidden&quot; class=&quot;produto-id&quot; value=&quot;&lt;IDProduto&gt;&quot;/&gt;
+            &lt;input type=&quot;hidden&quot; class=&quot;produto-id-loja&quot; value=&quot;&lt;IDLoja&gt;&quot;/&gt;
+            &lt;div class=&quot;EstImgFC&quot;&gt;&lt;ImagemProd&gt;&lt;/div&gt;
+          &lt;/li&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/table&gt;
+&lt;/ProdLista&gt;</pre></span>

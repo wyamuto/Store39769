@@ -1,0 +1,99 @@
+<p>Copie as linhas abaixo para o <b>bloco de notas</b> do Windows e altere as informações em vermelho. Não utilize acentos. O nome do estado deve ser escrito por extenso (ex: Sao Paulo).</p>
+<p>Salve o arquivo com o nome <b>request.inf</b>:</p>
+
+<pre>[Version]
+Signature="$Windows NT$"
+
+[NewRequest]
+Subject="CN=<span style="color:#8B0000">www.meudominio.com.br</span>, O=<span style="color:#8B0000">Minha empresa Ltda</span>, OU=TI, L=<span style="color:#8B0000">Cidade</span>, S=<span style="color:#8B0000">Estado</span>, C=BR"
+KeySpec=1
+KeyLength=2048
+Exportable=TRUE
+MachineKeySet=TRUE
+SMIME=False
+PrivateKeyArchive=FALSE
+UserProtected=FALSE
+UseExistingKeySet=FALSE
+ProviderName="Microsoft RSA SChannel Cryptographic Provider"
+ProviderType=12
+RequestType=PKCS10
+KeyUsage=0xa0
+
+[EnhancedKeyUsageExtension]
+OID=1.3.6.1.5.5.7.3.1 ; this is for Server Authentication / Token Signing</pre>
+<br>
+
+<p><span class="dest NewsPassos">2º Passo</span></p>
+<p>Abra o <b>Prompt de Comando</b> como <b>Administrador</b> e execute o seguinte comando, que gerará o arquivo <b>request.csr</b> na pasta atual:</p>
+
+<p><b>certreq -new request.inf request.csr</b></p>
+
+<p><img src="/lojas/00000009/images/fc/FC14395a.png" class="img-responsive"></p>
+<br>
+
+<p><span class="dest NewsPassos">3º Passo</span></p>
+<p>O arquivo <b>request.csr</b> é o CSR que deverá ser enviado para a empresa certificadora, que posteriormente enviará o certificado SSL em um arquivo <b>.cer</b> ou <b>.crt</b>.</p>
+<br>
+
+<p><span class="dest NewsPassos">4º Passo</span></p>
+<p>Salve certificado .cer enviado pela empresa certificadora com o nome <b>cert.cer</b> em uma pasta do mesmo computador onde foi gerado o CSR. Abra o <b>Prompt de Comando</b> como <b>Administrador</b> e execute o seguinte comando:</p>
+
+<p><b>certreq -accept cert.cer</b></p>
+
+<p><img src="/lojas/00000009/images/fc/FC14395b.PNG" class="img-responsive"></p>
+<br>
+
+<p><span class="dest NewsPassos">5º Passo</span></p>
+<p>Digite <b>mmc</b> no <b>Prompt de Comando</b> para abrir a janela <b>Console - [Raiz de Controle]</b>.</p>
+
+<p><img src="/lojas/00000009/images/fc/FC14395c.PNG" class="img-responsive"></p>
+<br>
+
+<p>Clique em <b>Adicionar/remover snap-in...</b></p>
+
+<p><img src="/lojas/00000009/images/fc/FC14395d.PNG" class="img-responsive"></p>
+<br>
+
+<p>Selecione a opção <b>Certificados</b> e clique em <b>Adicionar</b></p>
+
+<p><img src="/lojas/00000009/images/fc/FC14395e.PNG" class="img-responsive"></p>
+<br>
+
+<p>Em seguida selecione a opção <b>Conta de computador</b> e na janela seguinte a opção <b>Computador local</b>. Na próxima janela clique em <b>OK</b>.</p>
+
+<p><img src="/lojas/00000009/images/fc/FC14395f.PNG" class="img-responsive"></p>
+<br>
+
+<p><span class="dest NewsPassos">6º Passo</span></p>
+<p>Na janela <b>Console - [Raiz de Controle]</b> clique com o botão direito no domínio que vai utilizar o certificado e em seguida clique no item <b>Todas as tarefas / Exportar</b></p>
+
+<p><img src="/lojas/00000009/images/fc/FC14395g.PNG" class="img-responsive"></p>
+<br>
+
+<p><span class="dest NewsPassos">7º Passo</span></p>
+<p>Na janela de <b>Assistente para Exportação de Certificados</b> siga os passos abaixo:</p>
+
+<ol>
+<li><p>Tela 1: clique em avançar</p></li>
+<li><p>Tela 2: selecione a opção <b>Sim, exportar a chave privada</b></p></li>
+<li><p>Tela 3: marque os campos <b>Incluir todos os certificados no caminho de certificação, se possível</b> e <b>Exportar todas as propriedades estendidas</b></p></li>
+<li><p>Tela 4: cadastre uma senha</p></li>
+<li><p>Tela 5: informe o nome e selecione o local onde o arquivo será salvo</p></li>
+<li><p>Tela 6: clique em concluir</p></li>
+</ol>
+
+<p><img src="/lojas/00000009/images/fc/FC14395h.PNG" class="img-responsive"></p>
+<br>
+
+<p><span class="dest NewsPassos">8º Passo</span></p>
+
+<p>Após a exportação do arquivo <b>.PFX</b>, entre na página <b>Dados da loja</b> e siga os passos abaixo:</p>
+
+<ol>
+<li><p>Clique no botão <b>Enviar certificado SSL</b></p></li>
+<li><p>Selecione a opção <b>Envio do arquivo .PFX (formato PKCS12)</b>. Selecione o arquivo no campo <b>Envio do arquivo .PFX (formato PKCS12)</b>. Digite a senha e clique no botão <b>ENVIAR ARQUIVO</b></p></li>
+<li><p>Verifique se apareceu a linha <b>Certificado SSL importado</b></p></li>
+<li><p>A ativação do certificado leva até 5 minutos para ocorrer. Antes de selecionar a opção <b>(2) Certificado próprio: login/checkout</b>, clique no link do campo <b>Certificado SSL próprio</b> para verificar se a página foi aberta sem erros</p></li>
+</ol>
+
+<p><img src="/lojas/00000009/images/fc/FC14395i.png" class="img-responsive"></p>

@@ -1,0 +1,39 @@
+<span class="dest NewsPassos">1º Passo</span>
+<p>Inclua as linhas abaixo no início do arquivo <b>Home.htm</b>:</p>
+
+<div id="schemaHtml">
+<pre>&lt;link rel="stylesheet" type="text/css" href="/js/MagicToolbox/MagicSlideshowV2/magicslideshow.css" />
+&lt;script type="text/javascript" src="/js/MagicToolbox/MagicSlideshowV2/magicslideshow.js">&lt;/script></pre>
+<br>
+
+</div><span class="dest NewsPassos">2º Passo</span>
+<p>Envie as imagens dos banners para a pasta <b>IMAGES</b> da loja.</p>
+<br>
+
+<span class="dest NewsPassos">3º Passo</span>
+<p>Escolha um dos exemplos de banner rotativo listados abaixo. Defina em qual local deseja inserí-lo (BarraTopo.htm, rodape.htm, home.htm etc). Neste arquivo, insira as linhas do exemplo escolhido, alterando as dimensões (<b>width</b> e <b>height</b>), a <b>URL</b> e o <b>nome das imagens</b>.</p>
+<br>
+
+<iframe frameborder="0" style="width:920px;height:450px" src="/lojas/00000009/htm/descr/FC14333.htm"></iframe>
+<iframe frameborder="0" style="width:920px;height:500px" src="/lojas/00000009/htm/descr/FC14333M2.htm"></iframe>
+<iframe frameborder="0" style="width:920px;height:500px" src="/lojas/00000009/htm/descr/FC14333M3.htm"></iframe>
+<iframe frameborder="0" style="width:920px;height:450px" src="/lojas/00000009/htm/descr/FC14333M4.htm"></iframe>
+<iframe frameborder="0" style="width:920px;height:510px" src="/lojas/00000009/htm/descr/FC14333M5.htm"></iframe>
+<br>
+
+<p><b>Obs:</b> Caso as imagens não estejam aparecendo no slide pedimos que realize um dos procedimentos abaixo:</p>
+
+<p><b>1º</b> Acesse o arquivo no qual o código de um dos exemplos foi inserido e adicione o Script "&lt;script>sF$.fnCopyContentTop();FCLib$.execLazyLoad();&lt;/script>", logo abaixo da div com as imagens do seu slide, segue exemplo:</p>
+
+<table width="100%"><tr><td><div style="color:#800000;">&lt;div class="MagicSlideshow" data-options="width:<i style="color:#0000FF;">100%</i>;height:<i style="color:#0000FF;">235px</i>;"><br>&lt;a href="<i style="color:#0000FF;">http://www.SeuEnderecoLojaVirtual.com.br</i>">&lt;img src="&lt;BaseLoja>images/<i style="color:#0000FF;">FC14333IMG1.jpg</i>" />&lt;/a><br>&lt;a href="<i style="color:#0000FF;">http://www.SeuEnderecoLojaVirtual.com.br</i>">&lt;img src="&lt;BaseLoja>images/<i style="color:#0000FF;">FC14333IMG2.jpg</i>" />&lt;/a><br>&lt;a href="<i style="color:#0000FF;">http://www.SeuEnderecoLojaVirtual.com.br</i>">&lt;img src="&lt;BaseLoja>images/<i style="color:#0000FF;">FC14333IMG3.jpg</i>" />&lt;/a><br>&lt;/div><br><strong>&lt;script>sF$.fnCopyContentTop();FCLib$.execLazyLoad();&lt;/script></strong></div></td></tr></table>
+<br>
+<p><b>Obs:</b> Caso tenha adicionado o código no arquivo <b>Banners.htm</b> utilize o código abaixo para correção:</p>
+<br>
+<table width="100%"><tr><td><div style="color:#800000;">&lt;div class="MagicSlideshow" data-options="width:<i style="color:#0000FF;">100%</i>;height:<i style="color:#0000FF;">235px</i>;"><br>&lt;a href="<i style="color:#0000FF;">http://www.SeuEnderecoLojaVirtual.com.br</i>">&lt;img src="&lt;BaseLoja>images/<i style="color:#0000FF;">FC14333IMG1.jpg</i>" />&lt;/a><br>&lt;a href="<i style="color:#0000FF;">http://www.SeuEnderecoLojaVirtual.com.br</i>">&lt;img src="&lt;BaseLoja>images/<i style="color:#0000FF;">FC14333IMG2.jpg</i>" />&lt;/a><br>&lt;a href="<i style="color:#0000FF;">http://www.SeuEnderecoLojaVirtual.com.br</i>">&lt;img src="&lt;BaseLoja>images/<i style="color:#0000FF;">FC14333IMG3.jpg</i>" />&lt;/a><br>&lt;/div><br><strong>&lt;script>FCLib$.execLazyLoad();&lt;/script></strong></div></td></tr></table>  
+<br>
+<p>Após inserir grave, depois apague o cache da loja e verifique.</p>
+
+<p><b>2º</b> Caso o que foi passado como <i>1º</i> opção ainda não funcione, procure no arquivo no qual o código de um dos exemplos foi inserido, o trecho de script mostrado abaixo, exclua o mesmo e grave, depois apague o cache da loja e verifique, mas não desfaça o que foi passado no <i>1º</i>.</p>
+
+<p><center><b>&lt;script>sF$.fnCopyContentTop();&lt;/script></b></center></p>
+<!--NewsDesignFC-->

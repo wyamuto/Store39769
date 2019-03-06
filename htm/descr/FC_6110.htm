@@ -1,0 +1,11 @@
+<p>Se for este o caso, para que o problema não ocorra com as mensagens enviadas para a loja, solicite ao seu provedor uma alteração nos cadastros nos servidores DNS, com a inclusão do seguinte registro TXT:</p>
+
+<p><b>@ TXT ("v=spf1 mx include:rumo.com.br ~all")</b></p>
+
+<p>Isto incluirá o SMTP do Fastcommerce como possível origem de mensagens do domínio.</p>
+
+<p>Entretanto, algumas mensagens enviadas para os clientes continuarão a ser filtradas pelo provedor.</p>
+
+<p>Sugerimos portanto que utilize outro provedor para receber suas mensagens.</p>
+
+<p>Ou altere o campo <b>E-mail de auditoria</b> na página <b>Dados da loja</b>, utilizando endereço fora do domínio de sua loja (<b>ex:</b> <b class="dest">@hotmail.com</b> ou <b  class="dest">@gmail.com</b>). Este endereço receberá cópia oculta de todas as mensagens, comprovando o que afirmamos acima.</p>

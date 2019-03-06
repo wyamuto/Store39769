@@ -1,0 +1,47 @@
+<style>
+.courrierpeq {font-size:8pt;font-family:courier new,tahoma,verdana;color:#0D6D9E;}
+.destpeq {font-size:8pt;font-family:tahoma,verdana;color:#990000;font-weight:bold;}
+</style>
+
+<pre>
+<span class=courrierpeq>
+&lt;script&gt;
+function MostraMaxParcela(PrecoProd,MaxParcelas){
+  var ComSem;
+
+  <span class=destpeq>if(PrecoProd&gt;=300)MaxParcelas=6;
+  else if(PrecoProd&gt;=250)MaxParcelas=5;
+  else if(PrecoProd&gt;=200)MaxParcelas=4;
+  else if(PrecoProd&gt;=150)MaxParcelas=3;
+  else if(PrecoProd&gt;=100)MaxParcelas=2;
+  else if(PrecoProd&gt;=1)MaxParcelas=1;</span>
+
+  if(PrecoProd==0||MaxParcelas==1||Juros.length==0)return;
+  if(MaxParcelas==0||MaxParcelas&gt;Juros.length)MaxParcelas=Juros.length;
+  if(Juros[MaxParcelas-1]&gt;0)ComSem=""; else ComSem="&lt;font color=#DD0000&gt;&nbsp;sem&nbsp;juros&lt;/font&gt;";
+  document.write("ou&nbsp;&lt;b&gt;"+MaxParcelas+"x&lt;/b&gt;"+ComSem+" de&nbsp;&lt;b&gt;"+FormatPrecoReais(CalculaParcelaJurosCompostos(PrecoProd,MaxParcelas))+"&lt;/b&gt;");
+}
+
+function MostraParcelas(PrecoProd,MaxParcelas){
+  var ComSem,EstiloLinha;
+
+  <span class=destpeq>if(PrecoProd&gt;=300)MaxParcelas=6;
+  else if(PrecoProd&gt;=250)MaxParcelas=5;
+  else if(PrecoProd&gt;=200)MaxParcelas=4;
+  else if(PrecoProd&gt;=150)MaxParcelas=3;
+  else if(PrecoProd&gt;=100)MaxParcelas=2;
+  else if(PrecoProd&gt;=1)MaxParcelas=1;</span>
+
+  if(PrecoProd==0||MaxParcelas==1||Juros.length==0)return;
+  if(MaxParcelas==0||MaxParcelas&gt;Juros.length)MaxParcelas=Juros.length;
+  document.write("&lt;br&gt;&lt;table align=center cellpadding=3 width=270&gt;&lt;tr bgcolor=#DCDCDC&gt;&lt;td colspan=3 height=22 class=TitTabParc align=center&gt;&lt;b&gt;Opções de parcelamento&lt;/td&gt;&lt;/tr&gt;&lt;tr bgcolor=#FFFFFF&gt;&lt;td class=TitTabParc&gt;Número de&lt;br&gt;parcelas&lt;/td&gt;&lt;td align=right class=TitTabParc&gt;Valor&nbsp;de&lt;br&gt;cada&nbsp;parcela&lt;/td&gt;&lt;td align=right class=TitTabParc&gt;Valor total&lt;br&gt;parcelado&lt;/td&gt;&lt;/tr&gt;");
+  for(var i=0;i&lt;MaxParcelas;i++){
+    if(Juros[i]&gt;0)ComSem="com juros"; else ComSem="&lt;font color=#DD0000&gt;sem&nbsp;juros&lt;/font&gt;";
+    if((i%2)==0)EstiloLinha='EstParcPar'; else EstiloLinha='EstParcImpar';
+    document.write("&lt;tr class="+EstiloLinha+"&gt;&lt;td class="+EstiloLinha+"&gt;"+(i+1)+"x "+ComSem+"&lt;/td&gt;&lt;td class="+EstiloLinha+" align=right&gt;"+FormatPrecoReais(CalculaParcelaJurosCompostos(PrecoProd,i+1))+"&lt;/td&gt;&lt;td class="+EstiloLinha+" align=right&gt;"+FormatPrecoReais(CalculaParcelaJurosCompostos(PrecoProd,i+1)*(i+1))+"&lt;/td&gt;&lt;/tr&gt;");
+  }
+  document.write("&lt;/table&gt;&lt;br&gt;");
+}
+&lt;/script&gt;
+</span>
+</pre>

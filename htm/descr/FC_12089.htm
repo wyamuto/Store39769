@@ -1,0 +1,34 @@
+<p><span class="dest NewsPassos">1º Passo</span></p>
+<p>No site administrativo da loja virtual, clique em <b>Arquivos</b> e acesse a pasta <b>htm</b>.</p>
+<br>
+
+<p><span class="dest NewsPassos">2º Passo</span></p>
+<p>Localize o arquivo <b>EstiloProduto.htm</b> e clique no ícone de lápis para editar o código.</p>
+<br>
+
+<p><span class="dest NewsPassos">3º Passo</span></p>
+<p>Faça uma cópia do código em um arquivo de bloco de notas.</p>
+<br>
+
+<p><span class="dest NewsPassos">4º Passo</span></p>
+<p>No código do arquivo <b>EstiloProduto.htm</b>, entre as tags <b>&lt;ProdDet> ... &lt;/ProdDet></b>, localize a tag <b>&lt;Preco></b>. Se não encotrar, procure pela tag <b>&lt;PrecoSimples></b>. Em seguida, substitua a tag pelo seguinte código:</p>
+
+<pre><span>&lt;script>
+ if(&lt;PrecoNum>>0) document.write("&lt;PrecoSimples>");
+ else  document.write("&lt;img src='/lojas/<b>00099999</b>/images/consulte.gif'>");
+&lt;/script></span></pre>
+<br>
+
+<p>Altere <b>00099999</b> para o ID da loja com 8 posiçoes. Por exemplo, se o ID da loja é <b>123</b>, coloque <b>00000123</b>.</p>
+<br>
+
+<p><span class="dest NewsPassos">5º Passo</span></p>
+<p>Clique em <b>Gravar</b>.</p>
+<br>
+
+<p><span class="dest NewsPassos">6º Passo</span></p>
+<p>Clique novamente em <b>Arquivos</b>, acesse a pasta <b>images</b> e clique para enviar o arquivo de imagem <b>consulte.gif</b>.</p>
+<br>
+
+<p><span class="dest NewsPassos">7º Passo</span></p>
+<p>Após enviar a imagem, limpe o cache da loja virtual e execute testes de navegação.</p>

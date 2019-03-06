@@ -1,0 +1,167 @@
+<p><b class="dest">ATENÇÃO:</b> Após escolher o modelo desejado, veja ao final do artigo as instruções finais.</p>
+
+<div class="container">
+	<div class="row">
+	  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 text-center">
+      <img src="/lojas/00000009/images/fc/FC11873IMG1.png" class="img-responsive">
+    </div>
+	  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+      <p><b>&lt;prod out="p194"></b></p>
+<pre><span class="courrierpeq">&lt;p194>
+  &lt;div class="DivProdHome">
+    &lt;div class="ProdImgHome">&lt;a href="/prod,idloja,&lt;IDLojaNum>,idproduto,&lt;IDProduto>,&lt;NomeProdUA>">&lt;ImagemProd>&lt;a/>&lt;/div>
+    &lt;div class="ProdNomeHome">&lt;a href="/prod,idloja,&lt;idlojanum>,idproduto,&lt;IDProduto>,&lt;NomeProdUA>">&lt;NomeProd>&lt;/a>&lt;/div>
+    &lt;div class="ProdPriceHome">&lt;Preco>&lt;/div>
+    &lt;div class="ProdCompraHome">&lt;center>&lt;FormProd>&lt;LinkComprar>&lt;/FormProd>&lt;/center>&lt;/div>
+    &lt;div class="ProdEstoqueHome">Quantidade disponível:&nbsp&lt;b>&lt;Estoque>&lt;/b>&lt;/div>
+    &lt;a href="/prod,idloja,&lt;IDLojaNum>,idproduto,&lt;IDProduto>,&lt;NomeProdUA>">&lt;div class="ProdDetHome">&lt;b>Detalhes&lt;/b>&lt;/div>&lt;/a>
+  &lt;/div>
+&lt;/p194></span></pre>
+<br>
+
+<p><b>LojaSite.css</b></p>
+<pre><span class="courrierpeq">.DivProdHome{max-width: 220px;}
+.ProdImgHome img{max-width: 200px; max-height:200px;}
+.DivProdHome:hover{border-radius:5px 5px 5px 5px;border:1px dashed; border-color:#4682B4;box-shadow:5px 5px 5px 5px #ccc}
+.ProdPriceHome{color:#3CB371;}
+.ProdPriceHome .FCCurrencyLabel{color:#3CB371;font-weight:bold;}
+.ProdPriceHome strike{color:#DC143C;font-weight:bold;}
+.ProdDetHome{background-color:#E6E6FA;margin:3px;font-family: Arial,verdana,tahoma;font-size: 15px;color:#008B8B;}
+.ProdDetHome:hover{background-color:#E0FFFF;}
+.ProdNomeHome a{font-family: Arial,verdana,tahoma;font-size: 15px;color:#4682B4;}
+.ProdNomeHome{min-height:60px;}
+.ProdCompraHome img{width:150px;padding:5px 5px 5px 5px;}
+.ProdEstoqueHome{font-family: Arial,verdana,tahoma;font-size: 15px;color:#4682B4;padding:5px 5px 5px 5px;}</span></pre>
+    </div>
+	</div>
+
+	<div class="row">
+	  <div class="col-xs-12 col-sm-12 col-lg-12"><br></div>
+	</div>
+	<div class="row">
+	  <div class="col-xs-12 col-sm-12 col-lg-12"><hr></div>
+	</div>
+	<div class="row">
+	  <div class="col-xs-12 col-sm-12 col-lg-12"><br></div>
+	</div>
+
+	<div class="row">
+	  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 text-center">
+      <img src="/lojas/00000009/images/fc/FC11873IMG3.png" class="img-responsive">
+    </div>
+	  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+      <p><b>&lt;prod out="p195"></b></p>
+<pre><span class="courrierpeq">
+&lt;p195>
+  &lt;div class="DivProdHomeR">
+    &lt;div class="ProdImgHomeR">&lt;a href="/prod,idloja,&lt;IDLojaNum>,idproduto,&lt;IDProduto>,&lt;NomeProdUA>">&lt;ImagemProd>&lt;a/>&lt;/div>
+    &lt;div class="ProdNomeHomeR">&lt;a href="/prod,idloja,&lt;idlojanum>,idproduto,&lt;IDProduto>,&lt;NomeProdUA>">&lt;NomeProd>&lt;/a>&lt;/div>
+    &lt;div class="ProdPriceHomeR">&lt;Preco>&lt;/div>
+    &lt;div class="ProdCompraHomeR">&lt;center>&lt;FormProd>&lt;LinkComprar>&lt;/FormProd>&lt;/center>&lt;/div>
+    &lt;a href="#Spy" onclick='bCascate=true;FCLib$.OpenRWD("/listaprodutos.asp?idloja=&lt;IDLoja>&sty=9&int=1&idproduto=&lt;IDProduto>","Disp","width=700,height=700")'>&lt;div class="ProdSpyHomeR">&lt;b>Espiar&lt;/b>&lt;/div>&lt;/a>
+  &lt;/div>
+&lt;/p195>
+</span></pre>
+<br>
+
+<p><b>LojaSite.css</b></p>
+<pre><span class="courrierpeq">.DivProdHomeR{min-width: 350px;min-height:200px}
+.ProdImgHomeR img{max-width: 190px; max-height:190px;float:left;}
+.DivProdHomeR:hover{border-radius:5px 5px 5px 5px;border:1px dashed; border-color:#4682B4;box-shadow:5px 5px 5px 5px #ccc}
+.ProdPriceHomeR{color:#3CB371;}
+.ProdPriceHomeR .FCCurrencyLabel{color:#3CB371;font-weight:bold;}
+.ProdPriceHomeR strike{color:#DC143C;font-weight:bold;}
+.ProdSpyHomeR{background-color:#DCDCDC;margin:3px;font-family: Arial,verdana,tahoma;font-size: 15px;color:#3CB371;}
+.ProdSpyHomeR:hover{background-color:#696969;}
+.ProdNomeHomeR a{font-family: Arial,verdana,tahoma;font-size: 15px;color:#4682B4;}
+.ProdNomeHomeR{min-height:60px;padding-top:5px}
+.ProdCompraHomeR img{width:150px;padding:5px 5px 5px 5px;}</span></pre>
+
+    </div>
+	</div>
+
+	<div class="row">
+	  <div class="col-xs-12 col-sm-12 col-lg-12"><br></div>
+	</div>
+	<div class="row">
+	  <div class="col-xs-12 col-sm-12 col-lg-12"><hr></div>
+	</div>
+	<div class="row">
+	  <div class="col-xs-12 col-sm-12 col-lg-12"><br></div>
+	</div>
+
+	<div class="row">
+	  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 text-center">
+      <img src="/lojas/00000009/images/fc/FC11873IMG2.png" class="img-responsive">
+    </div>
+	  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+      <p><b>&lt;prod out="p196"></b></p>
+<pre><span class="courrierpeq">&lt;p196>
+  &lt;div class="DivProdHomeL">
+    &lt;div class="ProdImgHomeL">&lt;a href="/prod,idloja,&lt;IDLojaNum>,idproduto,&lt;IDProduto>,&lt;NomeProdUA>">&lt;ImagemProd>&lt;a/>&lt;/div>
+    &lt;div class="ProdNomeHomeL">&lt;a href="/prod,idloja,&lt;idlojanum>,idproduto,&lt;IDProduto>,&lt;NomeProdUA>">&lt;NomeProd>&lt;/a>&lt;/div>
+    &lt;div class="ProdPriceHomeL">&lt;Preco>&lt;/div>
+    &lt;div class="ProdCompraHomeL">&lt;center>&lt;FormProd>&lt;LinkComprar>&lt;/FormProd>&lt;/center>&lt;/div>
+    &lt;div class="ProdEstoqueHomeL">Quantidade disponível:&nbsp&lt;b>&lt;Estoque>&lt;/b>&lt;/div>
+    &lt;a href="/prod,idloja,&lt;IDLojaNum>,idproduto,&lt;IDProduto>,&lt;NomeProdUA>">&lt;div class="ProdDetHomeL">&lt;b>Detalhes&lt;/b>&lt;/div>&lt;/a>
+  &lt;/div>
+&lt;/p196></span></pre>
+<br>
+
+<p><b>LojaSite.css</b></p>
+<pre><span class="courrierpeq">.DivProdHomeL{min-width: 350px;min-height:200px}
+.ProdImgHomeL img{max-width: 190px; max-height:190px;float:left;min-height:190px;}
+.DivProdHomeL:hover{border-radius:5px 5px 5px 5px;border:1px dashed; border-color:#4682B4;box-shadow:5px 5px 5px 5px #ccc}
+.ProdPriceHomeL{color:#3CB371;}
+.ProdPriceHomeL .FCCurrencyLabel{color:#3CB371;font-weight:bold;}
+.ProdPriceHomeL strike{color:#DC143C;font-weight:bold;}
+.ProdDetHomeL{background-color:#E6E6FA;margin:3px;font-family: Arial,verdana,tahoma;font-size: 15px;color:#008B8B;}
+.ProdDetHomeL:hover{background-color:#E0FFFF;}
+.ProdNomeHomeL a{font-family: Arial,verdana,tahoma;font-size: 15px;color:#4682B4;}
+.ProdNomeHomeL{min-height:60px;padding-top:5px}
+.ProdCompraHomeL img{width:150px;padding:5px 5px 5px 5px;}
+.ProdEstoqueHomeL{font-family: Arial,verdana,tahoma;font-size: 15px;color:#4682B4;padding:5px 5px 5px 5px;}</span></pre>
+    </div>
+	</div>
+
+	<div class="row">
+	  <div class="col-xs-12 col-sm-12 col-lg-12"><br></div>
+	</div>
+
+</div>
+
+<p>Se as funções <b>MostraMaxParcela</b>, <b>MostraEconomia</b> e <b>FormatNum</b> não existirem no arquivo <b>LojaLib.js</b> ou no arquivo <b>EstiloProduto.htm</b>, insira as funções abaixo ao final do arquivo <b>LojaLib.js</b>.</p>
+
+<pre><span class="courrierpeq">
+//Função que mostra o máximo de parcela na home e na listagem principal de produtos
+function MostraMaxParcela(PrecoProd,MaxParcelas){
+  var ComSem;
+  if(PrecoProd==0||MaxParcelas==1||Juros.length==0)return;
+  if(MaxParcelas==0||MaxParcelas>Juros.length)MaxParcelas=Juros.length;
+  if(Juros[MaxParcelas-1]>0)ComSem=""; else ComSem="&lt;font color=#990000> sem juros&lt;/font>";
+  document.write(" ou &lt;b>"+MaxParcelas+"x&lt;/b>"+ComSem+" de &lt;b>"+FormatPrecoReais(CalculaParcelaJurosCompostos(PrecoProd,MaxParcelas))+"&lt;/b>");
+}
+
+//Função para mostrar valor economizado em produtos em promoção
+function MostraEconomia(PrecoProd,PrecoOri){
+if(PrecoProd!=PrecoOri)document.write("&lt;br>&lt;font color=#6f9e45>Economize &lt;b>"+FormatPrice(PrecoOri-PrecoProd,'R$')+"&lt;/b> ("+FormatNum(((PrecoOri-PrecoProd)/PrecoOri)*100)+"%)&lt;/font>");
+}
+
+function FormatNum(num){
+num=num.toString().replace(/\$|\,/g,'');
+if(isNaN(num))num="0";
+sign=(num==(num=Math.abs(num)));
+num=Math.floor(num*100+0.50000000001);
+num=Math.floor(num/100).toString();
+for(var i=0;i&lt;Math.floor((num.length-(1+i))/3);i++)num=num.substring(0,num.length-(4*i+3))+'.'+num.substring(num.length-(4*i+3));
+return ((sign)?'':'-')+num;
+}
+
+// Mostrar desconto à vista na página inicial
+// (utilizado no OUT que apresenta o preço À vista)
+// <span class="destpeq">(altere o "15%" e o "0.85" para o desconto utilizado em sua loja)</span>
+function MostraDescontoHome(PrecoProd){
+if(PrecoProd==0)return;
+document.write("&lt;br>&lt;table bgcolor=white cellspacing=0 cellpadding=0>&lt;tr class=EstParcPar>&lt;td colspan=3 height= 22 bgcolor=white> &lt;center>À vista com &lt;font color=#ff0000>&lt;b><span class="destpeq">15%</span>&lt;/font> de desconto. &lt;br>por &lt;b>&lt;font color=#ff0000>"+FormatPrecoReais(PrecoProd*<span class=destpeq>0.85</span>)+"&lt;/font>&lt;/b>&lt;/center>&lt;/td>&lt;/tr>");
+document.write("&lt;/table>&lt;br>");
+}</span></pre>

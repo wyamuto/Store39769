@@ -1,0 +1,109 @@
+<style>
+.titpeqverde {font-size:9pt;font-family:courier new,tahoma,verdana;color:#1DA906;font-weight:bold;}
+.courrierpeq {font-size:8pt;font-family:courier new,tahoma,verdana;color:#0D6D9E;}
+.destpeq {font-size:8pt;font-family:tahoma,verdana;color:#990000;font-weight:bold;}
+</style>
+<pre>
+<span class=courrierpeq>
+
+<span class=titpeqverde>
+&lt;!-- Altere onde está <span class=destpeq>9</span> de acordo com o Pagto utilizado na loja -->
+&lt;!-- Pagto 1 = <span class=destpeq>9</span>, Pagto 2 = <span class=destpeq>10</span>, Pagto 3 = <span class=destpeq>11</span>, Pagto 4 = <span class=destpeq>12</span> e Pagto 5 = <span class=destpeq>13</span> -->
+
+&lt;!-- Altere onde está <span class=destpeq>email@cadastradonobcash.com.br</span> de acordo com o e-mail cadastrado no Bcash -->
+
+&lt;!-- Este exemplo, permite a inclusão de até 10 produtos no pedido. Para aumentar este limite será necessário aumentar os parâmetros de produtos (produto_codigo_X, produto_descricao_X, produto_qtde_X e produto_valor_X) -->
+</span>
+
+&lt;script>
+if(&lt;IDFormaPagamento>==<span class=destpeq>9</span>){
+  document.write('&lt;style>');
+  document.write('#novajanela {width:667px;height:460px;background-color:#cbcbcb;position:absolute;top:20px;left:20px;border-style:solid;border-width:5px}');
+  document.write('&lt;/style>');
+  document.write('&lt;div id=novajanela>');
+  document.write('&lt;table width="667" height="460">');
+  document.write('  &lt;tr>');
+  document.write('    &lt;td align=center valign=middle>');
+  document.write('      Acessando site do &lt;b>Bcash&lt;/b> para pagamento do pedido...&lt;br>&lt;br>');
+  document.write('      Clique no botão abaixo para prosseguir.&lt;br>&lt;br>&lt;br>');
+  document.write('&lt;form name="bcash" action="https://www.bcash.com.br/checkout/pay/" method="post" target="_blank">');
+  document.write('&lt;input name="email_loja" type="hidden" value="<span class=destpeq>email@cadastradonobcash.com.br</span>">');
+  document.write('&lt;input name="id_pedido" type="hidden" value="&lt;NumPedido>">');
+  document.write('&lt;input name="email" type="hidden" value="&lt;EmailCliente>">');
+  document.write('&lt;input name="nome" type="hidden" value="&lt;NomeCompletoCliente>">');
+  document.write('&lt;input name="cpf" type="hidden" value="&lt;CPFCNPJ>">');
+  document.write('&lt;input name="telefone" type="hidden" value="&lt;TelefoneCliente>">');
+  document.write('&lt;input name="endereco" type="hidden" value="&lt;EnderecoCliente>">');
+  document.write('&lt;input name="bairro" type="hidden" value="&lt;BairroCliente>">');
+  document.write('&lt;input name="cidade" type="hidden" value="&lt;CidadeCliente>">');
+  document.write('&lt;input name="estado" type="hidden" value="&lt;EstadoCliente>">');
+  document.write('&lt;input name="cep" type="hidden" value="&lt;CEPCliente>">');
+  document.write('&lt;input name="produto_codigo_1" type="hidden" value="&lt;RefProduto1>">');
+  document.write('&lt;input name="produto_descricao_1" type="hidden" value="&lt;NomeProduto1>">');
+  document.write('&lt;input name="produto_qtde_1" type="hidden" value="&lt;QtdProduto1>">');
+  document.write('&lt;input name="produto_valor_1" type="hidden" value="&lt;PrecoUnitProduto1>">');
+  document.write('&lt;input name="produto_codigo_2" type="hidden" value="&lt;RefProduto2>">');
+  document.write('&lt;input name="produto_descricao_2" type="hidden" value="&lt;NomeProduto2>">');
+  document.write('&lt;input name="produto_qtde_2" type="hidden" value="&lt;QtdProduto2>">');
+  document.write('&lt;input name="produto_valor_2" type="hidden" value="&lt;PrecoUnitProduto2>">');
+  document.write('&lt;input name="produto_codigo_3" type="hidden" value="&lt;RefProduto3>">');
+  document.write('&lt;input name="produto_descricao_3" type="hidden" value="&lt;NomeProduto3>">');
+  document.write('&lt;input name="produto_qtde_3" type="hidden" value="&lt;QtdProduto3>">');
+  document.write('&lt;input name="produto_valor_3" type="hidden" value="&lt;PrecoUnitProduto3>">');
+  document.write('&lt;input name="produto_codigo_4" type="hidden" value="&lt;RefProduto4>">');
+  document.write('&lt;input name="produto_descricao_4" type="hidden" value="&lt;NomeProduto4>">');
+  document.write('&lt;input name="produto_qtde_4" type="hidden" value="&lt;QtdProduto4>">');
+  document.write('&lt;input name="produto_valor_4" type="hidden" value="&lt;PrecoUnitProduto4>">');
+  document.write('&lt;input name="produto_codigo_5" type="hidden" value="&lt;RefProduto5>">');
+  document.write('&lt;input name="produto_descricao_5" type="hidden" value="&lt;NomeProduto5>">');
+  document.write('&lt;input name="produto_qtde_5" type="hidden" value="&lt;QtdProduto5>">');
+  document.write('&lt;input name="produto_valor_5" type="hidden" value="&lt;PrecoUnitProduto5>">');
+  document.write('&lt;input name="produto_codigo_6" type="hidden" value="&lt;RefProduto6>">');
+  document.write('&lt;input name="produto_descricao_6" type="hidden" value="&lt;NomeProduto6>">');
+  document.write('&lt;input name="produto_qtde_6" type="hidden" value="&lt;QtdProduto6>">');
+  document.write('&lt;input name="produto_valor_6" type="hidden" value="&lt;PrecoUnitProduto6>">');
+  document.write('&lt;input name="produto_codigo_7" type="hidden" value="&lt;RefProduto7>">');
+  document.write('&lt;input name="produto_descricao_7" type="hidden" value="&lt;NomeProduto7>">');
+  document.write('&lt;input name="produto_qtde_7" type="hidden" value="&lt;QtdProduto7>">');
+  document.write('&lt;input name="produto_valor_7" type="hidden" value="&lt;PrecoUnitProduto7>">');
+  document.write('&lt;input name="produto_codigo_8" type="hidden" value="&lt;RefProduto8>">');
+  document.write('&lt;input name="produto_descricao_8" type="hidden" value="&lt;NomeProduto8>">');
+  document.write('&lt;input name="produto_qtde_8" type="hidden" value="&lt;QtdProduto8>">');
+  document.write('&lt;input name="produto_valor_8" type="hidden" value="&lt;PrecoUnitProduto8>">');
+  document.write('&lt;input name="produto_codigo_9" type="hidden" value="&lt;RefProduto9>">');
+  document.write('&lt;input name="produto_descricao_9" type="hidden" value="&lt;NomeProduto9>">');
+  document.write('&lt;input name="produto_qtde_9" type="hidden" value="&lt;QtdProduto9>">');
+  document.write('&lt;input name="produto_valor_9" type="hidden" value="&lt;PrecoUnitProduto9>">');
+  document.write('&lt;input name="produto_codigo_10" type="hidden" value="&lt;RefProduto10>">');
+  document.write('&lt;input name="produto_descricao_10" type="hidden" value="&lt;NomeProduto10>">');
+  document.write('&lt;input name="produto_qtde_10" type="hidden" value="&lt;QtdProduto10>">');
+  document.write('&lt;input name="produto_valor_10" type="hidden" value="&lt;PrecoUnitProduto10>">');
+  document.write('&lt;input name="tipo_integracao" type="hidden" value="PAD">');
+  document.write('&lt;input name="frete" type="hidden" value="&lt;Frete>">');
+  document.write('&lt;input name="desconto" type="hidden" value="&lt;DescontoCupom>">');
+  document.write('&lt;input name="acrescimo" type="hidden" value="&lt;ValorEmbalagemPedido>">');
+  document.write('&lt;input type="image" src="&lt;BaseLoja>images/btcomprar.gif" value="Comprar" alt="Comprar" border="0" align="absbottom" >');
+  document.write('&lt;/form>');
+  document.write('    &lt;/td>');
+  document.write('  &lt;/tr>');
+  document.write('&lt;/table>');
+  document.write('&lt;/div>');
+}
+
+var TotalSFrete=&lt;TotalSemFrete>;
+var NumP=&lt;NumParcelas>;
+
+// Informe o desconto que é oferecido de acordo com as regras da página "Pagamentos".
+//if(TotalSFrete>=210)var Desc1=30;
+//else if(TotalSFrete>=160)var Desc1=20;
+//else if(TotalSFrete>=90)var Desc1=10;
+
+//var Desc1
+//var FatorDesc=Desc1/100
+//Total=((TotalSFrete*100)/(100-Desc1)*FatorDesc);
+
+//coloca o resultado no campo hidden
+//document.bcash.desconto.value=Total;
+&lt;/script>
+</span>
+</pre>

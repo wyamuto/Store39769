@@ -1,0 +1,78 @@
+<script>
+function ValidaForm(este) {
+  if(este.TextoBuscaNews.value.length<2){
+    alert("Preencha a busca.");
+    este.TextoBuscaNews.focus();
+    return false;
+  }
+  return true;
+}
+</script>
+<br>
+
+<table align=center width=490 border=0 cellpadding=0 cellspacing=0>
+ <form name=BuscaNoticia method=GET action=Noticias.asp onSubmit='return ValidaForm(this)'>
+ <input type=hidden name=IDLoja value=9>
+ <input type=hidden name=Y value=<Y>>
+<tr><td colspan=4><img src="<baseloja>images/busca_01.gif" width=490 height=3></td></tr>
+<tr>
+<td rowspan=2><img src="<baseloja>images/busca_02.gif" width=3 height=97></td>
+<td><img src="<baseloja>images/busca_03.gif" width=188 height=94></td>
+<td width=296 height=94 background=<baseloja>images/busca_04.gif>
+
+    <table cellspacing=5 cellpadding=0 align=center border=0>
+       <tr>
+         <td></td>
+         <td colspan=2 style="font-size:10pt;font-weight:bold;color:#000000;font-family:tahoma,verdana;"><b>Pesquisar na base de conhecimento:</b></td></tr>
+         <td></td>
+       </tr>
+       <tr>
+        <td>&nbsp;</td>
+        <td><input type=text size=20 maxlength=20 name=TextoBuscaNews class=InputText1 value="" style=width:150px></td>
+        <td><input type=submit name=Procurar value=" Buscar " class=InputButton1></td>
+        <td>&nbsp;</td>
+       </tr>
+     </table>
+
+</td>
+<td rowspan=2><img src="<baseloja>images/busca_05.gif" width=3 height=97></td>
+</tr>
+<tr><td colspan=2><img src="<baseloja>images/busca_06.gif" width=484 height=3></td></tr>
+</table>
+
+<table width=700 cellspacing=10 cellpadding=15 align=center class=EstTabBorda>
+   <tr>
+    <td>
+     <center>Digite uma palavra para encontrar respostas para sua dúvida.<br>Ex: frete, sub-categorias, XML, etc.</center>
+     </td>
+   </tr>
+  <tr>
+    <td align=center><b><span class=lgtxt>Dúvidas mais frequentes:</span></b><br>
+     <br>
+     <span class=lgtxt><a href=Noticias.asp?IDLoja=<IDLoja>&IDNoticia=3795>É possível criar sub-categorias em minha loja?</a></span><br><br>
+     <span class=lgtxt><a href=Noticias.asp?IDLoja=<IDLoja>&IDNoticia=3813>É possível personalizar o design da loja?</a></span><br><br>
+     <span class=lgtxt><a href=Noticias.asp?IDLoja=<IDLoja>&IDNoticia=3793>Posso utilizar meu domínio www.minhaloja.com.br para acessar a loja?</a></span><br><br>
+     <span class=lgtxt><a href=Noticias.asp?IDLoja=<IDLoja>&IDNoticia=3794>Como configuro as tabelas de frete da minha loja?</a></span><br><br>
+     <span class=lgtxt><a href=Noticias.asp?IDLoja=<IDLoja>&IDNoticia=3791>Posso retirar ou escolher os banners exibidos no topo das páginas da loja?</a></span><br><br>
+     <span class=lgtxt><a href=Noticias.asp?IDLoja=<IDLoja>&IDNoticia=3788>Como divulgar a minha loja virtual?</a></span><br><br>
+     <span class=lgtxt><a href=Noticias.asp?IDLoja=<IDLoja>&IDNoticia=3789>Como enviar newsletter para clientes?</a></span><br><br>
+     <span class=lgtxt><a href=Noticias.asp?IDLoja=<IDLoja>&IDNoticia=3797>Como identificar origens de visitação e cadastrar parceiros afiliados em minha loja?</a></span><br><br>
+     <span class=lgtxt><a href=Noticias.asp?IDLoja=<IDLoja>&IDNoticia=3749>Como disponibilizar cartões de crédito na loja?</a></span><br><br>
+     <span class=lgtxt><a href=Noticias.asp?IDLoja=<IDLoja>&IDNoticia=3796>Qual a URL para exibir a lista dos produtos da loja em XML?</a></span><br>
+
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <center>
+       <input type=button name=Todas value=" Ver todas as dúvidas " class=InputButton onclick="self.location.href='/sistema/Noticias.asp?IDLoja=<IDLoja>'">
+     </center>
+     </td>
+   </tr>
+ </form>
+ </table><br>
+
+
+      <!--[if IE]>
+      <table width=170 bgcolor=#ffffff><tr><td align=right><a href="#" onclick="window.external.AddSearchProvider('http://www.rumo.com.br/lojas/00000009/htm/SearchProvider.xml')"><img src=<BaseLoja>images/ajudaFCIE.gif border=0 alt='Inclua esta busca no navegador'></a></td></tr></table>
+      <![endif]-->

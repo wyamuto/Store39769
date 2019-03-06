@@ -1,0 +1,19 @@
+<p>Coloque o código abaixo no arquivo ConfirmacaoPedido.htm (pasta HTM)</p>
+
+<pre>&lt;script>
+function require(file){
+var head=document.getElementsByTagName("head")[0];
+var script=document.createElement('script');
+script.id="getSelo";
+script.src=file;
+script.type='text/javascript';
+head.appendChild(script);
+}
+var sBannerEbit="&lt;br>&lt;table width=100% align=center class=EstChkDiv>&lt;tr height=25>&lt;td class=EstChkTabTopo style=text-align:center>Avaliação e-bit&lt;/td>&lt;/tr>&lt;tr>&lt;td style=text-align:center>&lt;a id='bannerEbit'>&lt;/a>&lt;/td>&lt;/tr>&lt;/table>&lt;br>";
+F$.GetID("idChkBottomFC").innerHTML=sBannerEbit;
+require('https://imgs.ebit.com.br/ebitBR/selo-ebit/js/getSelo.js?<b class="dest">XXXXXXX</b>');
+&lt;/script></pre>
+<br>
+
+
+<p>Onde está <b class="dest">XXXXXXX</b> coloque o código numérico da loja fornecido pelo <a href="http://www.ebit.com.br" target=_blank>e-bit</a>.</p>

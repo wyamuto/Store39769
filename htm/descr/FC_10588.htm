@@ -1,0 +1,43 @@
+<p>Segue abaixo exemplo de código HTML que pode ser utilizado em páginas <a href="/prod,idloja,9,idproduto,4814420" target="_blank">personalizadas da loja</a> (Ex: BarraTopo.htm, BarraLateral.htm, etc) para que o cliente possa cadastrar o e-mail na lista de assinantes de e-mail marketing da loja:</p>
+
+<span>
+<pre>&lt;table width=100% class=EstTabPedido align=center border=0>
+&lt;form name=FormCadNewsletter method=GET action="Newsletter.asp" onsubmit="return ValidaCadNewsletter(this);">
+  &lt;input type=hidden name=IDLoja value="&lt;IDLojaNum>">
+  &lt;input type=hidden name=Y value="&lt;Y>">
+  &lt;input type=hidden name=FormatoHTML value=True>
+  &lt;input type=hidden name=EnviarAssinante value="Enviar">
+ &lt;tr>&lt;td class=EstNomeCampo>Nome:&lt;/td>&lt;/tr> 
+ &lt;tr>&lt;td>&lt;input type=text name=NomeAssinante size=10 maxlength=35 class=InputText style="width:100px;">&lt;/td>&lt;/tr>
+ &lt;tr>&lt;td class=EstNomeCampo>Email:&lt;/td>&lt;/tr> 
+ &lt;tr>&lt;td>&lt;input type=text name=Email size=10 maxlength=35 class=InputText style="width:100px;">&lt;/td>&lt;/tr>
+ &lt;tr>&lt;td colspan=2 align=center>&lt;input type=submit class=InputButton name=ok value="Enviar">&lt;/td>&lt;/tr>
+&lt;/form>
+&lt;/table>
+
+&lt;script>
+function ValidaCadNewsletter(oForm) {
+  function ValidaEmailCadNews(sEmail) {
+    var regex=/^[a-zA-Z0-9._-]+@([a-zA-Z0-9.-]+\.)+[a-zA-Z0-9.-]{2,4}$/;
+    return regex.test(sEmail);
+  }
+  if (oForm.NomeAssinante.value.length==""){
+    alert("Campo 'Nome' não pode estar em branco!");
+    oForm.NomeAssinante.focus();
+    return false;
+  }
+  if (oForm.Email.value.length==""){
+    alert("Campo 'E-mail' não pode estar em branco!");
+    oForm.Email.focus();
+    return false;
+  }
+  if (!ValidaEmailCadNews(oForm.Email.value)) {
+    alert("Campo 'E-mail' inválido!");
+    oForm.Email.focus();
+    return false;
+  }
+}
+&lt;/script></pre>
+</span>
+&nbsp;
+<br>

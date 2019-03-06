@@ -1,0 +1,34 @@
+<center><img src="/lojas/00000009/images/FormCanc1.gif" class="img-responsive"></center>
+<br>
+
+<p>O exemplo de formulário desta documentação possui os seguintes campos:</p>
+
+<ul><li><p>Nº Pedido</p></li><li><p>Nome</p></li><li><p>E-mail</p></li><li><p>Telefone</p></li><li><p>Motivo</p></li></ul>
+<br>
+<p><b>Obs:</b> É obrigatório o preenchimento de todos os campos.</p>
+
+<center><img src="/lojas/00000009/images/FormCan.gif" class="img-responsive"></center>
+<br>
+
+<p><b>Obs:</b> A solicitação será enviada para o mesmo e-mail que recebe as confirmações de pedido.</p>
+<br>
+
+<p>Seguem os passos para adicionar este formulário na loja virtual:</p>
+<br>
+
+<p><span class="dest NewsPassos">1º Passo</span></p>
+<p>Adicione o código abaixo ao final do arquivo <b>Rodape.htm</b>:</p>
+
+<pre><span>&lt;script type="text/javascript">
+if (FC$.Page == "Track"){
+var sFormCanc=document.getElementById('idRecoverOrderFC');
+if(sFormCanc != null){
+document.getElementById('idRecoverOrderFC').innerHTML+="&lt;br />&lt;br />&lt;br />&lt;a href='&lt;htmloja>FormCancelamento.htm'>Clique aqui&lt;/a> para solicitar o cancelamento do 
+pedido.";
+}
+}
+&lt;/script></span></pre>
+<br>
+
+<p><span class="dest NewsPassos">2º Passo</span></p>
+<p><a href="/dnload/FC13245.zip">Clique aqui</a> para baixar os arquivos que devem ser enviados para a pasta <b>htm</b></p>

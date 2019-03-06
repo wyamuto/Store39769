@@ -1,0 +1,25 @@
+<style>
+.courrierpeq {font-size:8pt;font-family:courier new,tahoma,verdana;color:#0D6D9E;}
+.destpeq {font-size:8pt;font-family:tahoma,verdana;color:#990000;font-weight:bold;}
+</style>
+
+<pre>
+<span class=courrierpeq>
+&lt;table width=120 cellspacing=0 cellpadding=3>
+  &lt;script>function VerTextoBS(oForm){if (oForm.Texto.value==''){alert('Digite antes sua busca.');oForm.Texto.focus();return false;}else{return true;}}&lt;/script>
+  &lt;form name=FormBuscaSimples method=GET action="ListaProdutos.asp" onSubmit="return VerTextoBS(this);">
+  &lt;input type=hidden name=IDLoja value="&lt;IDLojaNum>">
+  &lt;input type=hidden name=Y value="&lt;Y>">
+  &lt;input type=hidden name=BuscaNomeRef value=True>
+  &lt;input type=hidden name=Digitada value=True>
+  &lt;tr>&lt;td colspan=2>&lt;b>Procurar: &lt;/b>&lt;/td>&lt;/tr>
+  &lt;tr>
+    &lt;td>&lt;input type=text name=Texto class=InputTextBusca style="width:90px;">&lt;/td>
+    &lt;td>&lt;input type=image name=ok src="&lt;BaseLoja>images/BotOkBusca.gif">&lt;/td>&lt;/form>
+  &lt;/tr>
+  &lt;tr>&lt;td align=right colspan=2>&lt;a href="BuscaAvancada.asp?IDLoja=&lt;IDLoja>">&lt;font color=#990000>busca detalhada&lt;/a>&lt;/td>&lt;/tr>
+&lt;/table>
+</span>
+</pre>
+
+

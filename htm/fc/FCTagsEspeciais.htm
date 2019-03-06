@@ -1,0 +1,50 @@
+<script src="../lojas/00000009/htm/js/list.js"></script>
+<script src="../lojas/00000009/htm/js/jquery-1.js"></script>
+<style>
+  ul{margin-left:10px;}
+  #busca{border-radius:5px;border: 2px solid #D3D3D3;margin:5px 0px 5px 0px;max-width: 200px;}
+  #busca:hover{box-shadow: 2px 2px 2px 2px #A9A9A9;}
+</style>
+<div id="users">
+  <hr>
+  <div class="row">
+  <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
+  <p><b>Procurar por:</b>  <input class="search" placeholder="Digite sua busca" id="busca" /></p>
+  </div>
+  </div>
+  <hr>
+<ul class="nav nav-tabs">
+  <!--<li class="active"><a data-toggle="tab" href="#TagsEspeciais">Tags especiais genéricas</a></li>-->
+  <li class="active"><a onclick="carregar('../lojas/00000009/htm/fc/TagsEspeciais/TagsEspeciais.htm')" href="#" data-toggle="tab">Tags especiais genéricas</a></li>
+  <li><a onclick="carregar('../lojas/00000009/htm/fc/TagsEspeciais/Produtos.htm')" href="#" data-toggle="tab">EstiloProduto.htm</a></li>
+  <li><a onclick="carregar('../lojas/00000009/htm/fc/TagsEspeciais/ProdutosOut.htm')" href="#" data-toggle="tab">EstiloProdutoOut.htm</a></li>
+  <li><a onclick="carregar('../lojas/00000009/htm/fc/TagsEspeciais/ConfirmacaoPedido.htm')" href="#" data-toggle="tab">ConfirmacaoPedido.htm</a></li>
+  <li><a onclick="carregar('../lojas/00000009/htm/fc/TagsEspeciais/MercadoLivre.htm')" href="#" data-toggle="tab">MercadoLivre</a></li>
+  <li><a onclick="carregar('../lojas/00000009/htm/fc/TagsEspeciais/Redes_Sociais.htm')" href="#" data-toggle="tab">Redes Sociais</a></li>
+</ul>
+
+<div class="tab-content" id="conteudo">
+<!--<iframe width="900" height="6000" src="../lojas/00000009/htm/fc/TagsEspeciais/TagsEspeciais.htm" frameborder="0" allowfullscreen></iframe>-->
+</div>
+  </div>
+<script>
+jQuery.ajaxSetup({
+    'beforeSend' : function(xhr) {
+        xhr.overrideMimeType('text/html; charset=ISO-8859-1');
+    },
+  
+});
+jQuery("#conteudo").load('../lojas/00000009/htm/fc/TagsEspeciais/TagsEspeciais.htm');
+</script>
+<script>
+    function carregar(pagina){
+
+       jQuery.ajaxSetup({
+    'beforeSend' : function(xhr) {
+        xhr.overrideMimeType('text/html; charset=ISO-8859-1');
+    },
+});
+
+        jQuery("#conteudo").load(pagina);
+    }
+</script>

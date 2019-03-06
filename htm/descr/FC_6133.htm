@@ -1,0 +1,673 @@
+<p>O conteúdo mencionado neste exemplo é apenas uma sugestão. A <b>Rumo Informática</b> não se responsabiliza por apresentar mais detalhes a respeito de alterações e implantações.</p>
+
+<p>Para mais informações, solicite recomendações de webdesigner ou entre em contato com o de sua preferência.</p>
+<br>
+
+<center><img src="/lojas/00000009/images/Parc_Flores.gif" class="img-responsive"></center>
+<br>
+
+<p><span class="dest NewsPassos">1º Passo:</span></p>
+<p>Estas parcelas e juros inicialmente devem estar cadastradas nas formas de pagamento que aceitam estes parcelamentos.</p>
+
+<p>Se sua loja por exemplo parcela com cartão de crédito, clique na seta ao lado da bandeira do cartão na página de <b>Pagamentos</b> para cadastrar as faixas de parcelamento.</p>
+
+<center><img src="/lojas/00000009/images/Parc_card.gif" class="img-responsive"></center>
+<br>
+
+<p><span class="dest NewsPassos">2º Passo:</span></p>
+<p>Envie o arquivo <b><i>SpryTabbedPanels.js</i></b> para a pasta <b>HTM</b> da loja.</p>
+
+<p>Segue o conteúdo deste arquivo:</p>
+
+<!-- Inicio do Antigo Frame FC613SpryTabbedPanels.htm-->
+<pre><span>var Spry;
+if (!Spry) Spry = {};
+if (!Spry.Widget) Spry.Widget = {};
+
+Spry.Widget.TabbedPanels = function(element, opts)
+{
+	this.element = this.getElement(element);
+	this.defaultTab = 0; // Show the first panel by default.
+	this.bindings = [];
+	this.tabSelectedClass = "TabbedPanelsTabSelected";
+	this.tabHoverClass = "TabbedPanelsTabHover";
+	this.tabFocusedClass = "TabbedPanelsTabFocused";
+	this.panelVisibleClass = "TabbedPanelsContentVisible";
+	this.focusElement = null;
+	this.hasFocus = false;
+	this.currentTabIndex = 0;
+	this.enableKeyboardNavigation = true;
+
+	Spry.Widget.TabbedPanels.setOptions(this, opts);
+
+	// If the defaultTab is expressed as a number/index, convert
+	// it to an element.
+
+	if (typeof (this.defaultTab) == "number")
+	{
+		if (this.defaultTab &lt; 0)
+			this.defaultTab = 0;
+		else
+		{
+			var count = this.getTabbedPanelCount();
+			if (this.defaultTab &gt;= count)
+				this.defaultTab = (count &gt; 1) ? (count - 1) : 0;
+		}
+
+		this.defaultTab = this.getTabs()[this.defaultTab];
+	}
+
+	// The defaultTab property is supposed to be the tab element for the tab content
+	// to show by default. The caller is allowed to pass in the element itself or the
+	// element's id, so we need to convert the current value to an element if necessary.
+
+	if (this.defaultTab)
+		this.defaultTab = this.getElement(this.defaultTab);
+
+	this.attachBehaviors();
+};
+
+Spry.Widget.TabbedPanels.prototype.getElement = function(ele)
+{
+	if (ele && typeof ele == "string")
+		return document.getElementById(ele);
+	return ele;
+}
+
+Spry.Widget.TabbedPanels.prototype.getElementChildren = function(element)
+{
+	var children = [];
+	var child = element.firstChild;
+	while (child)
+	{
+		if (child.nodeType == 1 /* Node.ELEMENT_NODE */)
+			children.push(child);
+		child = child.nextSibling;
+	}
+	return children;
+};
+
+Spry.Widget.TabbedPanels.prototype.addClassName = function(ele, className)
+{
+	if (!ele || !className || (ele.className && ele.className.search(new RegExp("\\b" + className + "\\b")) != -1))
+		return;
+	ele.className += (ele.className ? " " : "") + className;
+};
+
+Spry.Widget.TabbedPanels.prototype.removeClassName = function(ele, className)
+{
+	if (!ele || !className || (ele.className && ele.className.search(new RegExp("\\b" + className + "\\b")) == -1))
+		return;
+	ele.className = ele.className.replace(new RegExp("\\s*\\b" + className + "\\b", "g"), "");
+};
+
+Spry.Widget.TabbedPanels.setOptions = function(obj, optionsObj, ignoreUndefinedProps)
+{
+	if (!optionsObj)
+		return;
+	for (var optionName in optionsObj)
+	{
+		if (ignoreUndefinedProps && optionsObj[optionName] == undefined)
+			continue;
+		obj[optionName] = optionsObj[optionName];
+	}
+};
+
+Spry.Widget.TabbedPanels.prototype.getTabGroup = function()
+{
+	if (this.element)
+	{
+		var children = this.getElementChildren(this.element);
+		if (children.length)
+			return children[0];
+	}
+	return null;
+};
+
+Spry.Widget.TabbedPanels.prototype.getTabs = function()
+{
+	var tabs = [];
+	var tg = this.getTabGroup();
+	if (tg)
+		tabs = this.getElementChildren(tg);
+	return tabs;
+};
+
+Spry.Widget.TabbedPanels.prototype.getContentPanelGroup = function()
+{
+	if (this.element)
+	{
+		var children = this.getElementChildren(this.element);
+		if (children.length &gt; 1)
+			return children[1];
+	}
+	return null;
+};
+
+Spry.Widget.TabbedPanels.prototype.getContentPanels = function()
+{
+	var panels = [];
+	var pg = this.getContentPanelGroup();
+	if (pg)
+		panels = this.getElementChildren(pg);
+	return panels;
+};
+
+Spry.Widget.TabbedPanels.prototype.getIndex = function(ele, arr)
+{
+	ele = this.getElement(ele);
+	if (ele && arr && arr.length)
+	{
+		for (var i = 0; i &lt; arr.length; i++)
+		{
+			if (ele == arr[i])
+				return i;
+		}
+	}
+	return -1;
+};
+
+Spry.Widget.TabbedPanels.prototype.getTabIndex = function(ele)
+{
+	var i = this.getIndex(ele, this.getTabs());
+	if (i &lt; 0)
+		i = this.getIndex(ele, this.getContentPanels());
+	return i;
+};
+
+Spry.Widget.TabbedPanels.prototype.getCurrentTabIndex = function()
+{
+	return this.currentTabIndex;
+};
+
+Spry.Widget.TabbedPanels.prototype.getTabbedPanelCount = function(ele)
+{
+	return Math.min(this.getTabs().length, this.getContentPanels().length);
+};
+
+Spry.Widget.TabbedPanels.addEventListener = function(element, eventType, handler, capture)
+{
+	try
+	{
+		if (element.addEventListener)
+			element.addEventListener(eventType, handler, capture);
+		else if (element.attachEvent)
+			element.attachEvent("on" + eventType, handler);
+	}
+	catch (e) {}
+};
+
+Spry.Widget.TabbedPanels.prototype.onTabClick = function(e, tab)
+{
+	this.showPanel(tab);
+};
+
+Spry.Widget.TabbedPanels.prototype.onTabMouseOver = function(e, tab)
+{
+	this.addClassName(tab, this.tabHoverClass);
+};
+
+Spry.Widget.TabbedPanels.prototype.onTabMouseOut = function(e, tab)
+{
+	this.removeClassName(tab, this.tabHoverClass);
+};
+
+Spry.Widget.TabbedPanels.prototype.onTabFocus = function(e, tab)
+{
+	this.hasFocus = true;
+	this.addClassName(this.element, this.tabFocusedClass);
+};
+
+Spry.Widget.TabbedPanels.prototype.onTabBlur = function(e, tab)
+{
+	this.hasFocus = false;
+	this.removeClassName(this.element, this.tabFocusedClass);
+};
+
+Spry.Widget.TabbedPanels.ENTER_KEY = 13;
+Spry.Widget.TabbedPanels.SPACE_KEY = 32;
+
+Spry.Widget.TabbedPanels.prototype.onTabKeyDown = function(e, tab)
+{
+	var key = e.keyCode;
+	if (!this.hasFocus || (key != Spry.Widget.TabbedPanels.ENTER_KEY && key != Spry.Widget.TabbedPanels.SPACE_KEY))
+		return true;
+
+	this.showPanel(tab);
+
+	if (e.stopPropagation)
+		e.stopPropagation();
+	if (e.preventDefault)
+		e.preventDefault();
+
+	return false;
+};
+
+Spry.Widget.TabbedPanels.prototype.preorderTraversal = function(root, func)
+{
+	var stopTraversal = false;
+	if (root)
+	{
+		stopTraversal = func(root);
+		if (root.hasChildNodes())
+		{
+			var child = root.firstChild;
+			while (!stopTraversal && child)
+			{
+				stopTraversal = this.preorderTraversal(child, func);
+				try { child = child.nextSibling; } catch (e) { child = null; }
+			}
+		}
+	}
+	return stopTraversal;
+};
+
+Spry.Widget.TabbedPanels.prototype.addPanelEventListeners = function(tab, panel)
+{
+	var self = this;
+	Spry.Widget.TabbedPanels.addEventListener(tab, "click", function(e) { return self.onTabClick(e, tab); }, false);
+	Spry.Widget.TabbedPanels.addEventListener(tab, "mouseover", function(e) { return self.onTabMouseOver(e, tab); }, false);
+	Spry.Widget.TabbedPanels.addEventListener(tab, "mouseout", function(e) { return self.onTabMouseOut(e, tab); }, false);
+
+	if (this.enableKeyboardNavigation)
+	{
+		// XXX: IE doesn't allow the setting of tabindex dynamically. This means we can't
+		// rely on adding the tabindex attribute if it is missing to enable keyboard navigation
+		// by default.
+
+		// Find the first element within the tab container that has a tabindex or the first
+		// anchor tag.
+		
+		var tabIndexEle = null;
+		var tabAnchorEle = null;
+
+		this.preorderTraversal(tab, function(node) {
+			if (node.nodeType == 1 /* NODE.ELEMENT_NODE */)
+			{
+				var tabIndexAttr = tab.attributes.getNamedItem("tabindex");
+				if (tabIndexAttr)
+				{
+					tabIndexEle = node;
+					return true;
+				}
+				if (!tabAnchorEle && node.nodeName.toLowerCase() == "a")
+					tabAnchorEle = node;
+			}
+			return false;
+		});
+
+		if (tabIndexEle)
+			this.focusElement = tabIndexEle;
+		else if (tabAnchorEle)
+			this.focusElement = tabAnchorEle;
+
+		if (this.focusElement)
+		{
+			Spry.Widget.TabbedPanels.addEventListener(this.focusElement, "focus", function(e) { return self.onTabFocus(e, tab); }, false);
+			Spry.Widget.TabbedPanels.addEventListener(this.focusElement, "blur", function(e) { return self.onTabBlur(e, tab); }, false);
+			Spry.Widget.TabbedPanels.addEventListener(this.focusElement, "keydown", function(e) { return self.onTabKeyDown(e, tab); }, false);
+		}
+	}
+};
+
+Spry.Widget.TabbedPanels.prototype.showPanel = function(elementOrIndex)
+{
+	var tpIndex = -1;
+	
+	if (typeof elementOrIndex == "number")
+		tpIndex = elementOrIndex;
+	else // Must be the element for the tab or content panel.
+		tpIndex = this.getTabIndex(elementOrIndex);
+	
+	if (!tpIndex &lt; 0 || tpIndex &gt;= this.getTabbedPanelCount())
+		return;
+
+	var tabs = this.getTabs();
+	var panels = this.getContentPanels();
+
+	var numTabbedPanels = Math.max(tabs.length, panels.length);
+
+	for (var i = 0; i &lt; numTabbedPanels; i++)
+	{
+		if (i != tpIndex)
+		{
+			if (tabs[i])
+				this.removeClassName(tabs[i], this.tabSelectedClass);
+			if (panels[i])
+			{
+				this.removeClassName(panels[i], this.panelVisibleClass);
+				panels[i].style.display = "none";
+			}
+		}
+	}
+
+	this.addClassName(tabs[tpIndex], this.tabSelectedClass);
+	this.addClassName(panels[tpIndex], this.panelVisibleClass);
+	panels[tpIndex].style.display = "block";
+
+	this.currentTabIndex = tpIndex;
+};
+
+Spry.Widget.TabbedPanels.prototype.attachBehaviors = function(element)
+{
+	var tabs = this.getTabs();
+	var panels = this.getContentPanels();
+	var panelCount = this.getTabbedPanelCount();
+
+	for (var i = 0; i &lt; panelCount; i++)
+		this.addPanelEventListeners(tabs[i], panels[i]);
+
+	this.showPanel(this.defaultTab);
+};</span></pre>
+<!-- Fim do Antigo Frame-->
+<br>
+
+<p><span class="dest NewsPassos">3º Passo:</span></p>
+<p>Adicione as seguintes linhas no começo do arquivo <b>BarraTopo.htm</b>:</p>
+<pre>&lt;script src=&lt;BaseLoja&gt;htm/SpryTabbedPanels.js&gt;&lt;/script&gt;
+&lt;script src=&lt;BaseLoja&gt;htm/LojaLib.js&gt;&lt;/script&gt;
+&lt;script src=&lt;BaseLoja&gt;htm/JurosParcelas.js&gt;&lt;/script&gt;</pre>
+<br>
+
+<p><span class="dest NewsPassos">4º Passo:</span></p>
+<p>Altere o conteúdo do arquivo <b>JurosParcelas.js</b> de acordo com o código abaixo:</p>
+
+<p>Veja que temos diferentes parcelamentos para <b>Visa</b> e <b>AMEX.</b></p>
+
+<!-- Inicio do Antigo Frame FC6133JurosParcelas.htm-->
+<pre><span>//Informe abaixo os juros para parcelamento em 1x, 2x, 3x, etc.
+
+var Juros=new Array(0,0,0,0,0,0);
+var JurosVISA=new Array(0,0,0,1.9,1.9,1.9,1.9,1.9);
+var JurosAMEX=new Array(0,0,0,0,0,1.9,1.9,1.9,1.9,1.9);</span></pre>
+<!-- Fim do Antigo Frame-->
+<br>
+
+<p><span class="dest NewsPassos">5º Passo:</span></p>
+<p>Adicione as funções para mostrar o parcelamento no final do arquivo <b>LojaLib.js</b>.</p>
+
+<p>Veja que temos diferentes funções para parcelamentos (<b>CalculaParcelaJurosCompostosVISA</b> e <b>MostraParcelasVISA</b>) o mesmo se aplica para outros cartões.</p>
+
+<p>Não esqueça de sobrescrever se o arquivo possuir algumas destas funções.</p>
+
+<!-- Inicio do Antigo Frame FC6133LojaLib.htm-->
+<pre><span>//### Funções que mostram diferentes parcelamentos
+
+function MostraMaxParcela(PrecoProd,MaxParcelas){
+  var ComSem;
+  if(PrecoProd==0||MaxParcelas==1||Juros.length==0)return;
+  if(MaxParcelas==0||MaxParcelas&gt;Juros.length)MaxParcelas=Juros.length;
+  if(Juros[MaxParcelas-1]&gt;0)ComSem=""; else ComSem="&lt;font color=#990000&gt;&nbsp;sem&nbsp;juros&lt;/font&gt;";
+  document.write("ou&nbsp;&lt;b&gt;"+MaxParcelas+"x&lt;/b&gt;"+ComSem+" de&nbsp;&lt;b&gt;"+FormatPrecoReais(CalculaParcelaJurosCompostos(PrecoProd,MaxParcelas))+"&lt;/b&gt;");
+}
+
+function MostraDesconto(PrecoProd){
+ if(PrecoProd==0)return;
+ document.write("&lt;br&gt;Pague com depósito bancário, boleto bancário ou ItaúShopline e ganhe &lt;font color=#990000&gt;&lt;b&gt;10%&lt;/font&gt; de desconto&lt;/b&gt;.&lt;hr size=1 align=center width=90% style='color:#B4B4B4;'&gt; Valor com desconto &lt;span class=EstPrecoProd&gt;"+FormatPrecoReais(PrecoProd*0.90)+"&lt;/span&gt;&lt;br&gt;&lt;br&gt;");
+}
+
+function MostraParcelasMASTERCARD(PrecoProd,MaxParcelas){
+  var ComSemMASTERCARD,EstiloLinhaMASTERCARD;
+  if(PrecoProd==0||MaxParcelas==1||Juros.length==0)return;
+  if(MaxParcelas==0||MaxParcelas&gt;Juros.length)MaxParcelas=Juros.length;
+  document.write("&lt;br&gt;&lt;table align=center cellpadding=3 cellspacing=1 width=270 class=FundoCorParc&gt;&lt;tr class=FundoCorParc&gt;&lt;td colspan=3 height=22 class=TitTabParc align=center&gt;&lt;b&gt;Opções de parcelamento&lt;/td&gt;&lt;/tr&gt;&lt;tr class=FundoCorNumVal&gt;&lt;td class=TitTabParc&gt;Número de&lt;br&gt;parcelas&lt;/td&gt;&lt;td align=right class=TitTabParc&gt;Valor&nbsp;de&lt;br&gt;cada&nbsp;parcela&lt;/td&gt;&lt;td align=right class=TitTabParc&gt;Valor total&lt;br&gt;parcelado&lt;/td&gt;&lt;/tr&gt;");
+  for(var i=0;i&lt;MaxParcelas;i++){
+    if(Juros[i]&gt;0)ComSemMASTERCARD="com juros"; else ComSemMASTERCARD="&lt;font color=#990000&gt;sem&nbsp;juros&lt;/font&gt;";
+    if((i%2)==0)EstiloLinhaMASTERCARD='EstParcPar'; else EstiloLinhaMASTERCARD='EstParcImpar';
+    document.write("&lt;tr class="+EstiloLinhaMASTERCARD+"&gt;&lt;td class="+EstiloLinhaMASTERCARD+"&gt;"+(i+1)+"x "+ComSemMASTERCARD+"&lt;/td&gt;&lt;td class="+EstiloLinhaMASTERCARD+" align=right&gt;"+FormatPrecoReais(CalculaParcelaJurosCompostos(PrecoProd,i+1))+"&lt;/td&gt;&lt;td class="+EstiloLinhaMASTERCARD+" align=right&gt;"+FormatPrecoReais(CalculaParcelaJurosCompostos(PrecoProd,i+1)*(i+1))+"&lt;/td&gt;&lt;/tr&gt;");
+  }
+  document.write("&lt;/table&gt;&lt;br&gt;");
+}
+
+function CalculaParcelaJurosCompostosVISA(Preco,Parcelas){
+  if(JurosVISA[Parcelas-1]==0)return Preco/Parcelas;
+  else return Math.round(Preco*(Math.pow(1+JurosVISA[Parcelas-1]/100,Parcelas)*JurosVISA[Parcelas-1]/100)/(Math.pow(1+JurosVISA[Parcelas-1]/100,Parcelas)-1)*100)/100;
+}
+
+function MostraParcelasVISA(PrecoProdVISA,MaxParcelasVISA){
+  var ComSemVISA,EstiloLinhaVISA;
+  if(PrecoProdVISA==0||MaxParcelasVISA==1||JurosVISA.length==0)return;
+  if(MaxParcelasVISA==0||MaxParcelasVISA&gt;JurosVISA.length)MaxParcelasVISA=JurosVISA.length;
+  document.write("&lt;br&gt;&lt;table align=center cellpadding=3 cellspacing=1 width=270 class=FundoCorParc&gt;&lt;tr class=FundoCorParc&gt;&lt;td colspan=3 height=22 class=TitTabParc align=center&gt;&lt;b&gt;Opções de parcelamento&lt;/td&gt;&lt;/tr&gt;&lt;tr class=FundoCorNumVal&gt;&lt;td class=TitTabParc&gt;Número de&lt;br&gt;parcelas&lt;/td&gt;&lt;td align=right class=TitTabParc&gt;Valor&nbsp;de&lt;br&gt;cada&nbsp;parcela&lt;/td&gt;&lt;td align=right class=TitTabParc&gt;Valor total&lt;br&gt;parcelado&lt;/td&gt;&lt;/tr&gt;");
+  for(var i=0;i&lt;MaxParcelasVISA;i++){
+    if(JurosVISA[i]&gt;0)ComSemVISA="com juros"; else ComSemVISA="&lt;font color=#990000&gt;sem&nbsp;juros&lt;/font&gt;";
+    if((i%2)==0)EstiloLinhaVISA='EstParcPar'; else EstiloLinhaVISA='EstParcImpar';
+    document.write("&lt;tr class="+EstiloLinhaVISA+"&gt;&lt;td class="+EstiloLinhaVISA+"&gt;"+(i+1)+"x "+ComSemVISA+"&lt;/td&gt;&lt;td class="+EstiloLinhaVISA+" align=right&gt;"+FormatPrecoReais(CalculaParcelaJurosCompostosVISA(PrecoProdVISA,i+1))+"&lt;/td&gt;&lt;td class="+EstiloLinhaVISA+" align=right&gt;"+FormatPrecoReais(CalculaParcelaJurosCompostosVISA(PrecoProdVISA,i+1)*(i+1))+"&lt;/td&gt;&lt;/tr&gt;");
+  }
+  document.write("&lt;/table&gt;&lt;br&gt;");
+}
+
+function CalculaParcelaJurosCompostosAMEX(Preco,Parcelas){
+  if(JurosAMEX[Parcelas-1]==0)return Preco/Parcelas;
+  else return Math.round(Preco*(Math.pow(1+JurosAMEX[Parcelas-1]/100,Parcelas)*JurosAMEX[Parcelas-1]/100)/(Math.pow(1+JurosAMEX[Parcelas-1]/100,Parcelas)-1)*100)/100;
+}
+
+function MostraParcelasAMEX(PrecoProdAMEX,MaxParcelasAMEX){
+  var ComSemAMEX,EstiloLinhaAMEX;
+  if(PrecoProdAMEX==0||MaxParcelasAMEX==1||JurosAMEX.length==0)return;
+  if(MaxParcelasAMEX==0||MaxParcelasAMEX&gt;JurosAMEX.length)MaxParcelasAMEX=JurosAMEX.length;
+  document.write("&lt;br&gt;&lt;table align=center cellpadding=3 cellspacing=1 width=270 class=FundoCorParc&gt;&lt;tr class=FundoCorParc&gt;&lt;td colspan=3 height=22 class=TitTabParc align=center&gt;&lt;b&gt;Opções de parcelamento&lt;/td&gt;&lt;/tr&gt;&lt;tr class=FundoCorNumVal&gt;&lt;td class=TitTabParc&gt;Número de&lt;br&gt;parcelas&lt;/td&gt;&lt;td align=right class=TitTabParc&gt;Valor&nbsp;de&lt;br&gt;cada&nbsp;parcela&lt;/td&gt;&lt;td align=right class=TitTabParc&gt;Valor total&lt;br&gt;parcelado&lt;/td&gt;&lt;/tr&gt;");
+  for(var i=0;i&lt;MaxParcelasAMEX;i++){
+    if(JurosAMEX[i]&gt;0)ComSemAMEX="com juros"; else ComSemAMEX="&lt;font color=#990000&gt;sem&nbsp;juros&lt;/font&gt;";
+    if((i%2)==0)EstiloLinhaAMEX='EstParcPar'; else EstiloLinhaAMEX='EstParcImpar';
+    document.write("&lt;tr class="+EstiloLinhaAMEX+"&gt;&lt;td class="+EstiloLinhaAMEX+"&gt;"+(i+1)+"x "+ComSemAMEX+"&lt;/td&gt;&lt;td class="+EstiloLinhaAMEX+" align=right&gt;"+FormatPrecoReais(CalculaParcelaJurosCompostosAMEX(PrecoProdAMEX,i+1))+"&lt;/td&gt;&lt;td class="+EstiloLinhaAMEX+" align=right&gt;"+FormatPrecoReais(CalculaParcelaJurosCompostosAMEX(PrecoProdAMEX,i+1)*(i+1))+"&lt;/td&gt;&lt;/tr&gt;");
+  }
+  document.write("&lt;/table&gt;&lt;br&gt;");
+}</span></pre>
+<!-- Fim do Antigo Frame-->
+<br>
+
+<p><span class="dest NewsPassos">6º Passo:</span></p>
+<p>No exemplo da loja Flores WEB (<a href="http://www.rumo.com.br/sistema/ListaProdutos.asp?IDLoja=278&IDProduto=10195" target="_blank">www.rumo.com.br/sistema/ListaProdutos.asp?IDLoja=278&IDProduto=10195</a>) foi inserido as chamadas para mostrar as diferentes tabelas no arquivo <b>EstiloProduto.htm</b>.</p>
+
+<p>Apague todos os <b>scripts</b> relacionados a tabela de parcelamento do arquivo <b>EstiloProduto.htm</b></p>
+
+<p>Neste arquivo as chamadas para o parcelamento que ficaram dentro da tag <b>&lt;ProdDet&gt;</b> estão em <b>VERMELHO</b> e devem ser colocadas no lugar onde se encontra o seguinte código:<br><b>&lt;script&gt;MostraParcelas(&lt;PrecoNum&gt;,&lt;MaxParcelasProdNum&gt;);&lt;/script&gt;</b></p>
+
+<!-- Inicio do Antigo Frame FC6133EstiloProd.htm-->
+<pre><span>&lt;ProdDet&gt;
+&lt;table width=100% name=TabProduto&lt;IDProduto&gt; cellpadding=0 cellspacing=0&gt;
+  &lt;tr&gt;&lt;td align=center colspan=3&gt;&lt;br&gt;&lt;hr class=EstLinhaProd&gt;&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td align=center valign=top width=&lt;ProdLargura&gt;&gt;&lt;ImagemProd&gt;&lt;/td&gt;
+    &lt;td width=7 height=&lt;ProdAltura&gt;&gt;&lt;img src=images/shim.gif width=7 height=&lt;ProdAltura&gt;&gt;&lt;/td&gt;
+    &lt;td valign=top&gt;
+      &lt;table name=TabDadosProduto&lt;IDProduto&gt; width=100% cellpadding=5 cellspacing=0&gt;
+        &lt;tr&gt;
+          &lt;td valign=top&gt;
+            &lt;table name=TabNomeRefProd&lt;IDProduto&gt; width=100% cellpadding=2 cellspacing=0&gt;
+              &lt;tr&gt;
+                &lt;td valign=top class=EstNomeProd&gt;&lt;NomeProd&gt;&lt;/td&gt;
+                &lt;td width=7&gt;&lt;img src=images/shim.gif width=7 height=1&gt;&lt;/td&gt;
+                &lt;td valign=top align=right rowspan=2 nowrap&gt;&lt;Lancamento&gt;&lt;/td&gt;
+              &lt;/tr&gt;
+              &lt;tr&gt;
+                &lt;td valign=top class=EstRefProd&gt;Ref. &lt;CodProd&gt; - &lt;LegendaCat&gt; &lt;NomeCat&gt;&lt;/td&gt;
+                &lt;td&gt;&lt;/td&gt;
+              &lt;/tr&gt;
+            &lt;/table&gt;
+          &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;&lt;td height=7&gt;&lt;img src=images/shim.gif width=1 height=7&gt;&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td valign=top class=EstDescrProd&gt;&lt;Descricao&gt;&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td valign=top&gt;
+            &lt;table name=TabAdicionais&lt;IDProduto&gt; cellpadding=0 cellspacing=0&gt;
+              &lt;tr&gt;&lt;td height=3&gt;&lt;img src=images/shim.gif width=1 height=3&gt;&lt;/td&gt;&lt;/tr&gt;&lt;FormProd&gt;
+              &lt;tr&gt;
+                &lt;td&gt;
+                  &lt;table name=Tab1Adic&lt;IDProduto&gt; cellpadding=0 cellspacing=0&gt;
+                    &lt;tr&gt;
+                      &lt;td nowrap&gt;&lt;Adicional1&gt;&lt;/td&gt;
+                      &lt;td nowrap&gt;&lt;Adicional2&gt;&lt;/td&gt;
+                      &lt;td nowrap&gt;&lt;Adicional3&gt;&lt;/td&gt;
+                    &lt;/tr&gt;
+                  &lt;/table&gt;
+                &lt;/td&gt;
+              &lt;/tr&gt;
+              &lt;tr&gt;
+                &lt;td&gt;
+                  &lt;table name=Tab2Adic&lt;IDProduto&gt; cellpadding=0 cellspacing=0&gt;
+                    &lt;tr&gt;
+                      &lt;td nowrap&gt;&lt;Cor&gt;&lt;/td&gt;
+                      &lt;td nowrap&gt;&lt;AdicionalD1&gt;&lt;/td&gt;
+                      &lt;td nowrap&gt;&lt;AdicionalD2&gt;&lt;/td&gt;
+                      &lt;td nowrap&gt;&lt;AdicionalD3&gt;&lt;/td&gt;
+                      &lt;td nowrap&gt;&lt;Peso&gt;&lt;/td&gt;
+                    &lt;/tr&gt;
+                  &lt;/table&gt;
+                &lt;/td&gt;
+              &lt;/tr&gt;
+            &lt;/table&gt;
+          &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;&lt;td align=right class=EstMaisInfo nowrap&gt;&lt;DescrURL&gt;&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td valign=top&gt;
+            &lt;table name=TabPreco&lt;IDProduto&gt; width=100% cellpadding=3 cellspacing=0&gt;
+              &lt;tr&gt;&lt;td height=1 colspan=5&gt;&lt;img src=images/shim.gif width=1 height=1&gt;&lt;/td&gt;&lt;/tr&gt;
+              &lt;tr&gt;
+                &lt;td width=15% nowrap&gt;&lt;LinkAmp&gt;&lt;/td&gt;
+                &lt;td width=7&gt;&lt;img src=images/shim.gif width=7 height=1&gt;&lt;/td&gt;
+                &lt;td align=center width=15% nowrap&gt;&lt;LinkComprar&gt;&lt;/td&gt;&lt;/FormProd&gt;
+                &lt;td width=7&gt;&lt;img src=images/shim.gif width=7 height=1&gt;&lt;/td&gt;
+                &lt;td nowrap class=EstPrecoProd nowrap&gt;&lt;Preco&gt;&lt;br&gt;&lt;AvisoDisp&gt;&lt;IndicaProd&gt;&lt;br&gt;&lt;LinkOpiniao&gt;&lt;/td&gt;
+              &lt;/tr&gt;
+            &lt;/table&gt;&lt;br&gt;
+          &lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/table&gt;
+<span>&lt;center&gt;
+            &lt;div class="TabbedPanels" id="tp1"&gt;
+              &lt;ul class="TabbedPanelsTabGroup"&gt;
+                &lt;li class="TabbedPanelsTab" tabindex="0"&gt;À Vista&lt;/li&gt;
+                &lt;li class="TabbedPanelsTab" tabindex="0"&gt;Mastercard&lt;/li&gt;
+                &lt;li class="TabbedPanelsTab" tabindex="0"&gt;Visa&lt;/li&gt;
+                &lt;li class="TabbedPanelsTab" tabindex="0"&gt;AMEX&lt;/li&gt;
+              &lt;/ul&gt;
+              &lt;div class="TabbedPanelsContentGroup"&gt;
+                &lt;div class="TabbedPanelsContent"&gt;&lt;script&gt;MostraDesconto(&lt;PrecoNum&gt;);&lt;/script&gt;&lt;/div&gt;
+                &lt;div class="TabbedPanelsContent"&gt;&lt;script&gt;MostraParcelasMASTERCARD(&lt;PrecoNum&gt;,&lt;MaxParcelasProdNum&gt;);&lt;/script&gt;&lt;/div&gt;
+                &lt;div class="TabbedPanelsContent"&gt;&lt;script&gt;MostraParcelasVISA(&lt;PrecoNum&gt;,&lt;MaxParcelasProdNum&gt;);&lt;/script&gt;&lt;/div&gt;
+                &lt;div class="TabbedPanelsContent"&gt;&lt;script&gt;MostraParcelasAMEX(&lt;PrecoNum&gt;,&lt;MaxParcelasProdNum&gt;);&lt;/script&gt;&lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;script language="JavaScript" type="text/javascript"&gt;var tp1 = new Spry.Widget.TabbedPanels("tp1");&lt;/script&gt;
+&lt;/center&gt;</span>
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;Sub&gt;
+  &lt;tr&gt;
+    &lt;td align=right valign=top&gt;&lt;ImagemProd&gt;&lt;/td&gt;
+    &lt;/td&gt;
+    &lt;td width=7&gt;&lt;img src=images/shim.gif width=7 height=1&gt;&lt;/td&gt;
+    &lt;td valign=top&gt;
+      &lt;table name=TabDadosSubProduto&lt;IDProduto&gt; cellpadding=0 cellspacing=3 width=100% class=&lt;EstiloSubProduto&gt;&gt;
+        &lt;tr&gt;
+          &lt;td class=EstLinhaSubProd height=1&gt;&lt;img src=images/shim.gif width=1 height=1&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td valign=top&gt;
+            &lt;table name=TabRefSubProd&lt;IDProduto&gt; width=100% cellpadding=3 cellspacing=0&gt;
+              &lt;tr&gt;
+                &lt;td valign=top class=EstRefSubProd&gt;Ref. &lt;CodProd&gt;&lt;/td&gt;
+              &lt;/tr&gt;
+            &lt;/table&gt;
+          &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;&lt;td valign=top class=EstDescrSubProd&gt;&lt;Descricao&gt;&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td align=right class=EstMaisInfo nowrap&gt;&lt;DescrURL&gt;&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td valign=top&gt;
+            &lt;table name=TabAdicionaisSub&lt;IDProduto&gt; cellpadding=0 cellspacing=0&gt;
+              &lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
+              &lt;tr&gt;
+                &lt;td&gt;
+                  &lt;table name=Tab1Adic&lt;IDProduto&gt; cellpadding=0 cellspacing=0&gt;&lt;FormProd&gt;
+                    &lt;tr&gt;
+                      &lt;td nowrap&gt;&lt;Adicional1&gt;&lt;/td&gt;
+                      &lt;td nowrap&gt;&lt;Adicional2&gt;&lt;/td&gt;
+                      &lt;td nowrap&gt;&lt;Adicional3&gt;&lt;/td&gt;
+                    &lt;/tr&gt;
+                  &lt;/table&gt;
+                &lt;/td&gt;
+              &lt;/tr&gt;
+              &lt;tr&gt;
+                &lt;td&gt;
+                  &lt;table name=Tab2Adic&lt;IDProduto&gt; cellpadding=0 cellspacing=0&gt;
+                    &lt;tr&gt;
+                      &lt;td nowrap&gt;&lt;Cor&gt;&lt;/td&gt;
+                      &lt;td nowrap&gt;&lt;AdicionalD1&gt;&lt;/td&gt;
+                      &lt;td nowrap&gt;&lt;AdicionalD2&gt;&lt;/td&gt;
+                      &lt;td nowrap&gt;&lt;AdicionalD3&gt;&lt;/td&gt;
+                      &lt;td nowrap&gt;&lt;Peso&gt;&lt;/td&gt;
+                    &lt;/tr&gt;
+                  &lt;/table&gt;
+                &lt;/td&gt;
+              &lt;/tr&gt;
+            &lt;/table&gt;
+          &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td valign=top&gt;
+            &lt;table name=TabPrecoSub&lt;IDProduto&gt; width=100% cellpadding=3 cellspacing=0&gt;
+              &lt;tr&gt;
+                &lt;td width=15% nowrap&gt;&lt;LinkDet&gt;&lt;/td&gt;
+                &lt;td width=7&gt;&lt;img src=images/shim.gif width=7 height=1&gt;&lt;/td&gt;
+                &lt;td align=center width=15% nowrap&gt;&lt;LinkComprar&gt;&lt;/td&gt;&lt;/FormProd&gt;
+                &lt;td width=7&gt;&lt;img src=images/shim.gif width=7 height=1&gt;&lt;/td&gt;
+                &lt;td nowrap class=EstPrecoSubProd nowrap&gt;&lt;Preco&gt;&lt;AvisoDisp&gt;&lt;/td&gt;
+                &lt;td width=7&gt;&lt;img src=images/shim.gif width=7 height=1&gt;&lt;/td&gt;
+                &lt;td valign=top align=right nowrap&gt;&lt;Lancamento&gt;&lt;/td&gt;
+              &lt;/tr&gt;
+            &lt;/table&gt;
+          &lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/table&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/Sub&gt;
+&lt;/table&gt;
+&lt;/ProdDet&gt;</span></pre>
+<!-- Fim do Antigo Frame-->
+<br>
+
+<p><span class="dest NewsPassos">7º Passo:</span></p>
+<p>As cores desta tabela podem ser alteradas pelos estilos inseridos no começo do arquivo <b>EstiloProduto.htm</b> dentro da tag <b>&lt;ProdTop&gt;</b>.</p>
+
+<!-- Inicio do Antigo Frame FC6133ProdTop.htm-->
+<pre><span>&lt;ProdTop&gt;
+<span>&lt;style&gt;
+.TitTabParc{font-weight:bold;font-size:8pt;font-family:tahoma,arial}
+.EstParcPar{background:#f2f7e7;font-size:8pt;font-family:tahoma,verdana}
+.EstParcImpar{background:#FFFFFF;font-size:8pt;font-family:tahoma,verdana}
+.FundoCorNumVal{background:#aec67a}
+.FundoCorParc{background:#789142}
+&lt;/style&gt;</span>
+&lt;/ProdTop&gt;</span></pre>
+<!-- Fim do Antigo Frame-->
+<br>
+
+<p><span class="dest NewsPassos">8º Passo:</span></p>
+<p>Insira as classes que estão abaixo no arquivo <b>LojaSite.css</b></p>
+
+<!-- Inicio do Antigo Frame FC6133LojaSite.htm-->
+<pre><span>/* Descrição Formas de Pagamentos -  AJAX */
+
+.TabbedPanelsTab {position: relative;top: 1px;float: left;padding: 4px 10px;margin: 0px 1px 0px 0px;font: bold 0.7em sans-serif;background-color: #f2f5dc;list-style: none;border-left: solid 1px #CCCCCC;border-bottom: solid 1px #999999;border-top: solid 1px #999999;border-right: solid 1px #999999;-moz-user-select: none;-khtml-user-select: none;cursor: pointer;}
+.TabbedPanelsTabHover {background-color: #eaf2b5;}
+.TabbedPanelsTabSelected {background-color: #ced69b;border-bottom: 1px solid #EEEEEE;}
+.TabbedPanels {margin: 0px;padding: 0px;clear: both;width: 100%;}
+.TabbedPanelsTabGroup {margin: 0px;padding: 0px;}
+.TabbedPanelsTab a {color: black;text-decoration: none;}
+.TabbedPanelsContentGroup {clear: both;border-left: solid 1px #CCCCCC;border-bottom: solid 1px #CCCCCC;border-top: solid 1px #999999;border-right: solid 1px #999999;background-color: #FFFFFF;}
+.TabbedPanelsContent {padding: 4px;}
+.TabbedPanelsContentVisible {}
+.VTabbedPanels .TabbedPanelsTabGroup {float: left;width: 10em;height: 20em;background-color: #EEEEEE;position: relative;border-top: solid 1px #999999;border-right: solid 1px #999999;border-left: solid 1px #CCCCCC;border-bottom: solid 1px #CCCCCC;}
+.VTabbedPanels .TabbedPanelsTab {float: none;margin: 0px;border-top: none;border-left: none;border-right: none;}
+.VTabbedPanels .TabbedPanelsTabSelected {background-color: #EEEEEE;border-bottom: solid 1px #999999;}
+.VTabbedPanels .TabbedPanelsContentGroup {clear: none;float: left;padding: 0px;width: 30em;height: 20em;}
+.TabbedPanels {width: 300px;}
+.TabbedPanelsTab {font-family: sans-serif;font-size: 12px;font-weight: bold;}</span></pre></span>
+<!-- Fim do Antigo Frame-->
+<!--AJUDAPARC--><!--2008A03M17D-->

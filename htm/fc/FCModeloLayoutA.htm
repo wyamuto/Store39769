@@ -1,0 +1,23 @@
+<script>
+function MostraImgAmpliadaFC(){
+document.write("<style>");
+document.write("/* Estilos para mostrar a foto ampliada */");
+document.write("h2 {padding-right:0px; padding-left:0px; padding-bottom:0px; margin:0px; padding-top:0px; font-size: 13px; font-family: tahoma, verdana, arial;}");
+document.write("#loader_bg {font-size: 1px; left: 8px; width: 113px; position: relative; top: 8px; height: 7px; background-color: #ebebe4}");
+document.write(".title_h2 {padding-right: 0px; padding-left: 18px; padding-bottom: 0px; width: 300px; padding-top: 12px}");
+document.write(".border_preview {border-right: #444 1px solid; border-top: #444 1px solid; z-index: 100; background: #fff; border-left: #444 1px solid; border-bottom: #444 1px solid; position: absolute}");
+document.write(".preview_temp_load {padding-right: 10px; padding-left: 10px; padding-bottom: 10px; vertical-align: middle; padding-top: 10px; text-align: center}");
+document.write(".preview_temp_load img {vertical-align: middle; text-align: center}");
+document.write("</style>");
+
+document.write("<table width=\"900\">");
+document.write("  <tr>");
+document.write("    <td>");
+document.write("      <a style=\"cursor: hand\" href=\"#\"><img onmouseover=\"showtrail('http://www.rumo.com.br/lojas/00000009/prod/01ModeloAmp.jpg','Layout 1',520,520)\" style=\"border-left-color: #777777; border-bottom-color: #777777; border-top-color: #777777; border-right-color: #777777\" onmouseout=hidetrail() src=\"http://www.rumo.com.br/lojas/00000009/prod/01ModeloPeq.jpg\" border=0></a><div id=preview_div style=\"display: none; z-index: 200; position: absolute\"></div><div style=\"left: 0px; visibility: hidden; position: absolute; top: 0px\"></div>");
+document.write("    </td>");
+document.write("  </tr>");
+document.write("</table>");
+}
+
+MostraImgAmpliadaFC();
+</script>

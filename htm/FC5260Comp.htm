@@ -1,0 +1,49 @@
+<style>
+.courrierpeq {font-size:8pt;font-family:courier new,tahoma,verdana;color:#0D6D9E;}
+.destpeq {font-size:8pt;font-family:tahoma,verdana;color:#990000;font-weight:bold;}
+</style>
+
+<pre>
+<span class=courrierpeq>
+&lt;table name=TabBuscaRapidaSuperior class=EstTabQuadro cellpadding=0 cellspacing=0>
+  &lt;script>function VerTextoBC(oForm){if (oForm.Texto.value==''){alert('Digite antes sua busca.');oForm.Texto.focus();return false;}else{return true;}}&lt;/script>
+  &lt;form name=FormBuscaC method=GET action="ListaProdutos.asp" onSubmit="return VerTextoBC(this);">
+  &lt;input type=hidden name=IDLoja value="&lt;IDLojaNum>">
+  &lt;input type=hidden name=Y value="&lt;Y>">
+  &lt;input type=hidden name=BuscaNomeRef value=True>
+  &lt;input type=hidden name=Digitada value=True>
+  &lt;tr>&lt;td colspan=5>&lt;img src='images/shim.gif' width=2 height=3>&lt;/td>&lt;/tr>
+  &lt;tr>
+    &lt;td>&lt;img src='images/shim.gif' width=7 height=2>&lt;/td>
+    &lt;td align=center>
+      &lt;table cellpadding=0 cellspacing=0>
+      &lt;tr>&lt;td nowrap class=smtext>Busca rápida:&lt;/td>&lt;/tr>
+      &lt;tr>
+        &lt;td>
+          &lt;table cellpadding=2 cellspacing=0>
+          &lt;tr>
+            &lt;td>&lt;input type=text name=Texto size=7 maxlength=15 class=InputText style=width:70px value="">&lt;/td>
+            &lt;td>&lt;input type=image name=Ok src='images/c002/0/BotOk.gif' border=0>&lt;/td>
+          &lt;/tr>
+        &lt;/table>
+        &lt;/td>
+      &lt;/tr>
+      &lt;tr>&lt;td nowrap class=smtext>&lt;a href="BuscaAvancada.asp?IDLoja=&lt;IDLoja>">Busca detalhada&lt;/a>&lt;/td>&lt;/tr>
+    &lt;/table>
+    &lt;/td>
+    &lt;td>&lt;img src='images/shim.gif' width=7 height=2>&lt;/td>
+    &lt;td>
+      &lt;table cellpadding=0 cellspacing=1>
+        &lt;tr>&lt;td class=smtext>&lt;a href='Newsletter.asp?IDLoja=&lt;IDLoja>'>&lt;img src='images/c002/0/BotNewsletter.gif' border=0>&lt;/a>&lt;/td>&lt;/tr>
+        &lt;tr>&lt;td class=smtext nowrap>&lt;a href='Indique.asp?IDLoja=&lt;IDLoja>'>&lt;img src='images/c002/0/BotIndique.gif' border=0>&lt;/a>&lt;/td>&lt;/tr>
+        &lt;tr>&lt;td class=smtext>&lt;a target=_top href='https://www.rumo.com.br/sistema/Cadastro.asp?IDLoja=&lt;IDLoja>'>&lt;img src='images/c002/0/BotCadastro.gif' border=0>&lt;/a>&lt;/td>&lt;/tr>
+      &lt;/table>
+    &lt;/td>
+    &lt;td>&lt;img src='images/shim.gif' width=7 height=2>&lt;/td>
+  &lt;/tr>
+  &lt;tr>&lt;td colspan=5>&lt;img src='images/shim.gif' width=2 height=3>&lt;/td>&lt;/tr>
+  &lt;/form>
+&lt;/table>
+</span>
+</pre>
+

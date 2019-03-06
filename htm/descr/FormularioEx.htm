@@ -1,0 +1,59 @@
+<center>
+<table width="90%" class="EstTabPedido">
+      <form name="form" method="POST" action="EnviaMail.asp">
+        <input type="hidden" name="nameto" value='Nome para onde vai a msg'>
+        <input type="hidden" name="emailto" value='email@emaildestinatario.com.br'>
+        <input type="hidden" name="subject" value='Assunto da mensagem'>
+        <input type="hidden" name="returnurl" value='<HTMLoja>thanks.htm'>
+        <input type="hidden" name="fieldsorder" value='nameto,emailto,genre,office,interest,comments'>
+  <tr>
+    <td colspan="2" class="EstTabPedidoTit"><p>EXAMPLE</p></td>
+  </tr>   
+  <tr>
+    <td width="120" align="right" class="EstNomeCampo" style="padding: 10px 0px 10px 0px">Name:</td>
+    <td><input type="text" name="namefrom" class="InputText" size="25" maxlength="50"></td>
+  </tr>   
+  <tr>
+    <td align="right" class="EstNomeCampo" style="padding: 10px 0px 10px 0px">E-mail:</td>
+    <td><input type="text" name="emailfrom" class="InputText" size="25" maxlength="50"></td>
+  </tr>   
+  <tr>
+    <td align="right" class="EstNomeCampo" style="padding: 10px 0px 10px 0px">Genre:</td>
+    <td>
+      <input type="radio" name="genre" value="Masculino"> Male<br>
+      <input type="radio" name="genre" value="Feminino"> Female
+    </td>
+  </tr>   
+  <tr>
+    <td align="right" class="EstNomeCampo" style="padding: 10px 0px 10px 0px">Office:</td>
+    <td>
+      <select name="office" class="InputText" size="1" style="width:150px">
+        <option value="" selected>Select...</option>
+        <option value="Diretor">Director</option>
+        <option value="Gerente">Manager</option>
+        <option value="Analista">Analyst</option>
+      </select>
+    </td>
+  </tr>   
+  <tr>
+    <td align="right" valign="top" class="EstNomeCampo" style="padding: 10px 0px 10px 0px">Interest:</td>
+    <td>	
+      <input type="checkbox" name="interest" value="Esporte"> Sport<br>
+      <input type="checkbox" name="interest" value="Saúde"> Health<br>
+      <input type="checkbox" name="interest" value="Negócios"> Business<br>
+      <input type="checkbox" name="interest" value="Notícias"> News<br>
+      <input type="checkbox" name="interest" value="Viagem"> Trip<br>
+    </td>
+  </tr>   
+  <tr>
+    <td align="right" valign="top" class="EstNomeCampo" style="padding: 10px 0px 10px 0px">Comments:</td>
+    <td><textarea wrap="virtual" cols="18" rows="4" name="comments" class="InputText" style="height:50px;width:250px"></textarea></td>
+  </tr>   
+  <tr>
+    <td colspan="2"><input type="button" name="Submit" value=' Submit ' class="InputButton" onclick='javascript:ValidaForm()'></td>
+  </tr></form>
+</table>
+</center>
+<br>
+
+<p>File: <b>Formulario.htm</b> &nbsp;&nbsp; [ <a href="http://www.rumo.com.br/dnload/formulario.zip">Sample HTML code</a> ]</p>

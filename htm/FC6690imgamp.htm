@@ -1,0 +1,133 @@
+<style>
+.courrierpeq {font-size:8pt;font-family:courier new,tahoma,verdana;color:#0D6D9E;}
+.destpeq {font-size:8pt;font-family:tahoma,verdana;color:#990000;font-weight:bold;}
+</style>
+
+<pre>
+<span class=courrierpeq>
+&lt;ProdTop&gt;
+  &lt;script&gt;
+  function AmpliaFoto(cod){
+    windowopen('<span class=destpeq>ShopTênis</span>','/lojas/<span class=destpeq>00009999</span>/htm/AmpliaFoto.htm?foto='+cod,40,40,440,440);
+  }
+  &lt;/script&gt;
+&lt;/ProdTop&gt;
+
+
+&lt;ProdDet&gt;
+&lt;style&gt;
+.Titulos {display:none}
+&lt;/style&gt;
+&lt;br&gt;
+&lt;table width=562 border=0 cellspacing=0 cellpadding=0 bgcolor=#f3f3f3&gt;
+  &lt;tr height=43&gt;&lt;td valign=top bgproperties=fixed background=../lojas/00000276/images/TabelaDetProd1.gif colspan=3&gt;&lt;span class=EstNomeProdDet&gt;&lt;NomeProd&gt;&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td width=15 bgproperties=fixed background=../lojas/00000276/images/TabelaDetProd2.gif&gt;&lt;/td&gt;
+    &lt;td bgcolor=white&gt;
+
+
+&lt;table width=100% name=TabProduto&lt;IDProduto&gt; cellpadding=0 cellspacing=0&gt;
+  &lt;tr&gt;
+    &lt;td align=center valign=top&gt;
+      <span class=destpeq>&lt;a target=_self href=javascript:AmpliaFoto("&lt;ImagemProdAmp>");>&lt;img src="&lt;ImagemProdDet>" border="0">&lt;/a>&lt;br>
+      &lt;a target=_self href=javascript:AmpliaFoto("&lt;ImagemProdAmp>");>&lt;img src=/lojas/<span class=courrierpeq>00009999</span>/images/AMP.gif border=0 alt="Clique para ver foto ampliada"&gt;&lt;/a&gt;&lt;br&gt;</span>
+      &lt;script&gt;IndicaProd(&lt;IDProduto&gt;);&lt;/script&gt;
+    &lt;/td&gt;
+    &lt;td width=7&gt;&lt;img src=images/shim.gif width=7&gt;&lt;/td&gt;
+    &lt;td valign=top&gt;
+      &lt;table name=TabDadosProduto&lt;IDProduto&gt; width=100% cellpadding=5 cellspacing=0&gt;
+        &lt;tr&gt;
+          &lt;td valign=top&gt;
+            &lt;table name=TabNomeRefProd&lt;IDProduto&gt; width=100% cellpadding=2 cellspacing=0&gt;
+              &lt;tr&gt;
+                &lt;td valign=top&gt;&lt;/td&gt;
+                &lt;td width=7&gt;&lt;img src=images/shim.gif width=7 height=1&gt;&lt;/td&gt;
+                &lt;td valign=top align=right rowspan=2 nowrap&gt;&lt;Lancamento&gt;&lt;/td&gt;
+              &lt;/tr&gt;
+              &lt;tr&gt;
+                &lt;td valign=top class=EstRefProd&gt;Ref. &lt;CodProd&gt; - &lt;LegendaCat&gt; &lt;NomeCat&gt;&lt;/td&gt;
+                &lt;td&gt;&lt;/td&gt;
+              &lt;/tr&gt;
+            &lt;/table&gt;
+          &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;&lt;td height=7&gt;&lt;img src=images/shim.gif width=1 height=7&gt;&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td valign=top class=EstDescrProd&gt;&lt;Descricao&gt;&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td valign=top&gt;
+            &lt;table name=TabAdicionais&lt;IDProduto&gt; cellpadding=0 cellspacing=0&gt;
+              &lt;tr&gt;&lt;td height=3&gt;&lt;img src=images/shim.gif width=1 height=3&gt;&lt;/td&gt;&lt;/tr&gt;
+              &lt;tr&gt;
+                &lt;td&gt;
+                  &lt;table name=Tab1Adic&lt;IDProduto&gt; cellpadding=0 cellspacing=0&gt;
+                    &lt;tr&gt;
+                      &lt;td nowrap&gt;&lt;Adicional1&gt;&lt;/td&gt;
+                      &lt;td nowrap&gt;&lt;Adicional2&gt;&lt;/td&gt;
+                      &lt;td nowrap&gt;&lt;Adicional3&gt;&lt;/td&gt;
+                    &lt;/tr&gt;
+                  &lt;/table&gt;
+                &lt;/td&gt;
+              &lt;/tr&gt;
+              &lt;tr&gt;
+                &lt;td&gt;
+                  &lt;table name=Tab2Adic&lt;IDProduto&gt; cellpadding=0 cellspacing=0&gt;
+                    &lt;tr&gt;
+                      &lt;td nowrap&gt;&lt;Cor&gt;&lt;/td&gt;
+                      &lt;td nowrap&gt;&lt;AdicionalD1&gt;&lt;/td&gt;
+                      &lt;td nowrap&gt;&lt;AdicionalD2&gt;&lt;/td&gt;
+                      &lt;td nowrap&gt;&lt;AdicionalD3&gt;&lt;/td&gt;
+                      &lt;td nowrap&gt;&lt;Peso&gt;&lt;/td&gt;
+                    &lt;/tr&gt;
+                  &lt;/table&gt;
+                &lt;/td&gt;
+              &lt;/tr&gt;
+            &lt;/table&gt;
+          &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;&lt;td align=right class=EstMaisInfo nowrap&gt;&lt;DescrURL&gt;&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td valign=top&gt;
+            &lt;table name=TabPreco&lt;IDProduto&gt; width=100% cellpadding=3 cellspacing=0&gt;
+              &lt;tr&gt;&lt;td height=1 colspan=5&gt;&lt;img src=images/shim.gif width=1 height=1&gt;&lt;/td&gt;&lt;/tr&gt;
+              &lt;tr&gt;
+                &lt;td width=15% nowrap&gt;&lt;/td&gt;
+                &lt;td width=7&gt;&lt;img src=images/shim.gif width=7 height=1&gt;&lt;/td&gt;
+                &lt;td align=center width=15% nowrap&gt;&lt;/td&gt;
+                &lt;td width=7&gt;&lt;img src=images/shim.gif width=7 height=1&gt;&lt;/td&gt;
+                &lt;td nowrap class=EstPrecoProd nowrap&gt;&lt;Preco&gt;&lt;MaxParcelasProd&gt;&lt;AvisoDisp&gt;&lt;IndicaProd&gt;&lt;br&gt;&lt;LinkOpiniao&gt;&lt;/td&gt;
+              &lt;/tr&gt;
+            &lt;/table&gt;&lt;br&gt;
+          &lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/table&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+&lt;table width=100% border=0 cellspacing=0 cellpadding=0&gt;
+  &lt;tr&gt;
+    &lt;td width=192 valign=top&gt;
+
+      &lt;table width=192 bgcolor=#dedede border=0 cellspacing=1 cellpadding=3&gt;
+&lt;!-- SUBPRODUTO INI --&gt;
+&lt;Sub&gt;
+  &lt;tr bgcolor=#fcfcfc&gt;&lt;FormProd&gt;
+    &lt;td&gt;&lt;table width=192 cellspacing=0 cellpadding=0&gt;&lt;tr&gt;&lt;td&gt;&lt;Adicional3&gt;&lt;/td&gt;&lt;td&gt;&lt;script&gt;MostraCarrinhoDisp(&lt;Estoque&gt;,&lt;IDProduto&gt;,'&lt;CodProd&gt;');&lt;/script&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/td&gt;
+  &lt;/tr&gt;&lt;/FormProd&gt;
+&lt;/Sub&gt;
+&lt;!-- SUBPRODUTO FIM --&gt;
+      &lt;/table&gt;
+    &lt;/td&gt;
+    &lt;td valign=top&gt;
+      &lt;script&gt;MostraParcelas(&lt;PrecoNum&gt;,&lt;MaxParcelasProdNum&gt;);&lt;/script&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+    &lt;/td&gt;
+    &lt;td width=15 bgproperties=fixed background=../lojas/00000276/images/TabelaDetProd3.gif&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr height=16&gt;&lt;td bgproperties=fixed background=../lojas/00000276/images/TabelaDetProd4.gif colspan=3&gt;&nbsp;&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;  
+&lt;/ProdDet&gt;
+</span>
+</pre>

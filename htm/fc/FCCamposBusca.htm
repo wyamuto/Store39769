@@ -1,0 +1,147 @@
+<style>
+.courrierpeq {font-size:10pt;font-family:courier new,tahoma,verdana;color:#0D6D9E;}
+.destpeq {font-size:8pt;font-family:tahoma,verdana;color:#990000;font-weight:bold;}
+body {font-size:8pt;font-family:tahoma,verdana;color:#333333}
+td {font-size:8pt;font-family:tahoma,verdana;color:#333333}
+</style>
+
+<br><br>
+<table border=1 cellspacing=0 cellpadding=3 width=600>
+  <tr>
+    <td width=100><b>Texto</b></td>
+    <td>Texto que será utilizado para fazer a busca nos campos<br><br>
+    Exemplo: <span class=courrierpeq>&lt;input type=text name=Texto&gt;</span></td>
+  </tr>  
+  <tr>
+    <td><b>BuscaNomeRef</b></td>
+    <td>Define se a busca será feita apenas nos campos de nome e referência do produto, se não for passado o sistema busca nos campos: Nome da categoria, código do produto, nome do produto, descritores simples (1,2 e 3), descrição curta e longa.<br><br>
+    Exemplo: <span class=courrierpeq>&lt;input type=hidden name=BuscaNomeRef value=True&gt;</span></td>
+  </tr>  
+  <tr>
+    <td><b>Digitada</b></td>
+    <td>Informa que é uma busca digitada pelo usuário, não passada via link, URL<br><br>
+    Exemplo: <span class=courrierpeq>&lt;input type=hidden name=Digitada value=True&gt;</span></td>
+  </tr>  
+  <tr>
+    <td><b>IDProduto</b></td>
+    <td>ID interno do produto<br><br>
+    Exemplo: <span class=courrierpeq>&lt;input type=hidden name=IDProduto value="<span class=destpeq>99999</span>"&gt;</span><br><br>Onde 99999 é o ID do produto</td>
+  </tr>  
+  <tr>
+    <td><b>IDcategoria</b></td>
+    <td>ID interno da categoria<br><br>
+    Exemplo: <span class=courrierpeq>&lt;input type=hidden name=IDCategoria value="<span class=destpeq>99999</span>"&gt;</span><br><br>Onde 99999 é o ID da categoria</td>
+  </tr>  
+  <tr>
+    <td><b>Promocao</b></td>
+    <td>Para listar apenas produtos em lançamento<br><br>
+    Exemplo: <span class=courrierpeq>&lt;input type=checkbox name=Promocao value=True&gt;</span></td>
+  </tr>  
+  <tr>
+    <td><b>Lancamento</b></td>
+    <td>Para listar apenas produtos em promoção<br><br>
+    Exemplo: <span class=courrierpeq>&lt;input type=checkbox name=Lancamento value=True&gt;</span></td>
+  </tr>  
+  <tr><td colspan=2 align=center><b>Busca detalhada<hr></td></tr>
+  <tr>
+    <td><b>Avancada</b></td>
+    <td>Indica se a busca é detalhada, adiciona os campos de descritores especiais, Adicional1, Adicional2 e Adicional3, PrecoDe e PrecoAte para fazer a busca.<br><br>
+    Exemplo: <span class=courrierpeq>&lt;input type=hidden name=Avancada value=True&gt;</span></td>
+  </tr>  
+
+  <tr>
+    <td><b>Adicional1</b></td>
+    <td>Descritor especial 1<br><br>
+    Exemplo de um SELECT que passa o ID do item do descritor especial 1 para a busca:<br><br>
+<span class=courrierpeq>
+&lt;select class=smSelect name=Adicional1 size=1&gt;<br>
+ &lt;option value=0&gt;[ Selecione ]&lt;/option&gt;<br>
+ &lt;option value=0&gt;(*) Qualquer&lt;/option&gt;<br>
+ &lt;option value='<span class=destpeq>11111</span>'&gt;Gravata&lt;/option&gt;<br>
+ &lt;option value='<span class=destpeq>22222</span>'&gt;Gravata Borboleta&lt;/option&gt;<br> 
+&lt;/select><br></span>
+<br>
+Onde 11111 e 22222 são os IDs dos itens cadastrados dentro do descritor especial 1, Adicional1.
+<br><br>
+Exemplo retirado da loja SóGravatas, veja:
+<a href="http://www.sogravatas.com.br/sistema/BuscaAvancada.asp?IDLoja=153" target=_blank>http://www.sogravatas.com.br/sistema/BuscaAvancada.asp?IDLoja=153</a>
+    </td>
+  </tr>  
+
+  <tr>
+    <td><b>Adicional2</b></td>
+    <td>Descritor especial 2<br><br>Exemplo: Funciona igual ao Adicional1.</td>
+  </tr>  
+  <tr>
+    <td><b>Adicional3</b></td>
+    <td>Descritor especial 3<br><br>Exemplo: Funciona igual ao Adicional1.</td>
+  </tr>  
+
+  <tr>
+    <td><b>PrecoDe</b></td>
+    <td>Informa à partir de qual preço será feita a busca. Por razões de performance, será utilizado o preço normal do produto e não seu preço promocional.<br><br>
+    Exemplo: <span class=courrierpeq>&lt;input type=text name=PrecoDe&gt;</span></td>
+  </tr>  
+  <tr>
+    <td><b>PrecoAte</b></td>
+    <td>Informa até qual preço máximo será feita a busca. Por razões de performance, será utilizado o preço normal do produto e não seu preço promocional.<br><br>
+    Exemplo: <span class=courrierpeq>&lt;input type=text name=PrecoAte&gt;</span></td>
+  </tr>  
+
+</table>
+<br><br>
+Exemplo:
+<pre>
+<span class=courrierpeq>
+&lt;script&gt;
+function ValidaForm(este) {
+  if(este.texto.value.length&lt;2 && este.PrecoDe.value.length&lt;1 && este.PrecoAte.value.length&lt;1 && este.IDCategoria.options[este.IDCategoria.selectedIndex].value==0 && este.Promocao.checked==false && este.Lancamento.checked==false
+ && este.Adicional1.options[este.Adicional1.selectedIndex].value==0 && este.Adicional2.options[este.Adicional2.selectedIndex].value==0 && este.Adicional3.options[este.Adicional3.selectedIndex].value==0){
+    alert("Preencha pelo menos um dos campos de busca.");
+    este.texto.focus();
+    return false;
+  }
+  return true;
+}
+&lt;/script&gt;
+
+&lt;form method=GET action=ListaProdutos.asp name=FormBuscaAvancada onSubmit='return ValidaForm(this)'&gt;
+&lt;input type=hidden name=IDLoja value='&lt;IDLojaNum&gt;'&gt;
+&lt;input type=hidden name=Y value='&lt;Y&gt;'&gt;
+&lt;input type=hidden name=<span class=destpeq>Avancada</span> value='True'&gt;
+&lt;input type=hidden name=<span class=destpeq>Digitada</span> value='True'&gt;
+Procurar por: &lt;input type=text name=texto size=15 maxlength=25 class=InputText style=width:70px&gt;
+Categoria: &lt;select class=smSelect name=<span class=destpeq>IDCategoria</span> size=1&gt;
+           &lt;option value=0&gt;[ Selecione ]&lt;/option&gt;
+           &lt;option value=0&gt;(*) Qualquer&lt;/option&gt;
+           &lt;option value='11111'&gt;Categoria A&lt;/option&gt;
+           &lt;option value='22222'&gt;Categoria B&lt;/option&gt;
+           &lt;/select&gt;
+Faixa de preço: de &lt;input type=text name=<span class=destpeq>PrecoDe</span> class=InputText size=5 maxlength=8&gt;
+ até &lt;input type=text name=<span class=destpeq>PrecoAte</span> class=InputText size=5 maxlength=8&gt;
+Somente promoção: &lt;input type=checkbox name=<span class=destpeq>Promocao</span> value=True&gt;
+Somente lançamento: &lt;input type=checkbox name=<span class=destpeq>Lancamento</span> value=True&gt;
+Adicional 1: &lt;select class=smSelect name=<span class=destpeq>Adicional1</span> size=1&gt;
+             &lt;option value=0&gt;[ Selecione ]&lt;/option&gt;
+             &lt;option value=0&gt;(*) Qualquer&lt;/option&gt;
+             &lt;option value='12345'&gt;Item 1&lt;/option&gt;
+             &lt;option value='21444'&gt;Item 2&lt;/option&gt;
+             &lt;/select&gt;
+Adicional 2: &lt;select class=smSelect name=<span class=destpeq>Adicional2</span> size=1&gt;
+             &lt;option value=0&gt;[ Selecione ]&lt;/option&gt;
+             &lt;option value=0&gt;(*) Qualquer&lt;/option&gt;
+             &lt;option value='33333'&gt;Item 1&lt;/option&gt;
+             &lt;option value='56566'&gt;Item 2&lt;/option&gt;
+             &lt;/select&gt;
+Adicional 3: &lt;select class=smSelect name=<span class=destpeq>Adicional3</span> size=1&gt;
+             &lt;option value=0&gt;[ Selecione ]&lt;/option&gt;
+             &lt;option value=0&gt;(*) Qualquer&lt;/option&gt;
+             &lt;option value='8282'&gt;Item 1&lt;/option&gt;
+             &lt;option value='2828'&gt;Item 2&lt;/option&gt;
+             &lt;option value='2223'&gt;Item 3&lt;/option&gt;
+             &lt;option value='2213'&gt;Item 4&lt;/option&gt;
+             &lt;/select&gt;
+&lt;input type=submit value='Buscar' class=BotBuscaAvancada name=Buscar&gt;
+&lt;/form&gt;
+</span>
+</pre>

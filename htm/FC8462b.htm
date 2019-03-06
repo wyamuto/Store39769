@@ -1,0 +1,107 @@
+<style>
+.titpeqverde {font-size:9pt;font-family:courier new,tahoma,verdana;color:#1DA906;font-weight:bold;}
+.courrierpeq {font-size:8pt;font-family:courier new,tahoma,verdana;color:#0D6D9E;}
+.destpeq {font-size:8pt;font-family:tahoma,verdana;color:#990000;font-weight:bold;}
+</style>
+<pre>
+<span class=courrierpeq>
+
+<span class=titpeqverde>
+&lt;!-- Altere onde está <span class=destpeq>9</span> de acordo com o Pagto utilizado na loja -->
+&lt;!-- Pagto 1 = <span class=destpeq>9</span>, Pagto 2 = <span class=destpeq>10</span>, Pagto 3 = <span class=destpeq>11</span>, Pagto 4 = <span class=destpeq>12</span> e Pagto 5 = <span class=destpeq>13</span> -->
+
+&lt;!-- Altere onde está <span class=destpeq>email@cadastradonobcash.com.br</span> de acordo com o e-mail cadastrado no Bcash -->
+
+&lt;!-- Este exemplo, permite a inclusão de até 10 produtos no pedido. Para aumentar este limite será necessário aumentar os parâmetros de produtos (produto_codigo_X, produto_descricao_X, produto_qtde_X e produto_valor_X) -->
+</span>
+
+&lt;script>
+if(&lt;IDFormaPagamento>==<span class=destpeq>9</span>){
+  sBcash='&lt;table width=100% align=center>&lt;tr>&lt;td style=text-align:center>&lt;br>Clique no botão abaixo para prosseguir:&lt;br>&lt;br>';
+  sBcash+='&lt;form name="bcash" action="https://www.bcash.com.br/checkout/pay/" method="post" target="_blank">';
+  sBcash+='&lt;input name="email_loja" type="hidden" value="<span class=destpeq>email@cadastradonobcash.com.br</span>">';
+  sBcash+='&lt;input name="id_pedido" type="hidden" value="&lt;NumPedido>">';
+  sBcash+='&lt;input name="email" type="hidden" value="&lt;EmailCliente>">';
+  sBcash+='&lt;input name="nome" type="hidden" value="&lt;NomeCompletoCliente>">';
+  sBcash+='&lt;input name="cpf" type="hidden" value="&lt;CPFCNPJ>">';
+  sBcash+='&lt;input name="telefone" type="hidden" value="&lt;TelefoneCliente>">';
+  sBcash+='&lt;input name="endereco" type="hidden" value="&lt;EnderecoCliente>">';
+  sBcash+='&lt;input name="bairro" type="hidden" value="&lt;BairroCliente>">';
+  sBcash+='&lt;input name="cidade" type="hidden" value="&lt;CidadeCliente>">';
+  sBcash+='&lt;input name="estado" type="hidden" value="&lt;EstadoCliente>">';
+  sBcash+='&lt;input name="cep" type="hidden" value="&lt;CEPCliente>">';
+  sBcash+='&lt;input name="produto_codigo_1" type="hidden" value="&lt;RefProduto1>">';
+  sBcash+='&lt;input name="produto_descricao_1" type="hidden" value="&lt;NomeProduto1>">';
+  sBcash+='&lt;input name="produto_qtde_1" type="hidden" value="&lt;QtdProduto1>">';
+  sBcash+='&lt;input name="produto_valor_1" type="hidden" value="&lt;PrecoUnitProduto1>">';
+  sBcash+='&lt;input name="produto_codigo_2" type="hidden" value="&lt;RefProduto2>">';
+  sBcash+='&lt;input name="produto_descricao_2" type="hidden" value="&lt;NomeProduto2>">';
+  sBcash+='&lt;input name="produto_qtde_2" type="hidden" value="&lt;QtdProduto2>">';
+  sBcash+='&lt;input name="produto_valor_2" type="hidden" value="&lt;PrecoUnitProduto2>">';
+  sBcash+='&lt;input name="produto_codigo_3" type="hidden" value="&lt;RefProduto3>">';
+  sBcash+='&lt;input name="produto_descricao_3" type="hidden" value="&lt;NomeProduto3>">';
+  sBcash+='&lt;input name="produto_qtde_3" type="hidden" value="&lt;QtdProduto3>">';
+  sBcash+='&lt;input name="produto_valor_3" type="hidden" value="&lt;PrecoUnitProduto3>">';
+  sBcash+='&lt;input name="produto_codigo_4" type="hidden" value="&lt;RefProduto4>">';
+  sBcash+='&lt;input name="produto_descricao_4" type="hidden" value="&lt;NomeProduto4>">';
+  sBcash+='&lt;input name="produto_qtde_4" type="hidden" value="&lt;QtdProduto4>">';
+  sBcash+='&lt;input name="produto_valor_4" type="hidden" value="&lt;PrecoUnitProduto4>">';
+  sBcash+='&lt;input name="produto_codigo_5" type="hidden" value="&lt;RefProduto5>">';
+  sBcash+='&lt;input name="produto_descricao_5" type="hidden" value="&lt;NomeProduto5>">';
+  sBcash+='&lt;input name="produto_qtde_5" type="hidden" value="&lt;QtdProduto5>">';
+  sBcash+='&lt;input name="produto_valor_5" type="hidden" value="&lt;PrecoUnitProduto5>">';
+  sBcash+='&lt;input name="produto_codigo_6" type="hidden" value="&lt;RefProduto6>">';
+  sBcash+='&lt;input name="produto_descricao_6" type="hidden" value="&lt;NomeProduto6>">';
+  sBcash+='&lt;input name="produto_qtde_6" type="hidden" value="&lt;QtdProduto6>">';
+  sBcash+='&lt;input name="produto_valor_6" type="hidden" value="&lt;PrecoUnitProduto6>">';
+  sBcash+='&lt;input name="produto_codigo_7" type="hidden" value="&lt;RefProduto7>">';
+  sBcash+='&lt;input name="produto_descricao_7" type="hidden" value="&lt;NomeProduto7>">';
+  sBcash+='&lt;input name="produto_qtde_7" type="hidden" value="&lt;QtdProduto7>">';
+  sBcash+='&lt;input name="produto_valor_7" type="hidden" value="&lt;PrecoUnitProduto7>">';
+  sBcash+='&lt;input name="produto_codigo_8" type="hidden" value="&lt;RefProduto8>">';
+  sBcash+='&lt;input name="produto_descricao_8" type="hidden" value="&lt;NomeProduto8>">';
+  sBcash+='&lt;input name="produto_qtde_8" type="hidden" value="&lt;QtdProduto8>">';
+  sBcash+='&lt;input name="produto_valor_8" type="hidden" value="&lt;PrecoUnitProduto8>">';
+  sBcash+='&lt;input name="produto_codigo_9" type="hidden" value="&lt;RefProduto9>">';
+  sBcash+='&lt;input name="produto_descricao_9" type="hidden" value="&lt;NomeProduto9>">';
+  sBcash+='&lt;input name="produto_qtde_9" type="hidden" value="&lt;QtdProduto9>">';
+  sBcash+='&lt;input name="produto_valor_9" type="hidden" value="&lt;PrecoUnitProduto9>">';
+  sBcash+='&lt;input name="produto_codigo_10" type="hidden" value="&lt;RefProduto10>">';
+  sBcash+='&lt;input name="produto_descricao_10" type="hidden" value="&lt;NomeProduto10>">';
+  sBcash+='&lt;input name="produto_qtde_10" type="hidden" value="&lt;QtdProduto10>">';
+  sBcash+='&lt;input name="produto_valor_10" type="hidden" value="&lt;PrecoUnitProduto10>">';
+  sBcash+='&lt;input name="tipo_integracao" type="hidden" value="PAD">';
+  sBcash+='&lt;input name="frete" type="hidden" value="&lt;Frete>">';
+  sBcash+='&lt;input name="desconto" type="hidden" value="&lt;DescontoCupom>">';
+  sBcash+='&lt;input name="acrescimo" type="hidden" value="&lt;ValorEmbalagemPedido>">';
+  sBcash+='&lt;input type="image" src="&lt;BaseLoja>images/btcomprar.gif" value="Comprar" alt="Comprar" border="0" align="absbottom" >';
+  sBcash+='&lt;/form>&lt;/td>&lt;/tr>&lt;/table>';
+
+  var oPedConfirmado=F$.GetID("idChkTxtPedConfirmadoFC");
+  if(oPedConfirmado){
+    var oNewElementbCash=document.createElement("div");
+    oNewElementbCash.setAttribute("id","DivShowBcash"); 
+    oDivShowBcash=oPedConfirmado.parentNode.insertBefore(oNewElementbCash,oPedConfirmado);
+    oDivShowBcash.innerHTML=sBcash;
+  }
+
+  var TotalSFrete=&lt;TotalSemFrete>;
+  var NumP=&lt;NumParcelas>;
+
+  // Informe o desconto que é oferecido de acordo com as regras da página "Pagamentos".
+  //if(TotalSFrete>=210)var Desc1=30;
+  //else if(TotalSFrete>=160)var Desc1=20;
+  //else if(TotalSFrete>=90)var Desc1=10;
+
+  //var Desc1;
+  //var FatorDesc=Desc1/100;
+  //Total=((TotalSFrete*100)/(100-Desc1)*FatorDesc);
+
+  //coloca o resultado no campo hidden
+  //document.bcash.desconto.value=Total;
+
+}
+
+&lt;/script>
+</span>
+</pre>
